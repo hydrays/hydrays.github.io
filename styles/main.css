@@ -19,17 +19,49 @@ html, body, h2, h3, h4, div, p, ul, li, input {
 
 #section_title {
 	padding-top:2em;
-	padding-left:5em;
+	padding-left:20%;
 	font-size: large;
 	font-weight: bold;
+}
+
+li:not(:first-of-type) { 
+    margin-top: 1.5em; 
+} 
+  
+li:not(:last-of-type) { 
+    margin-bottom: 1.5em; 
+}
+
+.container {
+    clear: all;
+    padding-top:2em;
+    padding-left:22%;
+    padding-bottom:2em;
+    width: 50%;
+    height: 180px;
+}
+
+.one {
+  width: 20%;
+  height: 180px;
+  background: red;
+  float: left;
+}
+
+.two {
+  margin-left: 30%;
+  height: 100px;
+  font-size: large;
+  font-weight: bold;
 }
 
 #section_content {
 	clear:all;	
 	padding-top:2em;
-	padding-left:8em;
+	padding-left:22%;
 	padding-bottom:0em;
-	width:60%;
+	width:50%;
+	line-height: 1.5em;
 }
 
 #spark {
