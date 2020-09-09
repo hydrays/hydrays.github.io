@@ -44,12 +44,11 @@ li:not(:last-of-type) {
 .one {
   width: 20%;
   height: 180px;
-  background: red;
   float: left;
 }
 
 .two {
-  margin-left: 30%;
+  margin-left: 25%;
   height: 100px;
   font-size: large;
   font-weight: bold;
