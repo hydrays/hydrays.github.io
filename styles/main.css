@@ -1,0 +1,99 @@
+html, body, h2, h3, h4, div, p, ul, li, input {
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+#header {
+	padding-top: 2em;
+	margin-bottom: 5em;
+	clear: both;
+}
+
+#subsection {
+	padding-top:2em;
+	padding-left:2em;
+}
+
+#document {
+	padding:1em;
+}
+
+#section_title {
+	padding-top:2em;
+	padding-left:5em;
+	font-size: large;
+	font-weight: bold;
+}
+
+#section_content {
+	clear:all;	
+	padding-top:2em;
+	padding-left:8em;
+	padding-bottom:0em;
+	width:60%;
+}
+
+#spark {
+	padding-left:2em;
+	padding-bottom:1em;
+	font-size:small;
+	color:#990000;
+	width:80%;
+}
+
+#scholog_date {
+	padding-left:1em;
+	color:#336633;
+}
+	
+#ref {
+	padding-left:2em;
+	font-size:small;
+	width: 80%;
+}
+
+#report {
+	padding-left:2em;
+	padding-bottom:1em;
+	font-size:small;
+	width:80%;
+}
+
+#xfiles {
+	padding-left:2em;
+	font-size:smaller;
+}
+
+#todo {
+	padding-left:2em;
+	padding-bottom:1em;
+	font-size:small;
+	color:#3300FF;
+	width:80%;
+}
+
+#seminar {
+	 margin-left: 4em;
+	 padding-top: .6em;
+}
+
+#active_seminar {
+	margin-left: 4em;
+	padding-top: .6em;
+	color: #0000FF;
+	font-family: "Courier New", Courier, mono;
+	background-color: #FFFFFF;
+	list-style-image: url(../../head.jpeg);
+}
+
+#seminar_title {
+	margin-top:1em;
+	font-size: 16px;
+	font-weight:bold;
+	font-size-adjust:0.47;
+	font-family: "Times New Roman", Times, serif;
+}
+
+#seminar_date {
+	font-size: 16px;
+	font-family: "Times New Roman", Times, serif;
+}
