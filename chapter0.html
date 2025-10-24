@@ -1,0 +1,351 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><style type='text/css'>html {overflow-x: initial !important;}</style>
+<style type='text/css'  id="style-base">:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, "Segoe UI Emoji", "SF Pro", sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p *, #write.first-line-indent svg * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; position: relative; }
+#write svg h1, #write svg h2, #write svg h3, #write svg h4, #write svg h5, #write svg h6, #write svg p { position: static; white-space: nowrap; overflow: visible; }
+foreignobject { overflow: visible; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+li p { orphans: 1; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.mermaid-svg { margin: auto; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+</style>
+<link rel='stylesheet' href='https://&lt;your-host&gt;/V2025.10/vlook-thinking.css' type='text/css' />
+<link rel='stylesheet' href='https://&lt;your-host&gt;/github-io/V2025.10/fs-zen-min.css' type='text/css' />
+<style type='text/css'  id="style-theme_css">
+@import '';
+@import '';
+</style>
+<style type='text/css'  id="style-lp">ol, ul {padding-left: 40px}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="preconnect" href="https://openfonts.pages.dev" crossorigin="anonymous">
+<link rel="preconnect" href="https://madmaxchow.github.io" crossorigin="anonymous">
+<link rel="preconnect" href="https://github.com/hydrays/V2025.10/" crossorigin="anonymous">
+<!-- 补充 DNS 加速，防止 preconnect 被忽略 -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com" "="">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="dns-prefetch" href="https://openfonts.pages.dev">
+<link rel="dns-prefetch" href="https://madmaxchow.github.io">
+<link rel="dns-prefetch" href="https://github.com/hydrays/V2025.10/">
+<!-- live 模式部署时相关资源 URL 配置 -->
+<meta name="vlook-js" content="https://github.com/hydrays/V2025.10/">
+<meta name="vlook-fs" content="https://github.com/hydrays/V2025.10/">
+<!-- 以下为 W3C 相关的 meta 配置 -->
+<meta name="author" content="首师大交叉科学研究院">
+<meta name="date" content="">
+<meta name="changelog" content="">
+<meta name="description" content="首都师范大学新工科数学分析">
+<meta name="keywords" content="高等数学,微积分,数学分析,讲义">
+<!-- 以下为 VLOOK™ 相关的 meta 配置 -->
+<meta name="vlook-doc-lib" content="[序言](chapter0.html?target=_self &quot;序言&quot;), [第一章: 极限](chapter1.html?target=_self &quot;第一章&quot;), [第二章: 导数](chapter2.html?target=_self &quot;第二章&quot;), [第三章: 微分](chapter3.html?target=_self &quot;第三章&quot;), [第四章: 积分](chapter4.html?target=_self &quot;第四章&quot;), [第五章: 微分的应用](chapter5.html?target=_self &quot;第五章&quot;), [第六章: 积分的应用](chapter6.html?target=_self &quot;第六章&quot;), [第七章: 常微分方程](chapter7.html?target=_self &quot;第七章&quot;), [第八章: 数值方法](chapter8.html?target=_self &quot;第八章&quot;)">
+<meta name="vlook-gray-mode" content="">
+<meta name="vlook-header-autonum" content="">
+<meta name="vlook-header-dup" content="">
+<meta name="vlook-image-host" content="">
+<meta name="vlook-query" content="ws=off">
+<meta name="vlook-unpub" content="">
+<meta name="vlook-welcome" content="">
+<meta name="vlook-cc-top-left" content="">
+<meta name="vlook-cc-top-right" content="">
+<meta name="vlook-cc-bottom-left" content="">
+<meta name="vlook-cc-bottom-right" content="">
+<!-- 以下为 Open Graph Protocol (OGP) 相关的 meta 配置 -->
+<meta property="og:image" content="https://vlook-doc.pages.dev/pic/vlook-og.png">
+<meta property="og:image:alt" content="">
+<meta property="og:title" content="">
+<meta property="og:description" content="浏览器版和手机版">
+<meta property="og:url" content="">
+<meta property="og:type" content="">
+<meta property="og:site_name" content="">
+<meta property="og:locale" content="">
+<meta property="og:video" content="">
+<meta property="og:audio" content="">
+
+<!--========================================================================-->
+<!--                                                                        -->
+<!--                          VLOOK - Typora Plugin                         -->
+<!--                                ( live )                                -->
+<!--                                                                        -->
+<!--                                  V2025.10                                 -->
+<!--                               2025-10-18                               -->
+<!--                           Powered by MAX°孟兆                           -->
+<!--                                                                        -->
+<!--                          QQ Group: 805502564                           -->
+<!--                  Telegram Channel: t.me/vlook_markdown                 -->
+<!--                         email: maxchow@qq.com                          -->
+<!--                                                                        -->
+<!--                  https://github.com/MadMaxChow/VLOOK                   -->
+<!--                  https://gitee.com/madmaxchow/VLOOK                    -->
+<!--                                                                        -->
+<!--========================================================================-->
+<!--
+MIT License
+Copyright (c) 2016-2022 MAX°DESIGN | Max Chow
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+<!-- ==================== VLOOK UI ==================== -->
+<!-- <div class="v-vlook-inside"></div> -->
+<style type="text/css">
+    @keyframes breathe-vlook { 0% { transform: scale(1.5); opacity: 0.5; } 100% { transform: scale(1); opacity: 1; } }
+    #VLOOK { left: 0; top: 0; background: var(--v-btn-bg); width: 100%; height: 100vh; display: flex; align-items: center; position: fixed; z-index: 99999; }
+    #VLOOK > div { margin: 0 auto; background: var(--v-btn-f); width: 30px; height: 30px; border-radius: 10px; animation: 1s breathe-vlook infinite alternate; }
+</style>
+<!-- ==================== VLOOK JS ==================== -->
+<script type="text/javascript" defer="">
+	function getMetaContent(key, attr = "name") {
+		const meta = document.querySelector(`meta[${attr}="${key}"]`);
+		return meta ? meta.getAttribute("content") : null;
+	}
+    let lVer = "V2025.10",
+        devMode = lVer.indexOf("dev") > 0 ? true : false, debugMode = devMode,
+        // cssHost = devMode ? "http://localhost/dev/" : getMetaContent("vlook-res-css"),
+        jsHost = devMode ? "http://localhost/dev/" : getMetaContent("vlook-js") + lVer + "/";
+// ==================== NON-standalone ====================
+// ▽ ▽ ▽ ▽ ▽
+    let ts = Math.floor(Date.now()/(1000*60*60*24)); // (1000*60*60*24) 按天
+        jqueryJS =  document.createElement("script"),
+        startJS = document.createElement("script");
+
+    jqueryJS.type = "text/javascript";
+    jqueryJS.src = jsHost + "jquery.js?ts=" + ts;
+    jqueryJS.defer = true;
+    document.getElementsByTagName("HEAD")[0].appendChild(jqueryJS);
+
+    if (devMode) {
+	    let jqueryMigrateJS =  document.createElement("script");
+    	jqueryMigrateJS.type = "text/javascript";
+	    jqueryMigrateJS.src = jsHost + "jquery-migrate.js?ts=" + ts;
+	    jqueryMigrateJS.defer = true;
+    	document.getElementsByTagName("HEAD")[0].appendChild(jqueryMigrateJS);
+    }
+
+    startJS.type = "text/javascript";
+    startJS.src = jsHost + "start.js?ts=" + ts;
+    startJS.crossOrigin = "anonymous";
+    startJS.defer = true;
+    document.getElementsByTagName("HEAD")[0].appendChild(startJS);
+</script>
+<!--======================================-->
+<!-- END • VLOOK plugin_live for <head /> -->
+<!--======================================-->
+
+<title>新工科数学分析(上)</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n3"><a class="md-toc-inner" href="#第0章-序言">第0章 序言</a></span></p></div><h1 id='第0章-序言'><span>第0章 序言</span></h1><blockquote><p><span>&quot;对, 要学习的东西太多了.&quot; 米洛若有所思的皱起了眉.</span></p><p><span>&quot;没错.&quot; 韵律公主说: &quot;但是, 光学习是不够的, 关键的是: 你要知道学这些有什么用, 以及为什么要学这些东西.&quot;</span></p><p align="right">--- 摘录自《神奇的收费亭》</p><p><em><sub><span>Aq!</span></sub></em></p></blockquote><div class="md-alert md-alert-tip tip"><p><span class='md-alert-text md-alert-text-tip'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</span><br></p><p><mark><span>人工智能与微积分</span></mark></p><p><span>本课程的授课对象为人工智能方向本科一年级学生. 数学对于人工智能的重要性不言而喻. 人工智能的核心数学基础包括</span><strong><span>线性代数</span></strong><span>, </span><strong><span>微积分</span></strong><span>和</span><strong><span>概率论</span></strong><span>. 线性代数是骨架, 微积分是肌肉, 概率论是灵魂.</span></p><p><strong><span>新工科数学分析</span></strong><span>的主要内容是</span><strong><span>微积分</span></strong><span>. 微积分是一个强大的数学工具. </span><strong><span>牛顿</span></strong><span>借助微积分成功解释了行星运动, 这是人类文明历史上浓墨重彩的一笔. 尽管有些内容会包含一些繁琐的推演和计算, 但我相信我们每个人潜意识里对真理的渴望能够克服这些困难, 最后都能够够受到微积分的强大力量.</span></p></div><div class="md-alert md-alert-important important"><p><span class='md-alert-text md-alert-text-important'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</span><br></p><p><mark><span>这是一本倡导自主学习的高等数学讲义</span></mark></p><p><span>做同样的一件事, 带着目标去做和不带目标去做的效果是完全不同的. 打个比方, 有两个人各自要砍100棵树, 第一个人不知道为什么要砍这么多的树. 而另一个人知道这些树是为他来盖房子的. 可以想象, 同样在砍树, 这两个人内心的感受是不同的, 完成的效果也是不一样的: 第一个人也许会砍一些松软有蛀虫的 easy 树充数, 而第二个人则会主动去砍粗壮硬实的 hard 树, 因为这是为他自己的房子. 我们称前者为</span><strong><span>被迫砍树</span></strong><span>, 后者为</span><strong><span>自主砍树</span></strong><span>.</span></p><p><span>跟砍树一样, 学习也可以分为</span><strong><span>被迫学习</span></strong><span>和</span><strong><span>自主学习</span></strong><span>. 本讲义的</span><strong><span>设计理念</span></strong><span>是</span><strong><span>帮助大学生更好的自主学习</span></strong><span>. 我们可以把高数学习看成是为自己盖房子, 盖房子当然要砍树(做习题), 但我会先把房子的</span><strong><span>设计图纸</span></strong><span>给大家看, 在介绍每个数学概念时, 首先让大家明白这些部分是为了造窗, 那些部分是为了造门. 当我们明白了所学内容在整个知识体系中的</span><strong><span>目的和意义</span></strong><span>, 自然就会有大局观, 有参与感, 从而把</span><strong><span>被迫砍树</span></strong><span>变为</span><strong><span>主动砍树</span></strong><span>, 把</span><strong><span>被迫学习</span></strong><span>变为</span><strong><span>主动学习</span></strong><span>.</span></p></div><div class="md-alert md-alert-warning warning"><p><span class='md-alert-text md-alert-text-warning'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Warning</span><br></p><p><mark><span>如何才能做到自主学习?</span></mark></p><p><span>长期以来我们的数学教学往往对 </span><strong><span>Why</span></strong><span> 强调得不够: </span><strong><span>为什么要学?</span></strong><span> 更多的时候我们是在强调 </span><strong><span>What</span></strong><span> 和 </span><strong><span>How</span></strong><span>: 先介绍某某定理, 然后做习题. 这就像只让我们去砍树, 而不告诉我们砍树是为了什么. 中学时代为了练基本功这样做也无可厚非, 但在注重知识体系, 强调自主探索的大学时代, 再这样做就不合时宜了. </span></p><p><span>自主学习的关键是要告诉学生</span><strong><span>为什么要学</span></strong><span>, 不能只是空洞的说数学很重要, 而应该是首先把数学知识体系的设计图纸展示给大家, 让大家明白为什么要去学某个知识点, 以及这个知识点有什么用.</span></p></div><div class="md-alert md-alert-caution caution"><p><span class='md-alert-text md-alert-text-caution'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Caution</span><br></p><p><mark><span>如何学好高数</span></mark></p><p><strong><span>数学直觉</span></strong><span>的培养和建立.</span></p><iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=1355578989&bvid=BV1jz421b7p4&cid=1574534749&page=1&autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="85%" height="400"></iframe><p><span>请大家记住, 数学公式本身不值得炫耀, 公式背后所蕴含的直觉和图像才价值千金!</span></p></div><div class="md-alert md-alert-note note"><p><span class='md-alert-text md-alert-text-note'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</span><br></p><p><mark><span>如何使用本讲义</span></mark></p><p><span>本讲义的特点:</span></p><ul><li><p><span>使用HTML5技术, 注重视觉上的舒适性. </span></p></li><li><p><span>可在电脑, pad和手机端观看, 带有夜晚模式, </span><strong><span>对手机用户友好</span></strong><span>.</span></p></li><li><p><span>手机端可以安装本讲义的APP版本.</span></p></li></ul><p><span>为了便于阅读, 在讲解每个知识点时, 我们大致会按照下面的顺序:</span></p></div><div class="md-alert md-alert-tip tip"><p><span class='md-alert-text md-alert-text-tip'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</span><br></p><p><strong><span>WHY</span></strong><span>: 为什么要学它?</span></p></div><div class="md-alert md-alert-important important"><p><span class='md-alert-text md-alert-text-important'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</span><br></p><p><strong><span>WHAT</span></strong><span>: 这个东西是什么? 定义, 定理或性质.</span></p></div><div class="md-alert md-alert-note note"><p><span class='md-alert-text md-alert-text-note'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</span><br></p><p><strong><span>HOW</span></strong><span>: 相关例题</span></p></div><div class="md-alert md-alert-warning warning"><p><span class='md-alert-text md-alert-text-warning'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Warning</span><br></p><p><span>用量用法, 注意事项.</span></p></div><div class="md-alert md-alert-caution caution"><p><span class='md-alert-text md-alert-text-caution'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Caution</span><br></p><p><span>数值实验, 背景知识延拓.</span></p></div><div class="md-alert md-alert-important important"><p><span class='md-alert-text md-alert-text-important'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</span><br><mark><span>致谢:</span></mark></p><ul><li><p><span>首都师范大学交叉科学研究院 </span></p></li><li><p><span>首都师范大学人工智能学院(筹)</span></p></li><li><p><span>首都师范大学数学科学学院</span></p></li><li><p><span>首都师范大学信息工程学院</span></p></li><li><p><span>北京国家应用数学中心</span></p></li><li><p><span>Typora</span></p></li><li><p><span>Vlook</span></p></li></ul></div><div class="md-alert md-alert-caution caution"><p><span class='md-alert-text md-alert-text-caution'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Caution</span><br></p><p><mark><span>参考书目:</span></mark></p><ul><li><p><span>《高等数学》(第八版)， 同济大学数学教研组主编，高等教育出版社.</span></p></li><li><p><span>部分图片和视频来自于 Wikipedia 等网络资源.</span></p></li></ul></div></div></div>
+</body>
+</html>
