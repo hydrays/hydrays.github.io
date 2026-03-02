@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>新工科数学分析(上)</title>
+    <title>新工科数学分析</title>
     <style>
         * {
             margin: 0;
@@ -15,9 +15,9 @@
         body {
             background-color: #f5f7fa;
             color: #333;
-            line-height: 1.6;
-            padding: 20px;
-            max-width: 1200px;
+            line-height: 1.4;
+            padding: 15px;
+            max-width: 1400px;
             margin: 0 auto;
         }
         
@@ -76,62 +76,97 @@
             font-weight: 600;
         }
         
-        .chapters {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        .main-content {
+            --content-rail-width: 80%;
+            column-count: 2;
+            column-gap: 20px;
+            margin-top: 20px;
+        }
+
+        .intro-link {
+            display: block;
+        }
+
+        .section-divider {
+            display: flex;
+            align-items: center;
             gap: 10px;
-            padding: 10px;
+            width: var(--content-rail-width);
+            margin: 0 auto 8px;
+            break-inside: avoid;
+        }
+
+        .section-divider::before,
+        .section-divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #d7dee7;
+        }
+
+        .section-divider span {
+            color: #94a3b8;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            white-space: nowrap;
         }
         
         .chapter-card {
             background: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border-left: 4px solid #3498db;
-            min-height: 48px;
-            padding-top: 10px;
-            padding-bottom: 10px;
+            border-radius: 12px;
+            padding: 10px 14px;
+            box-shadow: 0 3px 12px rgba(15, 23, 42, 0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            border: 1px solid #dbe4ee;
+            min-height: 68px;
             display: flex;
             align-items: center;
-            margin-bottom: 1px; /* 原本20px，缩小为10px */
+            gap: 10px;
+            height: 100%;
         }
         
         .chapter-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            border-left-color: #2980b9;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.1);
+            border-color: #aac7e6;
         }
         
         .chapter-number {
             width: 40px;
             height: 40px;
-            background: #3498db;
+            background: #2f7fbf;
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            margin-right: 15px;
+            margin-right: 0;
             flex-shrink: 0;
+            font-size: 16px;
         }
         
         .chapter-info {
-            flex-grow: 1;
+            flex: 1 1 auto;
+            max-width: none;
         }
         
         .chapter-info h3 {
-            font-size: 18px;
-            margin-bottom: 5px;
+            font-size: 17px;
+            margin: 0;
             color: #2c3e50;
+            line-height: 1.2;
         }
         
         .chapter-link {
             text-decoration: none;
             color: inherit;
             display: block;
+            width: var(--content-rail-width);
+            margin-bottom: 8px;
+            margin-left: auto;
+            margin-right: auto;
+            break-inside: avoid;
         }
         
         footer {
@@ -143,8 +178,9 @@
         }
         
         @media (max-width: 768px) {
-            .chapters {
-                grid-template-columns: 1fr;
+            .main-content {
+                column-count: 1;
+                --content-rail-width: 100%;
             }
             
             .title h1 {
@@ -166,7 +202,28 @@
             }
             
             .chapter-card {
-                padding: 15px;
+                padding: 10px 12px;
+                min-height: 66px;
+            }
+
+            .chapter-info {
+                flex: 1 1 auto;
+                max-width: none;
+            }
+
+            .chapter-info h3 {
+                font-size: 15px;
+                line-height: 1.2;
+            }
+
+            .chapter-number {
+                width: 36px;
+                height: 36px;
+                font-size: 14px;
+            }
+
+            .intro-link {
+                width: 100%;
             }
             
             .image-container {
@@ -186,13 +243,13 @@
             <img src="media/img/cover.jpg" 
                  alt="新工科数学分析" class="custom-image">
             <div class="image-overlay">
-                <h2 style="margin-top: 2em;">新工科数学分析 (上)</h2>
+                <h2 style="margin-top: 2em;">新工科数学分析</h2>
             </div>
         </div>
     </div>
     
-    <div class="chapters">
-        <a href="Volume1/chapter0.html" class="chapter-link">
+    <div class="main-content">
+        <a href="Volume1/chapter0.html" class="chapter-link intro-link">
             <div class="chapter-card">
                 <div class="chapter-number">0</div>
                 <div class="chapter-info">
@@ -200,6 +257,10 @@
                 </div>
             </div>
         </a>
+
+        <div class="section-divider" aria-hidden="true">
+            <span>上册</span>
+        </div>
 
         <a href="Volume1/chapter1.html" class="chapter-link">
             <div class="chapter-card">
@@ -209,7 +270,7 @@
                 </div>
             </div>
         </a>
-        
+
         <a href="Volume1/chapter2.html" class="chapter-link">
             <div class="chapter-card">
                 <div class="chapter-number">2</div>
@@ -218,7 +279,7 @@
                 </div>
             </div>
         </a>
-        
+
         <a href="Volume1/chapter3.html" class="chapter-link">
             <div class="chapter-card">
                 <div class="chapter-number">3</div>
@@ -227,7 +288,7 @@
                 </div>
             </div>
         </a>
-        
+
         <a href="Volume1/chapter4.html" class="chapter-link">
             <div class="chapter-card">
                 <div class="chapter-number">4</div>
@@ -236,7 +297,7 @@
                 </div>
             </div>
         </a>
-        
+
         <a href="Volume1/chapter5.html" class="chapter-link">
             <div class="chapter-card">
                 <div class="chapter-number">5</div>
@@ -245,7 +306,7 @@
                 </div>
             </div>
         </a>
-        
+
         <a href="Volume1/chapter6.html" class="chapter-link">
             <div class="chapter-card">
                 <div class="chapter-number">6</div>
@@ -254,7 +315,7 @@
                 </div>
             </div>
         </a>
-        
+
         <a href="Volume1/chapter7.html" class="chapter-link">
             <div class="chapter-card">
                 <div class="chapter-number">7</div>
@@ -263,12 +324,70 @@
                 </div>
             </div>
         </a>
-        
+
         <a href="Volume1/chapter8.html" class="chapter-link">
             <div class="chapter-card">
                 <div class="chapter-number">8</div>
                 <div class="chapter-info">
                     <h3>数值方法</h3>
+                </div>
+            </div>
+        </a>
+
+    <div class="section-divider" aria-hidden="true">
+            <span>下册</span>
+        </div>
+
+        <a href="Volume2/chapter9.html" class="chapter-link">
+            <div class="chapter-card">
+                <div class="chapter-number">9</div>
+                <div class="chapter-info">
+                    <h3>向量与空间解析几何</h3>
+                </div>
+            </div>
+        </a>
+
+        <a href="Volume2/chapter10.html" class="chapter-link">
+            <div class="chapter-card">
+                <div class="chapter-number">10</div>
+                <div class="chapter-info">
+                    <h3>多元函数的微分</h3>
+                </div>
+            </div>
+        </a>
+
+        <a href="Volume2/chapter11.html" class="chapter-link">
+            <div class="chapter-card">
+                <div class="chapter-number">11</div>
+                <div class="chapter-info">
+                    <h3>多元函数的积分</h3>
+                </div>
+            </div>
+        </a>
+
+        <a href="Volume2/chapter12.html" class="chapter-link">
+            <div class="chapter-card">
+                <div class="chapter-number">12</div>
+                <div class="chapter-info">
+                    <h3>曲线积分和曲面积分</h3>
+                </div>
+            </div>
+        </a>
+
+        <a href="Volume2/chapter13.html" class="chapter-link">
+            <div class="chapter-card">
+                <div class="chapter-number">13</div>
+                <div class="chapter-info">
+                    <h3>无穷级数</h3>
+                </div>
+            </div>
+        </a>
+
+        <a href="Volume2/chapter14.html" class="chapter-link">
+            <div class="chapter-card">
+                <div class="chapter-number">14</div>
+                <div class="chapter-info">
+                    <h3>偏微分方程</h3>
                 </div>
             </div>
         </a>
