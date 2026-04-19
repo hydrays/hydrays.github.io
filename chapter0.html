@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新工科数学分析</title>
+  <meta name="author" content="首师大交叉科学研究院">
+  <meta name="description" content="首都师范大学新工科数学分析">
+  <meta name="keywords" content="高等数学,微积分,数学分析,讲义">
+  
+  
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/chapter.css">
+  <link rel="stylesheet" href="assets/app.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script type="importmap">
+  {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160/examples/jsm/"}}
+  </script>
+</head>
+<body>
+  <div id="sidebar">
+    <div id="doc-nav">
+      <ul id="doc-nav-list"></ul>
+    </div>
+    <div class="nav-divider"></div>
+    <div id="toc-nav">
+      <div class="nav-section-title">Contents</div>
+      <ul>
+      <li><a href="#第零章-序言" id="toc-第零章-序言">第零章:
+      序言</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="overlay" onclick="closeSidebar()"></div>
+
+  <div id="main">
+    <div id="topbar">
+      <button id="sidebar-toggle" onclick="toggleSidebar()" aria-label="Toggle sidebar">&#9776;</button>
+      <span id="topbar-title">新工科数学分析</span>
+      <button id="pdf-btn" onclick="window.print()" title="Print / Save as PDF">&#128438;</button>
+    </div>
+    <div id="video-panel">
+      <button id="video-close-btn" aria-label="Close video">&times;</button>
+      <iframe id="video-frame" src="" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+      <button id="video-close-bottom" onclick="void(0)">&#9650; 收起视频</button>
+    </div>
+    <div id="content">
+      <h1 id="第零章-序言">第零章: 序言</h1>
+      <blockquote>
+      <p>“对, 要学习的东西太多了.” 米洛若有所思的皱起了眉.</p>
+      <p>“没错.” 韵律公主说: “但是, 光学习是不够的, 关键的是:
+      你要知道学这些有什么用, 以及为什么要学这些东西.”</p>
+      <p align="right">
+      — 摘录自《神奇的收费亭》
+      </p>
+      </blockquote>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">人工智能与微积分</span></div>
+      <div class="callout-body">
+      <p>本课程的授课对象为人工智能方向本科一年级学生.
+      数学对于人工智能的重要性不言而喻.
+      人工智能的核心数学基础包括<strong>线性代数</strong>,
+      <strong>微积分</strong>和<strong>概率论</strong>. 线性代数是骨架,
+      微积分是肌肉, 概率论是灵魂.</p>
+      <p><strong>新工科数学分析</strong>的主要内容是<strong>微积分</strong>.
+      微积分是一个强大的数学工具.
+      <strong>牛顿</strong>借助微积分成功解释了行星运动,
+      这是人类文明历史上浓墨重彩的一笔.
+      尽管有些内容会包含一些繁琐的推演和计算,
+      但我相信我们每个人潜意识里对真理的渴望能够克服这些困难,
+      最后都能够够受到微积分的强大力量.</p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">这是一本倡导自主学习的高等数学讲义</span></div>
+      <div class="callout-body">
+      <p>做同样的一件事, 带着目标去做和不带目标去做的效果是完全不同的.
+      打个比方, 有两个人各自要砍100棵树,
+      第一个人不知道为什么要砍这么多的树.
+      而另一个人知道这些树是为他来盖房子的. 可以想象, 同样在砍树,
+      这两个人内心的感受是不同的, 完成的效果也是不一样的:
+      第一个人也许会砍一些松软有蛀虫的 easy 树充数,
+      而第二个人则会主动去砍粗壮硬实的 hard 树, 因为这是为他自己的房子.
+      我们称前者为<strong>被迫砍树</strong>,
+      后者为<strong>自主砍树</strong>.</p>
+      <p>跟砍树一样,
+      学习也可以分为<strong>被迫学习</strong>和<strong>自主学习</strong>.
+      本讲义的<strong>设计理念</strong>是<strong>帮助大学生更好的自主学习</strong>.
+      我们可以把高数学习看成是为自己盖房子, 盖房子当然要砍树(做习题),
+      但我会先把房子的<strong>设计图纸</strong>给大家看,
+      在介绍每个数学概念时, 首先让大家明白这些部分是为了造窗,
+      那些部分是为了造门.
+      当我们明白了所学内容在整个知识体系中的<strong>目的和意义</strong>,
+      自然就会有大局观, 有参与感,
+      从而把<strong>被迫砍树</strong>变为<strong>主动砍树</strong>,
+      把<strong>被迫学习</strong>变为<strong>主动学习</strong>.</p>
+      </div>
+      </div>
+      <div class="callout callout-warning">
+      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">如何才能做到自主学习?</span></div>
+      <div class="callout-body">
+      <p>长期以来我们的数学教学往往对 <strong>Why</strong> 强调得不够:
+      <strong>为什么要学?</strong> 更多的时候我们是在强调
+      <strong>What</strong> 和 <strong>How</strong>: 先介绍某某定理,
+      然后做习题. 这就像只让我们去砍树, 而不告诉我们砍树是为了什么.
+      中学时代为了练基本功这样做也无可厚非, 但在注重知识体系,
+      强调自主探索的大学时代, 再这样做就不合时宜了.</p>
+      <p>自主学习的关键是要告诉学生<strong>为什么要学</strong>,
+      不能只是空洞的说数学很重要,
+      而应该是首先把数学知识体系的设计图纸展示给大家,
+      让大家明白为什么要去学某个知识点, 以及这个知识点有什么用.</p>
+      </div>
+      </div>
+      <div class="callout callout-caution">
+      <div class="callout-header callout-header-caution"><span class="callout-icon"></span><span class="callout-label">如何学好高数</span></div>
+      <div class="callout-body">
+      <p><strong>数学直觉</strong>的培养和建立.</p>
+      <iframe src="https://player.bilibili.com/player.html?isOutside=true&amp;aid=1355578989&amp;bvid=BV1jz421b7p4&amp;cid=1574534749&amp;page=1&amp;autoplay=false" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="85%" height="400">
+      </iframe>
+      <p>请大家记住, 数学公式本身不值得炫耀,
+      公式背后所蕴含的直觉和图像才价值千金!</p>
+      </div>
+      </div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">如何使用本讲义</span></div>
+      <div class="callout-body">
+      <p>本讲义的特点:</p>
+      <ul>
+      <li>使用HTML5技术, 注重视觉上的舒适性.</li>
+      <li>可在电脑, pad和手机端观看, 带有夜晚模式,
+      <strong>对手机用户友好</strong>.</li>
+      <li>手机端可以安装本讲义的APP版本.</li>
+      </ul>
+      <p>为了便于阅读, 在讲解每个知识点时, 我们大致会按照下面的顺序:</p>
+      </div>
+      </div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p><strong>WHY</strong>: 为什么要学它?</p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要</span></div>
+      <div class="callout-body">
+      <p><strong>WHAT</strong>: 这个东西是什么? 定义, 定理或性质.</p>
+      </div>
+      </div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p><strong>HOW</strong>: 相关例题</p>
+      </div>
+      </div>
+      <div class="callout callout-warning">
+      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">警告</span></div>
+      <div class="callout-body">
+      <p>用量用法, 注意事项.</p>
+      </div>
+      </div>
+      <div class="callout callout-caution">
+      <div class="callout-header callout-header-caution"><span class="callout-icon"></span><span class="callout-label">注意</span></div>
+      <div class="callout-body">
+      <p>数值实验, 背景知识延拓.</p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">致谢:</span></div>
+      <div class="callout-body">
+      <ul>
+      <li>首都师范大学交叉科学研究院</li>
+      <li>首都师范大学人工智能学院(筹)</li>
+      <li>首都师范大学数学科学学院</li>
+      <li>首都师范大学信息工程学院</li>
+      <li>北京国家应用数学中心</li>
+      <li>Typora</li>
+      <li>Vlook</li>
+      </ul>
+      </div>
+      </div>
+      <div class="callout callout-caution">
+      <div class="callout-header callout-header-caution"><span class="callout-icon"></span><span class="callout-label">参考书目:</span></div>
+      <div class="callout-body">
+      <ul>
+      <li>《高等数学》(第八版)，
+      同济大学数学教研组主编，高等教育出版社.</li>
+      <li>部分图片和视频来自于 Wikipedia 等网络资源.</li>
+      </ul>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.docLib = [{"title": "\u5e8f\u8a00", "url": "chapter0.html"}, {"title": "\u7b2c\u4e00\u7ae0: \u6781\u9650", "url": "chapter1.html"}, {"title": "\u7b2c\u4e8c\u7ae0: \u5bfc\u6570", "url": "chapter2.html"}, {"title": "\u7b2c\u4e09\u7ae0: \u5fae\u5206", "url": "chapter3.html"}, {"title": "\u7b2c\u56db\u7ae0: \u79ef\u5206", "url": "chapter4.html"}, {"title": "\u7b2c\u4e94\u7ae0: \u5fae\u5206\u7684\u5e94\u7528", "url": "chapter5.html"}, {"title": "\u7b2c\u516d\u7ae0: \u79ef\u5206\u7684\u5e94\u7528", "url": "chapter6.html"}, {"title": "\u7b2c\u4e03\u7ae0: \u5e38\u5fae\u5206\u65b9\u7a0b", "url": "chapter7.html"}, {"title": "\u7b2c\u516b\u7ae0: \u6570\u503c\u65b9\u6cd5", "url": "chapter8.html"}, {"title": "\u7b2c\u4e5d\u7ae0: \u5411\u91cf\u4e0e\u7a7a\u95f4\u89e3\u6790\u51e0\u4f55", "url": "chapter9.html"}, {"title": "\u7b2c\u5341\u7ae0: \u591a\u5143\u51fd\u6570\u7684\u5fae\u5206", "url": "chapter10.html"}, {"title": "\u7b2c\u5341\u4e00\u7ae0: \u591a\u5143\u51fd\u6570\u7684\u79ef\u5206", "url": "chapter11.html"}, {"title": "\u7b2c\u5341\u4e8c\u7ae0: \u66f2\u7ebf\u79ef\u5206\u548c\u66f2\u9762\u79ef\u5206", "url": "chapter12.html"}, {"title": "\u7b2c\u5341\u4e09\u7ae0: \u65e0\u7a77\u7ea7\u6570", "url": "chapter13.html"}, {"title": "\u7b2c\u5341\u56db\u7ae0: \u504f\u5fae\u5206\u65b9\u7a0b", "url": "chapter14.html"}];
+    window.chpAutonum = "";
+    window.videoUrl = "";
+  </script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

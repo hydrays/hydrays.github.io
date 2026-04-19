@@ -1,0 +1,2619 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新工科数学分析</title>
+  <meta name="author" content="首师大交叉科学研究院">
+  <meta name="description" content="首都师范大学新工科数学分析">
+  <meta name="keywords" content="高等数学,微积分,数学分析,讲义">
+  
+  
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/chapter.css">
+  <link rel="stylesheet" href="assets/app.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script type="importmap">
+  {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160/examples/jsm/"}}
+  </script>
+</head>
+<body>
+  <div id="sidebar">
+    <div id="doc-nav">
+      <ul id="doc-nav-list"></ul>
+    </div>
+    <div class="nav-divider"></div>
+    <div id="toc-nav">
+      <div class="nav-section-title">Contents</div>
+      <ul>
+      <li><a href="#第一章-极限" id="toc-第一章-极限">第一章: 极限</a>
+      <ul>
+      <li><a href="#集合与映射" id="toc-集合与映射">1.1 集合与映射</a>
+      <ul>
+      <li><a href="#集合" id="toc-集合">1.1.1 集合</a></li>
+      <li><a href="#映射" id="toc-映射">1.1.2 映射</a></li>
+      <li><a href="#函数" id="toc-函数">1.1.3 函数</a></li>
+      </ul></li>
+      <li><a href="#极限" id="toc-极限">1.2 极限</a>
+      <ul>
+      <li><a href="#数列极限" id="toc-数列极限">1.2.1 数列极限</a></li>
+      <li><a href="#函数极限" id="toc-函数极限">1.2.2 函数极限</a></li>
+      <li><a href="#极限的运算" id="toc-极限的运算">1.2.3
+      极限的运算</a></li>
+      <li><a href="#两个重要的极限" id="toc-两个重要的极限">1.2.4
+      两个重要的极限</a></li>
+      <li><a href="#复合函数的极限" id="toc-复合函数的极限">1.2.5
+      复合函数的极限</a></li>
+      </ul></li>
+      <li><a href="#连续函数" id="toc-连续函数">1.3 连续函数</a>
+      <ul>
+      <li><a href="#连续和间断" id="toc-连续和间断">1.3.1
+      连续和间断</a></li>
+      <li><a href="#闭区间上连续函数的性质"
+      id="toc-闭区间上连续函数的性质">1.3.2
+      闭区间上连续函数的性质</a></li>
+      </ul></li>
+      </ul></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="overlay" onclick="closeSidebar()"></div>
+
+  <div id="main">
+    <div id="topbar">
+      <button id="sidebar-toggle" onclick="toggleSidebar()" aria-label="Toggle sidebar">&#9776;</button>
+      <span id="topbar-title">新工科数学分析</span>
+      <button id="pdf-btn" onclick="window.print()" title="Print / Save as PDF">&#128438;</button>
+    </div>
+    <div id="video-panel">
+      <button id="video-close-btn" aria-label="Close video">&times;</button>
+      <iframe id="video-frame" src="" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+      <button id="video-close-bottom" onclick="void(0)">&#9650; 收起视频</button>
+    </div>
+    <div id="content">
+      <h1 id="第一章-极限">第一章: 极限</h1>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p><strong>微积分</strong>是大学数学的核心内容,
+      是<strong>人工智能</strong>的基础之一,
+      学好它对我们以后的学习和成长有非常大的好处.</p>
+      <p>微积分的研究对象是<strong>函数</strong>.
+      我们中学已经学过函数的概念, 下面我们来复习和巩固一下.</p>
+      </div>
+      </div>
+      <h2 id="集合与映射">1.1 集合与映射</h2>
+      <h3 id="集合">1.1.1 集合</h3>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p>集合是数学研究从具体到抽象的第一步.
+      当我们用<strong>数学语言</strong>来描述世界时,
+      首先要把我们<strong>感兴趣的对象</strong>给拿出来, 进行适当的抽象,
+      然后再研究它们的规律.
+      <strong>集合</strong>就是数学中用来界定对象的一个概念.</p>
+      </div>
+      </div>
+      <div class="callout callout-note">
+      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">集合举例</span></div>
+      <div class="callout-body">
+      <ol type="1">
+      <li><em><code>自然数集</code></em> — <span
+      class="math inline">\mathbb{N} = \left\{0, 1, 2, 3, \cdots
+      \right\}</span></li>
+      <li><em><code>实数集</code></em> — <span
+      class="math inline">\mathbb{R} = \left\{x: -\infty &lt; x &lt;
+      \infty \right\}</span></li>
+      <li><em><code>满足不等式 x-3&lt;10 的所有实数 x</code></em> —
+      <span class="math inline">A=\left \{x &lt; 7\right \}</span></li>
+      </ol>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">集合的概念</span></div>
+      <div class="callout-body">
+      <p>我们把所要研究的对象统称为<strong>元素</strong> (element),
+      这些元素所组成的总体叫做<strong>集合</strong> (set).
+      一般用大写字母如 <span class="math inline">A, B, C</span>
+      表示集合, 用小写字母如 <span class="math inline">x</span> 或 <span
+      class="math inline">a, b, c</span> 来表示集合中的元素.</p>
+      <ul>
+      <li>如果 <span class="math inline">x</span> 是集合 <span
+      class="math inline">A</span> 的元素, 就说 <span
+      class="math inline">x</span> <strong>属于</strong> 集合 <span
+      class="math inline">A</span> , 记作 <span class="math inline">x\in
+      A</span> ;</li>
+      <li>如果 <span class="math inline">x</span> 不是集合 <span
+      class="math inline">A</span> 中的元素, 就说 <span
+      class="math inline">x</span> <strong>不属于</strong> 集合 <span
+      class="math inline">A</span>, 记作 <span class="math inline">a
+      \notin A</span>.</li>
+      <li>不包含任何元素的集合叫做 <strong>空集</strong> (emptyset),
+      记为 $$.</li>
+      </ul>
+      </div>
+      </div>
+      <div class="callout callout-caution">
+      <div class="callout-header callout-header-caution"><span class="callout-icon"></span><span class="callout-label">上机实验</span></div>
+      <div class="callout-body">
+      <p>计算机图像处理中经常会用到<strong>掩码</strong> (mask) 的概念.
+      掩码本质上就是一个集合.</p>
+      <ul>
+      <li>set_mask.ipynb: 图像掩码操作.</li>
+      </ul>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">两个集合间的包含关系</span></div>
+      <div class="callout-body">
+      <p>如果集合 <span class="math inline">A</span>
+      中<strong>任意</strong>一个元素都是集合 <span
+      class="math inline">B</span> 中的元素, 则称 <span
+      class="math inline">A</span> <strong>包含于</strong> <span
+      class="math inline">B</span> (或 <span
+      class="math inline">B</span> <strong>包含</strong><span
+      class="math inline">A</span>), 记作 <span
+      class="math inline">A\subseteq B</span> 或 <span
+      class="math inline">B\supseteq A</span>, 此时称 <span
+      class="math inline">A</span> 为 <span class="math inline">B</span>
+      的 <strong>子集</strong> (subset). 空集是任何集合的子集</p>
+      <ul>
+      <li><strong>集合相等</strong>: 如果 <span
+      class="math inline">A\subseteq B</span>, 同时 <span
+      class="math inline">B\subseteq A</span>, 则集合 <span
+      class="math inline">A</span>, <span class="math inline">B</span>
+      中的元素是完全一样的, 此时我们说集合 <span
+      class="math inline">A</span> 等于集合 <span
+      class="math inline">B</span>, 记作<span
+      class="math inline">A=B</span>.</li>
+      </ul>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">集合之间的运算</span></div>
+      <div class="callout-body">
+      <p><strong>交集</strong></p>
+      <p>所有既属于 <span class="math inline">A</span> 又属于 <span
+      class="math inline">B</span> 的元素组成的集合称为 <span
+      class="math inline">A</span> 与 <span class="math inline">B</span>
+      的 <strong>交集</strong> (intersection set), 记作 <span
+      class="math inline">A\cap B</span> (读作“<span
+      class="math inline">A</span> 交 <span
+      class="math inline">B</span>”), 即</p>
+      <p><span class="math display">
+      A\cap B=\left \{ x: x\in A \ \mathrm{and} \ x\in B \right \}
+      </span></p>
+      <p>下图展示了交集运算:</p>
+      <figure>
+      <img src="../media/img/chpt1_intersection.png" width="200"
+      alt="交集" />
+      <figcaption aria-hidden="true">交集</figcaption>
+      </figure>
+      <p><strong>并集</strong></p>
+      <p>所有属于集合 <span class="math inline">A</span> 或属于集合
+      <span class="math inline">B</span> 的元素组成的集合, 称为集合
+      <span class="math inline">A</span> 与 <span
+      class="math inline">B</span> 的 <strong>并集</strong> (union set),
+      记作 <span class="math inline">A\cup B</span> (读作“ <span
+      class="math inline">A</span> 并 <span class="math inline">B</span>
+      ”), 即</p>
+      <p><span class="math display">
+      A\cup B=\left \{ x: x\in A \ \mathrm{or} \ x\in B \right \}
+      </span></p>
+      <p>下图展示了并集运算:</p>
+      <figure>
+      <img src="../media/img/chpt1_union.png" width="200" alt="并集" />
+      <figcaption aria-hidden="true">并集</figcaption>
+      </figure>
+      <p><strong>补集</strong></p>
+      <p>如果集合 <span class="math inline">A</span> 是集合 <span
+      class="math inline">B</span> 的子集, 则所有 <span
+      class="math inline">B</span> 中不属于 <span
+      class="math inline">A</span> 的所有元素构成的集合称为 <span
+      class="math inline">A</span> 相对于 <span
+      class="math inline">B</span> 的 <strong>补集</strong>
+      (complementary set), 记作 <span class="math inline">C_BA</span> 或
+      <span class="math inline">A^C</span>, 即</p>
+      <p><span class="math display">
+      \bar{A} = C_B A = \{x \in B: \ x\notin A\}
+      </span></p>
+      <p>下图展示了补集运算:</p>
+      <figure>
+      <img src="../media/img/chpt1_complement.png" width="200"
+      alt="补集" />
+      <figcaption aria-hidden="true">补集</figcaption>
+      </figure>
+      </div>
+      </div>
+      <div class="callout callout-caution">
+      <div class="callout-header callout-header-caution"><span class="callout-icon"></span><span class="callout-label">上机实验</span></div>
+      <div class="callout-body">
+      <ul>
+      <li>set_iou.ipynb: <strong>交并比</strong>介绍.</li>
+      </ul>
+      </div>
+      </div>
+      <h3 id="映射">1.1.2 映射</h3>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p><strong>集合</strong>的概念是为了给<strong>映射</strong>做铺垫,
+      映射建立了<strong>集合与集合之间的关联</strong>.</p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">映射的定义</span></div>
+      <div class="callout-body">
+      <p>映射 (map) 描述了从一个集合到另一个集合的某种对映关系. 设集合
+      <span class="math inline">A</span> 和 集合 <span
+      class="math inline">B</span> 是两个集合, 如果存在一个对映关系
+      <span class="math inline">f</span>, 使得集合 <span
+      class="math inline">A</span> 中的每个元素都唯一的对映到 <span
+      class="math inline">B</span> 中的一个元素, 则称 <span
+      class="math inline">f</span> 为从 <span
+      class="math inline">A</span> 到 <span class="math inline">B</span>
+      的映射, 记作 <span class="math display">
+      f: A \rightarrow B
+      </span></p>
+      <p>映射 <span class="math inline">f</span> 把集合 <span
+      class="math inline">A</span> 中的元素 <span
+      class="math inline">a</span> 对映到 <span
+      class="math inline">B</span> 中的元素 <span
+      class="math inline">b</span>, 可记作 <span class="math display">
+      f(a) = b
+      </span> 此时 <span class="math inline">b</span> 称为 <span
+      class="math inline">a</span> 的<strong>象</strong>, <span
+      class="math inline">a</span> 称为 <span
+      class="math inline">b</span> 的<strong>原象</strong>.</p>
+      <p>映射可以通过下面的图像来理解:</p>
+      <figure>
+      <img src="../media/img/chpt1_Function_color_example.png"
+      height="200" alt="映射" />
+      <figcaption aria-hidden="true">映射</figcaption>
+      </figure>
+      <p>图中箭头表示了集合 <span class="math inline">A</span>
+      中元素与集合 <span class="math inline">B</span>
+      中元素的对映关系.</p>
+      <p>根据定义, 映射需要满足两个要求: <strong>随处取值,
+      唯一对映</strong>.</p>
+      <ul>
+      <li><strong>随处取值</strong>是指 <span
+      class="math inline">A</span> 中的任何一个元素在 <span
+      class="math inline">B</span> 中都有对映；</li>
+      <li><strong>唯一对映</strong>是指 <span
+      class="math inline">f</span> 可以把 <span
+      class="math inline">A</span> 中的不同元素映射到 <span
+      class="math inline">B</span> 中的同一个元素, 但不能把 <span
+      class="math inline">A</span> 中的一个元素映射到 <span
+      class="math inline">B</span> 中的多个元素.</li>
+      </ul>
+      </div>
+      </div>
+      <div class="callout callout-warning">
+      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">映射的性质</span></div>
+      <div class="callout-body">
+      <ol type="1">
+      <li><strong>单射</strong>：如果 <span class="math inline">A</span>
+      中的每个元素都对映 <span class="math inline">B</span>
+      中的不同元素, 则称 <span class="math inline">f</span> 为单射.</li>
+      <li><strong>满射</strong>：如果 <span class="math inline">B</span>
+      中的每个元素都有原象, 则称 <span class="math inline">f</span>
+      为满射.</li>
+      <li><strong>一一映射</strong>：顾名思义, 一一映射就是集合 <span
+      class="math inline">A</span> 中元素与集合 <span
+      class="math inline">B</span> 中的元素一个对映一个. 可以证明, <span
+      class="math inline">f</span> 是一一映射等价于 <span
+      class="math inline">f</span> 既是单射又是满射.</li>
+      </ol>
+      <p><strong>逆映射</strong></p>
+      <p>对于一一映射 <span class="math inline">f: A \rightarrow
+      B</span>, 把映射的象和原象反过来, 得到一个把集合 <span
+      class="math inline">B</span> 映射到集合 <span
+      class="math inline">A</span> 的新的映射, 称为逆映射, 记作 <span
+      class="math inline">f^{-1}: B\rightarrow A</span>.</p>
+      </div>
+      </div>
+      <div class="callout callout-note">
+      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">映射的例子</span></div>
+      <div class="callout-body">
+      <p>映射的例子在我们的生活中随处可见, 例如：</p>
+      <ol type="1">
+      <li><strong>名字</strong>：集合 <span class="math inline">A</span>
+      是所有的人, 集合 <span class="math inline">B</span> 是所有的名字.
+      每个人都有一个名字, 我们允许重名, 但不允许一个人有2个名字.</li>
+      <li><strong>地图</strong>：没错, map 本身就是一个
+      map！(我们希望)这是一个从地图到真实世界的一一映射.</li>
+      <li><strong>颜色</strong>：为什么我们能看到不同的颜色？颜色是一个从光波长到我们主观感受的映射.</li>
+      </ol>
+      <p>从上面的例子可以感受到, 映射的作用在于把集合 <span
+      class="math inline">A</span>
+      中的元素作为<strong>输入信号</strong>,
+      例如如不同的人、GPS坐标、光的波长等, 经过某种操作,
+      转换成我们关心的输出, 如名字、位置和颜色. 从这个意义上理解,
+      映射就是就是把输入 <span class="math inline">x</span> 转化成 <span
+      class="math inline">f(x)</span> 的一个机器.</p>
+      <figure>
+      <img src="../media/img/chpt1_function.png" width="200"
+      alt="Function" />
+      <figcaption aria-hidden="true">Function</figcaption>
+      </figure>
+      </div>
+      </div>
+      <h3 id="函数">1.1.3 函数</h3>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">映射与函数</span></div>
+      <div class="callout-body">
+      <p>函数是一种特殊的映射: 从<strong>数集</strong> <span
+      class="math inline">A</span> 到<strong>数集</strong> <span
+      class="math inline">B</span> 的<strong>映射</strong> <span
+      class="math inline">f:A \rightarrow B</span>
+      称为<strong>函数</strong> (function). 函数可写成 <span
+      class="math inline">y = f(x)</span> 的形式, 其中 <span
+      class="math inline">x</span> 称为<strong>自变量</strong>, <span
+      class="math inline">y</span> 称为 <span
+      class="math inline">x</span> 对映的<strong>函数值</strong>.</p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">数列</span></div>
+      <div class="callout-body">
+      <p><strong>数列</strong>是一类特殊的函数, 它把自然数集 <span
+      class="math inline">\mathbb{N}</span> 映射到实数集 <span
+      class="math inline">\mathbb{R}</span> 中, 这个函数可以记作 <span
+      class="math inline">a(n)</span>, 不过更多的时候我们会把 <span
+      class="math inline">n</span> 作为下标, 以 <span
+      class="math inline">a_n</span> 表示数列得第 <span
+      class="math inline">n</span> 项, 并以 <span class="math inline">\{
+      a_n \}</span> 表示整个数列.</p>
+      <p><strong>等差数列</strong></p>
+      <ul>
+      <li>首项为 <span class="math inline">a_{1}</span>, 公差为 <span
+      class="math inline">d</span>
+      的等差数列的<strong>通项公式</strong>为</li>
+      </ul>
+      <p><span class="math display">
+      a_{n} =a_{1} +(n-1)d
+      </span></p>
+      <ul>
+      <li>等差数列的<strong>前 <span class="math inline">n</span>
+      项和</strong>为 <span class="math display">
+      \quad S_{n}=na_1+\frac{n(n-1)}{2}d
+      </span></li>
+      </ul>
+      <p><strong>等比数列</strong></p>
+      <ul>
+      <li><p>首项为 <span class="math inline">a_{1}</span> , 公比为
+      <span class="math inline">q</span>
+      的等比数列的<strong>通项公式</strong>为 <span
+      class="math display">
+      a_{n}=a_{1} q^{n-1}
+      </span></p></li>
+      <li><p>等比数列的<strong>前 <span class="math inline">n</span>
+      项和</strong>为 <span class="math display">
+      S_{n}=a_{1}\frac{1-q^n }{1-q} （q\ne 1)
+      </span></p></li>
+      </ul>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">初等函数</span></div>
+      <div class="callout-body">
+      <ol type="1">
+      <li>幂函数: <span class="math inline">y=x^{\alpha}</span></li>
+      <li>指数函数: <span class="math inline">y=a^x</span>, 特别的有
+      <span class="math inline">y=\mathrm{e}^x</span>, 后者在 python
+      中有专门的函数 <span class="math inline">numpy.exp(x)</span></li>
+      <li>对数函数: <span
+      class="math inline">y=\mathrm{log}_a^{x}</span>, 特别的有 <span
+      class="math inline">y=\mathrm{ln}^{x}</span>, 后者在 python
+      中有专门的函数 <span class="math inline">numpy.log(x)</span></li>
+      <li>三角函数: <span class="math inline">y=\sin(x)</span>, <span
+      class="math inline">y=\cos(x)</span>, <span
+      class="math inline">y=\tan(x)</span></li>
+      <li>反三角函数: <span class="math inline">y =
+      \mathrm{arcsin}(x)</span></li>
+      </ol>
+      <p><strong>其它常用函数</strong></p>
+      <ol type="1">
+      <li><p>绝对值函数: <span class="math inline">y=|x|</span></p></li>
+      <li><p>符号函数 <span class="math display">
+      y=\mathrm{sgn}(x)=\left\{\begin{matrix}
+      1, &amp;  x&gt;0&amp; \\
+      0, &amp;  x=0&amp; \\
+      -1, &amp;  x&lt;0&amp;
+      \end{matrix}\right.
+      </span></p></li>
+      <li><p>Sigmoid函数 <span class="math display">
+      \sigma (x)=\frac{1}{1+e^{-x}}
+      </span></p></li>
+      </ol>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">反函数</span></div>
+      <div class="callout-body">
+      <p><strong>反函数</strong>是<strong>逆映射</strong>的一个特例,
+      对于函数 <span class="math inline">f: x \rightarrow y</span>
+      (也要求 <span class="math inline">f</span> 是一一映射), 其反函数为
+      <span class="math inline">f^{-1}: y \rightarrow x</span>. 例如</p>
+      <ul>
+      <li><span class="math inline">y = 3x + 1</span> 的反函数为 <span
+      class="math inline">\displaystyle y = \frac{x - 1}{3}</span></li>
+      <li><span class="math inline">y = \mathrm{e}^x</span> 的反函数为
+      <span class="math inline">y = \mathrm{ln}x</span>.</li>
+      </ul>
+      <p>反函数本质上是把 <span class="math inline">x</span> 和 <span
+      class="math inline">y</span> 的顺序对调了一下,
+      因此不难发现原函数与反函数的图像是关于直线 <span
+      class="math inline">y = x</span> 对称的.</p>
+      <figure>
+      <img src="../media/img/chpt1_inverse_function.png" width="400"
+      alt="反函数图形的对称性" />
+      <figcaption aria-hidden="true">反函数图形的对称性</figcaption>
+      </figure>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">复合函数</span></div>
+      <div class="callout-body">
+      <p>对于函数 <span class="math inline">f</span> 和 <span
+      class="math inline">g</span>,
+      我们可以构造一个<strong>新的函数</strong> <span
+      class="math inline">y = f[g(x)]</span>, 它把自变量 <span
+      class="math inline">x</span> 通过函数 <span
+      class="math inline">g</span> 映射到 <span class="math inline">u =
+      g(x)</span>, 再把 <span class="math inline">u</span> 视作自变量
+      (也称为<strong>中间变量</strong>) 通过函数 <span
+      class="math inline">f</span> 映射到 <span class="math inline">y =
+      y = f[g(x)]</span>. 这个过程可以表示为:</p>
+      <p><span class="math display">
+      x \stackrel{g}{\longrightarrow} u \stackrel{f}{\longrightarrow} y.
+      </span></p>
+      <p>我们把这个新函数 <span class="math inline">y = f[g(x)]</span>
+      称为函数 <span class="math inline">f</span> 和 <span
+      class="math inline">g</span> 的<strong>复合函数</strong>, 记作
+      <span class="math inline">f \circ g</span>.
+      注意函数复合是讲顺序的, 一般来说 <span class="math inline">f\circ
+      g \ne g\circ f</span>.</p>
+      </div>
+      </div>
+      <div id="chpt1-ex-021" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例1: 函数复合的计算</span><span
+      class="ex-tags"><span class="ex-tag">函数复合</span><span
+      class="ex-tag">复合函数</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>假设 <span class="math inline">f(x) = x + 2</span>，<span
+      class="math inline">g(x) = x^2</span>，计算复合函数 <span
+      class="math inline">f\circ g</span> 和 <span
+      class="math inline">g\circ f</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-021-frame" data-panel="chpt1-ex-021-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-021-frame" data-panel="chpt1-ex-021-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-021-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-021-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>将一个函数的输出代入另一个函数，注意复合的顺序：<span
+      class="math inline">f\circ g</span> 表示先作用 <span
+      class="math inline">g</span> 再作用 <span
+      class="math inline">f</span>。</p>
+      </div>
+      <div id="chpt1-ex-021-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      \begin{align}
+      f\circ g &amp;= g(x) + 2 = x^2 + 2, \\
+      g\circ f &amp;= [f(x)]^2 = (x+2)^2.
+      \end{align}
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-caution">
+      <div class="callout-header callout-header-caution"><span class="callout-icon"></span><span class="callout-label">注意</span></div>
+      <div class="callout-body">
+      <p>计算机编程中的<strong>函数</strong>(function)
+      概念比数学中的函数要广, 它表示从输入
+      (可以是数、数组、函数等）到输出
+      (也可以是数、数组、函数等）的一系列操作.</p>
+      <p><strong>深度学习与复合函数</strong></p>
+      <figure>
+      <img src="../media/img/chpt1_network.png" width="400"
+      alt="神经网络" />
+      <figcaption aria-hidden="true">神经网络</figcaption>
+      </figure>
+      <p>人工智能中的核心技术为<strong>深度学习</strong>,
+      深度学习的背后其实就是有很多层 (从几十到几千层都有)
+      的<strong>神经网络</strong> (Neuron Network).
+      神经网络的本质正是复合函数. 对于图中所示的神经网络,
+      从最左端的<strong>输入信号</strong>开始,
+      之后每一层都是上一层信号的复合,
+      因此神经网络就是一个复合了很多次的函数, 这个函数把输入
+      (比如一张图片) 映射到我们关心的结果
+      (比如图像是猫还是狗的概率).</p>
+      <p><strong>上机实验</strong></p>
+      <ul>
+      <li>set_mnist.ipynb: 手写数字识别演示.</li>
+      </ul>
+      </div>
+      </div>
+      <h2 id="极限">1.2 极限</h2>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p>极限是微积分中的核心概念. 极限的出现代表了数学思想的一次转变,
+      而促成这一转变的动机来自于现实问题中对<strong>曲线</strong>相关问题的需求.
+      在初等数学中我们会计算矩形的周长和面积, 会计算三角形的周长和面积,
+      甚至是任意多边形的周长和面积, 但是, 这些都是由直线构成的结构,
+      而到了曲线大家就不会了. 曲线的长度怎么算?
+      由曲线构成区域的面积怎么算? 尽管我们初中就知道圆的周长是 <span
+      class="math inline">2\pi r</span>, 面积是 <span
+      class="math inline">\pi r^2</span>, 但是为什么是这样,
+      只有运用微积分才能给出严格的证明.</p>
+      <p>极限的概念很直观, 但经过数学的严格化后会变得非常抽象.
+      可以说极限的公理化是一道门槛,
+      是我们从中学的初等数学迈向大学的高等数学的必经之路.
+      要学好极限并不容易, 这里面涉及从有限到无穷的观念转变.
+      我们会发现这条路一开始会辗转反复, 让人晕头转向,
+      但是当你学完这门课程再回头来看, 会发现这么做是值得的,
+      数学概念的严格化其实不是在追求外表的精美,
+      而是让我们的内心变得更加的强大, 使我们有力量走得更远. 那么,
+      我们深呼吸一下, 一起敲开通向高等数学的大门吧.</p>
+      </div>
+      </div>
+      <h3 id="数列极限">1.2.1 数列极限</h3>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">极限与圆的面积</span></div>
+      <div class="callout-body">
+      <p>圆的面积怎么算? 为了计算圆的面积,
+      我们构造了一<strong>系列</strong>圆的内接正多边形,
+      这些正多边形的面积是可以通过初等数学计算的, 我们把它们的面积记作
+      <span class="math inline">A_n, n = 1, 2, \cdots</span>.
+      通过<strong>直觉</strong>我们能感受到, <strong>当 <span
+      class="math inline">n</span> 趋于无穷大时, <span
+      class="math inline">A_n</span> 的面积会无限接近圆的面积</strong>.
+      接下来我们要做的就是<strong>把这个直觉通过数学语言给严格化</strong>.</p>
+      </div>
+      </div>
+      <div class="callout callout-caution">
+      <div class="callout-header callout-header-caution"><span class="callout-icon"></span><span class="callout-label">上机实验</span></div>
+      <div class="callout-body">
+      <ul>
+      <li>limit_array_circle.ipynb: 圆面积的极限.</li>
+      </ul>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要</span></div>
+      <div class="callout-body">
+      <p>极限是一个<strong>动中取静</strong>的过程.</p>
+      <ul>
+      <li><p>什么在动? 数列 <span class="math inline">\{ A_n \}</span>
+      中的指标 <span class="math inline">n</span>
+      在<strong>动</strong>.</p></li>
+      <li><p>什么是静? 圆面积是静, <span class="math inline">A_n</span>
+      的取值会慢慢<strong>趋于稳定</strong>,
+      到最后<strong>几乎不变</strong>了,
+      数学上我们称这种行为叫<strong>收敛</strong>.</p></li>
+      </ul>
+      </div>
+      </div>
+      <div class="callout callout-note">
+      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">极限存在的例子</span></div>
+      <div class="callout-body">
+      <p><strong>一尺之捶, 日取其半 (版本1)</strong></p>
+      <p>站在棒子的角度, 这个过程可以用一个数列描述. <span
+      class="math inline">n</span> 代表天数, <span
+      class="math inline">a_n</span> 代表杠剩下的长度.</p>
+      <p><span class="math display">
+      \begin{align*}
+      a_0 &amp;= 1,  \\
+      a_1 &amp;= \frac{1}{2},  \\
+      a_2 &amp;= \frac{1}{4},  \\
+      &amp; \cdots \\
+      a_n &amp; = \frac{1}{2^n}, \\
+      &amp; \cdots
+      \end{align*}
+      </span></p>
+      <p>随着 <span class="math inline">n</span> 的增加
+      (<strong>动</strong>), <span class="math inline">a_n</span>
+      的值不断靠近0 (<strong>静</strong>), 直觉告诉我们当 <span
+      class="math inline">n</span> 区域无穷大时 <span
+      class="math inline">a_n</span> 的极限是0.</p>
+      <p><strong>一尺之捶, 日取其半 (版本2)</strong></p>
+      <p>站在砍棒人的角度, 这个过程也可以用一个数列描述. <span
+      class="math inline">n</span> 代表天数, <span
+      class="math inline">b_n</span> 代表到第 <span
+      class="math inline">n</span> 天为止所取的棒子的总数.</p>
+      <p><span class="math display">
+      \begin{align*}
+      b_0 &amp;= 0,  \\
+      b_1 &amp;= \frac{1}{2},  \\
+      b_2 &amp;= \frac{1}{2} + \frac{1}{4} = \frac{3}{4},  \\
+      &amp; \cdots \\
+      b_n &amp; = \frac{1}{2} + \frac{1}{4} + \cdots + \frac{1}{2^n} = 1
+      - \frac{1}{2^n}, \\
+      &amp; \cdots
+      \end{align*}
+      </span></p>
+      <p>随着 <span class="math inline">n</span> 的增加
+      (<strong>动</strong>), <span class="math inline">b_n</span>
+      的值不断靠近1 (<strong>静</strong>), 直觉告诉我们当 <span
+      class="math inline">n</span> 区域无穷大时 <span
+      class="math inline">b_n</span> 的极限是1.</p>
+      <p><strong>P21 例1</strong></p>
+      <p><span class="math display">
+      a_n = \frac{n + (-1)^{n-1}}{n}
+      </span></p>
+      <p>随着 <span class="math inline">n</span> 的增加
+      (<strong>动</strong>), <span class="math inline">a_n</span>
+      的值不断靠近1 (<strong>静</strong>), 直觉告诉我们当 <span
+      class="math inline">n</span> 区域无穷大时 <span
+      class="math inline">a_n</span> 的极限是1.</p>
+      <p><strong>P22 例2</strong></p>
+      <p><span class="math display">
+      a_n = \frac{(-1)^{n}}{(n+1)^2}, \\
+      </span></p>
+      <p>随着 <span class="math inline">n</span> 的增加
+      (<strong>动</strong>), <span class="math inline">a_n</span>
+      的值不断靠近0 (<strong>静</strong>), 直觉告诉我们当 <span
+      class="math inline">n</span> 区域无穷大时 <span
+      class="math inline">a_n</span> 的极限是0.</p>
+      </div>
+      </div>
+      <div id="chpt1-ex-001" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例2</span><span class="ex-tags"><span
+      class="ex-tag">数列极限</span><span
+      class="ex-tag">极限</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>判断数列 <span class="math inline">a_n = (-1)^{n+1} = \{1, -1,
+      1, -1, \cdots\}</span> 是否收敛，并说明理由。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-001-frame" data-panel="chpt1-ex-001-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-001-frame" data-panel="chpt1-ex-001-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-001-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-001-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>观察数列各项的取值规律，判断其能否趋近于某个固定值（“静”下来）。</p>
+      </div>
+      <div id="chpt1-ex-001-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>数列 <span class="math inline">a_n = (-1)^{n+1}</span>
+      不收敛（发散）。</p>
+      <p>数列在 <span class="math inline">1</span> 和 <span
+      class="math inline">-1</span>
+      之间不断交替振荡，无法趋近于任何固定的数。</p>
+      <p>严格地说，假设极限为 <span class="math inline">A</span>，则对
+      <span class="math inline">\varepsilon = \dfrac{1}{2}</span>，存在
+      <span class="math inline">N</span> 使得当 <span
+      class="math inline">n &gt; N</span> 时 <span
+      class="math inline">|a_n - A| &lt; \dfrac{1}{2}</span>。但奇数项
+      <span class="math inline">a_{2k-1} = 1</span> 与偶数项 <span
+      class="math inline">a_{2k} = -1</span> 均出现在任意 <span
+      class="math inline">N</span> 之后，于是</p>
+      <p><span class="math display">2 = |1 - (-1)| \leq |1 - A| + |A -
+      (-1)| &lt; \frac{1}{2} + \frac{1}{2} = 1,</span></p>
+      <p>矛盾。故数列发散。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt1-ex-002" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例3</span><span class="ex-tags"><span
+      class="ex-tag">数列极限</span><span
+      class="ex-tag">极限</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>判断数列 <span class="math inline">a_n = n = \{1, 2, 3, 4,
+      \cdots\}</span> 是否收敛，并说明理由。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-002-frame" data-panel="chpt1-ex-002-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-002-frame" data-panel="chpt1-ex-002-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-002-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-002-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>观察数列各项是否有界，无界数列必然发散。</p>
+      </div>
+      <div id="chpt1-ex-002-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>数列 <span class="math inline">a_n = n</span>
+      不收敛（发散至正无穷）。</p>
+      <p>数列不断增长，无法趋近于任何有限的固定值，因此”静”不下来。</p>
+      <p>严格地说，若极限为 <span class="math inline">A</span>，则对
+      <span class="math inline">\varepsilon = 1</span>，存在 <span
+      class="math inline">N</span> 使得当 <span class="math inline">n
+      &gt; N</span> 时 <span class="math inline">|n - A| &lt;
+      1</span>，即 <span class="math inline">A - 1 &lt; n &lt; A +
+      1</span>。但 <span class="math inline">n</span> 可以任意大，当
+      <span class="math inline">n &gt; A + 1</span>
+      时不等式不成立，矛盾。故数列发散。</p>
+      <p>更简洁地，有界数列才可能收敛，而 <span
+      class="math inline">\{n\}</span> 无界，因此发散。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要</span></div>
+      <div class="callout-body">
+      <p>==数列极限的定义== (非常重要!!!)</p>
+      <p>设 <span class="math inline">\{a_n\}</span> 为一数列, <span
+      class="math inline">A</span> 为一常数,
+      如果<strong>对于任意给定的正数 <span
+      class="math inline">\varepsilon</span></strong>,
+      <strong>总存在正整数 <span class="math inline">N</span></strong>,
+      使得当 <span class="math inline">n&gt;N</span> 时有</p>
+      <p><span class="math display">
+      |a_n - A| &lt; \varepsilon,
+      </span></p>
+      <p>则称 <span class="math inline">A</span> 为数列 <span
+      class="math inline">\{a_n\}</span> 的<strong>极限</strong>, 记作
+      <span class="math display">
+      \lim_{n\rightarrow \infty} a_n = A.
+      </span></p>
+      <p><strong>定义背后的数学直觉</strong>: 所以数列 <span
+      class="math inline">\{a_n\}</span> 有极限就是, 当 <span
+      class="math inline">n</span> 足够大时, <span
+      class="math inline">a_n</span> 的值无限接近某个数 <span
+      class="math inline">A</span>. 上述定义把数列极限的直觉具象化了,
+      从而使得直觉变得可操作了. 根据定义,
+      我们现在可以严格的判断前面例子中数列的极限.</p>
+      </div>
+      </div>
+      <div class="callout callout-note">
+      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">一尺之捶, 日取其半 (版本1)</span></div>
+      <div class="callout-body">
+      <p><strong>直觉</strong>: <span class="math inline">\displaystyle
+      a_n  = \frac{1}{2^n}</span> 的极限为0.</p>
+      <p><strong>证明</strong>: 对于任意给定的 <span
+      class="math inline">\varepsilon &gt; 0</span>, 要找到 <span
+      class="math inline">N</span> 使得 <span class="math display">
+      | \frac{1}{2^N} - 0 | = \frac{1}{2^N} &lt; \varepsilon
+      </span></p>
+      <p>取 <span class="math inline">\displaystyle N = \left[
+      \frac{-\mathrm{ln} \varepsilon}{\mathrm{ln} 2} \right] + 1</span>,
+      可知当 <span class="math inline">n &gt; N</span> 时, 总有 <span
+      class="math inline">|a_n - 0| &lt; \varepsilon</span>. 因此 <span
+      class="math inline">\displaystyle \lim_{n \rightarrow \infty} a_n
+      = 0</span>.</p>
+      <p><strong>一尺之捶, 日取其半 (版本2)</strong></p>
+      <p><strong>直觉</strong>: <span class="math inline">\displaystyle
+      b_n  = 1 - \frac{1}{2^n}</span> 的极限为1.</p>
+      <p><strong>证明</strong>: 对于任意给定的 <span
+      class="math inline">\varepsilon &gt; 0</span>, 要找到 <span
+      class="math inline">N</span> 使得 <span class="math display">
+      |1 - \frac{1}{2^N} - 1| = \frac{1}{2^N} &lt; \varepsilon
+      </span></p>
+      <p>取 <span class="math inline">\displaystyle N = \left[
+      \frac{-\mathrm{ln} \varepsilon}{\mathrm{ln} 2} \right] + 1</span>,
+      可知当 <span class="math inline">n &gt; N</span> 时, 总有 <span
+      class="math inline">|b_n - 1| &lt; \varepsilon</span>. 因此 <span
+      class="math inline">\displaystyle \lim_{n \rightarrow \infty} b_n
+      = 1</span>.</p>
+      </div>
+      </div>
+      <div class="callout callout-note">
+      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">P21 例1</span></div>
+      <div class="callout-body">
+      <p><strong>直觉: <span class="math inline">\displaystyle a_n  =
+      \frac{n + (-1)^{n-1}}{n}</span> 的极限为1</strong>.</p>
+      <p><strong>证明</strong>: 对于任意给定的 <span
+      class="math inline">\varepsilon &gt; 0</span>, 要找到 <span
+      class="math inline">N</span> 使得 <span class="math display">
+      \left|\frac{n + (-1)^{n-1}}{n} - 1\right| = \frac{1}{n}&lt;
+      \varepsilon
+      </span></p>
+      <p>取 $N = + 1 $, 可知当 <span class="math inline">n &gt; N</span>
+      时, 总有 <span class="math inline">|a_n - 1| &lt;
+      \varepsilon</span>. 因此 <span class="math inline">\displaystyle
+      \lim_{n \rightarrow \infty} a_n = 1</span>.</p>
+      </div>
+      </div>
+      <div class="callout callout-note">
+      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">P22 例2</span></div>
+      <div class="callout-body">
+      <p><strong>直觉: <span class="math inline">\displaystyle a_n  =
+      \frac{(-1)^n}{(n+1)^2}</span> 的极限为0</strong>.</p>
+      <p><strong>证明</strong>: 对于任意给定的 <span
+      class="math inline">\varepsilon &gt; 0</span>, 要找到 <span
+      class="math inline">N</span> 使得 <span class="math display">
+      \left| \frac{(-1)^n}{(n+1)^2} - 0\right| = \frac{1}{(n+1)^2}&lt;
+      \varepsilon
+      </span></p>
+      <p>取 $N = $, 可知当 <span class="math inline">n &gt; N</span> 时,
+      总有 <span class="math inline">|a_n - 0| &lt; \varepsilon</span>.
+      因此 <span class="math inline">\displaystyle \lim_{n \rightarrow
+      \infty} a_n = 0</span>.</p>
+      </div>
+      </div>
+      <div class="callout callout-warning">
+      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">数列极限的几条性质 (了解, 不需要证明)</span></div>
+      <div class="callout-body">
+      <ol type="1">
+      <li>如果数列 <span class="math inline">a_n</span> 有极限,
+      那么它的极限唯一.</li>
+      <li>如果数列 <span class="math inline">a_n</span> 有极限, 那么数列
+      <span class="math inline">a_n</span> 一定有界.</li>
+      <li>如果 <span class="math inline">\displaystyle
+      \lim_{n\rightarrow \infty} a_n = A</span>, 且 <span
+      class="math inline">A &gt; 0</span>, 那么存在正整数 <span
+      class="math inline">N</span>, 当 <span class="math inline">n &gt;
+      N</span> 时有 <span class="math inline">x_n &gt; 0</span>.</li>
+      <li>如果 <span class="math inline">\displaystyle
+      \lim_{n\rightarrow \infty} a_n = A</span>, 那么 <span
+      class="math inline">a_n</span> 的任一子数列的极限也是 <span
+      class="math inline">A</span>.</li>
+      <li>任意改变数列的有限多项, 不影响极限的收敛.</li>
+      </ol>
+      </div>
+      </div>
+      <h3 id="函数极限">1.2.2 函数极限</h3>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p>函数极限跟数列极限本质上都是极限,
+      都是<strong>动中取静</strong>, 只不过数列极限中动的是 <span
+      class="math inline">n</span>, 而函数极限中动的是自变量 <span
+      class="math inline">x</span>.
+      之前我们强调过<strong>函数图像</strong>的重要性,
+      函数的极限过程同样可以通过函数图像来理解.
+      下面这张图可以作为我们对函数极限的<strong>直觉</strong>,
+      图中展示了 <span class="math inline">\displaystyle
+      \lim_{x\rightarrow 2} f(x) = 4</span>,
+      请大家想想在这个极限过程中什么在<strong>动</strong>,
+      什么是<strong>静</strong>?</p>
+      <figure>
+      <img src="../media/img/chpt1_function_limit.png" width="400"
+      alt="函数极限" />
+      <figcaption aria-hidden="true">函数极限</figcaption>
+      </figure>
+      </div>
+      </div>
+      <div class="callout callout-caution">
+      <div class="callout-header callout-header-caution"><span class="callout-icon"></span><span class="callout-label">上机实验</span></div>
+      <div class="callout-body">
+      <p>两个函数极限的例子:</p>
+      <ul>
+      <li>limit_fun_sin_over_x.ipynb</li>
+      <li>limit_fun_sin_1_x.ipynb</li>
+      </ul>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要</span></div>
+      <div class="callout-body">
+      <p>==函数极限的定义== (非常重要!!!)</p>
+      <p>设函数 <span class="math inline">\{f(x)\}</span> 在点 <span
+      class="math inline">x_0</span> 的某一去心领域内有定义 ( 为了让
+      <span class="math inline">x</span> 能够动起来), <span
+      class="math inline">A</span> 为一常数.
+      如果<strong>对于任意给定的正数 <span
+      class="math inline">\varepsilon</span></strong>,
+      <strong>总存在正数 <span
+      class="math inline">\delta</span></strong>, 使得当 <span
+      class="math inline">0 &lt; |x-x_0| &lt; \delta</span> 时有 <span
+      class="math display">
+      |f(x) - A| &lt; \varepsilon,
+      </span></p>
+      <p>则称 <span class="math inline">A</span> 为函数 <span
+      class="math inline">\{f(x)\}</span> 在 <span
+      class="math inline">x_0</span> 的<strong>极限</strong>, 记作 <span
+      class="math display">
+      \lim_{x\rightarrow x_0} f(x) = A.
+      </span></p>
+      <p>上述定义可以通过下图来理解</p>
+      <figure>
+      <img src="../media/img/chpt1_function_limit_def.png" width="400"
+      alt="函数极限" />
+      <figcaption aria-hidden="true">函数极限</figcaption>
+      </figure>
+      <p>所以函数 <span class="math inline">\{f(x)\}</span> 在 <span
+      class="math inline">x\rightarrow x_0</span> 时有极限就是, 当 <span
+      class="math inline">x</span> 足够接近 <span
+      class="math inline">x_0</span> 时, <span
+      class="math inline">f(x)</span> 的值无限接近某个数 <span
+      class="math inline">A</span>. 注意跟数列极限进行对比.
+      跟数列极限的定义一样,
+      上面关于函数极限的定义提供了一个<strong>可操作的流程</strong>,
+      能够将我们关于函数极限的直观<strong>具象化</strong>.</p>
+      </div>
+      </div>
+      <div id="chpt1-ex-022" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例4: epsilon-delta证明 <span
+      class="math inline">\lim_{x\to 2}(5x+1)=11</span></span><span
+      class="ex-tags"><span class="ex-tag">极限</span><span
+      class="ex-tag">epsilon-delta证明</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>用 <span class="math inline">\varepsilon</span>-<span
+      class="math inline">\delta</span> 语言证明 <span
+      class="math inline">\displaystyle\lim_{x \to 2}(5x+1) =
+      11</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-022-frame" data-panel="chpt1-ex-022-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-022-frame" data-panel="chpt1-ex-022-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-022-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-022-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>估计 <span class="math inline">|f(x) - 11|</span>，将其化为含
+      <span class="math inline">|x-2|</span> 的形式，再令其小于 <span
+      class="math inline">\varepsilon</span> 来确定 <span
+      class="math inline">\delta</span>。</p>
+      </div>
+      <div id="chpt1-ex-022-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><strong>证明：</strong> 由于</p>
+      <p><span class="math display">
+      \begin{align*}
+      |f(x) - 11| &amp;= |(5x + 1) - 11| \\
+      &amp;= 5|x - 2| &lt; \varepsilon
+      \end{align*}
+      </span></p>
+      <p>为了使 <span class="math inline">5|x - 2| &lt;
+      \varepsilon</span>，只要 <span class="math inline">\displaystyle
+      |x - 2| &lt; \frac{\varepsilon}{5}</span>。</p>
+      <p>取 <span class="math inline">\displaystyle \delta =
+      \frac{\varepsilon}{5}</span>，可知当 <span class="math inline">0
+      &lt; |x - 2| &lt; \delta</span> 时，总有 <span
+      class="math inline">\displaystyle |f(x) - 11| &lt;
+      \varepsilon</span>，从而</p>
+      <p><span class="math display">\lim_{x \rightarrow 2} f(x) =
+      11.</span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt1-ex-023" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例5: epsilon-delta证明 <span
+      class="math inline">\lim_{x\to 1}(2x-1)=1</span></span><span
+      class="ex-tags"><span class="ex-tag">极限</span><span
+      class="ex-tag">epsilon-delta证明</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>用 <span class="math inline">\varepsilon</span>-<span
+      class="math inline">\delta</span> 语言证明 <span
+      class="math inline">\displaystyle\lim_{x \to 1}(2x - 1) =
+      1</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-023-frame" data-panel="chpt1-ex-023-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-023-frame" data-panel="chpt1-ex-023-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-023-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-023-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>估计 <span class="math inline">|f(x) - 1|</span>，化为含 <span
+      class="math inline">|x-1|</span> 的形式，再确定满足条件的 <span
+      class="math inline">\delta</span>。</p>
+      </div>
+      <div id="chpt1-ex-023-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><strong>证：</strong> 由于</p>
+      <p><span class="math display">
+      |f(x) - A| = |(2x - 1) - 1| = 2|x - 1|
+      </span></p>
+      <p>为了使 <span class="math inline">\displaystyle |f(x) - A| &lt;
+      \varepsilon</span>，只要</p>
+      <p><span class="math display">
+      |x - 1| &lt; \frac{\varepsilon}{2}
+      </span></p>
+      <p>所以，<span class="math inline">\forall \varepsilon &gt;
+      0</span>，可取 <span class="math inline">\displaystyle \delta =
+      \frac{\varepsilon}{2}</span>，则当 <span
+      class="math inline">x</span> 适合不等式</p>
+      <p><span class="math display">
+      0 &lt; |x - 1| &lt; \delta
+      </span></p>
+      <p>时，对应的函数值 <span class="math inline">f(x)</span>
+      就满足不等式</p>
+      <p><span class="math display">
+      |f(x) - 1| = |(2x - 1) - 1| &lt; \varepsilon
+      </span></p>
+      <p>从而</p>
+      <p><span class="math display">
+      \lim\limits_{x \to 1}(2x - 1) = 1
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt1-ex-024" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例6: epsilon-delta证明 <span
+      class="math inline">\lim_{x\to 2}(x^2+1)=5</span></span><span
+      class="ex-tags"><span class="ex-tag">极限</span><span
+      class="ex-tag">极限计算</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>用 <span class="math inline">\varepsilon</span>-<span
+      class="math inline">\delta</span> 语言证明 <span
+      class="math inline">\displaystyle\lim_{x \to 2}(x^2 + 1) =
+      5</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-024-frame" data-panel="chpt1-ex-024-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-024-frame" data-panel="chpt1-ex-024-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-024-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-024-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>将 <span class="math inline">|f(x)-5|</span> 分解为 <span
+      class="math inline">|x-2||x+2|</span>，先限制 <span
+      class="math inline">\delta_0=1</span> 给 <span
+      class="math inline">|x+2|</span> 一个上界，再用两者的最小值确定
+      <span class="math inline">\delta</span>。</p>
+      </div>
+      <div id="chpt1-ex-024-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><strong>证明：</strong> 对于任意给定的 <span
+      class="math inline">\varepsilon &gt; 0</span>，要找到 <span
+      class="math inline">\delta</span> 使得只要 <span
+      class="math inline">0 &lt; |x-2|&lt; \delta</span>，总有</p>
+      <p><span class="math display">
+      \begin{align*}
+      \left|f(x) - 5\right| &amp;= \left| x^2+1 - 5\right| \\
+      &amp;= \left| x^2 - 4\right| \\
+      &amp;= \left| x - 2\right| \left| x + 2\right|.
+      \end{align*}
+      </span></p>
+      <p>为了把 <span class="math inline">\left|x+2\right|</span>
+      用常数束缚住，取 <span class="math inline">\delta_0 = 1</span>。当
+      <span class="math inline">|x-2|&lt;\delta_0</span> 时，<span
+      class="math inline">1&lt;x&lt;3</span>，因此</p>
+      <p><span class="math display">
+      |x+2|&lt;5.
+      </span></p>
+      <p>所以在 <span class="math inline">|x-2|&lt;1</span>
+      的情况下有</p>
+      <p><span class="math display">
+      |f(x)-5| = |x-2||x+2| &lt; 5|x-2|.
+      </span></p>
+      <p>现在给定任意 <span
+      class="math inline">\varepsilon&gt;0</span>，令</p>
+      <p><span class="math display">
+      \delta = \min\left\{1,\frac{\varepsilon}{5}\right\}.
+      </span></p>
+      <p>若 <span
+      class="math inline">0&lt;|x-2|&lt;\delta</span>，则同时有 <span
+      class="math inline">|x-2|&lt;1</span>（从而 <span
+      class="math inline">|x+2|&lt;5</span>）且 <span
+      class="math inline">|x-2|&lt;\varepsilon/5</span>。因此</p>
+      <p><span class="math display">
+      |f(x)-5| &lt; 5|x-2| &lt; 5\cdot\frac{\varepsilon}{5} =
+      \varepsilon.
+      </span></p>
+      <p>因此对任意 <span class="math inline">\varepsilon&gt;0</span>
+      存在上述 <span class="math inline">\delta&gt;0</span> 使得 <span
+      class="math inline">0&lt;|x-2|&lt;\delta</span> 蕴含 <span
+      class="math inline">|f(x)-5|&lt;\varepsilon</span>，于是</p>
+      <p><span class="math display">\displaystyle \lim_{x\to2}
+      (x^2+1)=5.</span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-warning">
+      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">函数极限的性质</span></div>
+      <div class="callout-body">
+      <ol type="1">
+      <li>如果 <span class="math inline">\displaystyle
+      \lim_{x\rightarrow x_0}f(x)</span> 存在, 则极限唯一.</li>
+      <li>如果 <span class="math inline">\displaystyle
+      \lim_{x\rightarrow x_0}f(x) = A</span>, 则 <span
+      class="math inline">f(x)</span> 在 <span
+      class="math inline">x_0</span> 周围有界, 即存在 <span
+      class="math inline">M &gt;0</span> 和 <span
+      class="math inline">\delta &gt; 0</span>, 使得当 <span
+      class="math inline">0&lt; |x-x_0|&lt;\delta</span> 时 <span
+      class="math inline">|f(x)| &lt; M</span> .</li>
+      <li>如果 <span class="math inline">\displaystyle
+      \lim_{x\rightarrow x_0}f(x) = A &gt; 0</span>, 则 <span
+      class="math inline">f(x)</span> 在 <span
+      class="math inline">x_0</span> 周围一定大于0, 即存在 <span
+      class="math inline">\delta &gt; 0</span>, 使得当 <span
+      class="math inline">0&lt; |x-x_0|&lt;\delta</span> 时 <span
+      class="math inline">f(x) &gt; 0</span>.</li>
+      </ol>
+      </div>
+      </div>
+      <div class="callout callout-warning">
+      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">\varepsilon-\delta 语言</span></div>
+      <div class="callout-body">
+      <p>本章的主要内容是<em><code>数列极限</code></em>和<em><code>函数极限</code></em>的<strong>定义</strong>,
+      在数学上我们也把这套定义极限的方法称为 <span
+      class="math inline">\varepsilon-N</span> 语言 (数列) 或 <span
+      class="math inline">\varepsilon-\delta</span> 语言 (函数).
+      这样的定义看似繁缛, 但只有这样才能把极限的本质说清楚.
+      初学者不要怕麻烦, 做题时应该一字一句的把极限的定义写清楚.
+      怕麻烦不想写字的同学, 在熟练掌握了极限的定义之后,
+      可以使用两个约定的缩写符号:</p>
+      <ol type="1">
+      <li><span class="math inline">\forall</span>:
+      <strong>对于任意</strong></li>
+      <li><span class="math inline">\exist</span>:
+      <strong>存在</strong></li>
+      </ol>
+      <p>使用这两个符号, 数列极限和函数极限的定义可以写成下面的形式
+      (仅仅是少几个字而已).</p>
+      <p><strong>数列极限的定义</strong></p>
+      <p><span class="math inline">\displaystyle \lim_{n\rightarrow
+      \infty} a_n = A \iff  \forall \varepsilon &gt; 0</span>, <span
+      class="math inline">\exist N</span>, s. t., <span
+      class="math inline">\ |a_n - A| &lt; \varepsilon</span> if <span
+      class="math inline">n &gt; N</span>.</p>
+      <p><strong>函数极限的定义</strong></p>
+      <p><span class="math inline">\displaystyle \lim_{x\rightarrow x_0}
+      f(x) = A \iff \forall \varepsilon &gt; 0</span>, <span
+      class="math inline">\exist \delta</span>, s. t., <span
+      class="math inline">|f(x) - A| &lt; \varepsilon</span> if <span
+      class="math inline">0 &lt; |x-x_0| &lt; \delta</span>.</p>
+      </div>
+      </div>
+      <div class="callout callout-warning">
+      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">对无穷大的描述</span></div>
+      <div class="callout-body">
+      <p>我们有时候会说一个数列或函数<strong>趋于无穷大</strong>, 也会写
+      <span class="math inline">\displaystyle \lim_{n\rightarrow \infty}
+      a_n = \infty</span> 或 <span class="math inline">\displaystyle
+      \lim_{x\rightarrow x_0} f(x) = \infty</span>, 请注意,
+      这只是一种<strong>习惯</strong>上的说法,
+      并<strong>不是</strong>真正意义上的 (有限的) 极限. 尽管如此,
+      我们可以借用类似 <span class="math inline">\varepsilon-N</span>
+      语言的做法来从数学上定义什么叫<strong>趋于无穷大</strong>,
+      例如:</p>
+      <p><strong>数列趋于无穷大</strong></p>
+      <p><span class="math inline">\displaystyle \lim_{n\rightarrow
+      \infty} a_n = \infty \iff  \forall M &gt; 0</span>, <span
+      class="math inline">\exist N</span>, s. t., <span
+      class="math inline">|a_n| &gt; M</span> if <span
+      class="math inline">n &gt; N</span>.</p>
+      <p><strong>函数趋于无穷大</strong></p>
+      <p><span class="math inline">\displaystyle \lim_{x\rightarrow x_0}
+      f(x) = \infty \iff \forall M &gt; 0</span>, <span
+      class="math inline">\exist \delta</span>, s. t., <span
+      class="math inline">|f(x)| &gt; M</span> if <span
+      class="math inline">0 &lt; |x-x_0| &lt; \delta</span>.</p>
+      </div>
+      </div>
+      <h3 id="极限的运算">1.2.3 极限的运算</h3>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p>这一讲我们主要关心如何计算极限.</p>
+      <ul>
+      <li>对于一些简单的极限计算, 每次都用直觉和 <span
+      class="math inline">\varepsilon-\delta</span>
+      语言来计算极限太繁琐, 也没有必要.
+      很多时候<strong>极限的四则运算</strong>能够帮上大忙.</li>
+      <li>有一些困难的极限问题, 我们需要跟强大的数学结论和工具,
+      本讲介绍的<strong>三明治定理</strong>和<strong>单调有界数列有极限</strong>请收好.</li>
+      </ul>
+      <p>注意,
+      本讲的性质和定理全部都建立在上一讲<strong>极限定义</strong>的基础之上,
+      其根本还是 <span class="math inline">\varepsilon-\delta</span>
+      语言.</p>
+      </div>
+      </div>
+      <div class="callout callout-caution">
+      <div class="callout-header callout-header-caution"><span class="callout-icon"></span><span class="callout-label">希尔伯特的旅店</span></div>
+      <div class="callout-body">
+      <p>极限运算涉及到了<strong>无限</strong>的概念,
+      对初学者来说这是一个之前从未踏足过的位置领域,
+      一些<strong>有限世界中的直觉</strong>将不再成立.
+      <strong>希尔伯特的旅店</strong>是一个有趣的故事,
+      通过这个故事希望能让大家对<strong>无限</strong>有一颗<strong>敬畏之心</strong>.</p>
+      <iframe src="https://player.bilibili.com/player.html?isOutside=true&amp;aid=217018325&amp;bvid=BV1Aa411N7Sg&amp;cid=804913368&amp;p=1&amp;autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true">
+      </iframe>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">数列极限四则运算</span></div>
+      <div class="callout-body">
+      <ul>
+      <li><p><strong>加减法</strong>: 如果 <span
+      class="math inline">\displaystyle \lim_{n\rightarrow \infty}a_n =
+      A</span>, <span class="math inline">\displaystyle
+      \lim_{n\rightarrow \infty}b_n = B</span>, 则 <span
+      class="math inline">\displaystyle \lim_{n\rightarrow \infty}[a_n
+      \pm b_n]= A \pm B</span>.</p></li>
+      <li><p><strong>乘法</strong>: 如果 <span
+      class="math inline">\displaystyle \lim_{n\rightarrow \infty}a_n =
+      A</span>, <span class="math inline">\displaystyle
+      \lim_{n\rightarrow \infty}b_n = B</span>, 则 <span
+      class="math inline">\displaystyle \lim_{n\rightarrow \infty}a_nb_n
+      = AB</span>.</p></li>
+      <li><p><strong>除法</strong>: 如果 <span
+      class="math inline">\displaystyle \lim_{n\rightarrow \infty}a_n=
+      A</span>, <span class="math inline">\displaystyle
+      \lim_{n\rightarrow \infty}b_n = B</span>, 且 <span
+      class="math inline">B \ne 0</span>, 则 <span
+      class="math inline">\displaystyle \lim_{n\rightarrow
+      \infty}\frac{a_n}{b_n}= \frac{A}{B}</span>.</p></li>
+      </ul>
+      <p>证明见教学视频或问DeepSeek.</p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">函数极限四则运算</span></div>
+      <div class="callout-body">
+      <ul>
+      <li><p><strong>加减法</strong>: 如果 <span
+      class="math inline">\displaystyle \lim_{x\rightarrow x_0}f(x) =
+      A</span>, <span class="math inline">\displaystyle
+      \lim_{x\rightarrow x_0}g(x) = B</span>, 则 <span
+      class="math inline">\displaystyle \lim_{x\rightarrow x_0}[f(x) \pm
+      g(x)]= A \pm B</span>.</p></li>
+      <li><p><strong>乘法</strong>: 如果 <span
+      class="math inline">\displaystyle \lim_{x\rightarrow x_0}f(x) =
+      A</span>, <span class="math inline">\displaystyle
+      \lim_{x\rightarrow x_0}g(x) = B</span>, 则 <span
+      class="math inline">\displaystyle \lim_{x\rightarrow x_0}f(x)g(x)=
+      AB</span>.</p></li>
+      <li><p><strong>除法</strong>: 如果 <span
+      class="math inline">\displaystyle \lim_{x\rightarrow x_0}f(x) =
+      A</span>, <span class="math inline">\displaystyle
+      \lim_{x\rightarrow x_0}g(x) = B</span>, 且 <span
+      class="math inline">B \ne 0</span>, 则 <span
+      class="math inline">\displaystyle \lim_{x\rightarrow
+      x_0}\frac{f(x)}{g(x)}= \frac{A}{B}</span>.</p></li>
+      </ul>
+      <p>证明见教学视频或问DeepSeek.</p>
+      </div>
+      </div>
+      <div id="chpt1-ex-003" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例7</span><span class="ex-tags"><span
+      class="ex-tag">数列极限</span><span
+      class="ex-tag">epsilon-N</span><span
+      class="ex-tag">极限</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>用 <span class="math inline">\varepsilon</span>-<span
+      class="math inline">N</span> 定义证明 <span
+      class="math inline">\displaystyle \lim_{n\rightarrow
+      \infty}\frac{1}{n}=0</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-003-frame" data-panel="chpt1-ex-003-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-003-frame" data-panel="chpt1-ex-003-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-003-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-003-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>从 <span class="math inline">\left|\dfrac{1}{n} - 0\right| &lt;
+      \varepsilon</span> 出发，解出 <span class="math inline">n</span>
+      的条件，进而确定 <span class="math inline">N</span> 的取法。</p>
+      </div>
+      <div id="chpt1-ex-003-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>对任意给定的 <span class="math inline">\varepsilon &gt;
+      0</span>，需要找到正整数 <span
+      class="math inline">N</span>，使得当 <span class="math inline">n
+      &gt; N</span> 时：</p>
+      <p><span class="math display">\left| \frac{1}{n} - 0 \right| =
+      \frac{1}{n} &lt; \varepsilon.</span></p>
+      <p>解不等式 <span class="math inline">\dfrac{1}{n} &lt;
+      \varepsilon</span> 得 <span class="math inline">n &gt;
+      \dfrac{1}{\varepsilon}</span>。</p>
+      <p>取 <span class="math inline">N = \left\lfloor
+      \dfrac{1}{\varepsilon} \right\rfloor + 1</span>（即大于 <span
+      class="math inline">\dfrac{1}{\varepsilon}</span>
+      的最小正整数），则当 <span class="math inline">n &gt; N</span>
+      时，必有 <span class="math inline">\dfrac{1}{n} &lt;
+      \varepsilon</span>。</p>
+      <p>故 <span class="math inline">\displaystyle \lim_{n\rightarrow
+      \infty}\frac{1}{n}=0</span>。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt1-ex-004" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例8</span><span class="ex-tags"><span
+      class="ex-tag">数列极限</span><span
+      class="ex-tag">epsilon-N</span><span
+      class="ex-tag">极限</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>计算 <span class="math inline">\displaystyle \lim_{n\rightarrow
+      \infty}\frac{1}{2n}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span class="ex-sol-label">解法一</span> <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-004-frame" data-panel="chpt1-ex-004-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-004-frame" data-panel="chpt1-ex-004-ans-0">答案</button></span>
+      </div>
+      <div class="ex-sol-row">
+      <span class="ex-sol-label">解法二</span> <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-004-frame" data-panel="chpt1-ex-004-hint-1">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-004-frame" data-panel="chpt1-ex-004-ans-1">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-004-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-004-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>利用极限的数乘性质，将问题归结为已知的 <span
+      class="math inline">\lim_{n\to\infty}\frac{1}{n}=0</span>。</p>
+      </div>
+      <div id="chpt1-ex-004-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>由极限的数乘性质及 <span class="math inline">\displaystyle
+      \lim_{n\rightarrow \infty}\frac{1}{n}=0</span>，得：</p>
+      <p><span class="math display">\lim_{n\rightarrow
+      \infty}\frac{1}{2n} = \frac{1}{2} \cdot \lim_{n\rightarrow
+      \infty}\frac{1}{n} = \frac{1}{2} \cdot 0 = 0.</span></p>
+      </div>
+      <div id="chpt1-ex-004-hint-1" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>直接用 <span class="math inline">\varepsilon</span>-<span
+      class="math inline">N</span> 定义，解出 <span
+      class="math inline">n</span> 需满足的条件，给出 <span
+      class="math inline">N</span> 的取法。</p>
+      </div>
+      <div id="chpt1-ex-004-ans-1" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>对任意 <span class="math inline">\varepsilon &gt;
+      0</span>，需找到 <span class="math inline">N</span> 使得当 <span
+      class="math inline">n &gt; N</span> 时：</p>
+      <p><span class="math display">\left| \frac{1}{2n} - 0 \right| =
+      \frac{1}{2n} &lt; \varepsilon.</span></p>
+      <p>解不等式得 <span class="math inline">n &gt;
+      \dfrac{1}{2\varepsilon}</span>，取 <span class="math inline">N =
+      \left\lfloor \dfrac{1}{2\varepsilon} \right\rfloor +
+      1</span>，则当 <span class="math inline">n &gt; N</span> 时必满足
+      <span class="math inline">\dfrac{1}{2n} &lt;
+      \varepsilon</span>。</p>
+      <p>故极限为 <span class="math inline">0</span>。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt1-ex-005" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例9</span><span class="ex-tags"><span
+      class="ex-tag">数列极限</span><span
+      class="ex-tag">epsilon-N</span><span
+      class="ex-tag">极限</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>计算 <span class="math inline">\displaystyle \lim_{n\rightarrow
+      \infty}\frac{1}{n^2}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-005-frame" data-panel="chpt1-ex-005-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-005-frame" data-panel="chpt1-ex-005-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-005-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-005-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>用 <span class="math inline">\varepsilon</span>-<span
+      class="math inline">N</span> 定义，从 <span
+      class="math inline">\dfrac{1}{n^2} &lt; \varepsilon</span> 解出对
+      <span class="math inline">n</span> 的要求，进而确定 <span
+      class="math inline">N</span>。</p>
+      </div>
+      <div id="chpt1-ex-005-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>对任意 <span class="math inline">\varepsilon &gt;
+      0</span>，需找到 <span class="math inline">N</span> 使得当 <span
+      class="math inline">n &gt; N</span> 时：</p>
+      <p><span class="math display">\left| \frac{1}{n^2} - 0 \right| =
+      \frac{1}{n^2} &lt; \varepsilon.</span></p>
+      <p>解不等式得 <span class="math inline">n &gt;
+      \dfrac{1}{\sqrt{\varepsilon}}</span>，取 <span
+      class="math inline">N = \left\lfloor \dfrac{1}{\sqrt{\varepsilon}}
+      \right\rfloor + 1</span>，则当 <span class="math inline">n &gt;
+      N</span> 时必有 <span class="math inline">\dfrac{1}{n^2} &lt;
+      \varepsilon</span>。</p>
+      <p>故 <span class="math inline">\displaystyle \lim_{n\rightarrow
+      \infty}\frac{1}{n^2} = 0</span>。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt1-ex-006" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例10</span><span class="ex-tags"><span
+      class="ex-tag">函数极限</span><span
+      class="ex-tag">epsilon-delta</span><span
+      class="ex-tag">极限</span><span
+      class="ex-tag">连续性</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>计算 <span class="math inline">\displaystyle \lim_{x\rightarrow
+      1}(2x-1)</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span class="ex-sol-label">解法一</span> <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-006-frame" data-panel="chpt1-ex-006-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-006-frame" data-panel="chpt1-ex-006-ans-0">答案</button></span>
+      </div>
+      <div class="ex-sol-row">
+      <span class="ex-sol-label">解法二</span> <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-006-frame" data-panel="chpt1-ex-006-hint-1">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-006-frame" data-panel="chpt1-ex-006-ans-1">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-006-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-006-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p><span class="math inline">f(x) = 2x-1</span> 是多项式函数，在
+      <span class="math inline">x=1</span> 处连续，可直接代入。</p>
+      </div>
+      <div id="chpt1-ex-006-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>由于 <span class="math inline">f(x) = 2x - 1</span>
+      是多项式，在 <span class="math inline">x=1</span>
+      处连续，直接代入得：</p>
+      <p><span class="math display">\lim_{x\rightarrow 1}(2x-1) = 2(1) -
+      1 = 1.</span></p>
+      </div>
+      <div id="chpt1-ex-006-hint-1" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>用 <span class="math inline">\varepsilon</span>-<span
+      class="math inline">\delta</span> 定义，从 <span
+      class="math inline">|(2x-1)-1| &lt; \varepsilon</span> 反推出
+      <span class="math inline">\delta</span> 的取法。</p>
+      </div>
+      <div id="chpt1-ex-006-ans-1" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>对任意 <span class="math inline">\varepsilon &gt;
+      0</span>，需找到 <span class="math inline">\delta &gt; 0</span>
+      使得当 <span class="math inline">0 &lt; |x-1| &lt; \delta</span>
+      时：</p>
+      <p><span class="math display">|(2x-1) - 1| = 2|x-1| &lt;
+      \varepsilon.</span></p>
+      <p>取 <span class="math inline">\delta =
+      \dfrac{\varepsilon}{2}</span>，则当 <span class="math inline">0
+      &lt; |x-1| &lt; \delta</span> 时：</p>
+      <p><span class="math display">2|x-1| &lt; 2 \cdot
+      \frac{\varepsilon}{2} = \varepsilon.</span></p>
+      <p>故 <span class="math inline">\displaystyle \lim_{x\rightarrow
+      1}(2x-1) = 1</span>。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt1-ex-007" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例11</span><span class="ex-tags"><span
+      class="ex-tag">函数极限</span><span
+      class="ex-tag">极限</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>计算 <span class="math inline">\displaystyle \lim_{x\rightarrow
+      2}\frac{x^3-1}{x^2-5x+3}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-007-frame" data-panel="chpt1-ex-007-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-007-frame" data-panel="chpt1-ex-007-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-007-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-007-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>验证分母在 <span class="math inline">x=2</span>
+      处不为零，若不为零则可直接代入。</p>
+      </div>
+      <div id="chpt1-ex-007-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>分子在 <span class="math inline">x=2</span> 处的值：<span
+      class="math inline">2^3 - 1 = 7</span>。</p>
+      <p>分母在 <span class="math inline">x=2</span> 处的值：<span
+      class="math inline">2^2 - 5(2) + 3 = 4 - 10 + 3 = -3 \neq
+      0</span>。</p>
+      <p>因分母不为零，由极限的四则运算法则可直接代入：</p>
+      <p><span class="math display">\lim_{x\rightarrow
+      2}\frac{x^3-1}{x^2-5x+3} = \frac{7}{-3} = -\frac{7}{3}.</span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt1-ex-008" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例12</span><span class="ex-tags"><span
+      class="ex-tag">函数极限</span><span
+      class="ex-tag">极限</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>计算 <span class="math inline">\displaystyle \lim_{x\rightarrow
+      3}\frac{x-3}{x^2-9}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-008-frame" data-panel="chpt1-ex-008-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-008-frame" data-panel="chpt1-ex-008-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-008-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-008-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>直接代入得 <span class="math inline">\dfrac{0}{0}</span>
+      型不定式，先对分母进行因式分解，约去公因式后再求极限。</p>
+      </div>
+      <div id="chpt1-ex-008-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>直接代入 <span class="math inline">x=3</span> 得分子分母均为
+      <span class="math inline">0</span>，是 <span
+      class="math inline">\dfrac{0}{0}</span>
+      型不定式，需进一步处理。</p>
+      <p>对分母因式分解：</p>
+      <p><span class="math display">x^2 - 9 = (x-3)(x+3).</span></p>
+      <p>在 <span class="math inline">x \neq 3</span> 时约去公因式 <span
+      class="math inline">(x-3)</span>：</p>
+      <p><span class="math display">\frac{x-3}{x^2-9} =
+      \frac{x-3}{(x-3)(x+3)} = \frac{1}{x+3}.</span></p>
+      <p>计算简化后的极限：</p>
+      <p><span class="math display">\lim_{x\rightarrow
+      3}\frac{x-3}{x^2-9} = \lim_{x\rightarrow 3}\frac{1}{x+3} =
+      \frac{1}{3+3} = \frac{1}{6}.</span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <h3 id="两个重要的极限">1.2.4 两个重要的极限</h3>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">重要极限一</span></div>
+      <div class="callout-body">
+      <p>还记得”割圆法”求圆面积的例子吗? 圆的内接正 <span
+      class="math inline">n</span> 边形的面积当 <span
+      class="math inline">n \rightarrow \infty</span>
+      的极限的计算最后就会落到极限 <span
+      class="math inline">\displaystyle \lim_{x\rightarrow 0} \frac{\sin
+      x}{x}</span> 的计算, 这个极限与圆周率 <span
+      class="math inline">\pi</span>
+      (<strong>阿基米德数</strong>)有着深刻的联系.</p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">三明治定理</span></div>
+      <div class="callout-body">
+      <p><strong>定理陈述</strong>：<br />
+      设函数 <span class="math inline">f(x), g(x), h(x)</span> 在点
+      <span class="math inline">x_0</span> 的某去心邻域内满足：</p>
+      <ol type="1">
+      <li><span class="math inline">g(x) \leq f(x) \leq h(x)</span></li>
+      <li><span class="math inline">\displaystyle \lim_{x\to x_0} g(x) =
+      \lim_{x\to x_0} h(x) = L</span>, 则 <span
+      class="math inline">\displaystyle \lim_{x\to x_0} f(x) =
+      L</span>.</li>
+      </ol>
+      <p><strong>数列版本</strong>：<br />
+      若数列 <span class="math inline">\{a_n\}, \{b_n\}, \{c_n\}</span>
+      满足：<br />
+      1. <span class="math inline">b_n \leq a_n \leq
+      c_n</span>（对充分大的 <span class="math inline">n</span>）<br />
+      2. <span class="math inline">\displaystyle \lim_{n\to\infty} b_n =
+      \lim_{n\to\infty} c_n = L</span>, 则 <span
+      class="math inline">\displaystyle \lim_{n\to\infty} a_n =
+      L</span>.</p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要极限1</span></div>
+      <div class="callout-body">
+      <p><span class="math display">
+      \boxed{\displaystyle \lim_{x\rightarrow 0} \frac{\sin x}{x} = 1}
+      </span></p>
+      <p><strong>证明</strong>: 首先考虑 <span
+      class="math inline">x&gt;0</span> 的情形. 我们从几何出发, 把 <span
+      class="math inline">x</span> 看作是单位圆上的一小段弧度,
+      注意到</p>
+      <ul>
+      <li><span class="math inline">\sin x</span> 为对边长度</li>
+      <li><span class="math inline">x</span> 为圆弧长度（弧度制）</li>
+      <li><span class="math inline">\tan x</span> 为切线长度</li>
+      </ul>
+      <p>通过几何上观察可知</p>
+      <p><span class="math display">
+      \sin x &lt; x &lt; \tan x
+      </span></p>
+      <p>同时除以 <span class="math inline">\sin x</span> 并取倒数得</p>
+      <p><span class="math display">
+      \cos x &lt; \frac{\sin x}{x} &lt; 1, \quad x&gt;0
+      </span></p>
+      <p>对于 <span class="math inline">x &lt; 0</span> 的情况,
+      利用奇函数性质：</p>
+      <p><span class="math display">
+      \frac{\sin(-x)}{-x} = \frac{\sin x}{x}
+      </span></p>
+      <p>因此同样有</p>
+      <p><span class="math display">
+      \cos x &lt; \frac{\sin x}{x} &lt; 1, \quad x &lt; 0
+      </span> 注意到 <span class="math display">
+      \lim_{x \to 0} \cos x = 1
+      </span></p>
+      <p>应用三明治定理, 得</p>
+      <p><span class="math display">
+      \lim_{x \to 0} \frac{\sin x}{x} = 1.
+      </span></p>
+      </div>
+      </div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">重要极限二</span></div>
+      <div class="callout-body">
+      <p>极限 <span class="math inline">\displaystyle \lim_{n\rightarrow
+      \infty} \left(1+\frac{1}{n}\right)^{n}</span> 与无理数 <span
+      class="math inline">\mathrm{e}</span>
+      (<strong>欧拉数</strong>)有密切的联系. Jacob Bernoulli
+      于1683年在研究<strong>复利</strong>的时候考虑过这个数列的极限.</p>
+      <figure>
+      <img src="../media/img/chpt1_Jakob_Bernoulli.jpg" height="400"
+      alt="Jakob Bernoulli" />
+      <figcaption aria-hidden="true">Jakob Bernoulli</figcaption>
+      </figure>
+      <p><strong>雅各布·伯努利与数e的发现</strong></p>
+      </div>
+      </div>
+      <div class="callout callout-caution">
+      <div class="callout-header callout-header-caution"><span class="callout-icon"></span><span class="callout-label">上机实验</span></div>
+      <div class="callout-body">
+      <ul>
+      <li>limit_array_e.ipynb: 函数极限的例子.</li>
+      </ul>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">单调有界数列有极限</span></div>
+      <div class="callout-body">
+
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要极限2</span></div>
+      <div class="callout-body">
+      <p><span class="math display">
+      \boxed{\lim_{n\rightarrow \infty} \left(1+\frac{1}{n}\right)^{n} =
+      \mathrm{e}}
+      </span></p>
+      <p>证明见教学视频或问DeepSeek.</p>
+      </div>
+      </div>
+      <div class="callout callout-warning">
+      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">警告</span></div>
+      <div class="callout-body">
+      <p><span class="math display">
+      \boxed{\lim_{x\rightarrow 0} \left(1+x\right)^{\frac{1}{x}} =
+      \mathrm{e}}
+      </span></p>
+      </div>
+      </div>
+      <div class="callout callout-caution">
+      <div class="callout-header callout-header-caution"><span class="callout-icon"></span><span class="callout-label">注意</span></div>
+      <div class="callout-body">
+      <p>可以证明</p>
+      <p><span class="math display">
+      \mathrm{e} = 1 + \frac{1}{1!} + \frac{1}{2!} + \cdots +
+      \frac{1}{n!} + \cdots
+      </span></p>
+      <p>证明的方法也是用<strong>单调有界数列有极限</strong>.</p>
+      <p>中学学过<strong>导数</strong>的同学可以算一下展开式</p>
+      <p><span class="math display">
+      \mathrm{e}^x = 1 + \frac{x}{1!} + \frac{x^2}{2!} + \cdots +
+      \frac{x^n}{n!} + \cdots
+      </span></p>
+      <p>的导数, 看看会发现什么有趣的现象?</p>
+      </div>
+      </div>
+      <h3 id="复合函数的极限">1.2.5 复合函数的极限</h3>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p>下面的结论相当于极限运算中的换元法,
+      在计算极限的时候十分有用.</p>
+      </div>
+      </div>
+      <div class="callout callout-warning">
+      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">警告</span></div>
+      <div class="callout-body">
+      <p>假设 <span class="math inline">y=f[g(x)]</span>, <span
+      class="math inline">\displaystyle \lim_{x\rightarrow x_0}g(x) =
+      u_0</span>, <span class="math inline">\displaystyle
+      \lim_{u\rightarrow u_0}f(x) = A</span>, 则 <span
+      class="math inline">\displaystyle \lim_{x\rightarrow x_0}f[g(x)] =
+      A</span>.</p>
+      <p>这个结论请自行根据直觉理解, 证明略.</p>
+      </div>
+      </div>
+      <div id="chpt1-ex-009" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例13</span><span class="ex-tags"><span
+      class="ex-tag">函数极限</span><span
+      class="ex-tag">等价无穷小</span><span
+      class="ex-tag">极限</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>计算 <span class="math inline">\displaystyle \lim_{x\rightarrow
+      0}\frac{\tan x}{x}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-009-frame" data-panel="chpt1-ex-009-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-009-frame" data-panel="chpt1-ex-009-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-009-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-009-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>将 <span class="math inline">\tan x</span> 拆成 <span
+      class="math inline">\dfrac{\sin x}{x} \cdot \dfrac{1}{\cos
+      x}</span>，利用重要极限 <span class="math inline">\lim_{x\to
+      0}\dfrac{\sin x}{x}=1</span> 及极限的乘法法则。</p>
+      </div>
+      <div id="chpt1-ex-009-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">\lim_{x \rightarrow 0} \frac{\tan
+      x}{x} = \lim_{x \rightarrow 0} \left( \frac{\sin x}{x} \cdot
+      \frac{1}{\cos x} \right) = \left( \lim_{x \rightarrow 0}
+      \frac{\sin x}{x} \right) \cdot \left( \lim_{x \rightarrow 0}
+      \frac{1}{\cos x} \right) = 1 \cdot 1 = 1.</span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt1-ex-010" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例14</span><span class="ex-tags"><span
+      class="ex-tag">函数极限</span><span
+      class="ex-tag">等价无穷小</span><span
+      class="ex-tag">极限</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>计算 <span class="math inline">\displaystyle \lim_{x\rightarrow
+      0}\frac{1-\cos x}{x^2}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-010-frame" data-panel="chpt1-ex-010-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-010-frame" data-panel="chpt1-ex-010-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-010-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-010-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>利用半角公式 <span class="math inline">1 - \cos x =
+      2\sin^2\!\dfrac{x}{2}</span>，或将分子改写为含 <span
+      class="math inline">\sin x</span>
+      的形式，再结合重要极限拆分计算。</p>
+      </div>
+      <div id="chpt1-ex-010-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>利用恒等式 <span class="math inline">1 - \cos x =
+      2\sin^2\!\dfrac{x}{2}</span> 不是唯一方法；这里用 <span
+      class="math inline">1-\cos x = \dfrac{\sin^2 x}{1+\cos
+      x}</span>：</p>
+      <p><span class="math display">\lim_{x \rightarrow 0} \frac{1 -
+      \cos x}{x^{2}} = \lim_{x \rightarrow 0} \frac{\sin^{2}x}{x^{2}(1 +
+      \cos x)} = \lim_{x \rightarrow 0} \left( \frac{\sin x}{x}
+      \right)^{2} \cdot \lim_{x \rightarrow 0} \frac{1}{1 + \cos x} =
+      1^2 \cdot \frac{1}{2} = \frac{1}{2}.</span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt1-ex-011" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例15</span><span class="ex-tags"><span
+      class="ex-tag">函数极限</span><span
+      class="ex-tag">等价无穷小</span><span
+      class="ex-tag">极限</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>计算 <span class="math inline">\displaystyle \lim_{x\rightarrow
+      0}\frac{\arcsin x}{x}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-011-frame" data-panel="chpt1-ex-011-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-011-frame" data-panel="chpt1-ex-011-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-011-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-011-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>令 <span class="math inline">t = \arcsin x</span>，则 <span
+      class="math inline">x = \sin t</span>，当 <span
+      class="math inline">x \to 0</span> 时 <span class="math inline">t
+      \to 0</span>，用复合函数极限换元法将问题转化为重要极限。</p>
+      </div>
+      <div id="chpt1-ex-011-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>令 <span class="math inline">t = \arcsin x</span>，则 <span
+      class="math inline">x = \sin t</span>。当 <span
+      class="math inline">x \to 0</span> 时，有 <span
+      class="math inline">t \to 0</span>。</p>
+      <p>由复合函数的极限运算法则：</p>
+      <p><span class="math display">\lim_{x \to 0} \frac{\arcsin x}{x} =
+      \lim_{t \to 0} \frac{t}{\sin t} = \frac{1}{\displaystyle\lim_{t
+      \to 0} \frac{\sin t}{t}} = \frac{1}{1} = 1.</span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt1-ex-012" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例16</span><span class="ex-tags"><span
+      class="ex-tag">函数极限</span><span
+      class="ex-tag">极限</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>计算 <span class="math inline">\displaystyle \lim_{x\rightarrow
+      \infty}\left( 1-\frac{1}{x}\right)^{x}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-012-frame" data-panel="chpt1-ex-012-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-012-frame" data-panel="chpt1-ex-012-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-012-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-012-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>令 <span class="math inline">t = -x</span>，当 <span
+      class="math inline">x \to \infty</span> 时 <span
+      class="math inline">t \to -\infty</span>，将表达式化为含 <span
+      class="math inline">\left(1+\dfrac{1}{t}\right)^t</span>
+      的形式，利用重要极限 <span
+      class="math inline">\lim_{t\to\infty}\left(1+\dfrac{1}{t}\right)^t
+      = \mathrm{e}</span>。</p>
+      </div>
+      <div id="chpt1-ex-012-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>令 <span class="math inline">t = -x</span>，则当 <span
+      class="math inline">x \to \infty</span> 时，<span
+      class="math inline">t \to -\infty</span>，且</p>
+      <p><span class="math display">\left(1 - \frac{1}{x}\right)^x =
+      \left(1 + \frac{1}{t}\right)^{-t} = \frac{1}{\left(1 +
+      \frac{1}{t}\right)^{t}}.</span></p>
+      <p>由重要极限，当 <span class="math inline">t \to -\infty</span>
+      时 <span class="math inline">\left(1+\dfrac{1}{t}\right)^t \to
+      \mathrm{e}</span>（该极限对 <span class="math inline">t \to
+      \pm\infty</span> 均成立），故</p>
+      <p><span class="math display">\lim_{x \to \infty} \left( 1 -
+      \frac{1}{x} \right)^{x} = \lim_{t \to -\infty} \frac{1}{\left( 1 +
+      \frac{1}{t} \right)^{t}} = \frac{1}{\mathrm{e}} =
+      \mathrm{e}^{-1}.</span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt1-ex-013" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例17</span><span class="ex-tags"><span
+      class="ex-tag">函数极限</span><span
+      class="ex-tag">等价无穷小</span><span
+      class="ex-tag">极限</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>计算 <span class="math inline">\displaystyle \lim_{x\rightarrow
+      0}\frac{\tan 2x}{\sin 5x}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-013-frame" data-panel="chpt1-ex-013-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-013-frame" data-panel="chpt1-ex-013-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-013-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-013-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>将分子和分母分别乘以各自的”参数”，凑出 <span
+      class="math inline">\dfrac{\tan u}{u} \to 1</span> 和 <span
+      class="math inline">\dfrac{\sin v}{v} \to 1</span>
+      的形式，再利用极限的乘除法则。</p>
+      </div>
+      <div id="chpt1-ex-013-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>将极限改写，凑出标准形式：</p>
+      <p><span class="math display">\lim_{x\rightarrow 0}\frac{\tan
+      2x}{\sin 5x} = \lim_{x\rightarrow 0} \frac{\tan 2x}{2x} \cdot
+      \frac{5x}{\sin 5x} \cdot \frac{2x}{5x}.</span></p>
+      <p>令 <span class="math inline">u = 2x</span>，当 <span
+      class="math inline">x \to 0</span> 时 <span class="math inline">u
+      \to 0</span>，由重要极限知 <span
+      class="math inline">\displaystyle\lim_{u\to 0}\frac{\tan u}{u} =
+      1</span>；</p>
+      <p>令 <span class="math inline">v = 5x</span>，当 <span
+      class="math inline">x \to 0</span> 时 <span class="math inline">v
+      \to 0</span>，由重要极限知 <span
+      class="math inline">\displaystyle\lim_{v\to 0}\frac{\sin v}{v} =
+      1</span>。</p>
+      <p>故</p>
+      <p><span class="math display">\lim_{x\rightarrow 0}\frac{\tan
+      2x}{\sin 5x} = 1 \cdot 1 \cdot \frac{2}{5} =
+      \frac{2}{5}.</span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <h2 id="连续函数">1.3 连续函数</h2>
+      <h3 id="连续和间断">1.3.1 连续和间断</h3>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p>所谓<strong>连续函数</strong>,
+      直白的说就是能笔不离开纸面一气画出来的函数,
+      下面我们就来运用<strong>极限</strong>的概念把这个<strong>连续的直观</strong>给<strong>数学化</strong>.</p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要</span></div>
+      <div class="callout-body">
+      <p><strong>函数在某一点的连续</strong></p>
+      <p>若 <span class="math inline">\displaystyle \lim_{x\rightarrow
+      x_0}f(x) = f(x_0)</span>, 则称 <span
+      class="math inline">f(x)</span> 在 <span
+      class="math inline">x_0</span> 处连续.</p>
+      <p><strong>连续函数</strong></p>
+      <p>如果函数在某个区域上<strong>每一点都连续</strong>, 则称 <span
+      class="math inline">f(x)</span>
+      是该区域上的<strong>连续函数</strong>.</p>
+      </div>
+      </div>
+      <div id="chpt1-ex-014" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例18</span><span class="ex-tags"><span
+      class="ex-tag">连续性</span><span
+      class="ex-tag">函数极限</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>讨论函数 <span class="math inline">f(x) = |x|</span>
+      的连续性。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-014-frame" data-panel="chpt1-ex-014-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-014-frame" data-panel="chpt1-ex-014-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-014-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-014-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>分 <span class="math inline">x_0 &gt; 0</span>、<span
+      class="math inline">x_0 &lt; 0</span>、<span
+      class="math inline">x_0 = 0</span> 三种情况，验证各点处 <span
+      class="math inline">\lim_{x\to x_0}f(x) = f(x_0)</span> 成立。</p>
+      </div>
+      <div id="chpt1-ex-014-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>函数 <span class="math inline">f(x) = |x|</span> 在 <span
+      class="math inline">(-\infty, +\infty)</span> 上处处连续。</p>
+      <ul>
+      <li>当 <span class="math inline">x_0 &gt; 0</span> 时，在 <span
+      class="math inline">x_0</span> 的某邻域内 <span
+      class="math inline">f(x) = x</span>，故 <span
+      class="math inline">\lim_{x\to x_0}|x| = x_0 =
+      f(x_0)</span>，连续。</li>
+      <li>当 <span class="math inline">x_0 &lt; 0</span> 时，在 <span
+      class="math inline">x_0</span> 的某邻域内 <span
+      class="math inline">f(x) = -x</span>，故 <span
+      class="math inline">\lim_{x\to x_0}|x| = -x_0 =
+      f(x_0)</span>，连续。</li>
+      <li>当 <span class="math inline">x_0 = 0</span> 时，左极限 <span
+      class="math inline">\lim_{x\to 0^-}|x| = \lim_{x\to 0^-}(-x) =
+      0</span>，右极限 <span class="math inline">\lim_{x\to 0^+}|x| =
+      \lim_{x\to 0^+}x = 0</span>，且 <span
+      class="math inline">f(0)=0</span>，故连续。</li>
+      </ul>
+      <p>因此 <span class="math inline">f(x) = |x|</span> 在 <span
+      class="math inline">(-\infty, +\infty)</span> 上连续。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt1-ex-015" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例19</span><span class="ex-tags"><span
+      class="ex-tag">连续性</span><span
+      class="ex-tag">间断点</span><span
+      class="ex-tag">函数极限</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>讨论函数 <span class="math inline">\displaystyle f(x) =
+      \frac{1}{|x|}</span> 的连续性，指出间断点（若有）。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-015-frame" data-panel="chpt1-ex-015-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-015-frame" data-panel="chpt1-ex-015-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-015-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-015-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>分析 <span class="math inline">f(x)</span> 的定义域，找出使
+      <span class="math inline">f(x)</span>
+      无定义的点，再检验该点处的极限行为。</p>
+      </div>
+      <div id="chpt1-ex-015-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math inline">f(x) = \dfrac{1}{|x|}</span> 在 <span
+      class="math inline">x = 0</span> 处无定义，因此 <span
+      class="math inline">x=0</span> 是间断点。</p>
+      <ul>
+      <li>当 <span class="math inline">x_0 \neq 0</span> 时，<span
+      class="math inline">|x|</span> 在 <span
+      class="math inline">x_0</span> 附近连续且非零，故 <span
+      class="math inline">f(x) = \dfrac{1}{|x|}</span> 在所有 <span
+      class="math inline">x_0 \neq 0</span> 处连续。</li>
+      <li>当 <span class="math inline">x \to 0</span> 时，<span
+      class="math inline">|x| \to 0^+</span>，故 <span
+      class="math inline">\dfrac{1}{|x|} \to
+      +\infty</span>，极限不存在（趋于无穷大）。</li>
+      </ul>
+      <p>因此，<span class="math inline">f(x)</span> 在 <span
+      class="math inline">(-\infty, 0) \cup (0, +\infty)</span>
+      上连续，在 <span class="math inline">x = 0</span>
+      处不连续（第二类间断点，无穷间断点）。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-warning">
+      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">间断函数</span></div>
+      <div class="callout-body">
+      <p>不连续的函数就是<strong>间断函数</strong>.
+      间断函数一定有某处是不连续的, 造成不连续的原因很多,
+      其中有些间断点还能够被挽救回来变成连续的
+      (<strong>可去间断点</strong>), 有些则挽救不回来.</p>
+      </div>
+      </div>
+      <div id="chpt1-ex-016" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例20</span><span class="ex-tags"><span
+      class="ex-tag">连续性</span><span
+      class="ex-tag">间断点</span><span
+      class="ex-tag">函数极限</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>讨论函数 <span class="math inline">\displaystyle f(x) =
+      \frac{\sin x}{x}</span>
+      的连续性。若存在间断点，判断其类型，并说明能否通过补充定义使其成为连续函数。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-016-frame" data-panel="chpt1-ex-016-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-016-frame" data-panel="chpt1-ex-016-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-016-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-016-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p><span class="math inline">f(x)</span> 在 <span
+      class="math inline">x=0</span> 处没有定义，但计算 <span
+      class="math inline">\lim_{x\to 0}\dfrac{\sin x}{x}</span>
+      可以判断该间断点是否可去。</p>
+      </div>
+      <div id="chpt1-ex-016-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math inline">f(x) = \dfrac{\sin x}{x}</span> 在
+      <span class="math inline">x=0</span> 处无定义，故 <span
+      class="math inline">x=0</span> 是间断点。</p>
+      <p>由重要极限：</p>
+      <p><span class="math display">\lim_{x\rightarrow 0} \frac{\sin
+      x}{x} = 1.</span></p>
+      <p>由于极限存在但函数在该点无定义，<span
+      class="math inline">x=0</span> 是<strong>可去间断点</strong>。</p>
+      <p>只要令 <span class="math inline">f(0) =
+      1</span>，即补充定义</p>
+      <p><span class="math display">\tilde{f}(x) = \begin{cases}
+      \dfrac{\sin x}{x}, &amp; x \neq 0, \\ 1, &amp; x = 0,
+      \end{cases}</span></p>
+      <p>则 <span class="math inline">\tilde{f}(x)</span> 在 <span
+      class="math inline">(-\infty, +\infty)</span> 上处处连续。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt1-ex-017" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例21</span><span class="ex-tags"><span
+      class="ex-tag">连续性</span><span
+      class="ex-tag">间断点</span><span
+      class="ex-tag">函数极限</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>讨论函数 <span class="math inline">f(x) =
+      \sin\dfrac{1}{x}</span> 在 <span class="math inline">x=0</span>
+      处的连续性。若不连续，判断间断点类型，并说明能否通过补充定义使其连续。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-017-frame" data-panel="chpt1-ex-017-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-017-frame" data-panel="chpt1-ex-017-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-017-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-017-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>考察 <span class="math inline">x \to 0</span> 时 <span
+      class="math inline">\sin\dfrac{1}{x}</span> 的极限行为：取特殊数列
+      <span class="math inline">x_n \to 0</span> 使得 <span
+      class="math inline">\sin\dfrac{1}{x_n}</span>
+      取不同值，说明极限不存在。</p>
+      </div>
+      <div id="chpt1-ex-017-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math inline">f(x) = \sin\dfrac{1}{x}</span> 在
+      <span class="math inline">x=0</span> 处无定义，故 <span
+      class="math inline">x=0</span> 是间断点。</p>
+      <p>当 <span class="math inline">x \to 0</span> 时，<span
+      class="math inline">\dfrac{1}{x} \to \infty</span>，<span
+      class="math inline">\sin\dfrac{1}{x}</span> 在 <span
+      class="math inline">-1</span> 和 <span
+      class="math inline">1</span> 之间无限振荡，极限不存在。</p>
+      <p>例如，取 <span class="math inline">x_n =
+      \dfrac{1}{n\pi}</span>，则 <span
+      class="math inline">\sin\dfrac{1}{x_n} = \sin(n\pi) = 0</span>；取
+      <span class="math inline">x_n = \dfrac{2}{(4n+1)\pi}</span>，则
+      <span class="math inline">\sin\dfrac{1}{x_n} = 1</span>。</p>
+      <p>因此 <span class="math inline">x=0</span>
+      是<strong>振荡间断点</strong>（第二类间断点），无法通过补充定义一个点值使
+      <span class="math inline">f(x)</span> 在 <span
+      class="math inline">x=0</span> 处连续。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-warning">
+      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">单侧极限</span></div>
+      <div class="callout-body">
+      <ul>
+      <li><strong>左连续</strong>(注意极限记号下方的 <span
+      class="math inline">-</span> 号)</li>
+      </ul>
+      <p><span class="math inline">\displaystyle \lim_{x\rightarrow
+      x_0^-} f(x) = A \iff \forall \varepsilon &gt; 0</span>, <span
+      class="math inline">\exist \delta&gt;0</span>, s. t., <span
+      class="math inline">|f(x) - A| &lt; \varepsilon</span> if <span
+      class="math inline">-\delta &lt; x-x_0 &lt; 0</span>.</p>
+      <ul>
+      <li><strong>右连续</strong>(注意极限记号下方的 <span
+      class="math inline">+</span> 号)</li>
+      </ul>
+      <p><span class="math inline">\displaystyle \lim_{x\rightarrow
+      x_0^+} f(x) = A \iff \forall \varepsilon &gt; 0</span>, <span
+      class="math inline">\exist \delta&gt;0</span>, s. t., <span
+      class="math inline">|f(x) - A| &lt; \varepsilon</span> if <span
+      class="math inline">0 &lt; x-x_0 &lt; \delta</span>.</p>
+      <p>造成函数 <span class="math inline">f(x)</span> 在 <span
+      class="math inline">x=x_0</span> 处的极限不存在的一个常见原因是
+      <span class="math inline">f(x)</span>
+      的<strong>左右极限不相等</strong>.</p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">符号函数 \mathrm{sgn}(x)</span></div>
+      <div class="callout-body">
+      <p><span class="math display">
+      \mathrm{sgn}(x) = \begin{cases}
+      1,  &amp; \text{if $x&gt;0$}, \\
+      0, &amp; \text{if $x=0$}, \\
+      -1, &amp; \text{if $x&lt;0$}.
+      \end{cases}
+      </span> 该函数在 <span class="math inline">x_0=0</span> 处不连续,
+      造成不连续的原因是函数在该点的左极限 (<span
+      class="math inline">x</span> 从左往右趋于0) 等于 <span
+      class="math inline">-1</span>, 右极限 (<span
+      class="math inline">x</span> 从右往左趋于0) 等于 <span
+      class="math inline">1</span>, 左右极限不相等.
+      这种情况也没有办法通过简单的修改 <span
+      class="math inline">f(0)</span> 的值来让函数连续.</p>
+      </div>
+      </div>
+      <div class="callout callout-warning">
+      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">警告</span></div>
+      <div class="callout-body">
+      <p>函数的连续性是一个很<strong>自然</strong>的性质,
+      我们所感受到的世界就是连续的: 物体运动的轨迹, 温度的变化,
+      甚至计算机里的0-1也是用连续函数来近似的. -
+      在做<strong>目标追踪</strong>问题的时候,
+      连续是一个很重要的<strong>先验</strong>; -
+      在求解<strong>物理方程</strong>的时候,
+      解的连续性是一个很重要的<strong>约束</strong>; - 在人工智能里,
+      连续性是解决高维问题的一个<strong>核心底层逻辑</strong>.</p>
+      </div>
+      </div>
+      <h3 id="闭区间上连续函数的性质">1.3.2 闭区间上连续函数的性质</h3>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p>闭区间上的连续函数是函数中的<strong>乖宝宝</strong>,
+      因为这类函数的值总是可以被<strong>控制</strong>住.</p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">闭区间上连续函数的定义</span></div>
+      <div class="callout-body">
+      <p>如果函数 <span class="math inline">f(x)</span> 在 <span
+      class="math inline">(a, b)</span> 内连续, 在 <span
+      class="math inline">a</span> 处右连续, 在 <span
+      class="math inline">b</span> 处左连续, 则 <span
+      class="math inline">f(x)</span> 是闭区间 <span
+      class="math inline">[a, b]</span> 上的连续函数.</p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">维尔斯特拉斯 (Weierstrass) 极值定理/极大极小值定理</span></div>
+      <div class="callout-body">
+      <p>闭区间 <span class="math inline">[a, b]</span>
+      上的连续函数有界, 且至少有一点 <span class="math inline">x_1 \in
+      [a, b]</span> 使得 <span class="math inline">f(x_1)</span> 是
+      <span class="math inline">f(x)</span> 在 <span
+      class="math inline">[a, b]</span> 上的最大值, 也至少有一点 <span
+      class="math inline">x_2 \in [a, b]</span> 使得 <span
+      class="math inline">f(x_2)</span> 是 <span
+      class="math inline">f(x)</span> 在 <span class="math inline">[a,
+      b]</span> 上的最小值.</p>
+      </div>
+      </div>
+      <div id="chpt1-ex-018" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例22</span><span class="ex-tags"><span
+      class="ex-tag">连续性</span><span
+      class="ex-tag">间断点</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>函数 <span class="math inline">f(x) = \dfrac{1}{x}</span>
+      是否在闭区间 <span class="math inline">[-1, 1]</span>
+      上连续？若不连续，说明原因，并说明维尔斯特拉斯极值定理是否适用。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-018-frame" data-panel="chpt1-ex-018-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-018-frame" data-panel="chpt1-ex-018-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-018-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-018-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>检验 <span class="math inline">f(x)</span> 在 <span
+      class="math inline">[-1,1]</span>
+      上的定义域，找出不连续的点，再讨论极值定理的适用条件。</p>
+      </div>
+      <div id="chpt1-ex-018-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math inline">f(x) = \dfrac{1}{x}</span> 在 <span
+      class="math inline">x=0</span> 处无定义，因此 <span
+      class="math inline">f(x)</span> 在闭区间 <span
+      class="math inline">[-1,1]</span>
+      上<strong>不连续</strong>（甚至无法在全区间上取值）。</p>
+      <p>由于 <span class="math inline">f(x)</span>
+      不满足维尔斯特拉斯极值定理的条件（函数须在闭区间上处处连续），定理不适用。</p>
+      <p>实际上，当 <span class="math inline">x \to 0</span> 时，<span
+      class="math inline">|f(x)| = \dfrac{1}{|x|} \to
+      +\infty</span>，函数在 <span class="math inline">[-1,1]</span>
+      上无界，既无最大值也无最小值，这正是定理不成立的<strong>反例</strong>。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt1-ex-019" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例23</span><span class="ex-tags"><span
+      class="ex-tag">连续性</span><span
+      class="ex-tag">间断点</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>符号函数 <span class="math inline">\mathrm{sgn}(x) =
+      \begin{cases} 1, &amp; x&gt;0, \\ 0, &amp; x=0, \\ -1, &amp;
+      x&lt;0 \end{cases}</span> 是否在闭区间 <span
+      class="math inline">[-1, 1]</span>
+      上连续？若不连续，说明原因，并说明维尔斯特拉斯极值定理是否适用。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-019-frame" data-panel="chpt1-ex-019-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-019-frame" data-panel="chpt1-ex-019-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-019-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-019-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>检验 <span class="math inline">\mathrm{sgn}(x)</span> 在 <span
+      class="math inline">x=0</span> 处的左右极限是否相等。</p>
+      </div>
+      <div id="chpt1-ex-019-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math inline">\mathrm{sgn}(x)</span> 在 <span
+      class="math inline">x=0</span> 处不连续：</p>
+      <p><span class="math display">\lim_{x \to 0^-} \mathrm{sgn}(x) =
+      -1, \qquad \lim_{x \to 0^+} \mathrm{sgn}(x) = 1.</span></p>
+      <p>左右极限不相等，故极限不存在，<span
+      class="math inline">x=0</span>
+      是<strong>跳跃间断点</strong>（第一类间断点）。</p>
+      <p>由于 <span class="math inline">\mathrm{sgn}(x)</span> 在 <span
+      class="math inline">[-1,1]</span>
+      上不连续，维尔斯特拉斯极值定理的条件不满足，定理不适用。</p>
+      <p>注意：尽管如此，<span
+      class="math inline">\mathrm{sgn}(x)</span> 在 <span
+      class="math inline">[-1,1]</span> 上实际上是有界的（值域为 <span
+      class="math inline">\{-1, 0,
+      1\}</span>），且最大值和最小值均存在，这说明定理的条件是充分条件而非必要条件。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">布尔查诺 (Bolzano) 定理/介值定理</span></div>
+      <div class="callout-body">
+      <p>设闭区间 <span class="math inline">[a, b]</span> 上的连续函数
+      <span class="math inline">f(x)</span> 在端点的值分别为 <span
+      class="math inline">f(a) &lt; 0</span>, <span
+      class="math inline">f(b) &gt; 0</span>, 则一定存在 <span
+      class="math inline">x_0 \in [a, b]</span> 使得 <span
+      class="math inline">f(x_0) = 0</span>.</p>
+      </div>
+      </div>
+      <div id="chpt1-ex-020" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例24</span><span class="ex-tags"><span
+      class="ex-tag">连续性</span><span
+      class="ex-tag">极限</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>证明方程 <span class="math inline">x^3 - 4x^2 + 1 = 0</span>
+      在区间 <span class="math inline">(0, 1)</span>
+      内至少有一个根。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-020-frame" data-panel="chpt1-ex-020-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-020-frame" data-panel="chpt1-ex-020-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-020-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-020-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>构造函数 <span class="math inline">f(x) = x^3 - 4x^2 +
+      1</span>，计算其在区间端点的值，利用介值定理（布尔查诺定理）得出结论。</p>
+      </div>
+      <div id="chpt1-ex-020-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>令 <span class="math inline">f(x) = x^3 - 4x^2 + 1</span>。</p>
+      <p><span class="math inline">f(x)</span> 是多项式，在闭区间 <span
+      class="math inline">[0, 1]</span> 上连续。</p>
+      <p>计算端点处的值：</p>
+      <p><span class="math display">f(0) = 0 - 0 + 1 = 1 &gt;
+      0,</span></p>
+      <p><span class="math display">f(1) = 1 - 4 + 1 = -2 &lt;
+      0.</span></p>
+      <p>由于 <span class="math inline">f(0) &gt; 0</span>，<span
+      class="math inline">f(1) &lt; 0</span>，<span
+      class="math inline">f</span> 在 <span
+      class="math inline">[0,1]</span>
+      上连续，根据介值定理（布尔查诺定理），在区间 <span
+      class="math inline">(0, 1)</span> 内存在 <span
+      class="math inline">c</span> 使得 <span class="math inline">f(c) =
+      0</span>。</p>
+      <p>此即方程 <span class="math inline">x^3 - 4x^2 + 1 = 0</span>
+      在区间 <span class="math inline">(0, 1)</span> 内的一个根。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-caution">
+      <div class="callout-header callout-header-caution"><span class="callout-icon"></span><span class="callout-label">注意</span></div>
+      <div class="callout-body">
+      <p>布尔查诺定理时一个<strong>存在性定理</strong>,
+      它只告诉我们一个东西有还是没有,
+      与之相对的是所谓的<strong>构造性定理</strong>,
+      后者会给出找出这个东西的具体办法.
+      <strong>存在性定理</strong>和<strong>构造性定理</strong>都是数学的重要组成部分,
+      按照一般的理解, 前者在纯数学中的地位更高,
+      后者则一般更受工程师和程序员的青睐.</p>
+      <p>为了让大家体会存在性定理的奇妙之处,
+      下面我们用布尔查诺定理来证明一个看起来并不明显的命题(摘自库朗所著的《什么是数学》一书).
+      命题如下: 如果 <span class="math inline">A</span> 和 <span
+      class="math inline">B</span> 是平面内的任意两个区域,
+      那么在平面内一定存在一条直线, 该直线同时平分 <span
+      class="math inline">A</span> 和 <span
+      class="math inline">B</span>. (注：所谓一个”区域”,
+      是指平面内一条简单闭曲线所包围的部分.)</p>
+      <figure>
+      <img src="../media/img/chpt1_equal_partition.png" width="400"
+      alt="直线同时等分两个区域" />
+      <figcaption aria-hidden="true">直线同时等分两个区域</figcaption>
+      </figure>
+      <p><strong>证明：</strong></p>
+      <p>先在平面上选择某一固定点 <span class="math inline">P</span>,
+      并且从 <span class="math inline">P</span> 引出一条射线 <span
+      class="math inline">PR</span> 当作度量角度的始边. 如果作与 <span
+      class="math inline">PR</span> 的夹角为 <span
+      class="math inline">x</span> 的任一射线 <span
+      class="math inline">PS</span>, 那么在平面上会有一条与 <span
+      class="math inline">PS</span> 同方向且 <strong>平分区域 <span
+      class="math inline">A</span></strong> 的有向直线.</p>
+      <p>因为, 如果我们作一条与 <span class="math inline">PS</span>
+      同方向的有向直线 <span class="math inline">l_1</span>, 但它整个在
+      <span class="math inline">A</span> 的一侧, 然后平行地移动这条直线,
+      直到直线处在位置 <span class="math inline">l_2</span>, 那么由区域
+      <span class="math inline">A</span> 在直线右侧（如果直线指北,
+      则东向是右侧）的面积减去 <span class="math inline">A</span>
+      在直线左侧的面积所定义的函数, 其值对 <span
+      class="math inline">l_1</span> 是负的, 对 <span
+      class="math inline">l_2</span> 是正的. 因为这个函数是连续的,
+      由布尔查诺定理, 必有某个中间位置 <span
+      class="math inline">l_x</span>, 使它为零, 也就是 <span
+      class="math inline">l_x</span> 平分了 <span
+      class="math inline">A</span>. 因此, 对于 <span
+      class="math inline">x</span> 由 <span class="math inline">x =
+      0^\circ</span> 到 <span class="math inline">x = 360^\circ</span>
+      的每个值 <span class="math inline">x</span>, <strong>平分 <span
+      class="math inline">A</span> 的直线 <span
+      class="math inline">l_x</span> 都是唯一确定的</strong>.</p>
+      <p>现在把函数 <span class="math inline">y = f(x)</span> 定义为
+      <span class="math inline">B</span> 在直线 <span
+      class="math inline">l_x</span> 右侧面积减去 <span
+      class="math inline">B</span> 在 <span
+      class="math inline">l_x</span> 左侧的面积. 假设直线 <span
+      class="math inline">l_0</span> 与 <span
+      class="math inline">PR</span> 同方向且平分了 <span
+      class="math inline">A</span>, 并且 <span
+      class="math inline">B</span> 在 <span
+      class="math inline">l_0</span> 右侧的面积大于左侧, 则对 <span
+      class="math inline">x = 0^\circ</span>, <span
+      class="math inline">y</span> 是正的. 如果 <span
+      class="math inline">x</span> 增加到 <span
+      class="math inline">180^\circ</span>, 那么直线 <span
+      class="math inline">l_{180}</span> 和 <span
+      class="math inline">RP</span> 平行, 它虽然和 <span
+      class="math inline">l_0</span> 一样地分割 <span
+      class="math inline">A</span>, 但与 <span
+      class="math inline">l_0</span> 方向相反, 右和左互换, 因此 <span
+      class="math inline">y</span> 在 <span class="math inline">x =
+      180^\circ</span> 时和在 <span class="math inline">x =
+      0^\circ</span> 时的数值相同, 但符号相反, 所以是负的. <strong>当
+      <span class="math inline">l_x</span> 旋转时, <span
+      class="math inline">y</span> 是 <span class="math inline">x</span>
+      的连续函数, 那么在 <span class="math inline">0^\circ</span> 和
+      <span class="math inline">180^\circ</span> 之间, 存在 <span
+      class="math inline">x</span> 的某个值 <span
+      class="math inline">\alpha</span>, 使 <span
+      class="math inline">y</span> 等于零</strong>.</p>
+      <p>因此方向线 <span class="math inline">l_\alpha</span> 同时平分
+      <span class="math inline">A</span> 和 <span
+      class="math inline">B</span>, 证明完毕.</p>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.docLib = [{"title": "\u5e8f\u8a00", "url": "chapter0.html"}, {"title": "\u7b2c\u4e00\u7ae0: \u6781\u9650", "url": "chapter1.html"}, {"title": "\u7b2c\u4e8c\u7ae0: \u5bfc\u6570", "url": "chapter2.html"}, {"title": "\u7b2c\u4e09\u7ae0: \u5fae\u5206", "url": "chapter3.html"}, {"title": "\u7b2c\u56db\u7ae0: \u79ef\u5206", "url": "chapter4.html"}, {"title": "\u7b2c\u4e94\u7ae0: \u5fae\u5206\u7684\u5e94\u7528", "url": "chapter5.html"}, {"title": "\u7b2c\u516d\u7ae0: \u79ef\u5206\u7684\u5e94\u7528", "url": "chapter6.html"}, {"title": "\u7b2c\u4e03\u7ae0: \u5e38\u5fae\u5206\u65b9\u7a0b", "url": "chapter7.html"}, {"title": "\u7b2c\u516b\u7ae0: \u6570\u503c\u65b9\u6cd5", "url": "chapter8.html"}, {"title": "\u7b2c\u4e5d\u7ae0: \u5411\u91cf\u4e0e\u7a7a\u95f4\u89e3\u6790\u51e0\u4f55", "url": "chapter9.html"}, {"title": "\u7b2c\u5341\u7ae0: \u591a\u5143\u51fd\u6570\u7684\u5fae\u5206", "url": "chapter10.html"}, {"title": "\u7b2c\u5341\u4e00\u7ae0: \u591a\u5143\u51fd\u6570\u7684\u79ef\u5206", "url": "chapter11.html"}, {"title": "\u7b2c\u5341\u4e8c\u7ae0: \u66f2\u7ebf\u79ef\u5206\u548c\u66f2\u9762\u79ef\u5206", "url": "chapter12.html"}, {"title": "\u7b2c\u5341\u4e09\u7ae0: \u65e0\u7a77\u7ea7\u6570", "url": "chapter13.html"}, {"title": "\u7b2c\u5341\u56db\u7ae0: \u504f\u5fae\u5206\u65b9\u7a0b", "url": "chapter14.html"}];
+    window.chpAutonum = "";
+    window.videoUrl = "https://player.bilibili.com/player.html?bvid=BV1jEDcBoE8F&autoplay=0";
+  </script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

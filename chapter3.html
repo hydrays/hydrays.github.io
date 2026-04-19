@@ -1,0 +1,1828 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新工科数学分析</title>
+  <meta name="author" content="首师大交叉科学研究院">
+  <meta name="description" content="首都师范大学新工科数学分析">
+  <meta name="keywords" content="高等数学,微积分,数学分析,讲义">
+  
+  
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/chapter.css">
+  <link rel="stylesheet" href="assets/app.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script type="importmap">
+  {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160/examples/jsm/"}}
+  </script>
+</head>
+<body>
+  <div id="sidebar">
+    <div id="doc-nav">
+      <ul id="doc-nav-list"></ul>
+    </div>
+    <div class="nav-divider"></div>
+    <div id="toc-nav">
+      <div class="nav-section-title">Contents</div>
+      <ul>
+      <li><a href="#第三章-微分" id="toc-第三章-微分">第三章: 微分</a>
+      <ul>
+      <li><a href="#微分的概念" id="toc-微分的概念">3.1 微分的概念</a>
+      <ul>
+      <li><a href="#微分与导数" id="toc-微分与导数">3.1.1
+      微分与导数</a></li>
+      </ul></li>
+      <li><a href="#借助微分计算导数" id="toc-借助微分计算导数">3.2
+      借助微分计算导数</a>
+      <ul>
+      <li><a href="#复合函数求导的链式法则"
+      id="toc-复合函数求导的链式法则">3.2.1
+      复合函数求导的链式法则</a></li>
+      <li><a href="#隐函数求导" id="toc-隐函数求导">3.2.2
+      隐函数求导</a></li>
+      <li><a href="#反函数求导" id="toc-反函数求导">3.2.3
+      反函数求导</a></li>
+      <li><a href="#更多的高阶导数计算"
+      id="toc-更多的高阶导数计算">3.2.4 更多的高阶导数计算</a></li>
+      </ul></li>
+      <li><a href="#借助微分计算极限" id="toc-借助微分计算极限">3.3
+      借助微分计算极限</a>
+      <ul>
+      <li><a href="#洛必达法则" id="toc-洛必达法则">3.3.1
+      洛必达法则</a></li>
+      </ul></li>
+      </ul></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="overlay" onclick="closeSidebar()"></div>
+
+  <div id="main">
+    <div id="topbar">
+      <button id="sidebar-toggle" onclick="toggleSidebar()" aria-label="Toggle sidebar">&#9776;</button>
+      <span id="topbar-title">新工科数学分析</span>
+      <button id="pdf-btn" onclick="window.print()" title="Print / Save as PDF">&#128438;</button>
+    </div>
+    <div id="video-panel">
+      <button id="video-close-btn" aria-label="Close video">&times;</button>
+      <iframe id="video-frame" src="" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+      <button id="video-close-bottom" onclick="void(0)">&#9650; 收起视频</button>
+    </div>
+    <div id="content">
+      <h1 id="第三章-微分">第三章: 微分</h1>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p>上一章我们通过极限给出了<strong>导数的定义</strong>,
+      并指出导数的几何意义是函数某一点处<strong>切线的斜率</strong>.
+      通过计算函数切线的斜率, 我们可以判断函数的增减性及其极值.</p>
+      <p>本章我们将介绍<strong>微分</strong>的概念,
+      并揭示微分与导数之间的朴实却深刻的联系. 微分是微积分的核心思想,
+      将在后续的课程中贯穿始终.</p>
+      </div>
+      </div>
+      <h2 id="微分的概念">3.1 微分的概念</h2>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p><strong>微分 (differential)</strong> 的意思是
+      <strong>无穷小的改变量 (infinitesimally small
+      change)</strong>，莱布尼茨为微分创立了其专属符号 “<span
+      class="math inline">d</span>”, 例如 <span
+      class="math inline">dx</span> 表示变量 <span
+      class="math inline">x</span> 的微分, <span
+      class="math inline">dy</span> 表示变量 <span
+      class="math inline">y</span> 的微分. 与之对应的, 物理上经常用
+      <span class="math inline">\Delta x</span>
+      表示一个很小的改变量，比如一小段位移. 直观上看, <span
+      class="math inline">\Delta x</span> 和 <span
+      class="math inline">dx</span> 想传达的意思很相近,
+      都是<strong>很小的量</strong>, 但是在数学它们是有区别的.</p>
+      <ul>
+      <li><p><span class="math inline">\Delta x</span>
+      表示一个非常小但<strong>固定的数</strong>.</p></li>
+      <li><p><span class="math inline">dx</span> 则表示一个”无穷小量”,
+      它不再是一个固定的数,
+      而是蕴含了某个<strong>极限过程</strong>.</p></li>
+      </ul>
+      </div>
+      </div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p>如图, 考虑一个做直线运动的物体, 它在经过一小段时间 <span
+      class="math inline">\Delta t</span> 之后位移的变化量为 <span
+      class="math inline">\Delta s = s(t +\Delta t) - s(t)</span>.
+      此时我们考虑 <span class="math inline">\Delta t \to 0</span>
+      的极限, 就得到<strong>时间的微分</strong> <span
+      class="math inline">dt</span>
+      以及对应的<strong>位移的微分</strong> <span
+      class="math inline">ds</span>.</p>
+      <figure>
+      <img src="../media/img/chpt3_diff_example_1.png" width="400"
+      alt="微分的例子1" />
+      <figcaption aria-hidden="true">微分的例子1</figcaption>
+      </figure>
+      </div>
+      </div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p>如图, 从原点位置以角度 <span class="math inline">\theta</span>
+      发射一束激光, 设激光与直线 <span class="math inline">y = b</span>
+      的交点坐标为 <span class="math inline">(x, b)</span>.
+      如果我们将发射角做一个微小的改变 <span class="math inline">\Delta
+      \theta</span>, 与之对应的激光光斑的位置会在 <span
+      class="math inline">x</span>-轴方向上发生了一个 <span
+      class="math inline">\Delta x</span> 的偏移. 此时我们考虑 <span
+      class="math inline">\Delta \theta \to 0</span> 的极限,
+      就得到<strong>角度的微分</strong> <span
+      class="math inline">d\theta</span>
+      以及对应的<strong>x的微分</strong> <span
+      class="math inline">dx</span>.</p>
+      <figure>
+      <img src="../media/img/chpt3_diff_example_2.png" width="400"
+      alt="微分的例子2" />
+      <figcaption aria-hidden="true">微分的例子2</figcaption>
+      </figure>
+      </div>
+      </div>
+      <h3 id="微分与导数">3.1.1 微分与导数</h3>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p>在研究实际问题的时候, 我们经常关心两个微分之间的关系. 例如,
+      设想我们需要控制一个机械手臂在黑板上画图, 粉笔移动一个小位移,
+      机械臂的各个关节也要相应的移动一个小量.
+      我们可以把关节移动的小量认为是 <span
+      class="math inline">dx</span>, 粉笔移动的小量认为是 <span
+      class="math inline">dy</span>.
+      很多时候我们关心两个微分之间的联动关系, 比如在机器人控制领域, 给定
+      <span class="math inline">dx</span> 计算 <span
+      class="math inline">dy</span> 叫做<strong>正动力学</strong>, 给定
+      <span class="math inline">dy</span> 计算 <span
+      class="math inline">dx</span> 叫做<strong>逆动力学</strong>.
+      又比如在例1中 <span class="math inline">dx</span> 与 <span
+      class="math inline">dt</span>
+      的关系反映了物体的位移随时间的变化关系; 例2中 <span
+      class="math inline">dx</span> 与 <span
+      class="math inline">d\theta</span>
+      的关系反映了激光光斑的位置随发射角度之间的变化关系,
+      这些都是物理中所关心的量.</p>
+      <p>那么如何确定两个微分之间的关系呢?
+      如果我们能够写出两个变量之间所满足的<strong>函数关系</strong>,
+      很容易就可以得到这两个变量所对应的微分之间的关系,
+      这是<strong>微分学</strong>的一个重要成就.</p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">微分与导数的关系</span></div>
+      <div class="callout-body">
+      <p>一般的, 假定两个变量 <span class="math inline">x</span>, <span
+      class="math inline">y</span> 满足函数关系 <span
+      class="math inline">y = f(x)</span>, 则 <span
+      class="math inline">dy = f&#39;(x) dx</span>.</p>
+      </div>
+      </div>
+      <div id="chpt3-ex-001" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例1</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">微分</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>对于匀速运动 <span class="math inline">s = s_0 + vt</span>
+      和初速度为零的匀加速运动 <span class="math inline">s = s_0 +
+      \frac{1}{2}at^2</span>，利用微分公式分别写出位移微分 <span
+      class="math inline">ds</span> 与时间微分 <span
+      class="math inline">dt</span>
+      之间的关系，并说明线性函数情形下微分给出精确值的原因。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-001-frame" data-panel="chpt3-ex-001-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-001-frame" data-panel="chpt3-ex-001-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-001-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-001-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>对函数 <span class="math inline">s = f(t)</span> 应用微分公式
+      <span class="math inline">ds =
+      f&#39;(t)\,dt</span>，分别对两个运动函数求导。</p>
+      </div>
+      <div id="chpt3-ex-001-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><strong>匀速运动</strong>：<span class="math inline">s = s_0 +
+      vt</span>，求导得 <span class="math inline">s&#39;(t) =
+      v</span>，故</p>
+      <p><span class="math display">
+      ds = v\,dt.
+      </span></p>
+      <p>对于线性函数，<span class="math inline">\Delta s = v\Delta
+      t</span>
+      精确成立（无误差），因为线性函数的差分与微分完全相等：<span
+      class="math inline">\Delta s - ds = 0</span>。</p>
+      <p><strong>匀加速运动</strong>：<span class="math inline">s = s_0
+      + \frac{1}{2}at^2</span>，求导得 <span
+      class="math inline">s&#39;(t) = at</span>，故</p>
+      <p><span class="math display">
+      ds = at\,dt.
+      </span></p>
+      <p>此时真实增量 <span class="math inline">\Delta s = at\Delta t +
+      \frac{1}{2}a(\Delta t)^2</span>，而微分预测值为 <span
+      class="math inline">at\Delta t</span>，误差为 <span
+      class="math inline">\frac{1}{2}a(\Delta t)^2</span>。当 <span
+      class="math inline">\Delta t \to 0</span>
+      时，误差趋于零，体现了”化曲为直”的思想。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt3-ex-002" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例2</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">微分</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>激光从原点以角度 <span class="math inline">\theta</span>
+      射出，与直线 <span class="math inline">y = b</span> 的交点横坐标为
+      <span class="math inline">x =
+      \dfrac{b}{\tan\theta}</span>，激光飞行距离为 <span
+      class="math inline">l =
+      \dfrac{b}{\sin\theta}</span>。利用微分公式，分别求 <span
+      class="math inline">dx</span> 与 <span
+      class="math inline">d\theta</span>、<span
+      class="math inline">dl</span> 与 <span
+      class="math inline">d\theta</span> 的关系，并由此计算 <span
+      class="math inline">\dfrac{dx}{dl}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-002-frame" data-panel="chpt3-ex-002-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-002-frame" data-panel="chpt3-ex-002-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-002-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-002-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>对 <span class="math inline">x</span> 和 <span
+      class="math inline">l</span> 分别关于 <span
+      class="math inline">\theta</span> 求导，再用微分之比直接求 <span
+      class="math inline">dx/dl</span>。</p>
+      </div>
+      <div id="chpt3-ex-002-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><strong><span class="math inline">dx</span> 与 <span
+      class="math inline">d\theta</span> 的关系</strong>：</p>
+      <p>对 <span class="math inline">x = b/\tan\theta =
+      b\cot\theta</span> 求导：</p>
+      <p><span class="math display">
+      \frac{dx}{d\theta} = -\frac{b}{\sin^2\theta},
+      </span></p>
+      <p>故</p>
+      <p><span class="math display">
+      dx = -\frac{b}{\sin^2\theta}\,d\theta.
+      </span></p>
+      <p><strong><span class="math inline">dl</span> 与 <span
+      class="math inline">d\theta</span> 的关系</strong>：</p>
+      <p>对 <span class="math inline">l = b/\sin\theta</span> 求导：</p>
+      <p><span class="math display">
+      \frac{dl}{d\theta} = -\frac{b\cos\theta}{\sin^2\theta},
+      </span></p>
+      <p>故</p>
+      <p><span class="math display">
+      dl = -\frac{b\cos\theta}{\sin^2\theta}\,d\theta.
+      </span></p>
+      <p><strong>计算 <span
+      class="math inline">dx/dl</span>（利用微分之比）</strong>：</p>
+      <p><span class="math display">
+      \frac{dx}{dl} =
+      \frac{-\dfrac{b}{\sin^2\theta}\,d\theta}{-\dfrac{b\cos\theta}{\sin^2\theta}\,d\theta}
+      = \frac{1}{\cos\theta}.
+      </span></p>
+      <p>因此 <span class="math inline">dx =
+      \dfrac{1}{\cos\theta}\,dl</span>，即出射角每变化 <span
+      class="math inline">dl</span> 长度时，光斑横坐标变化 <span
+      class="math inline">\dfrac{1}{\cos\theta}\,dl</span>。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-warning">
+      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">警告</span></div>
+      <div class="callout-body">
+      <p>接下来我们结合导数的定义来理解微分公式.
+      在上一章中，我们曾从函数图像切线的角度出发，借助极限给出导数的定义:</p>
+      <p><span class="math display">
+      f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) -
+      f(x)}{\Delta x}.
+      </span></p>
+      <p>上式的分子就是 <span class="math inline">\Delta y</span>.
+      因此形式上我们有</p>
+      <p><span class="math display">
+      f&#39;(x) = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} =
+      \frac{dy}{dx}
+      </span></p>
+      <p>由此可见，当 <span class="math inline">\Delta x \to 0</span>
+      时，差分商 <span class="math inline">\displaystyle\frac{\Delta
+      y}{\Delta x}</span> 的极限正是微分之商 <span
+      class="math inline">\displaystyle\frac{dy}{dx}</span>。</p>
+      <p>在微积分的逻辑体系内，<span
+      class="math inline">\displaystyle\frac{dy}{dx}</span>
+      最初是一个整体符号代表导数。事实上，我们也常用符号 <span
+      class="math inline">\dfrac{dy}{dx}</span>
+      表示导数，常见的表达方式包括:</p>
+      <p><span class="math display">
+      \frac{dy}{dx} \sim y&#39;(x)
+      </span></p>
+      <p><span class="math display">
+      \frac{df(x)}{dx} \sim f&#39;(x)
+      </span></p>
+      <p><span class="math display">
+      \left. \frac{df(x)}{dx} \right\rvert_{x = x_0} \sim f&#39;(x_0)
+      </span></p>
+      <p>但这里我们形式上将 <span class="math inline">dx</span> 和 <span
+      class="math inline">dy</span>
+      作为独立的“微分”概念，从而将导数的定义式</p>
+      <p><span class="math display">
+      \frac{dy}{dx} = f&#39;(x)
+      </span></p>
+      <p>变形成等式</p>
+      <p><span class="math display">
+      dy = f&#39;(x) dx
+      </span></p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要</span></div>
+      <div class="callout-body">
+      <p>微分公式表明函数值 <span class="math inline">y</span>
+      的微分与自变量 <span class="math inline">x</span>
+      的微分呈线性关系，它的背后体现了<strong>化曲为直</strong>的思想,
+      具体体现在</p>
+      <p><span class="math display">
+      \begin{align*}
+      &amp;\boxed{dy = f&#39;(x_0) dx} \\
+      &amp;\quad \downarrow \\
+      &amp;\boxed{\Delta y \approx f&#39;(x_0) \Delta x} \\
+      &amp;\quad \downarrow \\
+      &amp;\boxed{f(x_0+ \Delta x) - f(x_0) \approx f&#39;(x_0) \Delta
+      x} \\
+      &amp;\quad \downarrow \\
+      &amp;\boxed{f(x_0+ \Delta x) \approx f(x_0) + f&#39;(x_0) \Delta
+      x}
+      \end{align*}
+      </span></p>
+      <figure>
+      <img src="..\media\img\chpt3_diff_linear_approx.png"
+      alt="微分与线性近似" />
+      <figcaption aria-hidden="true">微分与线性近似</figcaption>
+      </figure>
+      <p>最后一个公式说明，函数在 <span class="math inline">x_0</span>
+      附近可近似看作一条过点 <span class="math inline">(x_0,
+      f(x_0))</span>、斜率为 <span
+      class="math inline">f&#39;(x_0)</span> 的<strong>直线</strong>.
+      <strong>在局部用一条直线来近似函数</strong>也就是所谓的<strong>化曲为直</strong>,
+      这是微积分中一个极其重要的思想.</p>
+      </div>
+      </div>
+      <div class="callout callout-warning">
+      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">警告</span></div>
+      <div class="callout-body">
+      <p>基于微分符号所建立的导数定义与运算规则非常直观，在后续课程中，我们将进一步领略<strong>微分</strong>思想的强大力量，并体会良好符号系统为数学带来的美感与实用价值。</p>
+      </div>
+      </div>
+      <h2 id="借助微分计算导数">3.2 借助微分计算导数</h2>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p>借助微分的思想和符号可以帮助我们去处理更加复杂的求导运算,
+      包括复合函数求导和隐函数求导.</p>
+      </div>
+      </div>
+      <h3 id="复合函数求导的链式法则">3.2.1 复合函数求导的链式法则</h3>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p>非常重要!</p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">链式法则 (Chain Rule)</span></div>
+      <div class="callout-body">
+      <p>若函数 <span class="math inline">y = f(u)</span> 在点 <span
+      class="math inline">u = g(x)</span> 可导，且 <span
+      class="math inline">u = g(x)</span> 在点 <span
+      class="math inline">x</span> 可导，则: <span class="math display">
+      [f(g(x))]&#39; = f&#39;(g(x)) g&#39;(x)
+      </span></p>
+      <p>基于微分的思想, 链式法则可以直观的理解为:
+      分子分母同时乘以无穷小量 <span class="math inline">du</span>,
+      得到</p>
+      <p><span class="math display">
+      \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}.
+      </span></p>
+      </div>
+      </div>
+      <div id="chpt3-ex-003" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例3</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">链式法则</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>设函数 <span class="math inline">y =
+      \mathrm{e}^{x^2}</span>，求 <span
+      class="math inline">\dfrac{dy}{dx}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-003-frame" data-panel="chpt3-ex-003-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-003-frame" data-panel="chpt3-ex-003-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-003-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-003-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>将 <span class="math inline">y = \mathrm{e}^{x^2}</span>
+      看作复合函数，令中间变量 <span class="math inline">u =
+      x^2</span>，再用链式法则。</p>
+      </div>
+      <div id="chpt3-ex-003-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>令 <span class="math inline">u = x^2</span>，则 <span
+      class="math inline">y = \mathrm{e}^u</span>，故</p>
+      <p><span class="math display">
+      \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = \mathrm{e}^u
+      \cdot 2x = 2x\mathrm{e}^{x^2}.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt3-ex-004" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例4</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">链式法则</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>设函数 <span class="math inline">y =
+      \cos\dfrac{x^2-1}{3x}</span>，求 <span
+      class="math inline">\dfrac{dy}{dx}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-004-frame" data-panel="chpt3-ex-004-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-004-frame" data-panel="chpt3-ex-004-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-004-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-004-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>令 <span class="math inline">u =
+      \dfrac{x^2-1}{3x}</span>，分别求 <span
+      class="math inline">\dfrac{dy}{du}</span> 和 <span
+      class="math inline">\dfrac{du}{dx}</span>，再用链式法则合并。</p>
+      </div>
+      <div id="chpt3-ex-004-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>令 <span class="math inline">u = \dfrac{x^2-1}{3x}</span>，则
+      <span class="math inline">y = \cos u</span>。</p>
+      <p><span class="math display">
+      \frac{dy}{du} = -\sin u,
+      </span></p>
+      <p><span class="math display">
+      \frac{du}{dx} = \frac{(2x)(3x) - (x^2-1)(3)}{9x^2} = \frac{6x^2 -
+      3x^2 + 3}{9x^2} = \frac{x^2+1}{3x^2}.
+      </span></p>
+      <p>由链式法则：</p>
+      <p><span class="math display">
+      \frac{dy}{dx} = -\sin u \cdot \frac{x^2+1}{3x^2} =
+      -\frac{x^2+1}{3x^2}\sin\frac{x^2-1}{3x}.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt3-ex-005" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例5</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">链式法则</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>设 <span class="math inline">y = \ln\cos x</span>，求 <span
+      class="math inline">\dfrac{dy}{dx}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-005-frame" data-panel="chpt3-ex-005-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-005-frame" data-panel="chpt3-ex-005-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-005-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-005-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>令 <span class="math inline">u = \cos x</span>，则 <span
+      class="math inline">y = \ln u</span>，用链式法则。</p>
+      </div>
+      <div id="chpt3-ex-005-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>令 <span class="math inline">u = \cos x</span>，则 <span
+      class="math inline">y = \ln u</span>。</p>
+      <p><span class="math display">
+      \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = \frac{1}{\cos
+      x} \cdot (-\sin x) = -\tan x.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt3-ex-006" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例6</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">链式法则</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>设 <span class="math inline">y = \sqrt{1 + 3x^3}</span>，求
+      <span class="math inline">\dfrac{dy}{dx}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-006-frame" data-panel="chpt3-ex-006-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-006-frame" data-panel="chpt3-ex-006-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-006-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-006-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>将 <span class="math inline">y = (1+3x^3)^{1/2}</span>
+      视为复合函数，令 <span class="math inline">u =
+      1+3x^3</span>，用链式法则。</p>
+      </div>
+      <div id="chpt3-ex-006-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>令 <span class="math inline">u = 1+3x^3</span>，则 <span
+      class="math inline">y = u^{1/2}</span>。</p>
+      <p><span class="math display">
+      \frac{dy}{du} = \frac{1}{2}u^{-1/2} = \frac{1}{2\sqrt{1+3x^3}},
+      \quad \frac{du}{dx} = 9x^2.
+      </span></p>
+      <p>由链式法则：</p>
+      <p><span class="math display">
+      \frac{dy}{dx} = \frac{1}{2\sqrt{1+3x^3}} \cdot 9x^2 =
+      \frac{9x^2}{2\sqrt{1+3x^3}}.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt3-ex-007" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例7</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">链式法则</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>设 <span class="math inline">y = \ln\sin(2x^2)</span>，求 <span
+      class="math inline">\dfrac{dy}{dx}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-007-frame" data-panel="chpt3-ex-007-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-007-frame" data-panel="chpt3-ex-007-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-007-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-007-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>将函数分解为三层复合：<span class="math inline">y = \ln
+      u</span>，<span class="math inline">u = \sin v</span>，<span
+      class="math inline">v = 2x^2</span>，逐层应用链式法则。</p>
+      </div>
+      <div id="chpt3-ex-007-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>令 <span class="math inline">y = \ln u</span>，<span
+      class="math inline">u = \sin v</span>，<span class="math inline">v
+      = 2x^2</span>。</p>
+      <p><span class="math display">
+      \frac{dy}{dx} = \frac{1}{u} \cdot \cos v \cdot 4x =
+      \frac{\cos(2x^2)}{\sin(2x^2)} \cdot 4x = 4x\cot(2x^2).
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt3-ex-008" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例8</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">链式法则</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>设 <span class="math inline">y =
+      \mathrm{e}^{\cos\sqrt{x}}</span>，求 <span
+      class="math inline">y&#39;</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-008-frame" data-panel="chpt3-ex-008-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-008-frame" data-panel="chpt3-ex-008-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-008-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-008-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>将函数分解为三层复合：<span class="math inline">y =
+      \mathrm{e}^u</span>，<span class="math inline">u = \cos
+      v</span>，<span class="math inline">v =
+      \sqrt{x}</span>，逐层求导后相乘。</p>
+      </div>
+      <div id="chpt3-ex-008-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>令 <span class="math inline">u = \cos\sqrt{x}</span>，<span
+      class="math inline">v = \sqrt{x}</span>。</p>
+      <p><span class="math display">
+      \frac{dy}{du} = \mathrm{e}^u = \mathrm{e}^{\cos\sqrt{x}}, \quad
+      \frac{du}{dv} = -\sin v = -\sin\sqrt{x}, \quad \frac{dv}{dx} =
+      \frac{1}{2\sqrt{x}}.
+      </span></p>
+      <p>由链式法则：</p>
+      <p><span class="math display">
+      y&#39; = \mathrm{e}^{\cos\sqrt{x}} \cdot (-\sin\sqrt{x}) \cdot
+      \frac{1}{2\sqrt{x}} =
+      -\frac{\mathrm{e}^{\cos\sqrt{x}}\sin\sqrt{x}}{2\sqrt{x}}.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt3-ex-009" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例9</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">链式法则</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>设 <span class="math inline">y = \cos 2x \cdot \cos^2
+      x</span>，求 <span class="math inline">y&#39;</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-009-frame" data-panel="chpt3-ex-009-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-009-frame" data-panel="chpt3-ex-009-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-009-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-009-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>用乘积法则求导，对 <span class="math inline">\cos 2x</span> 和
+      <span class="math inline">\cos^2 x</span>
+      分别求导，最后利用二倍角公式化简。</p>
+      </div>
+      <div id="chpt3-ex-009-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      \begin{aligned}
+      y&#39; &amp;= (\cos 2x)&#39;\cos^2 x + \cos 2x(\cos^2 x)&#39; \\
+      &amp;= -2\sin 2x\cos^2 x + \cos 2x \cdot (-2\sin x\cos x) \\
+      &amp;= -2\cos x(\sin 2x\cos x + \cos 2x\sin x) \\
+      &amp;= -2\cos x\sin 3x.
+      \end{aligned}
+      </span></p>
+      <p>（最后一步利用了 <span class="math inline">\sin(2x + x) = \sin
+      2x\cos x + \cos 2x\sin x</span>。）</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <h3 id="隐函数求导">3.2.2 隐函数求导</h3>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p>隐函数将自变量 <span class="math inline">x</span> 和函数值
+      <span class="math inline">y</span> 通过某个等式联系起来,
+      从这个等式里我们可以推测 <span class="math inline">dy</span> 和
+      <span class="math inline">dx</span> 之间的关系,
+      一些复杂的函数的导数通过隐函数更容易计算.</p>
+      </div>
+      </div>
+      <div id="chpt3-ex-010" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例10</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">隐函数</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求由方程 <span class="math inline">\ln y + x^2y - 1 = 0</span>
+      所确定的隐函数的导数 <span
+      class="math inline">\dfrac{dy}{dx}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-010-frame" data-panel="chpt3-ex-010-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-010-frame" data-panel="chpt3-ex-010-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-010-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-010-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>对方程两边关于 <span class="math inline">x</span> 求导，注意
+      <span class="math inline">y</span> 是 <span
+      class="math inline">x</span> 的函数，对含 <span
+      class="math inline">y</span> 的项使用链式法则，再解出 <span
+      class="math inline">\dfrac{dy}{dx}</span>。</p>
+      </div>
+      <div id="chpt3-ex-010-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>对方程两边关于 <span class="math inline">x</span> 求导：</p>
+      <p><span class="math display">
+      \frac{1}{y}\frac{dy}{dx} + 2xy + x^2\frac{dy}{dx} = 0.
+      </span></p>
+      <p>合并含 <span class="math inline">\dfrac{dy}{dx}</span>
+      的项：</p>
+      <p><span class="math display">
+      \left(\frac{1}{y} + x^2\right)\frac{dy}{dx} = -2xy.
+      </span></p>
+      <p>解得（<span class="math inline">y \neq 0</span>）：</p>
+      <p><span class="math display">
+      \frac{dy}{dx} = -\frac{2xy}{\frac{1}{y}+x^2} =
+      -\frac{2xy^2}{1+x^2y}.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt3-ex-011" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例11</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">隐函数</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求由方程 <span class="math inline">y^3 + 3y - x^2 - 2x^5 =
+      0</span> 所确定的隐函数在 <span class="math inline">x = 0</span>
+      处的导数 <span
+      class="math inline">\left.\dfrac{dy}{dx}\right|_{x=0}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-011-frame" data-panel="chpt3-ex-011-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-011-frame" data-panel="chpt3-ex-011-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-011-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-011-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>先对方程两边关于 <span class="math inline">x</span>
+      求导得到一般的导数公式，再求 <span class="math inline">x=0</span>
+      时对应的 <span class="math inline">y</span> 值，最后代入求值。</p>
+      </div>
+      <div id="chpt3-ex-011-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>对方程两边关于 <span class="math inline">x</span> 求导：</p>
+      <p><span class="math display">
+      3y^2\frac{dy}{dx} + 3\frac{dy}{dx} - 2x - 10x^4 = 0.
+      </span></p>
+      <p>解得：</p>
+      <p><span class="math display">
+      \frac{dy}{dx} = \frac{2x + 10x^4}{3y^2 + 3}.
+      </span></p>
+      <p>当 <span class="math inline">x = 0</span> 时，代入原方程 <span
+      class="math inline">y^3 + 3y = 0</span>，即 <span
+      class="math inline">y(y^2+3) = 0</span>，实数解为 <span
+      class="math inline">y = 0</span>。</p>
+      <p>代入导数公式：</p>
+      <p><span class="math display">
+      \left.\frac{dy}{dx}\right|_{x=0} = \frac{0}{0+3} = 0.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt3-ex-012" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例12</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">隐函数</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求双曲线 <span class="math inline">\dfrac{x^2}{9} -
+      \dfrac{y^2}{4} = 1</span> 在点 <span
+      class="math inline">(3\sqrt{2},\, 2)</span> 处的切线方程。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-012-frame" data-panel="chpt3-ex-012-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-012-frame" data-panel="chpt3-ex-012-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-012-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-012-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>对双曲线方程两边关于 <span class="math inline">x</span>
+      隐式求导，解出 <span
+      class="math inline">\dfrac{dy}{dx}</span>，代入切点坐标求斜率，再写切线方程。</p>
+      </div>
+      <div id="chpt3-ex-012-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>对方程两边关于 <span class="math inline">x</span> 求导：</p>
+      <p><span class="math display">
+      \frac{2x}{9} - \frac{2y}{4}\frac{dy}{dx} = 0 \implies
+      \frac{dy}{dx} = \frac{2x}{9y}.
+      </span></p>
+      <p>在点 <span class="math inline">(3\sqrt{2}, 2)</span>
+      处的斜率：</p>
+      <p><span class="math display">
+      k = \frac{2 \times 3\sqrt{2}}{9 \times 2} = \frac{\sqrt{2}}{3}.
+      </span></p>
+      <p>切线方程：</p>
+      <p><span class="math display">
+      y - 2 = \frac{\sqrt{2}}{3}(x - 3\sqrt{2}) \implies \sqrt{2}x - 3y
+      = 0.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <h3 id="反函数求导">3.2.3 反函数求导</h3>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p>反函数求导可以看作是隐函数求导的特例.</p>
+      </div>
+      </div>
+      <div id="chpt3-ex-013" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例13</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">隐函数</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>设 <span class="math inline">y = \arcsin x</span>（<span
+      class="math inline">-1 &lt; x &lt; 1</span>），用隐函数求导法求
+      <span class="math inline">y&#39;</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-013-frame" data-panel="chpt3-ex-013-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-013-frame" data-panel="chpt3-ex-013-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-013-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-013-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>由 <span class="math inline">y = \arcsin x</span> 得 <span
+      class="math inline">x = \sin y</span>，对两边关于 <span
+      class="math inline">x</span> 求导，利用 <span
+      class="math inline">\cos y &gt; 0</span>（当 <span
+      class="math inline">-\pi/2 &lt; y &lt; \pi/2</span>）将结果用
+      <span class="math inline">x</span> 表示。</p>
+      </div>
+      <div id="chpt3-ex-013-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>由 <span class="math inline">y = \arcsin x</span> 得 <span
+      class="math inline">x = \sin y</span>。对两边关于 <span
+      class="math inline">x</span> 求导：</p>
+      <p><span class="math display">
+      1 = \cos y \cdot \frac{dy}{dx}.
+      </span></p>
+      <p>当 <span class="math inline">-\dfrac{\pi}{2} &lt; y &lt;
+      \dfrac{\pi}{2}</span> 时，<span class="math inline">\cos y &gt;
+      0</span>，故 <span class="math inline">\cos y = \sqrt{1-\sin^2 y}
+      = \sqrt{1-x^2}</span>。</p>
+      <p>因此：</p>
+      <p><span class="math display">
+      \frac{dy}{dx} = (\arcsin x)&#39; = \frac{1}{\sqrt{1-x^2}}.
+      </span></p>
+      <p>类似可得 <span class="math inline">(\arccos x)&#39; =
+      -\dfrac{1}{\sqrt{1-x^2}}</span>。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt3-ex-014" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例14</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">隐函数</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>设 <span class="math inline">y = \arctan x</span>（<span
+      class="math inline">x \in \mathbb{R}</span>），用隐函数求导法求
+      <span class="math inline">y&#39;</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-014-frame" data-panel="chpt3-ex-014-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-014-frame" data-panel="chpt3-ex-014-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-014-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-014-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>由 <span class="math inline">y = \arctan x</span> 得 <span
+      class="math inline">x = \tan y</span>，对两边关于 <span
+      class="math inline">x</span> 求导，利用三角恒等式 <span
+      class="math inline">\sec^2 y = 1 + \tan^2 y</span> 将结果用 <span
+      class="math inline">x</span> 表示。</p>
+      </div>
+      <div id="chpt3-ex-014-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>由 <span class="math inline">y = \arctan x</span> 得 <span
+      class="math inline">x = \tan y</span>。对两边关于 <span
+      class="math inline">x</span> 求导：</p>
+      <p><span class="math display">
+      1 = \sec^2 y \cdot \frac{dy}{dx}.
+      </span></p>
+      <p>利用恒等式 <span class="math inline">\sec^2 y = 1 + \tan^2 y =
+      1 + x^2</span>，故：</p>
+      <p><span class="math display">
+      \frac{dy}{dx} = (\arctan x)&#39; = \frac{1}{1+x^2}.
+      </span></p>
+      <p>类似可得 <span class="math inline">(\text{arccot}\, x)&#39; =
+      -\dfrac{1}{1+x^2}</span>。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt3-ex-015" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例15</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">对数求导法</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求 <span class="math inline">y = (x^2)^{\ln x}</span>（<span
+      class="math inline">x &gt; 0</span>）的导数。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-015-frame" data-panel="chpt3-ex-015-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-015-frame" data-panel="chpt3-ex-015-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-015-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-015-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>两边取对数，利用 <span class="math inline">\ln y = 2(\ln
+      x)^2</span>，再对两边关于 <span class="math inline">x</span>
+      求导。</p>
+      </div>
+      <div id="chpt3-ex-015-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>两边取对数：</p>
+      <p><span class="math display">
+      \ln y = \ln x \cdot \ln(x^2) = 2(\ln x)^2.
+      </span></p>
+      <p>两边对 <span class="math inline">x</span> 求导：</p>
+      <p><span class="math display">
+      \frac{1}{y}y&#39; = 4\ln x \cdot \frac{1}{x} = \frac{4\ln x}{x}.
+      </span></p>
+      <p>故：</p>
+      <p><span class="math display">
+      y&#39; = y \cdot \frac{4\ln x}{x} = (x^2)^{\ln x} \cdot \frac{4\ln
+      x}{x}.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt3-ex-016" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例16</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">对数求导法</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求 <span class="math inline">y =
+      \sqrt{\dfrac{(x-1)(x-2)}{(x-4)(x-5)}}</span> 的导数（设 <span
+      class="math inline">x &gt; 5</span>）。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-016-frame" data-panel="chpt3-ex-016-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-016-frame" data-panel="chpt3-ex-016-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-016-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-016-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>两边取对数，将根号和乘除变成加减，再对两边求导。</p>
+      </div>
+      <div id="chpt3-ex-016-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>设 <span class="math inline">x &gt; 5</span>，两边取对数：</p>
+      <p><span class="math display">
+      \ln y = \frac{1}{2}\left[\ln(x-1) + \ln(x-2) - \ln(x-4) -
+      \ln(x-5)\right].
+      </span></p>
+      <p>两边对 <span class="math inline">x</span> 求导：</p>
+      <p><span class="math display">
+      \frac{y&#39;}{y} = \frac{1}{2}\left(\frac{1}{x-1} + \frac{1}{x-2}
+      - \frac{1}{x-4} - \frac{1}{x-5}\right).
+      </span></p>
+      <p>故：</p>
+      <p><span class="math display">
+      y&#39; =
+      \frac{1}{2}\sqrt{\frac{(x-1)(x-2)}{(x-4)(x-5)}}\left(\frac{1}{x-1}
+      + \frac{1}{x-2} - \frac{1}{x-4} - \frac{1}{x-5}\right).
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <h3 id="更多的高阶导数计算">3.2.4 更多的高阶导数计算</h3>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p>微分的思想也可以帮助我们来理解和计算高阶导数, 结合链式法则,
+      我们可以进行更加复杂的计算.</p>
+      </div>
+      </div>
+      <div class="callout callout-caution">
+      <div class="callout-header callout-header-caution"><span class="callout-icon"></span><span class="callout-label">常用记号</span></div>
+      <div class="callout-body">
+      <ul>
+      <li><span class="math inline">f&#39;(x)</span>, <span
+      class="math inline">f&#39;&#39;(x)</span>, <span
+      class="math inline">f&#39;&#39;&#39;(x)</span>, <span
+      class="math inline">f^{(n)}(x)</span>, <span
+      class="math inline">\cdots</span>.</li>
+      <li><span class="math inline">\displaystyle
+      \frac{d}{dx}f(x)</span>, <span class="math inline">\displaystyle
+      \frac{d^2}{dx^2}f(x)</span>, <span
+      class="math inline">\displaystyle \frac{d^3}{dx^3}f(x)</span>,
+      <span class="math inline">\displaystyle
+      \frac{d^{n}}{dx^{n}}f(x)</span>, <span
+      class="math inline">\cdots</span>.</li>
+      </ul>
+      </div>
+      </div>
+      <div id="chpt3-ex-017" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例17</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">高阶导数</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>设 <span class="math inline">y = \cos ax</span>，求 <span
+      class="math inline">y&#39;&#39;</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-017-frame" data-panel="chpt3-ex-017-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-017-frame" data-panel="chpt3-ex-017-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-017-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-017-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>先求一阶导数 <span class="math inline">y&#39;</span>，再对
+      <span class="math inline">y&#39;</span> 求导得 <span
+      class="math inline">y&#39;&#39;</span>。</p>
+      </div>
+      <div id="chpt3-ex-017-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      y&#39; = -a\sin ax.
+      </span></p>
+      <p><span class="math display">
+      y&#39;&#39; = -a \cdot a\cos ax = -a^2\cos ax.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt3-ex-018" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例18</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">高阶导数</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求指数函数 <span class="math inline">y =
+      \mathrm{e}^{kx}</span>（<span class="math inline">k</span>
+      为常数）的 <span class="math inline">n</span> 阶导数。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-018-frame" data-panel="chpt3-ex-018-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-018-frame" data-panel="chpt3-ex-018-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-018-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-018-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>逐步计算一阶、二阶、三阶导数，观察规律，归纳出一般公式。</p>
+      </div>
+      <div id="chpt3-ex-018-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      y&#39; = k\mathrm{e}^{kx}, \quad y&#39;&#39; = k^2\mathrm{e}^{kx},
+      \quad y&#39;&#39;&#39; = k^3\mathrm{e}^{kx}, \quad y^{(4)} =
+      k^4\mathrm{e}^{kx}.
+      </span></p>
+      <p>观察规律：每求导一次多乘一个系数 <span
+      class="math inline">k</span>，故</p>
+      <p><span class="math display">
+      y^{(n)} = k^n\mathrm{e}^{kx}.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt3-ex-019" class="exercise-block"
+      data-difficulty="hard">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-hard">🔴</span><span
+      class="ex-label">例19</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">隐函数</span><span
+      class="ex-tag">高阶导数</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求由方程 <span class="math inline">x + 2y - \dfrac{1}{3}\cos y
+      = 0</span> 所确定的隐函数的二阶导数 <span
+      class="math inline">\dfrac{d^2y}{dx^2}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-019-frame" data-panel="chpt3-ex-019-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-019-frame" data-panel="chpt3-ex-019-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-019-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-019-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>先对原方程关于 <span class="math inline">x</span>
+      求导，解出一阶导数 <span
+      class="math inline">\dfrac{dy}{dx}</span>；再对 <span
+      class="math inline">\dfrac{dy}{dx}</span> 的表达式关于 <span
+      class="math inline">x</span> 求导，代入一阶导数化简。</p>
+      </div>
+      <div id="chpt3-ex-019-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>对原方程两边关于 <span class="math inline">x</span> 求导：</p>
+      <p><span class="math display">
+      1 + 2\frac{dy}{dx} + \frac{1}{3}\sin y \cdot \frac{dy}{dx} = 0,
+      </span></p>
+      <p><span class="math display">
+      \frac{dy}{dx}\left(2 + \frac{1}{3}\sin y\right) = -1,
+      </span></p>
+      <p><span class="math display">
+      \frac{dy}{dx} = \frac{-3}{6+\sin y}.
+      </span></p>
+      <p>对一阶导数再关于 <span class="math inline">x</span> 求导：</p>
+      <p><span class="math display">
+      \frac{d^2y}{dx^2} = \frac{3\cos y \cdot \frac{dy}{dx}}{(6+\sin
+      y)^2} = \frac{3\cos y \cdot \frac{-3}{6+\sin y}}{(6+\sin y)^2} =
+      \frac{-9\cos y}{(6+\sin y)^3}.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p>最后我们回过头来看一下图2中所给出的例子. 上面我们已经得到 <span
+      class="math display">
+      dx = -b \frac{1}{\sin^2 \theta}d\theta, \quad dl = -b \frac{\cos
+      \theta}{\sin^2 \theta}d\theta
+      </span></p>
+      <p>如果我们希望计算 <span class="math inline">dx</span> 与 <span
+      class="math inline">dl</span> 的关系，即 <span
+      class="math inline">\dfrac{dx}{dl}</span>，可以采用以下两种方法:</p>
+      <p><strong>方法一: 建立 x 与 l 的显式函数关系</strong></p>
+      <p>由 <span class="math inline">l = \dfrac{b}{\sin \theta}</span>
+      可得 <span class="math inline">\sin \theta =
+      \dfrac{b}{l}</span>，代入 <span class="math inline">x =
+      \dfrac{b}{\tan \theta} = b\dfrac{\cos \theta}{\sin \theta}</span>
+      得: <span class="math display">
+      \begin{aligned}
+      x &amp;= b \cdot \frac{\cos \theta}{\sin \theta} \\
+      &amp; = b \cdot \frac{\sqrt{1 - \sin^2 \theta}}{\sin \theta}\\
+      &amp; = b \cdot \frac{\sqrt{1 - (b/l)^2}}{b/l} \\
+      &amp; = l \cdot \sqrt{1 - \left(\frac{b}{l}\right)^2}
+      \end{aligned}
+      </span></p>
+      <p>对 <span class="math inline">l</span> 求导得: <span
+      class="math display">
+      \begin{aligned}
+      \frac{dx}{dl} &amp;= \sqrt{1 - \left(\frac{b}{l}\right)^2} + l
+      \cdot \frac{1}{2\sqrt{1 - (b/l)^2}} \cdot \frac{2b^2}{l^3}\\
+      &amp; = \frac{1}{\sqrt{1 - (b/l)^2}} \\
+      &amp; = \frac{1}{\cos \theta}\
+      \end{aligned}
+      </span></p>
+      <p>因此 <span class="math inline">dx = \dfrac{1}{\cos \theta}
+      dl</span>。</p>
+      <p><strong>方法二: 直接利用微分之比</strong></p>
+      <p>由 <span class="math inline">dx</span> 和 <span
+      class="math inline">dl</span> 的表达式直接相除: <span
+      class="math display">
+      \frac{dx}{dl} = \frac{-b \frac{1}{\sin^2 \theta}d\theta}{-b
+      \frac{\cos \theta}{\sin^2 \theta}d\theta} = \frac{1}{\cos \theta}
+      </span></p>
+      <p>同样得到 <span class="math inline">dx = \dfrac{1}{\cos \theta}
+      dl</span>。</p>
+      <p>两种方法结果一致，但第二种方法通过直接操作微分，避免了复杂的函数关系和求导过程，显示了微分运算的简洁性与灵活性。在实际问题中，灵活运用微分关系可以大大简化计算，这正是微分思想的强大之处。</p>
+      </div>
+      </div>
+      <h2 id="借助微分计算极限">3.3 借助微分计算极限</h2>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p>借助微分的思想和符号还可以帮助我们去理解一个较为使用的求极限方法:
+      洛必达法则.</p>
+      </div>
+      </div>
+      <h3 id="洛必达法则">3.3.1 洛必达法则</h3>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要</span></div>
+      <div class="callout-body">
+      <p><strong>洛必达法则</strong>是用于计算在不定形式 (未定式, 即:
+      <span class="math inline">\displaystyle\frac{0}{0}</span>或<span
+      class="math inline">\displaystyle\frac{\infty}{\infty}</span>)
+      下极限的有力工具.</p>
+      <p>如果函数 <span class="math inline">f(x)</span> 和 <span
+      class="math inline">g(x)</span> 在点 <span
+      class="math inline">x=c</span>
+      的某个邻域内可导，且在该点附近有:</p>
+      <ul>
+      <li><span class="math inline">f(c) = 0</span> 且 <span
+      class="math inline">g(c) = 0</span> (或 <span
+      class="math inline">f(x)</span> 和 <span
+      class="math inline">g(x)</span> 的极限趋于 <span
+      class="math inline">\infty</span>).</li>
+      <li><span class="math inline">g&#39;(x) ≠ 0</span>.</li>
+      </ul>
+      <p>那么</p>
+      <p><span class="math display">
+      \lim_{x\rightarrow c} \frac{f(x)}{g(x)} = \lim_{x\rightarrow c}
+      \frac{f&#39;(x)}{g&#39;(x)},
+      </span></p>
+      <p>前提是后者的极限存在.</p>
+      <p><strong>注意</strong>: 有时可能需要多次应用洛必达法则, 特别是当
+      <span
+      class="math inline">\displaystyle\frac{f&#39;(x)}{g&#39;(x)}</span>
+      仍然是 <span class="math inline">\displaystyle\frac{0}{0}</span>
+      或 <span
+      class="math inline">\displaystyle\frac{\infty}{\infty}</span>
+      的形式时.</p>
+      </div>
+      </div>
+      <div class="callout callout-warning">
+      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">警告</span></div>
+      <div class="callout-body">
+      <p>下面我们借助微分的思想来理解洛必达法则.</p>
+      <p>当 <span class="math inline">x</span> 充分接近 <span
+      class="math inline">c</span>
+      时，我们可以用函数的线性近似（即微分）来替代原函数。由于 <span
+      class="math inline">f(c) = g(c) = 0</span>，在点 <span
+      class="math inline">c</span> 附近有:</p>
+      <p><span class="math display">
+      f(x) \approx f(c) + f&#39;(c)(x - c) = f&#39;(c)(x - c)
+      </span></p>
+      <p><span class="math display">
+      g(x) \approx g(c) + g&#39;(c)(x - c) = g&#39;(c)(x - c)
+      </span></p>
+      <p>因此，原比式的极限可近似表示为:</p>
+      <p><span class="math display">
+      \frac{f(x)}{g(x)} \approx \frac{f&#39;(c)(x - c)}{g&#39;(c)(x -
+      c)} = \frac{f&#39;(c)}{g&#39;(c)}
+      </span></p>
+      <p>当 <span class="math inline">x \to c</span>
+      时，这一近似将趋于精确。这正是洛必达法则的直观含义——在极限过程中，分子与分母的<strong>变化趋势</strong>由它们在该点的导数之比决定。</p>
+      <p>对于 <span class="math inline">\infty/\infty</span>
+      型未定式，虽然不能直接使用上述推导，但微分思想仍然适用:
+      此时我们比较的是 <span class="math inline">f(x)</span> 与 <span
+      class="math inline">g(x)</span> 在 <span class="math inline">x \to
+      c</span>
+      过程中的<strong>相对变化速率</strong>，而导数正是刻画这种瞬时变化率的工具。</p>
+      <p>需要强调的是，上述推导仅为理解洛必达法则提供了直观的几何图像。严格证明需依赖<strong>柯西中值定理</strong>，该定理能够将
+      <span class="math inline">\dfrac{f&#39;(c)}{g&#39;(c)}</span>
+      替换成 <span
+      class="math inline">\dfrac{f&#39;(\xi)}{g&#39;(\xi)}</span>，其中
+      <span class="math inline">\xi</span> 位于 <span
+      class="math inline">x</span> 与 <span class="math inline">c</span>
+      之间,
+      从而得到使用起来更加灵活的洛必达法则。这部分内容我们放在了后面的章节中.</p>
+      </div>
+      </div>
+      <div id="chpt3-ex-020" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例20</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">洛必达法则</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求 <span class="math inline">\displaystyle\lim_{x \to 0}
+      \frac{\sin ax}{\sin bx}</span>（<span class="math inline">b \neq
+      0</span>）。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-020-frame" data-panel="chpt3-ex-020-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-020-frame" data-panel="chpt3-ex-020-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-020-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-020-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>当 <span class="math inline">x \to 0</span>
+      时，分子分母均趋于零，构成 <span class="math inline">0/0</span>
+      型未定式，直接用洛必达法则。</p>
+      </div>
+      <div id="chpt3-ex-020-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      \lim_{x \to 0} \frac{\sin ax}{\sin bx} = \lim_{x \to 0}
+      \frac{a\cos ax}{b\cos bx} = \frac{a}{b}.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt3-ex-021" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例21</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">洛必达法则</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求 <span class="math inline">\displaystyle\lim_{x \to 1}
+      \frac{x^3 - 3x + 2}{x^3 - x^2 - x + 1}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-021-frame" data-panel="chpt3-ex-021-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-021-frame" data-panel="chpt3-ex-021-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-021-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-021-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>当 <span class="math inline">x \to 1</span>
+      时，分子分母均为零（<span class="math inline">0/0</span>
+      型），需多次应用洛必达法则，但每次应用前先验证仍是未定式。</p>
+      </div>
+      <div id="chpt3-ex-021-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      \lim_{x \to 1} \frac{x^3-3x+2}{x^3-x^2-x+1} = \lim_{x \to 1}
+      \frac{3x^2-3}{3x^2-2x-1} = \lim_{x \to 1} \frac{6x}{6x-2} =
+      \frac{6}{4} = \frac{3}{2}.
+      </span></p>
+      <p>注意：第二次求导后 <span
+      class="math inline">\displaystyle\lim_{x\to 1}\frac{6x}{6x-2} =
+      \frac{3}{2}</span> 已不是未定式，不能再次应用洛必达法则。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt3-ex-022" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例22</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">洛必达法则</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求 <span class="math inline">\displaystyle\lim_{x \to 0}
+      \frac{x - \sin x}{x^3}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-022-frame" data-panel="chpt3-ex-022-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-022-frame" data-panel="chpt3-ex-022-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-022-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-022-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p><span class="math inline">0/0</span>
+      型，需连续应用洛必达法则三次，每次都先确认仍是未定式。</p>
+      </div>
+      <div id="chpt3-ex-022-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      \lim_{x \to 0} \frac{x-\sin x}{x^3} = \lim_{x \to 0} \frac{1-\cos
+      x}{3x^2} = \lim_{x \to 0} \frac{\sin x}{6x} = \frac{1}{6}.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt3-ex-023" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例23</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">洛必达法则</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求 <span class="math inline">\displaystyle\lim_{x \to +\infty}
+      \frac{\dfrac{\pi}{2} - \arctan x}{\dfrac{1}{x}}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-023-frame" data-panel="chpt3-ex-023-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-023-frame" data-panel="chpt3-ex-023-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-023-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-023-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>当 <span class="math inline">x \to +\infty</span> 时，分子
+      <span class="math inline">\dfrac{\pi}{2} - \arctan x \to
+      0</span>，分母 <span class="math inline">\dfrac{1}{x} \to
+      0</span>，构成 <span class="math inline">0/0</span>
+      型，直接用洛必达法则。</p>
+      </div>
+      <div id="chpt3-ex-023-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      \lim_{x \to +\infty} \frac{\frac{\pi}{2}-\arctan x}{\frac{1}{x}} =
+      \lim_{x \to +\infty} \frac{-\frac{1}{1+x^2}}{-\frac{1}{x^2}} =
+      \lim_{x \to +\infty} \frac{x^2}{1+x^2} = 1.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt3-ex-024" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例24</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">洛必达法则</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求 <span class="math inline">\displaystyle\lim_{x \to +\infty}
+      \frac{\ln x}{x^n}</span>（<span class="math inline">n &gt;
+      0</span>）。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-024-frame" data-panel="chpt3-ex-024-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-024-frame" data-panel="chpt3-ex-024-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-024-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-024-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p><span class="math inline">\infty/\infty</span>
+      型未定式，直接用洛必达法则。</p>
+      </div>
+      <div id="chpt3-ex-024-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      \lim_{x \to +\infty} \frac{\ln x}{x^n} = \lim_{x \to +\infty}
+      \frac{\frac{1}{x}}{nx^{n-1}} = \lim_{x \to +\infty} \frac{1}{nx^n}
+      = 0.
+      </span></p>
+      <p>这说明对数函数趋于无穷的速度比任何正幂次的幂函数都慢。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt3-ex-025" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例25</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">洛必达法则</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求 <span class="math inline">\displaystyle\lim_{x \to +\infty}
+      \frac{x^n}{e^{\lambda x}}</span>（<span
+      class="math inline">n</span> 为正整数，<span
+      class="math inline">\lambda &gt; 0</span>）。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-025-frame" data-panel="chpt3-ex-025-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-025-frame" data-panel="chpt3-ex-025-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-025-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-025-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p><span class="math inline">\infty/\infty</span>
+      型，对分子连续求导 <span class="math inline">n</span>
+      次直到分子变为常数，期间分母始终是指数函数。</p>
+      </div>
+      <div id="chpt3-ex-025-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>相继对分子分母求导 <span class="math inline">n</span> 次：</p>
+      <p><span class="math display">
+      \lim_{x \to +\infty} \frac{x^n}{e^{\lambda x}} = \lim_{x \to
+      +\infty} \frac{nx^{n-1}}{\lambda e^{\lambda x}} = \cdots = \lim_{x
+      \to +\infty} \frac{n!}{\lambda^n e^{\lambda x}} = 0.
+      </span></p>
+      <p>这说明指数函数趋于无穷的速度比任何幂函数都快。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt3-ex-026" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例26</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">洛必达法则</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求 <span class="math inline">\displaystyle\lim_{x \to 0^+} x^n
+      \ln x</span>（<span class="math inline">n &gt; 0</span>）。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-026-frame" data-panel="chpt3-ex-026-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-026-frame" data-panel="chpt3-ex-026-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-026-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-026-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>将 <span class="math inline">0 \cdot \infty</span> 型转化为
+      <span class="math inline">\infty/\infty</span>
+      型，再用洛必达法则。</p>
+      </div>
+      <div id="chpt3-ex-026-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      x^n \ln x = \frac{\ln x}{x^{-n}}.
+      </span></p>
+      <p>当 <span class="math inline">x \to 0^+</span> 时，上式是 <span
+      class="math inline">\infty/\infty</span> 型。应用洛必达法则：</p>
+      <p><span class="math display">
+      \lim_{x \to 0^+} x^n \ln x = \lim_{x \to 0^+} \frac{\ln x}{x^{-n}}
+      = \lim_{x \to 0^+} \frac{\frac{1}{x}}{-nx^{-n-1}} = \lim_{x \to
+      0^+}\left(-\frac{x^n}{n}\right) = 0.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt3-ex-027" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例27</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">洛必达法则</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求 <span class="math inline">\displaystyle\lim_{x \to
+      \frac{\pi}{2}} (\sec x - \tan x)</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-027-frame" data-panel="chpt3-ex-027-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-027-frame" data-panel="chpt3-ex-027-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-027-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-027-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>将 <span class="math inline">\infty - \infty</span>
+      型通分转化为 <span class="math inline">0/0</span>
+      型，再用洛必达法则。</p>
+      </div>
+      <div id="chpt3-ex-027-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      \sec x - \tan x = \frac{1-\sin x}{\cos x}.
+      </span></p>
+      <p>当 <span class="math inline">x \to \dfrac{\pi}{2}</span>
+      时，上式是 <span class="math inline">0/0</span> 型。</p>
+      <p><span class="math display">
+      \lim_{x \to \frac{\pi}{2}} \frac{1-\sin x}{\cos x} = \lim_{x \to
+      \frac{\pi}{2}} \frac{-\cos x}{-\sin x} = 0.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt3-ex-028" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例28</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">洛必达法则</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求 <span class="math inline">\displaystyle\lim_{x \to 0^+}
+      x^x</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-028-frame" data-panel="chpt3-ex-028-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-028-frame" data-panel="chpt3-ex-028-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-028-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-028-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p><span class="math inline">0^0</span> 型，取对数转化为 <span
+      class="math inline">0 \cdot \infty</span>
+      型，再利用前一个极限结论。</p>
+      </div>
+      <div id="chpt3-ex-028-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>设 <span class="math inline">y = x^x</span>，则 <span
+      class="math inline">\ln y = x\ln x</span>。</p>
+      <p>当 <span class="math inline">x \to 0^+</span> 时，<span
+      class="math inline">\ln y = x\ln x</span> 是 <span
+      class="math inline">0 \cdot \infty</span> 型，由前面的结论（<span
+      class="math inline">\lim_{x\to 0^+} x\ln x = 0</span>，取 <span
+      class="math inline">n=1</span>）：</p>
+      <p><span class="math display">
+      \lim_{x \to 0^+} \ln y = 0.
+      </span></p>
+      <p>因此：</p>
+      <p><span class="math display">
+      \lim_{x \to 0^+} x^x = \lim_{x \to 0^+} \mathrm{e}^{\ln y} =
+      \mathrm{e}^0 = 1.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt3-ex-029" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例29</span><span class="ex-tags"><span
+      class="ex-tag">导数应用</span><span
+      class="ex-tag">洛必达法则</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求 <span class="math inline">\displaystyle\lim_{x \to 0}
+      \frac{\tan x - x}{x^2 \sin x}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt3-ex-029-frame" data-panel="chpt3-ex-029-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt3-ex-029-frame" data-panel="chpt3-ex-029-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt3-ex-029-frame" class="ex-frame" hidden="">
+      <div id="chpt3-ex-029-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>先用等价无穷小 <span class="math inline">\sin x \sim
+      x</span>（<span class="math inline">x \to 0</span>）替换分母中的
+      <span class="math inline">\sin
+      x</span>，简化分母后再用洛必达法则。</p>
+      </div>
+      <div id="chpt3-ex-029-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>当 <span class="math inline">x \to 0</span> 时，<span
+      class="math inline">\sin x \sim x</span>，故：</p>
+      <p><span class="math display">
+      \lim_{x \to 0} \frac{\tan x - x}{x^2\sin x} = \lim_{x \to 0}
+      \frac{\tan x - x}{x^3}.
+      </span></p>
+      <p>对 <span class="math inline">0/0</span>
+      型连续应用洛必达法则：</p>
+      <p><span class="math display">
+      = \lim_{x \to 0} \frac{\sec^2 x - 1}{3x^2} = \lim_{x \to 0}
+      \frac{2\sec^2 x\tan x}{6x} = \frac{1}{3}\lim_{x \to 0}\frac{\tan
+      x}{x} = \frac{1}{3}.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-warning">
+      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">警告</span></div>
+      <div class="callout-body">
+      <p>后面的章节中, 我们会介绍更加强大的计算极限的工具—泰勒展开.
+      而泰勒展开体现的也是微分的思想.</p>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.docLib = [{"title": "\u5e8f\u8a00", "url": "chapter0.html"}, {"title": "\u7b2c\u4e00\u7ae0: \u6781\u9650", "url": "chapter1.html"}, {"title": "\u7b2c\u4e8c\u7ae0: \u5bfc\u6570", "url": "chapter2.html"}, {"title": "\u7b2c\u4e09\u7ae0: \u5fae\u5206", "url": "chapter3.html"}, {"title": "\u7b2c\u56db\u7ae0: \u79ef\u5206", "url": "chapter4.html"}, {"title": "\u7b2c\u4e94\u7ae0: \u5fae\u5206\u7684\u5e94\u7528", "url": "chapter5.html"}, {"title": "\u7b2c\u516d\u7ae0: \u79ef\u5206\u7684\u5e94\u7528", "url": "chapter6.html"}, {"title": "\u7b2c\u4e03\u7ae0: \u5e38\u5fae\u5206\u65b9\u7a0b", "url": "chapter7.html"}, {"title": "\u7b2c\u516b\u7ae0: \u6570\u503c\u65b9\u6cd5", "url": "chapter8.html"}, {"title": "\u7b2c\u4e5d\u7ae0: \u5411\u91cf\u4e0e\u7a7a\u95f4\u89e3\u6790\u51e0\u4f55", "url": "chapter9.html"}, {"title": "\u7b2c\u5341\u7ae0: \u591a\u5143\u51fd\u6570\u7684\u5fae\u5206", "url": "chapter10.html"}, {"title": "\u7b2c\u5341\u4e00\u7ae0: \u591a\u5143\u51fd\u6570\u7684\u79ef\u5206", "url": "chapter11.html"}, {"title": "\u7b2c\u5341\u4e8c\u7ae0: \u66f2\u7ebf\u79ef\u5206\u548c\u66f2\u9762\u79ef\u5206", "url": "chapter12.html"}, {"title": "\u7b2c\u5341\u4e09\u7ae0: \u65e0\u7a77\u7ea7\u6570", "url": "chapter13.html"}, {"title": "\u7b2c\u5341\u56db\u7ae0: \u504f\u5fae\u5206\u65b9\u7a0b", "url": "chapter14.html"}];
+    window.chpAutonum = "";
+    window.videoUrl = "";
+  </script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

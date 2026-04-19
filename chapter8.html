@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新工科数学分析</title>
+  <meta name="author" content="首师大交叉科学研究院">
+  <meta name="description" content="首都师范大学新工科数学分析">
+  <meta name="keywords" content="高等数学,微积分,数学分析,讲义">
+  
+  
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/chapter.css">
+  <link rel="stylesheet" href="assets/app.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script type="importmap">
+  {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160/examples/jsm/"}}
+  </script>
+</head>
+<body>
+  <div id="sidebar">
+    <div id="doc-nav">
+      <ul id="doc-nav-list"></ul>
+    </div>
+    <div class="nav-divider"></div>
+    <div id="toc-nav">
+      <div class="nav-section-title">Contents</div>
+      <ul>
+      <li><a href="#第八章-数值方法" id="toc-第八章-数值方法">第八章:
+      数值方法</a>
+      <ul>
+      <li><a href="#数值微分" id="toc-数值微分">8.1 数值微分</a></li>
+      <li><a href="#数值积分" id="toc-数值积分">8.2 数值积分</a></li>
+      <li><a href="#常微分方程的数值解法"
+      id="toc-常微分方程的数值解法">8.3 常微分方程的数值解法</a></li>
+      <li><a href="#数值求解微分方程实例"
+      id="toc-数值求解微分方程实例">8.4 数值求解微分方程实例</a></li>
+      </ul></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="overlay" onclick="closeSidebar()"></div>
+
+  <div id="main">
+    <div id="topbar">
+      <button id="sidebar-toggle" onclick="toggleSidebar()" aria-label="Toggle sidebar">&#9776;</button>
+      <span id="topbar-title">新工科数学分析</span>
+      <button id="pdf-btn" onclick="window.print()" title="Print / Save as PDF">&#128438;</button>
+    </div>
+    <div id="video-panel">
+      <button id="video-close-btn" aria-label="Close video">&times;</button>
+      <iframe id="video-frame" src="" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+      <button id="video-close-bottom" onclick="void(0)">&#9650; 收起视频</button>
+    </div>
+    <div id="content">
+      <h1 id="第八章-数值方法">第八章: 数值方法</h1>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p>在实际工程和科学计算中，许多微积分问题无法获得解析解，或者解析表达式过于复杂。数值方法通过离散化近似，为这些问题提供了实用的解决方案。本章介绍三种基本数值方法：数值微分、数值积分和常微分方程的数值解法。</p>
+      </div>
+      </div>
+      <h2 id="数值微分">8.1 数值微分</h2>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p>在实际应用中，我们经常遇到需要计算函数导数的情况，但有时函数表达式复杂，或者只有离散的数据点，这时就需要使用数值微分方法。</p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">差商的基本概念</span></div>
+      <div class="callout-body">
+      <p>数值微分的核心思想是用<strong>差商</strong>来近似<strong>导数</strong>。差商是函数在两个点上的函数值之差与自变量之差的比值。</p>
+      <p><strong>三种基本差商</strong>：</p>
+      <ol type="1">
+      <li><p><strong>前向差商</strong>： <span class="math display">
+      f&#39;(x) \approx \frac{f(x+h)-f(x)}{h}
+      </span></p></li>
+      <li><p><strong>后向差商</strong>： <span class="math display">
+      f&#39;(x) \approx \frac{f(x)-f(x-h)}{h}
+      </span></p></li>
+      <li><p><strong>中心差商</strong>： <span class="math display">
+      f&#39;(x) \approx \frac{f(x+h)-f(x-h)}{2h}
+      </span></p></li>
+      </ol>
+      <p>其中 <span class="math inline">h &gt; 0</span>
+      是一个小的步长。</p>
+      </div>
+      </div>
+      <div class="callout callout-warning">
+      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">差商的几何意义</span></div>
+      <div class="callout-body">
+      <p>从几何角度看，差商实际上是<strong>割线斜率</strong>对<strong>切线斜率</strong>的近似：</p>
+      <ul>
+      <li><p><strong>前向差商</strong>：使用点 <span
+      class="math inline">(x, f(x))</span> 和 <span
+      class="math inline">(x+h, f(x+h))</span> 的割线斜率</p></li>
+      <li><p><strong>后向差商</strong>：使用点 <span
+      class="math inline">(x-h, f(x-h))</span> 和 <span
+      class="math inline">(x, f(x))</span> 的割线斜率</p></li>
+      <li><p><strong>中心差商</strong>：使用点 <span
+      class="math inline">(x-h, f(x-h))</span> 和 <span
+      class="math inline">(x+h, f(x+h))</span> 的割线斜率</p></li>
+      </ul>
+      <p><strong>精度比较</strong>：</p>
+      <ul>
+      <li>前向和后向差商的误差约为 <span
+      class="math inline">O(h)</span></li>
+      <li>中心差商的误差约为 <span
+      class="math inline">O(h^2)</span>，精度更高</li>
+      </ul>
+      </div>
+      </div>
+      <div id="chpt8-ex-001" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例1</span><span class="ex-tags"><span
+      class="ex-tag">偏导数</span><span
+      class="ex-tag">数值方法</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>计算 <span class="math inline">f(x) = x^2</span> 在 <span
+      class="math inline">x=1</span> 处的导数近似值，取步长 <span
+      class="math inline">h=0.1</span>，分别用前向差商、后向差商和中心差商，并与精确值
+      <span class="math inline">f&#39;(1) = 2</span> 比较。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt8-ex-001-frame" data-panel="chpt8-ex-001-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt8-ex-001-frame" data-panel="chpt8-ex-001-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt8-ex-001-frame" class="ex-frame" hidden="">
+      <div id="chpt8-ex-001-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>三种差商公式分别为：前向 <span
+      class="math inline">(f(x+h)-f(x))/h</span>，后向 <span
+      class="math inline">(f(x)-f(x-h))/h</span>，中心 <span
+      class="math inline">(f(x+h)-f(x-h))/(2h)</span>。</p>
+      </div>
+      <div id="chpt8-ex-001-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><strong>精确值</strong>：<span class="math inline">f&#39;(1) =
+      2</span>。</p>
+      <p><strong>前向差商</strong>：</p>
+      <p><span class="math display">
+      \frac{f(1.1)-f(1)}{0.1} = \frac{1.21-1}{0.1} = 2.1.
+      </span></p>
+      <p><strong>后向差商</strong>：</p>
+      <p><span class="math display">
+      \frac{f(1)-f(0.9)}{0.1} = \frac{1-0.81}{0.1} = 1.9.
+      </span></p>
+      <p><strong>中心差商</strong>：</p>
+      <p><span class="math display">
+      \frac{f(1.1)-f(0.9)}{0.2} = \frac{1.21-0.81}{0.2} = 2.0.
+      </span></p>
+      <p>中心差商给出了最精确的结果，与精确值完全一致，因为 <span
+      class="math inline">f(x)=x^2</span>
+      是二次函数，中心差商对二次函数精确成立。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt8-ex-002" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例2</span><span class="ex-tags"><span
+      class="ex-tag">偏导数</span><span
+      class="ex-tag">数值方法</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>对于 <span class="math inline">f(x) = \sin x</span>，在 <span
+      class="math inline">x=0</span> 处计算一阶导数（精确值 <span
+      class="math inline">\cos 0 = 1</span>），分析步长 <span
+      class="math inline">h</span> 对前向差商和中心差商精度的影响。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt8-ex-002-frame" data-panel="chpt8-ex-002-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt8-ex-002-frame" data-panel="chpt8-ex-002-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt8-ex-002-frame" class="ex-frame" hidden="">
+      <div id="chpt8-ex-002-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>分别取 <span class="math inline">h = 0.1, 0.01,
+      0.001</span>，计算两种差商并与精确值对比，观察误差随步长减小的变化趋势。</p>
+      </div>
+      <div id="chpt8-ex-002-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <table>
+      <thead>
+      <tr>
+      <th>步长 <span class="math inline">h</span></th>
+      <th>前向差商</th>
+      <th>绝对误差</th>
+      <th>中心差商</th>
+      <th>绝对误差</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>0.1</td>
+      <td>0.99833</td>
+      <td>0.00167</td>
+      <td>0.99998</td>
+      <td>0.00002</td>
+      </tr>
+      <tr>
+      <td>0.01</td>
+      <td>0.99998</td>
+      <td>0.00002</td>
+      <td>1.00000</td>
+      <td>0.00000</td>
+      </tr>
+      <tr>
+      <td>0.001</td>
+      <td>1.00000</td>
+      <td>0.00000</td>
+      <td>1.00000</td>
+      <td>0.00000</td>
+      </tr>
+      </tbody>
+      </table>
+      <p><strong>结论</strong>： - 步长越小，精度越高。 -
+      中心差商比前向差商精度更高（误差约为 <span
+      class="math inline">O(h^2)</span> vs <span
+      class="math inline">O(h)</span>）。 -
+      但步长过小可能引入数值舍入误差。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">二阶导数的数值计算</span></div>
+      <div class="callout-body">
+      <p>二阶导数可以用以下公式近似： <span class="math display">
+      f&#39;&#39;(x) \approx \frac{f(x+h) - 2f(x) + f(x-h)}{h^2}
+      </span></p>
+      <p><strong>推导</strong>： 将 <span
+      class="math inline">f(x+h)</span> 和 <span
+      class="math inline">f(x-h)</span> 在 <span
+      class="math inline">x</span> 处泰勒展开： <span
+      class="math display">
+      f(x+h) = f(x) + hf&#39;(x) + \frac{h^2}{2}f&#39;&#39;(x) +
+      \frac{h^3}{6}f&#39;&#39;&#39;(x) + \cdots
+      </span> <span class="math display">
+      f(x-h) = f(x) - hf&#39;(x) + \frac{h^2}{2}f&#39;&#39;(x) -
+      \frac{h^3}{6}f&#39;&#39;&#39;(x) + \cdots
+      </span></p>
+      <p>两式相加： <span class="math display">
+      f(x+h) + f(x-h) = 2f(x) + h^2 f&#39;&#39;(x) + O(h^4)
+      </span></p>
+      <p>整理得： <span class="math display">
+      f&#39;&#39;(x) \approx \frac{f(x+h) - 2f(x) + f(x-h)}{h^2}
+      </span></p>
+      </div>
+      </div>
+      <div id="chpt8-ex-003" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例3</span><span class="ex-tags"><span
+      class="ex-tag">偏导数</span><span
+      class="ex-tag">数值方法</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>计算 <span class="math inline">f(x) = x^3</span> 在 <span
+      class="math inline">x=1</span> 处的二阶导数，取 <span
+      class="math inline">h=0.1</span>，并与精确值 <span
+      class="math inline">f&#39;&#39;(1) = 6</span> 比较。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt8-ex-003-frame" data-panel="chpt8-ex-003-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt8-ex-003-frame" data-panel="chpt8-ex-003-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt8-ex-003-frame" class="ex-frame" hidden="">
+      <div id="chpt8-ex-003-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>使用二阶导数数值公式 <span class="math inline">f&#39;&#39;(x)
+      \approx [f(x+h) - 2f(x) + f(x-h)]/h^2</span>。</p>
+      </div>
+      <div id="chpt8-ex-003-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      \frac{f(1.1) - 2f(1) + f(0.9)}{h^2} = \frac{1.331 - 2 +
+      0.729}{0.01} = \frac{0.06}{0.01} = 6.
+      </span></p>
+      <p>结果与精确值 <span class="math inline">f&#39;&#39;(1) =
+      6</span> 完全一致。（<span class="math inline">f(x)=x^3</span>
+      是三次函数，该公式对三次函数精确成立。）</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <h2 id="数值积分">8.2 数值积分</h2>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p>当函数的原函数难以求出，或者只有离散的数据点时，数值积分提供了计算定积分的有效方法。数值积分的基本思想是用简单的函数（如多项式）近似被积函数，然后计算近似函数的积分。</p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">矩形法</span></div>
+      <div class="callout-body">
+      <p>矩形法是数值积分中最简单的方法，它将积分区间分割成若干小区间，用每个小区间左端点或右端点的函数值作为矩形的高。</p>
+      <p><strong>左矩形法</strong>： <span class="math display">
+      \int_a^b f(x)dx \approx h\sum_{i=0}^{n-1} f(x_i)
+      </span> 其中 <span class="math inline">h =
+      \frac{b-a}{n}</span>，<span class="math inline">x_i = a +
+      ih</span></p>
+      <p><strong>右矩形法</strong>： <span class="math display">
+      \int_a^b f(x)dx \approx h\sum_{i=1}^n f(x_i)
+      </span></p>
+      <p><strong>几何意义</strong>：用一系列矩形面积之和近似曲边梯形的面积。</p>
+      </div>
+      </div>
+      <div id="chpt8-ex-004" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例4</span><span class="ex-tags"><span
+      class="ex-tag">偏导数</span><span
+      class="ex-tag">数值方法</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>用左矩形法和右矩形法计算 <span
+      class="math inline">\displaystyle\int_0^1 x^2\,dx</span>，取 <span
+      class="math inline">n=4</span>，并与精确值 <span
+      class="math inline">\dfrac{1}{3} \approx 0.3333</span> 比较。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt8-ex-004-frame" data-panel="chpt8-ex-004-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt8-ex-004-frame" data-panel="chpt8-ex-004-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt8-ex-004-frame" class="ex-frame" hidden="">
+      <div id="chpt8-ex-004-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p><span class="math inline">h =
+      0.25</span>，左矩形法取各区间左端点，右矩形法取各区间右端点，乘以步长后求和。</p>
+      </div>
+      <div id="chpt8-ex-004-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><strong>左矩形法</strong>（<span class="math inline">x_i = 0,
+      0.25, 0.5, 0.75</span>）：</p>
+      <p><span class="math display">
+      0.25 \times [f(0) + f(0.25) + f(0.5) + f(0.75)] = 0.25 \times [0 +
+      0.0625 + 0.25 + 0.5625] = 0.21875.
+      </span></p>
+      <p><strong>右矩形法</strong>（<span class="math inline">x_i =
+      0.25, 0.5, 0.75, 1.0</span>）：</p>
+      <p><span class="math display">
+      0.25 \times [f(0.25) + f(0.5) + f(0.75) + f(1.0)] = 0.25 \times
+      [0.0625 + 0.25 + 0.5625 + 1.0] = 0.46875.
+      </span></p>
+      <p>左矩形法偏小，右矩形法偏大，两者均与精确值有较大误差。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">梯形法</span></div>
+      <div class="callout-body">
+      <p>梯形法用梯形面积代替矩形面积，通常能获得更好的精度。</p>
+      <p><strong>梯形公式</strong>： <span class="math display">
+      \int_a^b f(x)dx \approx \frac{h}{2}[f(a) + 2\sum_{i=1}^{n-1}
+      f(x_i) + f(b)]
+      </span></p>
+      <p><strong>几何意义</strong>：用一系列梯形面积之和近似曲边梯形的面积。</p>
+      <p><strong>推导</strong>： 每个小区间 <span
+      class="math inline">[x_i, x_{i+1}]</span> 上的积分用梯形面积近似：
+      <span class="math display">
+      \int_{x_i}^{x_{i+1}} f(x)dx \approx \frac{h}{2}[f(x_i) +
+      f(x_{i+1})]
+      </span></p>
+      <p>将所有小区间相加即得梯形公式。</p>
+      </div>
+      </div>
+      <div id="chpt8-ex-005" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例5</span><span class="ex-tags"><span
+      class="ex-tag">偏导数</span><span
+      class="ex-tag">数值方法</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>用梯形法计算 <span class="math inline">\displaystyle\int_0^1
+      x^2\,dx</span>，取 <span
+      class="math inline">n=4</span>，并与精确值 <span
+      class="math inline">\dfrac{1}{3}</span> 比较。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt8-ex-005-frame" data-panel="chpt8-ex-005-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt8-ex-005-frame" data-panel="chpt8-ex-005-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt8-ex-005-frame" class="ex-frame" hidden="">
+      <div id="chpt8-ex-005-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>梯形公式：<span class="math inline">\dfrac{h}{2}[f(a) +
+      2\sum_{i=1}^{n-1}f(x_i) + f(b)]</span>，<span
+      class="math inline">h=0.25</span>。</p>
+      </div>
+      <div id="chpt8-ex-005-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      \frac{0.25}{2}[f(0) + 2f(0.25) + 2f(0.5) + 2f(0.75) + f(1.0)]
+      </span></p>
+      <p><span class="math display">
+      = 0.125 \times [0 + 2(0.0625) + 2(0.25) + 2(0.5625) + 1.0] = 0.125
+      \times 2.75 = 0.34375.
+      </span></p>
+      <p>与精确值 <span class="math inline">0.3333</span> 相比，误差约
+      <span class="math inline">0.0104</span>，比矩形法有明显改进。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">辛普森法</span></div>
+      <div class="callout-body">
+      <p>辛普森法用抛物线代替直线来近似被积函数，精度更高。</p>
+      <p><strong>辛普森公式</strong>： <span class="math display">
+      \int_a^b f(x)dx \approx \frac{h}{3}[f(a) + 4\sum_{i=1}^{n/2}
+      f(x_{2i-1}) + 2\sum_{i=1}^{n/2-1} f(x_{2i}) + f(b)]
+      </span></p>
+      <p><strong>要求</strong>：区间等分且 <span
+      class="math inline">n</span> 为偶数</p>
+      <p><strong>几何意义</strong>：每两个相邻小区间上用一条抛物线近似被积函数。</p>
+      </div>
+      </div>
+      <div id="chpt8-ex-006" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例6</span><span class="ex-tags"><span
+      class="ex-tag">偏导数</span><span
+      class="ex-tag">数值方法</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>用辛普森法计算 <span class="math inline">\displaystyle\int_0^1
+      x^2\,dx</span>，取 <span
+      class="math inline">n=4</span>，并与精确值 <span
+      class="math inline">\dfrac{1}{3}</span> 比较。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt8-ex-006-frame" data-panel="chpt8-ex-006-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt8-ex-006-frame" data-panel="chpt8-ex-006-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt8-ex-006-frame" class="ex-frame" hidden="">
+      <div id="chpt8-ex-006-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>辛普森公式：<span class="math inline">\dfrac{h}{3}[f(a) +
+      4f(x_1) + 2f(x_2) + 4f(x_3) + f(b)]</span>（<span
+      class="math inline">n=4</span>，<span
+      class="math inline">h=0.25</span>）。</p>
+      </div>
+      <div id="chpt8-ex-006-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      \frac{0.25}{3}[f(0) + 4f(0.25) + 2f(0.5) + 4f(0.75) + f(1.0)]
+      </span></p>
+      <p><span class="math display">
+      = \frac{0.25}{3}[0 + 4(0.0625) + 2(0.25) + 4(0.5625) + 1.0] =
+      \frac{0.25}{3} \times 4.0 = 0.3333.
+      </span></p>
+      <p>与精确值完全一致，因为 <span class="math inline">x^2</span>
+      是二次多项式，辛普森法对不超过三次的多项式精确成立。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-warning">
+      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">三种数值积分方法的精度比较</span></div>
+      <div class="callout-body">
+      <p>对于 <span class="math inline">\int_0^1 e^x dx = e - 1 \approx
+      1.71828</span>，不同方法的精度比较：</p>
+      <table>
+      <thead>
+      <tr>
+      <th>方法</th>
+      <th><span class="math inline">n=4</span> 时的近似值</th>
+      <th>绝对误差</th>
+      <th>收敛阶</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>左矩形法</td>
+      <td>1.49068</td>
+      <td>0.22760</td>
+      <td><span class="math inline">O(h)</span></td>
+      </tr>
+      <tr>
+      <td>右矩形法</td>
+      <td>1.93637</td>
+      <td>0.21809</td>
+      <td><span class="math inline">O(h)</span></td>
+      </tr>
+      <tr>
+      <td>梯形法</td>
+      <td>1.71339</td>
+      <td>0.00489</td>
+      <td><span class="math inline">O(h^2)</span></td>
+      </tr>
+      <tr>
+      <td>辛普森法</td>
+      <td>1.71832</td>
+      <td>0.00004</td>
+      <td><span class="math inline">O(h^4)</span></td>
+      </tr>
+      </tbody>
+      </table>
+      <p>可见辛普森法的精度最高，梯形法次之，矩形法精度最低。</p>
+      </div>
+      </div>
+      <div class="callout callout-warning">
+      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">数值积分的误差分析</span></div>
+      <div class="callout-body">
+      <p>各种数值积分方法的误差估计：</p>
+      <ul>
+      <li><strong>矩形法</strong>：误差约 <span
+      class="math inline">O(h)</span></li>
+      <li><strong>梯形法</strong>：误差约 <span
+      class="math inline">O(h^2)</span></li>
+      <li><strong>辛普森法</strong>：误差约 <span
+      class="math inline">O(h^4)</span></li>
+      </ul>
+      </div>
+      </div>
+      <h2 id="常微分方程的数值解法">8.3 常微分方程的数值解法</h2>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p>许多实际问题的数学模型是常微分方程，但大多数微分方程无法求得解析解。数值解法通过离散化方法，将连续的微分方程转化为离散的代数方程，从而获得近似解。</p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">欧拉方法</span></div>
+      <div class="callout-body">
+      <p>欧拉方法是最简单、最直观的数值解法，它用切线来近似积分曲线。</p>
+      <p><strong>基本思想</strong>：从初始点出发，沿着该点的切线方向前进一小步，得到下一个近似点。</p>
+      <p><strong>迭代公式</strong>： <span class="math display">
+      y_{n+1} = y_n + hf(x_n, y_n)
+      </span></p>
+      <p>其中： - <span class="math inline">h</span> 是步长 - <span
+      class="math inline">f(x_n, y_n)</span> 是微分方程右端函数在 <span
+      class="math inline">(x_n, y_n)</span> 处的值 - <span
+      class="math inline">y_n</span> 是 <span
+      class="math inline">x_n</span> 处的近似解</p>
+      <p><strong>几何解释</strong>：在每一步，用当前点的切线斜率代替曲线在该点的导数，沿着切线方向前进。</p>
+      </div>
+      </div>
+      <div id="chpt8-ex-007" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例7</span><span class="ex-tags"><span
+      class="ex-tag">偏导数</span><span
+      class="ex-tag">数值方法</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>用欧拉方法求解初值问题</p>
+      <p><span class="math display">
+      \frac{dy}{dx} = y, \quad y(0) = 1
+      </span></p>
+      <p>在区间 <span class="math inline">[0, 1]</span> 上，取步长 <span
+      class="math inline">h = 0.2</span>，精确解为 <span
+      class="math inline">y = e^x</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt8-ex-007-frame" data-panel="chpt8-ex-007-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt8-ex-007-frame" data-panel="chpt8-ex-007-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt8-ex-007-frame" class="ex-frame" hidden="">
+      <div id="chpt8-ex-007-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>欧拉迭代公式：<span class="math inline">y_{n+1} = y_n + h \cdot
+      f(x_n, y_n)</span>，其中 <span class="math inline">f(x, y) =
+      y</span>。</p>
+      </div>
+      <div id="chpt8-ex-007-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>迭代过程：</p>
+      <p><span class="math display">
+      y_1 = 1.0 + 0.2 \times 1.0 = 1.2,\quad y_2 = 1.2 + 0.2 \times 1.2
+      = 1.44,
+      </span></p>
+      <p><span class="math display">
+      y_3 = 1.44 + 0.2 \times 1.44 = 1.728,\quad y_4 = 1.728 + 0.2
+      \times 1.728 = 2.0736,
+      </span></p>
+      <p><span class="math display">
+      y_5 = 2.0736 + 0.2 \times 2.0736 = 2.4883.
+      </span></p>
+      <table>
+      <thead>
+      <tr>
+      <th><span class="math inline">x_n</span></th>
+      <th>欧拉近似 <span class="math inline">y_n</span></th>
+      <th>精确值 <span class="math inline">e^{x_n}</span></th>
+      <th>绝对误差</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>0.0</td>
+      <td>1.0000</td>
+      <td>1.0000</td>
+      <td>0.0000</td>
+      </tr>
+      <tr>
+      <td>0.2</td>
+      <td>1.2000</td>
+      <td>1.2214</td>
+      <td>0.0214</td>
+      </tr>
+      <tr>
+      <td>0.4</td>
+      <td>1.4400</td>
+      <td>1.4918</td>
+      <td>0.0518</td>
+      </tr>
+      <tr>
+      <td>0.6</td>
+      <td>1.7280</td>
+      <td>1.8221</td>
+      <td>0.0941</td>
+      </tr>
+      <tr>
+      <td>0.8</td>
+      <td>2.0736</td>
+      <td>2.2255</td>
+      <td>0.1519</td>
+      </tr>
+      <tr>
+      <td>1.0</td>
+      <td>2.4883</td>
+      <td>2.7183</td>
+      <td>0.2300</td>
+      </tr>
+      </tbody>
+      </table>
+      <p>误差随 <span class="math inline">x</span>
+      增大而积累，步长越小精度越高。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt8-ex-008" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例8</span><span class="ex-tags"><span
+      class="ex-tag">偏导数</span><span
+      class="ex-tag">数值方法</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>对初值问题 <span class="math inline">\dfrac{dy}{dx} =
+      y</span>，<span class="math inline">y(0) =
+      1</span>，用欧拉方法分别取步长 <span class="math inline">h = 0.5,
+      0.2, 0.1, 0.05, 0.01</span>，比较 <span
+      class="math inline">y(1)</span> 的近似值与精确值 <span
+      class="math inline">e \approx 2.7183</span> 的误差。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt8-ex-008-frame" data-panel="chpt8-ex-008-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt8-ex-008-frame" data-panel="chpt8-ex-008-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt8-ex-008-frame" class="ex-frame" hidden="">
+      <div id="chpt8-ex-008-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>对每个步长反复应用欧拉迭代公式至 <span
+      class="math inline">x=1</span>，记录最终近似值并计算误差。</p>
+      </div>
+      <div id="chpt8-ex-008-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <table>
+      <thead>
+      <tr>
+      <th>步长 <span class="math inline">h</span></th>
+      <th><span class="math inline">y(1)</span> 近似值</th>
+      <th>绝对误差</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>0.5</td>
+      <td>2.2500</td>
+      <td>0.4683</td>
+      </tr>
+      <tr>
+      <td>0.2</td>
+      <td>2.4883</td>
+      <td>0.2300</td>
+      </tr>
+      <tr>
+      <td>0.1</td>
+      <td>2.5937</td>
+      <td>0.1246</td>
+      </tr>
+      <tr>
+      <td>0.05</td>
+      <td>2.6533</td>
+      <td>0.0650</td>
+      </tr>
+      <tr>
+      <td>0.01</td>
+      <td>2.7048</td>
+      <td>0.0135</td>
+      </tr>
+      </tbody>
+      </table>
+      <p>随着步长减小，精度逐渐提高，误差约为 <span
+      class="math inline">O(h)</span>。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-warning">
+      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">改进的欧拉方法</span></div>
+      <div class="callout-body">
+      <p>改进的欧拉方法（又称Heun方法）通过使用预测-校正策略来提高精度。</p>
+      <p><strong>计算步骤</strong>： 1.
+      <strong>预测步</strong>：用欧拉方法计算一个初步预测值 <span
+      class="math display">
+         \bar{y}_{n+1} = y_n + hf(x_n, y_n)
+         </span></p>
+      <ol start="2" type="1">
+      <li><strong>校正步</strong>：用预测点的斜率来改进 <span
+      class="math display">
+      y_{n+1} = y_n + \frac{h}{2}[f(x_n, y_n) + f(x_{n+1},
+      \bar{y}_{n+1})]
+      </span></li>
+      </ol>
+      <p><strong>几何解释</strong>：先用欧拉方法预测，然后用两端斜率的平均值来校正。</p>
+      </div>
+      </div>
+      <div id="chpt8-ex-009" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例9</span><span class="ex-tags"><span
+      class="ex-tag">偏导数</span><span
+      class="ex-tag">数值方法</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>用改进欧拉方法（Heun方法）求解初值问题 <span
+      class="math inline">\dfrac{dy}{dx} = y</span>，<span
+      class="math inline">y(0) = 1</span>，取步长 <span
+      class="math inline">h =
+      0.2</span>，计算第一步的近似值，并与普通欧拉方法和精确值 <span
+      class="math inline">e^{0.2} \approx 1.2214</span> 比较。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt8-ex-009-frame" data-panel="chpt8-ex-009-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt8-ex-009-frame" data-panel="chpt8-ex-009-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt8-ex-009-frame" class="ex-frame" hidden="">
+      <div id="chpt8-ex-009-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>改进欧拉法：先预测 <span class="math inline">\bar{y}_1 = y_0 +
+      h f(x_0, y_0)</span>，再校正 <span class="math inline">y_1 = y_0 +
+      \dfrac{h}{2}[f(x_0,y_0) + f(x_1,\bar{y}_1)]</span>。</p>
+      </div>
+      <div id="chpt8-ex-009-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><strong>预测步</strong>：</p>
+      <p><span class="math display">
+      \bar{y}_1 = 1.0 + 0.2 \times 1.0 = 1.2.
+      </span></p>
+      <p><strong>校正步</strong>：</p>
+      <p><span class="math display">
+      y_1 = 1.0 + \frac{0.2}{2}[f(0, 1.0) + f(0.2, 1.2)] = 1.0 + 0.1[1.0
+      + 1.2] = 1.22.
+      </span></p>
+      <p>改进欧拉法结果 <span class="math inline">1.22</span>
+      比普通欧拉法的 <span class="math inline">1.20</span> 更接近精确值
+      <span class="math inline">1.2214</span>，精度有所提升。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt8-ex-010" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例10: 数值解法应用实例</span><span
+      class="ex-tags"><span class="ex-tag">数值方法</span><span
+      class="ex-tag">常微分方程</span><span
+      class="ex-tag">Euler方法</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p><strong>应用1：人口增长模型</strong></p>
+      <p>某地区人口初始为100万，年自然增长率为3%，同时每年净迁入1万人。预测10年后的人口。</p>
+      <p><strong>模型</strong>： <span class="math display">
+      \frac{dP}{dt} = 0.03P + 1, \quad P(0) = 100
+      </span> （单位：万人，时间单位：年）</p>
+      <p>用欧拉方法（<span class="math inline">h = 1</span>
+      年）计算前5年的人口，并与解析解 <span class="math inline">P(t) =
+      \frac{100}{3}(e^{0.03t} - 1) + 100e^{0.03t}</span> 比较。</p>
+      <p><strong>应用2：RC电路充电过程</strong></p>
+      <p>RC电路中，电容初始电压为0，电源电压 <span class="math inline">E
+      = 10V</span>，电阻 <span class="math inline">R =
+      1000\Omega</span>，电容 <span class="math inline">C = 1000\mu
+      F</span>。求电容电压随时间的变化。</p>
+      <p><strong>模型</strong>： <span class="math display">
+      \frac{dV}{dt} = \frac{E - V}{RC}, \quad V(0) = 0
+      </span></p>
+      <p>其中 <span class="math inline">RC = 1000 \times 0.001 =
+      1</span> 秒。</p>
+      <p>用欧拉方法（<span class="math inline">h = 0.2</span>
+      秒）计算前5步，并与解析解 <span class="math inline">V(t) = 10(1 -
+      e^{-t})</span> 比较。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt8-ex-010-frame" data-panel="chpt8-ex-010-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt8-ex-010-frame" data-panel="chpt8-ex-010-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt8-ex-010-frame" class="ex-frame" hidden="">
+      <div id="chpt8-ex-010-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>欧拉方法迭代公式：<span class="math inline">y_{n+1} = y_n + h
+      \cdot f(t_n, y_n)</span>。</p>
+      </div>
+      <div id="chpt8-ex-010-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><strong>应用1：人口增长模型</strong></p>
+      <p>解析解：<span class="math inline">P(t) =
+      \frac{100}{3}(e^{0.03t} - 1) + 100e^{0.03t}</span></p>
+      <p>数值解（欧拉方法，<span class="math inline">h = 1</span>
+      年）：</p>
+      <table>
+      <thead>
+      <tr>
+      <th>年份 <span class="math inline">t</span></th>
+      <th>人口 <span class="math inline">P(t)</span>（数值）</th>
+      <th>人口 <span class="math inline">P(t)</span>（精确）</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>0</td>
+      <td>100.00</td>
+      <td>100.00</td>
+      </tr>
+      <tr>
+      <td>1</td>
+      <td>104.00</td>
+      <td>104.08</td>
+      </tr>
+      <tr>
+      <td>2</td>
+      <td>108.12</td>
+      <td>108.37</td>
+      </tr>
+      <tr>
+      <td>3</td>
+      <td>112.36</td>
+      <td>112.78</td>
+      </tr>
+      <tr>
+      <td>4</td>
+      <td>116.73</td>
+      <td>117.33</td>
+      </tr>
+      <tr>
+      <td>5</td>
+      <td>121.23</td>
+      <td>122.02</td>
+      </tr>
+      <tr>
+      <td>10</td>
+      <td>147.85</td>
+      <td>149.18</td>
+      </tr>
+      </tbody>
+      </table>
+      <p>计算过程： - <span class="math inline">\small P_1 = 100 + 1
+      \times (0.03 \times 100 + 1) = 104</span> - <span
+      class="math inline">\small P_2 = 104 + 1 \times (0.03 \times 104 +
+      1) = 108.12</span> - 依此类推…</p>
+      <p><strong>应用2：RC电路充电过程</strong></p>
+      <p>解析解：<span class="math inline">V(t) = 10(1 -
+      e^{-t})</span></p>
+      <p>数值解（欧拉方法，<span class="math inline">h = 0.2</span>
+      秒）：</p>
+      <table>
+      <thead>
+      <tr>
+      <th>时间 <span class="math inline">t</span> (s)</th>
+      <th>电压 <span class="math inline">V(t)</span>（数值）</th>
+      <th>电压 <span class="math inline">V(t)</span>（精确）</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>0.0</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      </tr>
+      <tr>
+      <td>0.2</td>
+      <td>2.00</td>
+      <td>1.81</td>
+      </tr>
+      <tr>
+      <td>0.4</td>
+      <td>3.60</td>
+      <td>3.30</td>
+      </tr>
+      <tr>
+      <td>0.6</td>
+      <td>4.88</td>
+      <td>4.51</td>
+      </tr>
+      <tr>
+      <td>0.8</td>
+      <td>5.90</td>
+      <td>5.51</td>
+      </tr>
+      <tr>
+      <td>1.0</td>
+      <td>6.72</td>
+      <td>6.32</td>
+      </tr>
+      </tbody>
+      </table>
+      <p>计算过程： - <span class="math inline">V_1 = 0 + 0.2 \times (10
+      - 0)/1 = 2.0</span> - <span class="math inline">V_2 = 2.0 + 0.2
+      \times (10 - 2.0)/1 = 3.6</span> - 依此类推…</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-warning">
+      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">数值解法的优缺点</span></div>
+      <div class="callout-body">
+      <p><strong>优点</strong>： 1.
+      <strong>通用性强</strong>：适用于各种类型的微分方程 2.
+      <strong>实现简单</strong>：算法直观，编程容易 3.
+      <strong>灵活性高</strong>：可以处理复杂的右端函数</p>
+      <p><strong>缺点</strong>： 1.
+      <strong>精度有限</strong>：欧拉方法只有一阶精度 2.
+      <strong>稳定性问题</strong>：步长选择不当可能导致数值不稳定 3.
+      <strong>累积误差</strong>：误差会随着计算步数增加而积累</p>
+      <p><strong>实用建议</strong>： 1.
+      先尝试欧拉方法，了解问题的基本特性 2.
+      对于精度要求高的问题，使用改进欧拉方法或其他高阶方法 3.
+      通过减小步长来检验结果的收敛性 4.
+      对于刚性问题，需要特殊的数值方法</p>
+      </div>
+      </div>
+      <h2 id="数值求解微分方程实例">8.4 数值求解微分方程实例</h2>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p>大部分微分方程都无法解析求解, 运用计算机,
+      我们可以对微分方程进行数值求解.</p>
+      </div>
+      </div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">Lotka-Volterra方程</span></div>
+      <div class="callout-body">
+      <p>[课堂展示] 我们可以很容易的用AI帮助我们写程序, 然后画图.</p>
+      </div>
+      </div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">行星运动方程</span></div>
+      <div class="callout-body">
+      <p>[课堂展示] 我们可以很容易的用AI帮助我们写程序, 然后画图.</p>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.docLib = [{"title": "\u5e8f\u8a00", "url": "chapter0.html"}, {"title": "\u7b2c\u4e00\u7ae0: \u6781\u9650", "url": "chapter1.html"}, {"title": "\u7b2c\u4e8c\u7ae0: \u5bfc\u6570", "url": "chapter2.html"}, {"title": "\u7b2c\u4e09\u7ae0: \u5fae\u5206", "url": "chapter3.html"}, {"title": "\u7b2c\u56db\u7ae0: \u79ef\u5206", "url": "chapter4.html"}, {"title": "\u7b2c\u4e94\u7ae0: \u5fae\u5206\u7684\u5e94\u7528", "url": "chapter5.html"}, {"title": "\u7b2c\u516d\u7ae0: \u79ef\u5206\u7684\u5e94\u7528", "url": "chapter6.html"}, {"title": "\u7b2c\u4e03\u7ae0: \u5e38\u5fae\u5206\u65b9\u7a0b", "url": "chapter7.html"}, {"title": "\u7b2c\u516b\u7ae0: \u6570\u503c\u65b9\u6cd5", "url": "chapter8.html"}, {"title": "\u7b2c\u4e5d\u7ae0: \u5411\u91cf\u4e0e\u7a7a\u95f4\u89e3\u6790\u51e0\u4f55", "url": "chapter9.html"}, {"title": "\u7b2c\u5341\u7ae0: \u591a\u5143\u51fd\u6570\u7684\u5fae\u5206", "url": "chapter10.html"}, {"title": "\u7b2c\u5341\u4e00\u7ae0: \u591a\u5143\u51fd\u6570\u7684\u79ef\u5206", "url": "chapter11.html"}, {"title": "\u7b2c\u5341\u4e8c\u7ae0: \u66f2\u7ebf\u79ef\u5206\u548c\u66f2\u9762\u79ef\u5206", "url": "chapter12.html"}, {"title": "\u7b2c\u5341\u4e09\u7ae0: \u65e0\u7a77\u7ea7\u6570", "url": "chapter13.html"}, {"title": "\u7b2c\u5341\u56db\u7ae0: \u504f\u5fae\u5206\u65b9\u7a0b", "url": "chapter14.html"}];
+    window.chpAutonum = "";
+    window.videoUrl = "";
+  </script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

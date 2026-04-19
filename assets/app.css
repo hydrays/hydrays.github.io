@@ -1,0 +1,706 @@
+/* ── Theme: VLOOK Thinking ──────────────────────────────────── */
+
+:root {
+  /* Wire app vars → VLOOK Thinking variables */
+  --v-bg:       var(--db, #fff);
+  --v-nav-bg:   var(--db, #f8f8f8);
+  --v-tt:       var(--df, #1c1e1f);
+  --v-tt-2:     var(--df-a, #7d868a);
+  --v-tt-3:     var(--df-a, #999);
+  --v-bd:       var(--df02, rgba(28,30,31,0.2));
+  --v-ac:       var(--ac-t1, #298bcc);
+  --v-ac-bg:    var(--ac-t1-a, #ddedf8);
+  --v-hover-bg: var(--df01, rgba(28,30,31,0.1));
+  --v-f-size:   16px;
+}
+
+/* ── Layout ─────────────────────────────────────────────────── */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;  /* body does not scroll — #main handles scrolling */
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  background: var(--v-bg, #fff);
+  color: var(--v-tt, #1c1e1f);
+  font-size: var(--v-f-size, 16px);
+  font-family: var(--v-fm-text, "霞鹜文楷", Georgia, serif);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--v-fm-h, "阿里妈妈东方大楷", "DongFangDaKai", "霞鹜文楷", Georgia, serif);
+}
+
+strong, b {
+  font-weight: 700;
+}
+
+code, pre {
+  font-family: var(--v-fm-code, "Go Mono", GoMono, Consolas, monospace);
+}
+
+/* Sidebar */
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  overflow-y: auto;
+  background: var(--v-nav-bg, #f8f8f8);
+  border-right: 1px solid var(--v-bd, #e0e0e0);
+  padding: 16px 0 32px;
+  z-index: 100;
+  transition: transform 0.25s ease;
+}
+
+#sidebar.hidden {
+  transform: translateX(-260px);
+}
+
+/* Dim overlay for mobile */
+#overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 99;
+}
+#overlay.visible { display: block; }
+
+.nav-section-title {
+  font-size: 0.7em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--v-tt-3, #888);
+  padding: 8px 20px 4px;
+}
+
+.nav-divider {
+  height: 1px;
+  background: var(--v-bd, #e0e0e0);
+  margin: 12px 16px;
+}
+
+/* Chapter navigation list */
+#doc-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#doc-nav-list li a {
+  display: block;
+  padding: 6px 20px;
+  font-size: 0.85em;
+  color: var(--v-tt-2, #555);
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-left: 3px solid transparent;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+#doc-nav-list li a:hover {
+  background: var(--v-hover-bg, rgba(28,30,31,0.1));
+  color: var(--v-ac, #298bcc);
+}
+
+#doc-nav-list li a.current {
+  border-left-color: var(--v-ac, #298bcc);
+  color: var(--v-ac, #298bcc);
+  font-weight: 600;
+  background: var(--v-ac-bg, #ddedf8);
+}
+
+/* Inline TOC sub-list — rendered inside the current chapter's nav-chapter li */
+ul.chapter-toc {
+  list-style: none;
+  margin: 4px 0 4px;
+  padding: 0;
+  border-left: 2px solid var(--v-bd, #e0e0e0);
+  margin-left: 20px;
+  display: none;                        /* whole TOC hidden until chapter clicked */
+}
+.nav-chapter-current.open ul.chapter-toc          { display: block; }
+
+ul.chapter-toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* The top-level sections list is always visible once the chapter is open */
+.nav-chapter-current.open ul.chapter-toc > li > ul { display: block; }
+
+/* Deeper nested lists (subsections, sub-subsections) start hidden */
+ul.chapter-toc > li > ul > li > ul               { display: none; }
+ul.chapter-toc > li > ul > li.open > ul          { display: block; }
+ul.chapter-toc > li > ul > li > ul > li > ul     { display: none; }
+ul.chapter-toc > li > ul > li > ul > li.open > ul { display: block; }
+
+ul.chapter-toc li a {
+  display: block;
+  padding: 3px 8px;
+  font-size: 0.8em;
+  color: var(--v-tt-2, #666);
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color 0.15s, background 0.15s;
+  border-radius: 3px;
+}
+
+/* Hide the duplicate chapter title (top-level anchor) — must come after li a rule */
+ul.chapter-toc > li > a {
+  display: none !important;
+}
+
+/* Expand/collapse arrow on chapter nav entry */
+.nav-chapter-current > a::before {
+  content: "▶ ";
+  font-size: 0.6em;
+  opacity: 0.5;
+}
+.nav-chapter-current.open > a::before {
+  content: "▼ ";
+}
+
+
+ul.chapter-toc li a:hover {
+  color: var(--v-ac, #298bcc);
+  background: var(--v-hover-bg, rgba(28,30,31,0.06));
+}
+
+ul.chapter-toc li a.toc-active {
+  color: var(--v-ac, #298bcc);
+  font-weight: 600;
+}
+
+/* Section level (1.1): base indent */
+ul.chapter-toc > li > ul > li > a {
+  padding-left: 10px !important;
+}
+
+/* Subsection level (1.1.1): extra indent */
+ul.chapter-toc > li > ul > li > ul > li > a {
+  padding-left: 28px !important;
+  font-size: 0.77em;
+  color: var(--v-tt-3, #999);
+}
+
+/* Main content area */
+#main {
+  margin-left: 260px;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 24px;
+  height: 48px;
+  background: var(--v-bg, #fff);
+  border-bottom: 1px solid var(--v-bd, #e0e0e0);
+}
+
+#sidebar-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: var(--v-tt-2, #555);
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: none;   /* shown only on narrow screens */
+}
+
+#topbar-title {
+  font-size: 0.9em;
+  font-weight: 600;
+  color: var(--v-tt-2, #555);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#pdf-btn {
+  background: none;
+  border: none;
+  font-size: 1.1em;
+  cursor: pointer;
+  color: var(--v-tt-2, #555);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+#pdf-btn:hover { background: var(--v-hover-bg, rgba(0,0,0,0.05)); }
+
+#content {
+  max-width: 860px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 40px 80px;
+}
+
+/* ── Math overflow (KaTeX wide equations) ───────────────────── */
+
+.math.display,
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.4em 0;
+}
+
+/* Prevent inline math from causing line overflow */
+.math.inline {
+  word-break: keep-all;
+}
+
+/* ── Callout blocks ─────────────────────────────────────────── */
+
+.callout {
+  border-radius: 6px;
+  margin: 1.2em 0;
+  overflow: hidden;
+  border: 1px solid transparent;
+}
+
+.callout-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  font-size: 0.95em;
+  font-weight: 700;
+  font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", "Source Han Sans CN", sans-serif;
+  letter-spacing: 0.06em;
+}
+
+.callout-icon::before {
+  font-style: normal;
+}
+
+.callout-body {
+  padding: 10px 14px 14px;
+  font-size: 0.95em;
+}
+
+.callout-body > *:first-child { margin-top: 0; }
+.callout-body > *:last-child  { margin-bottom: 0; }
+
+.callout-body > p:first-of-type {
+  text-indent: 2em;
+}
+
+/* Per-type colors */
+.callout-note    { background: #eff6ff; border-color: #bfdbfe; }
+.callout-note    .callout-header { background: #dbeafe; color: #1d4ed8; }
+.callout-note    .callout-icon::before { content: "📝 "; }
+
+.callout-tip     { background: #f0fdf4; border-color: #bbf7d0; }
+.callout-tip     .callout-header { background: #dcfce7; color: #15803d; }
+.callout-tip     .callout-icon::before { content: "💡 "; }
+
+.callout-important { background: #faf5ff; border-color: #e9d5ff; }
+.callout-important .callout-header { background: #f3e8ff; color: #7e22ce; }
+.callout-important .callout-icon::before { content: "⭐ "; }
+
+.callout-warning { background: #fffbeb; border-color: #fde68a; }
+.callout-warning .callout-header { background: #fef3c7; color: #b45309; }
+.callout-warning .callout-icon::before { content: "⚠️ "; }
+
+.callout-caution { background: #fff1f2; border-color: #fecdd3; }
+.callout-caution .callout-header { background: #ffe4e6; color: #be123c; }
+.callout-caution .callout-icon::before { content: "🔥 "; }
+
+.callout-extension { background: #f0f9ff; border-color: #bae6fd; }
+.callout-extension .callout-header { background: #e0f2fe; color: #0369a1; }
+.callout-extension .callout-icon::before { content: "🔭 "; }
+
+
+/* ── Highlighted text ==text== ──────────────────────────────── */
+
+mark {
+  background: #fef08a;
+  color: inherit;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+/* ── Semantic inline spans ──────────────────────────────────── */
+
+/* [text]{.hl} — soft yellow highlight */
+.hl {
+  background: #fef9c3;
+  color: inherit;
+  padding: 0 3px;
+  border-radius: 2px;
+}
+
+/* [text]{.key} — accent-colored key term */
+.key {
+  color: var(--v-ac, #298bcc);
+  font-weight: 600;
+}
+
+/* ── Auto chapter numbering ─────────────────────────────────── */
+
+body.chp-autonum {
+  counter-reset: h2cnt;
+}
+body.chp-autonum h2 {
+  counter-reset: h3cnt;
+  counter-increment: h2cnt;
+}
+body.chp-autonum h2::before {
+  content: counter(h2-cnt) ". ";
+}
+body.chp-autonum h3 {
+  counter-reset: h4cnt;
+  counter-increment: h3cnt;
+}
+body.chp-autonum h3::before {
+  content: counter(h2cnt) "." counter(h3cnt) " ";
+}
+body.chp-autonum h4 {
+  counter-increment: h4cnt;
+}
+body.chp-autonum h4::before {
+  content: counter(h2cnt) "." counter(h3cnt) "." counter(h4cnt) " ";
+}
+
+/* ── Video panel ─────────────────────────────────────────────── */
+
+#video-panel {
+  display: none;
+  max-width: 860px;
+  width: calc(100% - 80px);
+  margin: 16px auto;
+  border-radius: 6px;
+  background: #000;
+  scroll-margin-top: 60px;
+}
+
+#video-frame {
+  display: block;
+  width: 100%;
+  border: none;
+}
+
+#video-panel {
+  position: relative;  /* anchor for the close button */
+}
+
+#video-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 10;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  font-size: 1.1em;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+#video-close-btn:hover { background: rgba(0,0,0,0.85); }
+
+#video-close-bottom {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  background: rgba(0,0,0,0.7);
+  color: #ccc;
+  border: none;
+  font-size: 0.82em;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.15s, color 0.15s;
+}
+#video-close-bottom:hover {
+  background: rgba(0,0,0,0.9);
+  color: #fff;
+}
+
+.video-inline-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 6px 0 14px;
+  padding: 4px 12px;
+  background: none;
+  border: 1px solid var(--v-ac, #298bcc);
+  border-radius: 4px;
+  color: var(--v-ac, #298bcc);
+  font-size: 0.82em;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.video-inline-btn:hover {
+  background: var(--v-ac, #298bcc);
+  color: #fff;
+}
+
+/* ── Print / PDF mode ───────────────────────────────────────── */
+
+@media print {
+  #sidebar, #topbar, #overlay, #video-panel { display: none !important; }
+  #main { margin-left: 0 !important; }
+  #content { max-width: 100% !important; padding: 0 !important; }
+
+  .callout { break-inside: avoid; }
+
+  /* Ensure math doesn't get clipped in PDF */
+  .math.display, .katex-display {
+    overflow: visible !important;
+  }
+}
+
+/* ── Responsive: narrow screens ────────────────────────────── */
+
+@media (max-width: 900px) {
+  #sidebar {
+    transform: translateX(-260px);
+  }
+  #sidebar.open {
+    transform: translateX(0);
+  }
+  #main {
+    margin-left: 0;
+  }
+  #sidebar-toggle {
+    display: block;
+  }
+  #content {
+    padding: 24px 20px 60px;
+  }
+}
+
+/* ── Exercise blocks ─────────────────────────────────────────── */
+
+.exercise-block {
+  border: 1px solid #bfdbfe;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  background: #eff6ff;
+  overflow: hidden;
+}
+
+/* Colored banner — matches [!note] callout header */
+.ex-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 7px 14px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", "Source Han Sans CN", sans-serif;
+  font-weight: 700;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+}
+
+.ex-dot {
+  font-size: 0.65em;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.ex-label {
+  font-weight: 700;
+  font-size: 1em;
+  color: inherit;
+  flex: 1;
+}
+
+/* Body area below banner */
+.ex-body {
+  padding: 0.85rem 1.2rem 1rem;
+}
+
+/* Problem content box with deep-blue left border */
+.ex-problem-box {
+  background: #fff;
+  border: 1px solid #93c5fd;
+  border-left: 3px solid #1d4ed8;
+  border-radius: 4px;
+  padding: 0.55rem 0.9rem 0.55rem 0.85rem;
+  margin-bottom: 0.85rem;
+  line-height: 1.7;
+}
+
+.ex-problem-box > *:first-child { margin-top: 0; }
+.ex-problem-box > *:last-child  { margin-bottom: 0; }
+
+/* "题目：" as plain bold inline text before first paragraph */
+.ex-problem-box > p:first-child::before {
+  content: "题目：";
+  font-weight: 700;
+  font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", sans-serif;
+  color: #1d4ed8;
+  margin-right: 0.1em;
+}
+
+.ex-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+}
+
+.ex-tag {
+  font-size: 0.6em;
+  padding: 1px 5px;
+  border-radius: 8px;
+  background: var(--v-hover-bg, rgba(28,30,31,0.07));
+  color: var(--v-tt-2, #7d868a);
+  letter-spacing: 0.02em;
+}
+
+
+.ex-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Solution rows */
+.ex-sol-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  margin-bottom: 0.3rem;
+}
+
+.ex-sol-label {
+  font-size: 0.88em;
+  font-weight: 600;
+  color: var(--v-tt-2, #7d868a);
+  background: var(--v-hover-bg, rgba(28,30,31,0.06));
+  border: 1px solid var(--v-bd, #e0e0e0);
+  border-radius: 4px;
+  padding: 2px 10px;
+  user-select: none;
+  letter-spacing: 0.03em;
+}
+
+.ex-sol-btns {
+  display: inline-flex;
+  gap: 0;
+}
+
+/* Sticker-tab action buttons: 提示 / 答案 */
+.ex-action-btn {
+  padding: 1px 8px;
+  border: none;
+  border-radius: 3px;
+  font-size: 0.65em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.15s, opacity 0.15s;
+  line-height: 1.6;
+}
+
+.ex-hint-btn {
+  background: #fde68a;
+  color: #78350f;
+  border-radius: 3px 0 0 3px;
+}
+.ex-hint-btn:hover, .ex-hint-btn.active { filter: brightness(0.9); }
+
+.ex-ans-btn {
+  background: #a7f3d0;
+  color: #064e3b;
+  border-radius: 0 3px 3px 0;
+  border-left: 1px solid rgba(0,0,0,0.08);
+}
+.ex-ans-btn:hover, .ex-ans-btn.active { filter: brightness(0.9); }
+
+
+/* Video link */
+.ex-video-btn {
+  padding: 3px 10px;
+  border: 1px solid var(--v-bd, #e0e0e0);
+  border-radius: 12px;
+  color: var(--v-tt-2, #7d868a);
+  font-size: 0.8em;
+  text-decoration: none;
+  transition: border-color 0.15s;
+}
+
+.ex-video-btn:hover {
+  border-color: var(--v-ac, #298bcc);
+  color: var(--v-ac, #298bcc);
+}
+
+/* Fixed content frame */
+.ex-frame {
+  margin-top: 0.75rem;
+  border: 1px solid var(--v-bd, #e0e0e0);
+  border-radius: 4px;
+  background: var(--v-nav-bg, #f8f8f8);
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.ex-panel {
+  padding: 0.75rem 1rem;
+  line-height: 1.75;
+}
+
+/* Hint panel: muted gray, mysterious */
+.ex-hint-panel {
+  background: #e8e8e8;
+  color: #3a3a3a;
+  border-left: 3px solid #d4a72c;
+  font-style: italic;
+}
+
+/* Answer panel: clean white, authoritative */
+.ex-ans-panel {
+  background: #ffffff;
+  color: #111111;
+  border-left: 3px solid #059669;
+}
+
+/* "解答：" inline before the first paragraph of each answer panel */
+.ex-ans-panel > p:first-child::before {
+  content: "解答：";
+  font-weight: 700;
+  font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", sans-serif;
+  color: #065f46;
+  margin-right: 0.1em;
+}
+
+.ex-panel p { margin: 0.4em 0; }
+.ex-panel p:first-child { margin-top: 0; }
+.ex-panel p:last-child { margin-bottom: 0; }

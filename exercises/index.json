@@ -1,0 +1,2496 @@
+[
+  {
+    "id": "chpt1-ex-001",
+    "chapter": 1,
+    "tags": [
+      "数列极限",
+      "极限"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt1-ex-001.md"
+  },
+  {
+    "id": "chpt1-ex-002",
+    "chapter": 1,
+    "tags": [
+      "数列极限",
+      "极限"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt1-ex-002.md"
+  },
+  {
+    "id": "chpt1-ex-003",
+    "chapter": 1,
+    "tags": [
+      "数列极限",
+      "epsilon-N",
+      "极限"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt1-ex-003.md"
+  },
+  {
+    "id": "chpt1-ex-004",
+    "chapter": 1,
+    "tags": [
+      "数列极限",
+      "epsilon-N",
+      "极限"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt1-ex-004.md"
+  },
+  {
+    "id": "chpt1-ex-005",
+    "chapter": 1,
+    "tags": [
+      "数列极限",
+      "epsilon-N",
+      "极限"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt1-ex-005.md"
+  },
+  {
+    "id": "chpt1-ex-006",
+    "chapter": 1,
+    "tags": [
+      "函数极限",
+      "epsilon-delta",
+      "极限",
+      "连续性"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt1-ex-006.md"
+  },
+  {
+    "id": "chpt1-ex-007",
+    "chapter": 1,
+    "tags": [
+      "函数极限",
+      "极限"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt1-ex-007.md"
+  },
+  {
+    "id": "chpt1-ex-008",
+    "chapter": 1,
+    "tags": [
+      "函数极限",
+      "极限"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt1-ex-008.md"
+  },
+  {
+    "id": "chpt1-ex-009",
+    "chapter": 1,
+    "tags": [
+      "函数极限",
+      "等价无穷小",
+      "极限"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt1-ex-009.md"
+  },
+  {
+    "id": "chpt1-ex-010",
+    "chapter": 1,
+    "tags": [
+      "函数极限",
+      "等价无穷小",
+      "极限"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt1-ex-010.md"
+  },
+  {
+    "id": "chpt1-ex-011",
+    "chapter": 1,
+    "tags": [
+      "函数极限",
+      "等价无穷小",
+      "极限"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt1-ex-011.md"
+  },
+  {
+    "id": "chpt1-ex-012",
+    "chapter": 1,
+    "tags": [
+      "函数极限",
+      "极限"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt1-ex-012.md"
+  },
+  {
+    "id": "chpt1-ex-013",
+    "chapter": 1,
+    "tags": [
+      "函数极限",
+      "等价无穷小",
+      "极限"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt1-ex-013.md"
+  },
+  {
+    "id": "chpt1-ex-014",
+    "chapter": 1,
+    "tags": [
+      "连续性",
+      "函数极限"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt1-ex-014.md"
+  },
+  {
+    "id": "chpt1-ex-015",
+    "chapter": 1,
+    "tags": [
+      "连续性",
+      "间断点",
+      "函数极限"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt1-ex-015.md"
+  },
+  {
+    "id": "chpt1-ex-016",
+    "chapter": 1,
+    "tags": [
+      "连续性",
+      "间断点",
+      "函数极限"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt1-ex-016.md"
+  },
+  {
+    "id": "chpt1-ex-017",
+    "chapter": 1,
+    "tags": [
+      "连续性",
+      "间断点",
+      "函数极限"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt1-ex-017.md"
+  },
+  {
+    "id": "chpt1-ex-018",
+    "chapter": 1,
+    "tags": [
+      "连续性",
+      "间断点"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt1-ex-018.md"
+  },
+  {
+    "id": "chpt1-ex-019",
+    "chapter": 1,
+    "tags": [
+      "连续性",
+      "间断点"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt1-ex-019.md"
+  },
+  {
+    "id": "chpt1-ex-020",
+    "chapter": 1,
+    "tags": [
+      "连续性",
+      "极限"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt1-ex-020.md"
+  },
+  {
+    "id": "chpt1-ex-021",
+    "chapter": 1,
+    "tags": [
+      "函数复合",
+      "复合函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt1-ex-021.md"
+  },
+  {
+    "id": "chpt1-ex-022",
+    "chapter": 1,
+    "tags": [
+      "极限",
+      "epsilon-delta证明"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt1-ex-022.md"
+  },
+  {
+    "id": "chpt1-ex-023",
+    "chapter": 1,
+    "tags": [
+      "极限",
+      "epsilon-delta证明"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt1-ex-023.md"
+  },
+  {
+    "id": "chpt1-ex-024",
+    "chapter": 1,
+    "tags": [
+      "极限",
+      "极限计算"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt1-ex-024.md"
+  },
+  {
+    "id": "chpt10-ex-001",
+    "chapter": 10,
+    "tags": [
+      "多元函数",
+      "极限",
+      "epsilon-delta证明"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt10-ex-001.md"
+  },
+  {
+    "id": "chpt10-ex-002",
+    "chapter": 10,
+    "tags": [
+      "多元函数",
+      "极限",
+      "极限不存在"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt10-ex-002.md"
+  },
+  {
+    "id": "chpt10-ex-003",
+    "chapter": 10,
+    "tags": [
+      "多元函数",
+      "极限",
+      "等价无穷小"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt10-ex-003.md"
+  },
+  {
+    "id": "chpt10-ex-004",
+    "chapter": 10,
+    "tags": [
+      "偏导数",
+      "分段函数",
+      "定义法求导"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt10-ex-004.md"
+  },
+  {
+    "id": "chpt10-ex-005",
+    "chapter": 10,
+    "tags": [
+      "高阶偏导数",
+      "拉普拉斯方程",
+      "验证"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt10-ex-005.md"
+  },
+  {
+    "id": "chpt10-ex-006",
+    "chapter": 10,
+    "tags": [
+      "高阶偏导数",
+      "拉普拉斯方程",
+      "三元函数",
+      "验证"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt10-ex-006.md"
+  },
+  {
+    "id": "chpt10-ex-007",
+    "chapter": 10,
+    "tags": [
+      "全微分",
+      "线性函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt10-ex-007.md"
+  },
+  {
+    "id": "chpt10-ex-008",
+    "chapter": 10,
+    "tags": [
+      "全微分",
+      "高阶无穷小"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt10-ex-008.md"
+  },
+  {
+    "id": "chpt10-ex-009",
+    "chapter": 10,
+    "tags": [
+      "全微分",
+      "应用",
+      "梯形截面"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt10-ex-009.md"
+  },
+  {
+    "id": "chpt10-ex-010",
+    "chapter": 10,
+    "tags": [
+      "梯度",
+      "偏导数",
+      "二元函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt10-ex-010.md"
+  },
+  {
+    "id": "chpt10-ex-011",
+    "chapter": 10,
+    "tags": [
+      "梯度",
+      "方向导数",
+      "三元函数",
+      "最大变化率"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt10-ex-011.md"
+  },
+  {
+    "id": "chpt10-ex-012",
+    "chapter": 10,
+    "tags": [
+      "梯度",
+      "切平面",
+      "法线",
+      "曲面"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt10-ex-012.md"
+  },
+  {
+    "id": "chpt10-ex-013",
+    "chapter": 10,
+    "tags": [
+      "多元极值",
+      "无约束极值",
+      "应用题"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt10-ex-013.md"
+  },
+  {
+    "id": "chpt10-ex-014",
+    "chapter": 10,
+    "tags": [
+      "多元极值",
+      "无约束极值",
+      "应用题",
+      "最省材料"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt10-ex-014.md"
+  },
+  {
+    "id": "chpt10-ex-015",
+    "chapter": 10,
+    "tags": [
+      "多元函数",
+      "点集拓扑",
+      "邻域"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt10-ex-015.md"
+  },
+  {
+    "id": "chpt10-ex-016",
+    "chapter": 10,
+    "tags": [
+      "多元函数",
+      "点集拓扑",
+      "开集"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt10-ex-016.md"
+  },
+  {
+    "id": "chpt10-ex-017",
+    "chapter": 10,
+    "tags": [
+      "偏导数",
+      "高阶导数",
+      "混合偏导数"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt10-ex-017.md"
+  },
+  {
+    "id": "chpt10-ex-018",
+    "chapter": 10,
+    "tags": [
+      "全微分",
+      "复合函数",
+      "链式法则"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt10-ex-018.md"
+  },
+  {
+    "id": "chpt10-ex-019",
+    "chapter": 10,
+    "tags": [
+      "全微分",
+      "微分形式不变性"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt10-ex-019.md"
+  },
+  {
+    "id": "chpt10-ex-020",
+    "chapter": 10,
+    "tags": [
+      "隐函数",
+      "隐函数定理",
+      "偏导数"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt10-ex-020.md"
+  },
+  {
+    "id": "chpt10-ex-021",
+    "chapter": 10,
+    "tags": [
+      "梯度",
+      "方向导数",
+      "多元函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt10-ex-021.md"
+  },
+  {
+    "id": "chpt10-ex-022",
+    "chapter": 10,
+    "tags": [
+      "拉格朗日乘数法",
+      "条件极值",
+      "最优化"
+    ],
+    "difficulty": "hard",
+    "video": null,
+    "source": "chpt10-ex-022.md"
+  },
+  {
+    "id": "chpt11-ex-001",
+    "chapter": 11,
+    "tags": [
+      "二重积分",
+      "累次积分",
+      "矩形区域"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt11-ex-001.md"
+  },
+  {
+    "id": "chpt11-ex-002",
+    "chapter": 11,
+    "tags": [
+      "二重积分",
+      "累次积分",
+      "圆形区域",
+      "三角换元"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt11-ex-002.md"
+  },
+  {
+    "id": "chpt11-ex-003",
+    "chapter": 11,
+    "tags": [
+      "二重积分",
+      "累次积分",
+      "积分顺序交换"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt11-ex-003.md"
+  },
+  {
+    "id": "chpt11-ex-004",
+    "chapter": 11,
+    "tags": [
+      "二重积分",
+      "累次积分",
+      "积分顺序交换"
+    ],
+    "difficulty": "hard",
+    "video": null,
+    "source": "chpt11-ex-004.md"
+  },
+  {
+    "id": "chpt11-ex-005",
+    "chapter": 11,
+    "tags": [
+      "二重积分",
+      "极坐标",
+      "重积分应用"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt11-ex-005.md"
+  },
+  {
+    "id": "chpt11-ex-006",
+    "chapter": 11,
+    "tags": [
+      "二重积分",
+      "极坐标",
+      "重积分应用"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt11-ex-006.md"
+  },
+  {
+    "id": "chpt11-ex-007",
+    "chapter": 11,
+    "tags": [
+      "二重积分",
+      "极坐标",
+      "体积",
+      "重积分应用"
+    ],
+    "difficulty": "hard",
+    "video": null,
+    "source": "chpt11-ex-007.md"
+  },
+  {
+    "id": "chpt11-ex-008",
+    "chapter": 11,
+    "tags": [
+      "二重积分",
+      "换元法",
+      "椭圆面积"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt11-ex-008.md"
+  },
+  {
+    "id": "chpt11-ex-009",
+    "chapter": 11,
+    "tags": [
+      "二重积分",
+      "换元法",
+      "雅可比行列式"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt11-ex-009.md"
+  },
+  {
+    "id": "chpt11-ex-010",
+    "chapter": 11,
+    "tags": [
+      "三重积分",
+      "累次积分"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt11-ex-010.md"
+  },
+  {
+    "id": "chpt11-ex-011",
+    "chapter": 11,
+    "tags": [
+      "三重积分",
+      "柱面坐标"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt11-ex-011.md"
+  },
+  {
+    "id": "chpt11-ex-012",
+    "chapter": 11,
+    "tags": [
+      "二重积分",
+      "极坐标",
+      "换元"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt11-ex-012.md"
+  },
+  {
+    "id": "chpt11-ex-013",
+    "chapter": 11,
+    "tags": [
+      "二重积分",
+      "极坐标",
+      "广义积分"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt11-ex-013.md"
+  },
+  {
+    "id": "chpt12-ex-001",
+    "chapter": 12,
+    "tags": [
+      "曲线积分",
+      "第一类曲线积分",
+      "弧长"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt12-ex-001.md"
+  },
+  {
+    "id": "chpt12-ex-002",
+    "chapter": 12,
+    "tags": [
+      "曲线积分",
+      "第一类曲线积分",
+      "空间曲线",
+      "螺旋线"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt12-ex-002.md"
+  },
+  {
+    "id": "chpt12-ex-003",
+    "chapter": 12,
+    "tags": [
+      "曲线积分",
+      "第二类曲线积分",
+      "参数化"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt12-ex-003.md"
+  },
+  {
+    "id": "chpt12-ex-004",
+    "chapter": 12,
+    "tags": [
+      "曲线积分",
+      "第二类曲线积分",
+      "路径相关"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt12-ex-004.md"
+  },
+  {
+    "id": "chpt12-ex-005",
+    "chapter": 12,
+    "tags": [
+      "曲线积分",
+      "第二类曲线积分",
+      "物理应用",
+      "做功"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt12-ex-005.md"
+  },
+  {
+    "id": "chpt12-ex-006",
+    "chapter": 12,
+    "tags": [
+      "曲线积分",
+      "两类曲线积分关系",
+      "保守场"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt12-ex-006.md"
+  },
+  {
+    "id": "chpt12-ex-007",
+    "chapter": 12,
+    "tags": [
+      "曲线积分",
+      "第二类曲线积分",
+      "路径相关"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt12-ex-007.md"
+  },
+  {
+    "id": "chpt12-ex-008",
+    "chapter": 12,
+    "tags": [
+      "曲线积分",
+      "第二类曲线积分",
+      "路径无关"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt12-ex-008.md"
+  },
+  {
+    "id": "chpt12-ex-009",
+    "chapter": 12,
+    "tags": [
+      "梯度场",
+      "旋度",
+      "保守场判断"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt12-ex-009.md"
+  },
+  {
+    "id": "chpt12-ex-010",
+    "chapter": 12,
+    "tags": [
+      "格林公式",
+      "旋转场",
+      "面积"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt12-ex-010.md"
+  },
+  {
+    "id": "chpt12-ex-011",
+    "chapter": 12,
+    "tags": [
+      "格林公式",
+      "曲线积分",
+      "圆周"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt12-ex-011.md"
+  },
+  {
+    "id": "chpt12-ex-012",
+    "chapter": 12,
+    "tags": [
+      "格林公式",
+      "奇点",
+      "复连通区域"
+    ],
+    "difficulty": "hard",
+    "video": null,
+    "source": "chpt12-ex-012.md"
+  },
+  {
+    "id": "chpt12-ex-013",
+    "chapter": 12,
+    "tags": [
+      "格林公式",
+      "面积公式"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt12-ex-013.md"
+  },
+  {
+    "id": "chpt12-ex-014",
+    "chapter": 12,
+    "tags": [
+      "曲面积分",
+      "通量",
+      "散度定理"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt12-ex-014.md"
+  },
+  {
+    "id": "chpt12-ex-015",
+    "chapter": 12,
+    "tags": [
+      "曲面积分",
+      "高斯公式",
+      "三维散度"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt12-ex-015.md"
+  },
+  {
+    "id": "chpt12-ex-016",
+    "chapter": 12,
+    "tags": [
+      "曲面积分",
+      "高斯公式",
+      "柱面坐标"
+    ],
+    "difficulty": "hard",
+    "video": null,
+    "source": "chpt12-ex-016.md"
+  },
+  {
+    "id": "chpt12-ex-017",
+    "chapter": 12,
+    "tags": [
+      "曲面积分",
+      "高斯公式",
+      "非封闭曲面",
+      "补面法"
+    ],
+    "difficulty": "hard",
+    "video": null,
+    "source": "chpt12-ex-017.md"
+  },
+  {
+    "id": "chpt12-ex-018",
+    "chapter": 12,
+    "tags": [
+      "曲面积分",
+      "高斯公式",
+      "格林公式",
+      "证明"
+    ],
+    "difficulty": "hard",
+    "video": null,
+    "source": "chpt12-ex-018.md"
+  },
+  {
+    "id": "chpt12-ex-019",
+    "chapter": 12,
+    "tags": [
+      "Stokes公式",
+      "三维曲线积分",
+      "斯托克斯定理"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt12-ex-019.md"
+  },
+  {
+    "id": "chpt12-ex-020",
+    "chapter": 12,
+    "tags": [
+      "Stokes公式",
+      "三维曲线积分",
+      "斯托克斯定理"
+    ],
+    "difficulty": "hard",
+    "video": null,
+    "source": "chpt12-ex-020.md"
+  },
+  {
+    "id": "chpt12-ex-021",
+    "chapter": 12,
+    "tags": [
+      "Stokes公式",
+      "三维曲线积分",
+      "旋度"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt12-ex-021.md"
+  },
+  {
+    "id": "chpt12-ex-022",
+    "chapter": 12,
+    "tags": [
+      "旋度",
+      "梯度场",
+      "三维向量场"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt12-ex-022.md"
+  },
+  {
+    "id": "chpt12-ex-023",
+    "chapter": 12,
+    "tags": [
+      "曲线积分",
+      "第一类曲线积分",
+      "弧长",
+      "例题"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt12-ex-023.md"
+  },
+  {
+    "id": "chpt12-ex-024",
+    "chapter": 12,
+    "tags": [
+      "曲线积分",
+      "第二类曲线积分",
+      "例题"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt12-ex-024.md"
+  },
+  {
+    "id": "chpt12-ex-025",
+    "chapter": 12,
+    "tags": [
+      "保守场",
+      "势函数",
+      "旋度",
+      "例题"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt12-ex-025.md"
+  },
+  {
+    "id": "chpt12-ex-026",
+    "chapter": 12,
+    "tags": [
+      "曲面积分",
+      "通量",
+      "球面",
+      "极坐标",
+      "例题"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt12-ex-026.md"
+  },
+  {
+    "id": "chpt13-ex-001",
+    "chapter": 13,
+    "tags": [
+      "级数",
+      "收敛",
+      "几何级数",
+      "部分和"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt13-ex-001.md"
+  },
+  {
+    "id": "chpt13-ex-002",
+    "chapter": 13,
+    "tags": [
+      "级数",
+      "收敛",
+      "几何直观",
+      "圆面积"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt13-ex-002.md"
+  },
+  {
+    "id": "chpt13-ex-003",
+    "chapter": 13,
+    "tags": [
+      "级数",
+      "比较判别法",
+      "收敛性"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt13-ex-003.md"
+  },
+  {
+    "id": "chpt13-ex-004",
+    "chapter": 13,
+    "tags": [
+      "级数",
+      "极限比较判别法",
+      "收敛性"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt13-ex-004.md"
+  },
+  {
+    "id": "chpt13-ex-005",
+    "chapter": 13,
+    "tags": [
+      "级数",
+      "比值判别法",
+      "收敛性"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt13-ex-005.md"
+  },
+  {
+    "id": "chpt13-ex-006",
+    "chapter": 13,
+    "tags": [
+      "交错级数",
+      "Leibniz判别法",
+      "收敛性"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt13-ex-006.md"
+  },
+  {
+    "id": "chpt13-ex-007",
+    "chapter": 13,
+    "tags": [
+      "幂级数",
+      "收敛半径",
+      "收敛域"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt13-ex-007.md"
+  },
+  {
+    "id": "chpt2-ex-001",
+    "chapter": 2,
+    "tags": [
+      "导数",
+      "常数函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt2-ex-001.md"
+  },
+  {
+    "id": "chpt2-ex-002",
+    "chapter": 2,
+    "tags": [
+      "导数",
+      "幂函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt2-ex-002.md"
+  },
+  {
+    "id": "chpt2-ex-003",
+    "chapter": 2,
+    "tags": [
+      "导数",
+      "导函数",
+      "幂函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt2-ex-003.md"
+  },
+  {
+    "id": "chpt2-ex-004",
+    "chapter": 2,
+    "tags": [
+      "导数",
+      "导函数",
+      "三角函数"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt2-ex-004.md"
+  },
+  {
+    "id": "chpt2-ex-005",
+    "chapter": 2,
+    "tags": [
+      "导数",
+      "幂函数",
+      "二项式定理"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt2-ex-005.md"
+  },
+  {
+    "id": "chpt2-ex-006",
+    "chapter": 2,
+    "tags": [
+      "导数",
+      "求导法则",
+      "幂函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt2-ex-006.md"
+  },
+  {
+    "id": "chpt2-ex-007",
+    "chapter": 2,
+    "tags": [
+      "导数",
+      "乘积法则",
+      "三角函数"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt2-ex-007.md"
+  },
+  {
+    "id": "chpt2-ex-008",
+    "chapter": 2,
+    "tags": [
+      "导数",
+      "求导法则",
+      "三角函数",
+      "幂函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt2-ex-008.md"
+  },
+  {
+    "id": "chpt2-ex-009",
+    "chapter": 2,
+    "tags": [
+      "导数",
+      "商法则",
+      "三角函数"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt2-ex-009.md"
+  },
+  {
+    "id": "chpt2-ex-010",
+    "chapter": 2,
+    "tags": [
+      "高阶导数",
+      "幂函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt2-ex-010.md"
+  },
+  {
+    "id": "chpt2-ex-011",
+    "chapter": 2,
+    "tags": [
+      "高阶导数",
+      "幂函数"
+    ],
+    "difficulty": "hard",
+    "video": null,
+    "source": "chpt2-ex-011.md"
+  },
+  {
+    "id": "chpt2-ex-012",
+    "chapter": 2,
+    "tags": [
+      "导数",
+      "单调性",
+      "三角函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt2-ex-012.md"
+  },
+  {
+    "id": "chpt2-ex-013",
+    "chapter": 2,
+    "tags": [
+      "导数",
+      "单调性"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt2-ex-013.md"
+  },
+  {
+    "id": "chpt2-ex-014",
+    "chapter": 2,
+    "tags": [
+      "导数",
+      "极值",
+      "高阶导数",
+      "幂函数"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt2-ex-014.md"
+  },
+  {
+    "id": "chpt2-ex-015",
+    "chapter": 2,
+    "tags": [
+      "导数",
+      "极值",
+      "应用题"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt2-ex-015.md"
+  },
+  {
+    "id": "chpt2-ex-016",
+    "chapter": 2,
+    "tags": [
+      "导数",
+      "极值",
+      "应用题",
+      "链式法则"
+    ],
+    "difficulty": "hard",
+    "video": null,
+    "source": "chpt2-ex-016.md"
+  },
+  {
+    "id": "chpt2-ex-017",
+    "chapter": 2,
+    "tags": [
+      "导数",
+      "凸性",
+      "幂函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt2-ex-017.md"
+  },
+  {
+    "id": "chpt2-ex-018",
+    "chapter": 2,
+    "tags": [
+      "导数",
+      "凸性",
+      "幂函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt2-ex-018.md"
+  },
+  {
+    "id": "chpt2-ex-019",
+    "chapter": 2,
+    "tags": [
+      "导数",
+      "凸性",
+      "对数函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt2-ex-019.md"
+  },
+  {
+    "id": "chpt2-ex-020",
+    "chapter": 2,
+    "tags": [
+      "凸函数",
+      "极值"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt2-ex-020.md"
+  },
+  {
+    "id": "chpt3-ex-001",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "微分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt3-ex-001.md"
+  },
+  {
+    "id": "chpt3-ex-002",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "微分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt3-ex-002.md"
+  },
+  {
+    "id": "chpt3-ex-003",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "链式法则"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt3-ex-003.md"
+  },
+  {
+    "id": "chpt3-ex-004",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "链式法则"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt3-ex-004.md"
+  },
+  {
+    "id": "chpt3-ex-005",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "链式法则"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt3-ex-005.md"
+  },
+  {
+    "id": "chpt3-ex-006",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "链式法则"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt3-ex-006.md"
+  },
+  {
+    "id": "chpt3-ex-007",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "链式法则"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt3-ex-007.md"
+  },
+  {
+    "id": "chpt3-ex-008",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "链式法则"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt3-ex-008.md"
+  },
+  {
+    "id": "chpt3-ex-009",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "链式法则"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt3-ex-009.md"
+  },
+  {
+    "id": "chpt3-ex-010",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "隐函数"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt3-ex-010.md"
+  },
+  {
+    "id": "chpt3-ex-011",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "隐函数"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt3-ex-011.md"
+  },
+  {
+    "id": "chpt3-ex-012",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "隐函数"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt3-ex-012.md"
+  },
+  {
+    "id": "chpt3-ex-013",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "隐函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt3-ex-013.md"
+  },
+  {
+    "id": "chpt3-ex-014",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "隐函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt3-ex-014.md"
+  },
+  {
+    "id": "chpt3-ex-015",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "对数求导法"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt3-ex-015.md"
+  },
+  {
+    "id": "chpt3-ex-016",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "对数求导法"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt3-ex-016.md"
+  },
+  {
+    "id": "chpt3-ex-017",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "高阶导数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt3-ex-017.md"
+  },
+  {
+    "id": "chpt3-ex-018",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "高阶导数"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt3-ex-018.md"
+  },
+  {
+    "id": "chpt3-ex-019",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "隐函数",
+      "高阶导数"
+    ],
+    "difficulty": "hard",
+    "video": null,
+    "source": "chpt3-ex-019.md"
+  },
+  {
+    "id": "chpt3-ex-020",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "洛必达法则"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt3-ex-020.md"
+  },
+  {
+    "id": "chpt3-ex-021",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "洛必达法则"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt3-ex-021.md"
+  },
+  {
+    "id": "chpt3-ex-022",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "洛必达法则"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt3-ex-022.md"
+  },
+  {
+    "id": "chpt3-ex-023",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "洛必达法则"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt3-ex-023.md"
+  },
+  {
+    "id": "chpt3-ex-024",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "洛必达法则"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt3-ex-024.md"
+  },
+  {
+    "id": "chpt3-ex-025",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "洛必达法则"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt3-ex-025.md"
+  },
+  {
+    "id": "chpt3-ex-026",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "洛必达法则"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt3-ex-026.md"
+  },
+  {
+    "id": "chpt3-ex-027",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "洛必达法则"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt3-ex-027.md"
+  },
+  {
+    "id": "chpt3-ex-028",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "洛必达法则"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt3-ex-028.md"
+  },
+  {
+    "id": "chpt3-ex-029",
+    "chapter": 3,
+    "tags": [
+      "导数应用",
+      "洛必达法则"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt3-ex-029.md"
+  },
+  {
+    "id": "chpt4-ex-001",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "黎曼和"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt4-ex-001.md"
+  },
+  {
+    "id": "chpt4-ex-002",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "黎曼和"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt4-ex-002.md"
+  },
+  {
+    "id": "chpt4-ex-003",
+    "chapter": 4,
+    "tags": [
+      "不定积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt4-ex-003.md"
+  },
+  {
+    "id": "chpt4-ex-004",
+    "chapter": 4,
+    "tags": [
+      "不定积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt4-ex-004.md"
+  },
+  {
+    "id": "chpt4-ex-005",
+    "chapter": 4,
+    "tags": [
+      "不定积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt4-ex-005.md"
+  },
+  {
+    "id": "chpt4-ex-006",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "换元法"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt4-ex-006.md"
+  },
+  {
+    "id": "chpt4-ex-007",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "换元法"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt4-ex-007.md"
+  },
+  {
+    "id": "chpt4-ex-008",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "分部积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt4-ex-008.md"
+  },
+  {
+    "id": "chpt4-ex-009",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "分部积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt4-ex-009.md"
+  },
+  {
+    "id": "chpt4-ex-010",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "换元法"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt4-ex-010.md"
+  },
+  {
+    "id": "chpt4-ex-011",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "换元法"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt4-ex-011.md"
+  },
+  {
+    "id": "chpt4-ex-012",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "分部积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt4-ex-012.md"
+  },
+  {
+    "id": "chpt4-ex-013",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "分部积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt4-ex-013.md"
+  },
+  {
+    "id": "chpt5-ex-001",
+    "chapter": 5,
+    "tags": [
+      "中值定理",
+      "拉格朗日中值定理"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt5-ex-001.md"
+  },
+  {
+    "id": "chpt5-ex-002",
+    "chapter": 5,
+    "tags": [
+      "中值定理",
+      "拉格朗日中值定理"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt5-ex-002.md"
+  },
+  {
+    "id": "chpt5-ex-003",
+    "chapter": 5,
+    "tags": [
+      "中值定理",
+      "拉格朗日中值定理"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt5-ex-003.md"
+  },
+  {
+    "id": "chpt5-ex-004",
+    "chapter": 5,
+    "tags": [
+      "中值定理",
+      "拉格朗日中值定理"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt5-ex-004.md"
+  },
+  {
+    "id": "chpt5-ex-005",
+    "chapter": 5,
+    "tags": [
+      "中值定理",
+      "罗尔定理",
+      "柯西中值定理",
+      "拉格朗日中值定理"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt5-ex-005.md"
+  },
+  {
+    "id": "chpt5-ex-006",
+    "chapter": 5,
+    "tags": [
+      "中值定理"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt5-ex-006.md"
+  },
+  {
+    "id": "chpt5-ex-007",
+    "chapter": 5,
+    "tags": [
+      "中值定理"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt5-ex-007.md"
+  },
+  {
+    "id": "chpt5-ex-008",
+    "chapter": 5,
+    "tags": [
+      "中值定理"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt5-ex-008.md"
+  },
+  {
+    "id": "chpt5-ex-009",
+    "chapter": 5,
+    "tags": [
+      "泰勒展开"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt5-ex-009.md"
+  },
+  {
+    "id": "chpt5-ex-010",
+    "chapter": 5,
+    "tags": [
+      "泰勒展开"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt5-ex-010.md"
+  },
+  {
+    "id": "chpt5-ex-011",
+    "chapter": 5,
+    "tags": [
+      "泰勒展开",
+      "L'Hopital法则",
+      "洛必达法则"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt5-ex-011.md"
+  },
+  {
+    "id": "chpt5-ex-012",
+    "chapter": 5,
+    "tags": [
+      "泰勒展开",
+      "L'Hopital法则",
+      "洛必达法则"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt5-ex-012.md"
+  },
+  {
+    "id": "chpt5-ex-013",
+    "chapter": 5,
+    "tags": [
+      "泰勒展开"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt5-ex-013.md"
+  },
+  {
+    "id": "chpt5-ex-014",
+    "chapter": 5,
+    "tags": [
+      "泰勒展开"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt5-ex-014.md"
+  },
+  {
+    "id": "chpt5-ex-015",
+    "chapter": 5,
+    "tags": [
+      "泰勒展开"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt5-ex-015.md"
+  },
+  {
+    "id": "chpt5-ex-016",
+    "chapter": 5,
+    "tags": [
+      "泰勒展开"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt5-ex-016.md"
+  },
+  {
+    "id": "chpt5-ex-017",
+    "chapter": 5,
+    "tags": [
+      "泰勒展开"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt5-ex-017.md"
+  },
+  {
+    "id": "chpt5-ex-018",
+    "chapter": 5,
+    "tags": [
+      "无穷小",
+      "等价无穷小",
+      "大O记号"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt5-ex-018.md"
+  },
+  {
+    "id": "chpt5-ex-019",
+    "chapter": 5,
+    "tags": [
+      "泰勒展开",
+      "误差估计",
+      "拉格朗日余项"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt5-ex-019.md"
+  },
+  {
+    "id": "chpt5-ex-020",
+    "chapter": 5,
+    "tags": [
+      "泰勒展开",
+      "数值计算"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt5-ex-020.md"
+  },
+  {
+    "id": "chpt6-ex-001",
+    "chapter": 6,
+    "tags": [
+      "定积分",
+      "体积"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt6-ex-001.md"
+  },
+  {
+    "id": "chpt6-ex-002",
+    "chapter": 6,
+    "tags": [
+      "定积分",
+      "体积"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt6-ex-002.md"
+  },
+  {
+    "id": "chpt6-ex-003",
+    "chapter": 6,
+    "tags": [
+      "定积分",
+      "体积"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt6-ex-003.md"
+  },
+  {
+    "id": "chpt6-ex-004",
+    "chapter": 6,
+    "tags": [
+      "定积分",
+      "体积"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt6-ex-004.md"
+  },
+  {
+    "id": "chpt6-ex-005",
+    "chapter": 6,
+    "tags": [
+      "定积分",
+      "弧长",
+      "换元法"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt6-ex-005.md"
+  },
+  {
+    "id": "chpt6-ex-006",
+    "chapter": 6,
+    "tags": [
+      "定积分",
+      "弧长"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt6-ex-006.md"
+  },
+  {
+    "id": "chpt6-ex-007",
+    "chapter": 6,
+    "tags": [
+      "定积分",
+      "弧长",
+      "极坐标"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt6-ex-007.md"
+  },
+  {
+    "id": "chpt6-ex-008",
+    "chapter": 6,
+    "tags": [
+      "定积分",
+      "面积"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt6-ex-008.md"
+  },
+  {
+    "id": "chpt6-ex-009",
+    "chapter": 6,
+    "tags": [
+      "定积分",
+      "面积"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt6-ex-009.md"
+  },
+  {
+    "id": "chpt6-ex-010",
+    "chapter": 6,
+    "tags": [
+      "定积分",
+      "面积"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt6-ex-010.md"
+  },
+  {
+    "id": "chpt6-ex-011",
+    "chapter": 6,
+    "tags": [
+      "定积分",
+      "面积"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt6-ex-011.md"
+  },
+  {
+    "id": "chpt6-ex-012",
+    "chapter": 6,
+    "tags": [
+      "定积分",
+      "面积"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt6-ex-012.md"
+  },
+  {
+    "id": "chpt6-ex-013",
+    "chapter": 6,
+    "tags": [
+      "定积分",
+      "面积"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt6-ex-013.md"
+  },
+  {
+    "id": "chpt6-ex-014",
+    "chapter": 6,
+    "tags": [
+      "定积分",
+      "面积"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt6-ex-014.md"
+  },
+  {
+    "id": "chpt6-ex-015",
+    "chapter": 6,
+    "tags": [
+      "定积分",
+      "面积"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt6-ex-015.md"
+  },
+  {
+    "id": "chpt6-ex-016",
+    "chapter": 6,
+    "tags": [
+      "定积分",
+      "面积"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt6-ex-016.md"
+  },
+  {
+    "id": "chpt6-ex-017",
+    "chapter": 6,
+    "tags": [
+      "定积分",
+      "面积"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt6-ex-017.md"
+  },
+  {
+    "id": "chpt7-ex-001",
+    "chapter": 7,
+    "tags": [
+      "常微分方程",
+      "分离变量法"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt7-ex-001.md"
+  },
+  {
+    "id": "chpt7-ex-002",
+    "chapter": 7,
+    "tags": [
+      "常微分方程",
+      "应用",
+      "分离变量法"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt7-ex-002.md"
+  },
+  {
+    "id": "chpt7-ex-003",
+    "chapter": 7,
+    "tags": [
+      "常微分方程",
+      "应用",
+      "金融数学"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt7-ex-003.md"
+  },
+  {
+    "id": "chpt7-ex-004",
+    "chapter": 7,
+    "tags": [
+      "常微分方程",
+      "应用",
+      "环境"
+    ],
+    "difficulty": "hard",
+    "video": null,
+    "source": "chpt7-ex-004.md"
+  },
+  {
+    "id": "chpt8-ex-001",
+    "chapter": 8,
+    "tags": [
+      "偏导数",
+      "数值方法"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt8-ex-001.md"
+  },
+  {
+    "id": "chpt8-ex-002",
+    "chapter": 8,
+    "tags": [
+      "偏导数",
+      "数值方法"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt8-ex-002.md"
+  },
+  {
+    "id": "chpt8-ex-003",
+    "chapter": 8,
+    "tags": [
+      "偏导数",
+      "数值方法"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt8-ex-003.md"
+  },
+  {
+    "id": "chpt8-ex-004",
+    "chapter": 8,
+    "tags": [
+      "偏导数",
+      "数值方法"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt8-ex-004.md"
+  },
+  {
+    "id": "chpt8-ex-005",
+    "chapter": 8,
+    "tags": [
+      "偏导数",
+      "数值方法"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt8-ex-005.md"
+  },
+  {
+    "id": "chpt8-ex-006",
+    "chapter": 8,
+    "tags": [
+      "偏导数",
+      "数值方法"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt8-ex-006.md"
+  },
+  {
+    "id": "chpt8-ex-007",
+    "chapter": 8,
+    "tags": [
+      "偏导数",
+      "数值方法"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt8-ex-007.md"
+  },
+  {
+    "id": "chpt8-ex-008",
+    "chapter": 8,
+    "tags": [
+      "偏导数",
+      "数值方法"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt8-ex-008.md"
+  },
+  {
+    "id": "chpt8-ex-009",
+    "chapter": 8,
+    "tags": [
+      "偏导数",
+      "数值方法"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt8-ex-009.md"
+  },
+  {
+    "id": "chpt8-ex-010",
+    "chapter": 8,
+    "tags": [
+      "数值方法",
+      "常微分方程",
+      "Euler方法"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt8-ex-010.md"
+  },
+  {
+    "id": "chpt9-ex-001",
+    "chapter": 9,
+    "tags": [
+      "二重积分",
+      "极坐标"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt9-ex-001.md"
+  },
+  {
+    "id": "chpt9-ex-002",
+    "chapter": 9,
+    "tags": [
+      "二重积分",
+      "极坐标"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt9-ex-002.md"
+  },
+  {
+    "id": "chpt9-ex-003",
+    "chapter": 9,
+    "tags": [
+      "二重积分",
+      "极坐标"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt9-ex-003.md"
+  },
+  {
+    "id": "chpt9-ex-004",
+    "chapter": 9,
+    "tags": [
+      "二重积分",
+      "极坐标"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt9-ex-004.md"
+  },
+  {
+    "id": "chpt9-ex-005",
+    "chapter": 9,
+    "tags": [
+      "二重积分",
+      "极坐标"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt9-ex-005.md"
+  },
+  {
+    "id": "chpt9-ex-006",
+    "chapter": 9,
+    "tags": [
+      "二重积分",
+      "极坐标"
+    ],
+    "difficulty": "hard",
+    "video": null,
+    "source": "chpt9-ex-006.md"
+  },
+  {
+    "id": "chpt9-ex-007",
+    "chapter": 9,
+    "tags": [
+      "二重积分",
+      "曲面积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt9-ex-007.md"
+  },
+  {
+    "id": "chpt9-ex-008",
+    "chapter": 9,
+    "tags": [
+      "二重积分",
+      "曲面积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt9-ex-008.md"
+  },
+  {
+    "id": "chpt9-ex-009",
+    "chapter": 9,
+    "tags": [
+      "二重积分",
+      "曲线积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt9-ex-009.md"
+  },
+  {
+    "id": "chpt9-ex-010",
+    "chapter": 9,
+    "tags": [
+      "二重积分",
+      "曲线积分"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt9-ex-010.md"
+  },
+  {
+    "id": "chpt9-ex-011",
+    "chapter": 9,
+    "tags": [
+      "二重积分",
+      "曲线积分"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt9-ex-011.md"
+  },
+  {
+    "id": "chpt9-ex-012",
+    "chapter": 9,
+    "tags": [
+      "二重积分",
+      "曲线积分"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt9-ex-012.md"
+  }
+]

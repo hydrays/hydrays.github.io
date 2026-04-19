@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新工科数学分析</title>
+  <meta name="author" content="首师大交叉科学研究院">
+  <meta name="description" content="首都师范大学新工科数学分析">
+  <meta name="keywords" content="高等数学,微积分,数学分析,讲义">
+  
+  
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/chapter.css">
+  <link rel="stylesheet" href="assets/app.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script type="importmap">
+  {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160/examples/jsm/"}}
+  </script>
+</head>
+<body>
+  <div id="sidebar">
+    <div id="doc-nav">
+      <ul id="doc-nav-list"></ul>
+    </div>
+    <div class="nav-divider"></div>
+    <div id="toc-nav">
+      <div class="nav-section-title">Contents</div>
+      <ul>
+      <li><a href="#第六章-积分的应用"
+      id="toc-第六章-积分的应用">第六章: 积分的应用</a>
+      <ul>
+      <li><a href="#几何应用-求体积与弧长"
+      id="toc-几何应用-求体积与弧长">6.1 几何应用: 求体积与弧长</a>
+      <ul>
+      <li><a href="#微元法思想" id="toc-微元法思想">6.1.1
+      微元法思想</a></li>
+      <li><a href="#体积的计算" id="toc-体积的计算">6.1.2
+      体积的计算</a></li>
+      <li><a href="#曲线弧长" id="toc-曲线弧长">6.1.3 曲线弧长</a></li>
+      </ul></li>
+      <li><a href="#物理中的应用-功与能量"
+      id="toc-物理中的应用-功与能量">6.2 物理中的应用: 功与能量</a></li>
+      <li><a href="#概率中的应用" id="toc-概率中的应用">6.3
+      概率中的应用</a></li>
+      <li><a href="#反常积分" id="toc-反常积分">6.4 反常积分</a></li>
+      </ul></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="overlay" onclick="closeSidebar()"></div>
+
+  <div id="main">
+    <div id="topbar">
+      <button id="sidebar-toggle" onclick="toggleSidebar()" aria-label="Toggle sidebar">&#9776;</button>
+      <span id="topbar-title">新工科数学分析</span>
+      <button id="pdf-btn" onclick="window.print()" title="Print / Save as PDF">&#128438;</button>
+    </div>
+    <div id="video-panel">
+      <button id="video-close-btn" aria-label="Close video">&times;</button>
+      <iframe id="video-frame" src="" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+      <button id="video-close-bottom" onclick="void(0)">&#9650; 收起视频</button>
+    </div>
+    <div id="content">
+      <h1 id="第六章-积分的应用">第六章: 积分的应用</h1>
+      <h2 id="几何应用-求体积与弧长">6.1 几何应用: 求体积与弧长</h2>
+      <h3 id="微元法思想">6.1.1 微元法思想</h3>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p>微元法是积分学中解决几何与物理问题的核心思想，它将复杂的整体问题分解为无穷多个简单的局部问题。</p>
+      <p><strong>基本思路</strong>：</p>
+      <ol type="1">
+      <li><strong>分割</strong>：将所求的整体量对应的区域分割成许多微小部分</li>
+      <li><strong>近似</strong>：在每个微小部分上，用简单的几何量近似代替复杂的实际量</li>
+      <li><strong>求和取极限</strong>：将所有微小部分的近似值相加，然后通过取极限得到精确值</li>
+      </ol>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">微元法数学表述</span></div>
+      <div class="callout-body">
+      <p>如果要求整体量 <span class="math inline">Q</span>，先找出微元
+      <span class="math inline">dQ = f(x)dx</span>，然后通过积分得到
+      <span class="math display">
+      Q = \int_a^b dQ = \int_a^b f(x)dx
+      </span></p>
+      </div>
+      </div>
+      <div id="chpt6-ex-017" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例1: 曲线下面积的计算</span><span
+      class="ex-tags"><span class="ex-tag">定积分</span><span
+      class="ex-tag">面积</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>计算曲线 <span class="math inline">y = f(x)</span> 在 <span
+      class="math inline">[a,b]</span> 上与 <span
+      class="math inline">x</span> 轴围成的面积。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-017-frame" data-panel="chpt6-ex-017-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-017-frame" data-panel="chpt6-ex-017-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt6-ex-017-frame" class="ex-frame" hidden="">
+      <div id="chpt6-ex-017-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>利用微元法：将区间 <span class="math inline">[a,b]</span>
+      分成若干小区间，在每个小区间 <span class="math inline">[x,
+      x+dx]</span> 上用矩形近似面积微元，再求和取极限。</p>
+      </div>
+      <div id="chpt6-ex-017-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>利用微元法：</p>
+      <ul>
+      <li><strong>分割</strong>：将 <span
+      class="math inline">[a,b]</span> 分成 <span
+      class="math inline">n</span> 个小区间；</li>
+      <li><strong>近似</strong>：每个小区间 <span
+      class="math inline">[x, x+dx]</span> 上的面积微元为 <span
+      class="math inline">dA = f(x)dx</span>；</li>
+      <li><strong>求和取极限</strong>：</li>
+      </ul>
+      <p><span class="math display">
+      A = \int_a^b f(x)\,dx
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <h3 id="体积的计算">6.1.2 体积的计算</h3>
+      <div id="chpt6-ex-001" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例2</span><span class="ex-tags"><span
+      class="ex-tag">定积分</span><span
+      class="ex-tag">体积</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>计算底面积为 <span class="math inline">A</span>，高为 <span
+      class="math inline">h</span> 的棱柱体积。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-001-frame" data-panel="chpt6-ex-001-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-001-frame" data-panel="chpt6-ex-001-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt6-ex-001-frame" class="ex-frame" hidden="">
+      <div id="chpt6-ex-001-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>利用截面法：棱柱所有截面面积相同，直接积分。</p>
+      </div>
+      <div id="chpt6-ex-001-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>所有截面面积均为 <span class="math inline">A</span>，故</p>
+      <p><span class="math display">
+      V = \int_0^h A\,dx = Ah.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt6-ex-002" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例3</span><span class="ex-tags"><span
+      class="ex-tag">定积分</span><span
+      class="ex-tag">体积</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>计算底半径为 <span class="math inline">R</span>，高为 <span
+      class="math inline">h</span> 的圆锥体积。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-002-frame" data-panel="chpt6-ex-002-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-002-frame" data-panel="chpt6-ex-002-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt6-ex-002-frame" class="ex-frame" hidden="">
+      <div id="chpt6-ex-002-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>在高度 <span class="math inline">x</span> 处截面半径为 <span
+      class="math inline">r(x) = R \cdot x/h</span>，对截面面积从 <span
+      class="math inline">0</span> 到 <span class="math inline">h</span>
+      积分。</p>
+      </div>
+      <div id="chpt6-ex-002-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>在高度 <span class="math inline">x</span> 处，截面是半径为
+      <span class="math inline">r(x) = \dfrac{Rx}{h}</span> 的圆，面积为
+      <span class="math inline">A(x) = \pi r^2(x) = \dfrac{\pi R^2
+      x^2}{h^2}</span>。</p>
+      <p><span class="math display">
+      V = \int_0^h \frac{\pi R^2 x^2}{h^2}\,dx = \frac{\pi R^2}{h^2}
+      \cdot \frac{h^3}{3} = \frac{1}{3}\pi R^2 h.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要</span></div>
+      <div class="callout-body">
+      <p>曲线 <span class="math inline">y = f(x)</span> 绕 <span
+      class="math inline">x</span> 轴旋转一周形成的旋转体体积： <span
+      class="math display">
+      V = \int_a^b \pi [f(x)]^2 dx
+      </span></p>
+      <p><strong>推导</strong>：在 <span class="math inline">x</span>
+      处垂直于 <span class="math inline">x</span> 轴的截面是半径为 <span
+      class="math inline">f(x)</span> 的圆盘，面积 <span
+      class="math inline">A(x) = \pi [f(x)]^2</span></p>
+      </div>
+      </div>
+      <div id="chpt6-ex-003" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例4</span><span class="ex-tags"><span
+      class="ex-tag">定积分</span><span
+      class="ex-tag">体积</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>计算曲线 <span class="math inline">y = \sqrt{x}</span> 在 <span
+      class="math inline">[0,1]</span> 上绕 <span
+      class="math inline">x</span> 轴旋转一周所形成的旋转体体积。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-003-frame" data-panel="chpt6-ex-003-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-003-frame" data-panel="chpt6-ex-003-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt6-ex-003-frame" class="ex-frame" hidden="">
+      <div id="chpt6-ex-003-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>用旋转体体积公式 <span class="math inline">V =
+      \displaystyle\int_a^b \pi [f(x)]^2\,dx</span>。</p>
+      </div>
+      <div id="chpt6-ex-003-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      V = \int_0^1 \pi(\sqrt{x})^2\,dx = \pi\int_0^1 x\,dx = \pi \cdot
+      \frac{1}{2} = \frac{\pi}{2}.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要</span></div>
+      <div class="callout-body">
+      <p>曲线 <span class="math inline">y = f(x)</span> 绕 <span
+      class="math inline">y</span> 轴旋转一周形成的旋转体体积： <span
+      class="math display">
+      V = \int_a^b 2\pi x f(x) dx
+      </span></p>
+      <p><strong>推导</strong>：在 <span class="math inline">x</span>
+      处厚度为 <span class="math inline">dx</span> 的柱壳体积微元 <span
+      class="math inline">dV = 2\pi x \cdot f(x) \cdot dx</span></p>
+      </div>
+      </div>
+      <div id="chpt6-ex-004" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例5</span><span class="ex-tags"><span
+      class="ex-tag">定积分</span><span
+      class="ex-tag">体积</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>计算曲线 <span class="math inline">y = x</span> 在 <span
+      class="math inline">[0,1]</span> 上绕 <span
+      class="math inline">y</span> 轴旋转一周所形成的旋转体体积。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-004-frame" data-panel="chpt6-ex-004-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-004-frame" data-panel="chpt6-ex-004-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt6-ex-004-frame" class="ex-frame" hidden="">
+      <div id="chpt6-ex-004-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>用柱壳法（薄壳公式）：<span class="math inline">V =
+      \displaystyle\int_a^b 2\pi x f(x)\,dx</span>。</p>
+      </div>
+      <div id="chpt6-ex-004-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      V = \int_0^1 2\pi x \cdot x\,dx = 2\pi\int_0^1 x^2\,dx = 2\pi
+      \cdot \frac{1}{3} = \frac{2\pi}{3}.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <h3 id="曲线弧长">6.1.3 曲线弧长</h3>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">直角坐标系下的弧长</span></div>
+      <div class="callout-body">
+      <p>曲线 <span class="math inline">y = f(x)</span> 在 <span
+      class="math inline">[a,b]</span> 上的弧长： <span
+      class="math display">
+      L = \int_a^b \sqrt{1 + [f&#39;(x)]^2}  dx
+      </span></p>
+      <p><strong>推导</strong>：弧长微元 <span class="math inline">ds =
+      \sqrt{(dx)^2 + (dy)^2} = \sqrt{1 + \left(\frac{dy}{dx}\right)^2}
+      dx</span></p>
+      </div>
+      </div>
+      <div id="chpt6-ex-005" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例6</span><span class="ex-tags"><span
+      class="ex-tag">定积分</span><span class="ex-tag">弧长</span><span
+      class="ex-tag">换元法</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>计算曲线 <span class="math inline">y = x^{3/2}</span> 从 <span
+      class="math inline">x=0</span> 到 <span
+      class="math inline">x=1</span> 的弧长。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-005-frame" data-panel="chpt6-ex-005-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-005-frame" data-panel="chpt6-ex-005-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt6-ex-005-frame" class="ex-frame" hidden="">
+      <div id="chpt6-ex-005-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>用弧长公式 <span class="math inline">L = \displaystyle\int_0^1
+      \sqrt{1 + [f&#39;(x)]^2}\,dx</span>，令 <span
+      class="math inline">u = 1 + \dfrac{9}{4}x</span> 换元求积分。</p>
+      </div>
+      <div id="chpt6-ex-005-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math inline">f&#39;(x) =
+      \dfrac{3}{2}x^{1/2}</span>，故</p>
+      <p><span class="math display">
+      L = \int_0^1 \sqrt{1 + \frac{9}{4}x}\,dx.
+      </span></p>
+      <p>令 <span class="math inline">u = 1 + \dfrac{9}{4}x</span>，则
+      <span class="math inline">du = \dfrac{9}{4}dx</span>；当 <span
+      class="math inline">x=0</span> 时 <span
+      class="math inline">u=1</span>，当 <span
+      class="math inline">x=1</span> 时 <span
+      class="math inline">u=\dfrac{13}{4}</span>。</p>
+      <p><span class="math display">
+      L = \frac{4}{9}\int_1^{13/4} \sqrt{u}\,du = \frac{4}{9} \cdot
+      \frac{2}{3}u^{3/2}\Big|_1^{13/4} =
+      \frac{8}{27}\left[\left(\frac{13}{4}\right)^{3/2} - 1\right].
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">参数方程下的弧长</span></div>
+      <div class="callout-body">
+      <p>曲线由参数方程 <span class="math inline">x = x(t), y =
+      y(t)</span> (<span class="math inline">\alpha \leq t \leq
+      \beta</span>) 给出时，弧长为： <span class="math display">
+      L = \int_\alpha^\beta \sqrt{\left(\frac{dx}{dt}\right)^2 +
+      \left(\frac{dy}{dt}\right)^2}  dt
+      </span></p>
+      </div>
+      </div>
+      <div id="chpt6-ex-006" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例7</span><span class="ex-tags"><span
+      class="ex-tag">定积分</span><span
+      class="ex-tag">弧长</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>用参数方程下的弧长公式计算半径为 <span
+      class="math inline">R</span> 的圆的周长。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-006-frame" data-panel="chpt6-ex-006-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-006-frame" data-panel="chpt6-ex-006-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt6-ex-006-frame" class="ex-frame" hidden="">
+      <div id="chpt6-ex-006-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>圆的参数方程为 <span class="math inline">x = R\cos
+      t</span>，<span class="math inline">y = R\sin t</span>（<span
+      class="math inline">0 \leq t \leq
+      2\pi</span>），代入参数弧长公式。</p>
+      </div>
+      <div id="chpt6-ex-006-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      \frac{dx}{dt} = -R\sin t, \quad \frac{dy}{dt} = R\cos t.
+      </span></p>
+      <p><span class="math display">
+      L = \int_0^{2\pi} \sqrt{(-R\sin t)^2 + (R\cos t)^2}\,dt =
+      \int_0^{2\pi} R\,dt = 2\pi R.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">极坐标下的弧长</span></div>
+      <div class="callout-body">
+      <p>曲线由极坐标方程 <span class="math inline">r = r(\theta)</span>
+      (<span class="math inline">\alpha \leq \theta \leq \beta</span>)
+      给出时，弧长为： <span class="math display">
+      L = \int_\alpha^\beta \sqrt{[r(\theta)]^2 +
+      \left[\frac{dr}{d\theta}\right]^2}  d\theta
+      </span></p>
+      <p><strong>推导</strong>：利用直角坐标与极坐标的关系 <span
+      class="math inline">x = r\cos\theta, y =
+      r\sin\theta</span>，代入参数方程的弧长公式可得。</p>
+      </div>
+      </div>
+      <div id="chpt6-ex-007" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例8</span><span class="ex-tags"><span
+      class="ex-tag">定积分</span><span class="ex-tag">弧长</span><span
+      class="ex-tag">极坐标</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>计算心形线 <span class="math inline">r =
+      a(1+\cos\theta)</span>（<span class="math inline">0 \leq \theta
+      \leq 2\pi</span>）的周长。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-007-frame" data-panel="chpt6-ex-007-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-007-frame" data-panel="chpt6-ex-007-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt6-ex-007-frame" class="ex-frame" hidden="">
+      <div id="chpt6-ex-007-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>用极坐标弧长公式 <span class="math inline">L =
+      \displaystyle\int_0^{2\pi} \sqrt{r^2 +
+      (r&#39;)^2}\,d\theta</span>，利用半角公式 <span
+      class="math inline">1+\cos\theta = 2\cos^2(\theta/2)</span>
+      化简被积函数。</p>
+      </div>
+      <div id="chpt6-ex-007-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math inline">\dfrac{dr}{d\theta} =
+      -a\sin\theta</span>，故</p>
+      <p><span class="math display">
+      L = \int_0^{2\pi} \sqrt{a^2(1+\cos\theta)^2 +
+      a^2\sin^2\theta}\,d\theta =
+      a\int_0^{2\pi}\sqrt{2+2\cos\theta}\,d\theta.
+      </span></p>
+      <p>利用 <span class="math inline">1+\cos\theta =
+      2\cos^2(\theta/2)</span>：</p>
+      <p><span class="math display">
+      L = a\int_0^{2\pi} 2\left|\cos\frac{\theta}{2}\right|d\theta =
+      4a\int_0^{\pi}\cos\frac{\theta}{2}\,d\theta = 8a.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <h2 id="物理中的应用-功与能量">6.2 物理中的应用: 功与能量</h2>
+      <blockquote>
+      <p>在物理学中，力沿路径做的功定义为力与位移的乘积。当力是变力时，需要用积分计算。</p>
+      </blockquote>
+      <div class="callout callout-warning">
+      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">有限区域内的变力做功</span></div>
+      <div class="callout-body">
+
+      </div>
+      </div>
+      <div id="chpt6-ex-008" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例9</span><span class="ex-tags"><span
+      class="ex-tag">定积分</span><span
+      class="ex-tag">面积</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>弹簧压缩做功：根据胡克定律，弹性系数为 <span
+      class="math inline">k</span> 的弹簧，将弹簧从平衡位置压缩 <span
+      class="math inline">L</span> 距离，求所做的功。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-008-frame" data-panel="chpt6-ex-008-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-008-frame" data-panel="chpt6-ex-008-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt6-ex-008-frame" class="ex-frame" hidden="">
+      <div id="chpt6-ex-008-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>弹簧力 <span class="math inline">F(x) =
+      kx</span>，对力沿压缩方向积分。</p>
+      </div>
+      <div id="chpt6-ex-008-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      W = \int_0^L kx\,dx = \frac{1}{2}kL^2.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt6-ex-009" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例10</span><span class="ex-tags"><span
+      class="ex-tag">定积分</span><span
+      class="ex-tag">面积</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>抽水做功：设圆柱形水箱半径为 <span
+      class="math inline">R</span>，高为 <span
+      class="math inline">H</span>，装满密度为 <span
+      class="math inline">\rho</span>
+      的液体，求将液体全部抽出水箱顶部所需做的功。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-009-frame" data-panel="chpt6-ex-009-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-009-frame" data-panel="chpt6-ex-009-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt6-ex-009-frame" class="ex-frame" hidden="">
+      <div id="chpt6-ex-009-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>将水箱沿高度方向分层，距底面高度 <span
+      class="math inline">x</span> 处的薄层需提升距离为 <span
+      class="math inline">H-x</span>，建立积分。</p>
+      </div>
+      <div id="chpt6-ex-009-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>距底面高度 <span class="math inline">x</span> 处厚度为 <span
+      class="math inline">dx</span> 的水层的质量为 <span
+      class="math inline">\rho\pi R^2\,dx</span>，需提升距离 <span
+      class="math inline">H-x</span>，故功微元为</p>
+      <p><span class="math display">
+      dW = \rho\pi R^2(H-x)\,g\,dx.
+      </span></p>
+      <p>总功为</p>
+      <p><span class="math display">
+      W = \int_0^H \rho g\pi R^2(H-x)\,dx = \rho g\pi R^2 \cdot
+      \frac{H^2}{2} = \frac{1}{2}\rho g\pi R^2 H^2.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-warning">
+      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">无穷区域上的做功问题</span></div>
+      <div class="callout-body">
+
+      </div>
+      </div>
+      <div id="chpt6-ex-010" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例11</span><span class="ex-tags"><span
+      class="ex-tag">定积分</span><span
+      class="ex-tag">面积</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>万有引力做功：质量为 <span class="math inline">m</span>
+      的物体从距地心 <span class="math inline">r</span>
+      处移动到无穷远处，求克服地球引力所做的功（地球质量 <span
+      class="math inline">M</span>，引力常数 <span
+      class="math inline">G</span>）。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-010-frame" data-panel="chpt6-ex-010-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-010-frame" data-panel="chpt6-ex-010-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt6-ex-010-frame" class="ex-frame" hidden="">
+      <div id="chpt6-ex-010-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>引力 <span class="math inline">F(x) =
+      GMm/x^2</span>，对变力沿路径积分，上限取 <span
+      class="math inline">\infty</span>（反常积分）。</p>
+      </div>
+      <div id="chpt6-ex-010-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      W = \int_r^\infty \frac{GMm}{x^2}\,dx = \lim_{b\to\infty}
+      GMm\left[-\frac{1}{x}\right]_r^b = \lim_{b\to\infty}
+      GMm\left(\frac{1}{r} - \frac{1}{b}\right) = \frac{GMm}{r}.
+      </span></p>
+      <p>这就是引力势能公式，积分收敛于有限值。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-warning">
+      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">无界函数的积分</span></div>
+      <div class="callout-body">
+      <p>当被积函数在积分区间内无界时，也需要通过极限来定义积分。</p>
+      </div>
+      </div>
+      <div id="chpt6-ex-011" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例12</span><span class="ex-tags"><span
+      class="ex-tag">定积分</span><span
+      class="ex-tag">面积</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>计算电场强度：考虑函数 <span class="math inline">f(x) =
+      \dfrac{1}{\sqrt{x}}</span> 在 <span
+      class="math inline">[0,1]</span>
+      上的积分（无界函数的反常积分）。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-011-frame" data-panel="chpt6-ex-011-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-011-frame" data-panel="chpt6-ex-011-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt6-ex-011-frame" class="ex-frame" hidden="">
+      <div id="chpt6-ex-011-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p><span class="math inline">x=0</span>
+      处函数无界，通过极限定义反常积分：令下限趋于 <span
+      class="math inline">0^+</span>。</p>
+      </div>
+      <div id="chpt6-ex-011-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      \int_0^1 \frac{1}{\sqrt{x}}\,dx = \lim_{a\to 0^+}\int_a^1
+      \frac{1}{\sqrt{x}}\,dx = \lim_{a\to 0^+}\left[2\sqrt{x}\right]_a^1
+      = \lim_{a\to 0^+}(2-2\sqrt{a}) = 2.
+      </span></p>
+      <p>积分收敛于 <span class="math inline">2</span>。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <h2 id="概率中的应用">6.3 概率中的应用</h2>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p>积分学在概率论中扮演着核心角色，特别是在处理连续型随机变量时。本节将介绍如何用积分来描述和分析连续随机现象。掌握积分在概率中的应用，不仅是学习概率论的基础，也是理解现代统计学、金融工程等领域的必备工具。</p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">概率密度函数</span></div>
+      <div class="callout-body">
+      <p>对于连续型随机变量，我们不能像离散情况那样谈论某个具体值的概率，而是使用概率密度函数来描述概率分布。</p>
+      <p><strong>定义</strong>： 如果存在非负函数 <span
+      class="math inline">f(x)</span>，使得对任意实数 <span
+      class="math inline">a \leq b</span>，随机变量 <span
+      class="math inline">X</span> 落在区间 <span
+      class="math inline">[a,b]</span> 内的概率为 <span
+      class="math display">
+      P(a \leq X \leq b) = \int_a^b f(x)  dx
+      </span> 则称 <span class="math inline">f(x)</span> 为 <span
+      class="math inline">X</span> 的概率密度函数。</p>
+      <p><strong>性质</strong>： 1. 非负性：<span
+      class="math inline">f(x) \geq 0</span> 对所有 <span
+      class="math inline">x</span> 成立 2. 归一性：<span
+      class="math inline">\displaystyle\int_{-\infty}^\infty f(x)  dx =
+      1</span></p>
+      </div>
+      </div>
+      <div id="chpt6-ex-012" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例13</span><span class="ex-tags"><span
+      class="ex-tag">定积分</span><span
+      class="ex-tag">面积</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>验证函数</p>
+      <p><span class="math display">
+      f(x) = \begin{cases} 2x &amp; 0 \leq x \leq 1 \\ 0 &amp;
+      \text{其他} \end{cases}
+      </span></p>
+      <p>是否为概率密度函数。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-012-frame" data-panel="chpt6-ex-012-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-012-frame" data-panel="chpt6-ex-012-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt6-ex-012-frame" class="ex-frame" hidden="">
+      <div id="chpt6-ex-012-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>检查两个条件：非负性（<span class="math inline">f(x) \geq
+      0</span>）和归一性（积分等于 <span
+      class="math inline">1</span>）。</p>
+      </div>
+      <div id="chpt6-ex-012-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><strong>非负性</strong>：在 <span
+      class="math inline">[0,1]</span> 上 <span class="math inline">2x
+      \geq 0</span>，满足。</p>
+      <p><strong>归一性</strong>：</p>
+      <p><span class="math display">
+      \int_{-\infty}^\infty f(x)\,dx = \int_0^1 2x\,dx =
+      \left[x^2\right]_0^1 = 1.
+      </span></p>
+      <p>两个条件均满足，故 <span class="math inline">f(x)</span>
+      是合法的概率密度函数。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">均匀分布</span></div>
+      <div class="callout-body">
+      <p>均匀分布描述了一个随机变量在某个区间内等可能取值的现象。</p>
+      <p><strong>定义</strong>： 如果随机变量 <span
+      class="math inline">X</span> 在区间 <span
+      class="math inline">[a,b]</span> 上有概率密度函数 <span
+      class="math display">
+      f(x) = \begin{cases}
+      \frac{1}{b-a} &amp; a \leq x \leq b \\
+      0 &amp; \text{其他}
+      \end{cases}
+      </span> 则称 <span class="math inline">X</span> 服从均匀分布，记作
+      <span class="math inline">X \sim U(a,b)</span>。</p>
+      </div>
+      </div>
+      <div id="chpt6-ex-013" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例14</span><span class="ex-tags"><span
+      class="ex-tag">定积分</span><span
+      class="ex-tag">面积</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>公共汽车每10分钟一班，乘客随机到达车站，求等待时间不超过3分钟的概率。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-013-frame" data-panel="chpt6-ex-013-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-013-frame" data-panel="chpt6-ex-013-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt6-ex-013-frame" class="ex-frame" hidden="">
+      <div id="chpt6-ex-013-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>等待时间 <span class="math inline">X</span> 服从均匀分布 <span
+      class="math inline">U(0,10)</span>，用概率密度函数计算区间概率。</p>
+      </div>
+      <div id="chpt6-ex-013-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math inline">X \sim U(0,10)</span>，概率密度函数
+      <span class="math inline">f(x) = \dfrac{1}{10}</span>（<span
+      class="math inline">0 \leq x \leq 10</span>）。</p>
+      <p><span class="math display">
+      P(0 \leq X \leq 3) = \int_0^3 \frac{1}{10}\,dx = \frac{3}{10}.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">指数分布</span></div>
+      <div class="callout-body">
+      <p>指数分布常用于描述等待时间、寿命等随机现象。</p>
+      <p><strong>定义</strong>： 如果随机变量 <span
+      class="math inline">X</span> 有概率密度函数 <span
+      class="math display">
+      f(x) = \begin{cases}
+      \lambda e^{-\lambda x} &amp; x \geq 0 \\
+      0 &amp; x &lt; 0
+      \end{cases}
+      </span> 其中 <span class="math inline">\lambda &gt; 0</span>，则称
+      <span class="math inline">X</span> 服从参数为 <span
+      class="math inline">\lambda</span> 的指数分布。</p>
+      </div>
+      </div>
+      <div id="chpt6-ex-014" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例15</span><span class="ex-tags"><span
+      class="ex-tag">定积分</span><span
+      class="ex-tag">面积</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>某电子元件的寿命 <span
+      class="math inline">X</span>（单位：小时）服从参数 <span
+      class="math inline">\lambda = 0.001</span>
+      的指数分布，求该元件能工作超过1000小时的概率。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-014-frame" data-panel="chpt6-ex-014-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-014-frame" data-panel="chpt6-ex-014-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt6-ex-014-frame" class="ex-frame" hidden="">
+      <div id="chpt6-ex-014-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p><span class="math inline">P(X &gt; 1000) =
+      \displaystyle\int_{1000}^\infty \lambda e^{-\lambda
+      x}\,dx</span>，用反常积分计算。</p>
+      </div>
+      <div id="chpt6-ex-014-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      P(X &gt; 1000) = \int_{1000}^\infty 0.001\,e^{-0.001x}\,dx =
+      \lim_{b\to\infty}\left[-e^{-0.001x}\right]_{1000}^b = e^{-1}
+      \approx 0.3679.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">正态分布</span></div>
+      <div class="callout-body">
+      <p>正态分布（高斯分布）是概率论与统计学中最重要的分布，它描述了自然界中大量随机现象的分布规律。</p>
+      <p><strong>定义</strong>： 如果随机变量 <span
+      class="math inline">X</span> 有概率密度函数 <span
+      class="math display">
+      f(x) = \frac{1}{\sqrt{2\pi}\sigma}
+      e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+      </span> 则称 <span class="math inline">X</span> 服从正态分布，记作
+      <span class="math inline">X \sim N(\mu,\sigma^2)</span>。</p>
+      <p><strong>参数意义</strong>： - <span
+      class="math inline">\mu</span>：均值，决定分布的中心位置 - <span
+      class="math inline">\sigma</span>：标准差，决定分布的分散程度</p>
+      <p><strong>标准正态分布</strong>： 当 <span
+      class="math inline">\mu = 0</span>，<span
+      class="math inline">\sigma = 1</span>
+      时，称为标准正态分布，其概率密度函数为 <span class="math display">
+      \varphi(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}
+      </span></p>
+      <p><strong>概率计算</strong>： 对于 <span class="math inline">X
+      \sim N(\mu,\sigma^2)</span>，<span class="math inline">P(a \leq X
+      \leq b) = \displaystyle\int_a^b \frac{1}{\sqrt{2\pi}\sigma}
+      e^{-\frac{(x-\mu)^2}{2\sigma^2}}  dx</span></p>
+      <p>这个积分没有初等函数形式的原函数，谜底留到第二册.</p>
+      </div>
+      </div>
+      <h2 id="反常积分">6.4 反常积分</h2>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-body">
+      <p>反常积分处理两类问题：无穷区间上的积分和无界函数的积分。</p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">无穷区间上的反常积分</span></div>
+      <div class="callout-body">
+      <p><strong>定义</strong>： 1. <span
+      class="math inline">\displaystyle\int_a^\infty f(x)  dx = \lim_{b
+      \to \infty} \int_a^b f(x)  dx</span> 2. <span
+      class="math inline">\displaystyle\int_{-\infty}^b f(x)  dx =
+      \lim_{a \to -\infty} \int_a^b f(x)  dx</span> 3. <span
+      class="math inline">\displaystyle\int_{-\infty}^\infty f(x)  dx =
+      \int_{-\infty}^c f(x)  dx + \int_c^\infty f(x)  dx</span>（<span
+      class="math inline">c</span> 为任意实数）</p>
+      <p><strong>收敛判别</strong>：
+      如果极限存在且有限，则称反常积分收敛；否则称发散。</p>
+      </div>
+      </div>
+      <div id="chpt6-ex-015" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例16</span><span class="ex-tags"><span
+      class="ex-tag">定积分</span><span
+      class="ex-tag">面积</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>研究反常积分 <span
+      class="math inline">\displaystyle\int_1^\infty
+      \frac{1}{x^p}\,dx</span> 的收敛性（<span
+      class="math inline">p</span> 为实数）。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-015-frame" data-panel="chpt6-ex-015-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-015-frame" data-panel="chpt6-ex-015-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt6-ex-015-frame" class="ex-frame" hidden="">
+      <div id="chpt6-ex-015-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>对 <span class="math inline">p \neq 1</span> 和 <span
+      class="math inline">p = 1</span>
+      分情况讨论，通过求极限判断收敛发散。</p>
+      </div>
+      <div id="chpt6-ex-015-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><strong>当 <span class="math inline">p \neq 1</span>
+      时</strong>：</p>
+      <p><span class="math display">
+      \int_1^\infty \frac{1}{x^p}\,dx =
+      \lim_{b\to\infty}\frac{b^{1-p}-1}{1-p}.
+      </span></p>
+      <ul>
+      <li>若 <span class="math inline">p &gt; 1</span>：<span
+      class="math inline">b^{1-p} \to 0</span>，积分收敛于 <span
+      class="math inline">\dfrac{1}{p-1}</span>。</li>
+      <li>若 <span class="math inline">p &lt; 1</span>：<span
+      class="math inline">b^{1-p} \to \infty</span>，积分发散。</li>
+      </ul>
+      <p><strong>当 <span class="math inline">p = 1</span>
+      时</strong>：</p>
+      <p><span class="math display">
+      \int_1^\infty \frac{1}{x}\,dx = \lim_{b\to\infty}\ln b = \infty.
+      </span></p>
+      <p>发散。</p>
+      <p><strong>结论</strong>：<span class="math inline">p &gt;
+      1</span> 时收敛，<span class="math inline">p \leq 1</span>
+      时发散。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">无界函数的反常积分（瑕积分）</span></div>
+      <div class="callout-body">
+      <p>如果函数 <span class="math inline">f(x)</span> 在点 <span
+      class="math inline">c</span> 的任意邻域内无界，则称 <span
+      class="math inline">c</span> 为瑕点。</p>
+      <p><strong>定义</strong>： 1. 若 <span
+      class="math inline">f(x)</span> 在 <span
+      class="math inline">[a,b)</span> 上连续，且 <span
+      class="math inline">\lim_{x \to b^-} f(x) = \infty</span>，则
+      <span class="math display">
+         \int_a^b f(x)  dx = \lim_{t \to b^-} \int_a^t f(x)  dx
+         </span></p>
+      <ol start="2" type="1">
+      <li><p>若 <span class="math inline">f(x)</span> 在 <span
+      class="math inline">(a,b]</span> 上连续，且 <span
+      class="math inline">\lim_{x \to a^+} f(x) = \infty</span>，则
+      <span class="math display">
+      \int_a^b f(x)  dx = \lim_{t \to a^+} \int_t^b f(x)  dx
+      </span></p></li>
+      <li><p>若 <span class="math inline">c \in (a,b)</span> 是瑕点，则
+      <span class="math display">
+      \int_a^b f(x)  dx = \int_a^c f(x)  dx + \int_c^b f(x)  dx
+      </span></p></li>
+      </ol>
+      </div>
+      </div>
+      <div id="chpt6-ex-016" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例17</span><span class="ex-tags"><span
+      class="ex-tag">定积分</span><span
+      class="ex-tag">面积</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>研究瑕积分 <span class="math inline">\displaystyle\int_0^1
+      \frac{1}{x^p}\,dx</span> 的收敛性（<span
+      class="math inline">p</span> 为实数，<span
+      class="math inline">x=0</span> 为瑕点）。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-016-frame" data-panel="chpt6-ex-016-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-016-frame" data-panel="chpt6-ex-016-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt6-ex-016-frame" class="ex-frame" hidden="">
+      <div id="chpt6-ex-016-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p><span class="math inline">x=0</span> 处函数无界，通过令下限趋于
+      <span class="math inline">0^+</span> 的极限来判断收敛性。</p>
+      </div>
+      <div id="chpt6-ex-016-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><strong>当 <span class="math inline">p \neq 1</span>
+      时</strong>：</p>
+      <p><span class="math display">
+      \int_0^1 \frac{1}{x^p}\,dx = \lim_{a\to 0^+}\frac{1-a^{1-p}}{1-p}.
+      </span></p>
+      <ul>
+      <li>若 <span class="math inline">p &lt; 1</span>：<span
+      class="math inline">a^{1-p} \to 0</span>，积分收敛于 <span
+      class="math inline">\dfrac{1}{1-p}</span>。</li>
+      <li>若 <span class="math inline">p &gt; 1</span>：<span
+      class="math inline">a^{1-p} \to \infty</span>，积分发散。</li>
+      </ul>
+      <p><strong>当 <span class="math inline">p = 1</span>
+      时</strong>：</p>
+      <p><span class="math display">
+      \int_0^1 \frac{1}{x}\,dx = \lim_{a\to 0^+}(-\ln a) = \infty.
+      </span></p>
+      <p>发散。</p>
+      <p><strong>结论</strong>：<span class="math inline">p &lt;
+      1</span> 时收敛，<span class="math inline">p \geq 1</span>
+      时发散。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.docLib = [{"title": "\u5e8f\u8a00", "url": "chapter0.html"}, {"title": "\u7b2c\u4e00\u7ae0: \u6781\u9650", "url": "chapter1.html"}, {"title": "\u7b2c\u4e8c\u7ae0: \u5bfc\u6570", "url": "chapter2.html"}, {"title": "\u7b2c\u4e09\u7ae0: \u5fae\u5206", "url": "chapter3.html"}, {"title": "\u7b2c\u56db\u7ae0: \u79ef\u5206", "url": "chapter4.html"}, {"title": "\u7b2c\u4e94\u7ae0: \u5fae\u5206\u7684\u5e94\u7528", "url": "chapter5.html"}, {"title": "\u7b2c\u516d\u7ae0: \u79ef\u5206\u7684\u5e94\u7528", "url": "chapter6.html"}, {"title": "\u7b2c\u4e03\u7ae0: \u5e38\u5fae\u5206\u65b9\u7a0b", "url": "chapter7.html"}, {"title": "\u7b2c\u516b\u7ae0: \u6570\u503c\u65b9\u6cd5", "url": "chapter8.html"}, {"title": "\u7b2c\u4e5d\u7ae0: \u5411\u91cf\u4e0e\u7a7a\u95f4\u89e3\u6790\u51e0\u4f55", "url": "chapter9.html"}, {"title": "\u7b2c\u5341\u7ae0: \u591a\u5143\u51fd\u6570\u7684\u5fae\u5206", "url": "chapter10.html"}, {"title": "\u7b2c\u5341\u4e00\u7ae0: \u591a\u5143\u51fd\u6570\u7684\u79ef\u5206", "url": "chapter11.html"}, {"title": "\u7b2c\u5341\u4e8c\u7ae0: \u66f2\u7ebf\u79ef\u5206\u548c\u66f2\u9762\u79ef\u5206", "url": "chapter12.html"}, {"title": "\u7b2c\u5341\u4e09\u7ae0: \u65e0\u7a77\u7ea7\u6570", "url": "chapter13.html"}, {"title": "\u7b2c\u5341\u56db\u7ae0: \u504f\u5fae\u5206\u65b9\u7a0b", "url": "chapter14.html"}];
+    window.chpAutonum = "";
+    window.videoUrl = "";
+  </script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
