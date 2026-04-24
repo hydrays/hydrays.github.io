@@ -331,50 +331,69 @@
 
   // ── Video panel ──────────────────────────────────────────────
 
-  function initVideo() {
-    var url = (window.videoUrl || "").trim();
-    if (!url) return;
+  var activeVideoOwner = null;
 
-    var panel    = document.getElementById("video-panel");
-    var frame    = document.getElementById("video-frame");
-    var closeBtn = document.getElementById("video-close-btn");
-    var mainEl   = document.getElementById("main");
+  function closeVideoPanel() {
+    var panel = document.getElementById("video-panel");
+    if (panel) panel.style.display = "none";
+    if (activeVideoOwner) activeVideoOwner.classList.remove("is-active");
+    activeVideoOwner = null;
+  }
+
+  function openVideoPanelFor(btn) {
+    var panel = document.getElementById("video-panel");
+    var frame = document.getElementById("video-frame");
+    var mainEl = document.getElementById("main");
     if (!panel || !frame) return;
 
+    var url = btn.getAttribute("data-video-url") || "";
+    if (!url) return;
+
+    var callout = btn.closest(".callout");
+    var header = callout ? callout.querySelector(".callout-header") : null;
+    if (!header) return;
+
+    header.insertAdjacentElement("afterend", panel);
     frame.src = url;
-    panel.style.display = "none";
+    panel.style.display = "block";
+    frame.style.height = Math.round(panel.offsetWidth * 9 / 16) + "px";
 
-    var activeOwner = null;
+    if (activeVideoOwner && activeVideoOwner !== btn) {
+      activeVideoOwner.classList.remove("is-active");
+    }
+    activeVideoOwner = btn;
+    btn.classList.add("is-active");
 
-    function openAfter(owner) {
-      owner.insertAdjacentElement("afterend", panel);
-      panel.style.display = "block";
-      frame.style.height = Math.round(panel.offsetWidth * 9 / 16) + "px";
-      activeOwner = owner;
-      var top = panel.getBoundingClientRect().top + mainEl.scrollTop - 56;
+    if (mainEl) {
+      var top = header.getBoundingClientRect().top + mainEl.scrollTop - 56;
       mainEl.scrollTo({ top: top, behavior: "smooth" });
     }
-
-    function closePanel() {
-      panel.style.display = "none";
-      activeOwner = null;
-    }
-
-    if (closeBtn) closeBtn.onclick = closePanel;
-    var closeBottom = document.getElementById("video-close-bottom");
-    if (closeBottom) closeBottom.onclick = closePanel;
-
-    document.querySelectorAll(".callout.callout-tip").forEach(function (tip) {
-      var trigger = document.createElement("button");
-      trigger.className = "video-inline-btn";
-      trigger.innerHTML = "&#9654; 观看视频";
-      trigger.onclick = function () {
-        if (activeOwner === trigger) { closePanel(); }
-        else { openAfter(trigger); }
-      };
-      tip.insertAdjacentElement("afterend", trigger);
-    });
   }
+
+  function initVideo() {
+    // Reset panel on page load / after SPA swap — previous owner is gone.
+    var panel = document.getElementById("video-panel");
+    var frame = document.getElementById("video-frame");
+    if (panel) panel.style.display = "none";
+    if (frame) frame.src = "";
+    activeVideoOwner = null;
+
+    var closeBtn = document.getElementById("video-close-btn");
+    if (closeBtn) closeBtn.onclick = closeVideoPanel;
+    var closeBottom = document.getElementById("video-close-bottom");
+    if (closeBottom) closeBottom.onclick = closeVideoPanel;
+  }
+
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest(".callout-video-btn");
+    if (!btn) return;
+    e.preventDefault();
+    if (activeVideoOwner === btn) {
+      closeVideoPanel();
+    } else {
+      openVideoPanelFor(btn);
+    }
+  });
 
   // ── Init ─────────────────────────────────────────────────────
 

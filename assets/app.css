@@ -338,6 +338,34 @@ ul.chapter-toc > li > ul > li > ul > li > a {
 .callout-extension .callout-header { background: #e0f2fe; color: #0369a1; }
 .callout-extension .callout-icon::before { content: "🔭 "; }
 
+.callout-video-btn {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  color: inherit;
+  font: inherit;
+  font-size: 0.82em;
+  letter-spacing: 0;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.callout-video-btn:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+.callout-video-btn:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+.callout-video-btn.is-active {
+  background: rgba(0, 0, 0, 0.12);
+  border-width: 2px;
+  padding: 1px 9px;
+}
+
 
 /* ── Highlighted text ==text== ──────────────────────────────── */
 
@@ -447,25 +475,6 @@ body.chp-autonum h4::before {
 }
 #video-close-bottom:hover {
   background: rgba(0,0,0,0.9);
-  color: #fff;
-}
-
-.video-inline-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  margin: 6px 0 14px;
-  padding: 4px 12px;
-  background: none;
-  border: 1px solid var(--v-ac, #298bcc);
-  border-radius: 4px;
-  color: var(--v-ac, #298bcc);
-  font-size: 0.82em;
-  cursor: pointer;
-  transition: background 0.15s, color 0.15s;
-}
-.video-inline-btn:hover {
-  background: var(--v-ac, #298bcc);
   color: #fff;
 }
 
