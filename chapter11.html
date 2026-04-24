@@ -65,10 +65,15 @@
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
-      <p>在单变量积分中，我们通过定积分研究了一个变量在区间上的累积问题，例如曲线下的面积、物体的位移等。然而，现实世界中的许多问题涉及多个变量的相互作用，例如：三维空间中不均匀物体的质量（质量密度随位置变化），平面区域上的温度分布平均值等。这些问题要求我们将积分的概念从一维推广到高维空间。重积分（Multiple
-      Integrals）正是解决这类问题的核心工具。本章将系统学习二重积分（Double
-      Integrals）与三重积分（Triple
-      Integrals）的定义、计算方法及其应用。</p>
+      <p>在单变量积分中, 我们通过定积分研究了一个变量在区间上的累积问题,
+      例如曲线下的面积, 物体的位移等. 然而,
+      现实世界中的许多问题涉及多个变量的相互作用, 例如:
+      三维空间中不均匀物体的质量 (质量密度随位置变化),
+      平面区域上的温度分布平均值等.
+      这些问题要求我们将积分的概念从一维推广到高维空间. 重积分 (Multiple
+      Integrals) 正是解决这类问题的核心工具. 本章将系统学习二重积分
+      (Double Integrals) 与三重积分 (Triple Integrals) 的定义,
+      计算方法及其应用.</p>
       </div>
       </div>
       <h2 id="二重积分">11.1 二重积分</h2>
@@ -81,36 +86,33 @@
       </div>
       <h3 id="二重积分的概念">11.1.1 二重积分的概念</h3>
       <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label"></span></div>
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
       <p>我们要计算曲线 <span class="math inline">y = f(x)</span> 在区间
-      <span class="math inline">[a, b]</span>
-      下的面积，可以通过以下步骤实现： 将区间 <span
-      class="math inline">[a, b]</span> 等分为 <span
-      class="math inline">N</span> 个子区间，每个子区间的宽度为 <span
-      class="math inline">\displaystyle\Delta x =
-      \frac{b-a}{N}</span>。通过分割得到 <span
-      class="math inline">N</span>
-      个窄矩形（小柱体），每个矩形的左端点或右端点记为 <span
-      class="math inline">x_i</span>（例如 <span class="math inline">x_i
-      = a + i\Delta x</span>）.每个窄矩形的面积可近似为底边长度 <span
-      class="math inline">\Delta x</span> 乘以高度 <span
-      class="math inline">f(x_i)</span>，即第 <span
-      class="math inline">i</span> 个矩形的面积为 <span
-      class="math inline">\Delta x \cdot
-      f(x_i)</span>.将所有窄矩形的面积相加，得到总面积 <span
-      class="math inline">S_N</span> 的近似值： <span
+      <span class="math inline">[a, b]</span> 下的面积,
+      可以通过以下步骤实现: 将区间 <span class="math inline">[a,
+      b]</span> 等分为 <span class="math inline">N</span> 个子区间,
+      每个子区间的宽度为 <span class="math inline">\displaystyle\Delta x
+      = \frac{b-a}{N}</span>. 通过分割得到 <span
+      class="math inline">N</span> 个窄矩形 (小柱体),
+      每个矩形的左端点或右端点记为 <span class="math inline">x_i</span>
+      (例如 <span class="math inline">x_i = a + i\Delta x</span>).
+      每个窄矩形的面积可近似为底边长度 <span class="math inline">\Delta
+      x</span> 乘以高度 <span class="math inline">f(x_i)</span>, 即第
+      <span class="math inline">i</span> 个矩形的面积为 <span
+      class="math inline">\Delta x \cdot f(x_i)</span>.
+      将所有窄矩形的面积相加, 得到总面积 <span
+      class="math inline">S_N</span> 的近似值: <span
       class="math display">
       \displaystyle S_N = \sum_{i=1}^N \Delta x \cdot f(x_i)
-      </span> 当 <span class="math inline">N \to
-      \infty</span>（即子区间宽度 <span class="math inline">\Delta x \to
-      0</span>）时，近似值 <span class="math inline">S_N</span>
-      趋近于精确面积 <span class="math inline">S</span>： <span
-      class="math display">
+      </span> 当 <span class="math inline">N \to \infty</span>
+      (即子区间宽度 <span class="math inline">\Delta x \to 0</span>) 时,
+      近似值 <span class="math inline">S_N</span> 趋近于精确面积 <span
+      class="math inline">S</span>: <span class="math display">
       \displaystyle S = \lim_{N \to \infty} S_N = \lim_{\Delta x \to 0}
       S_N
-      </span> 最终，面积 <span class="math inline">S</span>
-      可表示为定积分： <span class="math display">
+      </span> 最终, 面积 <span class="math inline">S</span>
+      可表示为定积分: <span class="math display">
       S = \int_{a}^{b} f(x) \, \mathrm{d}x
       </span></p>
       </div>
@@ -122,42 +124,41 @@
       {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160/examples/jsm/"}}
       </script>
       <div id="chpt11-double-integral"
-      style="width:100%;height:440px;position:relative;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;margin:1.2em 0;">
+      style="width:100%; height:440px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; margin:1.2em 0;">
 
       </div>
       <script data-lazy-module="threejs/chpt11-double-integral.js?v=1"></script>
       </div>
       </div>
       <blockquote>
-      <p>如图所示，对于定义在平面区域 <span class="math inline">D</span>
-      上的函数 <span class="math inline">z =
-      f(x,y)</span>，若要计算其对应的体积或物理量（如质量、电荷量等），其思想是单变量积分在二维空间的自然推广.首先将积分区域
-      <span class="math inline">D</span> 分割为 <span
+      <p>如图所示, 对于定义在平面区域 <span class="math inline">D</span>
+      上的函数 <span class="math inline">z = f(x,y)</span>,
+      若要计算其对应的体积或物理量 (如质量, 电荷量等),
+      其思想是单变量积分在二维空间的自然推广. 首先将积分区域 <span
+      class="math inline">D</span> 分割为 <span
       class="math inline">N</span> 个面积微元 <span
-      class="math inline">\Delta
-      A</span>，每个微元可近似视为一个小矩形区域，并选取其代表点 <span
-      class="math inline">(x_i,
-      y_i)</span>（例如取中心点或顶点坐标）.每个微元的体积可近似为底面积
-      <span class="math inline">\Delta A</span> 乘以高度 <span
-      class="math inline">f(x_i, y_i)</span>，即 <span
-      class="math inline">\Delta A \cdot f(x_i,
-      y_i)</span>.将所有微元的贡献叠加，得到近似总体积： <span
-      class="math display">
+      class="math inline">\Delta A</span>,
+      每个微元可近似视为一个小矩形区域, 并选取其代表点 <span
+      class="math inline">(x_i, y_i)</span> (例如取中心点或顶点坐标).
+      每个微元的体积可近似为底面积 <span class="math inline">\Delta
+      A</span> 乘以高度 <span class="math inline">f(x_i, y_i)</span>, 即
+      <span class="math inline">\Delta A \cdot f(x_i, y_i)</span>.
+      将所有微元的贡献叠加, 得到近似总体积: <span class="math display">
       \displaystyle V_N = \sum_{i=1}^N \Delta A \cdot f(x_i, y_i)
-      </span> 当分割无限细化（即 <span class="math inline">N \to
-      \infty</span>，且每个微元面积 <span class="math inline">\Delta A
-      \to 0</span>）时，近似值趋于精确值： <span class="math display">
+      </span> 当分割无限细化 (即 <span class="math inline">N \to
+      \infty</span>, 且每个微元面积 <span class="math inline">\Delta A
+      \to 0</span>) 时, 近似值趋于精确值: <span class="math display">
       \displaystyle V = \lim_{N \to \infty} V_N = \lim_{\Delta A \to
       0}V_N
-      </span> 这一极限过程即为二重积分的定义，可表示为： <span
+      </span> 这一极限过程即为二重积分的定义, 可表示为: <span
       class="math display">
       V = \iint_{D} f(x,y) \, \mathrm{d}A
-      </span> 其中 <span class="math inline">D</span> 是积分区域，<span
-      class="math inline">f(x,y)</span> 为被积函数，<span
-      class="math inline">\mathrm{d}A</span>
-      为面积元（直角坐标系中通常写作 <span
-      class="math inline">\mathrm{d}x\mathrm{d}y</span>）.</p>
-      <p><strong>如何计算？</strong> [图略，待补充] <span
+      </span> 其中 <span class="math inline">D</span> 是积分区域, <span
+      class="math inline">f(x,y)</span> 为被积函数, <span
+      class="math inline">\mathrm{d}A</span> 为面积元
+      (直角坐标系中通常写作 <span
+      class="math inline">\mathrm{d}x\mathrm{d}y</span>).</p>
+      <p><strong>如何计算?</strong> [图略, 待补充] <span
       class="math display">
       \displaystyle M=\sum_{i=1}^N \rho (x_i,y_i)\mathrm{d}A_i=\iint_D
       \rho(x,y)\mathrm{d}A
@@ -168,42 +169,43 @@
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">例1 与 例2 的几何意义</span></div>
       <div class="callout-body">
       <p>下面两图对应本节的 <strong>例1</strong> 与
-      <strong>例2</strong>，两者的被积函数都是抛物面 <span
-      class="math inline">z = 1 - x^2 - y^2</span>，唯一区别在于积分区域
-      <span class="math inline">D</span>：</p>
+      <strong>例2</strong>, 两者的被积函数都是抛物面 <span
+      class="math inline">z = 1 - x^2 - y^2</span>, 唯一区别在于积分区域
+      <span class="math inline">D</span>:</p>
       <ul>
-      <li><strong>左图（例1）</strong> <span class="math inline">D =
-      [0,1]\times[0,1]</span> 是单位正方形。抛物面在 <span
-      class="math inline">x^2+y^2 &lt; 1</span> 处取正值（<span
-      style="color:#15803d">绿色</span>），在靠近角点 <span
-      class="math inline">(1,1)</span> 的区域取负值（<span
-      style="color:#b91c1c">红色</span>）. 因此 <span
+      <li><strong>左图 (例1)</strong> <span class="math inline">D =
+      [0,1]\times[0,1]</span> 是单位正方形. 抛物面在 <span
+      class="math inline">x^2+y^2 &lt; 1</span> 处取正值 (<span
+      style="color: #15803d">绿色</span>), 在靠近角点 <span
+      class="math inline">(1,1)</span> 的区域取负值 (<span
+      style="color: #b91c1c">红色</span>). 因此 <span
       class="math inline">\displaystyle\iint_D (1-x^2-y^2)\,dA =
-      \tfrac{1}{3}</span>
-      代表的是<strong>带符号的体积</strong>：绿色部分算作正贡献、红色部分算作负贡献，两者相抵后的净值.</li>
-      <li><strong>右图（例2）</strong> <span
-      class="math inline">D</span> 是第一象限的单位圆盘 <span
-      class="math inline">\{x^2+y^2\le 1, x,y\ge
-      0\}</span>，恰好是抛物面保持非负的最大区域. 此时 <span
+      \tfrac{1}{3}</span> 代表的是<strong>带符号的体积</strong>:
+      绿色部分算作正贡献, 红色部分算作负贡献, 两者相抵后的净值.</li>
+      <li><strong>右图 (例2)</strong> <span class="math inline">D</span>
+      是第一象限的单位圆盘 <span class="math inline">\{x^2+y^2\le 1,
+      x,y\ge 0\}</span>, 恰好是抛物面保持非负的最大区域. 此时 <span
       class="math inline">\displaystyle\iint_D (1-x^2-y^2)\,dA =
-      \tfrac{\pi}{8}</span>
-      就是<strong>纯粹的体积</strong>：以四分之一圆盘为底、以抛物面为顶盖所围成的立体的体积.</li>
+      \tfrac{\pi}{8}</span> 就是<strong>纯粹的体积</strong>:
+      以四分之一圆盘为底, 以抛物面为顶盖所围成的立体的体积.</li>
       </ul>
-      <p>对比两图可以看到：相同的被积函数配合不同的积分区域，几何意义会从“抵消后的净体积”变为“完整的立体体积”——这正是选择合适的
-      <span
-      class="math inline">D</span>（以及合适的坐标系）在重积分计算中的关键作用.</p>
+      <p>对比两图可以看到: 相同的被积函数配合不同的积分区域,
+      几何意义会从“抵消后的净体积”变为“完整的立体体积”——这正是选择合适的
+      <span class="math inline">D</span> (以及合适的坐标系)
+      在重积分计算中的关键作用.</p>
       </div>
       </div>
       <script type="importmap">
       {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160/examples/jsm/"}}
       </script>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin:1.2em 0;">
+      <div
+      style="display: flex; gap:10px; flex-wrap: wrap; margin:1.2em 0;">
       <div id="chpt11-example1"
-      style="flex:1 1 320px;min-width:300px;height:380px;position:relative;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;">
+      style="flex:1 1 320px; min-width:300px; height:380px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden;">
 
       </div>
       <div id="chpt11-example2"
-      style="flex:1 1 320px;min-width:300px;height:380px;position:relative;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;">
+      style="flex:1 1 320px; min-width:300px; height:380px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden;">
 
       </div>
       </div>
@@ -544,7 +546,7 @@
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">变量替换与雅可比行列式</span></div>
       <div class="callout-body">
       <p>考虑坐标变换 <span class="math inline">\begin{cases} u = u(x,y)
-      \\ v = v(x,y) \end{cases}</span>，其全微分形式可表示为： <span
+      \\ v = v(x,y) \end{cases}</span>, 其全微分形式可表示为: <span
       class="math display">
       \begin{cases}
       \mathrm{d}u = \frac{\partial u}{\partial x}\mathrm{d}x +
@@ -552,7 +554,7 @@
       \mathrm{d}v = \frac{\partial v}{\partial x}\mathrm{d}x +
       \frac{\partial v}{\partial y}\mathrm{d}y
       \end{cases}
-      </span> 该微分系统可写成矩阵形式： <span class="math display">
+      </span> 该微分系统可写成矩阵形式: <span class="math display">
       \begin{bmatrix}
       \mathrm{d}u \\
       \mathrm{d}v
@@ -566,61 +568,61 @@
       \mathrm{d}x \\
       \mathrm{d}y
       \end{bmatrix}
-      </span> [图略，待补充] <span class="math display">
-      \mathrm{d}u\mathrm{d}v = J = \frac{\partial (u,v)}{\partial (x,y)}
-      =
-      \begin{vmatrix}
+      </span> [图略, 待补充] <span class="math display">
+      \mathrm{d}u\mathrm{d}v = \left|\frac{\partial (u,v)}{\partial
+      (x,y)}\right|\mathrm{d}x\mathrm{d}y =
+      \left|\begin{vmatrix}
       \frac{\partial u}{\partial x} &amp; \frac{\partial u}{\partial
       y}\\
       \frac{\partial v}{\partial x} &amp; \frac{\partial v}{\partial y}
-      \end{vmatrix}\mathrm{d}x\mathrm{d}y = \left|\frac{\partial
+      \end{vmatrix}\right|\mathrm{d}x\mathrm{d}y = \left|\frac{\partial
       u}{\partial x}\frac{\partial v}{\partial y}-\frac{\partial
       u}{\partial y}\frac{\partial v}{\partial
       x}\right|\mathrm{d}x\mathrm{d}y
       </span></p>
       </div>
       </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin:1.2em 0;">
+      <div
+      style="display: flex; gap:10px; flex-wrap: wrap; margin:1.2em 0;">
       <div id="chpt11-jacobian-uv"
-      style="flex:1 1 280px;min-width:260px;height:320px;position:relative;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;background:#fff;">
+      style="flex:1 1 280px; min-width:260px; height:320px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; background: #fff;">
 
       </div>
       <div id="chpt11-jacobian-xy"
-      style="flex:1 1 280px;min-width:260px;height:320px;position:relative;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;background:#fff;">
+      style="flex:1 1 280px; min-width:260px; height:320px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; background: #fff;">
 
       </div>
       </div>
       <script data-lazy-module="threejs/chpt11-jacobian.js?v=1"></script>
-      <p><em>图：线性变换 <span class="math inline">\varphi(u,v) = (1.2u
+      <p><em>图: 线性变换 <span class="math inline">\varphi(u,v) = (1.2u
       + 0.6v,\; 0.4u + 1.3v)</span> 把 <span
       class="math inline">(u,v)</span>-平面的单位正方形网格映射为 <span
       class="math inline">(x,y)</span>-平面的平行四边形网格.
       每个小格的面积都被放大为原来的 <span class="math inline">|J| =
       1.32</span> 倍. 两个彩色向量是像 <span
-      class="math inline">\partial\varphi/\partial u</span>、<span
-      class="math inline">\partial\varphi/\partial
-      v</span>，它们正是所得平行四边形的两条边.</em></p>
+      class="math inline">\partial\varphi/\partial u</span>, <span
+      class="math inline">\partial\varphi/\partial v</span>,
+      它们正是所得平行四边形的两条边.</em></p>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">雅可比行列式与坐标变换的深层关系</span></div>
       <div class="callout-body">
       <p>在坐标变换 <span class="math inline">(x,y) \leftrightarrow
-      (u,v)</span>
-      中，雅可比行列式不仅描述面积元的缩放比例，更揭示了双向变换的对称性。由基本关系：
-      <span class="math display">
+      (u,v)</span> 中, 雅可比行列式不仅描述面积元的缩放比例,
+      更揭示了双向变换的对称性. 由基本关系: <span class="math display">
       \mathrm{d}u\mathrm{d}v=\left|J\right|\mathrm{d}x\mathrm{d}y=\left|\frac{\partial
       (u,v)}{\partial (x,y)}\right|\mathrm{d}x\mathrm{d}y
-      </span> 通过反函数定理，可得逆变换关系： <span
+      </span> 通过反函数定理, 可得逆变换关系: <span
       class="math display">
       \mathrm{d}x\mathrm{d}y=\left|\frac{\partial (x,y)}{\partial
       (u,v)}\right|\mathrm{d}u\mathrm{d}v
-      </span> 这建立了双向变换的精确对应：雅可比行列式互为倒数，即：
+      </span> 这建立了双向变换的精确对应: 雅可比行列式互为倒数, 即:
       <span class="math display">
       \left| \frac{\partial (x,y)}{\partial (u,v)} \right| = \left|
       \frac{\partial (u,v)}{\partial (x,y)} \right|^{-1}
-      </span> <strong>经典示例：极坐标变换</strong><br />
-      对极坐标变换 <span class="math inline">\begin{cases} x = \rho
-      \cos\theta \\ y = \rho \sin\theta
-      \end{cases}</span>，其雅可比矩阵为： <span class="math display">
+      </span> <strong>经典示例: 极坐标变换</strong> 对极坐标变换 <span
+      class="math inline">\begin{cases} x = \rho \cos\theta \\ y = \rho
+      \sin\theta \end{cases}</span>, 其雅可比矩阵为: <span
+      class="math display">
       J(\rho ,\theta)=\frac{\partial (x,y)}{\partial (\rho ,\theta)}=
       \begin{vmatrix}
       \frac{\partial x}{\partial \rho } &amp; \frac{\partial x}{\partial
@@ -632,12 +634,12 @@
       \cos\theta &amp; -\rho \sin\theta\\
       \sin\theta &amp; \rho \cos\theta
       \end{vmatrix} = \rho
-      </span> 因此面积元变换为： <span class="math display">
+      </span> 因此面积元变换为: <span class="math display">
       \mathrm{d}x\mathrm{d}y = \left|\rho\right|
       \mathrm{d}\rho\mathrm{d}\theta = \rho
       \mathrm{d}\rho\mathrm{d}\theta
-      </span> <strong>矩阵互逆性的几何诠释</strong><br />
-      变换矩阵的互逆性直接体现在坐标系转换中： <span
+      </span> <strong>矩阵互逆性的几何诠释</strong>
+      变换矩阵的互逆性直接体现在坐标系转换中: <span
       class="math display">
       \begin{bmatrix}
       \frac{\partial x}{\partial u} &amp; \frac{\partial x}{\partial v}
@@ -650,36 +652,37 @@
       \\
       \frac{\partial v}{\partial x} &amp; \frac{\partial v}{\partial y}
       \end{bmatrix}
-      </span> 这两个雅可比矩阵的乘积为单位矩阵，其行列式乘积为1。例如当
-      <span class="math inline">J_{uv} = 5</span> 时，逆变换的行列式为
-      <span class="math inline">\displaystyle\frac{1}{5}</span>，此时：
+      </span> 这两个雅可比矩阵的乘积为单位矩阵, 其行列式乘积为1. 例如当
+      <span class="math inline">J_{uv} = 5</span> 时, 逆变换的行列式为
+      <span class="math inline">\displaystyle\frac{1}{5}</span>, 此时:
       <span class="math display">
       \mathrm{d}x\mathrm{d}y = \frac{1}{5} \mathrm{d}u\mathrm{d}v
       </span>
-      这种精确的倒数关系确保了积分在不同坐标系下计算结果的一致性，是多重积分变量替换定理的核心数学基础。</p>
+      这种精确的倒数关系确保了积分在不同坐标系下计算结果的一致性,
+      是多重积分变量替换定理的核心数学基础.</p>
       </div>
       </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin:1.2em 0;">
+      <div
+      style="display: flex; gap:10px; flex-wrap: wrap; margin:1.2em 0;">
       <div id="chpt11-polar-rtheta"
-      style="flex:1 1 280px;min-width:260px;height:320px;position:relative;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;background:#fff;">
+      style="flex:1 1 280px; min-width:260px; height:320px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; background: #fff;">
 
       </div>
       <div id="chpt11-polar-xy"
-      style="flex:1 1 280px;min-width:260px;height:320px;position:relative;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;background:#fff;">
+      style="flex:1 1 280px; min-width:260px; height:320px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; background: #fff;">
 
       </div>
       </div>
       <script data-lazy-module="threejs/chpt11-polar-change.js?v=1"></script>
-      <p><em>图：极坐标变换 <span class="math inline">(r,\theta)\mapsto
+      <p><em>图: 极坐标变换 <span class="math inline">(r,\theta)\mapsto
       (r\cos\theta,\, r\sin\theta)</span>. 左侧 <span
       class="math inline">(r,\theta)</span>-矩形 <span
       class="math inline">[0,1]\times[0,\pi/2]</span> 被等分为 <span
-      class="math inline">5\times 6</span>
-      个同样大小的小矩形；右侧映射为四分之一圆盘的极坐标网格.
-      每个”小矩形”的面积是 <span
-      class="math inline">dr\,d\theta</span>；其像的面积约为 <span
-      class="math inline">r\,dr\,d\theta</span>，因此靠近 <span
-      class="math inline">r=0</span> 的格子变得很小，靠近 <span
+      class="math inline">5\times 6</span> 个同样大小的小矩形;
+      右侧映射为四分之一圆盘的极坐标网格. 每个”小矩形”的面积是 <span
+      class="math inline">dr\,d\theta</span>; 其像的面积约为 <span
+      class="math inline">r\,dr\,d\theta</span>, 因此靠近 <span
+      class="math inline">r=0</span> 的格子变得很小, 靠近 <span
       class="math inline">r=1</span> 的格子最大——这正是雅可比行列式
       <span class="math inline">|J| = r</span> 的几何含义.</em></p>
       <div id="chpt11-ex-013" class="exercise-block"
@@ -745,30 +748,28 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">质量</span></div>
       <div class="callout-body">
-      <p>对于分布在平面区域 <span class="math inline">D</span>
-      上的物体（如薄片），若其密度函数为 <span
-      class="math inline">\rho(x,y)</span>，则总质量可通过二重积分计算：
+      <p>对于分布在平面区域 <span class="math inline">D</span> 上的物体
+      (如薄片), 若其密度函数为 <span
+      class="math inline">\rho(x,y)</span>, 则总质量可通过二重积分计算:
       <span class="math display">
       M = \iint_D \rho(x,y) \, \mathrm{d}\sigma
       </span> 其中 <span class="math inline">\mathrm{d}\sigma</span>
-      表示面积元（即直角坐标系中的 <span
-      class="math inline">\mathrm{d}x\mathrm{d}y</span>）.当密度均匀时（<span
-      class="math inline">\rho</span>
-      为常数），总质量退化为密度与面积的乘积 <span class="math inline">M
-      = \rho \cdot A</span>，其中 <span
-      class="math inline">\displaystyle A = \iint_D
-      \mathrm{d}\sigma</span> 为区域 <span class="math inline">D</span>
-      的面积.</p>
+      表示面积元 (即直角坐标系中的 <span
+      class="math inline">\mathrm{d}x\mathrm{d}y</span>). 当密度均匀时
+      (<span class="math inline">\rho</span> 为常数),
+      总质量退化为密度与面积的乘积 <span class="math inline">M = \rho
+      \cdot A</span>, 其中 <span class="math inline">\displaystyle A =
+      \iint_D \mathrm{d}\sigma</span> 为区域 <span
+      class="math inline">D</span> 的面积.</p>
       <p><strong>质心</strong></p>
-      <p>质心是物体质量分布的加权平均位置.对于离散质点系，质心坐标 <span
-      class="math inline">(\bar{x}, \bar{y})</span> 定义为： <span
+      <p>质心是物体质量分布的加权平均位置. 对于离散质点系, 质心坐标
+      <span class="math inline">(\bar{x}, \bar{y})</span> 定义为: <span
       class="math display">
       \displaystyle \bar{x} = \frac{\sum_{i=1}^n m_i x_i}{\sum_{i=1}^n
       m_i}, \quad \bar{y} = \frac{\sum_{i=1}^n m_i y_i}{\sum_{i=1}^n
       m_i}
-      </span>
-      将其推广到连续情形，则质心坐标通过二重积分表达。当密度函数为 <span
-      class="math inline">\mu(x,y)</span> 时： <span
+      </span> 将其推广到连续情形, 则质心坐标通过二重积分表达.
+      当密度函数为 <span class="math inline">\mu(x,y)</span> 时: <span
       class="math display">
       \displaystyle \bar{x} = \frac{\iint_D x \mu(x,y) \,
       \mathrm{d}\sigma}{\iint_D \mu(x,y) \, \mathrm{d}\sigma}, \quad
@@ -908,40 +909,39 @@
       <div class="callout callout-warning">
       <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">转动惯量与质心的关系(不要求)</span></div>
       <div class="callout-body">
-      <p>对于平面区域 <span class="math inline">D</span>
-      上的质量分布，若密度函数为 <span
-      class="math inline">\mu(x,y)</span>，则系统对某点 <span
-      class="math inline">(x_0, y_0)</span> 的转动惯量为： <span
-      class="math display">
+      <p>对于平面区域 <span class="math inline">D</span> 上的质量分布,
+      若密度函数为 <span class="math inline">\mu(x,y)</span>,
+      则系统对某点 <span class="math inline">(x_0, y_0)</span>
+      的转动惯量为: <span class="math display">
       I(x_0, y_0) = \iint_D \mu(x,y) \left[ (x-x_0)^2 + (y-y_0)^2
       \right] \mathrm{d}x\mathrm{d}y
       </span> 此式可视为质量元 <span
       class="math inline">\mu(x,y)\mathrm{d}x\mathrm{d}y</span>
-      到参考点距离平方的加权积分.特别地，当参考点为原点时，转动惯量简化为：
-      <span class="math display">
+      到参考点距离平方的加权积分. 特别地, 当参考点为原点时,
+      转动惯量简化为: <span class="math display">
       I = \iint_D \mu(x,y) r^2(x,y) \mathrm{d}x\mathrm{d}y \quad (r^2 =
       x^2 + y^2)
       </span></p>
-      <p><strong>质心的极值特性</strong>:<br />
-      质心具有重要物理性质：它是使系统转动惯量取极小值的位置.为证明这一点，对
-      <span class="math inline">I(x_0, y_0)</span> 分别关于 <span
-      class="math inline">x_0, y_0</span> 求偏导并令其为零： <span
+      <p><strong>质心的极值特性</strong>: 质心具有重要物理性质:
+      它是使系统转动惯量取极小值的位置. 为证明这一点, 对 <span
+      class="math inline">I(x_0, y_0)</span> 分别关于 <span
+      class="math inline">x_0, y_0</span> 求偏导并令其为零: <span
       class="math display">
       \frac{\partial I}{\partial x_0} = \iint_D 2\mu(x,y)(x_0 -
       x)\mathrm{d}x\mathrm{d}y = 0 \\
       \frac{\partial I}{\partial y_0} = \iint_D 2\mu(x,y)(y_0 -
       y)\mathrm{d}x\mathrm{d}y = 0
-      </span> 由此可得方程组： <span class="math display">
+      </span> 由此可得方程组: <span class="math display">
       x_0 \iint_D \mu\mathrm{d}x\mathrm{d}y = \iint_D \mu
       x\mathrm{d}x\mathrm{d}y \\
       y_0 \iint_D \mu\mathrm{d}x\mathrm{d}y = \iint_D \mu
       y\mathrm{d}x\mathrm{d}y
-      </span> 最终解得质心坐标为： <span class="math display">
+      </span> 最终解得质心坐标为: <span class="math display">
       \displaystyle x_0 = \frac{\iint_D \mu
       x\mathrm{d}x\mathrm{d}y}{\iint_D \mu\mathrm{d}x\mathrm{d}y}, \quad
       y_0 = \frac{\iint_D \mu y\mathrm{d}x\mathrm{d}y}{\iint_D
       \mu\mathrm{d}x\mathrm{d}y}
-      </span> 这与离散质点系的质心公式一致： <span class="math display">
+      </span> 这与离散质点系的质心公式一致: <span class="math display">
       \displaystyle \begin{cases}
       x_0 = \frac{\sum m_i x_i}{\sum m_i} &amp; \text{（质量加权平均）}
       \\
@@ -953,9 +953,11 @@
       <div class="callout callout-warning">
       <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">平行轴定理</span></div>
       <div class="callout-body">
-      <p>平行轴定理揭示了物体绕不同轴转动惯量之间的关系：<strong>绕任意轴的转动惯量等于绕质心轴的转动惯量加上总质量与该轴到质心距离平方的乘积</strong>。其数学推导可通过二重积分展开：</p>
-      <p>设质心坐标为 <span class="math inline">(x_c, y_c)</span>，绕点
-      <span class="math inline">(x_0, y_0)</span> 的转动惯量为： <span
+      <p>平行轴定理揭示了物体绕不同轴转动惯量之间的关系:
+      <strong>绕任意轴的转动惯量等于绕质心轴的转动惯量加上总质量与该轴到质心距离平方的乘积</strong>.
+      其数学推导可通过二重积分展开:</p>
+      <p>设质心坐标为 <span class="math inline">(x_c, y_c)</span>, 绕点
+      <span class="math inline">(x_0, y_0)</span> 的转动惯量为: <span
       class="math display">
       \begin{aligned}
       I(x_0,y_0) &amp;= \iint_D \mu \left[ (x-x_0)^2 + (y-y_0)^2 \right]
@@ -964,7 +966,7 @@
       y_0)^2 \right] \mathrm{d}x\mathrm{d}y
       \end{aligned}
       </span></p>
-      <p>展开平方项并重组积分： <span class="math display">
+      <p>展开平方项并重组积分: <span class="math display">
       \begin{aligned}
       &amp;= \underbrace{\iint_D \mu \left[ (x-x_c)^2 + (y-y_c)^2
       \right] \mathrm{d}x\mathrm{d}y}_{I_c \ (\text{绕质心的转动惯量})}
@@ -978,17 +980,17 @@
       \mathrm{d}x\mathrm{d}y}_{0 \ (\text{质心定义})}
       \end{aligned}
       </span></p>
-      <p>关键消去项：根据质心坐标的定义 <span
+      <p>关键消去项: 根据质心坐标的定义 <span
       class="math inline">\displaystyle x_c = \frac{1}{M}\iint_D \mu x
-      \mathrm{d}x\mathrm{d}y</span>，交叉项中的积分 <span
+      \mathrm{d}x\mathrm{d}y</span>, 交叉项中的积分 <span
       class="math inline">\displaystyle\iint_D \mu(x -
       x_c)\mathrm{d}x\mathrm{d}y</span> 和 <span
       class="math inline">\displaystyle\iint_D \mu(y -
-      y_c)\mathrm{d}x\mathrm{d}y</span> 必然为零。最终得到简洁形式：
+      y_c)\mathrm{d}x\mathrm{d}y</span> 必然为零. 最终得到简洁形式:
       <span class="math display">
       I(x_0, y_0) = I_c + M r^2
       </span> 其中 <span class="math inline">r = \sqrt{(x_c - x_0)^2 +
-      (y_c - y_0)^2}</span> 为两轴间距离，<span
+      (y_c - y_0)^2}</span> 为两轴间距离, <span
       class="math inline">\displaystyle M = \iint_D \mu
       \mathrm{d}x\mathrm{d}y</span> 为总质量.</p>
       </div>
@@ -1352,13 +1354,14 @@
       </div>
       </div>
       </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin:1.2em 0;">
+      <div
+      style="display: flex; gap:10px; flex-wrap: wrap; margin:1.2em 0;">
       <div id="chpt11-example12"
-      style="flex:1 1 320px;min-width:300px;height:400px;position:relative;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;">
+      style="flex:1 1 320px; min-width:300px; height:400px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden;">
 
       </div>
       <div id="chpt11-example13"
-      style="flex:1 1 320px;min-width:300px;height:400px;position:relative;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;">
+      style="flex:1 1 320px; min-width:300px; height:400px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden;">
 
       </div>
       </div>

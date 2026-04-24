@@ -40,7 +40,13 @@
       <li><a href="#曲线弧长" id="toc-曲线弧长">6.1.3 曲线弧长</a></li>
       </ul></li>
       <li><a href="#物理中的应用-功与能量"
-      id="toc-物理中的应用-功与能量">6.2 物理中的应用: 功与能量</a></li>
+      id="toc-物理中的应用-功与能量">6.2 物理中的应用: 功与能量</a>
+      <ul>
+      <li><a href="#有限区域内的变力做功"
+      id="toc-有限区域内的变力做功">6.2.1 有限区域内的变力做功</a></li>
+      <li><a href="#无穷区域上的做功问题"
+      id="toc-无穷区域上的做功问题">6.2.2 无穷区域上的做功问题</a></li>
+      </ul></li>
       <li><a href="#概率中的应用" id="toc-概率中的应用">6.3
       概率中的应用</a></li>
       <li><a href="#反常积分" id="toc-反常积分">6.4 反常积分</a></li>
@@ -69,20 +75,24 @@
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
-      <p>微元法是积分学中解决几何与物理问题的核心思想，它将复杂的整体问题分解为无穷多个简单的局部问题。</p>
-      <p><strong>基本思路</strong>：</p>
+      <p>微元法是积分学中解决几何与物理问题的核心思想,
+      它将复杂的整体问题分解为无穷多个简单的局部问题.</p>
+      <p><strong>基本思路</strong>:</p>
       <ol type="1">
-      <li><strong>分割</strong>：将所求的整体量对应的区域分割成许多微小部分</li>
-      <li><strong>近似</strong>：在每个微小部分上，用简单的几何量近似代替复杂的实际量</li>
-      <li><strong>求和取极限</strong>：将所有微小部分的近似值相加，然后通过取极限得到精确值</li>
+      <li><strong>分割</strong>:
+      将所求的整体量对应的区域分割成许多微小部分</li>
+      <li><strong>近似</strong>: 在每个微小部分上,
+      用简单的几何量近似代替复杂的实际量</li>
+      <li><strong>求和取极限</strong>: 将所有微小部分的近似值相加,
+      然后通过取极限得到精确值</li>
       </ol>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">微元法数学表述</span></div>
       <div class="callout-body">
-      <p>如果要求整体量 <span class="math inline">Q</span>，先找出微元
-      <span class="math inline">dQ = f(x)dx</span>，然后通过积分得到
+      <p>如果要求整体量 <span class="math inline">Q</span>, 先找出微元
+      <span class="math inline">dQ = f(x)dx</span>, 然后通过积分得到
       <span class="math display">
       Q = \int_a^b dQ = \int_a^b f(x)dx
       </span></p>
@@ -217,13 +227,13 @@
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要</span></div>
       <div class="callout-body">
       <p>曲线 <span class="math inline">y = f(x)</span> 绕 <span
-      class="math inline">x</span> 轴旋转一周形成的旋转体体积： <span
+      class="math inline">x</span> 轴旋转一周形成的旋转体体积: <span
       class="math display">
       V = \int_a^b \pi [f(x)]^2 dx
       </span></p>
-      <p><strong>推导</strong>：在 <span class="math inline">x</span>
+      <p><strong>推导</strong>: 在 <span class="math inline">x</span>
       处垂直于 <span class="math inline">x</span> 轴的截面是半径为 <span
-      class="math inline">f(x)</span> 的圆盘，面积 <span
+      class="math inline">f(x)</span> 的圆盘, 面积 <span
       class="math inline">A(x) = \pi [f(x)]^2</span></p>
       </div>
       </div>
@@ -268,11 +278,11 @@
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要</span></div>
       <div class="callout-body">
       <p>曲线 <span class="math inline">y = f(x)</span> 绕 <span
-      class="math inline">y</span> 轴旋转一周形成的旋转体体积： <span
+      class="math inline">y</span> 轴旋转一周形成的旋转体体积: <span
       class="math display">
       V = \int_a^b 2\pi x f(x) dx
       </span></p>
-      <p><strong>推导</strong>：在 <span class="math inline">x</span>
+      <p><strong>推导</strong>: 在 <span class="math inline">x</span>
       处厚度为 <span class="math inline">dx</span> 的柱壳体积微元 <span
       class="math inline">dV = 2\pi x \cdot f(x) \cdot dx</span></p>
       </div>
@@ -319,11 +329,11 @@
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">直角坐标系下的弧长</span></div>
       <div class="callout-body">
       <p>曲线 <span class="math inline">y = f(x)</span> 在 <span
-      class="math inline">[a,b]</span> 上的弧长： <span
+      class="math inline">[a,b]</span> 上的弧长: <span
       class="math display">
       L = \int_a^b \sqrt{1 + [f&#39;(x)]^2}  dx
       </span></p>
-      <p><strong>推导</strong>：弧长微元 <span class="math inline">ds =
+      <p><strong>推导</strong>: 弧长微元 <span class="math inline">ds =
       \sqrt{(dx)^2 + (dy)^2} = \sqrt{1 + \left(\frac{dy}{dx}\right)^2}
       dx</span></p>
       </div>
@@ -383,7 +393,7 @@
       <div class="callout-body">
       <p>曲线由参数方程 <span class="math inline">x = x(t), y =
       y(t)</span> (<span class="math inline">\alpha \leq t \leq
-      \beta</span>) 给出时，弧长为： <span class="math display">
+      \beta</span>) 给出时, 弧长为: <span class="math display">
       L = \int_\alpha^\beta \sqrt{\left(\frac{dx}{dt}\right)^2 +
       \left(\frac{dy}{dt}\right)^2}  dt
       </span></p>
@@ -435,13 +445,13 @@
       <div class="callout-body">
       <p>曲线由极坐标方程 <span class="math inline">r = r(\theta)</span>
       (<span class="math inline">\alpha \leq \theta \leq \beta</span>)
-      给出时，弧长为： <span class="math display">
+      给出时, 弧长为: <span class="math display">
       L = \int_\alpha^\beta \sqrt{[r(\theta)]^2 +
       \left[\frac{dr}{d\theta}\right]^2}  d\theta
       </span></p>
-      <p><strong>推导</strong>：利用直角坐标与极坐标的关系 <span
-      class="math inline">x = r\cos\theta, y =
-      r\sin\theta</span>，代入参数方程的弧长公式可得。</p>
+      <p><strong>推导</strong>: 利用直角坐标与极坐标的关系 <span
+      class="math inline">x = r\cos\theta, y = r\sin\theta</span>,
+      代入参数方程的弧长公式可得.</p>
       </div>
       </div>
       <div id="chpt6-ex-007" class="exercise-block"
@@ -495,14 +505,10 @@
       </div>
       <h2 id="物理中的应用-功与能量">6.2 物理中的应用: 功与能量</h2>
       <blockquote>
-      <p>在物理学中，力沿路径做的功定义为力与位移的乘积。当力是变力时，需要用积分计算。</p>
+      <p>在物理学中, 力沿路径做的功定义为力与位移的乘积. 当力是变力时,
+      需要用积分计算.</p>
       </blockquote>
-      <div class="callout callout-warning">
-      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">有限区域内的变力做功</span></div>
-      <div class="callout-body">
-
-      </div>
-      </div>
+      <h3 id="有限区域内的变力做功">6.2.1 有限区域内的变力做功</h3>
       <div id="chpt6-ex-008" class="exercise-block"
       data-difficulty="easy">
       <div class="ex-banner">
@@ -587,12 +593,7 @@
       </div>
       </div>
       </div>
-      <div class="callout callout-warning">
-      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">无穷区域上的做功问题</span></div>
-      <div class="callout-body">
-
-      </div>
-      </div>
+      <h3 id="无穷区域上的做功问题">6.2.2 无穷区域上的做功问题</h3>
       <div id="chpt6-ex-010" class="exercise-block"
       data-difficulty="medium">
       <div class="ex-banner">
@@ -638,7 +639,7 @@
       <div class="callout callout-warning">
       <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">无界函数的积分</span></div>
       <div class="callout-body">
-      <p>当被积函数在积分区间内无界时，也需要通过极限来定义积分。</p>
+      <p>当被积函数在积分区间内无界时, 也需要通过极限来定义积分.</p>
       </div>
       </div>
       <div id="chpt6-ex-011" class="exercise-block"
@@ -686,25 +687,29 @@
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
-      <p>积分学在概率论中扮演着核心角色，特别是在处理连续型随机变量时。本节将介绍如何用积分来描述和分析连续随机现象。掌握积分在概率中的应用，不仅是学习概率论的基础，也是理解现代统计学、金融工程等领域的必备工具。</p>
+      <p>积分学在概率论中扮演着核心角色, 特别是在处理连续型随机变量时.
+      本节将介绍如何用积分来描述和分析连续随机现象.
+      掌握积分在概率中的应用, 不仅是学习概率论的基础,
+      也是理解现代统计学, 金融工程等领域的必备工具.</p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">概率密度函数</span></div>
       <div class="callout-body">
-      <p>对于连续型随机变量，我们不能像离散情况那样谈论某个具体值的概率，而是使用概率密度函数来描述概率分布。</p>
-      <p><strong>定义</strong>： 如果存在非负函数 <span
-      class="math inline">f(x)</span>，使得对任意实数 <span
-      class="math inline">a \leq b</span>，随机变量 <span
+      <p>对于连续型随机变量, 我们不能像离散情况那样谈论某个具体值的概率,
+      而是使用概率密度函数来描述概率分布.</p>
+      <p><strong>定义</strong>: 如果存在非负函数 <span
+      class="math inline">f(x)</span>, 使得对任意实数 <span
+      class="math inline">a \leq b</span>, 随机变量 <span
       class="math inline">X</span> 落在区间 <span
       class="math inline">[a,b]</span> 内的概率为 <span
       class="math display">
       P(a \leq X \leq b) = \int_a^b f(x)  dx
       </span> 则称 <span class="math inline">f(x)</span> 为 <span
-      class="math inline">X</span> 的概率密度函数。</p>
-      <p><strong>性质</strong>： 1. 非负性：<span
+      class="math inline">X</span> 的概率密度函数.</p>
+      <p><strong>性质</strong>: 1. 非负性: <span
       class="math inline">f(x) \geq 0</span> 对所有 <span
-      class="math inline">x</span> 成立 2. 归一性：<span
+      class="math inline">x</span> 成立 2. 归一性: <span
       class="math inline">\displaystyle\int_{-\infty}^\infty f(x)  dx =
       1</span></p>
       </div>
@@ -759,8 +764,8 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">均匀分布</span></div>
       <div class="callout-body">
-      <p>均匀分布描述了一个随机变量在某个区间内等可能取值的现象。</p>
-      <p><strong>定义</strong>： 如果随机变量 <span
+      <p>均匀分布描述了一个随机变量在某个区间内等可能取值的现象.</p>
+      <p><strong>定义</strong>: 如果随机变量 <span
       class="math inline">X</span> 在区间 <span
       class="math inline">[a,b]</span> 上有概率密度函数 <span
       class="math display">
@@ -768,8 +773,8 @@
       \frac{1}{b-a} &amp; a \leq x \leq b \\
       0 &amp; \text{其他}
       \end{cases}
-      </span> 则称 <span class="math inline">X</span> 服从均匀分布，记作
-      <span class="math inline">X \sim U(a,b)</span>。</p>
+      </span> 则称 <span class="math inline">X</span> 服从均匀分布, 记作
+      <span class="math inline">X \sim U(a,b)</span>.</p>
       </div>
       </div>
       <div id="chpt6-ex-013" class="exercise-block"
@@ -812,17 +817,17 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">指数分布</span></div>
       <div class="callout-body">
-      <p>指数分布常用于描述等待时间、寿命等随机现象。</p>
-      <p><strong>定义</strong>： 如果随机变量 <span
+      <p>指数分布常用于描述等待时间, 寿命等随机现象.</p>
+      <p><strong>定义</strong>: 如果随机变量 <span
       class="math inline">X</span> 有概率密度函数 <span
       class="math display">
       f(x) = \begin{cases}
       \lambda e^{-\lambda x} &amp; x \geq 0 \\
       0 &amp; x &lt; 0
       \end{cases}
-      </span> 其中 <span class="math inline">\lambda &gt; 0</span>，则称
+      </span> 其中 <span class="math inline">\lambda &gt; 0</span>, 则称
       <span class="math inline">X</span> 服从参数为 <span
-      class="math inline">\lambda</span> 的指数分布。</p>
+      class="math inline">\lambda</span> 的指数分布.</p>
       </div>
       </div>
       <div id="chpt6-ex-014" class="exercise-block"
@@ -868,50 +873,50 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">正态分布</span></div>
       <div class="callout-body">
-      <p>正态分布（高斯分布）是概率论与统计学中最重要的分布，它描述了自然界中大量随机现象的分布规律。</p>
-      <p><strong>定义</strong>： 如果随机变量 <span
+      <p>正态分布 (高斯分布) 是概率论与统计学中最重要的分布,
+      它描述了自然界中大量随机现象的分布规律.</p>
+      <p><strong>定义</strong>: 如果随机变量 <span
       class="math inline">X</span> 有概率密度函数 <span
       class="math display">
       f(x) = \frac{1}{\sqrt{2\pi}\sigma}
       e^{-\frac{(x-\mu)^2}{2\sigma^2}}
-      </span> 则称 <span class="math inline">X</span> 服从正态分布，记作
-      <span class="math inline">X \sim N(\mu,\sigma^2)</span>。</p>
-      <p><strong>参数意义</strong>： - <span
-      class="math inline">\mu</span>：均值，决定分布的中心位置 - <span
-      class="math inline">\sigma</span>：标准差，决定分布的分散程度</p>
-      <p><strong>标准正态分布</strong>： 当 <span
-      class="math inline">\mu = 0</span>，<span
-      class="math inline">\sigma = 1</span>
-      时，称为标准正态分布，其概率密度函数为 <span class="math display">
+      </span> 则称 <span class="math inline">X</span> 服从正态分布, 记作
+      <span class="math inline">X \sim N(\mu,\sigma^2)</span>.</p>
+      <p><strong>参数意义</strong>: - <span
+      class="math inline">\mu</span>: 均值, 决定分布的中心位置 - <span
+      class="math inline">\sigma</span>: 标准差, 决定分布的分散程度</p>
+      <p><strong>标准正态分布</strong>: 当 <span class="math inline">\mu
+      = 0</span>, <span class="math inline">\sigma = 1</span> 时,
+      称为标准正态分布, 其概率密度函数为 <span class="math display">
       \varphi(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}
       </span></p>
-      <p><strong>概率计算</strong>： 对于 <span class="math inline">X
-      \sim N(\mu,\sigma^2)</span>，<span class="math inline">P(a \leq X
+      <p><strong>概率计算</strong>: 对于 <span class="math inline">X
+      \sim N(\mu,\sigma^2)</span>, <span class="math inline">P(a \leq X
       \leq b) = \displaystyle\int_a^b \frac{1}{\sqrt{2\pi}\sigma}
       e^{-\frac{(x-\mu)^2}{2\sigma^2}}  dx</span></p>
-      <p>这个积分没有初等函数形式的原函数，谜底留到第二册.</p>
+      <p>这个积分没有初等函数形式的原函数, 谜底留到第二册.</p>
       </div>
       </div>
       <h2 id="反常积分">6.4 反常积分</h2>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
-      <p>反常积分处理两类问题：无穷区间上的积分和无界函数的积分。</p>
+      <p>反常积分处理两类问题: 无穷区间上的积分和无界函数的积分.</p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">无穷区间上的反常积分</span></div>
       <div class="callout-body">
-      <p><strong>定义</strong>： 1. <span
+      <p><strong>定义</strong>: 1. <span
       class="math inline">\displaystyle\int_a^\infty f(x)  dx = \lim_{b
       \to \infty} \int_a^b f(x)  dx</span> 2. <span
       class="math inline">\displaystyle\int_{-\infty}^b f(x)  dx =
       \lim_{a \to -\infty} \int_a^b f(x)  dx</span> 3. <span
       class="math inline">\displaystyle\int_{-\infty}^\infty f(x)  dx =
-      \int_{-\infty}^c f(x)  dx + \int_c^\infty f(x)  dx</span>（<span
-      class="math inline">c</span> 为任意实数）</p>
-      <p><strong>收敛判别</strong>：
-      如果极限存在且有限，则称反常积分收敛；否则称发散。</p>
+      \int_{-\infty}^c f(x)  dx + \int_c^\infty f(x)  dx</span> (<span
+      class="math inline">c</span> 为任意实数)</p>
+      <p><strong>收敛判别</strong>: 如果极限存在且有限,
+      则称反常积分收敛; 否则称发散.</p>
       </div>
       </div>
       <div id="chpt6-ex-015" class="exercise-block"
@@ -972,26 +977,26 @@
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">无界函数的反常积分（瑕积分）</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">无界函数的反常积分 (瑕积分)</span></div>
       <div class="callout-body">
       <p>如果函数 <span class="math inline">f(x)</span> 在点 <span
-      class="math inline">c</span> 的任意邻域内无界，则称 <span
-      class="math inline">c</span> 为瑕点。</p>
-      <p><strong>定义</strong>： 1. 若 <span
+      class="math inline">c</span> 的任意邻域内无界, 则称 <span
+      class="math inline">c</span> 为瑕点.</p>
+      <p><strong>定义</strong>: 1. 若 <span
       class="math inline">f(x)</span> 在 <span
-      class="math inline">[a,b)</span> 上连续，且 <span
-      class="math inline">\lim_{x \to b^-} f(x) = \infty</span>，则
+      class="math inline">[a,b)</span> 上连续, 且 <span
+      class="math inline">\lim_{x \to b^-} f(x) = \infty</span>, 则
       <span class="math display">
          \int_a^b f(x)  dx = \lim_{t \to b^-} \int_a^t f(x)  dx
          </span></p>
       <ol start="2" type="1">
       <li><p>若 <span class="math inline">f(x)</span> 在 <span
-      class="math inline">(a,b]</span> 上连续，且 <span
-      class="math inline">\lim_{x \to a^+} f(x) = \infty</span>，则
+      class="math inline">(a,b]</span> 上连续, 且 <span
+      class="math inline">\lim_{x \to a^+} f(x) = \infty</span>, 则
       <span class="math display">
       \int_a^b f(x)  dx = \lim_{t \to a^+} \int_t^b f(x)  dx
       </span></p></li>
-      <li><p>若 <span class="math inline">c \in (a,b)</span> 是瑕点，则
+      <li><p>若 <span class="math inline">c \in (a,b)</span> 是瑕点, 则
       <span class="math display">
       \int_a^b f(x)  dx = \int_a^c f(x)  dx + \int_c^b f(x)  dx
       </span></p></li>

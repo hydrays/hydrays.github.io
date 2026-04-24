@@ -53,9 +53,9 @@
       <li><a href="#斯托克斯公式" id="toc-斯托克斯公式">12.6.2
       斯托克斯公式</a></li>
       </ul></li>
-      <li><a href="#统一视角广义牛顿-莱布尼茨公式"
-      id="toc-统一视角广义牛顿-莱布尼茨公式">12.7
-      统一视角：广义牛顿-莱布尼茨公式</a></li>
+      <li><a href="#统一视角-广义牛顿-莱布尼茨公式"
+      id="toc-统一视角-广义牛顿-莱布尼茨公式">12.7 统一视角:
+      广义牛顿-莱布尼茨公式</a></li>
       </ul></li>
       </ul>
     </div>
@@ -80,29 +80,35 @@
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
-      <p>本章综合运用多元函数微积分，解决物理中的核心问题：力沿路径做的功、流体穿过曲面的通量，以及将它们联系起来的三大积分定理（格林、高斯、斯托克斯）。每一个定理都是微积分基本定理在更高维度的推广。</p>
+      <p>本章综合运用多元函数微积分, 解决物理中的核心问题:
+      力沿路径做的功, 流体穿过曲面的通量,
+      以及将它们联系起来的三大积分定理 (格林, 高斯, 斯托克斯).
+      每一个定理都是微积分基本定理在更高维度的推广.</p>
       </div>
       </div>
       <h2 id="场与向量场">12.1 场与向量场</h2>
-      <p>自然界中许多物理量随空间位置变化：温度在房间各处不同，风速在每个地点有大小和方向，引力场在不同位置指向不同的方向。数学上，我们用<strong>场</strong>来描述这类”空间中每个点都对应一个量”的结构。</p>
+      <p>自然界中许多物理量随空间位置变化: 温度在房间各处不同,
+      风速在每个地点有大小和方向, 引力场在不同位置指向不同的方向.
+      数学上,
+      我们用<strong>场</strong>来描述这类”空间中每个点都对应一个量”的结构.</p>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义：标量场与向量场</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义: 标量场与向量场</span></div>
       <div class="callout-body">
       <p>设 <span class="math inline">D \subset \mathbb{R}^n</span>
-      为一区域。</p>
+      为一区域.</p>
       <ul>
-      <li><strong>标量场（scalar field）</strong>：<span
+      <li><strong>标量场 (scalar field)</strong>: <span
       class="math inline">D</span> 上的实值函数 <span
-      class="math inline">f: D \to
-      \mathbb{R}</span>，每个点对应一个数。例：温度场、密度场、电势场。</li>
-      <li><strong>向量场（vector field）</strong>：<span
+      class="math inline">f: D \to \mathbb{R}</span>, 每个点对应一个数.
+      例: 温度场, 密度场, 电势场.</li>
+      <li><strong>向量场 (vector field)</strong>: <span
       class="math inline">D</span> 上的向量值函数 <span
-      class="math inline">\mathbf{F}: D \to
-      \mathbb{R}^n</span>，每个点对应一个向量。例：引力场、流速场、电（力）场。</li>
+      class="math inline">\mathbf{F}: D \to \mathbb{R}^n</span>,
+      每个点对应一个向量. 例: 引力场, 流速场, 电 (力) 场.</li>
       </ul>
       </div>
       </div>
-      <p>向量场的<strong>分量形式</strong>：</p>
+      <p>向量场的<strong>分量形式</strong>:</p>
       <p><span class="math display">
       \mathbf{F}(x,y) = P(x,y)\,\hat{\mathbf{i}} +
       Q(x,y)\,\hat{\mathbf{j}} \qquad \text{（二维）}
@@ -112,15 +118,15 @@
       Q(x,y,z)\,\hat{\mathbf{j}} + R(x,y,z)\,\hat{\mathbf{k}} \qquad
       \text{（三维）}
       </span></p>
-      <p>其中 <span class="math inline">P, Q, R</span>
-      是普通的多元函数，分别表示向量在 <span class="math inline">x, y,
-      z</span> 方向的分量。</p>
+      <p>其中 <span class="math inline">P, Q, R</span> 是普通的多元函数,
+      分别表示向量在 <span class="math inline">x, y, z</span>
+      方向的分量.</p>
       <div class="callout callout-note">
       <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">几个二维向量场的例子</span></div>
       <div class="callout-body">
       <p>==例 1==　<span class="math inline">\mathbf{F}(x,y) =
-      2\hat{\mathbf{i}} + 3\hat{\mathbf{j}}</span>　—
-      均匀场，每处方向和大小相同。</p>
+      2\hat{\mathbf{i}} + 3\hat{\mathbf{j}}</span>　— 均匀场,
+      每处方向和大小相同.</p>
       <figure>
       <img src="media/img/fig2-4-1.png" style="width:200pt"
       alt="均匀向量场" />
@@ -128,7 +134,7 @@
       </figure>
       <p>==例 2==　<span class="math inline">\mathbf{F}(x,y) =
       x\hat{\mathbf{i}}</span>　— 水平分量随 <span
-      class="math inline">x</span> 增大，无竖直分量。</p>
+      class="math inline">x</span> 增大, 无竖直分量.</p>
       <figure>
       <img src="media/img/fig2-4-3.png" style="width:200pt"
       alt="水平向量场" />
@@ -136,7 +142,7 @@
       </figure>
       <p>==例 3==　<span class="math inline">\mathbf{F}(x,y) =
       x\hat{\mathbf{i}} + y\hat{\mathbf{j}}</span>　—
-      从原点向外辐射的源场。</p>
+      从原点向外辐射的源场.</p>
       <figure>
       <img src="media/img/fig2-4-2.png" style="width:200pt"
       alt="辐射向量场" />
@@ -144,7 +150,7 @@
       </figure>
       <p>==例 4==　<span class="math inline">\mathbf{F}(x,y) =
       y\hat{\mathbf{i}} + x\hat{\mathbf{j}}</span>　—
-      场线呈双曲线形。</p>
+      场线呈双曲线形.</p>
       <figure>
       <img src="media/img/fig2-4-4.png" style="width:200pt"
       alt="双曲向量场" />
@@ -155,9 +161,10 @@
       <div class="callout callout-note">
       <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">注</span></div>
       <div class="callout-body">
-      <p><strong>三维向量场</strong>的结构更为丰富。下面是两个典型例子，可拖动旋转查看：左图为螺旋场
-      <span
-      class="math inline">\mathbf{F}=(-z,\tfrac{1}{2},x)</span>，右图为磁偶极子场。</p>
+      <p><strong>三维向量场</strong>的结构更为丰富. 下面是两个典型例子,
+      可拖动旋转查看: 左图为螺旋场 <span
+      class="math inline">\mathbf{F}=(-z,\tfrac{1}{2},x)</span>,
+      右图为磁偶极子场.</p>
       </div>
       </div>
       <div style="display:flex;gap:10px;margin:1.2em 0 0.2em;">
@@ -171,63 +178,65 @@
       </div>
       </div>
       <script data-lazy-module="threejs/chapter12-vectorfield.js?v=20260414b"></script>
-      <p>本章的核心问题是：<strong>如何在向量场中进行积分？</strong></p>
+      <p>本章的核心问题是: <strong>如何在向量场中进行积分?</strong></p>
       <h2 id="第一类曲线积分">12.2 第一类曲线积分</h2>
       <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">引入问题：不均匀细线的质量</span></div>
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">引入问题: 不均匀细线的质量</span></div>
       <div class="callout-body">
       <p>一段细线弯曲成平面曲线 <span class="math inline">L</span>
-      的形状，其线密度（单位长度的质量）在不同位置不同，记为 <span
-      class="math inline">\rho(x,y)</span>。如何计算这段细线的总质量？</p>
+      的形状, 其线密度 (单位长度的质量) 在不同位置不同, 记为 <span
+      class="math inline">\rho(x,y)</span>.
+      如何计算这段细线的总质量?</p>
       <p>将 <span class="math inline">L</span> 分成 <span
-      class="math inline">N</span> 小段，第 <span
+      class="math inline">N</span> 小段, 第 <span
       class="math inline">i</span> 段的弧长为 <span
-      class="math inline">\Delta s_i</span>，取该段上任一点 <span
-      class="math inline">(x_i, y_i)</span>，则该段质量约为 <span
-      class="math inline">\rho(x_i, y_i)\,\Delta
-      s_i</span>。对所有小段求和并令 <span
-      class="math inline">N\to\infty</span>，即得细线总质量：</p>
+      class="math inline">\Delta s_i</span>, 取该段上任一点 <span
+      class="math inline">(x_i, y_i)</span>, 则该段质量约为 <span
+      class="math inline">\rho(x_i, y_i)\,\Delta s_i</span>.
+      对所有小段求和并令 <span class="math inline">N\to\infty</span>,
+      即得细线总质量:</p>
       <p><span class="math display">M = \lim_{\lambda\to
       0}\sum_{i=1}^{N}\rho(x_i,y_i)\,\Delta s_i,</span></p>
       <p>其中 <span class="math inline">\lambda = \max_i \Delta
-      s_i</span> 为最大小段弧长。</p>
+      s_i</span> 为最大小段弧长.</p>
       </div>
       </div>
-      <p>这个极限就是<strong>第一类曲线积分</strong>（或<strong>弧长曲线积分</strong>）的定义。</p>
+      <p>这个极限就是<strong>第一类曲线积分</strong>
+      (或<strong>弧长曲线积分</strong>) 的定义.</p>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义：第一类曲线积分</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义: 第一类曲线积分</span></div>
       <div class="callout-body">
       <p>设 <span class="math inline">f(x,y)</span> 在曲线 <span
-      class="math inline">L</span> 上连续。将 <span
+      class="math inline">L</span> 上连续. 将 <span
       class="math inline">L</span> 划分为 <span
-      class="math inline">N</span> 段弧，第 <span
+      class="math inline">N</span> 段弧, 第 <span
       class="math inline">i</span> 段弧长为 <span
-      class="math inline">\Delta s_i</span>，在该段上取任一点 <span
-      class="math inline">(x_i,y_i)</span>，令 <span
-      class="math inline">\lambda = \max_i \Delta s_i</span>。若极限</p>
+      class="math inline">\Delta s_i</span>, 在该段上取任一点 <span
+      class="math inline">(x_i,y_i)</span>, 令 <span
+      class="math inline">\lambda = \max_i \Delta s_i</span>. 若极限</p>
       <p><span class="math display">\lim_{\lambda\to
       0}\sum_{i=1}^{N}f(x_i,y_i)\,\Delta s_i</span></p>
-      <p>存在且与划分方式及取点无关，则称该极限为 <span
+      <p>存在且与划分方式及取点无关, 则称该极限为 <span
       class="math inline">f</span> 沿 <span class="math inline">L</span>
-      的<strong>第一类曲线积分</strong>，记作</p>
+      的<strong>第一类曲线积分</strong>, 记作</p>
       <p><span class="math display">\int_L f(x,y)\,\mathrm{d}s =
       \lim_{\lambda\to 0}\sum_{i=1}^{N}f(x_i,y_i)\,\Delta
       s_i,</span></p>
       <p><span class="math inline">\mathrm{d}s</span>
-      称为<strong>弧长微元</strong>。</p>
+      称为<strong>弧长微元</strong>.</p>
       </div>
       </div>
       <div class="callout callout-note">
-      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">计算方法（参数化化简）</span></div>
+      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">计算方法 (参数化化简)</span></div>
       <div class="callout-body">
       <p>若 <span class="math inline">L</span> 由参数方程 <span
-      class="math inline">x=x(t),\,y=y(t),\,t\in[t_0,t_1]</span>
-      给出，<span class="math inline">t_0 &lt; t_1</span>，<span
+      class="math inline">x=x(t),\,y=y(t),\,t\in[t_0,t_1]</span> 给出,
+      <span class="math inline">t_0 &lt; t_1</span>, <span
       class="math inline">x&#39;(t),y&#39;(t)</span> 在 <span
-      class="math inline">[t_0,t_1]</span> 上连续，且对所有 <span
+      class="math inline">[t_0,t_1]</span> 上连续, 且对所有 <span
       class="math inline">t\in[t_0,t_1]</span> 均有 <span
-      class="math inline">[x&#39;(t)]^2+[y&#39;(t)]^2\neq
-      0</span>，则弧长微元为</p>
+      class="math inline">[x&#39;(t)]^2+[y&#39;(t)]^2\neq 0</span>,
+      则弧长微元为</p>
       <p><span class="math display">\mathrm{d}s =
       \sqrt{[x&#39;(t)]^2+[y&#39;(t)]^2}\,\mathrm{d}t,</span></p>
       <p>从而</p>
@@ -238,26 +247,27 @@
       <div class="callout callout-note">
       <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">推广到空间曲线</span></div>
       <div class="callout-body">
-      <p>对空间曲线 <span class="math inline">L</span>：<span
-      class="math inline">x=x(t),\,y=y(t),\,z=z(t),\,t\in[t_0,t_1]</span>，弧长微元为</p>
+      <p>对空间曲线 <span class="math inline">L</span>: <span
+      class="math inline">x=x(t),\,y=y(t),\,z=z(t),\,t\in[t_0,t_1]</span>,
+      弧长微元为</p>
       <p><span class="math display">\mathrm{d}s =
       \sqrt{[x&#39;(t)]^2+[y&#39;(t)]^2+[z&#39;(t)]^2}\,\mathrm{d}t,</span></p>
-      <p>积分公式形式相同：<span class="math inline">\displaystyle\int_L
+      <p>积分公式形式相同: <span class="math inline">\displaystyle\int_L
       f(x,y,z)\,\mathrm{d}s =
-      \int_{t_0}^{t_1}f(x(t),y(t),z(t))\sqrt{[x&#39;(t)]^2+[y&#39;(t)]^2+[z&#39;(t)]^2}\,\mathrm{d}t</span>。</p>
+      \int_{t_0}^{t_1}f(x(t),y(t),z(t))\sqrt{[x&#39;(t)]^2+[y&#39;(t)]^2+[z&#39;(t)]^2}\,\mathrm{d}t</span>.</p>
       </div>
       </div>
       <div class="callout callout-note">
       <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">基本性质</span></div>
       <div class="callout-body">
-      <p>第一类曲线积分有两个重要性质：</p>
+      <p>第一类曲线积分有两个重要性质:</p>
       <ol type="1">
-      <li><strong>与方向无关</strong>：将 <span
-      class="math inline">L</span> 反向，<span
-      class="math inline">\mathrm{d}s</span> 始终为正，积分值不变。</li>
-      <li><strong>对路径可加</strong>：<span
+      <li><strong>与方向无关</strong>: 将 <span
+      class="math inline">L</span> 反向, <span
+      class="math inline">\mathrm{d}s</span> 始终为正, 积分值不变.</li>
+      <li><strong>对路径可加</strong>: <span
       class="math inline">\int_{L_1+L_2}f\,\mathrm{d}s =
-      \int_{L_1}f\,\mathrm{d}s + \int_{L_2}f\,\mathrm{d}s</span>。</li>
+      \int_{L_1}f\,\mathrm{d}s + \int_{L_2}f\,\mathrm{d}s</span>.</li>
       </ol>
       </div>
       </div>
@@ -416,90 +426,92 @@
       </div>
       <h2 id="第二类曲线积分">12.3 第二类曲线积分</h2>
       <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">引入问题：力沿路径做的功</span></div>
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">引入问题: 力沿路径做的功</span></div>
       <div class="callout-body">
       <p>质点在向量场 <span class="math inline">\mathbf{F}(x,y) =
       P(x,y)\hat{\mathbf{i}}+Q(x,y)\hat{\mathbf{j}}</span>
-      的作用下沿有向曲线 <span class="math inline">L</span>
-      运动。如何计算场对质点所做的总功？</p>
-      <p>将路径分为 <span class="math inline">N</span> 小段，第 <span
+      的作用下沿有向曲线 <span class="math inline">L</span> 运动.
+      如何计算场对质点所做的总功?</p>
+      <p>将路径分为 <span class="math inline">N</span> 小段, 第 <span
       class="math inline">i</span> 段的位移向量为 <span
       class="math inline">\Delta\mathbf{r}_i = (\Delta x_i, \Delta
-      y_i)^T</span>，该段上的力约为 <span
-      class="math inline">\mathbf{F}(x_i,y_i)</span>。做功约为 <span
+      y_i)^T</span>, 该段上的力约为 <span
+      class="math inline">\mathbf{F}(x_i,y_i)</span>. 做功约为 <span
       class="math inline">\mathbf{F}(x_i,y_i)\cdot\Delta\mathbf{r}_i =
-      P_i\Delta x_i + Q_i\Delta y_i</span>。令 <span
+      P_i\Delta x_i + Q_i\Delta y_i</span>. 令 <span
       class="math inline">\lambda = \max_i|\Delta\mathbf{r}_i|</span>
-      并取极限：</p>
+      并取极限:</p>
       <p><span class="math display">W = \lim_{\lambda\to
       0}\sum_{i=1}^{N}\bigl(P(x_i,y_i)\Delta x_i + Q(x_i,y_i)\Delta
       y_i\bigr).</span></p>
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义：第二类曲线积分</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义: 第二类曲线积分</span></div>
       <div class="callout-body">
       <p>设向量场 <span
       class="math inline">\mathbf{F}(x,y)=P(x,y)\hat{\mathbf{i}}+Q(x,y)\hat{\mathbf{j}}</span>
-      在有向曲线 <span class="math inline">L</span>
-      上连续。若上述极限存在且与划分及取点无关，则称该极限为 <span
+      在有向曲线 <span class="math inline">L</span> 上连续.
+      若上述极限存在且与划分及取点无关, 则称该极限为 <span
       class="math inline">\mathbf{F}</span> 沿 <span
-      class="math inline">L</span>
-      的<strong>第二类曲线积分</strong>（或<strong>向量场曲线积分</strong>），记作</p>
+      class="math inline">L</span> 的<strong>第二类曲线积分</strong>
+      (或<strong>向量场曲线积分</strong>), 记作</p>
       <p><span class="math display">\int_L
       \mathbf{F}\cdot\mathrm{d}\mathbf{r} = \int_L P(x,y)\,\mathrm{d}x +
       Q(x,y)\,\mathrm{d}y,</span></p>
       <p>其中 <span class="math inline">\mathrm{d}\mathbf{r} =
       \mathrm{d}x\,\hat{\mathbf{i}}+\mathrm{d}y\,\hat{\mathbf{j}}</span>
-      为<strong>有向弧元</strong>。</p>
+      为<strong>有向弧元</strong>.</p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">方向性</span></div>
       <div class="callout-body">
-      <p>第二类曲线积分与曲线的<strong>方向</strong>有关：若 <span
+      <p>第二类曲线积分与曲线的<strong>方向</strong>有关: 若 <span
       class="math inline">-L</span> 表示 <span
-      class="math inline">L</span> 的反向，则</p>
+      class="math inline">L</span> 的反向, 则</p>
       <p><span
       class="math display">\int_{-L}\mathbf{F}\cdot\mathrm{d}\mathbf{r}
       = -\int_L\mathbf{F}\cdot\mathrm{d}\mathbf{r}.</span></p>
-      <p>物理直觉：逆着力的方向运动，场做负功。这与第一类积分不同（第一类积分的弧长
-      <span class="math inline">\mathrm{d}s &gt; 0</span>
-      与方向无关）。</p>
+      <p>物理直觉: 逆着力的方向运动, 场做负功. 这与第一类积分不同
+      (第一类积分的弧长 <span class="math inline">\mathrm{d}s &gt;
+      0</span> 与方向无关).</p>
       </div>
       </div>
       <div class="callout callout-note">
-      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">计算方法（参数化化简）</span></div>
+      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">计算方法 (参数化化简)</span></div>
       <div class="callout-body">
-      <p>若 <span class="math inline">L</span>：<span
-      class="math inline">x=x(t),\,y=y(t)</span>，<span
+      <p>若 <span class="math inline">L</span>: <span
+      class="math inline">x=x(t),\,y=y(t)</span>, <span
       class="math inline">t</span> 从 <span
       class="math inline">t_1</span> 到 <span
-      class="math inline">t_2</span>（<span
-      class="math inline">t_1</span> 对应起点，<span
-      class="math inline">t_2</span> 对应终点），则 <span
-      class="math inline">\mathrm{d}x=x&#39;(t)\,\mathrm{d}t,\,\mathrm{d}y=y&#39;(t)\,\mathrm{d}t</span>，故</p>
+      class="math inline">t_2</span> (<span
+      class="math inline">t_1</span> 对应起点, <span
+      class="math inline">t_2</span> 对应终点), 则 <span
+      class="math inline">\mathrm{d}x=x&#39;(t)\,\mathrm{d}t,\,\mathrm{d}y=y&#39;(t)\,\mathrm{d}t</span>,
+      故</p>
       <p><span class="math display">\int_L P\,\mathrm{d}x+Q\,\mathrm{d}y
       =
       \int_{t_1}^{t_2}\bigl[P(x(t),y(t))\,x&#39;(t)+Q(x(t),y(t))\,y&#39;(t)\bigr]\mathrm{d}t.</span></p>
-      <p>注意：<span class="math inline">t_1</span> 到 <span
-      class="math inline">t_2</span>
-      的积分方向与曲线的定向一致；若反向，则交换 <span
-      class="math inline">t_1, t_2</span>，积分变号。</p>
+      <p>注意: <span class="math inline">t_1</span> 到 <span
+      class="math inline">t_2</span> 的积分方向与曲线的定向一致; 若反向,
+      则交换 <span class="math inline">t_1, t_2</span>, 积分变号.</p>
       </div>
       </div>
       <div class="callout callout-note">
       <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">两类曲线积分的联系</span></div>
       <div class="callout-body">
       <p>设 <span class="math inline">\boldsymbol{\tau}</span> 为 <span
-      class="math inline">L</span> 的单位切向量（与定向一致），则 <span
+      class="math inline">L</span> 的单位切向量 (与定向一致), 则 <span
       class="math inline">\mathrm{d}\mathbf{r} =
-      \boldsymbol{\tau}\,\mathrm{d}s</span>，从而</p>
+      \boldsymbol{\tau}\,\mathrm{d}s</span>, 从而</p>
       <p><span
       class="math display">\int_L\mathbf{F}\cdot\mathrm{d}\mathbf{r} =
       \int_L\mathbf{F}\cdot\boldsymbol{\tau}\,\mathrm{d}s.</span></p>
       <p>即第二类曲线积分是以 <span
-      class="math inline">\mathbf{F}\cdot\boldsymbol{\tau}</span>（场沿切向的分量）为被积函数的第一类积分。两类积分本质上是同一件事：前者强调向量的分量，后者强调弧长方向。</p>
+      class="math inline">\mathbf{F}\cdot\boldsymbol{\tau}</span>
+      (场沿切向的分量) 为被积函数的第一类积分. 两类积分本质上是同一件事:
+      前者强调向量的分量, 后者强调弧长方向.</p>
       </div>
       </div>
       <div id="chpt12-ex-024" class="exercise-block"
@@ -914,46 +926,45 @@
       <h2 id="格林公式与保守场">12.4 格林公式与保守场</h2>
       <h3 id="格林公式">12.4.1 格林公式</h3>
       <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">引入问题：边界环量与内部旋转</span></div>
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">引入问题: 边界环量与内部旋转</span></div>
       <div class="callout-body">
-      <p>流体在平面区域 <span class="math inline">D</span>
-      内流动，速度场为 <span
-      class="math inline">\mathbf{F}=(P,Q)</span>。沿 <span
-      class="math inline">D</span> 的边界 <span
-      class="math inline">C</span>（逆时针方向）一圈的环量 <span
+      <p>流体在平面区域 <span class="math inline">D</span> 内流动,
+      速度场为 <span class="math inline">\mathbf{F}=(P,Q)</span>. 沿
+      <span class="math inline">D</span> 的边界 <span
+      class="math inline">C</span> (逆时针方向) 一圈的环量 <span
       class="math inline">\displaystyle\oint_C\mathbf{F}\cdot\mathrm{d}\mathbf{r}</span>
       是否能用 <span class="math inline">D</span>
-      内部每一点的”局部旋转”信息来计算？</p>
+      内部每一点的”局部旋转”信息来计算?</p>
       </div>
       </div>
-      <p>为刻画向量场在一点的旋转倾向，引入<strong>旋度</strong>：</p>
+      <p>为刻画向量场在一点的旋转倾向, 引入<strong>旋度</strong>:</p>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义：二维旋度</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义: 二维旋度</span></div>
       <div class="callout-body">
       <p>设 <span class="math inline">\mathbf{F}=(P,Q)</span> 在区域
-      <span class="math inline">D</span> 上有连续偏导数，称</p>
+      <span class="math inline">D</span> 上有连续偏导数, 称</p>
       <p><span class="math display">\operatorname{curl}\mathbf{F} =
       \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial
       y}</span></p>
       <p>为 <span class="math inline">\mathbf{F}</span>
-      的<strong>旋度</strong>（二维）。<span
+      的<strong>旋度</strong> (二维). <span
       class="math inline">\operatorname{curl}\mathbf{F}&gt;0</span>
-      表示该点邻域内流体逆时针旋转，<span
-      class="math inline">&lt;0</span> 表示顺时针旋转，<span
-      class="math inline">=0</span> 表示无旋。</p>
+      表示该点邻域内流体逆时针旋转, <span
+      class="math inline">&lt;0</span> 表示顺时针旋转, <span
+      class="math inline">=0</span> 表示无旋.</p>
       </div>
       </div>
-      <p>格林公式将区域内所有点的旋度”积累”起来，得到边界上的环量：</p>
+      <p>格林公式将区域内所有点的旋度”积累”起来, 得到边界上的环量:</p>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">格林公式</span></div>
       <div class="callout-body">
       <p>设 <span class="math inline">D</span>
-      为平面上由分段光滑曲线围成的有界闭区域，<span
+      为平面上由分段光滑曲线围成的有界闭区域, <span
       class="math inline">P(x,y)</span> 和 <span
       class="math inline">Q(x,y)</span> 在 <span
-      class="math inline">D</span> 上有一阶连续偏导数，<span
+      class="math inline">D</span> 上有一阶连续偏导数, <span
       class="math inline">C = \partial D^+</span> 表示 <span
-      class="math inline">D</span> 的正向（逆时针）边界，则</p>
+      class="math inline">D</span> 的正向 (逆时针) 边界, 则</p>
       <p><span class="math display">\oint_{C} P\,\mathrm{d}x +
       Q\,\mathrm{d}y = \iint_{D}\left(\frac{\partial Q}{\partial
       x}-\frac{\partial P}{\partial y}\right)\mathrm{d}A.</span></p>
@@ -962,50 +973,50 @@
       <div class="callout callout-extension">
       <div class="callout-header callout-header-extension"><span class="callout-icon"></span><span class="callout-label">证明</span></div>
       <div class="callout-body">
-      <p>只需分别证明：</p>
+      <p>只需分别证明:</p>
       <p><span class="math display">\oint_C P\,\mathrm{d}x = -\iint_D
       P_y\,\mathrm{d}A, \qquad \oint_C Q\,\mathrm{d}y = \iint_D
       Q_x\,\mathrm{d}A. \tag{$*$}</span></p>
-      <p>两式对称，只证第一式。</p>
-      <p><strong>第一步：竖直简单区域。</strong> 设 <span
-      class="math inline">D</span>：<span class="math inline">a\leq
-      x\leq b</span>，<span class="math inline">f_1(x)\leq y\leq
-      f_2(x)</span>，正向边界由底弧 <span
-      class="math inline">C_1</span>（<span
-      class="math inline">y=f_1</span>，从左到右）、顶弧 <span
-      class="math inline">C_3</span>（<span
-      class="math inline">y=f_2</span>，从右到左）及两侧竖直边（若有）组成。在竖直边上
-      <span class="math inline">\mathrm{d}x=0</span>，故其贡献为零。</p>
+      <p>两式对称, 只证第一式.</p>
+      <p><strong>第一步: 竖直简单区域.</strong> 设 <span
+      class="math inline">D</span>: <span class="math inline">a\leq
+      x\leq b</span>, <span class="math inline">f_1(x)\leq y\leq
+      f_2(x)</span>, 正向边界由底弧 <span class="math inline">C_1</span>
+      (<span class="math inline">y=f_1</span>, 从左到右), 顶弧 <span
+      class="math inline">C_3</span> (<span
+      class="math inline">y=f_2</span>, 从右到左) 及两侧竖直边 (若有)
+      组成. 在竖直边上 <span class="math inline">\mathrm{d}x=0</span>,
+      故其贡献为零.</p>
       <p><span class="math display">\oint_C P\,\mathrm{d}x = \int_a^b
       P(x,f_1(x))\,\mathrm{d}x - \int_a^b P(x,f_2(x))\,\mathrm{d}x =
       -\int_a^b\bigl[P(x,f_2(x))-P(x,f_1(x))\bigr]\mathrm{d}x.</span></p>
-      <p>另一方面，由单变量 FTC 对 <span class="math inline">y</span>
-      积分：</p>
+      <p>另一方面, 由单变量 FTC 对 <span class="math inline">y</span>
+      积分:</p>
       <p><span class="math display">-\iint_D P_y\,\mathrm{d}A =
       -\int_a^b\int_{f_1(x)}^{f_2(x)}\frac{\partial P}{\partial
       y}\,\mathrm{d}y\,\mathrm{d}x =
       -\int_a^b\bigl[P(x,f_2(x))-P(x,f_1(x))\bigr]\mathrm{d}x.</span></p>
-      <p>两式相等，第一式对竖直简单区域得证。</p>
-      <p><strong>第二步：一般区域。</strong> 将 <span
+      <p>两式相等, 第一式对竖直简单区域得证.</p>
+      <p><strong>第二步: 一般区域. </strong> 将 <span
       class="math inline">D</span> 用一条竖直线段分成两个竖直简单子区域
-      <span class="math inline">D_1,
-      D_2</span>，对每个子区域应用第一步。内部公共边界的贡献方向相反而相消：<span
+      <span class="math inline">D_1, D_2</span>, 对每个子区域应用第一步.
+      内部公共边界的贡献方向相反而相消: <span
       class="math inline">\int_\ell P\,\mathrm{d}x + \int_{-\ell}
-      P\,\mathrm{d}x = 0</span>。两部分相加即得 <span
-      class="math inline">D</span> 上的结论。对 <span
-      class="math inline">(*)</span>
-      的第二式类似处理，两式相加即得格林公式。<span
+      P\,\mathrm{d}x = 0</span>. 两部分相加即得 <span
+      class="math inline">D</span> 上的结论. 对 <span
+      class="math inline">(*)</span> 的第二式类似处理,
+      两式相加即得格林公式. <span
       class="math inline">\blacksquare</span></p>
       </div>
       </div>
       <div class="callout callout-note">
-      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">应用：用边界曲线计算面积</span></div>
+      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">应用: 用边界曲线计算面积</span></div>
       <div class="callout-body">
-      <p>取 <span class="math inline">P=-y,\,Q=x</span>，则 <span
-      class="math inline">Q_x-P_y=1+1=2</span>，格林公式给出</p>
+      <p>取 <span class="math inline">P=-y,\,Q=x</span>, 则 <span
+      class="math inline">Q_x-P_y=1+1=2</span>, 格林公式给出</p>
       <p><span class="math display">A = \iint_D\mathrm{d}A =
       \frac{1}{2}\oint_C x\,\mathrm{d}y - y\,\mathrm{d}x.</span></p>
-      <p>这是仅用边界曲线参数方程就能计算区域面积的公式。</p>
+      <p>这是仅用边界曲线参数方程就能计算区域面积的公式.</p>
       </div>
       </div>
       <div id="chpt12-ex-010" class="exercise-block"
@@ -1234,31 +1245,32 @@
       <h3 id="保守场与曲线积分基本定理">12.4.2
       保守场与曲线积分基本定理</h3>
       <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">引入问题：做功何时与路径无关？</span></div>
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">引入问题: 做功何时与路径无关?</span></div>
       <div class="callout-body">
-      <p>对于同一起点 <span class="math inline">A</span>、终点 <span
-      class="math inline">B</span>，力场 <span
-      class="math inline">\mathbf{F}</span>
-      沿不同路径所做的功是否相同？引力场是<strong>保守的</strong>——无论绕多远，做功只取决于位移；摩擦力是<strong>非保守的</strong>——路径越长，克服摩擦做的负功越大。决定这一区别的关键是什么？</p>
+      <p>对于同一起点 <span class="math inline">A</span>, 终点 <span
+      class="math inline">B</span>, 力场 <span
+      class="math inline">\mathbf{F}</span> 沿不同路径所做的功是否相同?
+      引力场是<strong>保守的</strong>——无论绕多远, 做功只取决于位移;
+      摩擦力是<strong>非保守的</strong>——路径越长, 克服摩擦做的负功越大.
+      决定这一区别的关键是什么?</p>
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义：保守场与势函数</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义: 保守场与势函数</span></div>
       <div class="callout-body">
       <p>设 <span
       class="math inline">\mathbf{F}=P\hat{\mathbf{i}}+Q\hat{\mathbf{j}}</span>
-      在区域 <span class="math inline">D</span> 上连续。若存在可微函数
-      <span class="math inline">f(x,y)</span>，使得</p>
+      在区域 <span class="math inline">D</span> 上连续. 若存在可微函数
+      <span class="math inline">f(x,y)</span>, 使得</p>
       <p><span class="math display">\mathbf{F} = \nabla f =
       \frac{\partial f}{\partial x}\hat{\mathbf{i}}+\frac{\partial
       f}{\partial y}\hat{\mathbf{j}},</span></p>
       <p>则称 <span class="math inline">\mathbf{F}</span> 为 <span
-      class="math inline">D</span>
-      上的<strong>保守场</strong>（conservative
-      field，亦称<strong>梯度场</strong>），<span
+      class="math inline">D</span> 上的<strong>保守场</strong>
+      (conservative field, 亦称<strong>梯度场</strong>), <span
       class="math inline">f</span> 称为 <span
-      class="math inline">\mathbf{F}</span>
-      的<strong>势函数</strong>（potential function）。</p>
+      class="math inline">\mathbf{F}</span> 的<strong>势函数</strong>
+      (potential function).</p>
       </div>
       </div>
       <div class="callout callout-important">
@@ -1266,18 +1278,17 @@
       <div class="callout-body">
       <p>若 <span class="math inline">\mathbf{F}=\nabla f</span>
       在包含有向曲线 <span class="math inline">L</span>
-      的区域上连续可微，<span class="math inline">L</span> 从点 <span
+      的区域上连续可微, <span class="math inline">L</span> 从点 <span
       class="math inline">A</span> 到点 <span
-      class="math inline">B</span>，则</p>
+      class="math inline">B</span>, 则</p>
       <p><span
       class="math display">\int_L\mathbf{F}\cdot\mathrm{d}\mathbf{r} =
       f(B) - f(A).</span></p>
-      <p><strong>证明</strong>：设 <span
-      class="math inline">L</span>：<span
-      class="math inline">\mathbf{r}(t)=(x(t),y(t))</span>，<span
-      class="math inline">t\in[t_0,t_1]</span>，<span
-      class="math inline">\mathbf{r}(t_0)=A</span>，<span
-      class="math inline">\mathbf{r}(t_1)=B</span>，则</p>
+      <p><strong>证明</strong>: 设 <span class="math inline">L</span>:
+      <span class="math inline">\mathbf{r}(t)=(x(t),y(t))</span>, <span
+      class="math inline">t\in[t_0,t_1]</span>, <span
+      class="math inline">\mathbf{r}(t_0)=A</span>, <span
+      class="math inline">\mathbf{r}(t_1)=B</span>, 则</p>
       <p><span
       class="math display">\int_L\mathbf{F}\cdot\mathrm{d}\mathbf{r} =
       \int_{t_0}^{t_1}\!\!\left(\frac{\partial f}{\partial
@@ -1288,53 +1299,53 @@
       </div>
       </div>
       <p>这是一元微积分基本定理 <span class="math inline">\int_a^b
-      f&#39;(x)\,\mathrm{d}x=f(b)-f(a)</span>
-      的直接推广：<strong>“对梯度的曲线积分只取决于边界”</strong>。</p>
+      f&#39;(x)\,\mathrm{d}x=f(b)-f(a)</span> 的直接推广:
+      <strong>“对梯度的曲线积分只取决于边界”</strong>.</p>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">保守场的等价条件</span></div>
       <div class="callout-body">
       <p>在<strong>单连通区域</strong> <span
-      class="math inline">D</span>（无”洞”的区域）上，以下四个条件等价：</p>
+      class="math inline">D</span> (无”洞”的区域) 上,
+      以下四个条件等价:</p>
       <ol type="1">
-      <li><span class="math inline">\mathbf{F}</span>
-      是保守场（存在势函数 <span class="math inline">f</span>）；</li>
-      <li>曲线积分与路径无关：对 <span class="math inline">D</span>
-      中任意 <span class="math inline">A,B</span>，积分值与连接 <span
-      class="math inline">A,B</span> 的路径无关；</li>
+      <li><span class="math inline">\mathbf{F}</span> 是保守场
+      (存在势函数 <span class="math inline">f</span>);</li>
+      <li>曲线积分与路径无关: 对 <span class="math inline">D</span>
+      中任意 <span class="math inline">A,B</span>, 积分值与连接 <span
+      class="math inline">A,B</span> 的路径无关;</li>
       <li>对 <span class="math inline">D</span> 内任意封闭曲线 <span
-      class="math inline">C</span>，<span
-      class="math inline">\oint_C\mathbf{F}\cdot\mathrm{d}\mathbf{r}=0</span>；</li>
+      class="math inline">C</span>, <span
+      class="math inline">\oint_C\mathbf{F}\cdot\mathrm{d}\mathbf{r}=0</span>;</li>
       <li><span class="math inline">\operatorname{curl}\mathbf{F} =
       \dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y} =
-      0</span>。</li>
+      0</span>.</li>
       </ol>
-      <p><strong>条件 4 的必要性</strong>：若 <span
-      class="math inline">f</span> 存在，则 <span
-      class="math inline">P=f_x,\,Q=f_y</span>，由混合偏导连续性得 <span
-      class="math inline">P_y=f_{xy}=f_{yx}=Q_x</span>，即 <span
-      class="math inline">\operatorname{curl}\mathbf{F}=0</span>。</p>
-      <p><strong>注</strong>：条件 4
-      的充分性依赖单连通性。在非单连通区域（如去掉原点的平面 <span
-      class="math inline">\mathbb{R}^2\setminus\{(0,0)\}</span>）中，<span
-      class="math inline">\operatorname{curl}\mathbf{F}=0</span>
-      不能保证 <span class="math inline">\mathbf{F}</span>
-      是保守场（经典反例：<span
-      class="math inline">\mathbf{F}=\dfrac{(-y,\,x)}{x^2+y^2}</span>）。</p>
+      <p><strong>条件 4 的必要性</strong>: 若 <span
+      class="math inline">f</span> 存在, 则 <span
+      class="math inline">P=f_x,\,Q=f_y</span>, 由混合偏导连续性得 <span
+      class="math inline">P_y=f_{xy}=f_{yx}=Q_x</span>, 即 <span
+      class="math inline">\operatorname{curl}\mathbf{F}=0</span>.</p>
+      <p><strong>注</strong>: 条件 4 的充分性依赖单连通性.
+      在非单连通区域 (如去掉原点的平面 <span
+      class="math inline">\mathbb{R}^2\setminus\{(0,0)\}</span>) 中,
+      <span class="math inline">\operatorname{curl}\mathbf{F}=0</span>
+      不能保证 <span class="math inline">\mathbf{F}</span> 是保守场
+      (经典反例: <span
+      class="math inline">\mathbf{F}=\dfrac{(-y,\,x)}{x^2+y^2}</span>).</p>
       </div>
       </div>
       <div class="callout callout-note">
       <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">求势函数的方法</span></div>
       <div class="callout-body">
       <p>已知 <span class="math inline">\mathbf{F}=(P,Q)</span> 满足
-      <span
-      class="math inline">\operatorname{curl}\mathbf{F}=0</span>，求
-      <span class="math inline">f(x,y)</span>。</p>
-      <p>对 <span class="math inline">x</span> 积分：<span
+      <span class="math inline">\operatorname{curl}\mathbf{F}=0</span>,
+      求 <span class="math inline">f(x,y)</span>.</p>
+      <p>对 <span class="math inline">x</span> 积分: <span
       class="math inline">f(x,y)=\displaystyle\int P(x,y)\,\mathrm{d}x +
-      g(y)</span>，其中 <span class="math inline">g(y)</span>
-      为待定函数。再由 <span class="math inline">f_y=Q</span> 确定 <span
-      class="math inline">g&#39;(y)</span>，积分得 <span
-      class="math inline">g(y)</span>。</p>
+      g(y)</span>, 其中 <span class="math inline">g(y)</span>
+      为待定函数. 再由 <span class="math inline">f_y=Q</span> 确定 <span
+      class="math inline">g&#39;(y)</span>, 积分得 <span
+      class="math inline">g(y)</span>.</p>
       </div>
       </div>
       <div id="chpt12-ex-025" class="exercise-block"
@@ -1449,35 +1460,37 @@
       </div>
       </div>
       <h2 id="曲面积分">12.5 曲面积分</h2>
-      <p>至此，二维的积分理论已经完整：沿曲线积分（第一类、第二类）以及将区域内部与边界联系起来的格林公式。现在将同样的思路推广到三维空间：<strong>曲面</strong>取代曲线，<strong>通量</strong>取代做功。</p>
+      <p>至此, 二维的积分理论已经完整: 沿曲线积分 (第一类, 第二类)
+      以及将区域内部与边界联系起来的格林公式.
+      现在将同样的思路推广到三维空间: <strong>曲面</strong>取代曲线,
+      <strong>通量</strong>取代做功.</p>
       <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">引入问题：流体穿过曲面的通量</span></div>
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">引入问题: 流体穿过曲面的通量</span></div>
       <div class="callout-body">
       <p>流体以速度场 <span
       class="math inline">\mathbf{F}(x,y,z)=P\hat{\mathbf{i}}+Q\hat{\mathbf{j}}+R\hat{\mathbf{k}}</span>
-      流动，空间中有一有向曲面 <span
-      class="math inline">S</span>。单位时间内穿过 <span
-      class="math inline">S</span>
-      的流体体积（<strong>通量</strong>）是多少？</p>
+      流动, 空间中有一有向曲面 <span class="math inline">S</span>.
+      单位时间内穿过 <span class="math inline">S</span> 的流体体积
+      (<strong>通量</strong>) 是多少?</p>
       <p>将 <span class="math inline">S</span> 分成 <span
-      class="math inline">N</span> 个小面片，第 <span
+      class="math inline">N</span> 个小面片, 第 <span
       class="math inline">i</span> 片的面积为 <span
-      class="math inline">\Delta S_i</span>，外法向单位向量为 <span
-      class="math inline">\mathbf{n}_i</span>。穿过该小片的流量约为
+      class="math inline">\Delta S_i</span>, 外法向单位向量为 <span
+      class="math inline">\mathbf{n}_i</span>. 穿过该小片的流量约为
       <span
       class="math inline">\mathbf{F}(x_i,y_i,z_i)\cdot\mathbf{n}_i\,\Delta
-      S_i</span>。令各小片面积最大值 <span class="math inline">\to
-      0</span>，取极限即得通量。</p>
+      S_i</span>. 令各小片面积最大值 <span class="math inline">\to
+      0</span>, 取极限即得通量.</p>
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义：曲面积分（通量型）</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义: 曲面积分 (通量型)</span></div>
       <div class="callout-body">
       <p>设 <span
       class="math inline">\mathbf{F}=P\hat{\mathbf{i}}+Q\hat{\mathbf{j}}+R\hat{\mathbf{k}}</span>
-      在有向曲面 <span class="math inline">S</span> 上连续，<span
+      在有向曲面 <span class="math inline">S</span> 上连续, <span
       class="math inline">\mathbf{n}</span> 为 <span
-      class="math inline">S</span> 的单位法向量，则 <span
+      class="math inline">S</span> 的单位法向量, 则 <span
       class="math inline">\mathbf{F}</span> 穿过 <span
       class="math inline">S</span> 的<strong>通量</strong>定义为</p>
       <p><span
@@ -1489,16 +1502,16 @@
       <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">计算方法</span></div>
       <div class="callout-body">
       <p>设 <span class="math inline">S</span> 由 <span
-      class="math inline">z=g(x,y)</span>，<span
-      class="math inline">(x,y)\in D_{xy}</span>
-      给出，取朝上法向量。曲面上的切向量为</p>
+      class="math inline">z=g(x,y)</span>, <span
+      class="math inline">(x,y)\in D_{xy}</span> 给出, 取朝上法向量.
+      曲面上的切向量为</p>
       <p><span class="math display">\mathbf{v}_1=(1,\,0,\,g_x), \quad
       \mathbf{v}_2=(0,\,1,\,g_y),</span></p>
       <p>法向量微元为</p>
       <p><span class="math display">\mathbf{n}\,\mathrm{d}S =
       \mathbf{v}_1\times\mathbf{v}_2\,\mathrm{d}x\,\mathrm{d}y =
       (-g_x,\,-g_y,\,1)\,\mathrm{d}x\,\mathrm{d}y.</span></p>
-      <p>（朝下法向量取反号。）于是</p>
+      <p>(朝下法向量取反号. ) 于是</p>
       <p><span
       class="math display">\iint_S\mathbf{F}\cdot\mathrm{d}\mathbf{S} =
       \iint_{D_{xy}}\bigl(-P\,g_x - Q\,g_y +
@@ -1508,7 +1521,10 @@
       <div class="callout callout-note">
       <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">方向的选取</span></div>
       <div class="callout-body">
-      <p>曲面积分与曲面的<strong>定向</strong>有关，改变法向量方向则积分变号。对<strong>封闭曲面</strong>（如球面），通常约定外法向量为正方向；对<strong>开曲面</strong>，需事先指定法向量朝哪一侧。</p>
+      <p>曲面积分与曲面的<strong>定向</strong>有关,
+      改变法向量方向则积分变号. 对<strong>封闭曲面</strong> (如球面),
+      通常约定外法向量为正方向; 对<strong>开曲面</strong>,
+      需事先指定法向量朝哪一侧.</p>
       </div>
       </div>
       <div id="chpt12-ex-026" class="exercise-block"
@@ -1614,46 +1630,46 @@
       <h2 id="高斯公式与斯托克斯公式">12.6 高斯公式与斯托克斯公式</h2>
       <h3 id="高斯公式">12.6.1 高斯公式</h3>
       <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">引入问题：源与通量的关系</span></div>
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">引入问题: 源与通量的关系</span></div>
       <div class="callout-body">
-      <p>设空间区域 <span class="math inline">V</span>
-      内有流体流动，速度场为 <span
-      class="math inline">\mathbf{F}</span>。若 <span
+      <p>设空间区域 <span class="math inline">V</span> 内有流体流动,
+      速度场为 <span class="math inline">\mathbf{F}</span>. 若 <span
+      class="math inline">V</span> 内某处是流体的<strong>源</strong>
+      (即流体在那里被持续”产生”),
+      这些新产生的流体必然向外流出并最终穿越边界曲面 <span
+      class="math inline">\partial V</span>. 那么, <span
       class="math inline">V</span>
-      内某处是流体的<strong>源</strong>（即流体在那里被持续”产生”），这些新产生的流体必然向外流出并最终穿越边界曲面
-      <span class="math inline">\partial V</span>。那么，<span
-      class="math inline">V</span>
-      内总的产生率与穿越边界的总通量之间有何定量关系？</p>
+      内总的产生率与穿越边界的总通量之间有何定量关系?</p>
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义：散度</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义: 散度</span></div>
       <div class="callout-body">
       <p>设 <span
       class="math inline">\mathbf{F}=P\hat{\mathbf{i}}+Q\hat{\mathbf{j}}+R\hat{\mathbf{k}}</span>
-      有连续偏导数，称</p>
+      有连续偏导数, 称</p>
       <p><span class="math display">\operatorname{div}\mathbf{F} =
       \nabla\cdot\mathbf{F} = \frac{\partial P}{\partial
       x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial
       z}</span></p>
       <p>为 <span class="math inline">\mathbf{F}</span>
-      的<strong>散度</strong>。<span
+      的<strong>散度</strong>. <span
       class="math inline">\operatorname{div}\mathbf{F}&gt;0</span>
-      表示该点是源，<span class="math inline">&lt;0</span>
-      表示是汇，<span class="math inline">=0</span>
-      表示不可压缩（流体既不产生也不消失）。</p>
+      表示该点是源, <span class="math inline">&lt;0</span> 表示是汇,
+      <span class="math inline">=0</span> 表示不可压缩
+      (流体既不产生也不消失).</p>
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">高斯公式（散度定理）</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">高斯公式 (散度定理)</span></div>
       <div class="callout-body">
       <p>设 <span class="math inline">V</span>
       为空间中由分片光滑封闭曲面 <span
-      class="math inline">\Sigma=\partial V</span> 围成的有界区域，<span
+      class="math inline">\Sigma=\partial V</span> 围成的有界区域, <span
       class="math inline">\mathbf{F}=P\hat{\mathbf{i}}+Q\hat{\mathbf{j}}+R\hat{\mathbf{k}}</span>
-      在 <span class="math inline">V</span> 上有一阶连续偏导数，<span
+      在 <span class="math inline">V</span> 上有一阶连续偏导数, <span
       class="math inline">\mathbf{n}</span> 为 <span
-      class="math inline">\Sigma</span> 的外法向量，则</p>
+      class="math inline">\Sigma</span> 的外法向量, 则</p>
       <p><span
       class="math display">\oiint_{\Sigma}\mathbf{F}\cdot\mathbf{n}\,\mathrm{d}S
       = \iiint_V\nabla\cdot\mathbf{F}\,\mathrm{d}V.</span></p>
@@ -1662,40 +1678,38 @@
       <div class="callout callout-extension">
       <div class="callout-header callout-header-extension"><span class="callout-icon"></span><span class="callout-label">证明思路</span></div>
       <div class="callout-body">
-      <p>分别证明（以 <span class="math inline">R</span>
-      分量为例）：</p>
+      <p>分别证明 (以 <span class="math inline">R</span> 分量为例):</p>
       <p><span class="math display">\oiint_\Sigma
       R\,\mathrm{d}x\,\mathrm{d}y = \iiint_V \frac{\partial R}{\partial
       z}\,\mathrm{d}V.</span></p>
-      <p>设 <span class="math inline">V</span> 为”竖直简单”区域：投影到
+      <p>设 <span class="math inline">V</span> 为”竖直简单”区域: 投影到
       <span class="math inline">xy</span> 平面得 <span
-      class="math inline">D_{xy}</span>，<span
+      class="math inline">D_{xy}</span>, <span
       class="math inline">z</span> 介于底面 <span
       class="math inline">z=z_1(x,y)</span> 和顶面 <span
-      class="math inline">z=z_2(x,y)</span>
-      之间。在顶面（朝外即朝上）<span
-      class="math inline">\mathrm{d}x\,\mathrm{d}y&gt;0</span>；在底面（朝外即朝下）<span
-      class="math inline">\mathrm{d}x\,\mathrm{d}y&lt;0</span>；在侧面
-      <span
-      class="math inline">\mathrm{d}x\,\mathrm{d}y=0</span>。故</p>
+      class="math inline">z=z_2(x,y)</span> 之间. 在顶面 (朝外即朝上)
+      <span class="math inline">\mathrm{d}x\,\mathrm{d}y&gt;0</span>;
+      在底面 (朝外即朝下) <span
+      class="math inline">\mathrm{d}x\,\mathrm{d}y&lt;0</span>; 在侧面
+      <span class="math inline">\mathrm{d}x\,\mathrm{d}y=0</span>.
+      故</p>
       <p><span class="math display">\oiint_\Sigma
       R\,\mathrm{d}x\,\mathrm{d}y =
       \iint_{D_{xy}}\bigl[R(x,y,z_2)-R(x,y,z_1)\bigr]\,\mathrm{d}x\,\mathrm{d}y.</span></p>
-      <p>另一方面，由单变量 FTC：</p>
+      <p>另一方面, 由单变量 FTC:</p>
       <p><span class="math display">\iiint_V R_z\,\mathrm{d}V =
       \iint_{D_{xy}}\int_{z_1}^{z_2}R_z\,\mathrm{d}z\,\mathrm{d}x\,\mathrm{d}y
       =
       \iint_{D_{xy}}\bigl[R(x,y,z_2)-R(x,y,z_1)\bigr]\,\mathrm{d}x\,\mathrm{d}y.</span></p>
-      <p>两式相等。<span class="math inline">P</span> 和 <span
-      class="math inline">Q</span>
-      分量类似处理，三式相加即得高斯公式。<span
-      class="math inline">\blacksquare</span></p>
+      <p>两式相等. <span class="math inline">P</span> 和 <span
+      class="math inline">Q</span> 分量类似处理, 三式相加即得高斯公式.
+      <span class="math inline">\blacksquare</span></p>
       </div>
       </div>
       <div class="callout callout-note">
       <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">与格林公式的类比</span></div>
       <div class="callout-body">
-      <p>高斯公式是格林公式通量形式的三维版本：</p>
+      <p>高斯公式是格林公式通量形式的三维版本:</p>
       <table>
       <colgroup>
       <col style="width: 50%" />
@@ -1709,14 +1723,14 @@
       </thead>
       <tbody>
       <tr>
-      <td style="text-align: left;">二维（格林通量形式）</td>
+      <td style="text-align: left;">二维 (格林通量形式)</td>
       <td style="text-align: left;"><span
       class="math inline">\oint_{\partial
       D}\mathbf{F}\cdot\mathbf{n}\,\mathrm{d}s =
       \iint_D\nabla\cdot\mathbf{F}\,\mathrm{d}A</span></td>
       </tr>
       <tr>
-      <td style="text-align: left;">三维（高斯）</td>
+      <td style="text-align: left;">三维 (高斯)</td>
       <td style="text-align: left;"><span
       class="math inline">\oiint_{\partial
       V}\mathbf{F}\cdot\mathbf{n}\,\mathrm{d}S =
@@ -1724,8 +1738,8 @@
       </tr>
       </tbody>
       </table>
-      <p>两者都说：<strong>区域边界上的总通量 <span
-      class="math inline">=</span> 区域内部散度的积分</strong>。</p>
+      <p>两者都说: <strong>区域边界上的总通量 <span
+      class="math inline">=</span> 区域内部散度的积分</strong>.</p>
       </div>
       </div>
       <div id="chpt12-ex-015" class="exercise-block"
@@ -2009,32 +2023,33 @@
       <div class="callout callout-note">
       <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">三维曲线积分</span></div>
       <div class="callout-body">
-      <p>三维空间中的曲线积分是二维情形的自然推广：</p>
+      <p>三维空间中的曲线积分是二维情形的自然推广:</p>
       <p><span
       class="math display">\int_C\mathbf{F}\cdot\mathrm{d}\mathbf{r} =
       \int_C P\,\mathrm{d}x+Q\,\mathrm{d}y+R\,\mathrm{d}z,</span></p>
       <p>其中 <span
-      class="math inline">\mathrm{d}\mathbf{r}=(\mathrm{d}x,\mathrm{d}y,\mathrm{d}z)</span>，计算方法与二维相同（参数化代入）。</p>
+      class="math inline">\mathrm{d}\mathbf{r}=(\mathrm{d}x,\mathrm{d}y,\mathrm{d}z)</span>,
+      计算方法与二维相同 (参数化代入).</p>
       </div>
       </div>
       <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">引入问题：三维中的环量与旋转</span></div>
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">引入问题: 三维中的环量与旋转</span></div>
       <div class="callout-body">
       <p>三维向量场 <span class="math inline">\mathbf{F}</span>
       沿封闭曲线 <span class="math inline">C</span> 的环量 <span
       class="math inline">\oint_C\mathbf{F}\cdot\mathrm{d}\mathbf{r}</span>
       与 <span class="math inline">C</span> 所围曲面 <span
-      class="math inline">S</span>
-      上的”旋转强度”有何关系？这是格林公式在三维的推广：格林公式中的平面区域推广为任意曲面。</p>
+      class="math inline">S</span> 上的”旋转强度”有何关系?
+      这是格林公式在三维的推广: 格林公式中的平面区域推广为任意曲面.</p>
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义：三维旋度</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义: 三维旋度</span></div>
       <div class="callout-body">
       <p>设 <span
       class="math inline">\mathbf{F}=P\hat{\mathbf{i}}+Q\hat{\mathbf{j}}+R\hat{\mathbf{k}}</span>
-      有连续偏导数，定义 <span class="math inline">\mathbf{F}</span>
-      的<strong>旋度</strong>（三维）为</p>
+      有连续偏导数, 定义 <span class="math inline">\mathbf{F}</span>
+      的<strong>旋度</strong> (三维) 为</p>
       <p><span class="math display">\operatorname{curl}\mathbf{F} =
       \nabla\times\mathbf{F} =
       \begin{vmatrix}\hat{\mathbf{i}}&amp;\hat{\mathbf{j}}&amp;\hat{\mathbf{k}}\\\partial_x&amp;\partial_y&amp;\partial_z\\P&amp;Q&amp;R\end{vmatrix}
@@ -2046,21 +2061,22 @@
       <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">二维旋度是三维旋度的分量</span></div>
       <div class="callout-body">
       <p>对平面向量场 <span
-      class="math inline">\mathbf{F}=(P,Q,0)</span>，三维旋度为 <span
-      class="math inline">(0,\,0,\,Q_x-P_y)</span>，其 <span
+      class="math inline">\mathbf{F}=(P,Q,0)</span>, 三维旋度为 <span
+      class="math inline">(0,\,0,\,Q_x-P_y)</span>, 其 <span
       class="math inline">\hat{\mathbf{k}}</span>-分量恰是二维旋度 <span
-      class="math inline">Q_x-P_y</span>。三维旋度是二维旋度的自然推广。</p>
+      class="math inline">Q_x-P_y</span>.
+      三维旋度是二维旋度的自然推广.</p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">斯托克斯公式</span></div>
       <div class="callout-body">
-      <p>设 <span class="math inline">S</span>
-      为分片光滑的有向曲面，其边界 <span class="math inline">\partial
-      S</span> 为分段光滑的有向封闭曲线（方向由右手法则与 <span
-      class="math inline">S</span> 的法向量相符），<span
+      <p>设 <span class="math inline">S</span> 为分片光滑的有向曲面,
+      其边界 <span class="math inline">\partial S</span>
+      为分段光滑的有向封闭曲线 (方向由右手法则与 <span
+      class="math inline">S</span> 的法向量相符), <span
       class="math inline">\mathbf{F}</span> 在含 <span
-      class="math inline">S</span> 的区域上有连续偏导数，则</p>
+      class="math inline">S</span> 的区域上有连续偏导数, 则</p>
       <p><span class="math display">\oint_{\partial
       S}\mathbf{F}\cdot\mathrm{d}\mathbf{r} =
       \iint_S(\nabla\times\mathbf{F})\cdot\mathbf{n}\,\mathrm{d}S.</span></p>
@@ -2070,38 +2086,38 @@
       <div class="callout-header callout-header-extension"><span class="callout-icon"></span><span class="callout-label">证明思路</span></div>
       <div class="callout-body">
       <p>将 <span class="math inline">S</span> 用参数方程 <span
-      class="math inline">\mathbf{r}(u,v)=(x(u,v),y(u,v),z(u,v))</span>，<span
-      class="math inline">(u,v)\in R</span> 参数化。用链式法则将 <span
-      class="math inline">\oint_{\partial S} P\,\mathrm{d}x</span>
+      class="math inline">\mathbf{r}(u,v)=(x(u,v),y(u,v),z(u,v))</span>,
+      <span class="math inline">(u,v)\in R</span> 参数化. 用链式法则将
+      <span class="math inline">\oint_{\partial S} P\,\mathrm{d}x</span>
       转化为参数域 <span class="math inline">R</span> 的边界上的积分
       <span class="math inline">\oint_{\partial
-      R}(\cdots)\,\mathrm{d}u+(\cdots)\,\mathrm{d}v</span>，再对 <span
-      class="math inline">R</span> 应用格林公式展开，所得表达式恰与右端
+      R}(\cdots)\,\mathrm{d}u+(\cdots)\,\mathrm{d}v</span>, 再对 <span
+      class="math inline">R</span> 应用格林公式展开, 所得表达式恰与右端
       <span class="math inline">\iint_S
       (R_y-Q_z,P_z-R_x,Q_x-P_y)\cdot\mathbf{n}\,\mathrm{d}S</span>
-      中的对应项相等。对 <span class="math inline">P,Q,R</span>
-      三项逐一处理后相加，即得斯托克斯公式。<span
+      中的对应项相等. 对 <span class="math inline">P,Q,R</span>
+      三项逐一处理后相加, 即得斯托克斯公式. <span
       class="math inline">\blacksquare</span></p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">三维保守场的判定</span></div>
       <div class="callout-body">
-      <p>在单连通空间区域 <span class="math inline">D</span>
-      上，以下条件等价：</p>
+      <p>在单连通空间区域 <span class="math inline">D</span> 上,
+      以下条件等价:</p>
       <ol type="1">
-      <li><span class="math inline">\mathbf{F}=\nabla
-      f</span>（存在势函数）；</li>
+      <li><span class="math inline">\mathbf{F}=\nabla f</span>
+      (存在势函数);</li>
       <li><span
-      class="math inline">\operatorname{curl}\mathbf{F}=\mathbf{0}</span>，即
-      <span
-      class="math inline">R_y=Q_z,\;P_z=R_x,\;Q_x=P_y</span>；</li>
+      class="math inline">\operatorname{curl}\mathbf{F}=\mathbf{0}</span>,
+      即 <span
+      class="math inline">R_y=Q_z,\;P_z=R_x,\;Q_x=P_y</span>;</li>
       <li>对 <span class="math inline">D</span> 内任意封闭曲线 <span
-      class="math inline">C</span>，<span
-      class="math inline">\oint_C\mathbf{F}\cdot\mathrm{d}\mathbf{r}=0</span>。</li>
+      class="math inline">C</span>, <span
+      class="math inline">\oint_C\mathbf{F}\cdot\mathrm{d}\mathbf{r}=0</span>.</li>
       </ol>
-      <p>势函数的求法与二维相同：依次对 <span
-      class="math inline">x,y,z</span> 积分，逐步确定待定函数。</p>
+      <p>势函数的求法与二维相同: 依次对 <span
+      class="math inline">x,y,z</span> 积分, 逐步确定待定函数.</p>
       </div>
       </div>
       <div id="chpt12-ex-021" class="exercise-block"
@@ -2344,9 +2360,9 @@
       </div>
       </div>
       </div>
-      <h2 id="统一视角广义牛顿-莱布尼茨公式">12.7
-      统一视角：广义牛顿-莱布尼茨公式</h2>
-      <p>本章的四个核心定理并非彼此独立的结论——它们是同一件事在不同维度的面貌。</p>
+      <h2 id="统一视角-广义牛顿-莱布尼茨公式">12.7 统一视角:
+      广义牛顿-莱布尼茨公式</h2>
+      <p>本章的四个核心定理并非彼此独立的结论——它们是同一件事在不同维度的面貌.</p>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">四个定理的统一形式</span></div>
       <div class="callout-body">
@@ -2415,22 +2431,32 @@
       </table>
       </div>
       </div>
-      <p><strong>规律</strong>：对区域上某种”导数”的积分，等于对其边界上”原函数”的积分。</p>
+      <p><strong>规律</strong>: 对区域上某种”导数”的积分,
+      等于对其边界上”原函数”的积分.</p>
       <div class="callout callout-note">
       <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">微分形式语言</span></div>
       <div class="callout-body">
-      <p>在<strong>微分形式</strong>（differential
-      forms）的语言中，上述四个公式统一为一个公式：</p>
+      <p>在<strong>微分形式</strong> (differential forms) 的语言中,
+      上述四个公式统一为一个公式:</p>
       <p><span class="math display">\int_\Omega \mathrm{d}\omega =
       \int_{\partial\Omega}\omega,</span></p>
-      <p>其中 <span class="math inline">\omega</span> 是微分形式，<span
-      class="math inline">\mathrm{d}</span>
-      是外微分算子。这一公式称为<strong>广义斯托克斯定理</strong>，是实变函数论和微分几何的核心结果。感兴趣的读者可在后续课程中深入探索。</p>
+      <p>其中 <span class="math inline">\omega</span> 是微分形式, <span
+      class="math inline">\mathrm{d}</span> 是外微分算子.
+      这一公式称为<strong>广义斯托克斯定理</strong>,
+      是实变函数论和微分几何的核心结果.
+      感兴趣的读者可在后续课程中深入探索.</p>
       </div>
       </div>
-      <p>回顾本章的旅程：我们从<strong>场</strong>出发，建立了沿曲线积分和穿越曲面积分的概念，发现了将区域与边界联系起来的三大定理。每一个定理的背后，都是牛顿和莱布尼茨三百年前的那个洞见——<strong>积分与微分互为逆运算</strong>——在更广阔的空间中回响。</p>
-      <p>格林公式告诉我们，平面区域内所有点的旋转强度可以”抵消”为边界上的一圈环量。高斯公式告诉我们，封闭区域内所有的源与汇，最终体现为穿越边界曲面的净通量。斯托克斯公式告诉我们，曲面上所有点的旋转，都在曲面边界的循环中留下完整的印记。</p>
-      <p>这不仅仅是计算技巧——这是微积分统一性最深刻的一句话。</p>
+      <p>回顾本章的旅程: 我们从<strong>场</strong>出发,
+      建立了沿曲线积分和穿越曲面积分的概念,
+      发现了将区域与边界联系起来的三大定理. 每一个定理的背后,
+      都是牛顿和莱布尼茨三百年前的那个洞见——<strong>积分与微分互为逆运算</strong>——在更广阔的空间中回响.</p>
+      <p>格林公式告诉我们,
+      平面区域内所有点的旋转强度可以”抵消”为边界上的一圈环量.
+      高斯公式告诉我们, 封闭区域内所有的源与汇,
+      最终体现为穿越边界曲面的净通量. 斯托克斯公式告诉我们,
+      曲面上所有点的旋转, 都在曲面边界的循环中留下完整的印记.</p>
+      <p>这不仅仅是计算技巧——这是微积分统一性最深刻的一句话.</p>
     </div>
   </div>
 

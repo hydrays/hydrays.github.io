@@ -111,9 +111,7 @@
       class="math inline">t</span> 变化的函数 <span
       class="math inline">y(t)</span> 满足</p>
       <p><span class="math display">
-      \begin{equation}
-      y^{\prime \prime}(t)=g
-      \end{equation}
+      y^{\prime \prime}(t)=g \tag{1}
       </span></p>
       <p>方程的右边是一个常数 (<strong>重力加速度</strong>),
       左边是一个二阶导数, 所以这是一个<strong>二阶微分方程</strong>.</p>
@@ -121,9 +119,7 @@
       <p>Step 1.</p>
       <p>令 <span class="math inline">v(t)=y^{\prime}(t)</span>,
       则原方程可化为: <span class="math display">
-      \begin{equation}
-      y&#39;&#39;(t)=v&#39;(t)=g
-      \end{equation}
+      y&#39;&#39;(t)=v&#39;(t)=g \tag{2}
       </span></p>
       <p>这是一个关于函数 <span class="math inline">v(t)</span>
       的一阶微分方程. 对该方程两边对自变量 <span
@@ -147,9 +143,7 @@
       <p>带入方程得 <span class="math inline">C_1=2</span>,
       于是我们得到</p>
       <p><span class="math display">
-      \begin{equation}
-      v(t) = gt + 2
-      \end{equation}
+      v(t) = gt + 2 \tag{3}
       </span></p>
       <p>为满足<code>定解条件1</code>的微分方程 (2) 的解.</p>
       <p>Step 2.</p>
@@ -189,31 +183,30 @@
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">简谐振动</span></div>
       <div class="callout-body">
       <p><strong>一维弹簧振子</strong> 假设一个质量为 <span
-      class="math inline">m</span>
-      的物体连接在弹簧的一端，弹簧另一端固定.
-      当物体受到弹簧的恢复力作用时，它会在平衡位置附近做简谐振动.
-      根据胡克定律，弹簧的恢复力与位移 <span
-      class="math inline">x(t)</span>
-      成正比，方向与位移相反，其表达式为：</p>
+      class="math inline">m</span> 的物体连接在弹簧的一端,
+      弹簧另一端固定. 当物体受到弹簧的恢复力作用时,
+      它会在平衡位置附近做简谐振动. 根据胡克定律, 弹簧的恢复力与位移
+      <span class="math inline">x(t)</span> 成正比, 方向与位移相反,
+      其表达式为:</p>
       <p><span class="math display">
       F_{\text{弹}} = -kx(t)
       </span></p>
-      <p>其中，<span class="math inline">k</span> 为弹簧常数，<span
+      <p>其中, <span class="math inline">k</span> 为弹簧常数, <span
       class="math inline">x(t)</span> 为物体相对于平衡位置的位移.
-      根据牛顿第二定律，力等于质量乘加速度，因此：</p>
+      根据牛顿第二定律, 力等于质量乘加速度, 因此:</p>
       <p><span class="math display">
       F = ma = m\frac{d^2x(t)}{dt^2}
       </span></p>
-      <p>将两者代入得到弹簧振子的运动方程：</p>
+      <p>将两者代入得到弹簧振子的运动方程:</p>
       <p><span class="math display">
       m\frac{d^2x(t)}{dt^2} = -kx(t)
       </span></p>
-      <p>整理得：</p>
+      <p>整理得:</p>
       <p><span class="math display">
       \frac{d^2x(t)}{dt^2} + \frac{k}{m}x(t) = 0
       </span></p>
       <p>令 <span class="math inline">\displaystyle \omega^2 =
-      \frac{k}{m}</span>，方程化为：</p>
+      \frac{k}{m}</span>, 方程化为:</p>
       <p><span class="math display">
       \frac{d^2x(t)}{dt^2} + \omega^2 x(t) = 0
       </span></p>
@@ -222,24 +215,23 @@
       <p>接下来我们来”蒙”一个微分方程的解. 你没有听错,
       因为微分方程太难解了, 以至于”蒙”也成了一个合理的办法,
       总之不管用什么方法, 只要能找到解就行.</p>
-      <p>该二阶线性齐次微分方程的通解为：</p>
+      <p>该二阶线性齐次微分方程的通解为:</p>
       <p><span class="math display">
       x(t) = A\cos(\omega t) + B\sin(\omega t)
       </span></p>
-      <p>其中，<span class="math inline">A</span> 和 <span
+      <p>其中, <span class="math inline">A</span> 和 <span
       class="math inline">B</span> 是由初始条件决定的常数.</p>
-      <p><strong>定解条件</strong><br />
-      如果初始时刻 <span class="math inline">t = 0</span>
-      时，物体的位移为 <span class="math inline">x(0) =
-      x_0</span>，速度为 <span class="math inline">v(0) =
-      v_0</span>，我们可以通过代入初始条件求解 <span
-      class="math inline">A</span> 和 <span
-      class="math inline">B</span>：</p>
+      <p><strong>定解条件</strong> 如果初始时刻 <span
+      class="math inline">t = 0</span> 时, 物体的位移为 <span
+      class="math inline">x(0) = x_0</span>, 速度为 <span
+      class="math inline">v(0) = v_0</span>,
+      我们可以通过代入初始条件求解 <span class="math inline">A</span> 和
+      <span class="math inline">B</span>:</p>
       <ol type="1">
-      <li><p><strong>初始位移条件</strong>： <span class="math display">
+      <li><p><strong>初始位移条件</strong>: <span class="math display">
       x(0) = A = x_0
       </span></p></li>
-      <li><p><strong>初始速度条件</strong>：</p></li>
+      <li><p><strong>初始速度条件</strong>:</p></li>
       </ol>
       <p><span class="math display">
       \begin{aligned}
@@ -247,7 +239,7 @@
       &amp;= B\omega = v_0
       \end{aligned}
       </span></p>
-      <p>代入初始条件得到：</p>
+      <p>代入初始条件得到:</p>
       <p><span class="math display">
       x(t) = x_0 \cos(\omega t) + \frac{v_0}{\omega} \sin(\omega t)
       </span></p>
@@ -259,198 +251,197 @@
       <div class="callout-body">
       <p><strong>单摆的描述</strong> 单摆由长度为 <span
       class="math inline">L</span> 的细绳和质量为 <span
-      class="math inline">m</span>
-      的小球组成，小球在重力作用下绕固定点摆动. 假设摆角为 <span
-      class="math inline">\theta(t)</span>，即小球偏离竖直方向的角度，我们将推导其运动方程.</p>
-      <p><strong>受力分析</strong> 小球所受的力主要包括： 1.
-      <strong>重力</strong> <span
-      class="math inline">mg</span>，方向竖直向下； 2.
-      <strong>绳子的张力</strong> <span
-      class="math inline">T</span>，方向沿绳子向内.</p>
-      <p>将重力分解为两个方向： - 沿绳方向的分力 <span
-      class="math inline">mg\cos\theta</span>，被张力抵消； -
-      垂直于绳方向的分力 <span
-      class="math inline">mg\sin\theta</span>，产生恢复力矩.</p>
+      class="math inline">m</span> 的小球组成,
+      小球在重力作用下绕固定点摆动. 假设摆角为 <span
+      class="math inline">\theta(t)</span>, 即小球偏离竖直方向的角度,
+      我们将推导其运动方程.</p>
+      <p><strong>受力分析</strong> 小球所受的力主要包括: 1.
+      <strong>重力</strong> <span class="math inline">mg</span>,
+      方向竖直向下; 2. <strong>绳子的张力</strong> <span
+      class="math inline">T</span>, 方向沿绳子向内.</p>
+      <p>将重力分解为两个方向: - 沿绳方向的分力 <span
+      class="math inline">mg\cos\theta</span>, 被张力抵消; -
+      垂直于绳方向的分力 <span class="math inline">mg\sin\theta</span>,
+      产生恢复力矩.</p>
       <p><strong>力矩分析</strong> 恢复力矩 <span
-      class="math inline">\tau</span> 关于固定点 O 为：</p>
+      class="math inline">\tau</span> 关于固定点 O 为:</p>
       <p><span class="math display">
       \tau = -mgL\sin\theta
       </span></p>
-      <p>根据牛顿第二定律的角度形式，力矩等于转动惯量 <span
+      <p>根据牛顿第二定律的角度形式, 力矩等于转动惯量 <span
       class="math inline">I</span> 乘角加速度<span
-      class="math inline">\alpha</span>：</p>
+      class="math inline">\alpha</span>:</p>
       <p><span class="math display">
       \tau = I \alpha
       </span></p>
-      <p>对于单摆，转动惯量 <span class="math inline">\displaystyle I =
-      mL^2</span>，角加速度<span class="math inline">\displaystyle
-      \alpha = \frac{d^2\theta}{dt^2}</span>，因此：</p>
+      <p>对于单摆, 转动惯量 <span class="math inline">\displaystyle I =
+      mL^2</span>, 角加速度<span class="math inline">\displaystyle
+      \alpha = \frac{d^2\theta}{dt^2}</span>, 因此:</p>
       <p><span class="math display">
       -mgL\sin\theta = mL^2 \frac{d^2\theta}{dt^2}
       </span></p>
       <p>消去 <span class="math inline">m</span> 和 <span
-      class="math inline">L</span> 后，得到：</p>
+      class="math inline">L</span> 后, 得到:</p>
       <p><span class="math display">
       \frac{d^2\theta}{dt^2} + \frac{g}{L}\sin\theta = 0
       </span></p>
       <p><strong>小角近似</strong> 当 <span
-      class="math inline">\theta</span> 较小时，<span
-      class="math inline">\sin\theta \approx
-      \theta</span>（弧度制），方程简化为：</p>
+      class="math inline">\theta</span> 较小时, <span
+      class="math inline">\sin\theta \approx \theta</span> (弧度制),
+      方程简化为:</p>
       <p><span class="math display">
       \frac{d^2\theta}{dt^2} + \frac{g}{L}\theta = 0
       </span></p>
       <p>这就是单摆在小角度近似下的简谐运动方程.</p>
-      <p><strong>方程的解</strong><br />
-      该方程的解跟简谐振动完全一样.</p>
+      <p><strong>方程的解</strong> 该方程的解跟简谐振动完全一样.</p>
       </div>
       </div>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
-      <p><strong>LC电路</strong><br />
-      一个理想的LC电路由电感 <span class="math inline">L</span> 和电容
-      <span class="math inline">C</span> 组成.
-      假设电路中无电阻，电感与电容串联. 电容的电荷量 <span
-      class="math inline">q(t)</span> 随时间变化，导致电路中的电流 <span
-      class="math inline">i(t)</span> 也随时间变化.
-      我们来推导该系统的运动方程.</p>
-      <p><strong>基本方程</strong> 1. <strong>电容的关系</strong>：
+      <p><strong>LC电路</strong> 一个理想的LC电路由电感 <span
+      class="math inline">L</span> 和电容 <span
+      class="math inline">C</span> 组成. 假设电路中无电阻,
+      电感与电容串联. 电容的电荷量 <span class="math inline">q(t)</span>
+      随时间变化, 导致电路中的电流 <span class="math inline">i(t)</span>
+      也随时间变化. 我们来推导该系统的运动方程.</p>
+      <p><strong>基本方程</strong> 1. <strong>电容的关系</strong>:
       电容两端的电压 <span class="math inline">u_C(t)</span> 与电荷量
-      <span class="math inline">q(t)</span> 的关系为：</p>
+      <span class="math inline">q(t)</span> 的关系为:</p>
       <p><span class="math display">
       u_C(t) = \frac{q(t)}{C}
       </span></p>
       <ol start="2" type="1">
-      <li><strong>电感的关系</strong>： 电感两端的电压 <span
+      <li><strong>电感的关系</strong>: 电感两端的电压 <span
       class="math inline">u_L(t)</span> 与电流变化率 <span
       class="math inline">\displaystyle \frac{di(t)}{dt}</span>
-      的关系为： <span class="math display">
+      的关系为: <span class="math display">
       u_L(t) = L \frac{di(t)}{dt}
       </span> 由于电流 <span class="math inline">i(t)</span> 是电荷
-      <span class="math inline">q(t)</span> 的时间导数： <span
+      <span class="math inline">q(t)</span> 的时间导数: <span
       class="math display">
       i(t) = \frac{dq(t)}{dt}
       </span></li>
       </ol>
-      <p><strong>回路方程（基尔霍夫电压定律）</strong>
-      在LC电路中，总电压为零，即：</p>
+      <p><strong>回路方程 (基尔霍夫电压定律)</strong> 在LC电路中,
+      总电压为零, 即:</p>
       <p><span class="math display">
       u_L(t) + u_C(t) = 0
       </span></p>
-      <p>代入电感和电容的表达式：</p>
+      <p>代入电感和电容的表达式:</p>
       <p><span class="math display">
       L \frac{d^2q(t)}{dt^2} + \frac{q(t)}{C} = 0
       </span></p>
-      <p><strong>LC震荡方程</strong> 将上式整理为标准形式：</p>
+      <p><strong>LC振荡方程</strong> 将上式整理为标准形式:</p>
       <p><span class="math display">
       \frac{d^2q(t)}{dt^2} + \frac{1}{LC}q(t) = 0
       </span></p>
-      <p>这就是LC电路的微分方程，描述了电容器电荷随时间的简谐振荡过程.</p>
+      <p>这就是LC电路的微分方程,
+      描述了电容器电荷随时间的简谐振荡过程.</p>
       <p><strong>特征频率</strong> LC电路的特征角频率 <span
-      class="math inline">\omega_0</span> 为：</p>
+      class="math inline">\omega_0</span> 为:</p>
       <p><span class="math display">
       \omega_0 = \sqrt{\frac{1}{LC}}
       </span></p>
-      <p>这表明LC电路的振荡频率只由电感和电容决定，与初始电荷或电流无关.</p>
+      <p>这表明LC电路的振荡频率只由电感和电容决定,
+      与初始电荷或电流无关.</p>
       </div>
       </div>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">地心电梯</span></div>
       <div class="callout-body">
       <p><strong>牛顿壳层定理</strong> 假设一个半径为 <span
-      class="math inline">R</span>、质量为 <span
-      class="math inline">M</span> 的均匀球壳，质点 <span
-      class="math inline">m</span>
-      位于球壳内部或外部，球壳对质点的引力为</p>
+      class="math inline">R</span>, 质量为 <span
+      class="math inline">M</span> 的均匀球壳, 质点 <span
+      class="math inline">m</span> 位于球壳内部或外部,
+      球壳对质点的引力为</p>
       <ul>
-      <li><p>当 <span class="math inline">r \geq R</span>
-      时，球壳对质点的引力为： <span class="math display">
+      <li><p>当 <span class="math inline">r \geq R</span> 时,
+      球壳对质点的引力为: <span class="math display">
       F = G\frac{Mm}{r^2}
       </span></p></li>
-      <li><p>当 <span class="math inline">r &lt; R</span>
-      时，球壳对质点的引力为： <span class="math display">
+      <li><p>当 <span class="math inline">r &lt; R</span> 时,
+      球壳对质点的引力为: <span class="math display">
       F = 0
       </span></p></li>
       </ul>
-      <p>这表明在球壳内部，质点所受引力为零，而在外部，引力遵循经典的万有引力公式，等效于将球壳质量集中于球心.</p>
+      <p>这表明在球壳内部, 质点所受引力为零, 而在外部,
+      引力遵循经典的万有引力公式, 等效于将球壳质量集中于球心.</p>
       <p><strong>牛顿壳层定理的微积分推导</strong></p>
       <ol type="1">
       <li><p>外部质点的引力 取球壳上一个面积元 <span
       class="math inline">\displaystyle dA = R^2 \sin\theta \, d\theta
-      \, d\phi</span>，其中 <span class="math inline">\theta</span>
-      是极角，<span class="math inline">\phi</span> 是方位角.
+      \, d\phi</span>, 其中 <span class="math inline">\theta</span>
+      是极角, <span class="math inline">\phi</span> 是方位角.
       球壳的面密度 <span class="math inline">\displaystyle \sigma =
-      \frac{M}{4\pi R^2}</span>，因此面积元的质量： <span
+      \frac{M}{4\pi R^2}</span>, 因此面积元的质量: <span
       class="math display">
       dm = \sigma \, dA = \frac{M}{4\pi R^2} \cdot R^2 \sin\theta \,
       d\theta \, d\phi
       </span> 质点 <span class="math inline">P</span> 与面积元 <span
-      class="math inline">dm</span> 之间的距离为： <span
+      class="math inline">dm</span> 之间的距离为: <span
       class="math display">
       s = \sqrt{r^2 + R^2 - 2rR\cos\theta}
       </span> 微元 <span class="math inline">dm</span> 对质点 <span
-      class="math inline">P</span> 产生的引力： <span
+      class="math inline">P</span> 产生的引力: <span
       class="math display">
       dF = G \frac{dm \cdot m}{s^2}
-      </span>
-      由于球壳的对称性，垂直于径向的引力分量会相互抵消，仅剩下沿径向的分量：
-      <span class="math display">
+      </span> 由于球壳的对称性, 垂直于径向的引力分量会相互抵消,
+      仅剩下沿径向的分量: <span class="math display">
       dF_{\text{径}} = dF \cdot \frac{r - R\cos\theta}{s}
       </span> 将 <span class="math inline">dF_{\text{径}}</span>
-      对整个球壳积分： <span class="math display">
+      对整个球壳积分: <span class="math display">
       F = \int_0^{2\pi} \int_0^\pi G \frac{M m}{4\pi R^2} \cdot
       \frac{R^2 \sin\theta (r - R\cos\theta)}{(r^2 + R^2 -
       2rR\cos\theta)^{3/2}} \, d\theta \, d\phi
-      </span> 计算结果表明，球壳外部的引力等效于质量集中于球心： <span
+      </span> 计算结果表明, 球壳外部的引力等效于质量集中于球心: <span
       class="math display">
       F = G \frac{Mm}{r^2}
       </span></p></li>
       <li><p>外层球壳的引力为零 (也可以用积分计算, 但比较繁琐)
       考虑距球心距离为 <span class="math inline">r</span> 的质点 <span
-      class="math inline">P</span>，外层的壳质量不影响 <span
+      class="math inline">P</span>, 外层的壳质量不影响 <span
       class="math inline">P</span>. 引力微元在 <span
-      class="math inline">P</span>
-      点的径向和垂直方向上完全抵消，因此外层壳对 <span
-      class="math inline">P</span> 的引力为： <span
+      class="math inline">P</span> 点的径向和垂直方向上完全抵消,
+      因此外层壳对 <span class="math inline">P</span> 的引力为: <span
       class="math display">
       F_{\text{外}} = 0
       </span></p></li>
       </ol>
       <p><strong>穿过地心的电梯在重力作用下的运动方程推导</strong></p>
-      <p>假设一部电梯沿直线穿过地球中心，从地球表面一端移动到另一端，忽略空气阻力和其他阻力，仅考虑重力作用.
+      <p>假设一部电梯沿直线穿过地球中心, 从地球表面一端移动到另一端,
+      忽略空气阻力和其他阻力, 仅考虑重力作用.
       我们将推导电梯在这种情况下的运动方程.</p>
       <p>假设地球是一个半径为 <span class="math inline">R</span>
-      的均匀密度球体，总质量为 <span
-      class="math inline">M</span>，密度为 <span
-      class="math inline">\displaystyle \rho = \frac{M}{\frac{4}{3} \pi
-      R^3}</span>.</p>
-      <p>在距离地心 <span class="math inline">r</span>
-      处，电梯所受引力只来自半径为 <span class="math inline">r</span>
-      的球体部分，质量为：</p>
+      的均匀密度球体, 总质量为 <span class="math inline">M</span>,
+      密度为 <span class="math inline">\displaystyle \rho =
+      \frac{M}{\frac{4}{3} \pi R^3}</span>.</p>
+      <p>在距离地心 <span class="math inline">r</span> 处,
+      电梯所受引力只来自半径为 <span class="math inline">r</span>
+      的球体部分, 质量为:</p>
       <p><span class="math display">
       M(r) = \rho \cdot \frac{4}{3} \pi r^3 = M \cdot \frac{r^3}{R^3}
       </span></p>
-      <p>根据牛顿引力定律，电梯在距离地心 <span
-      class="math inline">r</span> 处的引力为：</p>
+      <p>根据牛顿引力定律, 电梯在距离地心 <span
+      class="math inline">r</span> 处的引力为:</p>
       <p><span class="math display">
       F(r) = G \frac{M(r) \cdot m}{r^2} = G \frac{M \cdot m \cdot
       r}{R^3}
       </span></p>
-      <p>因此，重力加速度为：</p>
+      <p>因此, 重力加速度为:</p>
       <p><span class="math display">
       g(r) = G \frac{M}{R^3} \cdot r  
       </span></p>
       <p>电梯在重力作用下的加速度为 <span
-      class="math inline">-g(r)</span>，即：</p>
+      class="math inline">-g(r)</span>, 即:</p>
       <p><span class="math display">
       \frac{d^2r}{dt^2} = -G \frac{M}{R^3} \cdot r  
       </span></p>
-      <p>这就是一个简谐振动方程，其形式为：</p>
+      <p>这就是一个简谐振动方程, 其形式为:</p>
       <p><span class="math display">
       \frac{d^2r}{dt^2} + \omega^2 r = 0
       </span></p>
-      <p>其中，角频率 <span class="math inline">\omega</span> 为：</p>
+      <p>其中, 角频率 <span class="math inline">\omega</span> 为:</p>
       <p><span class="math display">
       \omega = \sqrt{\frac{G M}{R^3}}  
       </span></p>
@@ -468,9 +459,7 @@
       <div class="callout-body">
       <p>在这个例子中我们考虑一阶微分方程</p>
       <p><span class="math display">
-      \begin{equation}
-      \frac{dy}{dt} = k y
-      \end{equation}
+      \frac{dy}{dt} = k y \tag{4}
       </span></p>
       <p>其中 <span class="math inline">k</span> 为常数. 方程 (4)
       是一类非常重要的微分方程, 方程左边是 <span
@@ -493,13 +482,11 @@
       class="math inline">\Delta t</span> 这段时间内新增的感染者人数,
       即</p>
       <p><span class="math display">
-      \begin{equation}
-      y(t_0+\Delta t) \approx y(t_0) + k y(t_0) \Delta t
-      \end{equation}
+      y(t_0+\Delta t) \approx y(t_0) + k y(t_0) \Delta t \tag{5}
       </span></p>
-      <p>注意这里时约等于, 因为在 <span
+      <p>注意这里是约等于, 因为在 <span
       class="math inline">\Delta</span> 这段时间内,
-      感染者的人数并总是不严格等于 <span
+      感染者的人数并不总是严格等于 <span
       class="math inline">y(t_0)</span> 的, 但是如果 <span
       class="math inline">\Delta t</span> 取得很小, 那么 <span
       class="math inline">y</span> 的变化也非常小 (<span
@@ -510,7 +497,7 @@
       \frac{y(t_0+\Delta t) - y(t_0)} {\Delta t} \approx  k y(t_0)
       </span></p>
       <p>根据上面的分析, 当我们让 <span class="math inline">\Delta
-      t</span> 区域 0 时, 左边趋近于 <span
+      t</span> 趋于 0 时, 左边趋近于 <span
       class="math inline">y&#39;(t_0)</span>, 而约等号也会”趋近于”等号,
       因此我们得到</p>
       <p><span class="math display">
@@ -519,43 +506,45 @@
       <p>上式中把 <span class="math inline">t_0</span> 换成 <span
       class="math inline">t</span>, 就得到微分方程 (4).</p>
       <p><strong>情景2: 化学反应</strong></p>
-      <p>考虑一个放射性元素的衰变过程，我们用 <span
+      <p>考虑一个放射性元素的衰变过程, 我们用 <span
       class="math inline">y(t)</span> 表示 <span
       class="math inline">t</span> 时刻剩余的放射性原子数.
-      放射性元素的衰变是一个随机过程，每个原子都有一定的概率在单位时间内发生衰变，因此衰变的速率与当前剩余的原子数成正比。我们用一个常数
-      <span class="math inline">k</span>
-      来表示这种衰变率，称为<strong>衰变常数</strong>，即单位时间内一个原子发生衰变的概率.</p>
-      <p>在时间 <span class="math inline">\Delta t</span>
-      之后，剩余的放射性原子数 <span class="math inline">y(t_0+\Delta
+      放射性元素的衰变是一个随机过程,
+      每个原子都有一定的概率在单位时间内发生衰变,
+      因此衰变的速率与当前剩余的原子数成正比. 我们用一个常数 <span
+      class="math inline">k</span> 来表示这种衰变率,
+      称为<strong>衰变常数</strong>,
+      即单位时间内一个原子发生衰变的概率.</p>
+      <p>在时间 <span class="math inline">\Delta t</span> 之后,
+      剩余的放射性原子数 <span class="math inline">y(t_0+\Delta
       t)</span> 可以表示为 <span class="math inline">t_0</span>
-      时刻的原子数减去这段时间内衰变的原子数：</p>
+      时刻的原子数减去这段时间内衰变的原子数:</p>
       <p><span class="math display">
       y(t_0+\Delta t) \approx y(t_0) - k y(t_0) \Delta t
       </span></p>
       <p>注意这里的负号表示原子数目在减小, 而约等于号表示在 <span
-      class="math inline">\Delta t</span>
-      时间内，衰变速率近似保持恒定，因为当 <span
-      class="math inline">\Delta t</span> 很小时，<span
-      class="math inline">y(t)</span> 变化非常小，<span
+      class="math inline">\Delta t</span> 时间内, 衰变速率近似保持恒定,
+      因为当 <span class="math inline">\Delta t</span> 很小时, <span
+      class="math inline">y(t)</span> 变化非常小, <span
       class="math inline">y(t_0)</span> 可以被近似看作常数.</p>
-      <p>对上式整理并移项得到：</p>
+      <p>对上式整理并移项得到:</p>
       <p><span class="math display">
       \frac{y(t_0+\Delta t) - y(t_0)}{\Delta t} \approx -k y(t_0)
       </span></p>
-      <p>当我们令 <span class="math inline">\Delta t \to 0</span>
-      时，左边趋近于 <span
-      class="math inline">y&#39;(t_0)</span>，约等号也趋近于等号，因此得到：</p>
+      <p>当我们令 <span class="math inline">\Delta t \to 0</span> 时,
+      左边趋近于 <span class="math inline">y&#39;(t_0)</span>,
+      约等号也趋近于等号, 因此得到:</p>
       <p><span class="math display">
       y&#39;(t_0) = -k y(t_0)
       </span></p>
       <p>将 <span class="math inline">t_0</span> 换成一般的 <span
-      class="math inline">t</span>，同样得到微分方程 (4),
+      class="math inline">t</span>, 同样得到微分方程 (4),
       只是系数变成了负数.</p>
       <p>下面我们来”蒙”方程(4)的解. 我们知道, <span
       class="math inline">\mathrm{e}^t</span> 的导数等于它自己, 因此
       <span class="math inline">\mathrm{e}^t</span> 是满足微分方程 <span
       class="math inline">y&#39; = y</span> 的一个解. 对 <span
-      class="math inline">\mathrm{e}^x</span> 进行适当边形, 可以构造出
+      class="math inline">\mathrm{e}^x</span> 进行适当变形, 可以构造出
       (4) 的解为</p>
       <p><span class="math display">
       y(t) = C\mathrm{e}^{kt}
@@ -575,9 +564,9 @@
       实际情况下指数增长只是在传染病爆发的初期出现, 随着时间的增长,
       未感染的群体数目会减小, 还有一部分感染者将被治愈, 这时微分方程 (4)
       就不再成立了, 需要用一个新的微分方程来描述.</p>
-      <p>在<strong>情景2</strong>中，假设初始时刻 <span
+      <p>在<strong>情景2</strong>中, 假设初始时刻 <span
       class="math inline">t=0</span> 时放射性原子的数目 <span
-      class="math inline">y(0) = N_0</span>，因此微分方程</p>
+      class="math inline">y(0) = N_0</span>, 因此微分方程</p>
       <p><span class="math display">
       y&#39; = -ky
       </span></p>
@@ -586,21 +575,22 @@
       y(t) = N_0 e^{-k t}
       </span></p>
       <p>这个公式描述了放射性原子数目随时间的指数型衰减.
-      与传染病的”指数型增长”相反，放射性衰变是一种<strong>指数型减少</strong>的过程.</p>
-      <p>在实际情况中，放射性衰变是一个非常稳定的过程，不受外界环境的影响，因此微分方程
-      <span class="math inline">y&#39;(t) = -k y(t)</span>
-      可以长期成立，直至几乎所有原子都完成衰变.
-      我们常用<strong>半衰期</strong> <span
+      与传染病的”指数型增长”相反,
+      放射性衰变是一种<strong>指数型减少</strong>的过程.</p>
+      <p>在实际情况中, 放射性衰变是一个非常稳定的过程,
+      不受外界环境的影响, 因此微分方程 <span
+      class="math inline">y&#39;(t) = -k y(t)</span> 可以长期成立,
+      直至几乎所有原子都完成衰变. 我们常用<strong>半衰期</strong> <span
       class="math inline">\displaystyle T_{\frac{1}{2}}</span>
-      来描述这个衰变过程，即原子数目减少到初始值一半所需的时间.
+      来描述这个衰变过程, 即原子数目减少到初始值一半所需的时间.
       通过解方程 <span class="math inline">\displaystyle
-      y(T_{\frac{1}{2}}) = \frac{N_0}{2}</span>，可以得到：</p>
+      y(T_{\frac{1}{2}}) = \frac{N_0}{2}</span>, 可以得到:</p>
       <p><span class="math display">
       T_{\frac{1}{2}} = \frac{\ln 2}{k}
       </span></p>
-      <p>半衰期是一个重要的物理量，它使得我们可以通过简单的实验观测来确定衰变常数
-      <span
-      class="math inline">k</span>，从而了解放射性物质的衰变特性.</p>
+      <p>半衰期是一个重要的物理量,
+      它使得我们可以通过简单的实验观测来确定衰变常数 <span
+      class="math inline">k</span>, 从而了解放射性物质的衰变特性.</p>
       </div>
       </div>
       <div class="callout callout-important">
@@ -963,55 +953,55 @@
       <div class="callout-body">
       <p>求解变系数的一阶线性微分方程可以使用常数变异法. 过程如下:</p>
       <p><code>step 1</code> 将方程的非齐次项 <span
-      class="math inline">b(x)</span> 去掉，得到齐次方程：</p>
+      class="math inline">b(x)</span> 去掉, 得到齐次方程:</p>
       <p><span class="math display">
       y&#39; = k(x)y
       </span></p>
-      <p>这个方程是可分离变量的，解法为：</p>
+      <p>这个方程是可分离变量的, 解法为:</p>
       <p><span class="math display">
       \frac{dy}{y} = k(x)dx
       </span></p>
-      <p>积分得到：</p>
+      <p>积分得到:</p>
       <p><span class="math display">
       \ln|y| = \int k(x) dx + C
       </span></p>
-      <p>进一步简化：</p>
+      <p>进一步简化:</p>
       <p><span class="math display">
       y_h = Ce^{\int k(x) dx}
       </span></p>
       <p>这是齐次方程的一般解.</p>
-      <p><code>step 2</code> 假设非齐次方程的特解形式为：</p>
+      <p><code>step 2</code> 假设非齐次方程的特解形式为:</p>
       <p><span class="math display">
       y_p = u(x)e^{\int k(x) dx}
       </span></p>
       <p>其中 <span class="math inline">u(x)</span> 是待定函数.</p>
       <p><code>step 3</code> 将 <span class="math inline">\displaystyle
       y_p = u(x)e^{\int k(x) dx}</span> 代入原方程 <span
-      class="math inline">y&#39; = k(x)y +
-      b(x)</span>，利用链式法则：</p>
+      class="math inline">y&#39; = k(x)y + b(x)</span>,
+      利用链式法则:</p>
       <p><span class="math display">
       y_p&#39; = u&#39;(x)e^{\int k(x) dx} + u(x)k(x)e^{\int k(x) dx}
       </span></p>
       <p>将 <span class="math inline">y_p</span> 和 <span
-      class="math inline">y_p&#39;</span> 代入原方程：</p>
+      class="math inline">y_p&#39;</span> 代入原方程:</p>
       <p><span class="math display">
       u&#39;(x)e^{\int k(x) dx} + u(x)k(x)e^{\int k(x) dx} =
       k(x)u(x)e^{\int k(x) dx} + b(x)
       </span></p>
-      <p>化简后得：</p>
+      <p>化简后得:</p>
       <p><span class="math display">
       u&#39;(x)e^{\int k(x) dx} = b(x)
       </span></p>
       <p>两边同时除以 <span class="math inline">\displaystyle e^{\int
-      k(x) dx}</span>：</p>
+      k(x) dx}</span>:</p>
       <p><span class="math display">
       u&#39;(x) = b(x)e^{-\int k(x) dx}
       </span></p>
-      <p>积分求解 <span class="math inline">u(x)</span>：</p>
+      <p>积分求解 <span class="math inline">u(x)</span>:</p>
       <p><span class="math display">
       u(x) = \int b(x)e^{-\int k(x) dx} dx + C
       </span></p>
-      <p>通解为齐次解与特解的叠加：</p>
+      <p>通解为齐次解与特解的叠加:</p>
       <p><span class="math display">
       y = y_h + y_p = Ce^{\int k(x) dx} + \left(\int b(x)e^{-\int k(x)
       dx} dx\right)e^{\int k(x) dx}
@@ -1039,25 +1029,25 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">带有阻尼和外力的振动方程</span></div>
       <div class="callout-body">
-      <p>考虑一个质量为 $ m $ 的物体，固定在弹簧上，弹簧常数为 $ k
-      $，并且系统中存在阻力（或阻尼），阻力与速度成正比，比例常数为 $c
-      $. 此外，系统受到一个外力 $ F(t) $ 的作用.
+      <p>考虑一个质量为 $ m $ 的物体, 固定在弹簧上, 弹簧常数为 $ k $,
+      并且系统中存在阻力 (或阻尼), 阻力与速度成正比, 比例常数为 $c $.
+      此外, 系统受到一个外力 $ F(t) $ 的作用.
       我们的目标是建立该系统的运动方程.</p>
       <p>系统的受力分析为:</p>
       <ul>
-      <li><p><strong>弹簧力</strong>：根据胡克定律，弹簧的恢复力是与物体的位移
-      $ x(t) $ 成正比的，方向与位移相反，表达式为： <span
-      class="math display">
+      <li><p><strong>弹簧力</strong>: 根据胡克定律,
+      弹簧的恢复力是与物体的位移 $ x(t) $ 成正比的, 方向与位移相反,
+      表达式为: <span class="math display">
       F_{\text{spring}} = -k \cdot x(t)
       </span></p></li>
-      <li><p><strong>阻尼力</strong>：阻尼力与物体的速度 $ $
-      成正比，方向与速度相反，表达式为： <span class="math display">
+      <li><p><strong>阻尼力</strong>: 阻尼力与物体的速度 $ $ 成正比,
+      方向与速度相反, 表达式为: <span class="math display">
       F_{\text{damping}} = -c \cdot \frac{dx}{dt}
       </span></p></li>
-      <li><p><strong>外力</strong>：外力 <span
+      <li><p><strong>外力</strong>: 外力 <span
       class="math inline">F(t)</span> 是已知的外部作用力.</p></li>
       </ul>
-      <p>根据牛顿第二定律，物体的加速度 $ $ 与合力之比为物体的质量：</p>
+      <p>根据牛顿第二定律, 物体的加速度 $ $ 与合力之比为物体的质量:</p>
       <p><span class="math display">
       m \cdot \frac{d^2x}{dt^2} = F_{\text{spring}} + F_{\text{damping}}
       + F(t)
@@ -1067,22 +1057,21 @@
       m \cdot \frac{d^2x}{dt^2} = -k \cdot x(t) - c \cdot \frac{dx}{dt}
       + F(t)
       </span></p>
-      <p>将上式整理得到标准形式的二阶线性微分方程：</p>
+      <p>将上式整理得到标准形式的二阶线性微分方程:</p>
       <p><span class="math display">
       \frac{d^2x}{dt^2} + \frac{c}{m} \cdot \frac{dx}{dt} + \frac{k}{m}
       \cdot x(t) = \frac{F(t)}{m}
       </span></p>
-      <p>这就是有外力的阻尼震荡方程. - 当 <span class="math inline">F(t)
-      = 0</span> 时，方程为齐次方程，描述的是自由阻尼振动： <span
+      <p>这就是有外力的阻尼振荡方程. - 当 <span class="math inline">F(t)
+      = 0</span> 时, 方程为齐次方程, 描述的是自由阻尼振动: <span
       class="math display">
         \frac{d^2x}{dt^2} + \frac{c}{m} \cdot \frac{dx}{dt} +
       \frac{k}{m} \cdot x(t) = 0
         </span></p>
       <ul>
-      <li>当 $ F(t) $ 时，如 <span class="math inline">F(t) = h\sin(
-      \omega t)</span>,
-      方程为非齐次方程，描述的是有外力作用下的阻尼振动. <span
-      class="math display">
+      <li>当 $ F(t) $ 时, 如 <span class="math inline">F(t) = h\sin(
+      \omega t)</span>, 方程为非齐次方程,
+      描述的是有外力作用下的阻尼振动. <span class="math display">
       \frac{d^2x}{dt^2} + \frac{c}{m} \cdot \frac{dx}{dt} + \frac{k}{m}
       \cdot x(t) = \frac{h}{m} \sin( \omega t)
       </span></li>
@@ -1094,12 +1083,12 @@
       <div class="callout-body">
       <p>前面我们考虑的简谐振动方程可以看成是二阶线性微分方程的特例,
       但一般的二阶线性微分方程求解是非常困难的,
-      需要通过引入新变量的方法将<strong>高阶(二阶)线性微分方程</strong>转化为<strong>一阶线性线性微分方程组</strong>.</p>
+      需要通过引入新变量的方法将<strong>高阶(二阶)线性微分方程</strong>转化为<strong>一阶线性微分方程组</strong>.</p>
       <p>例如对方程</p>
       <p><span class="math display">
       y&#39;&#39; + p y&#39; + q y = 0
       </span></p>
-      <p>我们可以令 <span class="math inline">v(t) = y&#39;(t)</span>,
+      <p>我们可以令 <span class="math inline">u(t) = y&#39;(t)</span>,
       则</p>
       <p><span class="math display">
         \left\{
@@ -1109,7 +1098,7 @@
         \end{align*}
         \right.
         </span></p>
-      <p>求解这类<strong>一阶线性线性微分方程组</strong>需要在高维线性空间中进行,
+      <p>求解这类<strong>一阶线性微分方程组</strong>需要在高维线性空间中进行,
       需要一些线性代数的知识, 因此这部分内容我们将在下学期再介绍.</p>
       </div>
       </div>
@@ -1124,27 +1113,26 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">Lotka-Volterra 模型</span></div>
       <div class="callout-body">
-      <p>Lotka-Volterra
-      模型是一个经典的捕食-猎物模型，用于描述捕食者与猎物之间的相互作用.
-      该模型由两个微分方程组成，分别描述猎物和捕食者的动态变化.
-      模型的标准形式为：</p>
+      <p>Lotka-Volterra 模型是一个经典的捕食-猎物模型,
+      用于描述捕食者与猎物之间的相互作用. 该模型由两个微分方程组成,
+      分别描述猎物和捕食者的动态变化. 模型的标准形式为:</p>
       <p><span class="math display">
       \frac{dx}{dt} = \alpha x - \beta xy
       </span></p>
       <p><span class="math display">
       \frac{dy}{dt} = \delta xy - \gamma y
       </span></p>
-      <p>其中：<br />
-      - <span class="math inline">x(t)</span> 是猎物（兔子）的数量， -
-      <span class="math inline">y(t)</span> 是捕食者（狼）的数量， -
-      <span class="math inline">\alpha</span>
-      是猎物的自然增长率（不受捕食者影响时）， - <span
-      class="math inline">\beta</span> 是捕食者捕食猎物的效率， - <span
-      class="math inline">\delta</span>
-      是捕食者的繁殖率（每捕食一只猎物，捕食者的种群数量增加的比例）， -
-      <span class="math inline">\gamma</span>
-      是捕食者的死亡率（不受食物影响时）.</p>
-      <p>这个模型是一个非线性方程组，常用于描述生态系统中捕食者和猎物的动态交互关系.</p>
+      <p>其中: - <span class="math inline">x(t)</span> 是猎物 (兔子)
+      的数量, - <span class="math inline">y(t)</span> 是捕食者 (狼)
+      的数量, - <span class="math inline">\alpha</span>
+      是猎物的自然增长率 (不受捕食者影响时), - <span
+      class="math inline">\beta</span> 是捕食者捕食猎物的效率, - <span
+      class="math inline">\delta</span> 是捕食者的繁殖率
+      (每捕食一只猎物, 捕食者的种群数量增加的比例), - <span
+      class="math inline">\gamma</span> 是捕食者的死亡率
+      (不受食物影响时).</p>
+      <p>这个模型是一个非线性方程组,
+      常用于描述生态系统中捕食者和猎物的动态交互关系.</p>
       </div>
       </div>
       <div class="callout callout-important">

@@ -70,15 +70,17 @@
       <button id="video-close-bottom" onclick="void(0)">&#9650; 收起视频</button>
     </div>
     <div id="content">
-      <p>﻿# 第十三章 无穷级数</p>
+      <p>﻿# 无穷级数</p>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
       <p>本章的内容主要包括 <strong>常数项级数的收敛性</strong> 和
-      <strong>函数的级数展开</strong>。 对 <strong>常数项级数</strong>
-      的研究可以追溯到古人对极限过程的早期理解（如芝诺悖论、割圆术）。而
-      <strong>函数项级数</strong>
-      则是分析学中一项极其重要的工具，它蕴含了深层次的数学思想——即用简单的无穷多项式（或三角函数）的和，来逼近并表示一个复杂的对象。这也是现代计算数学和人工智能中逼近理论的基石。</p>
+      <strong>函数的级数展开</strong>. 对 <strong>常数项级数</strong>
+      的研究可以追溯到古人对极限过程的早期理解 (如芝诺悖论, 割圆术). 而
+      <strong>函数项级数</strong> 则是分析学中一项极其重要的工具,
+      它蕴含了深层次的数学思想——即用简单的无穷多项式 (或三角函数) 的和,
+      来逼近并表示一个复杂的对象.
+      这也是现代计算数学和人工智能中逼近理论的基石.</p>
       </div>
       </div>
       <h2 id="常数项级数的概念和性质">13.1 常数项级数的概念和性质</h2>
@@ -191,16 +193,16 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">级数的定义</span></div>
       <div class="callout-body">
-      <p>无穷多个数的和称为 <strong>无穷级数</strong> (Infinite
-      Series)，简称 <strong>级数</strong>。 给定数列 <span
-      class="math inline">a_n, n = 1, 2, \cdots, \infty</span>，其前
+      <p>无穷多个数的和称为 <strong>无穷级数</strong> (Infinite Series),
+      简称 <strong>级数</strong>. 给定数列 <span
+      class="math inline">a_n, n = 1, 2, \cdots, \infty</span>, 其前
       <span class="math inline">n</span> 项和 <span
       class="math inline">S_n= \displaystyle \sum_{i=1}^{n} a_i</span>
-      称为该级数的 <strong>部分和</strong> (Partial sum)。 如果 <span
+      称为该级数的 <strong>部分和</strong> (Partial sum). 如果 <span
       class="math inline">\displaystyle \lim _{n \rightarrow \infty} S_n
-      = S</span> 存在（即极限为一个有限常数），则称级数 <strong>收敛
-      (Convergent)</strong>，并称 <span class="math inline">S</span>
-      为级数的和；否则称级数 <strong>发散 (Divergent)</strong>。</p>
+      = S</span> 存在 (即极限为一个有限常数), 则称级数 <strong>收敛
+      (Convergent)</strong>, 并称 <span class="math inline">S</span>
+      为级数的和; 否则称级数 <strong>发散 (Divergent)</strong>.</p>
       </div>
       </div>
       <div class="callout callout-important">
@@ -209,17 +211,17 @@
       <p><strong>1. 几何级数 (等比级数)</strong> <span
       class="math inline">\displaystyle S_n = \sum_{i=1}^{n} a q^{i-1}
       \quad (a \neq 0)</span> * 当 <span class="math inline">|q| &lt;
-      1</span> 时，级数收敛，和为 <span
-      class="math inline">\displaystyle\frac{a}{1-q}</span>； * 当 <span
-      class="math inline">|q| \ge 1</span> 时，级数发散。</p>
+      1</span> 时, 级数收敛, 和为 <span
+      class="math inline">\displaystyle\frac{a}{1-q}</span>; * 当 <span
+      class="math inline">|q| \ge 1</span> 时, 级数发散.</p>
       <p><strong>2. 调和级数 (发散的经典例子)</strong> <span
       class="math inline">\displaystyle \sum_{n=1}^{\infty} \frac{1}{n}
       = 1 + \frac{1}{2} + \frac{1}{3} + \cdots</span> 虽然通项 <span
-      class="math inline">\frac{1}{n} \to 0</span>，但该级数是
-      <strong>发散</strong> 的。</p>
+      class="math inline">\frac{1}{n} \to 0</span>, 但该级数是
+      <strong>发散</strong> 的.</p>
       <p><strong>3. 裂项相消级数</strong> <span
       class="math inline">\displaystyle \sum_{n=1}^{\infty}
-      \frac{1}{n(n+1)}</span> 计算其部分和： <span class="math display">
+      \frac{1}{n(n+1)}</span> 计算其部分和: <span class="math display">
       \begin{aligned}
       S_n &amp;= \frac{1}{1 \cdot 2}+\frac{1}{2 \cdot
       3}+\cdots+\frac{1}{n(n+1)} \\
@@ -229,36 +231,34 @@
       &amp;= 1-\frac{1}{n+1}
       \end{aligned}
       </span> 显然 <span class="math inline">\lim_{n \rightarrow \infty}
-      S_n = 1</span>，故该级数 <strong>收敛</strong>。</p>
+      S_n = 1</span>, 故该级数 <strong>收敛</strong>.</p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">收敛级数的基本性质</span></div>
       <div class="callout-body">
-      <p><strong>性质1</strong>：若 <span class="math inline">\sum u_n =
-      s</span>，则 <span class="math inline">\sum k u_n = k
-      s</span>（<span class="math inline">k</span> 为常数）。
-      <strong>性质2</strong>：若 <span class="math inline">\sum u_n =
-      s</span>, <span class="math inline">\sum v_n = \sigma</span>，则
-      <span class="math inline">\sum(u_n \pm v_n) = s \pm
-      \sigma</span>。
-      <strong>性质3</strong>：在级数中去掉、增加或改变有限项，不会改变级数的收敛性。
-      <strong>性质4 (必要条件)</strong>：如果级数 <span
-      class="math inline">\sum u_n</span> 收敛，那么必然有 <span
+      <p><strong>性质1</strong>: 若 <span class="math inline">\sum u_n =
+      s</span>, 则 <span class="math inline">\sum k u_n = k s</span>
+      (<span class="math inline">k</span> 为常数).
+      <strong>性质2</strong>: 若 <span class="math inline">\sum u_n =
+      s</span>, <span class="math inline">\sum v_n = \sigma</span>, 则
+      <span class="math inline">\sum(u_n \pm v_n) = s \pm \sigma</span>.
+      <strong>性质3</strong>: 在级数中去掉, 增加或改变有限项,
+      不会改变级数的收敛性. <strong>性质4 (必要条件)</strong>: 如果级数
+      <span class="math inline">\sum u_n</span> 收敛, 那么必然有 <span
       class="math inline">\displaystyle \lim_{n \rightarrow \infty} u_n
-      = 0</span>。</p>
+      = 0</span>.</p>
       </div>
       </div>
       <div class="callout callout-warning">
       <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">警告</span></div>
       <div class="callout-body">
-      <p><strong>注意</strong>：通项趋于零只是级数收敛的
-      <strong>必要条件</strong>，绝非充分条件！ 例如调和级数 <span
-      class="math inline">\sum \frac{1}{n}</span>，其通项 <span
-      class="math inline">\frac{1}{n} \to
-      0</span>，但级数发散。所以，如果在判断时发现 <span
-      class="math inline">\lim_{n \to \infty} u_n \neq
-      0</span>，则级数必定发散。</p>
+      <p><strong>注意</strong>: 通项趋于零只是级数收敛的
+      <strong>必要条件</strong>, 绝非充分条件! 例如调和级数 <span
+      class="math inline">\sum \frac{1}{n}</span>, 其通项 <span
+      class="math inline">\frac{1}{n} \to 0</span>, 但级数发散. 所以,
+      如果在判断时发现 <span class="math inline">\lim_{n \to \infty} u_n
+      \neq 0</span>, 则级数必定发散.</p>
       </div>
       </div>
       <h2 id="常数项级数的审敛法">13.2 常数项级数的审敛法</h2>
@@ -266,36 +266,37 @@
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
       <p>直接计算部分和 <span class="math inline">S_n</span>
-      的极限在多数情况下是不可能的。如果我们只关心级数“是否收敛”（而不求具体的和），可以使用一系列的判别法则，这些法则称为
-      <strong>审敛法</strong>。</p>
+      的极限在多数情况下是不可能的. 如果我们只关心级数“是否收敛”
+      (而不求具体的和), 可以使用一系列的判别法则, 这些法则称为
+      <strong>审敛法</strong>.</p>
       </div>
       </div>
       <h3 id="正项级数及其审敛法">13.2.1 正项级数及其审敛法</h3>
       <p>正项级数是指所有项 <span class="math inline">u_n \ge 0</span>
-      的级数。对于正项级数，其部分和 <span
-      class="math inline">S_n</span> 必定是单调递增的。</p>
+      的级数. 对于正项级数, 其部分和 <span
+      class="math inline">S_n</span> 必定是单调递增的.</p>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定理1：单调有界原理</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定理1: 单调有界原理</span></div>
       <div class="callout-body">
       <p>正项级数 <span class="math inline">\displaystyle
-      \sum_{n=1}^{\infty} u_n</span> 收敛的充分必要条件是：其部分和数列
-      <span class="math inline">S_n</span> <strong>有界</strong>。
+      \sum_{n=1}^{\infty} u_n</span> 收敛的充分必要条件是: 其部分和数列
+      <span class="math inline">S_n</span> <strong>有界</strong>.
       <em>(注: 本质上这个定理就是上册学过的“单调有界必有极限”)</em></p>
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定理2：比较审敛法</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定理2: 比较审敛法</span></div>
       <div class="callout-body">
       <p>设 <span class="math inline">\sum u_n</span> 和 <span
-      class="math inline">\sum v_n</span> 都是正项级数，且对所有 <span
+      class="math inline">\sum v_n</span> 都是正项级数, 且对所有 <span
       class="math inline">n</span> 有 <span class="math inline">u_n
-      \leqslant v_n</span>： * 如果“大级数” <span
+      \leqslant v_n</span>: * 如果“大级数” <span
       class="math inline">\sum v_n</span> 收敛 <span
       class="math inline">\Rightarrow</span> “小级数” <span
-      class="math inline">\sum u_n</span> 必收敛。 * 如果“小级数” <span
+      class="math inline">\sum u_n</span> 必收敛. * 如果“小级数” <span
       class="math inline">\sum u_n</span> 发散 <span
       class="math inline">\Rightarrow</span> “大级数” <span
-      class="math inline">\sum v_n</span> 必发散。</p>
+      class="math inline">\sum v_n</span> 必发散.</p>
       </div>
       </div>
       <div id="chpt13-ex-003" class="exercise-block"
@@ -339,13 +340,13 @@
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定理3：极限比较审敛法</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定理3: 极限比较审敛法</span></div>
       <div class="callout-body">
       <p>设 <span class="math inline">\sum u_n</span> 与 <span
-      class="math inline">\sum v_n</span> 为正项级数，若 <span
+      class="math inline">\sum v_n</span> 为正项级数, 若 <span
       class="math inline">\displaystyle \lim_{n \rightarrow \infty}
-      \frac{u_n}{v_n} = l \ (0 &lt; l &lt; \infty)</span>，则这两个级数
-      <strong>同收敛或同发散</strong>。</p>
+      \frac{u_n}{v_n} = l \ (0 &lt; l &lt; \infty)</span>, 则这两个级数
+      <strong>同收敛或同发散</strong>.</p>
       </div>
       </div>
       <div id="chpt13-ex-004" class="exercise-block"
@@ -396,17 +397,16 @@
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定理4：比值审敛法 (达朗贝尔判别法)——非常重要！</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定理4: 比值审敛法 (达朗贝尔判别法)——非常重要!</span></div>
       <div class="callout-body">
-      <p>设 <span class="math inline">\sum u_n</span> 为正项级数，若
+      <p>设 <span class="math inline">\sum u_n</span> 为正项级数, 若
       <span class="math inline">\displaystyle \lim_{n \rightarrow
-      \infty} \frac{u_{n+1}}{u_n} = \rho</span>，则： * 当 <span
-      class="math inline">\rho &lt; 1</span> 时，级数
-      <strong>收敛</strong>； * 当 <span class="math inline">\rho &gt;
-      1</span> 或 <span class="math inline">\rho = \infty</span>
-      时，级数 <strong>发散</strong>； * 当 <span
-      class="math inline">\rho = 1</span>
-      时，方法失效（不确定，需用其他方法）。</p>
+      \infty} \frac{u_{n+1}}{u_n} = \rho</span>, 则: * 当 <span
+      class="math inline">\rho &lt; 1</span> 时, 级数
+      <strong>收敛</strong>; * 当 <span class="math inline">\rho &gt;
+      1</span> 或 <span class="math inline">\rho = \infty</span> 时,
+      级数 <strong>发散</strong>; * 当 <span class="math inline">\rho =
+      1</span> 时, 方法失效 (不确定, 需用其他方法).</p>
       </div>
       </div>
       <div id="chpt13-ex-005" class="exercise-block"
@@ -454,14 +454,14 @@
       </div>
       <h3 id="交错级数与任意项级数">13.2.2 交错级数与任意项级数</h3>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定理5：莱布尼茨定理 (交错级数审敛法)</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定理5: 莱布尼茨定理 (交错级数审敛法)</span></div>
       <div class="callout-body">
       <p>对于交错级数 <span class="math inline">\displaystyle
-      \sum_{n=1}^{\infty}(-1)^{n-1} u_n \ (u_n &gt; 0)</span>，若满足：
+      \sum_{n=1}^{\infty}(-1)^{n-1} u_n \ (u_n &gt; 0)</span>, 若满足:
       1. <span class="math inline">u_n \geqslant u_{n+1}</span>
-      （各项的绝对值单调递减） 2. <span
-      class="math inline">\displaystyle \lim_{n \rightarrow \infty} u_n
-      = 0</span> 则该交错级数 <strong>收敛</strong>。</p>
+      (各项的绝对值单调递减) 2. <span class="math inline">\displaystyle
+      \lim_{n \rightarrow \infty} u_n = 0</span> 则该交错级数
+      <strong>收敛</strong>.</p>
       </div>
       </div>
       <div id="chpt13-ex-006" class="exercise-block"
@@ -516,64 +516,63 @@
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">绝对收敛与条件收敛</span></div>
       <div class="callout-body">
       <p>对于包含正负项的任意级数 <span class="math inline">\sum
-      u_n</span>： *
-      <strong>绝对收敛</strong>：如果加上绝对值后的正项级数 <span
-      class="math inline">\sum |u_n|</span>
-      收敛，则原级数必然收敛，且称为绝对收敛。 *
-      <strong>条件收敛</strong>：如果原级数 <span
-      class="math inline">\sum u_n</span> 收敛，但加了绝对值后的级数
-      <span class="math inline">\sum |u_n|</span>
-      发散，则称原级数为条件收敛（如交错调和级数）。</p>
+      u_n</span>: * <strong>绝对收敛</strong>:
+      如果加上绝对值后的正项级数 <span class="math inline">\sum
+      |u_n|</span> 收敛, 则原级数必然收敛, 且称为绝对收敛. *
+      <strong>条件收敛</strong>: 如果原级数 <span
+      class="math inline">\sum u_n</span> 收敛, 但加了绝对值后的级数
+      <span class="math inline">\sum |u_n|</span> 发散,
+      则称原级数为条件收敛 (如交错调和级数).</p>
       </div>
       </div>
       <h2 id="幂级数及其展开">13.3 幂级数及其展开</h2>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
-      <p>由常数构成的级数称为
-      <strong>常数项级数</strong>。如果我们把常数换成函数，就得到了
-      <strong>函数项级数</strong>。其中最简单、最优美的一类，就是形如多项式无限延伸的
-      <strong>幂级数</strong>。用幂级数来逼近函数，是微积分泰勒展开的终极形态。</p>
+      <p>由常数构成的级数称为 <strong>常数项级数</strong>.
+      如果我们把常数换成函数, 就得到了 <strong>函数项级数</strong>.
+      其中最简单, 最优美的一类, 就是形如多项式无限延伸的
+      <strong>幂级数</strong>. 用幂级数来逼近函数,
+      是微积分泰勒展开的终极形态.</p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">幂级数的形式</span></div>
       <div class="callout-body">
       <p><span class="math display"> \sum_{n=0}^{\infty} a_n x^n = a_0 +
-      a_1x + a_2x^2 + \cdots + a_nx^n + \cdots </span> 其中，常数 <span
-      class="math inline">a_0, a_1, \cdots</span> 称为幂级数的系数。</p>
+      a_1x + a_2x^2 + \cdots + a_nx^n + \cdots </span> 其中, 常数 <span
+      class="math inline">a_0, a_1, \cdots</span> 称为幂级数的系数.</p>
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定理6：阿贝尔(Abel)定理</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定理6: 阿贝尔(Abel)定理</span></div>
       <div class="callout-body">
       <p>如果幂级数 <span class="math inline">\sum a_n x^n</span> 在
-      <span class="math inline">x=x_0 \ (x_0 \neq 0)</span>
-      处收敛，那么对于所有满足 <span class="math inline">|x| &lt;
-      |x_0|</span> 的 <span
-      class="math inline">x</span>，幂级数必<strong>绝对收敛</strong>。
-      反之，如果在 <span class="math inline">x=x_1</span>
-      处发散，则对于所有满足 <span class="math inline">|x| &gt;
-      |x_1|</span> 的 <span
-      class="math inline">x</span>，幂级数必<strong>发散</strong>。</p>
+      <span class="math inline">x=x_0 \ (x_0 \neq 0)</span> 处收敛,
+      那么对于所有满足 <span class="math inline">|x| &lt; |x_0|</span>
+      的 <span class="math inline">x</span>,
+      幂级数必<strong>绝对收敛</strong>. 反之, 如果在 <span
+      class="math inline">x=x_1</span> 处发散, 则对于所有满足 <span
+      class="math inline">|x| &gt; |x_1|</span> 的 <span
+      class="math inline">x</span>, 幂级数必<strong>发散</strong>.</p>
       </div>
       </div>
       <div class="callout callout-warning">
       <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">收敛半径与收敛区间</span></div>
       <div class="callout-body">
-      <p>由阿贝尔定理可知，幂级数的收敛域必然是一个以原点为中心的区间
-      <span class="math inline">(-R, R)</span>。这个正数 <span
-      class="math inline">R</span> 就称为 <strong>收敛半径</strong>。在
+      <p>由阿贝尔定理可知, 幂级数的收敛域必然是一个以原点为中心的区间
+      <span class="math inline">(-R, R)</span>. 这个正数 <span
+      class="math inline">R</span> 就称为 <strong>收敛半径</strong>. 在
       <span class="math inline">x=R</span> 或 <span
-      class="math inline">x=-R</span> 的端点处，收敛性需要单独判定。</p>
-      <p><strong>收敛半径的求法：</strong> 若 <span
+      class="math inline">x=-R</span> 的端点处, 收敛性需要单独判定.</p>
+      <p><strong>收敛半径的求法:</strong> 若 <span
       class="math inline">\displaystyle \lim_{n \to \infty} \left|
-      \frac{a_{n+1}}{a_n} \right| = \rho</span>，则收敛半径 <span
-      class="math inline">R = \frac{1}{\rho}</span>。（若 <span
+      \frac{a_{n+1}}{a_n} \right| = \rho</span>, 则收敛半径 <span
+      class="math inline">R = \frac{1}{\rho}</span>. (若 <span
       class="math inline">\rho=0</span> 则 <span
-      class="math inline">R=\infty</span>；若 <span
+      class="math inline">R=\infty</span>; 若 <span
       class="math inline">\rho=\infty</span> 则 <span
-      class="math inline">R=0</span>）。</p>
+      class="math inline">R=0</span>).</p>
       </div>
       </div>
       <div id="chpt13-ex-007" class="exercise-block"
@@ -642,18 +641,18 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">常见函数的麦克劳林(幂级数)展开</span></div>
       <div class="callout-body">
-      <p>这些公式在数值计算和计算机算法中极其基础： 1.
-      <strong>指数函数</strong>：<span class="math inline">\displaystyle
+      <p>这些公式在数值计算和计算机算法中极其基础: 1.
+      <strong>指数函数</strong>: <span class="math inline">\displaystyle
       e^x = \sum_{n=0}^{\infty}\frac{x^n}{n!} = 1 + x + \frac{x^2}{2!} +
       \cdots \quad (x \in \mathbb{R})</span> 2.
-      <strong>正弦函数</strong>：<span class="math inline">\displaystyle
+      <strong>正弦函数</strong>: <span class="math inline">\displaystyle
       \sin x = \sum_{n=0}^\infty (-1)^n \frac{x^{2n+1}}{(2n+1)!} \quad
-      (x \in \mathbb{R})</span> 3. <strong>余弦函数</strong>：<span
+      (x \in \mathbb{R})</span> 3. <strong>余弦函数</strong>: <span
       class="math inline">\displaystyle \cos x = \sum_{n=0}^\infty
       (-1)^n \frac{x^{2n}}{(2n)!} \quad (x \in \mathbb{R})</span> 4.
-      <strong>几何级数</strong>：<span class="math inline">\displaystyle
+      <strong>几何级数</strong>: <span class="math inline">\displaystyle
       \frac{1}{1-x} = \sum_{n=0}^\infty x^n \quad (-1 &lt; x &lt;
-      1)</span> 5. <strong>对数函数</strong>：<span
+      1)</span> 5. <strong>对数函数</strong>: <span
       class="math inline">\displaystyle \ln(1+x) = \sum_{n=1}^\infty
       (-1)^{n-1}\frac{x^n}{n} \quad (-1 &lt; x \leq 1)</span></p>
       </div>
@@ -662,13 +661,17 @@
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
-      <p><strong>WHY：我们为什么需要傅里叶级数？</strong></p>
-      <p>幂级数（泰勒展开）是用 <span class="math inline">x^n</span>
-      这样的代数多项式来逼近函数，它非常适合在<strong>某一个点附近</strong>做局部逼近。但是在现实世界中，我们经常遇到<strong>周期性</strong>的信号（比如声波、脑电波、图像纹理）。对于周期信号，用
-      <span class="math inline">x^n</span> 去逼近是极其困难且低效的。
-      19世纪，法国数学家傅里叶提出了一项颠覆性的见解：<strong>任何周期函数，都可以展开为一系列不同频率的正弦波和余弦波的叠加！</strong>
-      这就是傅里叶级数。它是现代信号处理、通信工程以及 AI
-      图像/音频处理的绝对基石。</p>
+      <p><strong>WHY: 我们为什么需要傅里叶级数?</strong></p>
+      <p>幂级数 (泰勒展开) 是用 <span class="math inline">x^n</span>
+      这样的代数多项式来逼近函数,
+      它非常适合在<strong>某一个点附近</strong>做局部逼近.
+      但是在现实世界中, 我们经常遇到<strong>周期性</strong>的信号
+      (比如声波, 脑电波, 图像纹理). 对于周期信号, 用 <span
+      class="math inline">x^n</span> 去逼近是极其困难且低效的. 19世纪,
+      法国数学家傅里叶提出了一项颠覆性的见解: <strong>任何周期函数,
+      都可以展开为一系列不同频率的正弦波和余弦波的叠加!</strong>
+      这就是傅里叶级数. 它是现代信号处理, 通信工程以及 AI
+      图像/音频处理的绝对基石.</p>
       </div>
       </div>
       <h3 id="三角级数与傅里叶展开">13.4.1 三角级数与傅里叶展开</h3>
@@ -676,22 +679,22 @@
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">傅里叶级数 (Fourier Series)</span></div>
       <div class="callout-body">
       <p>设 <span class="math inline">f(x)</span> 是以 <span
-      class="math inline">2\pi</span>
-      为周期的周期函数，它可以被展开为如下的 <strong>三角级数</strong>：
-      <span class="math display"> f(x) = \frac{a_0}{2} +
-      \sum_{n=1}^{\infty} \left( a_n \cos(nx) + b_n \sin(nx) \right)
-      </span>
-      其中，常数项和三角函数的系数（称为<strong>傅里叶系数</strong>）通过积分计算得出：
-      * <span class="math inline">a_0 = \frac{1}{\pi} \int_{-\pi}^{\pi}
-      f(x) dx</span> （代表信号的直流/平均分量） * <span
+      class="math inline">2\pi</span> 为周期的周期函数,
+      它可以被展开为如下的 <strong>三角级数</strong>: <span
+      class="math display"> f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty}
+      \left( a_n \cos(nx) + b_n \sin(nx) \right) </span> 其中,
+      常数项和三角函数的系数 (称为<strong>傅里叶系数</strong>)
+      通过积分计算得出: * <span class="math inline">a_0 = \frac{1}{\pi}
+      \int_{-\pi}^{\pi} f(x) dx</span> (代表信号的直流/平均分量) * <span
       class="math inline">a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x)
       \cos(nx) dx</span> * <span class="math inline">b_n = \frac{1}{\pi}
       \int_{-\pi}^{\pi} f(x) \sin(nx) dx</span></p>
       <blockquote>
-      <p><em>注：上述公式的基础在于三角函数族 <span
+      <p><em>注: 上述公式的基础在于三角函数族 <span
       class="math inline">\{1, \cos x, \sin x, \cos 2x, \sin 2x, \cdots
       \}</span> 在区间 <span class="math inline">[-\pi, \pi]</span>
-      上构成了<strong>正交基</strong>（即任意两个不同基函数的乘积积分为0）。</em></p>
+      上构成了<strong>正交基</strong>
+      (即任意两个不同基函数的乘积积分为0).</em></p>
       </blockquote>
       </div>
       </div>
@@ -700,40 +703,43 @@
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
       <p>使用 <span class="math inline">\cos</span> 和 <span
-      class="math inline">\sin</span>
-      两个函数写起来又长又繁琐。伟大的数学家欧拉（Leonhard
-      Euler）为我们提供了一把连通三角函数和指数函数的钥匙，让傅里叶级数发生了质的飞跃。</p>
+      class="math inline">\sin</span> 两个函数写起来又长又繁琐.
+      伟大的数学家欧拉 (Leonhard Euler)
+      为我们提供了一把连通三角函数和指数函数的钥匙,
+      让傅里叶级数发生了质的飞跃.</p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">欧拉公式 (Euler’s Formula)</span></div>
       <div class="callout-body">
-      <p>被誉为数学中最美的公式，它将复数、指数与三角函数完美统一：
-      <span class="math display"> e^{ix} = \cos x + i \sin x </span>
-      &gt; <em>推论：当 <span class="math inline">x=\pi</span> 时，得到
-      <span class="math inline">e^{i\pi} + 1 =
-      0</span>，这个等式将数学中最重要的五个常数 <span
-      class="math inline">0, 1, i, \pi, e</span> 融为一体。</em></p>
-      <p>利用欧拉公式，我们可以反向表示正弦和余弦： <span
+      <p>被誉为数学中最美的公式, 它将复数, 指数与三角函数完美统一: <span
+      class="math display"> e^{ix} = \cos x + i \sin x </span> &gt;
+      <em>推论: 当 <span class="math inline">x=\pi</span> 时, 得到 <span
+      class="math inline">e^{i\pi} + 1 = 0</span>,
+      这个等式将数学中最重要的五个常数 <span class="math inline">0, 1,
+      i, \pi, e</span> 融为一体.</em></p>
+      <p>利用欧拉公式, 我们可以反向表示正弦和余弦: <span
       class="math display"> \cos(nx) = \frac{e^{inx} + e^{-inx}}{2},
       \quad \sin(nx) = \frac{e^{inx} - e^{-inx}}{2i} </span></p>
-      <p>将这两个式子代入传统的傅里叶级数中，经过简单的代数合并整理，原本分为三项（常数项、<span
-      class="math inline">a_n</span>项、<span
-      class="math inline">b_n</span>项）的冗长公式，可以被压缩成一个极其优雅的复数形式！</p>
+      <p>将这两个式子代入传统的傅里叶级数中, 经过简单的代数合并整理,
+      原本分为三项 (常数项, <span class="math inline">a_n</span>项,
+      <span class="math inline">b_n</span>项) 的冗长公式,
+      可以被压缩成一个极其优雅的复数形式!</p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">傅里叶级数的复数形式</span></div>
       <div class="callout-body">
       <p><span class="math display"> f(x) = \sum_{n=-\infty}^{\infty}
-      c_n e^{inx} </span> 此时，统一的傅里叶系数 <span
-      class="math inline">c_n</span> 为： <span class="math display">
-      c_n = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x) e^{-inx} dx
-      </span></p>
-      <p>在这里，<span class="math inline">n</span> 包含了负整数、0
-      和正整数，它代表了信号中离散的<strong>频率</strong>成分。<span
-      class="math inline">c_n</span>
-      是一个复数，它的<strong>模</strong>代表了该频率成分的<strong>振幅</strong>（能量大小），它的<strong>幅角</strong>代表了该频率成分的<strong>相位</strong>。</p>
+      c_n e^{inx} </span> 此时, 统一的傅里叶系数 <span
+      class="math inline">c_n</span> 为: <span class="math display"> c_n
+      = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x) e^{-inx} dx </span></p>
+      <p>在这里, <span class="math inline">n</span> 包含了负整数, 0
+      和正整数, 它代表了信号中离散的<strong>频率</strong>成分. <span
+      class="math inline">c_n</span> 是一个复数,
+      它的<strong>模</strong>代表了该频率成分的<strong>振幅</strong>
+      (能量大小),
+      它的<strong>幅角</strong>代表了该频率成分的<strong>相位</strong>.</p>
       </div>
       </div>
       <h3 id="从傅里叶级数走向傅里叶变换">13.4.3
@@ -741,39 +747,44 @@
       <div class="callout callout-extension">
       <div class="callout-header callout-header-extension"><span class="callout-icon"></span><span class="callout-label">傅里叶变换 (Fourier Transform)</span></div>
       <div class="callout-body">
-      <p>傅里叶级数非常完美，但它有一个致命的限制：<strong>它只能处理周期函数</strong>。如果我们在现实中录制了一段只有几秒钟的离散语音，或者一张有限尺寸的图像（它们并非无限循环的周期信号），还能用傅里叶分析吗？</p>
-      <p><strong>微积分的极限思想在这里再次闪耀！</strong>
-      我们可以把一个<strong>非周期信号</strong>，看作是一个<strong>周期无限大（即
-      <span class="math inline">T \to
-      \infty</span>）的周期信号</strong>！</p>
+      <p>傅里叶级数非常完美, 但它有一个致命的限制:
+      <strong>它只能处理周期函数</strong>.
+      如果我们在现实中录制了一段只有几秒钟的离散语音,
+      或者一张有限尺寸的图像 (它们并非无限循环的周期信号),
+      还能用傅里叶分析吗?</p>
+      <p><strong>微积分的极限思想在这里再次闪耀!</strong>
+      我们可以把一个<strong>非周期信号</strong>,
+      看作是一个<strong>周期无限大 (即 <span class="math inline">T \to
+      \infty</span>) 的周期信号</strong>!</p>
       <ul>
-      <li>当周期 <span class="math inline">T</span>
-      是有限的时候，频率的取值是离散的（即 <span
-      class="math inline">n=1,2,3,\cdots</span>），频谱是一根根分立的柱子。</li>
-      <li>当我们让 <span class="math inline">T \to
-      \infty</span>（极限过程）时，相邻频率之间的间隔 <span
-      class="math inline">\Delta \omega \to
-      0</span>。于是，<strong>离散的求和 <span
+      <li>当周期 <span class="math inline">T</span> 是有限的时候,
+      频率的取值是离散的 (即 <span
+      class="math inline">n=1,2,3,\cdots</span>),
+      频谱是一根根分立的柱子.</li>
+      <li>当我们让 <span class="math inline">T \to \infty</span>
+      (极限过程) 时, 相邻频率之间的间隔 <span class="math inline">\Delta
+      \omega \to 0</span>. 于是, <strong>离散的求和 <span
       class="math inline">\sum</span> 就蜕变成了连续的积分 <span
-      class="math inline">\int</span></strong>！</li>
+      class="math inline">\int</span></strong>!</li>
       </ul>
-      <p>由此，我们得出了工程界最伟大的公式之一——<strong>连续傅里叶变换</strong>：</p>
-      <p><strong>1. 傅里叶变换（从时域到频域）：</strong> <span
+      <p>由此,
+      我们得出了工程界最伟大的公式之一——<strong>连续傅里叶变换</strong>:</p>
+      <p><strong>1. 傅里叶变换 (从时域到频域):</strong> <span
       class="math display"> F(\omega) = \int_{-\infty}^{\infty} f(t)
-      e^{-i\omega t} dt </span> <em>这里，<span
-      class="math inline">f(t)</span>
-      是我们在时间上观察到的信号波形，<span
-      class="math inline">F(\omega)</span> 就是提取出来的包含连续频率
-      <span class="math inline">\omega</span> 成分的频谱图！</em></p>
-      <p><strong>2. 逆傅里叶变换（从频域还原回时域）：</strong> <span
+      e^{-i\omega t} dt </span> <em>这里, <span
+      class="math inline">f(t)</span> 是我们在时间上观察到的信号波形,
+      <span class="math inline">F(\omega)</span>
+      就是提取出来的包含连续频率 <span class="math inline">\omega</span>
+      成分的频谱图! </em></p>
+      <p><strong>2. 逆傅里叶变换 (从频域还原回时域):</strong> <span
       class="math display"> f(t) = \frac{1}{2\pi}
       \int_{-\infty}^{\infty} F(\omega) e^{i\omega t} d\omega
       </span></p>
-      <p><strong>在人工智能中的应用：</strong>
-      无论是计算机视觉中的图像滤波（比如提取图像的边缘特征），还是语音识别系统（如让
-      AI 听懂人话，往往需要先用傅里叶变换将语音转化为声谱图
-      Spectrogram），傅里叶变换及其离散形式（DFT /
-      FFT）都是不可或缺的基石工具。</p>
+      <p><strong>在人工智能中的应用:</strong>
+      无论是计算机视觉中的图像滤波 (比如提取图像的边缘特征),
+      还是语音识别系统 (如让 AI 听懂人话,
+      往往需要先用傅里叶变换将语音转化为声谱图 Spectrogram),
+      傅里叶变换及其离散形式 (DFT / FFT) 都是不可或缺的基石工具.</p>
       </div>
       </div>
     </div>

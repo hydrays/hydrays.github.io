@@ -128,10 +128,10 @@
       <li>如果 <span class="math inline">x</span> 不是集合 <span
       class="math inline">A</span> 中的元素, 就说 <span
       class="math inline">x</span> <strong>不属于</strong> 集合 <span
-      class="math inline">A</span>, 记作 <span class="math inline">a
+      class="math inline">A</span>, 记作 <span class="math inline">x
       \notin A</span>.</li>
       <li>不包含任何元素的集合叫做 <strong>空集</strong> (emptyset),
-      记为 $$.</li>
+      记为 <span class="math inline">\varnothing</span>.</li>
       </ul>
       </div>
       </div>
@@ -209,7 +209,7 @@
       </figure>
       <p><strong>补集</strong></p>
       <p>如果集合 <span class="math inline">A</span> 是集合 <span
-      class="math inline">B</span> 的子集, 则所有 <span
+      class="math inline">B</span> 的子集, 则 <span
       class="math inline">B</span> 中不属于 <span
       class="math inline">A</span> 的所有元素构成的集合称为 <span
       class="math inline">A</span> 相对于 <span
@@ -246,10 +246,10 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">映射的定义</span></div>
       <div class="callout-body">
-      <p>映射 (map) 描述了从一个集合到另一个集合的某种对映关系. 设集合
-      <span class="math inline">A</span> 和 集合 <span
-      class="math inline">B</span> 是两个集合, 如果存在一个对映关系
-      <span class="math inline">f</span>, 使得集合 <span
+      <p>映射 (map) 描述了从一个集合到另一个集合的某种对映关系. 设 <span
+      class="math inline">A</span>, <span class="math inline">B</span>
+      是两个集合, 如果存在一个对映关系 <span
+      class="math inline">f</span>, 使得集合 <span
       class="math inline">A</span> 中的每个元素都唯一的对映到 <span
       class="math inline">B</span> 中的一个元素, 则称 <span
       class="math inline">f</span> 为从 <span
@@ -281,7 +281,7 @@
       <ul>
       <li><strong>随处取值</strong>是指 <span
       class="math inline">A</span> 中的任何一个元素在 <span
-      class="math inline">B</span> 中都有对映；</li>
+      class="math inline">B</span> 中都有对映.</li>
       <li><strong>唯一对映</strong>是指 <span
       class="math inline">f</span> 可以把 <span
       class="math inline">A</span> 中的不同元素映射到 <span
@@ -323,16 +323,16 @@
       <li><strong>名字</strong>：集合 <span class="math inline">A</span>
       是所有的人, 集合 <span class="math inline">B</span> 是所有的名字.
       每个人都有一个名字, 我们允许重名, 但不允许一个人有2个名字.</li>
-      <li><strong>地图</strong>：没错, map 本身就是一个
-      map！(我们希望)这是一个从地图到真实世界的一一映射.</li>
+      <li><strong>地图</strong>：没错, map 本身就是一个 map!
+      (我们希望)这是一个从地图到真实世界的一一映射.</li>
       <li><strong>颜色</strong>：为什么我们能看到不同的颜色？颜色是一个从光波长到我们主观感受的映射.</li>
       </ol>
       <p>从上面的例子可以感受到, 映射的作用在于把集合 <span
       class="math inline">A</span>
       中的元素作为<strong>输入信号</strong>,
-      例如如不同的人、GPS坐标、光的波长等, 经过某种操作,
+      例如不同的人、GPS坐标、光的波长等, 经过某种操作,
       转换成我们关心的输出, 如名字、位置和颜色. 从这个意义上理解,
-      映射就是就是把输入 <span class="math inline">x</span> 转化成 <span
+      映射就是把输入 <span class="math inline">x</span> 转化成 <span
       class="math inline">f(x)</span> 的一个机器.</p>
       <figure>
       <img src="media/img/chpt1_function.png" width="200"
@@ -364,7 +364,7 @@
       class="math inline">\mathbb{R}</span> 中, 这个函数可以记作 <span
       class="math inline">a(n)</span>, 不过更多的时候我们会把 <span
       class="math inline">n</span> 作为下标, 以 <span
-      class="math inline">a_n</span> 表示数列得第 <span
+      class="math inline">a_n</span> 表示数列的第 <span
       class="math inline">n</span> 项, 并以 <span class="math inline">\{
       a_n \}</span> 表示整个数列.</p>
       <p><strong>等差数列</strong></p>
@@ -392,7 +392,7 @@
       </span></p></li>
       <li><p>等比数列的<strong>前 <span class="math inline">n</span>
       项和</strong>为 <span class="math display">
-      S_{n}=a_{1}\frac{1-q^n }{1-q} （q\ne 1)
+      S_{n}=a_{1}\frac{1-q^n }{1-q} \quad (q\ne 1)
       </span></p></li>
       </ul>
       </div>
@@ -405,9 +405,8 @@
       <li>指数函数: <span class="math inline">y=a^x</span>, 特别的有
       <span class="math inline">y=\mathrm{e}^x</span>, 后者在 python
       中有专门的函数 <span class="math inline">numpy.exp(x)</span></li>
-      <li>对数函数: <span
-      class="math inline">y=\mathrm{log}_a^{x}</span>, 特别的有 <span
-      class="math inline">y=\mathrm{ln}^{x}</span>, 后者在 python
+      <li>对数函数: <span class="math inline">y=\log_a x</span>,
+      特别的有 <span class="math inline">y=\ln x</span>, 后者在 python
       中有专门的函数 <span class="math inline">numpy.log(x)</span></li>
       <li>三角函数: <span class="math inline">y=\sin(x)</span>, <span
       class="math inline">y=\cos(x)</span>, <span
@@ -467,7 +466,7 @@
       g(x)</span>, 再把 <span class="math inline">u</span> 视作自变量
       (也称为<strong>中间变量</strong>) 通过函数 <span
       class="math inline">f</span> 映射到 <span class="math inline">y =
-      y = f[g(x)]</span>. 这个过程可以表示为:</p>
+      f[g(x)]</span>. 这个过程可以表示为:</p>
       <p><span class="math display">
       x \stackrel{g}{\longrightarrow} u \stackrel{f}{\longrightarrow} y.
       </span></p>
@@ -616,7 +615,7 @@
       <p><strong>一尺之捶, 日取其半 (版本1)</strong></p>
       <p>站在棒子的角度, 这个过程可以用一个数列描述. <span
       class="math inline">n</span> 代表天数, <span
-      class="math inline">a_n</span> 代表杠剩下的长度.</p>
+      class="math inline">a_n</span> 代表棒剩下的长度.</p>
       <p><span class="math display">
       \begin{align*}
       a_0 &amp;= 1,  \\
@@ -630,7 +629,7 @@
       <p>随着 <span class="math inline">n</span> 的增加
       (<strong>动</strong>), <span class="math inline">a_n</span>
       的值不断靠近0 (<strong>静</strong>), 直觉告诉我们当 <span
-      class="math inline">n</span> 区域无穷大时 <span
+      class="math inline">n</span> 趋于无穷大时 <span
       class="math inline">a_n</span> 的极限是0.</p>
       <p><strong>一尺之捶, 日取其半 (版本2)</strong></p>
       <p>站在砍棒人的角度, 这个过程也可以用一个数列描述. <span
@@ -651,7 +650,7 @@
       <p>随着 <span class="math inline">n</span> 的增加
       (<strong>动</strong>), <span class="math inline">b_n</span>
       的值不断靠近1 (<strong>静</strong>), 直觉告诉我们当 <span
-      class="math inline">n</span> 区域无穷大时 <span
+      class="math inline">n</span> 趋于无穷大时 <span
       class="math inline">b_n</span> 的极限是1.</p>
       <p><strong>P21 例1</strong></p>
       <p><span class="math display">
@@ -660,7 +659,7 @@
       <p>随着 <span class="math inline">n</span> 的增加
       (<strong>动</strong>), <span class="math inline">a_n</span>
       的值不断靠近1 (<strong>静</strong>), 直觉告诉我们当 <span
-      class="math inline">n</span> 区域无穷大时 <span
+      class="math inline">n</span> 趋于无穷大时 <span
       class="math inline">a_n</span> 的极限是1.</p>
       <p><strong>P22 例2</strong></p>
       <p><span class="math display">
@@ -669,7 +668,7 @@
       <p>随着 <span class="math inline">n</span> 的增加
       (<strong>动</strong>), <span class="math inline">a_n</span>
       的值不断靠近0 (<strong>静</strong>), 直觉告诉我们当 <span
-      class="math inline">n</span> 区域无穷大时 <span
+      class="math inline">n</span> 趋于无穷大时 <span
       class="math inline">a_n</span> 的极限是0.</p>
       </div>
       </div>
@@ -914,8 +913,8 @@
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要</span></div>
       <div class="callout-body">
       <p>==函数极限的定义== (非常重要!!!)</p>
-      <p>设函数 <span class="math inline">\{f(x)\}</span> 在点 <span
-      class="math inline">x_0</span> 的某一去心领域内有定义 ( 为了让
+      <p>设函数 <span class="math inline">f(x)</span> 在点 <span
+      class="math inline">x_0</span> 的某一去心邻域内有定义 ( 为了让
       <span class="math inline">x</span> 能够动起来), <span
       class="math inline">A</span> 为一常数.
       如果<strong>对于任意给定的正数 <span
@@ -927,7 +926,7 @@
       |f(x) - A| &lt; \varepsilon,
       </span></p>
       <p>则称 <span class="math inline">A</span> 为函数 <span
-      class="math inline">\{f(x)\}</span> 在 <span
+      class="math inline">f(x)</span> 在 <span
       class="math inline">x_0</span> 的<strong>极限</strong>, 记作 <span
       class="math display">
       \lim_{x\rightarrow x_0} f(x) = A.
@@ -938,7 +937,7 @@
       alt="函数极限" />
       <figcaption aria-hidden="true">函数极限</figcaption>
       </figure>
-      <p>所以函数 <span class="math inline">\{f(x)\}</span> 在 <span
+      <p>所以函数 <span class="math inline">f(x)</span> 在 <span
       class="math inline">x\rightarrow x_0</span> 时有极限就是, 当 <span
       class="math inline">x</span> 足够接近 <span
       class="math inline">x_0</span> 时, <span
@@ -1183,7 +1182,7 @@
       <ol type="1">
       <li><span class="math inline">\forall</span>:
       <strong>对于任意</strong></li>
-      <li><span class="math inline">\exist</span>:
+      <li><span class="math inline">\exists</span>:
       <strong>存在</strong></li>
       </ol>
       <p>使用这两个符号, 数列极限和函数极限的定义可以写成下面的形式
@@ -1191,13 +1190,13 @@
       <p><strong>数列极限的定义</strong></p>
       <p><span class="math inline">\displaystyle \lim_{n\rightarrow
       \infty} a_n = A \iff  \forall \varepsilon &gt; 0</span>, <span
-      class="math inline">\exist N</span>, s. t., <span
+      class="math inline">\exists N</span>, s. t., <span
       class="math inline">\ |a_n - A| &lt; \varepsilon</span> if <span
       class="math inline">n &gt; N</span>.</p>
       <p><strong>函数极限的定义</strong></p>
       <p><span class="math inline">\displaystyle \lim_{x\rightarrow x_0}
       f(x) = A \iff \forall \varepsilon &gt; 0</span>, <span
-      class="math inline">\exist \delta</span>, s. t., <span
+      class="math inline">\exists \delta</span>, s. t., <span
       class="math inline">|f(x) - A| &lt; \varepsilon</span> if <span
       class="math inline">0 &lt; |x-x_0| &lt; \delta</span>.</p>
       </div>
@@ -1217,13 +1216,13 @@
       <p><strong>数列趋于无穷大</strong></p>
       <p><span class="math inline">\displaystyle \lim_{n\rightarrow
       \infty} a_n = \infty \iff  \forall M &gt; 0</span>, <span
-      class="math inline">\exist N</span>, s. t., <span
+      class="math inline">\exists N</span>, s. t., <span
       class="math inline">|a_n| &gt; M</span> if <span
       class="math inline">n &gt; N</span>.</p>
       <p><strong>函数趋于无穷大</strong></p>
       <p><span class="math inline">\displaystyle \lim_{x\rightarrow x_0}
       f(x) = \infty \iff \forall M &gt; 0</span>, <span
-      class="math inline">\exist \delta</span>, s. t., <span
+      class="math inline">\exists \delta</span>, s. t., <span
       class="math inline">|f(x)| &gt; M</span> if <span
       class="math inline">0 &lt; |x-x_0| &lt; \delta</span>.</p>
       </div>
@@ -1251,7 +1250,7 @@
       <div class="callout-header callout-header-caution"><span class="callout-icon"></span><span class="callout-label">希尔伯特的旅店</span></div>
       <div class="callout-body">
       <p>极限运算涉及到了<strong>无限</strong>的概念,
-      对初学者来说这是一个之前从未踏足过的位置领域,
+      对初学者来说这是一个之前从未踏足过的未知领域,
       一些<strong>有限世界中的直觉</strong>将不再成立.
       <strong>希尔伯特的旅店</strong>是一个有趣的故事,
       通过这个故事希望能让大家对<strong>无限</strong>有一颗<strong>敬畏之心</strong>.</p>
@@ -1644,7 +1643,7 @@
       class="math inline">\displaystyle \lim_{x\rightarrow 0} \frac{\sin
       x}{x}</span> 的计算, 这个极限与圆周率 <span
       class="math inline">\pi</span>
-      (<strong>阿基米德数</strong>)有着深刻的联系.</p>
+      (<strong>阿基米德常数</strong>)有着深刻的联系.</p>
       </div>
       </div>
       <div class="callout callout-important">
@@ -1731,14 +1730,8 @@
       <div class="callout-header callout-header-caution"><span class="callout-icon"></span><span class="callout-label">上机实验</span></div>
       <div class="callout-body">
       <ul>
-      <li>limit_array_e.ipynb: 函数极限的例子.</li>
+      <li>limit_array_e.ipynb: 数列极限的例子.</li>
       </ul>
-      </div>
-      </div>
-      <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">单调有界数列有极限</span></div>
-      <div class="callout-body">
-
       </div>
       </div>
       <div class="callout callout-important">
@@ -1791,7 +1784,7 @@
       <p>假设 <span class="math inline">y=f[g(x)]</span>, <span
       class="math inline">\displaystyle \lim_{x\rightarrow x_0}g(x) =
       u_0</span>, <span class="math inline">\displaystyle
-      \lim_{u\rightarrow u_0}f(x) = A</span>, 则 <span
+      \lim_{u\rightarrow u_0}f(u) = A</span>, 则 <span
       class="math inline">\displaystyle \lim_{x\rightarrow x_0}f[g(x)] =
       A</span>.</p>
       <p>这个结论请自行根据直觉理解, 证明略.</p>
@@ -2282,7 +2275,7 @@
       </ul>
       <p><span class="math inline">\displaystyle \lim_{x\rightarrow
       x_0^-} f(x) = A \iff \forall \varepsilon &gt; 0</span>, <span
-      class="math inline">\exist \delta&gt;0</span>, s. t., <span
+      class="math inline">\exists \delta&gt;0</span>, s. t., <span
       class="math inline">|f(x) - A| &lt; \varepsilon</span> if <span
       class="math inline">-\delta &lt; x-x_0 &lt; 0</span>.</p>
       <ul>
@@ -2291,7 +2284,7 @@
       </ul>
       <p><span class="math inline">\displaystyle \lim_{x\rightarrow
       x_0^+} f(x) = A \iff \forall \varepsilon &gt; 0</span>, <span
-      class="math inline">\exist \delta&gt;0</span>, s. t., <span
+      class="math inline">\exists \delta&gt;0</span>, s. t., <span
       class="math inline">|f(x) - A| &lt; \varepsilon</span> if <span
       class="math inline">0 &lt; x-x_0 &lt; \delta</span>.</p>
       <p>造成函数 <span class="math inline">f(x)</span> 在 <span
@@ -2525,7 +2518,7 @@
       <div class="callout callout-caution">
       <div class="callout-header callout-header-caution"><span class="callout-icon"></span><span class="callout-label">注意</span></div>
       <div class="callout-body">
-      <p>布尔查诺定理时一个<strong>存在性定理</strong>,
+      <p>布尔查诺定理是一个<strong>存在性定理</strong>,
       它只告诉我们一个东西有还是没有,
       与之相对的是所谓的<strong>构造性定理</strong>,
       后者会给出找出这个东西的具体办法.

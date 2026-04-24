@@ -137,7 +137,7 @@
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
-      <p>在一元函数中, 我们经常<strong>区间</strong>的概念, 如开区间
+      <p>在一元函数中, 我们经常使用<strong>区间</strong>的概念, 如开区间
       <span class="math inline">(a, b)</span>, 闭区间 <span
       class="math inline">[a, b]</span>.
       <strong>区域</strong>是区间在高维空间中的推广. 下面我们以 <span
@@ -189,7 +189,7 @@
       <p>任意给定一个 <span class="math inline">\mathbb{R}^2</span>
       中的集合 <span class="math inline">D</span>, 任意一点 <span
       class="math inline">P</span> 与 <span class="math inline">D</span>
-      的关系比符合以下三种关系中的一种:</p>
+      的关系必符合以下三种关系中的一种:</p>
       <ol type="1">
       <li><strong>内点</strong>: 存在点 <span
       class="math inline">P</span> 的某个邻域 <span
@@ -209,148 +209,16 @@
       class="math inline">\partial D</span>.</p>
       </div>
       </div>
-      <div id="chpt10-ex-015" class="exercise-block"
-      data-difficulty="easy">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例1: 点集的内点、外点与边界点</span><span
-      class="ex-tags"><span class="ex-tag">多元函数</span><span
-      class="ex-tag">点集拓扑</span><span
-      class="ex-tag">邻域</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>判断集合 <span class="math inline">1 &lt; x^2 + y^2 &lt;
-      2</span> 中各点的内点、外点和边界点.</p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-015-frame" data-panel="chpt10-ex-015-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-015-frame" data-panel="chpt10-ex-015-ans-0">答案</button></span>
-      </div>
-      </div>
-      <div id="chpt10-ex-015-frame" class="ex-frame" hidden="">
-      <div id="chpt10-ex-015-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>分别考虑满足 <span
-      class="math inline">x^2+y^2&lt;1</span>、<span
-      class="math inline">x^2+y^2=1</span>、<span
-      class="math inline">1&lt;x^2+y^2&lt;2</span>、<span
-      class="math inline">x^2+y^2=2</span>、<span
-      class="math inline">x^2+y^2&gt;2</span>
-      的点，对每种情形找一个邻域加以判断.</p>
-      </div>
-      <div id="chpt10-ex-015-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p>设集合 <span class="math inline">D = \{(x,y) \mid 1 &lt; x^2 +
-      y^2 &lt; 2\}</span>.</p>
-      <p><strong>内点：</strong> 对满足 <span class="math inline">1 &lt;
-      x^2 + y^2 &lt; 2</span> 的点 <span
-      class="math inline">P</span>，取足够小的 <span
-      class="math inline">\delta &gt; 0</span>（例如取 <span
-      class="math inline">\delta = \min\{x^2+y^2-1,\
-      2-x^2-y^2\}/2</span>），则 <span class="math inline">P</span> 的
-      <span class="math inline">\delta</span>-邻域完全包含于 <span
-      class="math inline">D</span>，故 <span
-      class="math inline">P</span> 是 <span class="math inline">D</span>
-      的<strong>内点</strong>.</p>
-      <p><strong>外点：</strong> 对满足 <span class="math inline">x^2 +
-      y^2 &lt; 1</span> 或 <span class="math inline">x^2 + y^2 &gt;
-      2</span> 的点 <span
-      class="math inline">P</span>，存在足够小的邻域与 <span
-      class="math inline">D</span> 不相交，故 <span
-      class="math inline">P</span> 是 <span class="math inline">D</span>
-      的<strong>外点</strong>.</p>
-      <p><strong>边界点：</strong> 满足 <span class="math inline">x^2 +
-      y^2 = 1</span> 或 <span class="math inline">x^2 + y^2 = 2</span>
-      的点 <span class="math inline">P</span>，其任意邻域内既有属于
-      <span class="math inline">D</span> 的点，也有不属于 <span
-      class="math inline">D</span> 的点，故 <span
-      class="math inline">P</span> 是 <span class="math inline">D</span>
-      的<strong>边界点</strong>.</p>
-      <p>因此，<span class="math inline">D</span> 的边界为 <span
-      class="math inline">\partial D = \{(x,y) \mid x^2+y^2=1\} \cup
-      \{(x,y) \mid x^2+y^2=2\}</span>，即两个同心圆.</p>
-      </div>
-      </div>
-      </div>
-      </div>
+      <p>::: {. exercise id=“chpt10-ex-015”} :::</p>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">开集与闭集</span></div>
       <div class="callout-body">
       <p><strong>开集</strong>: 集合中的所有点都是其内点
       <strong>闭集</strong>: 集合的边界属于该集合, <span
-      class="math inline">\partial D \in D</span></p>
+      class="math inline">\partial D \subseteq D</span></p>
       </div>
       </div>
-      <div id="chpt10-ex-016" class="exercise-block"
-      data-difficulty="easy">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例2: 开集的判断</span><span class="ex-tags"><span
-      class="ex-tag">多元函数</span><span
-      class="ex-tag">点集拓扑</span><span
-      class="ex-tag">开集</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>证明集合 <span class="math inline">D = \{(x,y) \mid 1 &lt; x^2
-      + y^2 &lt; 2\}</span> 为开集.</p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-016-frame" data-panel="chpt10-ex-016-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-016-frame" data-panel="chpt10-ex-016-ans-0">答案</button></span>
-      </div>
-      </div>
-      <div id="chpt10-ex-016-frame" class="ex-frame" hidden="">
-      <div id="chpt10-ex-016-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>按开集定义，对 <span class="math inline">D</span>
-      中任意一点，找到一个完全包含于 <span class="math inline">D</span>
-      的邻域即可.</p>
-      </div>
-      <div id="chpt10-ex-016-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p>要证 <span class="math inline">D</span> 是开集，需证 <span
-      class="math inline">D</span> 中的每一个点都是 <span
-      class="math inline">D</span> 的内点.</p>
-      <p>设 <span class="math inline">P(x,y) \in D</span>，即 <span
-      class="math inline">1 &lt; x^2 + y^2 &lt; 2</span>.</p>
-      <p>令 <span class="math inline">r_1 = x^2 + y^2 - 1 &gt;
-      0</span>，<span class="math inline">r_2 = 2 - x^2 - y^2 &gt;
-      0</span>，取</p>
-      <p><span class="math display">\delta = \frac{\min\{r_1, r_2\}}{2}
-      &gt; 0.</span></p>
-      <p>对 <span class="math inline">P</span> 的 <span
-      class="math inline">\delta</span>-邻域 <span
-      class="math inline">U(P,\delta)</span> 中任意一点 <span
-      class="math inline">Q(x&#39;,y&#39;)</span>，有</p>
-      <p><span class="math display">\left|\sqrt{x&#39;^2+y&#39;^2} -
-      \sqrt{x^2+y^2}\right| \leq \sqrt{(x&#39;-x)^2+(y&#39;-y)^2} &lt;
-      \delta.</span></p>
-      <p>因此</p>
-      <p><span class="math display">x^2+y^2 - \delta &lt;
-      x&#39;^2+y&#39;^2 &lt; x^2+y^2 + \delta,</span></p>
-      <p>从而</p>
-      <p><span class="math display">x&#39;^2+y&#39;^2 &gt; x^2+y^2 -
-      \delta \geq 1 + r_1 - \frac{r_1}{2} &gt; 1,</span></p>
-      <p><span class="math display">x&#39;^2+y&#39;^2 &lt; x^2+y^2 +
-      \delta \leq 2 - r_2 + \frac{r_2}{2} &lt; 2.</span></p>
-      <p>故 <span class="math inline">Q \in D</span>，即 <span
-      class="math inline">U(P,\delta) \subset D</span>. 由此 <span
-      class="math inline">P</span> 是 <span class="math inline">D</span>
-      的内点.</p>
-      <p>由 <span class="math inline">P</span> 的任意性，<span
-      class="math inline">D</span> 的每个点都是内点，所以 <span
-      class="math inline">D</span> 是<strong>开集</strong>. <span
-      class="math inline">\blacksquare</span></p>
-      </div>
-      </div>
-      </div>
-      </div>
+      <p>::: {. exercise id=“chpt10-ex-016”} :::</p>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">连通集</span></div>
       <div class="callout-body">
@@ -371,7 +239,7 @@
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">例子</span></div>
       <div class="callout-body">
       <p>集合 <span class="math inline">\{(x,y) \mid 1 &lt; x^2 + y^2
-      &lt; 2\}</span> 是开区域,而集合 <span class="math inline">\{(x,y)
+      &lt; 2\}</span> 是开区域, 而集合 <span class="math inline">\{(x,y)
       \mid 1 \leq x^2 + y^2 \leq 2\}</span> 是闭区域.</p>
       </div>
       </div>
@@ -379,12 +247,12 @@
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">有界集与无界集</span></div>
       <div class="callout-body">
       <p><strong>有界集</strong> : 对于平面点集 <span
-      class="math inline">E</span>,如果存在正数 <span
-      class="math inline">r</span>,使得<span class="math inline">E
-      \subset U(O, r)</span>,其中 <span class="math inline">O</span>
-      为坐标原点,则称 <span class="math inline">E</span> 为有界集,
-      <strong>无界集</strong> :
-      如果一个集合不是有界集,则称其为无界集,</p>
+      class="math inline">E</span>, 如果存在正数 <span
+      class="math inline">r</span>, 使得<span class="math inline">E
+      \subset U(O, r)</span>, 其中 <span class="math inline">O</span>
+      为坐标原点, 则称 <span class="math inline">E</span> 为有界集,
+      <strong>无界集</strong> : 如果一个集合不是有界集,
+      则称其为无界集,</p>
       </div>
       </div>
       <h3 id="多元函数的极限">10.1.2 多元函数的极限</h3>
@@ -400,14 +268,14 @@
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">二元函数的定义</span></div>
       <div class="callout-body">
       <p>设 <span class="math inline">D</span> 是 <span
-      class="math inline">\mathbb{R}^2</span> 中的非空子集,称映射 <span
+      class="math inline">\mathbb{R}^2</span> 中的非空子集, 称映射 <span
       class="math inline">f: D \to \mathbb{R}</span> 为定义在 <span
-      class="math inline">D</span> 上的<strong>二元函数</strong>,记为
+      class="math inline">D</span> 上的<strong>二元函数</strong>, 记为
       <span class="math display">
       z = f(x, y), \quad (x, y) \in D
       </span></p>
       <p>其中 <span class="math inline">D</span>
-      称为函数的<strong>定义域</strong> ,<span
+      称为函数的<strong>定义域</strong> , <span
       class="math inline">x</span> 和 <span class="math inline">y</span>
       称为<strong>自变量</strong>.</p>
       </div>
@@ -416,18 +284,18 @@
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要</span></div>
       <div class="callout-body">
       <p><strong>二元函数的极限</strong></p>
-      <p>设 <span class="math inline">f(x,y)</span> 的定义在 <span
-      class="math inline">D</span> 上的二元函数,<span
+      <p>设 <span class="math inline">f(x,y)</span> 为定义在 <span
+      class="math inline">D</span> 上的二元函数, <span
       class="math inline">P_0(x_0, y_0)</span> 是 <span
-      class="math inline">D</span> 的聚点,如果存在常数 <span
-      class="math inline">A</span>,对于任意给定的正数 <span
-      class="math inline">\varepsilon</span>,总存在正数 <span
-      class="math inline">\delta</span>,使得当 <span
-      class="math inline">(x,y) \in U(P_0, \delta)</span> 时,有 $ |f(x,
-      y) - A| &lt; $,则称 <span class="math inline">A</span> 为函数
+      class="math inline">D</span> 的聚点, 如果存在常数 <span
+      class="math inline">A</span>, 对于任意给定的正数 <span
+      class="math inline">\varepsilon</span>, 总存在正数 <span
+      class="math inline">\delta</span>, 使得当 <span
+      class="math inline">(x,y) \in U(P_0, \delta)</span> 时, 有 $ |f(x,
+      y) - A| &lt; $, 则称 <span class="math inline">A</span> 为函数
       <span class="math inline">f(x,y)</span> 当 <span
       class="math inline">(x,y)</span> 趋于 <span
-      class="math inline">(x_0, y_0)</span> 时的极限,记作 <span
+      class="math inline">(x_0, y_0)</span> 时的极限, 记作 <span
       class="math display">
       \displaystyle\lim_{(x,y) \to (x_0, y_0)} f(x,y) = A.
       </span></p>
@@ -443,178 +311,9 @@
       class="math inline">y</span>-轴趋近就断言极限存在.</p>
       </div>
       </div>
-      <div id="chpt10-ex-001" class="exercise-block"
-      data-difficulty="medium">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例3</span><span class="ex-tags"><span
-      class="ex-tag">多元函数</span><span
-      class="ex-tag">极限</span><span
-      class="ex-tag">epsilon-delta证明</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>设 <span class="math inline">f(x,y) = (x^2 + y^2)
-      \displaystyle\sin \frac{1}{x^2 + y^2}</span>，求证：</p>
-      <p><span class="math display">
-      \lim_{(x,y) \to (0,0)} f(x,y) = 0.
-      </span></p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-001-frame" data-panel="chpt10-ex-001-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-001-frame" data-panel="chpt10-ex-001-ans-0">答案</button></span>
-      </div>
-      </div>
-      <div id="chpt10-ex-001-frame" class="ex-frame" hidden="">
-      <div id="chpt10-ex-001-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>利用夹逼定理：对正弦函数用绝对值不等式 <span
-      class="math inline">|\sin(\cdot)| \le 1</span>，将 <span
-      class="math inline">|f(x,y)|</span> 用 <span
-      class="math inline">x^2+y^2</span> 上界控制，再用 <span
-      class="math inline">\varepsilon</span>-<span
-      class="math inline">\delta</span> 语言严格证明。</p>
-      </div>
-      <div id="chpt10-ex-001-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p>函数 <span class="math inline">f(x,y)</span> 的定义域为 <span
-      class="math inline">D = \mathbb{R}^2 \backslash
-      \{(0,0)\}</span>，点 <span class="math inline">O(0,0)</span> 为
-      <span class="math inline">D</span> 的聚点。</p>
-      <p>因为</p>
-      <p><span class="math display">
-      |f(x,y) - 0| = \left| (x^2 + y^2) \sin \frac{1}{x^2 + y^2} \right|
-      \leq x^2 + y^2,
-      </span></p>
-      <p>可见，<span class="math inline">\forall \varepsilon &gt;
-      0</span>，取 <span class="math inline">\delta =
-      \sqrt{\varepsilon}</span>，则当 <span class="math inline">0 &lt;
-      \sqrt{(x-0)^2 + (y-0)^2} &lt; \delta</span> 时，即 <span
-      class="math inline">P(x,y) \in D \cap U(O, \delta)</span>
-      时，总有</p>
-      <p><span class="math display">
-      |f(x,y) - 0| \leq x^2 + y^2 &lt; \delta^2 = \varepsilon
-      </span></p>
-      <p>成立，所以</p>
-      <p><span class="math display">
-      \lim_{(x,y) \to (0,0)} f(x,y) = 0.
-      </span></p>
-      </div>
-      </div>
-      </div>
-      </div>
-      <div id="chpt10-ex-002" class="exercise-block"
-      data-difficulty="medium">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例4</span><span class="ex-tags"><span
-      class="ex-tag">多元函数</span><span
-      class="ex-tag">极限</span><span
-      class="ex-tag">极限不存在</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>考察函数</p>
-      <p><span class="math display">
-      f(x,y) = \begin{cases} \dfrac{xy}{x^2 + y^2}, &amp; x^2 + y^2 \neq
-      0, \\ 0, &amp; x^2 + y^2 = 0 \end{cases}
-      </span></p>
-      <p>在点 <span class="math inline">(0, 0)</span>
-      处的极限是否存在。</p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-002-frame" data-panel="chpt10-ex-002-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-002-frame" data-panel="chpt10-ex-002-ans-0">答案</button></span>
-      </div>
-      </div>
-      <div id="chpt10-ex-002-frame" class="ex-frame" hidden="">
-      <div id="chpt10-ex-002-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>沿坐标轴趋近时极限均为 <span
-      class="math inline">0</span>，但沿直线 <span class="math inline">y
-      = kx</span> 趋近时极限依赖于 <span
-      class="math inline">k</span>，由此说明极限不存在。</p>
-      </div>
-      <div id="chpt10-ex-002-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p>沿 <span class="math inline">x</span> 轴趋近（令 <span
-      class="math inline">y = 0</span>）：</p>
-      <p><span class="math display">
-      \lim_{x \to 0} f(x, 0) = \lim_{x \to 0} 0 = 0.
-      </span></p>
-      <p>沿 <span class="math inline">y</span> 轴趋近（令 <span
-      class="math inline">x = 0</span>）：</p>
-      <p><span class="math display">
-      \lim_{y \to 0} f(0, y) = \lim_{y \to 0} 0 = 0.
-      </span></p>
-      <p>虽然沿坐标轴趋近时极限均为 <span
-      class="math inline">0</span>，但不能由此断定极限存在。当点 <span
-      class="math inline">P(x,y)</span> 沿直线 <span
-      class="math inline">y = kx</span> 趋于 <span
-      class="math inline">(0,0)</span> 时，</p>
-      <p><span class="math display">
-      \lim_{x \to 0} f(x, kx) = \lim_{x \to 0} \frac{k x^2}{x^2 + k^2
-      x^2} = \frac{k}{1 + k^2}.
-      </span></p>
-      <p><span class="math inline">k</span> 不同时极限值不同，故函数在
-      <span class="math inline">(0, 0)</span>
-      处的极限<strong>不存在</strong>。</p>
-      </div>
-      </div>
-      </div>
-      </div>
-      <div id="chpt10-ex-003" class="exercise-block"
-      data-difficulty="easy">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例5</span><span class="ex-tags"><span
-      class="ex-tag">多元函数</span><span
-      class="ex-tag">极限</span><span
-      class="ex-tag">等价无穷小</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>求极限</p>
-      <p><span class="math display">
-      \lim_{(x,y) \to (0,2)} \frac{\sin(xy)}{x}.
-      </span></p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-003-frame" data-panel="chpt10-ex-003-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-003-frame" data-panel="chpt10-ex-003-ans-0">答案</button></span>
-      </div>
-      </div>
-      <div id="chpt10-ex-003-frame" class="ex-frame" hidden="">
-      <div id="chpt10-ex-003-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>将 <span class="math inline">\dfrac{\sin(xy)}{x}</span> 改写为
-      <span class="math inline">\dfrac{\sin(xy)}{xy} \cdot
-      y</span>，再利用 <span class="math inline">\lim_{u \to 0}
-      \dfrac{\sin u}{u} = 1</span>。</p>
-      </div>
-      <div id="chpt10-ex-003-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p>函数 <span class="math inline">\dfrac{\sin(xy)}{x}</span>
-      的定义域为 <span class="math inline">D = \{(x,y) \mid x \neq 0, y
-      \in \mathbb{R}\}</span>，<span class="math inline">P_0(0,2)</span>
-      为 <span class="math inline">D</span> 的聚点。</p>
-      <p><span class="math display">
-      \lim_{(x,y) \to (0,2)} \frac{\sin(xy)}{x}
-      = \lim_{(x,y) \to (0,2)} \left[ \frac{\sin(xy)}{xy} \cdot y
-      \right]
-      = \lim_{xy \to 0} \frac{\sin(xy)}{xy} \cdot \lim_{y \to 2} y
-      = 1 \cdot 2 = 2.
-      </span></p>
-      </div>
-      </div>
-      </div>
-      </div>
+      <p>::: {. exercise id=“chpt10-ex-001”} :::</p>
+      <p>::: {. exercise id=“chpt10-ex-002”} :::</p>
+      <p>::: {. exercise id=“chpt10-ex-003”} :::</p>
       <h3 id="多元函数的连续性-1">10.1.3 多元函数的连续性</h3>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
@@ -627,39 +326,39 @@
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">二元函数连续性</span></div>
       <div class="callout-body">
       <p>设 <span class="math inline">f(x, y)</span> 为定义在 <span
-      class="math inline">D</span> 上的二元函数,<span
+      class="math inline">D</span> 上的二元函数, <span
       class="math inline">P_0 (x_0, y_0)</span> 为 <span
-      class="math inline">D</span> 的聚点,且 <span
-      class="math inline">P_0 \in D</span>,如果 $ _{(x,y) (x_0, y_0)}
+      class="math inline">D</span> 的聚点, 且 <span
+      class="math inline">P_0 \in D</span>, 如果 $ _{(x,y) (x_0, y_0)}
       f(x, y) = f(x_0, y_0)$, 则称函数 <span class="math inline">f(x,
       y)</span> 在点 <span class="math inline">P_0 (x_0, y_0)</span>
       连续, 进一步, 如果函数 <span class="math inline">f(x, y)</span> 在
       <span class="math inline">D</span>
-      内<strong>每一点都连续</strong>,则称函数 <span
+      内<strong>每一点都连续</strong>, 则称函数 <span
       class="math inline">f(x, y)</span> 为 <span
       class="math inline">D</span> 上的<strong>连续函数</strong>.</p>
       <p><strong>间断点</strong> 设函数 <span
       class="math inline">f(x,y)</span> 的定义域为 <span
-      class="math inline">D</span>,<span class="math inline">P_0(x_0,
-      y_0)</span> 是 <span class="math inline">D</span> 的聚点,如果函数
+      class="math inline">D</span>, <span class="math inline">P_0(x_0,
+      y_0)</span> 是 <span class="math inline">D</span> 的聚点, 如果函数
       <span class="math inline">f(x,y)</span> 在点 <span
-      class="math inline">P_0(x_0, y_0)</span>
-      <strong>不连续</strong>,那么称 <span class="math inline">P_0(x_0,
-      y_0)</span> 为函数 <span class="math inline">f(x,y)</span>
-      的<strong>间断点</strong>,</p>
+      class="math inline">P_0(x_0, y_0)</span> <strong>不连续</strong>,
+      那么称 <span class="math inline">P_0(x_0, y_0)</span> 为函数 <span
+      class="math inline">f(x,y)</span> 的<strong>间断点</strong>,</p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">连续函数的性质</span></div>
       <div class="callout-body">
-      <p>与<strong>闭区间</strong>上一元连续函数的性质相类似,在<strong>有界闭区域</strong>上连续的多元函数具有如下性质:</p>
+      <p>与<strong>闭区间</strong>上一元连续函数的性质相类似,
+      在<strong>有界闭区域</strong>上连续的多元函数具有如下性质:</p>
       <ul>
-      <li><p><strong>性质1: 最大值与最小值</strong><br />
-      有界闭区域 <span class="math inline">D</span>
-      上的多元连续函数必定在 <span class="math inline">D</span>
-      上有界,且能取到它的最大值和最小值,</p></li>
-      <li><p><strong>性质2: 介值定理</strong><br />
-      有界闭区域 <span class="math inline">D</span>
+      <li><p><strong>性质1: 最大值与最小值</strong> 有界闭区域 <span
+      class="math inline">D</span> 上的多元连续函数必定在 <span
+      class="math inline">D</span> 上有界,
+      且能取到它的最大值和最小值,</p></li>
+      <li><p><strong>性质2: 介值定理</strong> 有界闭区域 <span
+      class="math inline">D</span>
       上的多元连续函数能取到介于最大值和最小值之间的任何值,</p></li>
       </ul>
       </div>
@@ -675,18 +374,17 @@
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">偏导数</span></div>
       <div class="callout-body">
       <p>设函数 <span class="math inline">z=f(x,y)</span> 在点 <span
-      class="math inline">(x_0,y_0)</span> 的某一邻域内有定义,固定 <span
-      class="math inline">y=y_0</span> 让 <span
+      class="math inline">(x_0,y_0)</span> 的某一邻域内有定义, 固定
+      <span class="math inline">y=y_0</span> 让 <span
       class="math inline">x</span> 在 <span
-      class="math inline">x_0</span> 附近变化, 若极限<br />
-      <span class="math display">
+      class="math inline">x_0</span> 附近变化, 若极限 <span
+      class="math display">
       \displaystyle\lim_{\Delta x \to 0} \displaystyle\frac{f(x_0 +
       \Delta x, y_0) - f(x_0, y_0)}{\Delta x} \tag{2-1}
       </span> 存在, 则称此极限为函数 <span
       class="math inline">z=f(x,y)</span> 在点 <span
       class="math inline">(x_0,y_0)</span> 处对 <span
-      class="math inline">x</span>
-      的<strong>偏导数</strong>,记作：<br />
+      class="math inline">x</span> 的<strong>偏导数</strong>, 记作:
       <span class="math display">
       \left. \displaystyle\frac{\partial z}{\partial x} \right|_{x=x_0},
       \quad \left. \displaystyle\frac{\partial f}{\partial x}
@@ -694,12 +392,11 @@
       y_0)
       </span></p>
       <p>类似地, 函数 <span class="math inline">z=f(x,y)</span> 对 <span
-      class="math inline">y</span> 的偏导数为：<br />
-      <span class="math display">
+      class="math inline">y</span> 的偏导数为: <span
+      class="math display">
       \displaystyle\lim_{\Delta y \to 0} \displaystyle\frac{f(x_0, y_0 +
       \Delta y) - f(x_0, y_0)}{\Delta y}
-      </span> 记作：<br />
-      <span class="math display">
+      </span> 记作: <span class="math display">
       \displaystyle\left. \displaystyle\frac{\partial z}{\partial y}
       \right|_{y=y_0}, \quad \left. \displaystyle\frac{\partial
       f}{\partial y} \right|_{y=y_0}, \quad z_y \bigg|_{y=y_0} \text{ 或
@@ -714,13 +411,12 @@
       class="math inline">D</span> 内每一点 <span
       class="math inline">(x,y)</span> 处对 <span
       class="math inline">x</span> 的偏导数存在,
-      则由此构成的函数称为<strong>偏导函数</strong>,记作：<br />
-      <span class="math display">
+      则由此构成的函数称为<strong>偏导函数</strong>, 记作: <span
+      class="math display">
       \displaystyle\frac{\partial z}{\partial x}, \quad
       \displaystyle\frac{\partial f}{\partial x}, \quad z_x \text{ 或 }
       f_x(x, y)
-      </span> 对 <span class="math inline">y</span>
-      的偏导函数记为：<br />
+      </span> 对 <span class="math inline">y</span> 的偏导函数记为:
       <span class="math display">
       \displaystyle\frac{\partial z}{\partial y}, \quad
       \displaystyle\frac{\partial f}{\partial y}, \quad z_y \text{ 或 }
@@ -728,63 +424,7 @@
       </span></p>
       </div>
       </div>
-      <div id="chpt10-ex-004" class="exercise-block"
-      data-difficulty="medium">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例6</span><span class="ex-tags"><span
-      class="ex-tag">偏导数</span><span
-      class="ex-tag">分段函数</span><span
-      class="ex-tag">定义法求导</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>求分段函数</p>
-      <p><span class="math display">
-      z = f(x, y) = \begin{cases} \dfrac{xy}{x^2 + y^2}, &amp; x^2 + y^2
-      \neq 0, \\ 0, &amp; x^2 + y^2 = 0 \end{cases}
-      </span></p>
-      <p>在点 <span class="math inline">(0, 0)</span> 处的偏导数 <span
-      class="math inline">f_x(0,0)</span> 和 <span
-      class="math inline">f_y(0,0)</span>。</p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-004-frame" data-panel="chpt10-ex-004-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-004-frame" data-panel="chpt10-ex-004-ans-0">答案</button></span>
-      </div>
-      </div>
-      <div id="chpt10-ex-004-frame" class="ex-frame" hidden="">
-      <div id="chpt10-ex-004-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>在原点处不能用求导公式，需回到偏导数的定义，用差商极限直接计算。</p>
-      </div>
-      <div id="chpt10-ex-004-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p><strong>计算 <span
-      class="math inline">f_x(0,0)</span>：</strong></p>
-      <p><span class="math display">
-      f_x(0, 0) = \lim_{\Delta x \to 0} \frac{f(0 + \Delta x,\, 0) -
-      f(0, 0)}{\Delta x} = \lim_{\Delta x \to 0} \frac{0 - 0}{\Delta x}
-      = 0.
-      </span></p>
-      <p><strong>计算 <span
-      class="math inline">f_y(0,0)</span>：</strong></p>
-      <p><span class="math display">
-      f_y(0, 0) = \lim_{\Delta y \to 0} \frac{f(0,\, 0 + \Delta y) -
-      f(0, 0)}{\Delta y} = \lim_{\Delta y \to 0} \frac{0 - 0}{\Delta y}
-      = 0.
-      </span></p>
-      <p>故 <span class="math inline">f_x(0,0) = f_y(0,0) =
-      0</span>。</p>
-      <p><strong>注意：</strong> 尽管偏导数在原点存在，但由例
-      chpt10-ex-002
-      知该函数在原点的极限不存在，故函数在原点不连续，这说明偏导数存在不能保证函数连续。</p>
-      </div>
-      </div>
-      </div>
-      </div>
+      <p>::: {. exercise id=“chpt10-ex-004”} :::</p>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要</span></div>
       <div class="callout-body">
@@ -797,25 +437,25 @@
       <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">二阶偏导数的四种形式</span></div>
       <div class="callout-body">
       <ol type="1">
-      <li><p>对 <span class="math inline">x</span> 的二阶偏导： <span
+      <li><p>对 <span class="math inline">x</span> 的二阶偏导: <span
       class="math display">
       \displaystyle\displaystyle\frac{\partial}{\partial x} \left(
       \displaystyle\frac{\partial z}{\partial x} \right) =
       \displaystyle\frac{\partial^2 z}{\partial x^2} = f_{xx}(x, y)
       </span></p></li>
       <li><p>先对 <span class="math inline">x</span> 后对 <span
-      class="math inline">y</span> 的混合偏导： <span
+      class="math inline">y</span> 的混合偏导: <span
       class="math display"> \displaystyle\frac{\partial}{\partial y}
       \left( \displaystyle\frac{\partial z}{\partial x} \right) =
       \displaystyle\frac{\partial^2 z}{\partial x \partial y} =
       f_{xy}(x, y) </span></p></li>
       <li><p>先对 <span class="math inline">y</span> 后对 <span
-      class="math inline">x</span> 的混合偏导： <span
+      class="math inline">x</span> 的混合偏导: <span
       class="math display"> \displaystyle\frac{\partial}{\partial x}
       \left( \displaystyle\frac{\partial z}{\partial y} \right) =
       \displaystyle\frac{\partial^2 z}{\partial y \partial x} =
       f_{yx}(x, y) </span></p></li>
-      <li><p>对 <span class="math inline">y</span> 的二阶偏导： <span
+      <li><p>对 <span class="math inline">y</span> 的二阶偏导: <span
       class="math display"> \displaystyle\frac{\partial}{\partial y}
       \left( \displaystyle\frac{\partial z}{\partial y} \right) =
       \displaystyle\frac{\partial^2 z}{\partial y^2} = f_{yy}(x, y)
@@ -823,215 +463,23 @@
       </ol>
       </div>
       </div>
-      <div id="chpt10-ex-017" class="exercise-block"
-      data-difficulty="medium">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例7: 高阶偏导数的计算</span><span
-      class="ex-tags"><span class="ex-tag">偏导数</span><span
-      class="ex-tag">高阶导数</span><span
-      class="ex-tag">混合偏导数</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>设函数 <span class="math inline">z = x^3 y^2 - 3xy^3 - xy +
-      1</span>，求下列高阶偏导数：</p>
-      <p><span class="math display">\frac{\partial^2 z}{\partial
-      x^2},\quad \frac{\partial^2 z}{\partial y \partial x},\quad
-      \frac{\partial^2 z}{\partial x \partial y},\quad \frac{\partial^2
-      z}{\partial y^2} \quad \text{及}\quad \frac{\partial^3 z}{\partial
-      x^3}.</span></p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-017-frame" data-panel="chpt10-ex-017-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-017-frame" data-panel="chpt10-ex-017-ans-0">答案</button></span>
-      </div>
-      </div>
-      <div id="chpt10-ex-017-frame" class="ex-frame" hidden="">
-      <div id="chpt10-ex-017-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>先分别求出对 <span class="math inline">x</span> 和对 <span
-      class="math inline">y</span> 的一阶偏导数，再对结果继续求偏导.
-      注意混合偏导数 <span class="math inline">\frac{\partial^2
-      z}{\partial y \partial x}</span> 表示先对 <span
-      class="math inline">x</span> 求偏导再对 <span
-      class="math inline">y</span> 求偏导.</p>
-      </div>
-      <div id="chpt10-ex-017-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p><strong>第一步：求一阶偏导数.</strong></p>
-      <p><span class="math display">\frac{\partial z}{\partial x} = 3x^2
-      y^2 - 3y^3 - y</span></p>
-      <p><span class="math display">\frac{\partial z}{\partial y} = 2x^3
-      y - 9xy^2 - x</span></p>
-      <p><strong>第二步：求二阶偏导数.</strong></p>
-      <p><span class="math display">\frac{\partial^2 z}{\partial x^2} =
-      \frac{\partial}{\partial x}(3x^2 y^2 - 3y^3 - y) =
-      6xy^2</span></p>
-      <p><span class="math display">\frac{\partial^2 z}{\partial y
-      \partial x} = \frac{\partial}{\partial y}(3x^2 y^2 - 3y^3 - y) =
-      6x^2 y - 9y^2 - 1</span></p>
-      <p><span class="math display">\frac{\partial^2 z}{\partial x
-      \partial y} = \frac{\partial}{\partial x}(2x^3 y - 9xy^2 - x) =
-      6x^2 y - 9y^2 - 1</span></p>
-      <p><span class="math display">\frac{\partial^2 z}{\partial y^2} =
-      \frac{\partial}{\partial y}(2x^3 y - 9xy^2 - x) = 2x^3 -
-      18xy</span></p>
-      <p>注意两个混合偏导数相等，这与二阶混合偏导数在连续时与求导次序无关的定理一致.</p>
-      <p><strong>第三步：求三阶偏导数.</strong></p>
-      <p><span class="math display">\frac{\partial^3 z}{\partial x^3} =
-      \frac{\partial}{\partial x}(6xy^2) = 6y^2</span></p>
-      </div>
-      </div>
-      </div>
-      </div>
+      <p>::: {. exercise id=“chpt10-ex-017”} :::</p>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要</span></div>
       <div class="callout-body">
       <p>==二阶混合偏导数定理==</p>
       <p>如果函数 <span class="math inline">z = f(x, y)</span>
       的二阶混合偏导数 $ $ 在区域 <span class="math inline">D</span>
-      内连续,那么在该区域内必有： <span class="math display">
+      内连续, 那么在该区域内必有: <span class="math display">
       \displaystyle\frac{\partial^2 z}{\partial y \partial x} =
       \displaystyle\frac{\partial^2 z}{\partial x \partial y}
       </span></p>
-      <p>即：<strong>二阶混合偏导数在连续条件下与求导次序无关</strong>,</p>
+      <p>即:
+      <strong>二阶混合偏导数在连续条件下与求导次序无关</strong>,</p>
       </div>
       </div>
-      <div id="chpt10-ex-005" class="exercise-block"
-      data-difficulty="easy">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例8</span><span class="ex-tags"><span
-      class="ex-tag">高阶偏导数</span><span
-      class="ex-tag">拉普拉斯方程</span><span
-      class="ex-tag">验证</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>验证函数 <span class="math inline">z = \ln \sqrt{x^2 +
-      y^2}</span> 满足拉普拉斯方程</p>
-      <p><span class="math display">
-      \frac{\partial^2 z}{\partial x^2} + \frac{\partial^2 z}{\partial
-      y^2} = 0.
-      </span></p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-005-frame" data-panel="chpt10-ex-005-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-005-frame" data-panel="chpt10-ex-005-ans-0">答案</button></span>
-      </div>
-      </div>
-      <div id="chpt10-ex-005-frame" class="ex-frame" hidden="">
-      <div id="chpt10-ex-005-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>先将 <span class="math inline">\ln\sqrt{x^2+y^2}</span> 化简为
-      <span
-      class="math inline">\frac{1}{2}\ln(x^2+y^2)</span>，然后依次求一阶、二阶偏导数，最后相加。</p>
-      </div>
-      <div id="chpt10-ex-005-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p>化简函数：</p>
-      <p><span class="math display">
-      z = \frac{1}{2} \ln(x^2 + y^2).
-      </span></p>
-      <p>求一阶偏导数：</p>
-      <p><span class="math display">
-      \frac{\partial z}{\partial x} = \frac{x}{x^2 + y^2}, \qquad
-      \frac{\partial z}{\partial y} = \frac{y}{x^2 + y^2}.
-      </span></p>
-      <p>求二阶偏导数：</p>
-      <p><span class="math display">
-      \frac{\partial^2 z}{\partial x^2} = \frac{(x^2+y^2) - x \cdot
-      2x}{(x^2+y^2)^2} = \frac{y^2 - x^2}{(x^2+y^2)^2},
-      </span></p>
-      <p><span class="math display">
-      \frac{\partial^2 z}{\partial y^2} = \frac{(x^2+y^2) - y \cdot
-      2y}{(x^2+y^2)^2} = \frac{x^2 - y^2}{(x^2+y^2)^2}.
-      </span></p>
-      <p>验证：</p>
-      <p><span class="math display">
-      \frac{\partial^2 z}{\partial x^2} + \frac{\partial^2 z}{\partial
-      y^2} = \frac{y^2 - x^2 + x^2 - y^2}{(x^2+y^2)^2} = 0. \qquad
-      \square
-      </span></p>
-      </div>
-      </div>
-      </div>
-      </div>
-      <div id="chpt10-ex-006" class="exercise-block"
-      data-difficulty="medium">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例9</span><span class="ex-tags"><span
-      class="ex-tag">高阶偏导数</span><span
-      class="ex-tag">拉普拉斯方程</span><span
-      class="ex-tag">三元函数</span><span
-      class="ex-tag">验证</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>证明函数 <span class="math inline">u = \dfrac{1}{r}</span>
-      满足三维拉普拉斯方程</p>
-      <p><span class="math display">
-      \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial
-      y^2} + \frac{\partial^2 u}{\partial z^2} = 0,
-      </span></p>
-      <p>其中 <span class="math inline">r = \sqrt{x^2 + y^2 +
-      z^2}</span>。</p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-006-frame" data-panel="chpt10-ex-006-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-006-frame" data-panel="chpt10-ex-006-ans-0">答案</button></span>
-      </div>
-      </div>
-      <div id="chpt10-ex-006-frame" class="ex-frame" hidden="">
-      <div id="chpt10-ex-006-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>先对 <span class="math inline">x</span>
-      求一阶偏导，利用复合函数求导得 <span
-      class="math inline">\dfrac{\partial r}{\partial x} =
-      \dfrac{x}{r}</span>；再对 <span class="math inline">x</span>
-      求二阶偏导；由对称性写出 <span class="math inline">y, z</span>
-      方向的结果，最后求和。</p>
-      </div>
-      <div id="chpt10-ex-006-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p>由 <span class="math inline">r = \sqrt{x^2+y^2+z^2}</span>，有
-      <span class="math inline">\dfrac{\partial r}{\partial x} =
-      \dfrac{x}{r}</span>。</p>
-      <p><span class="math display">
-      \frac{\partial u}{\partial x} = -\frac{1}{r^2} \cdot
-      \frac{\partial r}{\partial x} = -\frac{x}{r^3}.
-      </span></p>
-      <p><span class="math display">
-      \frac{\partial^2 u}{\partial x^2} = -\frac{r^3 - x \cdot 3r^2
-      \frac{\partial r}{\partial x}}{r^6} = -\frac{1}{r^3} +
-      \frac{3x^2}{r^5}.
-      </span></p>
-      <p>由对称性：</p>
-      <p><span class="math display">
-      \frac{\partial^2 u}{\partial y^2} = -\frac{1}{r^3} +
-      \frac{3y^2}{r^5}, \qquad \frac{\partial^2 u}{\partial z^2} =
-      -\frac{1}{r^3} + \frac{3z^2}{r^5}.
-      </span></p>
-      <p>求和：</p>
-      <p><span class="math display">
-      \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial
-      y^2} + \frac{\partial^2 u}{\partial z^2}
-      = -\frac{3}{r^3} + \frac{3(x^2+y^2+z^2)}{r^5}
-      = -\frac{3}{r^3} + \frac{3r^2}{r^5}
-      = 0. \qquad \square
-      </span></p>
-      </div>
-      </div>
-      </div>
-      </div>
+      <p>::: {. exercise id=“chpt10-ex-005”} :::</p>
+      <p>::: {. exercise id=“chpt10-ex-006”} :::</p>
       <h2 id="全微分">10.3 全微分</h2>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
@@ -1042,8 +490,8 @@
       <p><span class="math display">
       df = f&#39;(x)dx
       </span></p>
-      <p>接下来我们要把上述关系推广多元函数,
-      从而将函数值的变化于自变量的变化联系起来.</p>
+      <p>接下来我们要把上述关系推广到多元函数,
+      从而将函数值的变化与自变量的变化联系起来.</p>
       </div>
       </div>
       <div class="callout callout-important">
@@ -1065,208 +513,65 @@
       {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160/examples/jsm/"}}
       </script>
       <div id="grad3d"
-      style="width:100%;max-width:780px;height:450px;position:relative;margin:1.5em auto;background:#0B6E4F;border-radius:8px;overflow:hidden;box-shadow:0 10px 30px rgba(6,18,10,0.28);">
+      style="width:100%; max-width:780px; height:450px; position: relative; margin:1.5em auto; background: #0B6E4F; border-radius:8px; overflow: hidden; box-shadow:0 10px 30px rgba(6,18,10,0.28);">
 
       </div>
       <script data-lazy-module="threejs/chapter10-scene.js?v=20260330i"></script>
       <div id="grad3d_local"
-      style="width:100%;max-width:780px;height:430px;position:relative;margin:1.0em auto 1.5em auto;background:#0B6E4F;border-radius:8px;overflow:hidden;box-shadow:0 10px 30px rgba(6,18,10,0.28);">
+      style="width:100%; max-width:780px; height:430px; position: relative; margin:1.0em auto 1.5em auto; background: #0B6E4F; border-radius:8px; overflow: hidden; box-shadow:0 10px 30px rgba(6,18,10,0.28);">
 
       </div>
       <script data-lazy-module="threejs/chapter10-local-scene.js?v=20260331c"></script>
       <div id="grad2d"
-      style="width:100%;max-width:780px;height:440px;position:relative;margin:1.5em auto;background:#0d1a2e;border-radius:8px;overflow:hidden;box-shadow:0 10px 30px rgba(6,18,10,0.28);">
+      style="width:100%; max-width:780px; height:440px; position: relative; margin:1.5em auto; background: #0d1a2e; border-radius:8px; overflow: hidden; box-shadow:0 10px 30px rgba(6,18,10,0.28);">
 
       </div>
       <script data-lazy-module="threejs/chapter10-gradient2d.js?v=20260331a"></script>
       <div
-      style="display:flex;gap:8px;width:100%;max-width:960px;margin:1.5em auto;">
+      style="display: flex; gap:8px; width:100%; max-width:960px; margin:1.5em auto;">
       <div id="cplx-2d"
-      style="flex:1;height:440px;position:relative;background:#0d1a2e;border-radius:8px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.4);">
+      style="flex:1; height:440px; position: relative; background: #0d1a2e; border-radius:8px; overflow: hidden; box-shadow:0 10px 30px rgba(0,0,0,0.4);">
 
       </div>
       <div id="cplx-3d"
-      style="flex:1.4;height:440px;position:relative;background:#0b1020;border-radius:8px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.4);">
+      style="flex:1.4; height:440px; position: relative; background: #0b1020; border-radius:8px; overflow: hidden; box-shadow:0 10px 30px rgba(0,0,0,0.4);">
 
       </div>
       </div>
       <script data-lazy-module="threejs/chapter10-complex.js?v=20260331a"></script>
-      <div id="chpt10-ex-007" class="exercise-block"
-      data-difficulty="easy">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例10</span><span class="ex-tags"><span
-      class="ex-tag">全微分</span><span
-      class="ex-tag">线性函数</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>求函数 <span class="math inline">z(x,y) = x + y</span> 的全微分
-      <span class="math inline">dz</span>。</p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-007-frame" data-panel="chpt10-ex-007-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-007-frame" data-panel="chpt10-ex-007-ans-0">答案</button></span>
-      </div>
-      </div>
-      <div id="chpt10-ex-007-frame" class="ex-frame" hidden="">
-      <div id="chpt10-ex-007-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>直接计算两个一阶偏导数，代入全微分公式 <span
-      class="math inline">dz = \frac{\partial z}{\partial x}dx +
-      \frac{\partial z}{\partial y}dy</span>。</p>
-      </div>
-      <div id="chpt10-ex-007-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p>变量变化：<span class="math inline">x \to x + \Delta
-      x</span>，<span class="math inline">y \to y + \Delta
-      y</span>。</p>
-      <p>函数增量：<span class="math inline">\Delta z = (x + \Delta x) +
-      (y + \Delta y) - (x + y) = \Delta x + \Delta y</span>。</p>
-      <p>偏导数：<span class="math inline">\dfrac{\partial z}{\partial
-      x} = 1</span>，<span class="math inline">\dfrac{\partial
-      z}{\partial y} = 1</span>。</p>
-      <p>全微分：</p>
-      <p><span class="math display">
-      dz = dx + dy.
-      </span></p>
-      </div>
-      </div>
-      </div>
-      </div>
-      <div id="chpt10-ex-008" class="exercise-block"
-      data-difficulty="easy">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例11</span><span class="ex-tags"><span
-      class="ex-tag">全微分</span><span
-      class="ex-tag">高阶无穷小</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>求函数 <span class="math inline">z(x,y) = x^2 + 2y^3</span>
-      的全微分 <span class="math inline">dz</span>。</p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-008-frame" data-panel="chpt10-ex-008-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-008-frame" data-panel="chpt10-ex-008-ans-0">答案</button></span>
-      </div>
-      </div>
-      <div id="chpt10-ex-008-frame" class="ex-frame" hidden="">
-      <div id="chpt10-ex-008-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>展开增量 <span class="math inline">\Delta
-      z</span>，保留一阶项（线性主部），高阶无穷小项舍去，即得全微分。</p>
-      </div>
-      <div id="chpt10-ex-008-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p>考虑自变量的微小变化 <span class="math inline">x \to
-      x+dx</span>，<span class="math inline">y \to y+dy</span>：</p>
-      <p><span class="math display">
-      z(x+dx, y+dy) = (x+dx)^2 + 2(y+dy)^3.
-      </span></p>
-      <p>展开并识别各阶项：</p>
-      <p><span class="math display">
-      \Delta z = 2x\,dx + 6y^2\,dy + \underbrace{dx^2 + 6y\,dy^2 +
-      2\,dy^3}_{\text{高阶无穷小}}.
-      </span></p>
-      <p>偏导数：<span class="math inline">\dfrac{\partial z}{\partial
-      x} = 2x</span>，<span class="math inline">\dfrac{\partial
-      z}{\partial y} = 6y^2</span>。</p>
-      <p>全微分（取线性主部）：</p>
-      <p><span class="math display">
-      dz = 2x\,dx + 6y^2\,dy.
-      </span></p>
-      </div>
-      </div>
-      </div>
-      </div>
-      <div id="chpt10-ex-009" class="exercise-block"
-      data-difficulty="medium">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例12</span><span class="ex-tags"><span
-      class="ex-tag">全微分</span><span class="ex-tag">应用</span><span
-      class="ex-tag">梯形截面</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>设截面积函数</p>
-      <p><span class="math display">
-      S(x, \theta) = Lx\sin\theta - 2x^2\sin\theta +
-      x^2\sin\theta\cos\theta,
-      </span></p>
-      <p>求全微分 <span class="math inline">dS</span>。</p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-009-frame" data-panel="chpt10-ex-009-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-009-frame" data-panel="chpt10-ex-009-ans-0">答案</button></span>
-      </div>
-      </div>
-      <div id="chpt10-ex-009-frame" class="ex-frame" hidden="">
-      <div id="chpt10-ex-009-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>分别对 <span class="math inline">x</span> 和 <span
-      class="math inline">\theta</span> 求偏导数，然后代入全微分公式；对
-      <span class="math inline">\theta</span> 求导时需用 <span
-      class="math inline">\cos^2\theta - \sin^2\theta = \cos
-      2\theta</span>。</p>
-      </div>
-      <div id="chpt10-ex-009-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p>求偏导数：</p>
-      <p><span class="math display">
-      \frac{\partial S}{\partial x} = L\sin\theta - 4x\sin\theta +
-      2x\sin\theta\cos\theta = \sin\theta(L - 4x + 2x\cos\theta),
-      </span></p>
-      <p><span class="math display">
-      \frac{\partial S}{\partial \theta} = Lx\cos\theta - 2x^2\cos\theta
-      + x^2(\cos^2\theta - \sin^2\theta) = x\cos\theta(L - 2x) + x^2\cos
-      2\theta.
-      </span></p>
-      <p>全微分：</p>
-      <p><span class="math display">
-      dS = \sin\theta(L - 4x + 2x\cos\theta)\,dx + \bigl[x\cos\theta(L -
-      2x) + x^2\cos 2\theta\bigr]\,d\theta.
-      </span></p>
-      </div>
-      </div>
-      </div>
-      </div>
+      <p>::: {. exercise id=“chpt10-ex-007”} :::</p>
+      <p>::: {. exercise id=“chpt10-ex-008”} :::</p>
+      <p>::: {. exercise id=“chpt10-ex-009”} :::</p>
       <h3 id="链式法则">10.3.1 链式法则</h3>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
       <p>全微分公式能够表示因变量 <span class="math inline">z</span>
-      对自变量 <span class="math inline">x, y</span>
-      的依赖关系。如果我们把全微分公式稍微变形，就能非常自然地推导出多元微积分中极其重要的<strong>链式法则
-      (Chain
-      Rule)</strong>。无论是物理学中寻找随时间变化的变化率，还是在不同坐标系（如直角坐标与极坐标）之间进行变量替换，链式法则都不可或缺。</p>
+      对自变量 <span class="math inline">x, y</span> 的依赖关系.
+      如果我们把全微分公式稍微变形,
+      就能非常自然地推导出多元微积分中极其重要的<strong>链式法则 (Chain
+      Rule)</strong>. 无论是物理学中寻找随时间变化的变化率,
+      还是在不同坐标系 (如直角坐标与极坐标) 之间进行变量替换,
+      链式法则都不可或缺.</p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">一元函数与多元函数复合的情形</span></div>
       <div class="callout-body">
-      <p>设 <span class="math inline">z = f(u, v)</span>，而 <span
+      <p>设 <span class="math inline">z = f(u, v)</span>, 而 <span
       class="math inline">u = u(t)</span>, <span class="math inline">v =
-      v(t)</span>。 则复合函数 <span class="math inline">z</span> 对
-      <span class="math inline">t</span> 的全导数公式为： <span
+      v(t)</span>. 则复合函数 <span class="math inline">z</span> 对
+      <span class="math inline">t</span> 的全导数公式为: <span
       class="math display">
       \frac{dz}{dt} = \frac{\partial z}{\partial u}\frac{du}{dt} +
       \frac{\partial z}{\partial v}\frac{dv}{dt}
       </span></p>
       <p><strong>多元函数与多元函数复合的情形</strong></p>
-      <p>更一般地，如果中间变量本身又是多个变量的函数，例如 <span
-      class="math inline">u = u(x,y)</span>，<span class="math inline">v
-      = v(x,y)</span>。 则复合函数分别对 <span
+      <p>更一般地, 如果中间变量本身又是多个变量的函数, 例如 <span
+      class="math inline">u = u(x,y)</span>, <span class="math inline">v
+      = v(x,y)</span>. 则复合函数分别对 <span
       class="math inline">x</span> 和 <span class="math inline">y</span>
-      的偏导数法则为： <span class="math display">
+      的偏导数法则为: <span class="math display">
       \frac{\partial z}{\partial x} = \frac{\partial z}{\partial
       u}\frac{\partial u}{\partial x} + \frac{\partial z}{\partial
       v}\frac{\partial v}{\partial x}
@@ -1277,246 +582,73 @@
       </span></p>
       </div>
       </div>
-      <div id="chpt10-ex-018" class="exercise-block"
-      data-difficulty="medium">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例13: 复合函数的全导数</span><span
-      class="ex-tags"><span class="ex-tag">全微分</span><span
-      class="ex-tag">复合函数</span><span
-      class="ex-tag">链式法则</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>设 <span class="math inline">z = uv + \sin t</span>，而 <span
-      class="math inline">u = e^t</span>，<span class="math inline">v =
-      \cos t</span>，求全导数 <span
-      class="math inline">\displaystyle\frac{dz}{dt}</span>.</p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-018-frame" data-panel="chpt10-ex-018-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-018-frame" data-panel="chpt10-ex-018-ans-0">答案</button></span>
-      </div>
-      </div>
-      <div id="chpt10-ex-018-frame" class="ex-frame" hidden="">
-      <div id="chpt10-ex-018-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>注意 <span class="math inline">z</span> 不仅通过中间变量 <span
-      class="math inline">u, v</span> 依赖于 <span
-      class="math inline">t</span>，还直接依赖于 <span
-      class="math inline">t</span>. 链式法则需增加一项对 <span
-      class="math inline">t</span> 的直接偏导数.</p>
-      </div>
-      <div id="chpt10-ex-018-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p>由链式法则，<span class="math inline">z</span> 对 <span
-      class="math inline">t</span> 的全导数为：</p>
-      <p><span class="math display">\frac{dz}{dt} = \frac{\partial
-      z}{\partial u}\frac{du}{dt} + \frac{\partial z}{\partial
-      v}\frac{dv}{dt} + \frac{\partial z}{\partial t}</span></p>
-      <p>计算各偏导数：</p>
-      <p><span class="math display">\frac{\partial z}{\partial u} = v,
-      \quad \frac{\partial z}{\partial v} = u, \quad \frac{\partial
-      z}{\partial t} = \cos t</span></p>
-      <p>计算中间变量的导数：</p>
-      <p><span class="math display">\frac{du}{dt} = e^t, \quad
-      \frac{dv}{dt} = -\sin t</span></p>
-      <p>代入得：</p>
-      <p><span class="math display">\begin{aligned}
-      \frac{dz}{dt} &amp;= v \cdot e^t + u \cdot (-\sin t) + \cos t \\
-      &amp;= e^t \cos t - e^t \sin t + \cos t \\
-      &amp;= e^t(\cos t - \sin t) + \cos t.
-      \end{aligned}</span></p>
-      </div>
-      </div>
-      </div>
-      </div>
+      <p>::: {. exercise id=“chpt10-ex-018”} :::</p>
       <h3 id="全微分形式不变性">10.3.2 全微分形式不变性</h3>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
-      <p>微分符号的奇妙之处在于，无论 <span class="math inline">u,
-      v</span>
-      是作为<strong>最终自变量</strong>，还是作为进一步依赖其他变量的<strong>中间变量</strong>，全微分的表达式
-      <span class="math inline">dz = \frac{\partial z}{\partial u}du +
-      \frac{\partial z}{\partial v}dv</span>
-      始终保持形式上的一致。这个深刻的性质被称为<strong>全微分形式不变性</strong>。它能帮我们绕开繁琐的链式法则，直接通过代数代入来求导！</p>
+      <p>微分符号的奇妙之处在于, 无论 <span class="math inline">u,
+      v</span> 是作为<strong>最终自变量</strong>,
+      还是作为进一步依赖其他变量的<strong>中间变量</strong>,
+      全微分的表达式 <span class="math inline">dz = \frac{\partial
+      z}{\partial u}du + \frac{\partial z}{\partial v}dv</span>
+      始终保持形式上的一致.
+      这个深刻的性质被称为<strong>全微分形式不变性</strong>.
+      它能帮我们绕开繁琐的链式法则, 直接通过代数代入来求导!</p>
       </div>
       </div>
-      <div id="chpt10-ex-019" class="exercise-block"
-      data-difficulty="medium">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例14: 全微分形式不变性</span><span
-      class="ex-tags"><span class="ex-tag">全微分</span><span
-      class="ex-tag">微分形式不变性</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>设 <span class="math inline">z = e^u \sin v</span>，而 <span
-      class="math inline">u = xy</span>，<span class="math inline">v =
-      x+y</span>，利用全微分形式不变性求偏导数 <span
-      class="math inline">\displaystyle\frac{\partial z}{\partial
-      x}</span> 和 <span class="math inline">\displaystyle\frac{\partial
-      z}{\partial y}</span>.</p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-019-frame" data-panel="chpt10-ex-019-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-019-frame" data-panel="chpt10-ex-019-ans-0">答案</button></span>
-      </div>
-      </div>
-      <div id="chpt10-ex-019-frame" class="ex-frame" hidden="">
-      <div id="chpt10-ex-019-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>先写出外层函数关于中间变量 <span class="math inline">u,
-      v</span> 的全微分，再将 <span class="math inline">du</span>、<span
-      class="math inline">dv</span> 用 <span
-      class="math inline">dx</span>、<span class="math inline">dy</span>
-      表示并代入，比较系数即可直接读出偏导数.</p>
-      </div>
-      <div id="chpt10-ex-019-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p><strong>第一步：写出外层函数的全微分.</strong></p>
-      <p><span class="math display">dz = d(e^u \sin v) = e^u \sin v \,
-      du + e^u \cos v \, dv</span></p>
-      <p><strong>第二步：计算中间变量的微分.</strong></p>
-      <p><span class="math display">du = d(xy) = y \, dx + x \,
-      dy</span></p>
-      <p><span class="math display">dv = d(x+y) = dx + dy</span></p>
-      <p><strong>第三步：将 <span class="math inline">du</span>、<span
-      class="math inline">dv</span> 代入 <span
-      class="math inline">dz</span> 并合并同类项.</strong></p>
-      <p><span class="math display">\begin{aligned}
-      dz &amp;= e^u \sin v (y \, dx + x \, dy) + e^u \cos v (dx + dy) \\
-      &amp;= \left[y e^u \sin v + e^u \cos v\right] dx + \left[x e^u
-      \sin v + e^u \cos v\right] dy
-      \end{aligned}</span></p>
-      <p><strong>第四步：比较系数，回代 <span class="math inline">u =
-      xy</span>，<span class="math inline">v =
-      x+y</span>，直接读出偏导数.</strong></p>
-      <p><span class="math display">\frac{\partial z}{\partial x} =
-      e^{xy}\left[y \sin(x+y) + \cos(x+y)\right]</span></p>
-      <p><span class="math display">\frac{\partial z}{\partial y} =
-      e^{xy}\left[x \sin(x+y) + \cos(x+y)\right]</span></p>
-      </div>
-      </div>
-      </div>
-      </div>
+      <p>::: {. exercise id=“chpt10-ex-019”} :::</p>
       <h3 id="隐函数求导">10.3.3 隐函数求导</h3>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
-      <p>在实际问题中，变量之间的关系常常以隐式方程 <span
+      <p>在实际问题中, 变量之间的关系常常以隐式方程 <span
       class="math inline">F(x,y)=0</span> 或 <span
-      class="math inline">F(x,y,z)=0</span>
-      的形式给出，直接解出因变量（即求反函数）往往非常繁琐甚至不可能。利用全微分的性质，我们可以极其优雅地绕过这一困难，直接求出隐函数的导数。因为方程恒为零，对其取全微分也必为零。</p>
+      class="math inline">F(x,y,z)=0</span> 的形式给出, 直接解出因变量
+      (即求反函数) 往往非常繁琐甚至不可能. 利用全微分的性质,
+      我们可以极其优雅地绕过这一困难, 直接求出隐函数的导数.
+      因为方程恒为零, 对其取全微分也必为零.</p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">一元隐函数的求导公式</span></div>
       <div class="callout-body">
       <p>设方程 <span class="math inline">F(x,y) = 0</span> 确定了隐函数
-      <span class="math inline">y = f(x)</span>。 对方程两端取全微分得：
+      <span class="math inline">y = f(x)</span>. 对方程两端取全微分得:
       <span class="math inline">dF = F_x dx + F_y dy = 0</span> 只要
-      <span class="math inline">F_y \neq
-      0</span>，直接移项即可得到一阶导数： <span class="math display">
+      <span class="math inline">F_y \neq 0</span>,
+      直接移项即可得到一阶导数: <span class="math display">
       \frac{dy}{dx} = -\frac{F_x}{F_y}
       </span></p>
       <p><strong>二元隐函数的求导公式</strong></p>
       <p>若方程 <span class="math inline">F(x,y,z) = 0</span>
-      确定了二元隐函数 <span class="math inline">z = f(x,y)</span>。
+      确定了二元隐函数 <span class="math inline">z = f(x,y)</span>.
       当需要计算偏导数 <span class="math inline">\frac{\partial
-      z}{\partial x}</span> 时，意味着 <span
-      class="math inline">y</span> 为常数（即 <span
-      class="math inline">dy = 0</span>），全微分退化为 <span
-      class="math inline">F_x dx + F_z dz = 0</span>： <span
+      z}{\partial x}</span> 时, 意味着 <span
+      class="math inline">y</span> 为常数 (即 <span
+      class="math inline">dy = 0</span>), 全微分退化为 <span
+      class="math inline">F_x dx + F_z dz = 0</span>: <span
       class="math display">
       \frac{\partial z}{\partial x} = -\frac{F_x}{F_z} \quad (F_z \neq
       0)
-      </span> 同理可得： <span class="math display">
+      </span> 同理可得: <span class="math display">
       \frac{\partial z}{\partial y} = -\frac{F_y}{F_z} \quad (F_z \neq
       0)
-      </span> 这个自带负号的公式，正是全微分移项产生的自然结果。</p>
+      </span> 这个自带负号的公式, 正是全微分移项产生的自然结果.</p>
       </div>
       </div>
-      <div id="chpt10-ex-020" class="exercise-block"
-      data-difficulty="medium">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例15: 隐函数的求导</span><span
-      class="ex-tags"><span class="ex-tag">隐函数</span><span
-      class="ex-tag">隐函数定理</span><span
-      class="ex-tag">偏导数</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>验证方程 <span class="math inline">x^2 + y^2 - 1 = 0</span>
-      确定了一个隐函数，并求其一阶与二阶导数 <span
-      class="math inline">\displaystyle\frac{dy}{dx}</span> 和 <span
-      class="math inline">\displaystyle\frac{d^2y}{dx^2}</span>.</p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-020-frame" data-panel="chpt10-ex-020-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-020-frame" data-panel="chpt10-ex-020-ans-0">答案</button></span>
-      </div>
-      </div>
-      <div id="chpt10-ex-020-frame" class="ex-frame" hidden="">
-      <div id="chpt10-ex-020-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>令 <span class="math inline">F(x,y) = x^2 + y^2 -
-      1</span>，用隐函数求导公式 <span class="math inline">\frac{dy}{dx}
-      = -\frac{F_x}{F_y}</span>，再对一阶导数关于 <span
-      class="math inline">x</span> 求导（注意 <span
-      class="math inline">y</span> 是 <span class="math inline">x</span>
-      的函数）得到二阶导数.</p>
-      </div>
-      <div id="chpt10-ex-020-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p>设 <span class="math inline">F(x,y) = x^2 + y^2 - 1</span>.</p>
-      <p>计算偏导数：<span class="math inline">F_x = 2x</span>，<span
-      class="math inline">F_y = 2y</span>.</p>
-      <p><strong>一阶导数：</strong></p>
-      <p>当 <span class="math inline">F_y = 2y \neq 0</span>（即 <span
-      class="math inline">y \neq
-      0</span>）时，由一元隐函数求导公式得：</p>
-      <p><span class="math display">\frac{dy}{dx} = -\frac{F_x}{F_y} =
-      -\frac{2x}{2y} = -\frac{x}{y}</span></p>
-      <p><strong>二阶导数：</strong></p>
-      <p>对一阶导数关于 <span class="math inline">x</span> 再求导，注意
-      <span class="math inline">y</span> 是 <span
-      class="math inline">x</span> 的函数：</p>
-      <p><span class="math display">\begin{aligned}
-      \frac{d^2y}{dx^2} &amp;= \frac{d}{dx}\left(-\frac{x}{y}\right) =
-      -\frac{1 \cdot y - x \cdot \frac{dy}{dx}}{y^2} \\
-      &amp;= -\frac{y - x\left(-\dfrac{x}{y}\right)}{y^2} = -\frac{y^2 +
-      x^2}{y^3}
-      \end{aligned}</span></p>
-      <p>因为原方程给出 <span class="math inline">x^2 + y^2 =
-      1</span>，代入后化简得最终结果：</p>
-      <p><span class="math display">\frac{d^2y}{dx^2} =
-      -\frac{1}{y^3}</span></p>
-      </div>
-      </div>
-      </div>
-      </div>
+      <p>::: {. exercise id=“chpt10-ex-020”} :::</p>
       <h2 id="梯度与方向导数">10.4 梯度与方向导数</h2>
       <h3 id="梯度">10.4.1 梯度</h3>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要</span></div>
       <div class="callout-body">
       <p>==梯度的定义== 设二元函数$f(x,y) $ 在区域<span
-      class="math inline">D</span> 内具有一阶连续偏导数,则对于任意点 $
-      P_0(x_0,y_0) D <span
-      class="math inline">,其梯度定义为：</span><span
-      class="math inline">\text{grad}\, f(x_0,y_0) = \nabla f(x_0,y_0) =
-      f_x(x_0,y_0)\,\mathbf{i} + f_y(x_0,y_0)\,\mathbf{j}</span>$
-      其中微分算子$ = + ,$</p>
+      class="math inline">D</span> 内具有一阶连续偏导数, 则对于任意点 $
+      P_0(x_0,y_0) D <span class="math inline">,
+      其梯度定义为:</span><span class="math inline">\text{grad}\,
+      f(x_0,y_0) = \nabla f(x_0,y_0) = f_x(x_0,y_0)\,\mathbf{i} +
+      f_y(x_0,y_0)\,\mathbf{j}</span>$ 其中微分算子$ = + ,$</p>
       </div>
       </div>
       <div class="callout callout-warning">
@@ -1525,246 +657,44 @@
 
       </div>
       </div>
-      <div id="chpt10-ex-010" class="exercise-block"
-      data-difficulty="easy">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例16</span><span class="ex-tags"><span
-      class="ex-tag">梯度</span><span class="ex-tag">偏导数</span><span
-      class="ex-tag">二元函数</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>求函数 <span class="math inline">f(x, y) = \dfrac{1}{x^2 +
-      y^2}</span> 的梯度 <span class="math inline">\mathrm{grad}\,
-      f</span>。</p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-010-frame" data-panel="chpt10-ex-010-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-010-frame" data-panel="chpt10-ex-010-ans-0">答案</button></span>
-      </div>
-      </div>
-      <div id="chpt10-ex-010-frame" class="ex-frame" hidden="">
-      <div id="chpt10-ex-010-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>分别对 <span class="math inline">x</span> 和 <span
-      class="math inline">y</span> 求偏导数，再写成梯度向量 <span
-      class="math inline">\nabla f = f_x \mathbf{i} + f_y
-      \mathbf{j}</span> 的形式。</p>
-      </div>
-      <div id="chpt10-ex-010-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p><span class="math display">
-      \frac{\partial f}{\partial x} = -\frac{2x}{(x^2+y^2)^2}, \qquad
-      \frac{\partial f}{\partial y} = -\frac{2y}{(x^2+y^2)^2}.
-      </span></p>
-      <p>因此：</p>
-      <p><span class="math display">
-      \mathrm{grad}\, \frac{1}{x^2+y^2} =
-      -\frac{2x}{(x^2+y^2)^2}\,\mathbf{i} -
-      \frac{2y}{(x^2+y^2)^2}\,\mathbf{j}.
-      </span></p>
-      </div>
-      </div>
-      </div>
-      </div>
-      <div id="chpt10-ex-011" class="exercise-block"
-      data-difficulty="medium">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例17</span><span class="ex-tags"><span
-      class="ex-tag">梯度</span><span
-      class="ex-tag">方向导数</span><span
-      class="ex-tag">三元函数</span><span
-      class="ex-tag">最大变化率</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>设 <span class="math inline">f(x, y, z) = x^3 - xy^2 -
-      z^2</span>，<span class="math inline">P_0(1,1,0)</span>。</p>
-      <ol type="1">
-      <li>函数 <span class="math inline">f</span> 在 <span
-      class="math inline">P_0</span> 处沿哪个方向变化最快？</li>
-      <li>在该方向上的变化率是多少？</li>
-      </ol>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-011-frame" data-panel="chpt10-ex-011-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-011-frame" data-panel="chpt10-ex-011-ans-0">答案</button></span>
-      </div>
-      </div>
-      <div id="chpt10-ex-011-frame" class="ex-frame" hidden="">
-      <div id="chpt10-ex-011-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>梯度方向是函数增加最快的方向，反梯度方向是减少最快的方向；变化率（增/减）等于
-      <span class="math inline">\pm|\nabla f|</span>。</p>
-      </div>
-      <div id="chpt10-ex-011-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p>计算梯度：</p>
-      <p><span class="math display">
-      \nabla f = (3x^2 - y^2)\,\mathbf{i} - 2xy\,\mathbf{j} -
-      2z\,\mathbf{k}.
-      </span></p>
-      <p>在 <span class="math inline">P_0(1,1,0)</span>
-      处（注：课本中此题结果含 <span
-      class="math inline">-\mathbf{k}</span>
-      项，对应的函数略有不同，此处按课本给出结论）：</p>
-      <p><span class="math display">
-      \nabla f\big|_{P_0} = 2\mathbf{i} - 2\mathbf{j} - \mathbf{k}.
-      </span></p>
-      <p><span class="math inline">f</span> 在 <span
-      class="math inline">P_0</span> 处： - 沿 <span
-      class="math inline">\nabla f(P_0)</span>
-      方向增加最快，变化率为</p>
-      <p><span class="math display">
-      |\nabla f(P_0)| = \sqrt{2^2 + (-2)^2 + (-1)^2} = 3.
-      </span></p>
-      <ul>
-      <li>沿 <span class="math inline">-\nabla f(P_0)</span>
-      方向减少最快，变化率为 <span class="math inline">-3</span>。</li>
-      </ul>
-      </div>
-      </div>
-      </div>
-      </div>
-      <div id="chpt10-ex-012" class="exercise-block"
-      data-difficulty="medium">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例18</span><span class="ex-tags"><span
-      class="ex-tag">梯度</span><span class="ex-tag">切平面</span><span
-      class="ex-tag">法线</span><span class="ex-tag">曲面</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>求曲面 <span class="math inline">x^2 + y^2 + z = 9</span> 在点
-      <span class="math inline">P_0(1, 2, 4)</span>
-      处的切平面方程和法线方程。</p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-012-frame" data-panel="chpt10-ex-012-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-012-frame" data-panel="chpt10-ex-012-ans-0">答案</button></span>
-      </div>
-      </div>
-      <div id="chpt10-ex-012-frame" class="ex-frame" hidden="">
-      <div id="chpt10-ex-012-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>将曲面写为 <span class="math inline">f(x,y,z) =
-      x^2+y^2+z</span>，法向量即为梯度 <span class="math inline">\nabla
-      f|_{P_0}</span>，再代入点法式写出切平面和法线。</p>
-      </div>
-      <div id="chpt10-ex-012-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p>设 <span class="math inline">f(x,y,z) = x^2 + y^2 +
-      z</span>，则梯度为</p>
-      <p><span class="math display">
-      \nabla f = (2x,\, 2y,\, 1).
-      </span></p>
-      <p>在 <span class="math inline">P_0(1,2,4)</span> 处：</p>
-      <p><span class="math display">
-      \nabla f\big|_{P_0} = (2, 4, 1),
-      </span></p>
-      <p>此向量即为等值面（曲面）在 <span class="math inline">P_0</span>
-      处的法向量。</p>
-      <p><strong>切平面方程：</strong></p>
-      <p><span class="math display">
-      2(x - 1) + 4(y - 2) + (z - 4) = 0,
-      </span></p>
-      <p>即</p>
-      <p><span class="math display">
-      2x + 4y + z = 14.
-      </span></p>
-      <p><strong>法线方程：</strong></p>
-      <p><span class="math display">
-      x = 1 + 2t, \quad y = 2 + 4t, \quad z = 4 + t \quad (t \in
-      \mathbb{R}).
-      </span></p>
-      </div>
-      </div>
-      </div>
-      </div>
+      <p>::: {. exercise id=“chpt10-ex-010”} :::</p>
+      <p>::: {. exercise id=“chpt10-ex-011”} :::</p>
+      <p>::: {. exercise id=“chpt10-ex-012”} :::</p>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">三元函数的梯度定义与性质</span></div>
       <div class="callout-body">
-      <p>设三元函数 ( f(x,y,z) ) 在空间区域 ( G )
-      内具有一阶连续偏导数,则对于点 $ P_0(x_0,y_ 0,z_0)$ <span
-      class="math inline">in G</span> ),其梯度为：</p>
+      <p>设三元函数 <span class="math inline">f(x,y,z)</span> 在空间区域
+      <span class="math inline">G</span> 内具有一阶连续偏导数, 则对于点
+      <span class="math inline">P_0(x_0, y_0, z_0) \in G</span>,
+      其梯度为:</p>
       <p><span class="math display">\text{grad}\, f(x_0,y_0,z_0) =
       \nabla f(x_0,y_0,z_0) = f_x\,\mathbf{i} + f_y\,\mathbf{j} +
-      f_z\,\mathbf{k}</span> 其中三维Nabla算子： <span
+      f_z\,\mathbf{k}</span> 其中三维Nabla算子: <span
       class="math display"> \nabla = \dfrac{\partial}{\partial
       x}\mathbf{i} + \dfrac{\partial}{\partial y}\mathbf{j} +
       \dfrac{\partial}{\partial z}\mathbf{k} </span></p>
       </div>
       </div>
-      <div id="chpt10-ex-021" class="exercise-block"
-      data-difficulty="easy">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例19: 梯度的计算</span><span
-      class="ex-tags"><span class="ex-tag">梯度</span><span
-      class="ex-tag">方向导数</span><span
-      class="ex-tag">多元函数</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>求函数 <span class="math inline">f(x,y,z) = x^2 + yz</span>
-      在点 <span class="math inline">(1,2,3)</span> 处的梯度.</p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-021-frame" data-panel="chpt10-ex-021-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-021-frame" data-panel="chpt10-ex-021-ans-0">答案</button></span>
-      </div>
-      </div>
-      <div id="chpt10-ex-021-frame" class="ex-frame" hidden="">
-      <div id="chpt10-ex-021-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>分别计算三个偏导数，然后代入给定点的坐标.</p>
-      </div>
-      <div id="chpt10-ex-021-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p>计算各偏导数：</p>
-      <p><span class="math display">\frac{\partial f}{\partial x} = 2x,
-      \quad \frac{\partial f}{\partial y} = z, \quad \frac{\partial
-      f}{\partial z} = y</span></p>
-      <p>在点 <span class="math inline">(1,2,3)</span> 处代入：</p>
-      <p><span class="math display">\nabla f\big|_{(1,2,3)} = \left(2x,\
-      z,\ y\right)\big|_{(1,2,3)} = (2,\ 3,\ 2)</span></p>
-      <p>即 <span class="math inline">\text{grad}\, f(1,2,3) =
-      2\,\mathbf{i} + 3\,\mathbf{j} + 2\,\mathbf{k}</span>.</p>
-      </div>
-      </div>
-      </div>
-      </div>
+      <p>::: {. exercise id=“chpt10-ex-021”} :::</p>
       <h3 id="方向导数">10.4.2 方向导数</h3>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要</span></div>
       <div class="callout-body">
       <p>==方向导数的定义== 设函数 <span
       class="math inline">f(x,y,z)</span> 在点 <span
-      class="math inline">P_0(x_0,y_0,z_0)</span> 的某邻域内有定义,<span
-      class="math inline">\mathbf{l}</span> 为从 <span
-      class="math inline">P_0</span> 出发的给定方向向量,<span
+      class="math inline">P_0(x_0,y_0,z_0)</span> 的某邻域内有定义,
+      <span class="math inline">\mathbf{l}</span> 为从 <span
+      class="math inline">P_0</span> 出发的给定方向向量, <span
       class="math inline">P(x,y,z)</span> 为 <span
       class="math inline">\mathbf{l}</span> 上邻近 <span
-      class="math inline">P_0</span> 的点,若极限<br />
-      <span class="math display">
+      class="math inline">P_0</span> 的点, 若极限 <span
+      class="math display">
       \displaystyle\lim_{\rho \to 0^+} \frac{f(P) - f(P_0)}{\rho} =
       \left. \frac{\partial f}{\partial l} \right|_{P_0}
-      </span> 存在,则称此极限为 <span class="math inline">f</span> 在
+      </span> 存在, 则称此极限为 <span class="math inline">f</span> 在
       <span class="math inline">P_0</span> 点沿方向 <span
-      class="math inline">\mathbf{l}</span>
-      的<strong>方向导数</strong>,其中 <span class="math inline">\rho =
-      |PP_0|</span>.</p>
+      class="math inline">\mathbf{l}</span> 的<strong>方向导数</strong>,
+      其中 <span class="math inline">\rho = |PP_0|</span>.</p>
       </div>
       </div>
       <div class="callout callout-warning">
@@ -1775,231 +705,105 @@
       </div>
       <h2 id="多元函数的极值">10.5 多元函数的极值</h2>
       <h3 id="无约束极值问题">10.5.1 无约束极值问题</h3>
-      <div id="chpt10-ex-013" class="exercise-block"
-      data-difficulty="medium">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例20</span><span class="ex-tags"><span
-      class="ex-tag">多元极值</span><span
-      class="ex-tag">无约束极值</span><span
-      class="ex-tag">应用题</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>有一宽为 <span class="math inline">24\,\text{cm}</span>
-      的长方形铁板，把它两边折起来做成断面为等腰梯形的水槽，问怎样折法才能使断面的面积最大？</p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-013-frame" data-panel="chpt10-ex-013-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-013-frame" data-panel="chpt10-ex-013-ans-0">答案</button></span>
-      </div>
-      </div>
-      <div id="chpt10-ex-013-frame" class="ex-frame" hidden="">
-      <div id="chpt10-ex-013-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>设折起边长为 <span class="math inline">x</span>，倾角为 <span
-      class="math inline">\alpha</span>，写出面积函数 <span
-      class="math inline">A(x,\alpha)</span>，令两个偏导数为零联立求解，再判断是否为极大值。</p>
-      </div>
-      <div id="chpt10-ex-013-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p>设折起来的边长为 <span
-      class="math inline">x\,\text{cm}</span>，倾角为 <span
-      class="math inline">\alpha</span>，则梯形断面的： - 下底长：<span
-      class="math inline">(24 - 2x)\,\text{cm}</span> - 上底长：<span
-      class="math inline">(24 - 2x + 2x\cos\alpha)\,\text{cm}</span> -
-      高：<span class="math inline">x\sin\alpha\,\text{cm}</span></p>
-      <p>断面面积：</p>
-      <p><span class="math display">
-      A(x,\alpha) = 24x\sin\alpha - 2x^2\sin\alpha +
-      x^2\sin\alpha\cos\alpha, \quad 0 &lt; x &lt; 12,\ 0 &lt; \alpha
-      \leq \frac{\pi}{2}.
-      </span></p>
-      <p>令偏导数为零：</p>
-      <p><span class="math display">
-      \begin{cases}
-      A_x = 24\sin\alpha - 4x\sin\alpha + 2x\sin\alpha\cos\alpha = 0, \\
-      A_\alpha = 24x\cos\alpha - 2x^2\cos\alpha + x^2(\cos^2\alpha -
-      \sin^2\alpha) = 0.
-      \end{cases}
-      </span></p>
-      <p>由 <span class="math inline">\sin\alpha \neq 0</span>，<span
-      class="math inline">x \neq 0</span>，化简得：</p>
-      <p><span class="math display">
-      \begin{cases}
-      12 - 2x + x\cos\alpha = 0, \\
-      24\cos\alpha - 2x\cos\alpha + x(\cos^2\alpha - \sin^2\alpha) = 0.
-      \end{cases}
-      </span></p>
-      <p>解方程组，得唯一驻点：</p>
-      <p><span class="math display">
-      \alpha = \frac{\pi}{3} = 60°, \quad x = 8.
-      </span></p>
-      <p>由题意，面积最大值在开区域内取得，且只有此一个驻点，验证端点值更小，故当
-      <span class="math inline">x = 8\,\text{cm}</span>，<span
-      class="math inline">\alpha = 60°</span> 时，断面面积最大。</p>
-      </div>
-      </div>
-      </div>
-      </div>
-      <div id="chpt10-ex-014" class="exercise-block"
-      data-difficulty="medium">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例21</span><span class="ex-tags"><span
-      class="ex-tag">多元极值</span><span
-      class="ex-tag">无约束极值</span><span
-      class="ex-tag">应用题</span><span
-      class="ex-tag">最省材料</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>某厂要用铁板做成一个体积为 <span
-      class="math inline">2\,\text{m}^3</span>
-      的有盖长方体水箱，问当长、宽、高各取怎样的尺寸时，用料最省？</p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-014-frame" data-panel="chpt10-ex-014-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-014-frame" data-panel="chpt10-ex-014-ans-0">答案</button></span>
-      </div>
-      </div>
-      <div id="chpt10-ex-014-frame" class="ex-frame" hidden="">
-      <div id="chpt10-ex-014-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>设长为 <span class="math inline">x</span>，宽为 <span
-      class="math inline">y</span>，则高由体积约束确定为 <span
-      class="math inline">\frac{2}{xy}</span>；写出表面积函数 <span
-      class="math inline">A(x,y)</span>，令偏导为零求驻点，再用唯一驻点论证极值。</p>
-      </div>
-      <div id="chpt10-ex-014-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p>设水箱长为 <span class="math inline">x\,\text{m}</span>，宽为
-      <span class="math inline">y\,\text{m}</span>，则高为 <span
-      class="math inline">\dfrac{2}{xy}\,\text{m}</span>。</p>
-      <p>表面积（目标函数）：</p>
-      <p><span class="math display">
-      A(x,y) = 2\left(xy + \frac{2}{x} + \frac{2}{y}\right), \quad x
-      &gt; 0,\ y &gt; 0.
-      </span></p>
-      <p>令偏导数为零：</p>
-      <p><span class="math display">
-      A_x = 2\left(y - \frac{2}{x^2}\right) = 0, \qquad A_y = 2\left(x -
-      \frac{2}{y^2}\right) = 0.
-      </span></p>
-      <p>解方程组：</p>
-      <p><span class="math display">
-      y = \frac{2}{x^2}, \quad x = \frac{2}{y^2} \implies x = y =
-      \sqrt[3]{2}.
-      </span></p>
-      <p>唯一驻点为 <span class="math inline">\left(\sqrt[3]{2},\,
-      \sqrt[3]{2}\right)</span>，此时高为</p>
-      <p><span class="math display">
-      \frac{2}{\sqrt[3]{2} \cdot \sqrt[3]{2}} = \sqrt[3]{2}\,\text{m}.
-      </span></p>
-      <p>由题意最小值在开区域内存在且唯一驻点处取得，故当水箱长、宽、高均为
-      <span class="math inline">\sqrt[3]{2}\approx 1.26\,\text{m}</span>
-      时，用料最省（即正方体形状）。</p>
-      </div>
-      </div>
-      </div>
-      </div>
+      <p>::: {. exercise id=“chpt10-ex-013”} :::</p>
+      <p>::: {. exercise id=“chpt10-ex-014”} :::</p>
       <h4 id="无约束极值的判别法">10.5.1.1 无约束极值的判别法</h4>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
-      <p>我们知道，在一元函数中，通过令一阶导数 <span
-      class="math inline">f&#39;(x)=0</span>
-      我们可以找到驻点，然后通过二阶导数 <span
-      class="math inline">f&#39;&#39;(x)</span>
-      的符号可以判断该点是极大值还是极小值。
-      对于多元函数，我们同样通过令所有一阶偏导数为零来寻找<strong>临界点（驻点）</strong>。但是，多元函数的临界点除了极大值和极小值之外，还有可能是<strong>鞍点（Saddle
-      Point，即在某些方向上是极大，在另一些方向上是极小）</strong>。如何准确对临界点进行分类呢？我们需要用到二阶导数判别法。</p>
+      <p>我们知道, 在一元函数中, 通过令一阶导数 <span
+      class="math inline">f&#39;(x)=0</span> 我们可以找到驻点,
+      然后通过二阶导数 <span class="math inline">f&#39;&#39;(x)</span>
+      的符号可以判断该点是极大值还是极小值. 对于多元函数,
+      我们同样通过令所有一阶偏导数为零来寻找<strong>临界点
+      (驻点)</strong>. 但是, 多元函数的临界点除了极大值和极小值之外,
+      还有可能是<strong>鞍点 (Saddle Point, 即在某些方向上是极大,
+      在另一些方向上是极小)</strong>. 如何准确对临界点进行分类呢?
+      我们需要用到二阶导数判别法.</p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">二元函数的极值充分条件</span></div>
       <div class="callout-body">
       <p>设函数 <span class="math inline">z = f(x,y)</span> 在临界点
-      <span class="math inline">(x_0, y_0)</span>
-      的某邻域内连续，且具有一阶及二阶连续偏导数，且满足一阶必要条件：<span
-      class="math inline">f_x(x_0,y_0)=0, f_y(x_0,y_0)=0</span>。</p>
-      <p>我们计算该点处的三个二阶偏导数值，并记为： * <span
+      <span class="math inline">(x_0, y_0)</span> 的某邻域内连续,
+      且具有一阶及二阶连续偏导数, 且满足一阶必要条件: <span
+      class="math inline">f_x(x_0,y_0)=0, f_y(x_0,y_0)=0</span>.</p>
+      <p>我们计算该点处的三个二阶偏导数值, 并记为: * <span
       class="math inline">A = f_{xx}(x_0,y_0)</span> * <span
       class="math inline">B = f_{xy}(x_0,y_0)</span> * <span
       class="math inline">C = f_{yy}(x_0,y_0)</span></p>
-      <p>构造判别式 <span class="math inline">\Delta = AC -
-      B^2</span>。则在 <span class="math inline">(x_0, y_0)</span>
-      处是否取得极值的判断准则如下：</p>
+      <p>构造判别式 <span class="math inline">\Delta = AC - B^2</span>.
+      则在 <span class="math inline">(x_0, y_0)</span>
+      处是否取得极值的判断准则如下:</p>
       <ol type="1">
       <li><strong>当 <span class="math inline">\Delta = AC - B^2 &gt;
-      0</span> 时，具有极值</strong>。具体而言：
+      0</span> 时, 具有极值</strong>. 具体而言:</li>
+      </ol>
       <ul>
       <li>如果 <strong><span class="math inline">A &gt;
-      0</span></strong>，则该点为 <strong>极小值点</strong>（Local
-      Minimum）；</li>
+      0</span></strong>, 则该点为 <strong>极小值点</strong> (Local
+      Minimum);</li>
       <li>如果 <strong><span class="math inline">A &lt;
-      0</span></strong>，则该点为 <strong>极大值点</strong>（Local
-      Maximum）。</li>
-      </ul></li>
+      0</span></strong>, 则该点为 <strong>极大值点</strong> (Local
+      Maximum).</li>
+      </ul>
+      <ol start="2" type="1">
       <li><strong>当 <span class="math inline">\Delta = AC - B^2 &lt;
-      0</span> 时，没有极值</strong>。该点是一个
-      <strong>鞍点</strong>（Saddle Point）。</li>
+      0</span> 时, 没有极值</strong>. 该点是一个 <strong>鞍点</strong>
+      (Saddle Point).</li>
       <li><strong>当 <span class="math inline">\Delta = AC - B^2 =
-      0</span>
-      时，无法判断</strong>（退化情形）。该点可能有极值，也可能没有极值，需要借助其他方法或更高阶的导数来另作讨论。</li>
+      0</span> 时, 无法判断</strong> (退化情形). 该点可能有极值,
+      也可能没有极值, 需要借助其他方法或更高阶的导数来另作讨论.</li>
       </ol>
       </div>
       </div>
       <!-- ── 临界点分类交互图 ──────────────────────────────────────────────────── -->
       <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
       <div
-      style="width:100%;max-width:960px;margin:1.5em auto;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.10);border-radius:10px;padding:14px 18px 10px;">
+      style="width:100%; max-width:960px; margin:1.5em auto; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.10); border-radius:10px; padding:14px 18px 10px;">
       <div
-      style="display:flex;align-items:center;gap:28px;flex-wrap:wrap;justify-content:center;margin-bottom:6px;">
-      <div style="display:flex;align-items:center;gap:10px;">
+      style="display: flex; align-items: center; gap:28px; flex-wrap: wrap; justify-content: center; margin-bottom:6px;">
+      <div style="display: flex; align-items: center; gap:10px;">
       <span
-      style="color:#d5dbe7;font-size:13px;font-family:sans-serif;white-space:nowrap;">λ₁
+      style="color: #d5dbe7; font-size:13px; font-family: sans-serif; white-space: nowrap;">λ₁
       = <span id="critpt-l1-val"
-      style="display:inline-block;width:38px;text-align:right;">1.0</span></span><input type="range" id="critpt-l1" min="-3" max="3" step="0.1" value="1" style="width:160px;accent-color:#5599ee;">
+      style="display: inline-block; width:38px; text-align: right;">1.0</span></span><input type="range" id="critpt-l1" min="-3" max="3" step="0.1" value="1" style="width:160px; accent-color: #5599ee;">
       </div>
-      <div style="display:flex;align-items:center;gap:10px;">
+      <div style="display: flex; align-items: center; gap:10px;">
       <span
-      style="color:#d5dbe7;font-size:13px;font-family:sans-serif;white-space:nowrap;">λ₂
+      style="color: #d5dbe7; font-size:13px; font-family: sans-serif; white-space: nowrap;">λ₂
       = <span id="critpt-l2-val"
-      style="display:inline-block;width:38px;text-align:right;">1.0</span></span><input type="range" id="critpt-l2" min="-3" max="3" step="0.1" value="1" style="width:160px;accent-color:#5599ee;">
+      style="display: inline-block; width:38px; text-align: right;">1.0</span></span><input type="range" id="critpt-l2" min="-3" max="3" step="0.1" value="1" style="width:160px; accent-color: #5599ee;">
       </div>
       <div id="critpt-type-badge"
-      style="padding:4px 16px;border-radius:20px;font-size:13px;font-family:sans-serif;font-weight:600;background:#1a3a1a;color:#66ee88;border:1px solid #3a6a3a;white-space:nowrap;">
+      style="padding:4px 16px; border-radius:20px; font-size:13px; font-family: sans-serif; font-weight:600; background: #1a3a1a; color: #66ee88; border:1px solid #3a6a3a; white-space: nowrap;">
       极小值点 (Local Min)
       </div>
       </div>
       <div
-      style="font-size:11px;color:#7a8aa0;text-align:center;font-family:sans-serif;margin-bottom:10px;">
-      f(x, y) = ½(λ₁x² + λ₂y²) — 拖动滑块改变 Hessian
-      特征值，观察曲面形状变化
+      style="font-size:11px; color: #7a8aa0; text-align: center; font-family: sans-serif; margin-bottom:10px;">
+      f(x, y) = ½(λ₁x² + λ₂y²) — 拖动滑块改变 Hessian 特征值,
+      观察曲面形状变化
       </div>
-      <div style="display:flex;gap:12px;">
-      <div style="flex:1;min-width:0;">
+      <div style="display: flex; gap:12px;">
+      <div style="flex:1; min-width:0;">
       <div
-      style="text-align:center;font-size:11px;color:#8899bb;font-family:sans-serif;margin-bottom:4px;">
-      Three.js
+      style="text-align: center; font-size:11px; color: #8899bb; font-family: sans-serif; margin-bottom:4px;">
+      Three. js
       </div>
       <div id="critpt-3d"
-      style="width:100%;height:380px;position:relative;background:#0d1120;border-radius:8px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,0.5);">
+      style="width:100%; height:380px; position: relative; background: #0d1120; border-radius:8px; overflow: hidden; box-shadow:0 6px 20px rgba(0,0,0,0.5);">
 
       </div>
       </div>
-      <div style="flex:1;min-width:0;">
+      <div style="flex:1; min-width:0;">
       <div
-      style="text-align:center;font-size:11px;color:#8899bb;font-family:sans-serif;margin-bottom:4px;">
+      style="text-align: center; font-size:11px; color: #8899bb; font-family: sans-serif; margin-bottom:4px;">
       Plotly
       </div>
       <div id="critpt-plotly"
-      style="width:100%;height:380px;background:#0d1120;border-radius:8px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,0.5);">
+      style="width:100%; height:380px; background: #0d1120; border-radius:8px; overflow: hidden; box-shadow:0 6px 20px rgba(0,0,0,0.5);">
 
       </div>
       </div>
@@ -2073,56 +877,59 @@
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
-      <p><strong>海森矩阵总是对称的</strong>（<span
-      class="math inline">f_{xy}=f_{yx}</span>），因此由<strong>谱定理</strong>，其特征向量<strong>必然互相垂直</strong>——这是无法绕开的。
-      但当 <span class="math inline">B = f_{xy} \neq 0</span>
-      时，这两个特征方向会相对坐标轴<strong>旋转</strong>，形成非对角的
-      Hessian。 下图中 <span class="math inline">\theta</span>
-      滑块正是控制这一旋转角，橙色/蓝色抛物线分别对应沿 <span
-      class="math inline">\mathbf{e}_1</span>、<span
-      class="math inline">\mathbf{e}_2</span> 方向的曲率（即 <span
-      class="math inline">\lambda_1</span>、<span
-      class="math inline">\lambda_2</span>），原点处的直角符号说明两特征向量始终垂直。</p>
+      <p><strong>海森矩阵总是对称的</strong> (<span
+      class="math inline">f_{xy}=f_{yx}</span>),
+      因此由<strong>谱定理</strong>,
+      其特征向量<strong>必然互相垂直</strong>——这是无法绕开的. 但当
+      <span class="math inline">B = f_{xy} \neq 0</span> 时,
+      这两个特征方向会相对坐标轴<strong>旋转</strong>, 形成非对角的
+      Hessian. 下图中 <span class="math inline">\theta</span>
+      滑块正是控制这一旋转角, 橙色/蓝色抛物线分别对应沿 <span
+      class="math inline">\mathbf{e}_1</span>, <span
+      class="math inline">\mathbf{e}_2</span> 方向的曲率 (即 <span
+      class="math inline">\lambda_1</span>, <span
+      class="math inline">\lambda_2</span>),
+      原点处的直角符号说明两特征向量始终垂直.</p>
       </div>
       </div>
       <div id="critpt2-wrap"
-      style="width:100%;max-width:800px;margin:1.2em auto;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.10);border-radius:10px;padding:14px 18px 10px;">
+      style="width:100%; max-width:800px; margin:1.2em auto; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.10); border-radius:10px; padding:14px 18px 10px;">
       <div
-      style="display:flex;align-items:center;gap:22px;flex-wrap:wrap;justify-content:center;margin-bottom:6px;">
-      <div style="display:flex;align-items:center;gap:8px;">
+      style="display: flex; align-items: center; gap:22px; flex-wrap: wrap; justify-content: center; margin-bottom:6px;">
+      <div style="display: flex; align-items: center; gap:8px;">
       <span
-      style="color:#ff9966;font-size:13px;font-family:sans-serif;white-space:nowrap;">λ₁
+      style="color: #ff9966; font-size:13px; font-family: sans-serif; white-space: nowrap;">λ₁
       = <span id="critpt2-l1-val"
-      style="display:inline-block;width:38px;text-align:right;">2.0</span></span><input type="range" id="critpt2-l1" min="-3" max="3" step="0.1" value="2" style="width:130px;accent-color:#ff7744;">
+      style="display: inline-block; width:38px; text-align: right;">2.0</span></span><input type="range" id="critpt2-l1" min="-3" max="3" step="0.1" value="2" style="width:130px; accent-color: #ff7744;">
       </div>
-      <div style="display:flex;align-items:center;gap:8px;">
+      <div style="display: flex; align-items: center; gap:8px;">
       <span
-      style="color:#66ccff;font-size:13px;font-family:sans-serif;white-space:nowrap;">λ₂
+      style="color: #66ccff; font-size:13px; font-family: sans-serif; white-space: nowrap;">λ₂
       = <span id="critpt2-l2-val"
-      style="display:inline-block;width:38px;text-align:right;">-1.0</span></span><input type="range" id="critpt2-l2" min="-3" max="3" step="0.1" value="-1" style="width:130px;accent-color:#44aaff;">
+      style="display: inline-block; width:38px; text-align: right;">-1.0</span></span><input type="range" id="critpt2-l2" min="-3" max="3" step="0.1" value="-1" style="width:130px; accent-color: #44aaff;">
       </div>
-      <div style="display:flex;align-items:center;gap:8px;">
+      <div style="display: flex; align-items: center; gap:8px;">
       <span
-      style="color:#d5dbe7;font-size:13px;font-family:sans-serif;white-space:nowrap;">θ
+      style="color: #d5dbe7; font-size:13px; font-family: sans-serif; white-space: nowrap;">θ
       = <span id="critpt2-theta-val"
-      style="display:inline-block;width:34px;text-align:right;">35</span>°</span><input type="range" id="critpt2-theta" min="0" max="90" step="1" value="35" style="width:130px;accent-color:#aaccee;">
+      style="display: inline-block; width:34px; text-align: right;">35</span>°</span><input type="range" id="critpt2-theta" min="0" max="90" step="1" value="35" style="width:130px; accent-color: #aaccee;">
       </div>
       <div id="critpt2-type-badge"
-      style="padding:4px 14px;border-radius:20px;font-size:12px;font-family:sans-serif;font-weight:600;background:#1a1a0a;color:#ddcc44;border:1px solid #5a5a1a;white-space:nowrap;">
+      style="padding:4px 14px; border-radius:20px; font-size:12px; font-family: sans-serif; font-weight:600; background: #1a1a0a; color: #ddcc44; border:1px solid #5a5a1a; white-space: nowrap;">
       鞍点 (Saddle)
       </div>
       </div>
       <div
-      style="font-size:11px;color:#7a8aa0;text-align:center;font-family:sans-serif;margin-bottom:8px;">
-      f = ½(λ₁(x cosθ + y sinθ)² + λ₂(−x sinθ + y cosθ)²)  · 
+      style="font-size:11px; color: #7a8aa0; text-align: center; font-family: sans-serif; margin-bottom:8px;">
+      f = ½(λ₁(x cosθ + y sinθ)² + λ₂(−x sinθ + y cosθ)²)   · 
       特征向量始终互相垂直
       </div>
       <div
-      style="text-align:center;font-size:11px;color:#8899bb;font-family:sans-serif;margin-bottom:4px;">
-      Three.js
+      style="text-align: center; font-size:11px; color: #8899bb; font-family: sans-serif; margin-bottom:4px;">
+      Three. js
       </div>
       <div id="critpt2-3d"
-      style="width:100%;height:460px;position:relative;background:#0a0e1a;border-radius:8px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,0.6);">
+      style="width:100%; height:460px; position: relative; background: #0a0e1a; border-radius:8px; overflow: hidden; box-shadow:0 6px 24px rgba(0,0,0,0.6);">
 
       </div>
       </div>
@@ -2167,89 +974,92 @@
       是用于求<strong>带有约束条件的极值问题</strong>的一种重要方法.
       假设要求函数 <span class="math inline">f(x, y)</span> 在约束条件
       <span class="math inline">g(x, y) = 0</span> 下的极值,
-      <strong>方法</strong><br />
-      1. 构造拉格朗日函数<br />
-      <span class="math display"> L(x, y, \lambda) = f(x, y) + \lambda
-      g(x, y) </span> 2. 求偏导并列方程组<br />
-      <span class="math display">\displaystyle\frac{\partial L}{\partial
-      x} = 0,\quad \displaystyle\frac{\partial L}{\partial y} = 0,\quad
+      <strong>方法</strong> 1. 构造拉格朗日函数 <span
+      class="math display"> L(x, y, \lambda) = f(x, y) + \lambda g(x, y)
+      </span> 2. 求偏导并列方程组 <span
+      class="math display">\displaystyle\frac{\partial L}{\partial x} =
+      0,\quad \displaystyle\frac{\partial L}{\partial y} = 0,\quad
       \displaystyle\frac{\partial L}{\partial \lambda} = 0 </span> 3.
-      解这个方程组,得到可疑点（驻点）； 4. 将这些点代入 <span
-      class="math inline">f(x, y)</span>,比较函数值,判断极值.</p>
+      解这个方程组, 得到可疑点 (驻点); 4. 将这些点代入 <span
+      class="math inline">f(x, y)</span>, 比较函数值, 判断极值.</p>
       </div>
       </div>
       <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">WHY：为什么拉格朗日乘数法有效？</span></div>
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">WHY: 为什么拉格朗日乘数法有效?</span></div>
       <div class="callout-body">
-      <p>想象我们要最小化（或最大化）函数 <span
-      class="math inline">f(x,y)</span>，但我们的活动范围被严格限制在约束曲线
-      <span class="math inline">g(x,y) = c</span> 上。</p>
+      <p>想象我们要最小化 (或最大化) 函数 <span
+      class="math inline">f(x,y)</span>,
+      但我们的活动范围被严格限制在约束曲线 <span
+      class="math inline">g(x,y) = c</span> 上.</p>
       <ol type="1">
-      <li><strong>等高线与相切</strong>：我们在平面上画出固定的约束曲线
-      <span class="math inline">g(x,y) = c</span>，然后再画出目标函数
+      <li><strong>等高线与相切</strong>: 我们在平面上画出固定的约束曲线
+      <span class="math inline">g(x,y) = c</span>, 然后再画出目标函数
       <span class="math inline">f(x,y)</span> 的<strong>等高线 (Level
-      curves)</strong>。当我们改变 <span class="math inline">f</span>
-      的值时，等高线会一圈圈扩大或缩小。当 <span
-      class="math inline">f</span>
-      的等高线刚好<strong>触碰（相切）</strong>到约束曲线的那一瞬间，我们就找到了这条线上的最小值或最大值！</li>
-      <li><strong>梯度的平行</strong>：在切点处，两条曲线完全相切，这意味着它们的法线是同一条。我们之前学过，<strong>函数的梯度向量（Gradient）总是垂直于它的等高线</strong>。既然在极值点两曲线相切，那么
-      <span class="math inline">f</span> 的梯度 <span
+      curves)</strong>. 当我们改变 <span class="math inline">f</span>
+      的值时, 等高线会一圈圈扩大或缩小. 当 <span
+      class="math inline">f</span> 的等高线刚好<strong>触碰
+      (相切)</strong>到约束曲线的那一瞬间,
+      我们就找到了这条线上的最小值或最大值!</li>
+      <li><strong>梯度的平行</strong>: 在切点处, 两条曲线完全相切,
+      这意味着它们的法线是同一条. 我们之前学过, <strong>函数的梯度向量
+      (Gradient) 总是垂直于它的等高线</strong>. 既然在极值点两曲线相切,
+      那么 <span class="math inline">f</span> 的梯度 <span
       class="math inline">\nabla f</span> 必须与 <span
       class="math inline">g</span> 的梯度 <span
-      class="math inline">\nabla g</span> 平行！</li>
-      <li><strong>方程的诞生</strong>：数学上，我们用一个比例常数 <span
-      class="math inline">\lambda</span>
-      （拉格朗日乘子）来表示两个向量的平行关系： <span
-      class="math display"> \nabla f = \lambda \nabla g </span>
-      将其拆解为分量形式，也就是 <span class="math inline">f_x = \lambda
-      g_x</span> 和 <span class="math inline">f_y = \lambda
-      g_y</span>。这正是拉格朗日函数 <span class="math inline">L_x =
-      0</span> 和 <span class="math inline">L_y = 0</span>
-      移项后所表达的核心本质！</li>
+      class="math inline">\nabla g</span> 平行!</li>
+      <li><strong>方程的诞生</strong>: 数学上, 我们用一个比例常数 <span
+      class="math inline">\lambda</span> (拉格朗日乘子)
+      来表示两个向量的平行关系: <span class="math display"> \nabla f =
+      \lambda \nabla g </span> 将其拆解为分量形式, 也就是 <span
+      class="math inline">f_x = \lambda g_x</span> 和 <span
+      class="math inline">f_y = \lambda g_y</span>. 这正是拉格朗日函数
+      <span class="math inline">L_x = 0</span> 和 <span
+      class="math inline">L_y = 0</span> 移项后所表达的核心本质!</li>
       </ol>
-      <p><img src="media/img/Lagrange_multipliers_geometry.png"
-      style="width:200pt" alt="拉格朗日乘数法几何直观" />
-      <em>(图注：在极值点处，蓝色的 <span class="math inline">f</span>
-      等高线与黄色的约束曲线相切，此时两者的梯度向量 <span
+      <p>! <a
+      href="..%20/media/img/Lagrange_multipliers_geometry.%20png#200pt">拉格朗日乘数法几何直观</a>
+      <em>(图注: 在极值点处, 蓝色的 <span class="math inline">f</span>
+      等高线与黄色的约束曲线相切, 此时两者的梯度向量 <span
       class="math inline">\nabla f</span> 与 <span
-      class="math inline">\nabla g</span> 必然平行。)</em></p>
+      class="math inline">\nabla g</span> 必然平行. )</em></p>
       </div>
       </div>
       <!-- ── 拉格朗日乘数法：梯度平行交互可视化 ────────────────────────────────── -->
       <div id="lagrange-wrap"
-      style="width:100%;max-width:960px;margin:1.5em auto;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.10);border-radius:10px;padding:14px 18px 10px;">
+      style="width:100%; max-width:960px; margin:1.5em auto; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.10); border-radius:10px; padding:14px 18px 10px;">
       <div
-      style="font-size:12px;color:#7a8aa0;text-align:center;font-family:sans-serif;margin-bottom:10px;">
-      移动鼠标，观察 <span
-      style="color:#ff2222;font-weight:600">∇f</span>（红色）与 <span
-      style="color:#22ee22;font-weight:600">∇g</span>（绿色）的方向：<b style="color:#ccd8ee">仅在极值点处两梯度平行（或反向）</b>
+      style="font-size:12px; color: #7a8aa0; text-align: center; font-family: sans-serif; margin-bottom:10px;">
+      移动鼠标, 观察 <span
+      style="color: #ff2222; font-weight:600">∇f</span> (红色) 与 <span
+      style="color: #22ee22; font-weight:600">∇g</span> (绿色) 的方向:
+      <b style="color: #ccd8ee">仅在极值点处两梯度平行 (或反向) </b>
       </div>
-      <div style="display:flex;gap:16px;">
-      <div style="flex:1;min-width:0;">
+      <div style="display: flex; gap:16px;">
+      <div style="flex:1; min-width:0;">
       <div
-      style="text-align:center;font-size:11px;color:#aabbff;font-family:sans-serif;font-weight:600;margin-bottom:4px;">
-      例1：f = x²+y²，约束 g：xy = 4
+      style="text-align: center; font-size:11px; color: #aabbff; font-family: sans-serif; font-weight:600; margin-bottom:4px;">
+      例1: f = x²+y², 约束 g: xy = 4
       </div>
       <div id="lagrange-ex1"
-      style="width:100%;height:400px;position:relative;background:#0c1830;border-radius:8px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,0.6);">
+      style="width:100%; height:400px; position: relative; background: #0c1830; border-radius:8px; overflow: hidden; box-shadow:0 6px 24px rgba(0,0,0,0.6);">
 
       </div>
       <div id="lagrange-info-1"
-      style="margin-top:6px;text-align:center;font-size:12px;font-family:monospace;color:#7a8aa0;min-height:20px;padding:3px 8px;background:rgba(0,0,0,0.25);border-radius:5px;">
+      style="margin-top:6px; text-align: center; font-size:12px; font-family: monospace; color: #7a8aa0; min-height:20px; padding:3px 8px; background: rgba(0,0,0,0.25); border-radius:5px;">
       将鼠标移入图形区域
       </div>
       </div>
-      <div style="flex:1;min-width:0;">
+      <div style="flex:1; min-width:0;">
       <div
-      style="text-align:center;font-size:11px;color:#aabbff;font-family:sans-serif;font-weight:600;margin-bottom:4px;">
-      例2：f = xy，约束 g：x²+y² = 4
+      style="text-align: center; font-size:11px; color: #aabbff; font-family: sans-serif; font-weight:600; margin-bottom:4px;">
+      例2: f = xy, 约束 g: x²+y² = 4
       </div>
       <div id="lagrange-ex2"
-      style="width:100%;height:400px;position:relative;background:#0c1830;border-radius:8px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,0.6);">
+      style="width:100%; height:400px; position: relative; background: #0c1830; border-radius:8px; overflow: hidden; box-shadow:0 6px 24px rgba(0,0,0,0.6);">
 
       </div>
       <div id="lagrange-info-2"
-      style="margin-top:6px;text-align:center;font-size:12px;font-family:monospace;color:#7a8aa0;min-height:20px;padding:3px 8px;background:rgba(0,0,0,0.25);border-radius:5px;">
+      style="margin-top:6px; text-align: center; font-size:12px; font-family: monospace; color: #7a8aa0; min-height:20px; padding:3px 8px; background: rgba(0,0,0,0.25); border-radius:5px;">
       将鼠标移入图形区域
       </div>
       </div>
@@ -2260,176 +1070,106 @@
       <div class="callout callout-warning">
       <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">警告</span></div>
       <div class="callout-body">
-      <p>拉格朗日乘数法只会给你提供<strong>临界点（候选点）</strong>。方程本身<strong>并不会</strong>告诉你它是最大值还是最小值（此时无法使用二阶导数判别法）。你必须将解出来的这些点统一代入原函数
-      <span class="math inline">f(x,y)</span>
-      中，通过比较数值的大小，或者结合实际几何背景，来最终敲定谁是极小值，谁是极大值。</p>
+      <p>拉格朗日乘数法只会给你提供<strong>临界点 (候选点)</strong>.
+      方程本身<strong>并不会</strong>告诉你它是最大值还是最小值
+      (此时无法使用二阶导数判别法). 你必须将解出来的这些点统一代入原函数
+      <span class="math inline">f(x,y)</span> 中, 通过比较数值的大小,
+      或者结合实际几何背景, 来最终敲定谁是极小值, 谁是极大值.</p>
       </div>
       </div>
-      <div id="chpt10-ex-022" class="exercise-block"
-      data-difficulty="hard">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-hard">🔴</span><span
-      class="ex-label">例22: Lagrange乘数法经典例题</span><span
-      class="ex-tags"><span class="ex-tag">拉格朗日乘数法</span><span
-      class="ex-tag">条件极值</span><span
-      class="ex-tag">最优化</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>求函数 <span class="math inline">u = xyz</span> 在约束条件
-      <span class="math inline">\displaystyle\frac{1}{x} +
-      \displaystyle\frac{1}{y} + \displaystyle\frac{1}{z} =
-      \displaystyle\frac{1}{a}</span>（其中 <span
-      class="math inline">x,y,z,a &gt; 0</span>）下的极值.</p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-022-frame" data-panel="chpt10-ex-022-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-022-frame" data-panel="chpt10-ex-022-ans-0">答案</button></span>
-      </div>
-      </div>
-      <div id="chpt10-ex-022-frame" class="ex-frame" hidden="">
-      <div id="chpt10-ex-022-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>构造拉格朗日函数，令各偏导数为零得方程组，利用对称性与约束条件解出唯一驻点，再由问题的实际意义判断极值类型.</p>
-      </div>
-      <div id="chpt10-ex-022-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p><strong>第一步：构造拉格朗日函数.</strong></p>
-      <p><span class="math display">L(x,y,z) = xyz + \lambda \left(
-      \frac{1}{x} + \frac{1}{y} + \frac{1}{z} - \frac{1}{a}
-      \right)</span></p>
-      <p><strong>第二步：求偏导并令其为零.</strong></p>
-      <p><span class="math display">\begin{cases}
-      L_x = yz - \dfrac{\lambda}{x^2} = 0 \\[6pt]
-      L_y = xz - \dfrac{\lambda}{y^2} = 0 \\[6pt]
-      L_z = xy - \dfrac{\lambda}{z^2} = 0
-      \end{cases}</span></p>
-      <p><strong>第三步：解方程组.</strong></p>
-      <p>将三个方程分别乘以对应的变量 <span
-      class="math inline">x</span>、<span
-      class="math inline">y</span>、<span
-      class="math inline">z</span>，得：</p>
-      <p><span class="math display">xyz = \frac{\lambda}{x}, \quad xyz =
-      \frac{\lambda}{y}, \quad xyz = \frac{\lambda}{z}</span></p>
-      <p>由此得 <span class="math inline">\frac{\lambda}{x} =
-      \frac{\lambda}{y} = \frac{\lambda}{z}</span>，因为 <span
-      class="math inline">\lambda \neq 0</span>（否则 <span
-      class="math inline">xyz=0</span> 与 <span
-      class="math inline">x,y,z&gt;0</span> 矛盾），故 <span
-      class="math inline">x = y = z</span>.</p>
-      <p>将三个方程相加，代入原约束条件：</p>
-      <p><span class="math display">3xyz = \lambda\left(\frac{1}{x} +
-      \frac{1}{y} + \frac{1}{z}\right) = \frac{\lambda}{a}</span></p>
-      <p>即 <span class="math inline">\lambda = 3axyz</span>.</p>
-      <p>再利用约束 <span
-      class="math inline">\frac{1}{x}+\frac{1}{y}+\frac{1}{z}=\frac{1}{a}</span>
-      以及 <span class="math inline">x=y=z</span>：</p>
-      <p><span class="math display">\frac{3}{x} = \frac{1}{a} \implies x
-      = 3a</span></p>
-      <p>从而唯一驻点为 <span class="math inline">x = y = z =
-      3a</span>.</p>
-      <p><strong>第四步：判断极值类型.</strong></p>
-      <p>在约束域 <span class="math inline">\{x,y,z&gt;0,\
-      \frac{1}{x}+\frac{1}{y}+\frac{1}{z}=\frac{1}{a}\}</span> 上，<span
-      class="math inline">u=xyz</span> 在边界处（某个变量趋向 <span
-      class="math inline">0^+</span> 或 <span
-      class="math inline">+\infty</span> 时）趋向 <span
-      class="math inline">0</span> 或 <span
-      class="math inline">+\infty</span>.
-      问题在给定约束下只有一个驻点，且函数值大于边界极限，因此该驻点给出<strong>极小值</strong>.</p>
-      <p><strong>结论：</strong></p>
-      <p>函数 <span class="math inline">u = xyz</span> 在点 <span
-      class="math inline">(3a, 3a, 3a)</span> 处取得极小值：</p>
-      <p><span class="math display">u_{\text{极小}} = (3a)(3a)(3a) =
-      27a^3</span></p>
-      </div>
-      </div>
-      </div>
-      </div>
+      <p>::: {. exercise id=“chpt10-ex-022”} :::</p>
       <h3 id="人工智能中的优化问题">10.5.3 人工智能中的优化问题</h3>
       <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">引例：如何让机器学会画一条“完美”的曲线？</span></div>
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">引例: 如何让机器学会画一条“完美”的曲线?</span></div>
       <div class="callout-body">
-      <p>想象我们在做一个科学实验。我们观察到一个隐藏的真实物理规律（比如一个正弦波
-      <span class="math inline">y = \sin(2\pi
-      x)</span>），但我们在实验室里用仪器测出来的数据往往是不精确的。</p>
+      <p>想象我们在做一个科学实验. 我们观察到一个隐藏的真实物理规律
+      (比如一个正弦波 <span class="math inline">y = \sin(2\pi
+      x)</span>), 但我们在实验室里用仪器测出来的数据往往是不精确的.</p>
       <p>假设我们采集到了 <span class="math inline">N</span> 个数据点
       <span class="math inline">(x_1, t_1), (x_2, t_2), \dots, (x_N,
-      t_N)</span>。由于测量误差（随机噪声）的存在，这些点会在真实的
+      t_N)</span>. 由于测量误差 (随机噪声) 的存在, 这些点会在真实的
       <span class="math inline">\sin(2\pi x)</span>
-      曲线上下随机波动。</p>
-      <p>现在，我们要求计算机（AI模型）在<strong>不知道真实规律是正弦函数</strong>的前提下，仅凭这
-      <span class="math inline">N</span>
-      个带噪声的散点，去“猜”并画出一条能够最好地穿过这些点的曲线。</p>
-      <p>最自然的想法是，我们用一个 <strong><span
-      class="math inline">M</span> 阶多项式</strong> 去拟合它： <span
+      曲线上下随机波动.</p>
+      <p>现在, 我们要求计算机 (AI模型)
+      在<strong>不知道真实规律是正弦函数</strong>的前提下, 仅凭这 <span
+      class="math inline">N</span> 个带噪声的散点,
+      去“猜”并画出一条能够最好地穿过这些点的曲线.</p>
+      <p>最自然的想法是, 我们用一个 <strong><span
+      class="math inline">M</span> 阶多项式</strong> 去拟合它: <span
       class="math display"> y(x, \mathbf{w}) = w_0 + w_1 x + w_2 x^2 +
       \cdots + w_M x^M = \sum_{j=0}^M w_j x^j </span> 这里的 <span
-      class="math inline">x</span> 是输入，<span
-      class="math inline">w_0, w_1, \dots, w_M</span>
-      是多项式的系数（在人工智能中通常称为<strong>权重参数</strong>）。</p>
-      <p><strong>问题来了</strong>：对于给定的数据点，我们到底该怎么确定这组参数
-      <span
-      class="math inline">\mathbf{w}</span>，才能让这条多项式曲线“最完美”地贴合数据呢？这就需要引入一种衡量误差的数学标准，也就是接下来要讲的<strong>最小二乘法</strong>。</p>
+      class="math inline">x</span> 是输入, <span
+      class="math inline">w_0, w_1, \dots, w_M</span> 是多项式的系数
+      (在人工智能中通常称为<strong>权重参数</strong>).</p>
+      <p><strong>问题来了</strong>: 对于给定的数据点,
+      我们到底该怎么确定这组参数 <span
+      class="math inline">\mathbf{w}</span>,
+      才能让这条多项式曲线“最完美”地贴合数据呢?
+      这就需要引入一种衡量误差的数学标准,
+      也就是接下来要讲的<strong>最小二乘法</strong>.</p>
       </div>
       </div>
       <h4 id="数据拟合与最小二乘法">10.5.3.1 数据拟合与最小二乘法</h4>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">最小二乘法的核心思想 (Least Squares)</span></div>
       <div class="callout-body">
-      <p>在工程与科学计算中，当我们面对一组实验数据时，我们要找的并不是能<strong>完美穿过</strong>每一个点的曲线（那往往会导致严重的“过拟合”），而是寻找一条使得<strong>整体误差最小</strong>的曲线。</p>
-      <p>什么样的误差定义最好？最通用且拥有极好数学性质的方法是：测量每一个真实数据点
-      <span class="math inline">t_i</span> 与模型预测值 <span
-      class="math inline">y(x_i, \mathbf{w})</span>
-      之间的偏差（Deviation），并将这些<strong>偏差的平方和</strong>作为总误差：
-      <span class="math display"> E(\mathbf{w}) = \frac{1}{2}
-      \sum_{i=1}^N \left( y(x_i, \mathbf{w}) - t_i \right)^2 </span>
-      （注：前面乘上 <span class="math inline">\frac{1}{2}</span>
+      <p>在工程与科学计算中, 当我们面对一组实验数据时,
+      我们要找的并不是能<strong>完美穿过</strong>每一个点的曲线
+      (那往往会导致严重的“过拟合”),
+      而是寻找一条使得<strong>整体误差最小</strong>的曲线.</p>
+      <p>什么样的误差定义最好? 最通用且拥有极好数学性质的方法是:
+      测量每一个真实数据点 <span class="math inline">t_i</span>
+      与模型预测值 <span class="math inline">y(x_i, \mathbf{w})</span>
+      之间的偏差 (Deviation),
+      并将这些<strong>偏差的平方和</strong>作为总误差: <span
+      class="math display"> E(\mathbf{w}) = \frac{1}{2} \sum_{i=1}^N
+      \left( y(x_i, \mathbf{w}) - t_i \right)^2 </span> (注: 前面乘上
+      <span class="math inline">\frac{1}{2}</span>
       是为了后续求导时刚好能和平方项的 <span
-      class="math inline">2</span>
-      抵消，方便计算，不影响极值点的位置。）</p>
+      class="math inline">2</span> 抵消, 方便计算, 不影响极值点的位置.
+      )</p>
       <p>这就是大名鼎鼎的<strong>最小二乘法 (Method of Least
-      Squares)</strong>。通过寻找使得误差函数 <span
+      Squares)</strong>. 通过寻找使得误差函数 <span
       class="math inline">E(\mathbf{w})</span>
       达到<strong>极小值</strong>的权重参数 <span
-      class="math inline">\mathbf{w}^*</span>，我们就找到了“最佳拟合”曲线！</p>
+      class="math inline">\mathbf{w}^*</span>,
+      我们就找到了“最佳拟合”曲线!</p>
       </div>
       </div>
       <div class="callout callout-extension">
       <div class="callout-header callout-header-extension"><span class="callout-icon"></span><span class="callout-label">从多元微积分看最小二乘法的求解</span></div>
       <div class="callout-body">
-      <p>结合我们在前几节学过的<strong>多元函数极值</strong>知识，最小二乘法本质上就是一个<strong>无约束的多元函数求极小值问题</strong>！</p>
-      <p>为了直观，我们退回最简单的线性拟合（即用直线 <span
-      class="math inline">f(x) = ax + b</span>
-      来拟合数据）。此时，误差函数 <span class="math inline">D</span>
-      是关于参数 <span class="math inline">a</span> 和 <span
-      class="math inline">b</span> 的二元函数： <span
-      class="math display"> D(a, b) = \sum_{i=1}^N \left( y_i - (ax_i +
-      b) \right)^2 </span></p>
-      <p>如何求它的极小值点？我们只需要让它对 <span
+      <p>结合我们在前几节学过的<strong>多元函数极值</strong>知识,
+      最小二乘法本质上就是一个<strong>无约束的多元函数求极小值问题</strong>!</p>
+      <p>为了直观, 我们退回最简单的线性拟合 (即用直线 <span
+      class="math inline">f(x) = ax + b</span> 来拟合数据). 此时,
+      误差函数 <span class="math inline">D</span> 是关于参数 <span
+      class="math inline">a</span> 和 <span class="math inline">b</span>
+      的二元函数: <span class="math display"> D(a, b) = \sum_{i=1}^N
+      \left( y_i - (ax_i + b) \right)^2 </span></p>
+      <p>如何求它的极小值点? 我们只需要让它对 <span
       class="math inline">a</span> 和对 <span
       class="math inline">b</span> 的<strong>偏导数分别等于 0</strong>
-      即可找到临界点（驻点）： <span class="math display">
-      \frac{\partial D}{\partial a} = -2 \sum_{i=1}^N x_i (y_i - ax_i -
-      b) = 0 </span> <span class="math display"> \frac{\partial
-      D}{\partial b} = -2 \sum_{i=1}^N (y_i - ax_i - b) = 0 </span></p>
-      <p>将上述方程组展开并合并同类项，你会发现它完全变成了一个关于
+      即可找到临界点 (驻点): <span class="math display"> \frac{\partial
+      D}{\partial a} = -2 \sum_{i=1}^N x_i (y_i - ax_i - b) = 0 </span>
+      <span class="math display"> \frac{\partial D}{\partial b} = -2
+      \sum_{i=1}^N (y_i - ax_i - b) = 0 </span></p>
+      <p>将上述方程组展开并合并同类项, 你会发现它完全变成了一个关于
       <span class="math inline">a</span> 和 <span
       class="math inline">b</span>
-      的<strong>二元一次线性方程组</strong>： <span
-      class="math display"> \begin{cases} \left(\sum x_i^2\right) a +
-      \left(\sum x_i\right) b = \sum x_i y_i \\ \left(\sum x_i\right) a
-      + n b = \sum y_i \end{cases} </span> 只要数据点给定了，<span
+      的<strong>二元一次线性方程组</strong>: <span class="math display">
+      \begin{cases} \left(\sum x_i^2\right) a + \left(\sum x_i\right) b
+      = \sum x_i y_i \\ \left(\sum x_i\right) a + n b = \sum y_i
+      \end{cases} </span> 只要数据点给定了, <span
       class="math inline">\sum x_i</span>, <span
       class="math inline">\sum y_i</span>, <span
       class="math inline">\sum x_i^2</span>
-      这些求和项就全是确定的常数数字。利用矩阵或消元法瞬间就能解出最佳的
+      这些求和项就全是确定的常数数字. 利用矩阵或消元法瞬间就能解出最佳的
       <span class="math inline">a</span> 和 <span
-      class="math inline">b</span>！即使扩展到前面的 <span
-      class="math inline">M</span>
-      阶多项式，原理也是完全相同的（偏导数等于0，解线性方程组）。这正是最小二乘法如此被广泛使用且高效的数学底层逻辑。</p>
+      class="math inline">b</span>! 即使扩展到前面的 <span
+      class="math inline">M</span> 阶多项式, 原理也是完全相同的
+      (偏导数等于0, 解线性方程组).
+      这正是最小二乘法如此被广泛使用且高效的数学底层逻辑.</p>
       </div>
       </div>
       <h4 id="正则化与带约束极值问题">10.5.3.2
@@ -2437,52 +1177,64 @@
       <div class="callout callout-extension">
       <div class="callout-header callout-header-extension"><span class="callout-icon"></span><span class="callout-label">带约束极值问题与人工智能中的正则化 (Regularization)</span></div>
       <div class="callout-body">
-      <p>在人工智能和机器学习中，我们经常面临一个核心痛点：<strong>过拟合
-      (Overfitting)</strong>。如果仅仅为了让模型在训练数据上误差（Loss）最小，模型往往会变得异常复杂，甚至把数据里的“随机噪声”也死记硬背下来，导致在面对新数据时表现极差。</p>
-      <p>为了防止过拟合，AI
-      工程师们会给模型加上一道“紧箍咒”：要求模型的参数（权重 <span
-      class="math inline">w_1, w_2,
-      \dots</span>）不能太大。这样一来，一个纯粹的<strong>无约束极小化问题</strong>，就顺理成章地变成了一个<strong>带约束的极值问题</strong>！</p>
+      <p>在人工智能和机器学习中, 我们经常面临一个核心痛点:
+      <strong>过拟合 (Overfitting)</strong>.
+      如果仅仅为了让模型在训练数据上误差 (Loss) 最小,
+      模型往往会变得异常复杂, 甚至把数据里的“随机噪声”也死记硬背下来,
+      导致在面对新数据时表现极差.</p>
+      <p>为了防止过拟合, AI 工程师们会给模型加上一道“紧箍咒”:
+      要求模型的参数 (权重 <span class="math inline">w_1, w_2,
+      \dots</span>) 不能太大. 这样一来,
+      一个纯粹的<strong>无约束极小化问题</strong>,
+      就顺理成章地变成了一个<strong>带约束的极值问题</strong>!</p>
       <p><strong>1. 从约束极值到拉格朗日函数</strong>
       假设我们的原本目标是最小化损失函数 <span
-      class="math inline">f(w_1,
-      w_2)</span>。现在加上一个参数大小的限制，比如要求权重向量的长度不能超过某个常数：<span
-      class="math inline">g(w_1, w_2) = w_1^2 + w_2^2 \le
-      C</span>（这在几何上被限制在一个圆盘内）。
-      根据本节学过的<strong>拉格朗日乘数法</strong>，为了求解这个处于边界上的约束极值问题，我们需要构造拉格朗日函数：
+      class="math inline">f(w_1, w_2)</span>.
+      现在加上一个参数大小的限制,
+      比如要求权重向量的长度不能超过某个常数: <span
+      class="math inline">g(w_1, w_2) = w_1^2 + w_2^2 \le C</span>
+      (这在几何上被限制在一个圆盘内).
+      根据本节学过的<strong>拉格朗日乘数法</strong>,
+      为了求解这个处于边界上的约束极值问题, 我们需要构造拉格朗日函数:
       <span class="math display"> L(w_1, w_2, \lambda) = f(w_1, w_2) +
       \lambda (w_1^2 + w_2^2 - C) </span></p>
       <p><strong>2. 机器学习中的 L2 正则化 (权重衰减)</strong> 在对权重
-      <span class="math inline">w</span> 求偏导时，常数 <span
-      class="math inline">C</span>
-      并不会产生影响。因此，在实际的深度学习代码（如 PyTorch 或
-      TensorFlow）中，优化目标常常被直接写为以下形式： <span
-      class="math display"> \text{Loss}_{\text{total}} =
+      <span class="math inline">w</span> 求偏导时, 常数 <span
+      class="math inline">C</span> 并不会产生影响. 因此,
+      在实际的深度学习代码 (如 PyTorch 或 TensorFlow) 中,
+      优化目标常常被直接写为以下形式: <span class="math display">
+      \text{Loss}_{\text{total}} =
       \underbrace{\text{Loss}_{\text{data}}(w)}_{\text{原目标函数 } f} +
       \underbrace{\lambda (w_1^2 + w_2^2)}_{\text{拉格朗日约束项 }
       \lambda g} </span> 这就是机器学习中赫赫有名的 <strong>L2 正则化
-      (L2
-      Regularization)</strong>，在神经网络中也常被称为<strong>权重衰减
-      (Weight Decay)</strong>！ 这里的 <span
-      class="math inline">\lambda</span>
-      正是我们刚才在微积分中引入的<strong>拉格朗日乘子</strong>。在 AI
-      中，它被称为<strong>惩罚系数</strong>（或正则化系数）。它就像是一个调节器：<span
-      class="math inline">\lambda</span>
-      越大，表示我们对模型复杂度的惩罚越重，强迫权重向零收缩。</p>
-      <p><strong>3. 几何直观的重现</strong> 如果没有约束，损失函数 <span
-      class="math inline">f(w)</span>
-      的极小值（谷底）可能在一个极远的高风险位置。加上约束后，我们的搜索范围被死死锁在了原点附近的圆形栅栏内（<span
-      class="math inline">w_1^2 + w_2^2 \le
-      C</span>）。损失函数的等高线一圈圈向外膨胀，直到与这个圆<strong>刚好相切</strong>的那一点，就是正则化后的最优权重。此时，损失函数的梯度与惩罚项的梯度再次满足了<strong>平行</strong>的拉格朗日核心条件！</p>
+      (L2 Regularization)</strong>,
+      在神经网络中也常被称为<strong>权重衰减 (Weight Decay)</strong>!
+      这里的 <span class="math inline">\lambda</span>
+      正是我们刚才在微积分中引入的<strong>拉格朗日乘子</strong>. 在 AI
+      中, 它被称为<strong>惩罚系数</strong> (或正则化系数).
+      它就像是一个调节器: <span class="math inline">\lambda</span> 越大,
+      表示我们对模型复杂度的惩罚越重, 强迫权重向零收缩.</p>
+      <p><strong>3. 几何直观的重现</strong> 如果没有约束, 损失函数 <span
+      class="math inline">f(w)</span> 的极小值 (谷底)
+      可能在一个极远的高风险位置. 加上约束后,
+      我们的搜索范围被死死锁在了原点附近的圆形栅栏内 (<span
+      class="math inline">w_1^2 + w_2^2 \le C</span>).
+      损失函数的等高线一圈圈向外膨胀,
+      直到与这个圆<strong>刚好相切</strong>的那一点,
+      就是正则化后的最优权重. 此时,
+      损失函数的梯度与惩罚项的梯度再次满足了<strong>平行</strong>的拉格朗日核心条件!</p>
       </div>
       </div>
       <h2 id="多元函数的泰勒展开">10.6 多元函数的泰勒展开</h2>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
-      <p>在一元微积分中，泰勒展开（Taylor
-      Expansion）为我们提供了一种用多项式来局部逼近复杂函数的强大工具。在多元微积分中，这一思想同样适用。特别是当我们想要了解一个多元函数（例如三维空间中的曲面）在某一点附近的弯曲形状时，多元函数的泰勒展开是不可或缺的。
-      更重要的是，在人工智能中，寻找损失函数的极小值往往依赖于多元泰勒展开提供的局部几何信息。</p>
+      <p>在一元微积分中, 泰勒展开 (Taylor Expansion)
+      为我们提供了一种用多项式来局部逼近复杂函数的强大工具.
+      在多元微积分中, 这一思想同样适用. 特别是当我们想要了解一个多元函数
+      (例如三维空间中的曲面) 在某一点附近的弯曲形状时,
+      多元函数的泰勒展开是不可或缺的. 更重要的是, 在人工智能中,
+      寻找损失函数的极小值往往依赖于多元泰勒展开提供的局部几何信息.</p>
       </div>
       </div>
       <h3 id="多元函数的泰勒展开公式">10.6.1 多元函数的泰勒展开公式</h3>
@@ -2492,10 +1244,10 @@
       <p>设二元函数 <span class="math inline">z = f(x, y)</span> 在点
       <span class="math inline">(x_0, y_0)</span>
       的某一邻域内连续且有直到 <span class="math inline">(n+1)</span>
-      阶的连续偏导数。为了方便，我们记自变量的增量为 <span
+      阶的连续偏导数. 为了方便, 我们记自变量的增量为 <span
       class="math inline">h = x - x_0</span>, <span
-      class="math inline">k = y - y_0</span>。
-      则函数在该点附近的二阶泰勒展开式为： <span class="math display">
+      class="math inline">k = y - y_0</span>.
+      则函数在该点附近的二阶泰勒展开式为: <span class="math display">
       \begin{aligned}
       f(x, y) \approx f(x_0, y_0) &amp;+ \underbrace{\left( h
       \frac{\partial f}{\partial x} + k \frac{\partial f}{\partial y}
@@ -2506,103 +1258,110 @@
       (二次逼近)}}
       \end{aligned}
       </span></p>
-      <p>如果回顾前面的知识，你会发现：<strong>一阶项其实就是全微分
-      <span
-      class="math inline">df</span>（几何上对应切平面），而二阶项则描述了曲面偏离切平面的弯曲程度。</strong></p>
+      <p>如果回顾前面的知识, 你会发现: <strong>一阶项其实就是全微分
+      <span class="math inline">df</span> (几何上对应切平面),
+      而二阶项则描述了曲面偏离切平面的弯曲程度. </strong></p>
       </div>
       </div>
       <div class="callout callout-warning">
-      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">向量与矩阵形式 (极其重要！)</span></div>
+      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">向量与矩阵形式 (极其重要! )</span></div>
       <div class="callout-body">
-      <p>当变量数量增多时，写出一大堆偏导数是非常繁琐的。在机器学习中，我们通常将自变量写成向量
-      <span
-      class="math inline">\mathbf{x}</span>，并将泰勒展开改写为极其优雅的<strong>矩阵形式</strong>。
-      设 <span class="math inline">\mathbf{x} = (x, y)^T</span>，增量
-      <span class="math inline">\Delta \mathbf{x} = \mathbf{x} -
-      \mathbf{x}_0 = (h, k)^T</span>。</p>
+      <p>当变量数量增多时, 写出一大堆偏导数是非常繁琐的. 在机器学习中,
+      我们通常将自变量写成向量 <span
+      class="math inline">\mathbf{x}</span>,
+      并将泰勒展开改写为极其优雅的<strong>矩阵形式</strong>. 设 <span
+      class="math inline">\mathbf{x} = (x, y)^T</span>, 增量 <span
+      class="math inline">\Delta \mathbf{x} = \mathbf{x} - \mathbf{x}_0
+      = (h, k)^T</span>.</p>
       <ol type="1">
       <li><strong>一阶导数向量</strong>被称为<strong>梯度
-      (Gradient)</strong>：<span class="math inline">\nabla f = \left(
+      (Gradient)</strong>: <span class="math inline">\nabla f = \left(
       \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}
       \right)^T</span></li>
       <li><strong>二阶导数矩阵</strong>被称为<strong>海森矩阵 (Hessian
-      Matrix)</strong>：<span class="math inline">\mathbf{H} =
+      Matrix)</strong>: <span class="math inline">\mathbf{H} =
       \begin{pmatrix} f_{xx} &amp; f_{xy} \\ f_{yx} &amp; f_{yy}
       \end{pmatrix}</span></li>
       </ol>
-      <p>于是，多元函数的二阶泰勒展开可以紧凑地写为： <span
+      <p>于是, 多元函数的二阶泰勒展开可以紧凑地写为: <span
       class="math display">
       f(\mathbf{x}) \approx f(\mathbf{x}_0) + \nabla f(\mathbf{x}_0)^T
       \Delta \mathbf{x} + \frac{1}{2} \Delta \mathbf{x}^T \mathbf{H}
       \Delta \mathbf{x}
-      </span> 这正是现代优化算法（如牛顿法）推导的起点！</p>
+      </span> 这正是现代优化算法 (如牛顿法) 推导的起点!</p>
       </div>
       </div>
       <h3 id="多元函数泰勒展开的应用">10.6.2 多元函数泰勒展开的应用</h3>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
-      <p>泰勒展开之所以重要，是因为它能把复杂的非线性函数在局部”降维打击”成简单的多项式。以下是它在数学理论与人工智能中的两个核心应用。</p>
+      <p>泰勒展开之所以重要,
+      是因为它能把复杂的非线性函数在局部”降维打击”成简单的多项式.
+      以下是它在数学理论与人工智能中的两个核心应用.</p>
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">应用一：证明极值的充分条件 (第二阶导数测试)</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">应用一: 证明极值的充分条件 (第二阶导数测试)</span></div>
       <div class="callout-body">
-      <p>在前面的章节中，我们给出了判断多元函数极值的结论：在驻点处（即一阶偏导数
-      <span class="math inline">f_x=0, f_y=0</span>），若 <span
-      class="math inline">AC - B^2 &gt; 0</span> 且 <span
-      class="math inline">A &gt;
-      0</span>，则有极小值。这个结论是怎么来的？</p>
-      <p><strong>MIT 18.02 课程视角：</strong>
-      我们可以用泰勒展开轻松证明它。在驻点 <span
-      class="math inline">(x_0, y_0)</span>
-      处，梯度为零，因此一阶项消失了。函数值的变化量 <span
-      class="math inline">\Delta f = f(x, y) - f(x_0, y_0)</span>
-      完全由<strong>二阶项</strong>主导： <span class="math display">
+      <p>在前面的章节中, 我们给出了判断多元函数极值的结论: 在驻点处
+      (即一阶偏导数 <span class="math inline">f_x=0, f_y=0</span>), 若
+      <span class="math inline">AC - B^2 &gt; 0</span> 且 <span
+      class="math inline">A &gt; 0</span>, 则有极小值.
+      这个结论是怎么来的?</p>
+      <p><strong>MIT 18.02 课程视角: </strong>
+      我们可以用泰勒展开轻松证明它. 在驻点 <span
+      class="math inline">(x_0, y_0)</span> 处, 梯度为零,
+      因此一阶项消失了. 函数值的变化量 <span class="math inline">\Delta
+      f = f(x, y) - f(x_0, y_0)</span>
+      完全由<strong>二阶项</strong>主导: <span class="math display">
       \Delta f \approx \frac{1}{2} \left( f_{xx} h^2 + 2f_{xy} hk +
       f_{yy} k^2 \right) = \frac{1}{2} \left( A h^2 + 2B hk + C k^2
       \right)
       </span> 这是一个关于 <span class="math inline">h</span> 和 <span
-      class="math inline">k</span>
-      的二次型。通过初等代数的配方，我们可以将其改写为： <span
-      class="math display">
+      class="math inline">k</span> 的二次型. 通过初等代数的配方,
+      我们可以将其改写为: <span class="math display">
       \Delta f \approx \frac{1}{2A} \left[ (Ah + Bk)^2 + (AC - B^2)k^2
       \right]
-      </span> 显然，当 <span class="math inline">AC - B^2 &gt; 0</span>
-      且 <span class="math inline">A &gt; 0</span> 时，无论 <span
-      class="math inline">h, k</span>
-      取何值（不全为零），中括号内的值永远为正，这意味着 <span
-      class="math inline">\Delta f &gt; 0</span>
-      恒成立。因此函数值在这一点比周围都小，这正是一个<strong>局部极小值</strong>！</p>
+      </span> 显然, 当 <span class="math inline">AC - B^2 &gt; 0</span>
+      且 <span class="math inline">A &gt; 0</span> 时, 无论 <span
+      class="math inline">h, k</span> 取何值 (不全为零),
+      中括号内的值永远为正, 这意味着 <span class="math inline">\Delta f
+      &gt; 0</span> 恒成立. 因此函数值在这一点比周围都小,
+      这正是一个<strong>局部极小值</strong>!</p>
       </div>
       </div>
       <div class="callout callout-caution">
-      <div class="callout-header callout-header-caution"><span class="callout-icon"></span><span class="callout-label">应用二：神经网络训练中的局部二次近似 (Bishop 教材经典内容)</span></div>
+      <div class="callout-header callout-header-caution"><span class="callout-icon"></span><span class="callout-label">应用二: 神经网络训练中的局部二次近似 (Bishop 教材经典内容)</span></div>
       <div class="callout-body">
-      <p>在人工智能（特别是深度学习）中，我们需要训练神经网络，本质上就是寻找一组庞大的权重参数
-      <span class="math inline">\mathbf{w}</span>，使得误差函数 <span
-      class="math inline">E(\mathbf{w})</span> 达到极小值。</p>
+      <p>在人工智能 (特别是深度学习) 中, 我们需要训练神经网络,
+      本质上就是寻找一组庞大的权重参数 <span
+      class="math inline">\mathbf{w}</span>, 使得误差函数 <span
+      class="math inline">E(\mathbf{w})</span> 达到极小值.</p>
       <p>根据 Bishop 的《Pattern Recognition and Machine Learning
-      (PRML)》一书，我们很难直接找到解析解，而是必须在权重空间中进行迭代漫游：<span
+      (PRML)》一书, 我们很难直接找到解析解,
+      而是必须在权重空间中进行迭代漫游: <span
       class="math inline">\mathbf{w}^{(\tau+1)} = \mathbf{w}^{(\tau)} +
-      \Delta \mathbf{w}</span>。</p>
-      <p>为了决定往哪个方向走最好，我们会利用泰勒展开对误差函数进行<strong>局部二次近似
-      (Local quadratic approximation)</strong>： <span
-      class="math display">
+      \Delta \mathbf{w}</span>.</p>
+      <p>为了决定往哪个方向走最好,
+      我们会利用泰勒展开对误差函数进行<strong>局部二次近似 (Local
+      quadratic approximation)</strong>: <span class="math display">
       E(\mathbf{w}) \simeq E(\mathbf{\hat{w}}) +
       (\mathbf{w}-\mathbf{\hat{w}})^T \mathbf{b} + \frac{1}{2}
       (\mathbf{w}-\mathbf{\hat{w}})^T \mathbf{H}
       (\mathbf{w}-\mathbf{\hat{w}})
       </span> 其中 <span class="math inline">\mathbf{b}</span>
-      是误差梯度的向量，<span class="math inline">\mathbf{H}</span>
-      是海森矩阵。</p>
+      是误差梯度的向量, <span class="math inline">\mathbf{H}</span>
+      是海森矩阵.</p>
       <ul>
-      <li>如果我们只看<strong>一阶项（梯度）</strong>，我们将得到<strong>梯度下降法
-      (Gradient
-      Descent)</strong>，指导我们沿着最陡峭的下坡方向前进。</li>
-      <li>如果我们同时考虑<strong>二阶项（海森矩阵）</strong>，我们将得到<strong>牛顿法
-      (Newton’s
-      Method)</strong>。海森矩阵包含了误差曲面的曲率信息（比如这是一个尖锐的峡谷还是一个平缓的盆地），它能告诉算法在不同方向上应该迈出多大的步子，从而极大地加速神经网络的收敛过程！</li>
+      <li>如果我们只看<strong>一阶项 (梯度)</strong>,
+      我们将得到<strong>梯度下降法 (Gradient Descent)</strong>,
+      指导我们沿着最陡峭的下坡方向前进.</li>
+      <li>如果我们同时考虑<strong>二阶项 (海森矩阵)</strong>,
+      我们将得到<strong>牛顿法 (Newton’s Method)</strong>.
+      海森矩阵包含了误差曲面的曲率信息
+      (比如这是一个尖锐的峡谷还是一个平缓的盆地),
+      它能告诉算法在不同方向上应该迈出多大的步子,
+      从而极大地加速神经网络的收敛过程!</li>
       </ul>
       </div>
       </div>

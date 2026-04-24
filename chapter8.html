@@ -59,57 +59,64 @@
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
-      <p>在实际工程和科学计算中，许多微积分问题无法获得解析解，或者解析表达式过于复杂。数值方法通过离散化近似，为这些问题提供了实用的解决方案。本章介绍三种基本数值方法：数值微分、数值积分和常微分方程的数值解法。</p>
+      <p>在实际工程和科学计算中, 许多微积分问题无法获得解析解,
+      或者解析表达式过于复杂. 数值方法通过离散化近似,
+      为这些问题提供了实用的解决方案. 本章介绍三种基本数值方法:
+      数值微分, 数值积分和常微分方程的数值解法.</p>
       </div>
       </div>
       <h2 id="数值微分">8.1 数值微分</h2>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
-      <p>在实际应用中，我们经常遇到需要计算函数导数的情况，但有时函数表达式复杂，或者只有离散的数据点，这时就需要使用数值微分方法。</p>
+      <p>在实际应用中, 我们经常遇到需要计算函数导数的情况,
+      但有时函数表达式复杂, 或者只有离散的数据点,
+      这时就需要使用数值微分方法.</p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">差商的基本概念</span></div>
       <div class="callout-body">
-      <p>数值微分的核心思想是用<strong>差商</strong>来近似<strong>导数</strong>。差商是函数在两个点上的函数值之差与自变量之差的比值。</p>
-      <p><strong>三种基本差商</strong>：</p>
+      <p>数值微分的核心思想是用<strong>差商</strong>来近似<strong>导数</strong>.
+      差商是函数在两个点上的函数值之差与自变量之差的比值.</p>
+      <p><strong>三种基本差商</strong>:</p>
       <ol type="1">
-      <li><p><strong>前向差商</strong>： <span class="math display">
+      <li><p><strong>前向差商</strong>: <span class="math display">
       f&#39;(x) \approx \frac{f(x+h)-f(x)}{h}
       </span></p></li>
-      <li><p><strong>后向差商</strong>： <span class="math display">
+      <li><p><strong>后向差商</strong>: <span class="math display">
       f&#39;(x) \approx \frac{f(x)-f(x-h)}{h}
       </span></p></li>
-      <li><p><strong>中心差商</strong>： <span class="math display">
+      <li><p><strong>中心差商</strong>: <span class="math display">
       f&#39;(x) \approx \frac{f(x+h)-f(x-h)}{2h}
       </span></p></li>
       </ol>
       <p>其中 <span class="math inline">h &gt; 0</span>
-      是一个小的步长。</p>
+      是一个小的步长.</p>
       </div>
       </div>
       <div class="callout callout-warning">
       <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">差商的几何意义</span></div>
       <div class="callout-body">
-      <p>从几何角度看，差商实际上是<strong>割线斜率</strong>对<strong>切线斜率</strong>的近似：</p>
+      <p>从几何角度看,
+      差商实际上是<strong>割线斜率</strong>对<strong>切线斜率</strong>的近似:</p>
       <ul>
-      <li><p><strong>前向差商</strong>：使用点 <span
+      <li><p><strong>前向差商</strong>: 使用点 <span
       class="math inline">(x, f(x))</span> 和 <span
       class="math inline">(x+h, f(x+h))</span> 的割线斜率</p></li>
-      <li><p><strong>后向差商</strong>：使用点 <span
+      <li><p><strong>后向差商</strong>: 使用点 <span
       class="math inline">(x-h, f(x-h))</span> 和 <span
       class="math inline">(x, f(x))</span> 的割线斜率</p></li>
-      <li><p><strong>中心差商</strong>：使用点 <span
+      <li><p><strong>中心差商</strong>: 使用点 <span
       class="math inline">(x-h, f(x-h))</span> 和 <span
       class="math inline">(x+h, f(x+h))</span> 的割线斜率</p></li>
       </ul>
-      <p><strong>精度比较</strong>：</p>
+      <p><strong>精度比较</strong>:</p>
       <ul>
       <li>前向和后向差商的误差约为 <span
       class="math inline">O(h)</span></li>
-      <li>中心差商的误差约为 <span
-      class="math inline">O(h^2)</span>，精度更高</li>
+      <li>中心差商的误差约为 <span class="math inline">O(h^2)</span>,
+      精度更高</li>
       </ul>
       </div>
       </div>
@@ -242,13 +249,13 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">二阶导数的数值计算</span></div>
       <div class="callout-body">
-      <p>二阶导数可以用以下公式近似： <span class="math display">
+      <p>二阶导数可以用以下公式近似: <span class="math display">
       f&#39;&#39;(x) \approx \frac{f(x+h) - 2f(x) + f(x-h)}{h^2}
       </span></p>
-      <p><strong>推导</strong>： 将 <span
+      <p><strong>推导</strong>: 将 <span
       class="math inline">f(x+h)</span> 和 <span
       class="math inline">f(x-h)</span> 在 <span
-      class="math inline">x</span> 处泰勒展开： <span
+      class="math inline">x</span> 处泰勒展开: <span
       class="math display">
       f(x+h) = f(x) + hf&#39;(x) + \frac{h^2}{2}f&#39;&#39;(x) +
       \frac{h^3}{6}f&#39;&#39;&#39;(x) + \cdots
@@ -256,10 +263,10 @@
       f(x-h) = f(x) - hf&#39;(x) + \frac{h^2}{2}f&#39;&#39;(x) -
       \frac{h^3}{6}f&#39;&#39;&#39;(x) + \cdots
       </span></p>
-      <p>两式相加： <span class="math display">
+      <p>两式相加: <span class="math display">
       f(x+h) + f(x-h) = 2f(x) + h^2 f&#39;&#39;(x) + O(h^4)
       </span></p>
-      <p>整理得： <span class="math display">
+      <p>整理得: <span class="math display">
       f&#39;&#39;(x) \approx \frac{f(x+h) - 2f(x) + f(x-h)}{h^2}
       </span></p>
       </div>
@@ -309,22 +316,26 @@
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
-      <p>当函数的原函数难以求出，或者只有离散的数据点时，数值积分提供了计算定积分的有效方法。数值积分的基本思想是用简单的函数（如多项式）近似被积函数，然后计算近似函数的积分。</p>
+      <p>当函数的原函数难以求出, 或者只有离散的数据点时,
+      数值积分提供了计算定积分的有效方法.
+      数值积分的基本思想是用简单的函数 (如多项式) 近似被积函数,
+      然后计算近似函数的积分.</p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">矩形法</span></div>
       <div class="callout-body">
-      <p>矩形法是数值积分中最简单的方法，它将积分区间分割成若干小区间，用每个小区间左端点或右端点的函数值作为矩形的高。</p>
-      <p><strong>左矩形法</strong>： <span class="math display">
+      <p>矩形法是数值积分中最简单的方法, 它将积分区间分割成若干小区间,
+      用每个小区间左端点或右端点的函数值作为矩形的高.</p>
+      <p><strong>左矩形法</strong>: <span class="math display">
       \int_a^b f(x)dx \approx h\sum_{i=0}^{n-1} f(x_i)
-      </span> 其中 <span class="math inline">h =
-      \frac{b-a}{n}</span>，<span class="math inline">x_i = a +
-      ih</span></p>
-      <p><strong>右矩形法</strong>： <span class="math display">
+      </span> 其中 <span class="math inline">h = \frac{b-a}{n}</span>,
+      <span class="math inline">x_i = a + ih</span></p>
+      <p><strong>右矩形法</strong>: <span class="math display">
       \int_a^b f(x)dx \approx h\sum_{i=1}^n f(x_i)
       </span></p>
-      <p><strong>几何意义</strong>：用一系列矩形面积之和近似曲边梯形的面积。</p>
+      <p><strong>几何意义</strong>:
+      用一系列矩形面积之和近似曲边梯形的面积.</p>
       </div>
       </div>
       <div id="chpt8-ex-004" class="exercise-block"
@@ -377,19 +388,20 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">梯形法</span></div>
       <div class="callout-body">
-      <p>梯形法用梯形面积代替矩形面积，通常能获得更好的精度。</p>
-      <p><strong>梯形公式</strong>： <span class="math display">
+      <p>梯形法用梯形面积代替矩形面积, 通常能获得更好的精度.</p>
+      <p><strong>梯形公式</strong>: <span class="math display">
       \int_a^b f(x)dx \approx \frac{h}{2}[f(a) + 2\sum_{i=1}^{n-1}
       f(x_i) + f(b)]
       </span></p>
-      <p><strong>几何意义</strong>：用一系列梯形面积之和近似曲边梯形的面积。</p>
-      <p><strong>推导</strong>： 每个小区间 <span
-      class="math inline">[x_i, x_{i+1}]</span> 上的积分用梯形面积近似：
+      <p><strong>几何意义</strong>:
+      用一系列梯形面积之和近似曲边梯形的面积.</p>
+      <p><strong>推导</strong>: 每个小区间 <span
+      class="math inline">[x_i, x_{i+1}]</span> 上的积分用梯形面积近似:
       <span class="math display">
       \int_{x_i}^{x_{i+1}} f(x)dx \approx \frac{h}{2}[f(x_i) +
       f(x_{i+1})]
       </span></p>
-      <p>将所有小区间相加即得梯形公式。</p>
+      <p>将所有小区间相加即得梯形公式.</p>
       </div>
       </div>
       <div id="chpt8-ex-005" class="exercise-block"
@@ -439,14 +451,15 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">辛普森法</span></div>
       <div class="callout-body">
-      <p>辛普森法用抛物线代替直线来近似被积函数，精度更高。</p>
-      <p><strong>辛普森公式</strong>： <span class="math display">
+      <p>辛普森法用抛物线代替直线来近似被积函数, 精度更高.</p>
+      <p><strong>辛普森公式</strong>: <span class="math display">
       \int_a^b f(x)dx \approx \frac{h}{3}[f(a) + 4\sum_{i=1}^{n/2}
       f(x_{2i-1}) + 2\sum_{i=1}^{n/2-1} f(x_{2i}) + f(b)]
       </span></p>
-      <p><strong>要求</strong>：区间等分且 <span
+      <p><strong>要求</strong>: 区间等分且 <span
       class="math inline">n</span> 为偶数</p>
-      <p><strong>几何意义</strong>：每两个相邻小区间上用一条抛物线近似被积函数。</p>
+      <p><strong>几何意义</strong>:
+      每两个相邻小区间上用一条抛物线近似被积函数.</p>
       </div>
       </div>
       <div id="chpt8-ex-006" class="exercise-block"
@@ -498,7 +511,7 @@
       <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">三种数值积分方法的精度比较</span></div>
       <div class="callout-body">
       <p>对于 <span class="math inline">\int_0^1 e^x dx = e - 1 \approx
-      1.71828</span>，不同方法的精度比较：</p>
+      1.71828</span>, 不同方法的精度比较:</p>
       <table>
       <thead>
       <tr>
@@ -535,19 +548,19 @@
       </tr>
       </tbody>
       </table>
-      <p>可见辛普森法的精度最高，梯形法次之，矩形法精度最低。</p>
+      <p>可见辛普森法的精度最高, 梯形法次之, 矩形法精度最低.</p>
       </div>
       </div>
       <div class="callout callout-warning">
       <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">数值积分的误差分析</span></div>
       <div class="callout-body">
-      <p>各种数值积分方法的误差估计：</p>
+      <p>各种数值积分方法的误差估计:</p>
       <ul>
-      <li><strong>矩形法</strong>：误差约 <span
+      <li><strong>矩形法</strong>: 误差约 <span
       class="math inline">O(h)</span></li>
-      <li><strong>梯形法</strong>：误差约 <span
+      <li><strong>梯形法</strong>: 误差约 <span
       class="math inline">O(h^2)</span></li>
-      <li><strong>辛普森法</strong>：误差约 <span
+      <li><strong>辛普森法</strong>: 误差约 <span
       class="math inline">O(h^4)</span></li>
       </ul>
       </div>
@@ -556,23 +569,27 @@
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
-      <p>许多实际问题的数学模型是常微分方程，但大多数微分方程无法求得解析解。数值解法通过离散化方法，将连续的微分方程转化为离散的代数方程，从而获得近似解。</p>
+      <p>许多实际问题的数学模型是常微分方程,
+      但大多数微分方程无法求得解析解. 数值解法通过离散化方法,
+      将连续的微分方程转化为离散的代数方程, 从而获得近似解.</p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">欧拉方法</span></div>
       <div class="callout-body">
-      <p>欧拉方法是最简单、最直观的数值解法，它用切线来近似积分曲线。</p>
-      <p><strong>基本思想</strong>：从初始点出发，沿着该点的切线方向前进一小步，得到下一个近似点。</p>
-      <p><strong>迭代公式</strong>： <span class="math display">
+      <p>欧拉方法是最简单, 最直观的数值解法, 它用切线来近似积分曲线.</p>
+      <p><strong>基本思想</strong>: 从初始点出发,
+      沿着该点的切线方向前进一小步, 得到下一个近似点.</p>
+      <p><strong>迭代公式</strong>: <span class="math display">
       y_{n+1} = y_n + hf(x_n, y_n)
       </span></p>
-      <p>其中： - <span class="math inline">h</span> 是步长 - <span
+      <p>其中: - <span class="math inline">h</span> 是步长 - <span
       class="math inline">f(x_n, y_n)</span> 是微分方程右端函数在 <span
       class="math inline">(x_n, y_n)</span> 处的值 - <span
       class="math inline">y_n</span> 是 <span
       class="math inline">x_n</span> 处的近似解</p>
-      <p><strong>几何解释</strong>：在每一步，用当前点的切线斜率代替曲线在该点的导数，沿着切线方向前进。</p>
+      <p><strong>几何解释</strong>: 在每一步,
+      用当前点的切线斜率代替曲线在该点的导数, 沿着切线方向前进.</p>
       </div>
       </div>
       <div id="chpt8-ex-007" class="exercise-block"
@@ -752,20 +769,21 @@
       <div class="callout callout-warning">
       <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">改进的欧拉方法</span></div>
       <div class="callout-body">
-      <p>改进的欧拉方法（又称Heun方法）通过使用预测-校正策略来提高精度。</p>
-      <p><strong>计算步骤</strong>： 1.
-      <strong>预测步</strong>：用欧拉方法计算一个初步预测值 <span
-      class="math display">
+      <p>改进的欧拉方法 (又称Heun方法)
+      通过使用预测-校正策略来提高精度.</p>
+      <p><strong>计算步骤</strong>: 1. <strong>预测步</strong>:
+      用欧拉方法计算一个初步预测值 <span class="math display">
          \bar{y}_{n+1} = y_n + hf(x_n, y_n)
          </span></p>
       <ol start="2" type="1">
-      <li><strong>校正步</strong>：用预测点的斜率来改进 <span
+      <li><strong>校正步</strong>: 用预测点的斜率来改进 <span
       class="math display">
       y_{n+1} = y_n + \frac{h}{2}[f(x_n, y_n) + f(x_{n+1},
       \bar{y}_{n+1})]
       </span></li>
       </ol>
-      <p><strong>几何解释</strong>：先用欧拉方法预测，然后用两端斜率的平均值来校正。</p>
+      <p><strong>几何解释</strong>: 先用欧拉方法预测,
+      然后用两端斜率的平均值来校正.</p>
       </div>
       </div>
       <div id="chpt8-ex-009" class="exercise-block"
@@ -976,19 +994,17 @@
       <div class="callout callout-warning">
       <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">数值解法的优缺点</span></div>
       <div class="callout-body">
-      <p><strong>优点</strong>： 1.
-      <strong>通用性强</strong>：适用于各种类型的微分方程 2.
-      <strong>实现简单</strong>：算法直观，编程容易 3.
-      <strong>灵活性高</strong>：可以处理复杂的右端函数</p>
-      <p><strong>缺点</strong>： 1.
-      <strong>精度有限</strong>：欧拉方法只有一阶精度 2.
-      <strong>稳定性问题</strong>：步长选择不当可能导致数值不稳定 3.
-      <strong>累积误差</strong>：误差会随着计算步数增加而积累</p>
-      <p><strong>实用建议</strong>： 1.
-      先尝试欧拉方法，了解问题的基本特性 2.
-      对于精度要求高的问题，使用改进欧拉方法或其他高阶方法 3.
-      通过减小步长来检验结果的收敛性 4.
-      对于刚性问题，需要特殊的数值方法</p>
+      <p><strong>优点</strong>: 1. <strong>通用性强</strong>:
+      适用于各种类型的微分方程 2. <strong>实现简单</strong>: 算法直观,
+      编程容易 3. <strong>灵活性高</strong>: 可以处理复杂的右端函数</p>
+      <p><strong>缺点</strong>: 1. <strong>精度有限</strong>:
+      欧拉方法只有一阶精度 2. <strong>稳定性问题</strong>:
+      步长选择不当可能导致数值不稳定 3. <strong>累积误差</strong>:
+      误差会随着计算步数增加而积累</p>
+      <p><strong>实用建议</strong>: 1. 先尝试欧拉方法,
+      了解问题的基本特性 2. 对于精度要求高的问题,
+      使用改进欧拉方法或其他高阶方法 3. 通过减小步长来检验结果的收敛性
+      4. 对于刚性问题, 需要特殊的数值方法</p>
       </div>
       </div>
       <h2 id="数值求解微分方程实例">8.4 数值求解微分方程实例</h2>

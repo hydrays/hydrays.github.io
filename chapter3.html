@@ -89,18 +89,18 @@
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
       <p><strong>微分 (differential)</strong> 的意思是
-      <strong>无穷小的改变量 (infinitesimally small
-      change)</strong>，莱布尼茨为微分创立了其专属符号 “<span
+      <strong>无穷小的改变量 (infinitesimally small change)</strong>,
+      莱布尼茨为微分创立了其专属符号 “<span
       class="math inline">d</span>”, 例如 <span
       class="math inline">dx</span> 表示变量 <span
       class="math inline">x</span> 的微分, <span
       class="math inline">dy</span> 表示变量 <span
       class="math inline">y</span> 的微分. 与之对应的, 物理上经常用
-      <span class="math inline">\Delta x</span>
-      表示一个很小的改变量，比如一小段位移. 直观上看, <span
-      class="math inline">\Delta x</span> 和 <span
-      class="math inline">dx</span> 想传达的意思很相近,
-      都是<strong>很小的量</strong>, 但是在数学它们是有区别的.</p>
+      <span class="math inline">\Delta x</span> 表示一个很小的改变量,
+      比如一小段位移. 直观上看, <span class="math inline">\Delta
+      x</span> 和 <span class="math inline">dx</span>
+      想传达的意思很相近, 都是<strong>很小的量</strong>,
+      但是在数学上它们是有区别的.</p>
       <ul>
       <li><p><span class="math inline">\Delta x</span>
       表示一个非常小但<strong>固定的数</strong>.</p></li>
@@ -324,8 +324,8 @@
       <div class="callout callout-warning">
       <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">警告</span></div>
       <div class="callout-body">
-      <p>接下来我们结合导数的定义来理解微分公式.
-      在上一章中，我们曾从函数图像切线的角度出发，借助极限给出导数的定义:</p>
+      <p>接下来我们结合导数的定义来理解微分公式. 在上一章中,
+      我们曾从函数图像切线的角度出发, 借助极限给出导数的定义:</p>
       <p><span class="math display">
       f&#39;(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) -
       f(x)}{\Delta x}.
@@ -336,15 +336,15 @@
       f&#39;(x) = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} =
       \frac{dy}{dx}
       </span></p>
-      <p>由此可见，当 <span class="math inline">\Delta x \to 0</span>
-      时，差分商 <span class="math inline">\displaystyle\frac{\Delta
+      <p>由此可见, 当 <span class="math inline">\Delta x \to 0</span>
+      时, 差分商 <span class="math inline">\displaystyle\frac{\Delta
       y}{\Delta x}</span> 的极限正是微分之商 <span
-      class="math inline">\displaystyle\frac{dy}{dx}</span>。</p>
-      <p>在微积分的逻辑体系内，<span
+      class="math inline">\displaystyle\frac{dy}{dx}</span>.</p>
+      <p>在微积分的逻辑体系内, <span
       class="math inline">\displaystyle\frac{dy}{dx}</span>
-      最初是一个整体符号代表导数。事实上，我们也常用符号 <span
-      class="math inline">\dfrac{dy}{dx}</span>
-      表示导数，常见的表达方式包括:</p>
+      最初是一个整体符号代表导数. 事实上, 我们也常用符号 <span
+      class="math inline">\dfrac{dy}{dx}</span> 表示导数,
+      常见的表达方式包括:</p>
       <p><span class="math display">
       \frac{dy}{dx} \sim y&#39;(x)
       </span></p>
@@ -355,8 +355,8 @@
       \left. \frac{df(x)}{dx} \right\rvert_{x = x_0} \sim f&#39;(x_0)
       </span></p>
       <p>但这里我们形式上将 <span class="math inline">dx</span> 和 <span
-      class="math inline">dy</span>
-      作为独立的“微分”概念，从而将导数的定义式</p>
+      class="math inline">dy</span> 作为独立的“微分”概念,
+      从而将导数的定义式</p>
       <p><span class="math display">
       \frac{dy}{dx} = f&#39;(x)
       </span></p>
@@ -371,7 +371,7 @@
       <div class="callout-body">
       <p>微分公式表明函数值 <span class="math inline">y</span>
       的微分与自变量 <span class="math inline">x</span>
-      的微分呈线性关系，它的背后体现了<strong>化曲为直</strong>的思想,
+      的微分呈线性关系, 它的背后体现了<strong>化曲为直</strong>的思想,
       具体体现在</p>
       <p><span class="math display">
       \begin{align*}
@@ -387,13 +387,13 @@
       \end{align*}
       </span></p>
       <figure>
-      <img src="..\media\img\chpt3_diff_linear_approx.png"
+      <img src="media/img/chpt3_diff_linear_approx.png"
       alt="微分与线性近似" />
       <figcaption aria-hidden="true">微分与线性近似</figcaption>
       </figure>
-      <p>最后一个公式说明，函数在 <span class="math inline">x_0</span>
+      <p>最后一个公式说明, 函数在 <span class="math inline">x_0</span>
       附近可近似看作一条过点 <span class="math inline">(x_0,
-      f(x_0))</span>、斜率为 <span
+      f(x_0))</span>, 斜率为 <span
       class="math inline">f&#39;(x_0)</span> 的<strong>直线</strong>.
       <strong>在局部用一条直线来近似函数</strong>也就是所谓的<strong>化曲为直</strong>,
       这是微积分中一个极其重要的思想.</p>
@@ -402,7 +402,9 @@
       <div class="callout callout-warning">
       <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">警告</span></div>
       <div class="callout-body">
-      <p>基于微分符号所建立的导数定义与运算规则非常直观，在后续课程中，我们将进一步领略<strong>微分</strong>思想的强大力量，并体会良好符号系统为数学带来的美感与实用价值。</p>
+      <p>基于微分符号所建立的导数定义与运算规则非常直观, 在后续课程中,
+      我们将进一步领略<strong>微分</strong>思想的强大力量,
+      并体会良好符号系统为数学带来的美感与实用价值.</p>
       </div>
       </div>
       <h2 id="借助微分计算导数">3.2 借助微分计算导数</h2>
@@ -424,9 +426,9 @@
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">链式法则 (Chain Rule)</span></div>
       <div class="callout-body">
       <p>若函数 <span class="math inline">y = f(u)</span> 在点 <span
-      class="math inline">u = g(x)</span> 可导，且 <span
+      class="math inline">u = g(x)</span> 可导, 且 <span
       class="math inline">u = g(x)</span> 在点 <span
-      class="math inline">x</span> 可导，则: <span class="math display">
+      class="math inline">x</span> 可导, 则: <span class="math display">
       [f(g(x))]&#39; = f&#39;(g(x)) g&#39;(x)
       </span></p>
       <p>基于微分的思想, 链式法则可以直观的理解为:
@@ -1273,14 +1275,15 @@
       \theta}{\sin^2 \theta}d\theta
       </span></p>
       <p>如果我们希望计算 <span class="math inline">dx</span> 与 <span
-      class="math inline">dl</span> 的关系，即 <span
-      class="math inline">\dfrac{dx}{dl}</span>，可以采用以下两种方法:</p>
+      class="math inline">dl</span> 的关系, 即 <span
+      class="math inline">\dfrac{dx}{dl}</span>,
+      可以采用以下两种方法:</p>
       <p><strong>方法一: 建立 x 与 l 的显式函数关系</strong></p>
       <p>由 <span class="math inline">l = \dfrac{b}{\sin \theta}</span>
-      可得 <span class="math inline">\sin \theta =
-      \dfrac{b}{l}</span>，代入 <span class="math inline">x =
-      \dfrac{b}{\tan \theta} = b\dfrac{\cos \theta}{\sin \theta}</span>
-      得: <span class="math display">
+      可得 <span class="math inline">\sin \theta = \dfrac{b}{l}</span>,
+      代入 <span class="math inline">x = \dfrac{b}{\tan \theta} =
+      b\dfrac{\cos \theta}{\sin \theta}</span> 得: <span
+      class="math display">
       \begin{aligned}
       x &amp;= b \cdot \frac{\cos \theta}{\sin \theta} \\
       &amp; = b \cdot \frac{\sqrt{1 - \sin^2 \theta}}{\sin \theta}\\
@@ -1298,7 +1301,7 @@
       \end{aligned}
       </span></p>
       <p>因此 <span class="math inline">dx = \dfrac{1}{\cos \theta}
-      dl</span>。</p>
+      dl</span>.</p>
       <p><strong>方法二: 直接利用微分之比</strong></p>
       <p>由 <span class="math inline">dx</span> 和 <span
       class="math inline">dl</span> 的表达式直接相除: <span
@@ -1307,15 +1310,18 @@
       \frac{\cos \theta}{\sin^2 \theta}d\theta} = \frac{1}{\cos \theta}
       </span></p>
       <p>同样得到 <span class="math inline">dx = \dfrac{1}{\cos \theta}
-      dl</span>。</p>
-      <p>两种方法结果一致，但第二种方法通过直接操作微分，避免了复杂的函数关系和求导过程，显示了微分运算的简洁性与灵活性。在实际问题中，灵活运用微分关系可以大大简化计算，这正是微分思想的强大之处。</p>
+      dl</span>.</p>
+      <p>两种方法结果一致, 但第二种方法通过直接操作微分,
+      避免了复杂的函数关系和求导过程, 显示了微分运算的简洁性与灵活性.
+      在实际问题中, 灵活运用微分关系可以大大简化计算,
+      这正是微分思想的强大之处.</p>
       </div>
       </div>
       <h2 id="借助微分计算极限">3.3 借助微分计算极限</h2>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
-      <p>借助微分的思想和符号还可以帮助我们去理解一个较为使用的求极限方法:
+      <p>借助微分的思想和符号还可以帮助我们去理解一个较为实用的求极限方法:
       洛必达法则.</p>
       </div>
       </div>
@@ -1329,15 +1335,15 @@
       下极限的有力工具.</p>
       <p>如果函数 <span class="math inline">f(x)</span> 和 <span
       class="math inline">g(x)</span> 在点 <span
-      class="math inline">x=c</span>
-      的某个邻域内可导，且在该点附近有:</p>
+      class="math inline">x=c</span> 的某个邻域内可导,
+      且在该点附近有:</p>
       <ul>
       <li><span class="math inline">f(c) = 0</span> 且 <span
       class="math inline">g(c) = 0</span> (或 <span
       class="math inline">f(x)</span> 和 <span
       class="math inline">g(x)</span> 的极限趋于 <span
       class="math inline">\infty</span>).</li>
-      <li><span class="math inline">g&#39;(x) ≠ 0</span>.</li>
+      <li><span class="math inline">g&#39;(x) \ne 0</span>.</li>
       </ul>
       <p>那么</p>
       <p><span class="math display">
@@ -1359,37 +1365,37 @@
       <div class="callout-body">
       <p>下面我们借助微分的思想来理解洛必达法则.</p>
       <p>当 <span class="math inline">x</span> 充分接近 <span
-      class="math inline">c</span>
-      时，我们可以用函数的线性近似（即微分）来替代原函数。由于 <span
-      class="math inline">f(c) = g(c) = 0</span>，在点 <span
-      class="math inline">c</span> 附近有:</p>
+      class="math inline">c</span> 时, 我们可以用函数的线性近似 (即微分)
+      来替代原函数. 由于 <span class="math inline">f(c) = g(c) =
+      0</span>, 在点 <span class="math inline">c</span> 附近有:</p>
       <p><span class="math display">
       f(x) \approx f(c) + f&#39;(c)(x - c) = f&#39;(c)(x - c)
       </span></p>
       <p><span class="math display">
       g(x) \approx g(c) + g&#39;(c)(x - c) = g&#39;(c)(x - c)
       </span></p>
-      <p>因此，原比式的极限可近似表示为:</p>
+      <p>因此, 原比式的极限可近似表示为:</p>
       <p><span class="math display">
       \frac{f(x)}{g(x)} \approx \frac{f&#39;(c)(x - c)}{g&#39;(c)(x -
       c)} = \frac{f&#39;(c)}{g&#39;(c)}
       </span></p>
-      <p>当 <span class="math inline">x \to c</span>
-      时，这一近似将趋于精确。这正是洛必达法则的直观含义——在极限过程中，分子与分母的<strong>变化趋势</strong>由它们在该点的导数之比决定。</p>
-      <p>对于 <span class="math inline">\infty/\infty</span>
-      型未定式，虽然不能直接使用上述推导，但微分思想仍然适用:
-      此时我们比较的是 <span class="math inline">f(x)</span> 与 <span
+      <p>当 <span class="math inline">x \to c</span> 时,
+      这一近似将趋于精确. 这正是洛必达法则的直观含义——在极限过程中,
+      分子与分母的<strong>变化趋势</strong>由它们在该点的导数之比决定.</p>
+      <p>对于 <span class="math inline">\infty/\infty</span> 型未定式,
+      虽然不能直接使用上述推导, 但微分思想仍然适用: 此时我们比较的是
+      <span class="math inline">f(x)</span> 与 <span
       class="math inline">g(x)</span> 在 <span class="math inline">x \to
-      c</span>
-      过程中的<strong>相对变化速率</strong>，而导数正是刻画这种瞬时变化率的工具。</p>
-      <p>需要强调的是，上述推导仅为理解洛必达法则提供了直观的几何图像。严格证明需依赖<strong>柯西中值定理</strong>，该定理能够将
-      <span class="math inline">\dfrac{f&#39;(c)}{g&#39;(c)}</span>
-      替换成 <span
-      class="math inline">\dfrac{f&#39;(\xi)}{g&#39;(\xi)}</span>，其中
-      <span class="math inline">\xi</span> 位于 <span
+      c</span> 过程中的<strong>相对变化速率</strong>,
+      而导数正是刻画这种瞬时变化率的工具.</p>
+      <p>需要强调的是, 上述推导仅为理解洛必达法则提供了直观的几何图像.
+      严格证明需依赖<strong>柯西中值定理</strong>, 该定理能够将 <span
+      class="math inline">\dfrac{f&#39;(c)}{g&#39;(c)}</span> 替换成
+      <span class="math inline">\dfrac{f&#39;(\xi)}{g&#39;(\xi)}</span>,
+      其中 <span class="math inline">\xi</span> 位于 <span
       class="math inline">x</span> 与 <span class="math inline">c</span>
-      之间,
-      从而得到使用起来更加灵活的洛必达法则。这部分内容我们放在了后面的章节中.</p>
+      之间, 从而得到使用起来更加灵活的洛必达法则.
+      这部分内容我们放在了后面的章节中.</p>
       </div>
       </div>
       <div id="chpt3-ex-020" class="exercise-block"

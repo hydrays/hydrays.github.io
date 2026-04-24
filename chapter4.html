@@ -66,99 +66,106 @@
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
-      <p>在微积分的发展历程中，积分与微分如同一对孪生兄弟，共同构成了现代数学的基石。
-      如果说微分研究的是函数在<strong>局部</strong>的瞬时变化率，那么积分则致力于从<strong>整体</strong>上把握量的累积效应。</p>
-      <p>为什么要引入积分？ 让我们从几个经典问题开始思考:</p>
+      <p>在微积分的发展历程中, 积分与微分如同一对孪生兄弟,
+      共同构成了现代数学的基石.
+      如果说微分研究的是函数在<strong>局部</strong>的瞬时变化率,
+      那么积分则致力于从<strong>整体</strong>上把握量的累积效应.</p>
+      <p>为什么要引入积分? 让我们从几个经典问题开始思考:</p>
       <ol type="1">
       <li><strong>面积问题</strong>:
-      如何计算由任意曲线围成的平面图形的面积？</li>
-      <li><strong>距离问题</strong>:
-      已知物体运动的速度随时间变化，如何计算它在某段时间内走过的总路程？</li>
+      如何计算由任意曲线围成的平面图形的面积?</li>
+      <li><strong>距离问题</strong>: 已知物体运动的速度随时间变化,
+      如何计算它在某段时间内走过的总路程?</li>
       <li><strong>体积问题</strong>:
-      如何计算旋转体或不规则立体的体积？</li>
+      如何计算旋转体或不规则立体的体积?</li>
       </ol>
-      <p>这些问题看似各异，但本质上都涉及到一个共同的思想——<strong>“化整为零，积零为整”</strong>。
-      我们将复杂的整体分解为无数个简单的微小部分，分别计算每个微小部分的贡献，然后将这些微小贡献累加起来，当分割无限精细时，就得到了精确的整体量。</p>
-      <p>积分不仅仅是一种计算工具，更是一种思维方式。
-      它在物理学中用于计算功、能量、质心；在工程学中用于分析应力、流量；在经济学中用于计算总收益、消费者剩余；在概率论中则是定义连续型随机变量概率密度的基础。</p>
-      <p>本章将带领大家沿着历史发展的轨迹，首先建立积分的概念，然后揭示积分与微分之间深刻的内在联系——微积分基本定理，最后掌握计算积分的基本方法。</p>
+      <p>这些问题看似各异,
+      但本质上都涉及到一个共同的思想——<strong>“化整为零,
+      积零为整”</strong>. 我们将复杂的整体分解为无数个简单的微小部分,
+      分别计算每个微小部分的贡献, 然后将这些微小贡献累加起来,
+      当分割无限精细时, 就得到了精确的整体量.</p>
+      <p>积分不仅仅是一种计算工具, 更是一种思维方式.
+      它在物理学中用于计算功, 能量, 质心; 在工程学中用于分析应力, 流量;
+      在经济学中用于计算总收益, 消费者剩余;
+      在概率论中则是定义连续型随机变量概率密度的基础.</p>
+      <p>本章将带领大家沿着历史发展的轨迹, 首先建立积分的概念,
+      然后揭示积分与微分之间深刻的内在联系——微积分基本定理,
+      最后掌握计算积分的基本方法.</p>
       </div>
       </div>
       <h2 id="积分的概念">4.1 积分的概念</h2>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">问题引入: 从规则图形到曲边图形</span></div>
       <div class="callout-body">
-      <p><strong>什么是面积？</strong>
-      这是一个看似简单却深奥的问题。</p>
-      <p>在初等几何中，我们以边长为1的正方形作为<strong>单位面积</strong>，基于此定义了:
+      <p><strong>什么是面积?</strong> 这是一个看似简单却深奥的问题.</p>
+      <p>在初等几何中,
+      我们以边长为1的正方形作为<strong>单位面积</strong>, 基于此定义了:
       - 矩形的面积 = 长 × 宽 - 三角形的面积 = ½ × 底 × 高 -
       多边形的面积可通过分割为三角形求和得到</p>
-      <p>这套方法在古代丈量田地时已经足够实用。
-      然而，当人类文明的触角伸向更精深的科学领域时，我们遇到了新的挑战:</p>
+      <p>这套方法在古代丈量田地时已经足够实用. 然而,
+      当人类文明的触角伸向更精深的科学领域时, 我们遇到了新的挑战:</p>
       <ul>
-      <li><p><strong>圆的面积</strong>: 如何精确计算圆的面积？
-      古希腊的阿基米德用”穷竭法”不断用内接正多边形逼近圆，已经蕴含了积分思想的萌芽。</p></li>
-      <li><p><strong>椭圆面积</strong>:
-      行星轨道是椭圆，计算椭圆面积对天文学至关重要。</p></li>
-      <li><p><strong>一般曲线围成的面积</strong>:
-      在物理学和工程学中，经常需要计算由复杂曲线围成的区域的面积。</p></li>
+      <li><p><strong>圆的面积</strong>: 如何精确计算圆的面积?
+      古希腊的阿基米德用”穷竭法”不断用内接正多边形逼近圆,
+      已经蕴含了积分思想的萌芽.</p></li>
+      <li><p><strong>椭圆面积</strong>: 行星轨道是椭圆,
+      计算椭圆面积对天文学至关重要.</p></li>
+      <li><p><strong>一般曲线围成的面积</strong>: 在物理学和工程学中,
+      经常需要计算由复杂曲线围成的区域的面积.</p></li>
       </ul>
-      <p>这些问题的共同特点是:
-      <strong>边界不再是直线，而是曲线</strong>。
-      传统的几何方法对此无能为力，我们需要一种全新的数学工具——这就是积分诞生的背景。</p>
+      <p>这些问题的共同特点是: <strong>边界不再是直线,
+      而是曲线</strong>. 传统的几何方法对此无能为力,
+      我们需要一种全新的数学工具——这就是积分诞生的背景.</p>
       </div>
       </div>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">通过极限定义积分</span></div>
       <div class="callout-body">
       <p>让我们从一个具体例子出发: 计算由曲线<span class="math inline">y
-      = f(x)</span>、直线<span class="math inline">x = a</span>、<span
+      = f(x)</span>, 直线<span class="math inline">x = a</span>, <span
       class="math inline">x = b</span>以及<span
-      class="math inline">x</span>轴所围成的曲边梯形的面积。</p>
+      class="math inline">x</span>轴所围成的曲边梯形的面积.</p>
       <p>我们考虑一个具体的函数: 半径为<span
-      class="math inline">\sqrt{2}</span>、圆心在<span
-      class="math inline">(\sqrt{2}, 0)</span>的圆的上半部分。
-      这个圆的方程为: <span class="math inline">(x - \sqrt{2})² + y² =
-      2</span>，所以上半圆的函数为 <span class="math inline">y = f(x) =
-      \sqrt{2 - (x - \sqrt{2})²}</span>。 我们计算这个上半圆在区间 <span
-      class="math inline">[0, 2\sqrt{2}]</span>
-      上的面积，这正好是半个圆的面积, 中学我们已经学过圆的面积公式,
+      class="math inline">\sqrt{2}</span>, 圆心在<span
+      class="math inline">(\sqrt{2}, 0)</span>的圆的上半部分.
+      这个圆的方程为: <span class="math inline">(x - \sqrt{2})^2 + y^2 =
+      2</span>, 所以上半圆的函数为 <span class="math inline">y = f(x) =
+      \sqrt{2 - (x - \sqrt{2})^2}</span>. 我们计算这个上半圆在区间 <span
+      class="math inline">[0, 2\sqrt{2}]</span> 上的面积,
+      这正好是半个圆的面积, 中学我们已经学过圆的面积公式,
       知道这半个圆的面积正好等于 <span
-      class="math inline">\pi</span>。</p>
+      class="math inline">\pi</span>.</p>
       <p><strong>第一步: 分割</strong> 将区间 <span
       class="math inline">[0, 2\sqrt{2}]</span> 分成 <span
-      class="math inline">n</span> 个小区间，设分点为: <span
+      class="math inline">n</span> 个小区间, 设分点为: <span
       class="math inline">0 = x_0 &lt; x_1 &lt; x_2 &lt; \cdots &lt; x_n
       = 2\sqrt{2}</span> 每个小区间长度为 <span
-      class="math inline">\Delta x_i = x_i - x_{i-1}</span>
-      为简单起见，我们可以采用等分，即 <span
-      class="math inline">\displaystyle\Delta x =\frac{(2\sqrt{2} -
-      0)}{n} = \frac{2\sqrt{2}}{n}</span></p>
+      class="math inline">\Delta x_i = x_i - x_{i-1}</span> 为简单起见,
+      我们可以采用等分, 即 <span class="math inline">\displaystyle\Delta
+      x =\frac{(2\sqrt{2} - 0)}{n} = \frac{2\sqrt{2}}{n}</span></p>
       <p><strong>第二步: 近似代替</strong> 在每个小区间 <span
       class="math inline">[x_{i-1}, x_i]</span> 上任取一点 <span
-      class="math inline">\xi_i</span>，例如取右端点 <span
-      class="math inline">\xi_i = x_i</span>。 用高为 <span
+      class="math inline">\xi_i</span>, 例如取右端点 <span
+      class="math inline">\xi_i = x_i</span>. 用高为 <span
       class="math inline">f(\xi_i) = \sqrt{2 - (\xi_i -
-      \sqrt{2})^2}</span>、宽为 <span class="math inline">\Delta
+      \sqrt{2})^2}</span>, 宽为 <span class="math inline">\Delta
       x</span> 的小矩形面积 <span class="math inline">f(\xi_i)\Delta
-      x</span> 来近似代替该小区间上曲边梯形的面积。</p>
-      <p><strong>第三步: 求和</strong>
-      将所有小矩形的面积相加，得到整个曲边梯形面积的近似值: <span
-      class="math display">
+      x</span> 来近似代替该小区间上曲边梯形的面积.</p>
+      <p><strong>第三步: 求和</strong> 将所有小矩形的面积相加,
+      得到整个曲边梯形面积的近似值: <span class="math display">
       S_n = \sum_{i=1}^n f(\xi_i)\Delta x
       </span> 这个和称为<strong>黎曼和</strong>(Riemann sum)</p>
-      <p><strong>第四步: 取极限</strong> 当分割越来越细，即 <span
-      class="math inline">n \to \infty</span> 时，<span
-      class="math inline">\Delta x \to
-      0</span>，如果黎曼和的极限存在，我们就定义这个极限值为曲边梯形的面积:
-      <span class="math display">
+      <p><strong>第四步: 取极限</strong> 当分割越来越细, 即 <span
+      class="math inline">n \to \infty</span> 时, <span
+      class="math inline">\Delta x \to 0</span>, 如果黎曼和的极限存在,
+      我们就定义这个极限值为曲边梯形的面积: <span class="math display">
       S = \lim_{n\to\infty} S_n = \lim_{n\to\infty} \sum_{i=1}^n
       f(\xi_i)\Delta x
       </span></p>
       <p>取 <span class="math inline">n=4, 8, 16, 32, \ldots</span> 计算
-      <span class="math inline">S_n</span> 的值，会发现 <span
+      <span class="math inline">S_n</span> 的值, 会发现 <span
       class="math inline">S_n</span> 趋近于 <span
-      class="math inline">\pi</span>（见下表）。</p>
+      class="math inline">\pi</span> (见下表).</p>
       <table>
       <thead>
       <tr>
@@ -217,51 +224,51 @@
       </table>
       <p>这个表格直观地展示了黎曼和随着分割数 <span
       class="math inline">n</span> 的增加而收敛于精确面积 <span
-      class="math inline">\pi</span>
-      的过程，体现了积分作为”无限细分、无限求和”极限过程的本质。</p>
+      class="math inline">\pi</span> 的过程, 体现了积分作为”无限细分,
+      无限求和”极限过程的本质.</p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">积分的定义</span></div>
       <div class="callout-body">
       <p>设函数 <span class="math inline">f(x)</span> 在区间 <span
-      class="math inline">[a, b]</span> 上有定义。 用分点 <span
+      class="math inline">[a, b]</span> 上有定义. 用分点 <span
       class="math inline">a = x_0 &lt; x_1 &lt; \cdots &lt; x_n =
       b</span> 将区间任意分割成 <span class="math inline">n</span>
-      个小区间，在每个小区间 <span class="math inline">[x_{i-1},
-      x_i]</span> 上任取一点 <span
-      class="math inline">\xi_i</span>，作黎曼和 <span
-      class="math inline">\sum_{i=1}^n f(\xi_i)\Delta x_i</span>。</p>
+      个小区间, 在每个小区间 <span class="math inline">[x_{i-1},
+      x_i]</span> 上任取一点 <span class="math inline">\xi_i</span>,
+      作黎曼和 <span class="math inline">\sum_{i=1}^n f(\xi_i)\Delta
+      x_i</span>.</p>
       <p>如果当最大小区间长度 <span class="math inline">\lambda =
-      \max\{\Delta x_i\} \to 0</span>
-      时，黎曼和的极限存在且与区间的分割方式以及点 <span
-      class="math inline">\xi_i</span> 的取法无关，则称函数 <span
+      \max\{\Delta x_i\} \to 0</span> 时,
+      黎曼和的极限存在且与区间的分割方式以及点 <span
+      class="math inline">\xi_i</span> 的取法无关, 则称函数 <span
       class="math inline">f(x)</span> 在 <span class="math inline">[a,
-      b]</span> 上<strong>可积</strong>，并称此极限值为 <span
+      b]</span> 上<strong>可积</strong>, 并称此极限值为 <span
       class="math inline">f(x)</span> 在 <span class="math inline">[a,
-      b]</span> 上的<strong>定积分</strong>，记作:</p>
+      b]</span> 上的<strong>定积分</strong>, 记作:</p>
       <p><span class="math display">
       \int_a^b f(x)\,dx = \lim_{\lambda\to 0} \sum_{i=1}^n
       f(\xi_i)\Delta x_i
       </span></p>
       <p>其中: - “<span class="math inline">\displaystyle\int</span>”
-      是积分号，由莱布尼兹引入，是求和符号 “<span
+      是积分号, 由莱布尼茨引入, 是求和符号 “<span
       class="math inline">S</span>” 的拉长 - <span
       class="math inline">f(x)</span> 称为<strong>被积函数</strong> -
       <span class="math inline">f(x)dx</span>
       称为<strong>被积表达式</strong> - <span
       class="math inline">x</span> 称为<strong>积分变量</strong> - <span
       class="math inline">[a, b]</span> 称为<strong>积分区间</strong> -
-      <span class="math inline">a</span>
-      称为<strong>积分下限</strong>，<span class="math inline">b</span>
+      <span class="math inline">a</span> 称为<strong>积分下限</strong>,
+      <span class="math inline">b</span>
       称为<strong>积分上限</strong></p>
       <p><strong>几何意义</strong>: 当 <span class="math inline">f(x)
-      \geq 0</span> 时，定积分 <span
+      \geq 0</span> 时, 定积分 <span
       class="math inline">\displaystyle\int_a^b f(x)\,dx</span>
-      表示由曲线 <span class="math inline">y = f(x)</span>、直线 <span
-      class="math inline">x = a</span>、<span class="math inline">x =
+      表示由曲线 <span class="math inline">y = f(x)</span>, 直线 <span
+      class="math inline">x = a</span>, <span class="math inline">x =
       b</span> 与 <span class="math inline">x</span>
-      轴所围成的曲边梯形的面积。</p>
+      轴所围成的曲边梯形的面积.</p>
       </div>
       </div>
       <div id="chpt4-ex-001" class="exercise-block"
@@ -362,82 +369,88 @@
       </div>
       </div>
       </div>
-      <p>从这两个例子我们看到，用定义计算积分虽然思路直接，但过程繁琐。
-      在下一节中，我们将介绍微积分基本定理，它提供了计算定积分的强大工具。</p>
+      <p>从这两个例子我们看到, 用定义计算积分虽然思路直接, 但过程繁琐.
+      在下一节中, 我们将介绍微积分基本定理,
+      它提供了计算定积分的强大工具.</p>
       <h2 id="微积分基本定理">4.2 微积分基本定理</h2>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
-      <p>在上一节中，我们通过黎曼和的极限定义了定积分，并用这种方法计算了几个简单函数的积分。
-      然而，这种方法极其繁琐，对于复杂函数几乎无法实际应用。
-      我们需要一种更高效、更强大的工具来计算定积分。</p>
-      <p>微积分基本定理正是这样的工具，它被誉为”整个微积分学中最重要的定理”。
-      这个定理的核心内容由牛顿和莱布尼茨在17世纪独立发现，因此又被称为<strong>牛顿-莱布尼茨公式</strong>。</p>
-      <p>这两位数学巨匠的工作将积分学与微分学这两个看似独立的领域联系起来，揭示了它们之间深刻的内在联系，从而奠定了现代微积分的基础。</p>
+      <p>在上一节中, 我们通过黎曼和的极限定义了定积分,
+      并用这种方法计算了几个简单函数的积分. 然而, 这种方法极其繁琐,
+      对于复杂函数几乎无法实际应用. 我们需要一种更高效,
+      更强大的工具来计算定积分.</p>
+      <p>微积分基本定理正是这样的工具,
+      它被誉为”整个微积分学中最重要的定理”.
+      这个定理的核心内容由牛顿和莱布尼茨在17世纪独立发现,
+      因此又被称为<strong>牛顿-莱布尼茨公式</strong>.</p>
+      <p>这两位数学巨匠的工作将积分学与微分学这两个看似独立的领域联系起来,
+      揭示了它们之间深刻的内在联系, 从而奠定了现代微积分的基础.</p>
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">微积分基本定理（牛顿-莱布尼茨公式）</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">微积分基本定理 (牛顿-莱布尼茨公式)</span></div>
       <div class="callout-body">
       <p>设函数 <span class="math inline">f</span> 在区间 <span
-      class="math inline">[a, b]</span> 上连续，且 <span
+      class="math inline">[a, b]</span> 上连续, 且 <span
       class="math inline">F</span> 是 <span class="math inline">f</span>
-      的任意一个原函数（即 <span class="math inline">F&#39;(x) =
-      f(x)</span>），则 <span class="math display">
+      的任意一个原函数 (即 <span class="math inline">F&#39;(x) =
+      f(x)</span>), 则 <span class="math display">
       \int_a^b f(x)\,dx = F(b) - F(a)
       </span></p>
       <p>通常记作: <span class="math inline">\displaystyle\int_a^b
       f(x)\,dx = F(x)\big|_a^b = F(b) - F(a)</span></p>
       <p><strong>定理的意义</strong> -
-      它将复杂的积分计算问题转化为相对简单的求原函数问题。 -
+      它将复杂的积分计算问题转化为相对简单的求原函数问题. -
       它建立了微分与积分之间的互逆关系:
-      求导和积分在某种意义上是”相反”的运算。 -
-      它统一了微积分的两大核心操作，揭示了变化率与累积量之间的深刻联系。</p>
+      求导和积分在某种意义上是”相反”的运算. -
+      它统一了微积分的两大核心操作,
+      揭示了变化率与累积量之间的深刻联系.</p>
       <p><strong>定理的直观证明</strong></p>
-      <p>让我们从直观的角度来理解为什么这个定理成立。</p>
+      <p>让我们从直观的角度来理解为什么这个定理成立.</p>
       <p>考虑定积分 <span class="math inline">\displaystyle\int_a^b
-      f(x)\,dx</span>，它表示曲线 <span class="math inline">y =
+      f(x)\,dx</span>, 它表示曲线 <span class="math inline">y =
       f(x)</span> 下从 <span class="math inline">a</span> 到 <span
-      class="math inline">b</span> 的面积。</p>
+      class="math inline">b</span> 的面积.</p>
       <p>现在定义一个新的函数: <span class="math inline">A(x) =
-      \displaystyle\int_a^x f(t)\,dt</span>，它表示从 <span
+      \displaystyle\int_a^x f(t)\,dt</span>, 它表示从 <span
       class="math inline">a</span> 到 <span class="math inline">x</span>
-      的曲线下面积。</p>
+      的曲线下面积.</p>
       <p><strong>关键洞察</strong>: 当我们给 <span
       class="math inline">x</span> 一个微小的增量 <span
-      class="math inline">\Delta x</span> 时，面积 <span
+      class="math inline">\Delta x</span> 时, 面积 <span
       class="math inline">A</span> 的增量为: <span class="math display">
       \Delta A = A(x+\Delta x) - A(x) = \int_x^{x+\Delta x} f(t)\,dt
       </span></p>
-      <p>当 <span class="math inline">\Delta x</span> 很小时，在小区间
-      <span class="math inline">[x, x+\Delta x]</span> 上，<span
+      <p>当 <span class="math inline">\Delta x</span> 很小时, 在小区间
+      <span class="math inline">[x, x+\Delta x]</span> 上, <span
       class="math inline">f(t)</span> 的值近似等于 <span
-      class="math inline">f(x)</span>， 因此 <span
+      class="math inline">f(x)</span>, 因此 <span
       class="math inline">\Delta A \approx f(x)\Delta x</span></p>
       <p>于是有 <span class="math inline">\displaystyle\frac{\Delta
       A}{\Delta x }\approx f(x)</span></p>
-      <p>当 <span class="math inline">\Delta x \to 0</span>
-      时，这个近似变得精确，所以我们发现: <span class="math display">
+      <p>当 <span class="math inline">\Delta x \to 0</span> 时,
+      这个近似变得精确, 所以我们发现: <span class="math display">
       A&#39;(x) = \lim_{\Delta x\to 0} \frac{\Delta A}{\Delta x} = f(x)
       </span></p>
       <p>这意味着: <strong>面积函数 <span
       class="math inline">A(x)</span> 的导数正好等于被积函数 <span
-      class="math inline">f(x)</span></strong>！</p>
-      <p>换句话说，<span class="math inline">A(x)</span> 是 <span
-      class="math inline">f(x)</span> 的一个原函数。</p>
-      <p>现在，设 <span class="math inline">F</span> 是 <span
-      class="math inline">f</span>
-      的任意一个原函数，由于同一函数的任意两个原函数之间只相差一个常数，所以
-      <span class="math inline">A(x) = F(x) + C</span></p>
-      <p>当 <span class="math inline">x = a</span> 时，<span
+      class="math inline">f(x)</span></strong>!</p>
+      <p>换句话说, <span class="math inline">A(x)</span> 是 <span
+      class="math inline">f(x)</span> 的一个原函数.</p>
+      <p>现在, 设 <span class="math inline">F</span> 是 <span
+      class="math inline">f</span> 的任意一个原函数,
+      由于同一函数的任意两个原函数之间只相差一个常数, 所以 <span
+      class="math inline">A(x) = F(x) + C</span></p>
+      <p>当 <span class="math inline">x = a</span> 时, <span
       class="math inline">A(a) = \displaystyle\int_a^a f(t)\,dt =
-      0</span>，所以 <span class="math inline">0 = F(a) + C</span>，即
+      0</span>, 所以 <span class="math inline">0 = F(a) + C</span>, 即
       <span class="math inline">C = -F(a)</span></p>
       <p>因此 <span class="math inline">A(x) = F(x) - F(a)</span></p>
-      <p>当 <span class="math inline">x = b</span> 时，<span
+      <p>当 <span class="math inline">x = b</span> 时, <span
       class="math inline">A(b) = \displaystyle\int_a^b f(t)\,dt = F(b) -
       F(a)</span></p>
-      <p>这就完成了证明。</p>
+      <p>这就完成了证明.</p>
       </div>
       </div>
       <div id="chpt4-ex-003" class="exercise-block"
@@ -552,18 +565,19 @@
       </div>
       </div>
       </div>
-      <p>这些例子展示了微积分基本定理的强大威力——它将复杂的极限计算简化为简单的代数运算。</p>
+      <p>这些例子展示了微积分基本定理的强大威力——它将复杂的极限计算简化为简单的代数运算.</p>
       <h2 id="积分的性质和运算">4.3 积分的性质和运算</h2>
       <h3 id="积分的性质">4.3.1 积分的性质</h3>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要</span></div>
       <div class="callout-body">
-      <p>定积分具有一系列重要的性质，这些性质不仅有助于我们理解积分的本质，还能简化积分的计算。</p>
+      <p>定积分具有一系列重要的性质,
+      这些性质不仅有助于我们理解积分的本质, 还能简化积分的计算.</p>
       <p><strong>1. 线性性质</strong></p>
       <p>若函数 <span class="math inline">f</span> 和 <span
       class="math inline">g</span> 在 <span class="math inline">[a,
-      b]</span> 上可积，<span class="math inline">c</span>
-      为常数，则:</p>
+      b]</span> 上可积, <span class="math inline">c</span> 为常数,
+      则:</p>
       <ul>
       <li><strong>加法性质</strong>: <span class="math display">\int_a^b
       [f(x) + g(x)]\,dx = \int_a^b f(x)\,dx + \int_a^b
@@ -572,7 +586,8 @@
       c\cdot f(x)\,dx = c\cdot \int_a^b f(x)\,dx</span></li>
       </ul>
       <p><strong>几何解释</strong>:
-      加法性质表示两个函数围成的总面积等于各自面积的代数和；数乘性质表示函数值按比例缩放时，面积也按相同比例缩放。</p>
+      加法性质表示两个函数围成的总面积等于各自面积的代数和;
+      数乘性质表示函数值按比例缩放时, 面积也按相同比例缩放.</p>
       </div>
       </div>
       <div class="callout callout-important">
@@ -580,7 +595,7 @@
       <div class="callout-body">
       <p><strong>2. 区间可加性</strong></p>
       <p>若函数 <span class="math inline">f</span> 在包含 <span
-      class="math inline">a, b, c</span> 的区间上可积，则: <span
+      class="math inline">a, b, c</span> 的区间上可积, 则: <span
       class="math display">
       \int_a^b f(x)\,dx = \int_a^c f(x)\,dx + \int_c^b f(x)\,dx
       </span></p>
@@ -589,7 +604,7 @@
       的总面积等于从 <span class="math inline">a</span> 到 <span
       class="math inline">c</span> 的面积加上从 <span
       class="math inline">c</span> 到 <span class="math inline">b</span>
-      的面积。</p>
+      的面积.</p>
       </div>
       </div>
       <div class="callout callout-important">
@@ -599,8 +614,8 @@
       <p><span class="math display">
       \int_a^b f(x)\,dx = -\int_b^a f(x)\,dx
       </span></p>
-      <p><strong>几何解释</strong>:
-      当积分方向反转时，面积值变号，这保证了面积的方向性。</p>
+      <p><strong>几何解释</strong>: 当积分方向反转时, 面积值变号,
+      这保证了面积的方向性.</p>
       </div>
       </div>
       <div class="callout callout-important">
@@ -611,7 +626,8 @@
       \left|\int_a^b f(x)\,dx\right| \leq \int_a^b |f(x)|\,dx
       </span></p>
       <p><strong>几何解释</strong>:
-      函数积分的绝对值不超过函数绝对值积分，因为绝对值积分计算的是总面积（不考虑正负），而普通积分计算的是代数和。</p>
+      函数积分的绝对值不超过函数绝对值积分, 因为绝对值积分计算的是总面积
+      (不考虑正负), 而普通积分计算的是代数和.</p>
       </div>
       </div>
       <div class="callout callout-important">
@@ -619,43 +635,44 @@
       <div class="callout-body">
       <p><strong>5. 积分比较定理</strong></p>
       <p>若在 <span class="math inline">[a, b]</span> 上 <span
-      class="math inline">f(x) \leq g(x)</span>，则 <span
+      class="math inline">f(x) \leq g(x)</span>, 则 <span
       class="math display">
       \int_a^b f(x)\,dx \leq \int_a^b g(x)\,dx
       </span></p>
       <p><strong>几何解释</strong>:
-      函数值较大的曲线在相同区间上围成的面积也较大。</p>
+      函数值较大的曲线在相同区间上围成的面积也较大.</p>
       </div>
       </div>
       <h3 id="不定积分的运算">4.3.2 不定积分的运算</h3>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
-      <p>不定积分是求原函数的过程，其结果是一个函数族（相差一个常数）。以下是计算不定积分的两种基本方法.</p>
+      <p>不定积分是求原函数的过程, 其结果是一个函数族 (相差一个常数).
+      以下是计算不定积分的两种基本方法.</p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">换元积分法</span></div>
       <div class="callout-body">
-      <p>换元积分法源于链式法则的逆运算，是计算积分最强大的工具之一。</p>
-      <p><strong>基本思想</strong>:
-      通过变量代换，将复杂的积分转化为简单的积分。</p>
+      <p>换元积分法源于链式法则的逆运算, 是计算积分最强大的工具之一.</p>
+      <p><strong>基本思想</strong>: 通过变量代换,
+      将复杂的积分转化为简单的积分.</p>
       <p><strong>定理</strong>: 设函数 <span
       class="math inline">f</span> 在区间 <span
-      class="math inline">I</span> 上连续，函数 <span
+      class="math inline">I</span> 上连续, 函数 <span
       class="math inline">\varphi</span> 在区间 <span
       class="math inline">J</span> 上可导且值域包含于 <span
-      class="math inline">I</span>，则 <span class="math display">
+      class="math inline">I</span>, 则 <span class="math display">
       \int f(\varphi(x))\varphi&#39;(x)\,dx = \int f(u)\,du,\quad u =
       \varphi(x)
       </span></p>
       <p><strong>直观解释</strong>: 链式法则告诉我们 $ (F((x)))’ =
-      F’((x))‘(x) = f((x))’(x)$ 因此，<span
+      F’((x))‘(x) = f((x))’(x)$ 因此, <span
       class="math inline">\displaystyle\int f(\varphi(x))\varphi&#39;(x)
       dx</span> 应该是 <span class="math inline">F(\varphi(x)) +
       C</span> 这正是 <span class="math inline">\displaystyle\int f(u)
       du</span> 在 <span class="math inline">u = \varphi(x)</span>
-      时的结果。</p>
+      时的结果.</p>
       </div>
       </div>
       <div id="chpt4-ex-006" class="exercise-block"
@@ -741,7 +758,8 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">分部积分法</span></div>
       <div class="callout-body">
-      <p>分部积分法源于乘积求导法则的逆运算，适用于计算两个函数乘积的积分。</p>
+      <p>分部积分法源于乘积求导法则的逆运算,
+      适用于计算两个函数乘积的积分.</p>
       <p><strong>基本思想</strong>: 将难以直接计算的积分 <span
       class="math inline">\int u\,dv</span> 转化为更容易计算的 <span
       class="math inline">\displaystyle\int v\,du</span></p>
@@ -753,7 +771,7 @@
       两边积分得: <span class="math inline">uv = \displaystyle\int
       u&#39;v dx + \displaystyle\int uv&#39; dx</span> 整理得: <span
       class="math inline">\displaystyle\int uv&#39; dx = uv - \int
-      u&#39;v dx</span> 这就是分部积分公式。</p>
+      u&#39;v dx</span> 这就是分部积分公式.</p>
       </div>
       </div>
       <div id="chpt4-ex-008" class="exercise-block"
@@ -843,25 +861,25 @@
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
       <div class="callout-body">
-      <p>定积分的计算可以使用与不定积分相同的方法，但有一些重要区别:</p>
+      <p>定积分的计算可以使用与不定积分相同的方法, 但有一些重要区别:</p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定积分的换元法</span></div>
       <div class="callout-body">
-      <p>与不定积分的换元法相比，定积分的换元法有一个重要特点:
-      <strong>需要同时改变积分限</strong>。</p>
+      <p>与不定积分的换元法相比, 定积分的换元法有一个重要特点:
+      <strong>需要同时改变积分限</strong>.</p>
       <p><strong>定理</strong>: 设函数 <span
       class="math inline">f</span> 在区间 <span class="math inline">[a,
-      b]</span> 上连续，函数 <span class="math inline">\varphi</span>
+      b]</span> 上连续, 函数 <span class="math inline">\varphi</span>
       在区间 <span class="math inline">[\alpha, \beta]</span>
-      上具有连续导数，且 <span class="math inline">\varphi(\alpha) = a,
-      \varphi(\beta) = b</span>，则 <span class="math display">
+      上具有连续导数, 且 <span class="math inline">\varphi(\alpha) = a,
+      \varphi(\beta) = b</span>, 则 <span class="math display">
       \int_a^b f(x)\,dx = \int_\alpha^\beta
       f(\varphi(t))\varphi&#39;(t)\,dt
       </span></p>
-      <p><strong>关键区别</strong>:
-      在定积分中使用换元法时，不仅要进行变量代换，还要相应地改变积分上下限。</p>
+      <p><strong>关键区别</strong>: 在定积分中使用换元法时,
+      不仅要进行变量代换, 还要相应地改变积分上下限.</p>
       </div>
       </div>
       <div id="chpt4-ex-010" class="exercise-block"
@@ -968,12 +986,12 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定积分的分部积分法</span></div>
       <div class="callout-body">
-      <p>定积分的分部积分法与不定积分类似，但结果是一个数值而非函数。</p>
+      <p>定积分的分部积分法与不定积分类似, 但结果是一个数值而非函数.</p>
       <p><strong>公式</strong>: <span
       class="math inline">\displaystyle\int_a^b u\,dv = [uv]_a^b -
       \int_a^b v\,du</span></p>
-      <p><strong>关键区别</strong>: 在定积分的分部积分法中，<span
-      class="math inline">uv</span> 项需要代入上下限计算。</p>
+      <p><strong>关键区别</strong>: 在定积分的分部积分法中, <span
+      class="math inline">uv</span> 项需要代入上下限计算.</p>
       </div>
       </div>
       <div id="chpt4-ex-012" class="exercise-block"
@@ -1067,32 +1085,37 @@
       <div class="callout-body">
       <p>定积分还有一些不定积分不具备的特殊性质:</p>
       <p><strong>对称性</strong>: - 若 <span
-      class="math inline">f</span> 是偶函数（<span
-      class="math inline">f(-x) = f(x)</span>），则 <span
+      class="math inline">f</span> 是偶函数 (<span
+      class="math inline">f(-x) = f(x)</span>), 则 <span
       class="math inline">\displaystyle\int_{-a}^a f(x)\,dx = 2\int_0^a
-      f(x)\,dx</span> - 若 <span class="math inline">f</span>
-      是奇函数（<span class="math inline">f(-x) = -f(x)</span>），则
-      <span class="math inline">\displaystyle\int_{-a}^a f(x)\,dx =
+      f(x)\,dx</span> - 若 <span class="math inline">f</span> 是奇函数
+      (<span class="math inline">f(-x) = -f(x)</span>), 则 <span
+      class="math inline">\displaystyle\int_{-a}^a f(x)\,dx =
       0</span></p>
       <p><strong>周期性</strong>: 若 <span class="math inline">f</span>
-      是周期为 <span class="math inline">T</span> 的周期函数，则 <span
+      是周期为 <span class="math inline">T</span> 的周期函数, 则 <span
       class="math inline">\displaystyle\int_a^{a+T} f(x)\,dx = \int_0^T
       f(x)\,dx</span></p>
-      <p>这些特殊性质可以大大简化定积分的计算。</p>
-      <p>通过掌握这些积分方法，我们能够解决各种复杂的积分计算问题，为后续的数学学习和应用打下坚实基础。</p>
+      <p>这些特殊性质可以大大简化定积分的计算.</p>
+      <p>通过掌握这些积分方法, 我们能够解决各种复杂的积分计算问题,
+      为后续的数学学习和应用打下坚实基础.</p>
       </div>
       </div>
       <div class="callout callout-warning">
       <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">人生就像一场积分</span></div>
       <div class="callout-body">
-      <p>人生就像一场积分,
-      <strong>考上大学，从一个环境到另一个环境，就像积分中的换元法</strong>。但换元法的精髓在于:
-      <strong>改变变量的同时，必须调整积分的上下限</strong>。</p>
+      <p>人生就像一场积分, <strong>考上大学, 从一个环境到另一个环境,
+      就像积分中的换元法</strong>. 但换元法的精髓在于:
+      <strong>改变变量的同时, 必须调整积分的上下限</strong>.</p>
       <p>这意味着: - 你不能用高中的标准来衡量大学的生活 -
-      你不能用过去的思维来解决现在的问题<br />
-      - 你不能用旧的习惯来面对新的环境</p>
-      <p>就像在定积分的换元中，如果只改变被积函数而忘记改变积分限，结果必然是错误的。在人生的换元中，如果只改变环境而不调整自己的心态、目标和行为方式，同样难以获得正确的人生积分。</p>
-      <p>每一次重要的转变——无论是升学、就业、结婚，还是任何重大的人生抉择——都是一次换元。成功的换元需要我们:</p>
+      你不能用过去的思维来解决现在的问题 -
+      你不能用旧的习惯来面对新的环境</p>
+      <p>就像在定积分的换元中, 如果只改变被积函数而忘记改变积分限,
+      结果必然是错误的. 在人生的换元中,
+      如果只改变环境而不调整自己的心态, 目标和行为方式,
+      同样难以获得正确的人生积分.</p>
+      <p>每一次重要的转变——无论是升学, 就业, 结婚,
+      还是任何重大的人生抉择——都是一次换元. 成功的换元需要我们:</p>
       <ol type="1">
       <li><strong>认清新旧变量的对应关系</strong>:
       理解新旧环境之间的差异和联系</li>
@@ -1100,9 +1123,11 @@
       明确在新阶段中的起点和目标</li>
       <li><strong>勇敢地执行变换</strong>: 主动适应新的规则和节奏</li>
       </ol>
-      <p>积分教会我们的不仅是数学技巧，更是一种人生智慧:
-      <strong>懂得在变化中保持本质，在转型中完成累积</strong>。</p>
-      <p>愿你善于运用人生的”换元法”，在每一个转折点都能准确调整自己的”积分上下限”，让生命的定积分值不断增长，最终收获丰盈而充实的人生。</p>
+      <p>积分教会我们的不仅是数学技巧, 更是一种人生智慧:
+      <strong>懂得在变化中保持本质, 在转型中完成累积</strong>.</p>
+      <p>愿你善于运用人生的”换元法”,
+      在每一个转折点都能准确调整自己的”积分上下限”,
+      让生命的定积分值不断增长, 最终收获丰盈而充实的人生.</p>
       </div>
       </div>
     </div>
