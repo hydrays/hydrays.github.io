@@ -259,7 +259,81 @@
       class="math inline">\partial D</span>.</p>
       </div>
       </div>
-      <p>::: {. exercise id=“chpt10-ex-015”} :::</p>
+      <div id="chpt10-ex-015" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例1: 点集的内点、外点与边界点</span><span
+      class="ex-tags"><span class="ex-tag">多元函数</span><span
+      class="ex-tag">点集拓扑</span><span
+      class="ex-tag">邻域</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>判断集合 <span class="math inline">1 &lt; x^2 + y^2 &lt;
+      2</span> 中各点的内点、外点和边界点.</p>
+      <figure>
+      <img src="../media/img/chpt10_ex015.png" width="400"
+      alt="圆环 D = \{1 &lt; x^2+y^2 &lt; 2\} — 内点 (绿色), 边界点 (\times, 不属于 D), 外点 (黄色)" />
+      <figcaption aria-hidden="true">圆环 <span class="math inline">D =
+      \{1 &lt; x^2+y^2 &lt; 2\}</span> — 内点 (绿色), 边界点 (<span
+      class="math inline">\times</span>, 不属于 D), 外点
+      (黄色)</figcaption>
+      </figure>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-015-frame" data-panel="chpt10-ex-015-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-015-frame" data-panel="chpt10-ex-015-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt10-ex-015-frame" class="ex-frame" hidden="">
+      <div id="chpt10-ex-015-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>分别考虑满足 <span
+      class="math inline">x^2+y^2&lt;1</span>、<span
+      class="math inline">x^2+y^2=1</span>、<span
+      class="math inline">1&lt;x^2+y^2&lt;2</span>、<span
+      class="math inline">x^2+y^2=2</span>、<span
+      class="math inline">x^2+y^2&gt;2</span>
+      的点，对每种情形找一个邻域加以判断.</p>
+      </div>
+      <div id="chpt10-ex-015-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>设集合 <span class="math inline">D = \{(x,y) \mid 1 &lt; x^2 +
+      y^2 &lt; 2\}</span>.</p>
+      <p><strong>内点：</strong> 对满足 <span class="math inline">1 &lt;
+      x^2 + y^2 &lt; 2</span> 的点 <span
+      class="math inline">P</span>，取足够小的 <span
+      class="math inline">\delta &gt; 0</span>（例如取 <span
+      class="math inline">\delta = \min\{x^2+y^2-1,\
+      2-x^2-y^2\}/2</span>），则 <span class="math inline">P</span> 的
+      <span class="math inline">\delta</span>-邻域完全包含于 <span
+      class="math inline">D</span>，故 <span
+      class="math inline">P</span> 是 <span class="math inline">D</span>
+      的<strong>内点</strong>.</p>
+      <p><strong>外点：</strong> 对满足 <span class="math inline">x^2 +
+      y^2 &lt; 1</span> 或 <span class="math inline">x^2 + y^2 &gt;
+      2</span> 的点 <span
+      class="math inline">P</span>，存在足够小的邻域与 <span
+      class="math inline">D</span> 不相交，故 <span
+      class="math inline">P</span> 是 <span class="math inline">D</span>
+      的<strong>外点</strong>.</p>
+      <p><strong>边界点：</strong> 满足 <span class="math inline">x^2 +
+      y^2 = 1</span> 或 <span class="math inline">x^2 + y^2 = 2</span>
+      的点 <span class="math inline">P</span>，其任意邻域内既有属于
+      <span class="math inline">D</span> 的点，也有不属于 <span
+      class="math inline">D</span> 的点，故 <span
+      class="math inline">P</span> 是 <span class="math inline">D</span>
+      的<strong>边界点</strong>.</p>
+      <p>因此，<span class="math inline">D</span> 的边界为 <span
+      class="math inline">\partial D = \{(x,y) \mid x^2+y^2=1\} \cup
+      \{(x,y) \mid x^2+y^2=2\}</span>，即两个同心圆.</p>
+      </div>
+      </div>
+      </div>
+      </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">开集与闭集</span></div>
       <div class="callout-body">
@@ -268,7 +342,73 @@
       class="math inline">\partial D \subseteq D</span></p>
       </div>
       </div>
-      <p>::: {. exercise id=“chpt10-ex-016”} :::</p>
+      <div id="chpt10-ex-016" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例2: 开集的判断</span><span class="ex-tags"><span
+      class="ex-tag">多元函数</span><span
+      class="ex-tag">点集拓扑</span><span
+      class="ex-tag">开集</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>证明集合 <span class="math inline">D = \{(x,y) \mid 1 &lt; x^2
+      + y^2 &lt; 2\}</span> 为开集.</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-016-frame" data-panel="chpt10-ex-016-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-016-frame" data-panel="chpt10-ex-016-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt10-ex-016-frame" class="ex-frame" hidden="">
+      <div id="chpt10-ex-016-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>按开集定义，对 <span class="math inline">D</span>
+      中任意一点，找到一个完全包含于 <span class="math inline">D</span>
+      的邻域即可.</p>
+      </div>
+      <div id="chpt10-ex-016-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>要证 <span class="math inline">D</span> 是开集，需证 <span
+      class="math inline">D</span> 中的每一个点都是 <span
+      class="math inline">D</span> 的内点.</p>
+      <p>设 <span class="math inline">P(x,y) \in D</span>，即 <span
+      class="math inline">1 &lt; x^2 + y^2 &lt; 2</span>.</p>
+      <p>令 <span class="math inline">r_1 = x^2 + y^2 - 1 &gt;
+      0</span>，<span class="math inline">r_2 = 2 - x^2 - y^2 &gt;
+      0</span>，取</p>
+      <p><span class="math display">\delta = \frac{\min\{r_1, r_2\}}{2}
+      &gt; 0.</span></p>
+      <p>对 <span class="math inline">P</span> 的 <span
+      class="math inline">\delta</span>-邻域 <span
+      class="math inline">U(P,\delta)</span> 中任意一点 <span
+      class="math inline">Q(x&#39;,y&#39;)</span>，有</p>
+      <p><span class="math display">\left|\sqrt{x&#39;^2+y&#39;^2} -
+      \sqrt{x^2+y^2}\right| \leq \sqrt{(x&#39;-x)^2+(y&#39;-y)^2} &lt;
+      \delta.</span></p>
+      <p>因此</p>
+      <p><span class="math display">x^2+y^2 - \delta &lt;
+      x&#39;^2+y&#39;^2 &lt; x^2+y^2 + \delta,</span></p>
+      <p>从而</p>
+      <p><span class="math display">x&#39;^2+y&#39;^2 &gt; x^2+y^2 -
+      \delta \geq 1 + r_1 - \frac{r_1}{2} &gt; 1,</span></p>
+      <p><span class="math display">x&#39;^2+y&#39;^2 &lt; x^2+y^2 +
+      \delta \leq 2 - r_2 + \frac{r_2}{2} &lt; 2.</span></p>
+      <p>故 <span class="math inline">Q \in D</span>，即 <span
+      class="math inline">U(P,\delta) \subset D</span>. 由此 <span
+      class="math inline">P</span> 是 <span class="math inline">D</span>
+      的内点.</p>
+      <p>由 <span class="math inline">P</span> 的任意性，<span
+      class="math inline">D</span> 的每个点都是内点，所以 <span
+      class="math inline">D</span> 是<strong>开集</strong>. <span
+      class="math inline">\blacksquare</span></p>
+      </div>
+      </div>
+      </div>
+      </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">连通集</span></div>
       <div class="callout-body">
@@ -361,9 +501,194 @@
       class="math inline">y</span>-轴趋近就断言极限存在.</p>
       </div>
       </div>
-      <p>::: {. exercise id=“chpt10-ex-001”} :::</p>
-      <p>::: {. exercise id=“chpt10-ex-002”} :::</p>
-      <p>::: {. exercise id=“chpt10-ex-003”} :::</p>
+      <div id="chpt10-ex-001" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例3</span><span class="ex-tags"><span
+      class="ex-tag">多元函数</span><span
+      class="ex-tag">极限</span><span
+      class="ex-tag">epsilon-delta证明</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>设 <span class="math inline">f(x,y) = (x^2 + y^2)
+      \displaystyle\sin \frac{1}{x^2 + y^2}</span>，求证：</p>
+      <p><span class="math display">
+      \lim_{(x,y) \to (0,0)} f(x,y) = 0.
+      </span></p>
+      <figure>
+      <img src="../media/img/chpt10_ex001.png" width="400"
+      alt="z = (x^2+y^2)\sin(1/(x^2+y^2)) 在原点附近振荡, 但被 \pm r^2 夹住, 极限 =0" />
+      <figcaption aria-hidden="true"><span class="math inline">z =
+      (x^2+y^2)\sin(1/(x^2+y^2))</span> 在原点附近振荡, 但被 <span
+      class="math inline">\pm r^2</span> 夹住, 极限 <span
+      class="math inline">=0</span></figcaption>
+      </figure>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-001-frame" data-panel="chpt10-ex-001-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-001-frame" data-panel="chpt10-ex-001-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt10-ex-001-frame" class="ex-frame" hidden="">
+      <div id="chpt10-ex-001-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>利用夹逼定理：对正弦函数用绝对值不等式 <span
+      class="math inline">|\sin(\cdot)| \le 1</span>，将 <span
+      class="math inline">|f(x,y)|</span> 用 <span
+      class="math inline">x^2+y^2</span> 上界控制，再用 <span
+      class="math inline">\varepsilon</span>-<span
+      class="math inline">\delta</span> 语言严格证明。</p>
+      </div>
+      <div id="chpt10-ex-001-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>函数 <span class="math inline">f(x,y)</span> 的定义域为 <span
+      class="math inline">D = \mathbb{R}^2 \backslash
+      \{(0,0)\}</span>，点 <span class="math inline">O(0,0)</span> 为
+      <span class="math inline">D</span> 的聚点。</p>
+      <p>因为</p>
+      <p><span class="math display">
+      |f(x,y) - 0| = \left| (x^2 + y^2) \sin \frac{1}{x^2 + y^2} \right|
+      \leq x^2 + y^2,
+      </span></p>
+      <p>可见，<span class="math inline">\forall \varepsilon &gt;
+      0</span>，取 <span class="math inline">\delta =
+      \sqrt{\varepsilon}</span>，则当 <span class="math inline">0 &lt;
+      \sqrt{(x-0)^2 + (y-0)^2} &lt; \delta</span> 时，即 <span
+      class="math inline">P(x,y) \in D \cap U(O, \delta)</span>
+      时，总有</p>
+      <p><span class="math display">
+      |f(x,y) - 0| \leq x^2 + y^2 &lt; \delta^2 = \varepsilon
+      </span></p>
+      <p>成立，所以</p>
+      <p><span class="math display">
+      \lim_{(x,y) \to (0,0)} f(x,y) = 0.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt10-ex-002" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例4</span><span class="ex-tags"><span
+      class="ex-tag">多元函数</span><span
+      class="ex-tag">极限</span><span
+      class="ex-tag">极限不存在</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>考察函数</p>
+      <p><span class="math display">
+      f(x,y) = \begin{cases} \dfrac{xy}{x^2 + y^2}, &amp; x^2 + y^2 \neq
+      0, \\ 0, &amp; x^2 + y^2 = 0 \end{cases}
+      </span></p>
+      <p>在点 <span class="math inline">(0, 0)</span>
+      处的极限是否存在。</p>
+      <figure>
+      <img src="../media/img/chpt10_ex002.png" width="400"
+      alt="z = xy/(x^2+y^2) 是马鞍形曲面 — 沿不同方向 (y=kx) 趋近原点得到不同值, 极限不存在" />
+      <figcaption aria-hidden="true"><span class="math inline">z =
+      xy/(x^2+y^2)</span> 是马鞍形曲面 — 沿不同方向 (<span
+      class="math inline">y=kx</span>) 趋近原点得到不同值,
+      极限不存在</figcaption>
+      </figure>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-002-frame" data-panel="chpt10-ex-002-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-002-frame" data-panel="chpt10-ex-002-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt10-ex-002-frame" class="ex-frame" hidden="">
+      <div id="chpt10-ex-002-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>沿坐标轴趋近时极限均为 <span
+      class="math inline">0</span>，但沿直线 <span class="math inline">y
+      = kx</span> 趋近时极限依赖于 <span
+      class="math inline">k</span>，由此说明极限不存在。</p>
+      </div>
+      <div id="chpt10-ex-002-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>沿 <span class="math inline">x</span> 轴趋近（令 <span
+      class="math inline">y = 0</span>）：</p>
+      <p><span class="math display">
+      \lim_{x \to 0} f(x, 0) = \lim_{x \to 0} 0 = 0.
+      </span></p>
+      <p>沿 <span class="math inline">y</span> 轴趋近（令 <span
+      class="math inline">x = 0</span>）：</p>
+      <p><span class="math display">
+      \lim_{y \to 0} f(0, y) = \lim_{y \to 0} 0 = 0.
+      </span></p>
+      <p>虽然沿坐标轴趋近时极限均为 <span
+      class="math inline">0</span>，但不能由此断定极限存在。当点 <span
+      class="math inline">P(x,y)</span> 沿直线 <span
+      class="math inline">y = kx</span> 趋于 <span
+      class="math inline">(0,0)</span> 时，</p>
+      <p><span class="math display">
+      \lim_{x \to 0} f(x, kx) = \lim_{x \to 0} \frac{k x^2}{x^2 + k^2
+      x^2} = \frac{k}{1 + k^2}.
+      </span></p>
+      <p><span class="math inline">k</span> 不同时极限值不同，故函数在
+      <span class="math inline">(0, 0)</span>
+      处的极限<strong>不存在</strong>。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt10-ex-003" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例5</span><span class="ex-tags"><span
+      class="ex-tag">多元函数</span><span
+      class="ex-tag">极限</span><span
+      class="ex-tag">等价无穷小</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求极限</p>
+      <p><span class="math display">
+      \lim_{(x,y) \to (0,2)} \frac{\sin(xy)}{x}.
+      </span></p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-003-frame" data-panel="chpt10-ex-003-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-003-frame" data-panel="chpt10-ex-003-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt10-ex-003-frame" class="ex-frame" hidden="">
+      <div id="chpt10-ex-003-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>将 <span class="math inline">\dfrac{\sin(xy)}{x}</span> 改写为
+      <span class="math inline">\dfrac{\sin(xy)}{xy} \cdot
+      y</span>，再利用 <span class="math inline">\lim_{u \to 0}
+      \dfrac{\sin u}{u} = 1</span>。</p>
+      </div>
+      <div id="chpt10-ex-003-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>函数 <span class="math inline">\dfrac{\sin(xy)}{x}</span>
+      的定义域为 <span class="math inline">D = \{(x,y) \mid x \neq 0, y
+      \in \mathbb{R}\}</span>，<span class="math inline">P_0(0,2)</span>
+      为 <span class="math inline">D</span> 的聚点。</p>
+      <p><span class="math display">
+      \lim_{(x,y) \to (0,2)} \frac{\sin(xy)}{x}
+      = \lim_{(x,y) \to (0,2)} \left[ \frac{\sin(xy)}{xy} \cdot y
+      \right]
+      = \lim_{xy \to 0} \frac{\sin(xy)}{xy} \cdot \lim_{y \to 2} y
+      = 1 \cdot 2 = 2.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
       <h3 id="多元函数的连续性-1">10.1.3 多元函数的连续性</h3>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
@@ -474,7 +799,63 @@
       </span></p>
       </div>
       </div>
-      <p>::: {. exercise id=“chpt10-ex-004”} :::</p>
+      <div id="chpt10-ex-004" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例6</span><span class="ex-tags"><span
+      class="ex-tag">偏导数</span><span
+      class="ex-tag">分段函数</span><span
+      class="ex-tag">定义法求导</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求分段函数</p>
+      <p><span class="math display">
+      z = f(x, y) = \begin{cases} \dfrac{xy}{x^2 + y^2}, &amp; x^2 + y^2
+      \neq 0, \\ 0, &amp; x^2 + y^2 = 0 \end{cases}
+      </span></p>
+      <p>在点 <span class="math inline">(0, 0)</span> 处的偏导数 <span
+      class="math inline">f_x(0,0)</span> 和 <span
+      class="math inline">f_y(0,0)</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-004-frame" data-panel="chpt10-ex-004-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-004-frame" data-panel="chpt10-ex-004-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt10-ex-004-frame" class="ex-frame" hidden="">
+      <div id="chpt10-ex-004-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>在原点处不能用求导公式，需回到偏导数的定义，用差商极限直接计算。</p>
+      </div>
+      <div id="chpt10-ex-004-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><strong>计算 <span
+      class="math inline">f_x(0,0)</span>：</strong></p>
+      <p><span class="math display">
+      f_x(0, 0) = \lim_{\Delta x \to 0} \frac{f(0 + \Delta x,\, 0) -
+      f(0, 0)}{\Delta x} = \lim_{\Delta x \to 0} \frac{0 - 0}{\Delta x}
+      = 0.
+      </span></p>
+      <p><strong>计算 <span
+      class="math inline">f_y(0,0)</span>：</strong></p>
+      <p><span class="math display">
+      f_y(0, 0) = \lim_{\Delta y \to 0} \frac{f(0,\, 0 + \Delta y) -
+      f(0, 0)}{\Delta y} = \lim_{\Delta y \to 0} \frac{0 - 0}{\Delta y}
+      = 0.
+      </span></p>
+      <p>故 <span class="math inline">f_x(0,0) = f_y(0,0) =
+      0</span>。</p>
+      <p><strong>注意：</strong> 尽管偏导数在原点存在，但由例
+      chpt10-ex-002
+      知该函数在原点的极限不存在，故函数在原点不连续，这说明偏导数存在不能保证函数连续。</p>
+      </div>
+      </div>
+      </div>
+      </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要</span></div>
       <div class="callout-body">
@@ -513,7 +894,70 @@
       </ol>
       </div>
       </div>
-      <p>::: {. exercise id=“chpt10-ex-017”} :::</p>
+      <div id="chpt10-ex-017" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例7: 高阶偏导数的计算</span><span
+      class="ex-tags"><span class="ex-tag">偏导数</span><span
+      class="ex-tag">高阶导数</span><span
+      class="ex-tag">混合偏导数</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>设函数 <span class="math inline">z = x^3 y^2 - 3xy^3 - xy +
+      1</span>，求下列高阶偏导数：</p>
+      <p><span class="math display">\frac{\partial^2 z}{\partial
+      x^2},\quad \frac{\partial^2 z}{\partial y \partial x},\quad
+      \frac{\partial^2 z}{\partial x \partial y},\quad \frac{\partial^2
+      z}{\partial y^2} \quad \text{及}\quad \frac{\partial^3 z}{\partial
+      x^3}.</span></p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-017-frame" data-panel="chpt10-ex-017-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-017-frame" data-panel="chpt10-ex-017-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt10-ex-017-frame" class="ex-frame" hidden="">
+      <div id="chpt10-ex-017-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>先分别求出对 <span class="math inline">x</span> 和对 <span
+      class="math inline">y</span> 的一阶偏导数，再对结果继续求偏导.
+      注意混合偏导数 <span class="math inline">\frac{\partial^2
+      z}{\partial y \partial x}</span> 表示先对 <span
+      class="math inline">x</span> 求偏导再对 <span
+      class="math inline">y</span> 求偏导.</p>
+      </div>
+      <div id="chpt10-ex-017-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><strong>第一步：求一阶偏导数.</strong></p>
+      <p><span class="math display">\frac{\partial z}{\partial x} = 3x^2
+      y^2 - 3y^3 - y</span></p>
+      <p><span class="math display">\frac{\partial z}{\partial y} = 2x^3
+      y - 9xy^2 - x</span></p>
+      <p><strong>第二步：求二阶偏导数.</strong></p>
+      <p><span class="math display">\frac{\partial^2 z}{\partial x^2} =
+      \frac{\partial}{\partial x}(3x^2 y^2 - 3y^3 - y) =
+      6xy^2</span></p>
+      <p><span class="math display">\frac{\partial^2 z}{\partial y
+      \partial x} = \frac{\partial}{\partial y}(3x^2 y^2 - 3y^3 - y) =
+      6x^2 y - 9y^2 - 1</span></p>
+      <p><span class="math display">\frac{\partial^2 z}{\partial x
+      \partial y} = \frac{\partial}{\partial x}(2x^3 y - 9xy^2 - x) =
+      6x^2 y - 9y^2 - 1</span></p>
+      <p><span class="math display">\frac{\partial^2 z}{\partial y^2} =
+      \frac{\partial}{\partial y}(2x^3 y - 9xy^2 - x) = 2x^3 -
+      18xy</span></p>
+      <p>注意两个混合偏导数相等，这与二阶混合偏导数在连续时与求导次序无关的定理一致.</p>
+      <p><strong>第三步：求三阶偏导数.</strong></p>
+      <p><span class="math display">\frac{\partial^3 z}{\partial x^3} =
+      \frac{\partial}{\partial x}(6xy^2) = 6y^2</span></p>
+      </div>
+      </div>
+      </div>
+      </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要</span></div>
       <div class="callout-body">
@@ -528,8 +972,138 @@
       <strong>二阶混合偏导数在连续条件下与求导次序无关</strong>,</p>
       </div>
       </div>
-      <p>::: {. exercise id=“chpt10-ex-005”} :::</p>
-      <p>::: {. exercise id=“chpt10-ex-006”} :::</p>
+      <div id="chpt10-ex-005" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例8</span><span class="ex-tags"><span
+      class="ex-tag">高阶偏导数</span><span
+      class="ex-tag">拉普拉斯方程</span><span
+      class="ex-tag">验证</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>验证函数 <span class="math inline">z = \ln \sqrt{x^2 +
+      y^2}</span> 满足拉普拉斯方程</p>
+      <p><span class="math display">
+      \frac{\partial^2 z}{\partial x^2} + \frac{\partial^2 z}{\partial
+      y^2} = 0.
+      </span></p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-005-frame" data-panel="chpt10-ex-005-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-005-frame" data-panel="chpt10-ex-005-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt10-ex-005-frame" class="ex-frame" hidden="">
+      <div id="chpt10-ex-005-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>先将 <span class="math inline">\ln\sqrt{x^2+y^2}</span> 化简为
+      <span
+      class="math inline">\frac{1}{2}\ln(x^2+y^2)</span>，然后依次求一阶、二阶偏导数，最后相加。</p>
+      </div>
+      <div id="chpt10-ex-005-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>化简函数：</p>
+      <p><span class="math display">
+      z = \frac{1}{2} \ln(x^2 + y^2).
+      </span></p>
+      <p>求一阶偏导数：</p>
+      <p><span class="math display">
+      \frac{\partial z}{\partial x} = \frac{x}{x^2 + y^2}, \qquad
+      \frac{\partial z}{\partial y} = \frac{y}{x^2 + y^2}.
+      </span></p>
+      <p>求二阶偏导数：</p>
+      <p><span class="math display">
+      \frac{\partial^2 z}{\partial x^2} = \frac{(x^2+y^2) - x \cdot
+      2x}{(x^2+y^2)^2} = \frac{y^2 - x^2}{(x^2+y^2)^2},
+      </span></p>
+      <p><span class="math display">
+      \frac{\partial^2 z}{\partial y^2} = \frac{(x^2+y^2) - y \cdot
+      2y}{(x^2+y^2)^2} = \frac{x^2 - y^2}{(x^2+y^2)^2}.
+      </span></p>
+      <p>验证：</p>
+      <p><span class="math display">
+      \frac{\partial^2 z}{\partial x^2} + \frac{\partial^2 z}{\partial
+      y^2} = \frac{y^2 - x^2 + x^2 - y^2}{(x^2+y^2)^2} = 0. \qquad
+      \square
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt10-ex-006" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例9</span><span class="ex-tags"><span
+      class="ex-tag">高阶偏导数</span><span
+      class="ex-tag">拉普拉斯方程</span><span
+      class="ex-tag">三元函数</span><span
+      class="ex-tag">验证</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>证明函数 <span class="math inline">u = \dfrac{1}{r}</span>
+      满足三维拉普拉斯方程</p>
+      <p><span class="math display">
+      \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial
+      y^2} + \frac{\partial^2 u}{\partial z^2} = 0,
+      </span></p>
+      <p>其中 <span class="math inline">r = \sqrt{x^2 + y^2 +
+      z^2}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-006-frame" data-panel="chpt10-ex-006-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-006-frame" data-panel="chpt10-ex-006-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt10-ex-006-frame" class="ex-frame" hidden="">
+      <div id="chpt10-ex-006-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>先对 <span class="math inline">x</span>
+      求一阶偏导，利用复合函数求导得 <span
+      class="math inline">\dfrac{\partial r}{\partial x} =
+      \dfrac{x}{r}</span>；再对 <span class="math inline">x</span>
+      求二阶偏导；由对称性写出 <span class="math inline">y, z</span>
+      方向的结果，最后求和。</p>
+      </div>
+      <div id="chpt10-ex-006-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>由 <span class="math inline">r = \sqrt{x^2+y^2+z^2}</span>，有
+      <span class="math inline">\dfrac{\partial r}{\partial x} =
+      \dfrac{x}{r}</span>。</p>
+      <p><span class="math display">
+      \frac{\partial u}{\partial x} = -\frac{1}{r^2} \cdot
+      \frac{\partial r}{\partial x} = -\frac{x}{r^3}.
+      </span></p>
+      <p><span class="math display">
+      \frac{\partial^2 u}{\partial x^2} = -\frac{r^3 - x \cdot 3r^2
+      \frac{\partial r}{\partial x}}{r^6} = -\frac{1}{r^3} +
+      \frac{3x^2}{r^5}.
+      </span></p>
+      <p>由对称性：</p>
+      <p><span class="math display">
+      \frac{\partial^2 u}{\partial y^2} = -\frac{1}{r^3} +
+      \frac{3y^2}{r^5}, \qquad \frac{\partial^2 u}{\partial z^2} =
+      -\frac{1}{r^3} + \frac{3z^2}{r^5}.
+      </span></p>
+      <p>求和：</p>
+      <p><span class="math display">
+      \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial
+      y^2} + \frac{\partial^2 u}{\partial z^2}
+      = -\frac{3}{r^3} + \frac{3(x^2+y^2+z^2)}{r^5}
+      = -\frac{3}{r^3} + \frac{3r^2}{r^5}
+      = 0. \qquad \square
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
       <h2 id="全微分">10.3 全微分</h2>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
@@ -586,9 +1160,163 @@
       </div>
       </div>
       <script data-lazy-module="threejs/chapter10-complex.js?v=20260331a"></script>
-      <p>::: {. exercise id=“chpt10-ex-007”} :::</p>
-      <p>::: {. exercise id=“chpt10-ex-008”} :::</p>
-      <p>::: {. exercise id=“chpt10-ex-009”} :::</p>
+      <div id="chpt10-ex-007" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例10</span><span class="ex-tags"><span
+      class="ex-tag">全微分</span><span
+      class="ex-tag">线性函数</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求函数 <span class="math inline">z(x,y) = x + y</span> 的全微分
+      <span class="math inline">dz</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-007-frame" data-panel="chpt10-ex-007-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-007-frame" data-panel="chpt10-ex-007-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt10-ex-007-frame" class="ex-frame" hidden="">
+      <div id="chpt10-ex-007-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>直接计算两个一阶偏导数，代入全微分公式 <span
+      class="math inline">dz = \frac{\partial z}{\partial x}dx +
+      \frac{\partial z}{\partial y}dy</span>。</p>
+      </div>
+      <div id="chpt10-ex-007-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>变量变化：<span class="math inline">x \to x + \Delta
+      x</span>，<span class="math inline">y \to y + \Delta
+      y</span>。</p>
+      <p>函数增量：<span class="math inline">\Delta z = (x + \Delta x) +
+      (y + \Delta y) - (x + y) = \Delta x + \Delta y</span>。</p>
+      <p>偏导数：<span class="math inline">\dfrac{\partial z}{\partial
+      x} = 1</span>，<span class="math inline">\dfrac{\partial
+      z}{\partial y} = 1</span>。</p>
+      <p>全微分：</p>
+      <p><span class="math display">
+      dz = dx + dy.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt10-ex-008" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例11</span><span class="ex-tags"><span
+      class="ex-tag">全微分</span><span
+      class="ex-tag">高阶无穷小</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求函数 <span class="math inline">z(x,y) = x^2 + 2y^3</span>
+      的全微分 <span class="math inline">dz</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-008-frame" data-panel="chpt10-ex-008-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-008-frame" data-panel="chpt10-ex-008-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt10-ex-008-frame" class="ex-frame" hidden="">
+      <div id="chpt10-ex-008-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>展开增量 <span class="math inline">\Delta
+      z</span>，保留一阶项（线性主部），高阶无穷小项舍去，即得全微分。</p>
+      </div>
+      <div id="chpt10-ex-008-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>考虑自变量的微小变化 <span class="math inline">x \to
+      x+dx</span>，<span class="math inline">y \to y+dy</span>：</p>
+      <p><span class="math display">
+      z(x+dx, y+dy) = (x+dx)^2 + 2(y+dy)^3.
+      </span></p>
+      <p>展开并识别各阶项：</p>
+      <p><span class="math display">
+      \Delta z = 2x\,dx + 6y^2\,dy + \underbrace{dx^2 + 6y\,dy^2 +
+      2\,dy^3}_{\text{高阶无穷小}}.
+      </span></p>
+      <p>偏导数：<span class="math inline">\dfrac{\partial z}{\partial
+      x} = 2x</span>，<span class="math inline">\dfrac{\partial
+      z}{\partial y} = 6y^2</span>。</p>
+      <p>全微分（取线性主部）：</p>
+      <p><span class="math display">
+      dz = 2x\,dx + 6y^2\,dy.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt10-ex-009" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例12</span><span class="ex-tags"><span
+      class="ex-tag">全微分</span><span class="ex-tag">应用</span><span
+      class="ex-tag">梯形截面</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>设截面积函数</p>
+      <p><span class="math display">
+      S(x, \theta) = Lx\sin\theta - 2x^2\sin\theta +
+      x^2\sin\theta\cos\theta,
+      </span></p>
+      <p>求全微分 <span class="math inline">dS</span>。</p>
+      <figure>
+      <img src="../media/img/chpt10_ex009.png" width="400"
+      alt="等腰梯形截面, 折边长 x, 折角 \theta, 底宽 L-2x — 截面积是 x, \theta 的二元函数" />
+      <figcaption aria-hidden="true">等腰梯形截面, 折边长 <span
+      class="math inline">x</span>, 折角 <span
+      class="math inline">\theta</span>, 底宽 <span
+      class="math inline">L-2x</span> — 截面积是 <span
+      class="math inline">x, \theta</span> 的二元函数</figcaption>
+      </figure>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-009-frame" data-panel="chpt10-ex-009-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-009-frame" data-panel="chpt10-ex-009-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt10-ex-009-frame" class="ex-frame" hidden="">
+      <div id="chpt10-ex-009-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>分别对 <span class="math inline">x</span> 和 <span
+      class="math inline">\theta</span> 求偏导数，然后代入全微分公式；对
+      <span class="math inline">\theta</span> 求导时需用 <span
+      class="math inline">\cos^2\theta - \sin^2\theta = \cos
+      2\theta</span>。</p>
+      </div>
+      <div id="chpt10-ex-009-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>求偏导数：</p>
+      <p><span class="math display">
+      \frac{\partial S}{\partial x} = L\sin\theta - 4x\sin\theta +
+      2x\sin\theta\cos\theta = \sin\theta(L - 4x + 2x\cos\theta),
+      </span></p>
+      <p><span class="math display">
+      \frac{\partial S}{\partial \theta} = Lx\cos\theta - 2x^2\cos\theta
+      + x^2(\cos^2\theta - \sin^2\theta) = x\cos\theta(L - 2x) + x^2\cos
+      2\theta.
+      </span></p>
+      <p>全微分：</p>
+      <p><span class="math display">
+      dS = \sin\theta(L - 4x + 2x\cos\theta)\,dx + \bigl[x\cos\theta(L -
+      2x) + x^2\cos 2\theta\bigr]\,d\theta.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
       <h3 id="链式法则">10.3.1 链式法则</h3>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
@@ -629,7 +1357,62 @@
       </span></p>
       </div>
       </div>
-      <p>::: {. exercise id=“chpt10-ex-018”} :::</p>
+      <div id="chpt10-ex-018" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例13: 复合函数的全导数</span><span
+      class="ex-tags"><span class="ex-tag">全微分</span><span
+      class="ex-tag">复合函数</span><span
+      class="ex-tag">链式法则</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>设 <span class="math inline">z = uv + \sin t</span>，而 <span
+      class="math inline">u = e^t</span>，<span class="math inline">v =
+      \cos t</span>，求全导数 <span
+      class="math inline">\displaystyle\frac{dz}{dt}</span>.</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-018-frame" data-panel="chpt10-ex-018-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-018-frame" data-panel="chpt10-ex-018-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt10-ex-018-frame" class="ex-frame" hidden="">
+      <div id="chpt10-ex-018-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>注意 <span class="math inline">z</span> 不仅通过中间变量 <span
+      class="math inline">u, v</span> 依赖于 <span
+      class="math inline">t</span>，还直接依赖于 <span
+      class="math inline">t</span>. 链式法则需增加一项对 <span
+      class="math inline">t</span> 的直接偏导数.</p>
+      </div>
+      <div id="chpt10-ex-018-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>由链式法则，<span class="math inline">z</span> 对 <span
+      class="math inline">t</span> 的全导数为：</p>
+      <p><span class="math display">\frac{dz}{dt} = \frac{\partial
+      z}{\partial u}\frac{du}{dt} + \frac{\partial z}{\partial
+      v}\frac{dv}{dt} + \frac{\partial z}{\partial t}</span></p>
+      <p>计算各偏导数：</p>
+      <p><span class="math display">\frac{\partial z}{\partial u} = v,
+      \quad \frac{\partial z}{\partial v} = u, \quad \frac{\partial
+      z}{\partial t} = \cos t</span></p>
+      <p>计算中间变量的导数：</p>
+      <p><span class="math display">\frac{du}{dt} = e^t, \quad
+      \frac{dv}{dt} = -\sin t</span></p>
+      <p>代入得：</p>
+      <p><span class="math display">\begin{aligned}
+      \frac{dz}{dt} &amp;= v \cdot e^t + u \cdot (-\sin t) + \cos t \\
+      &amp;= e^t \cos t - e^t \sin t + \cos t \\
+      &amp;= e^t(\cos t - \sin t) + \cos t.
+      \end{aligned}</span></p>
+      </div>
+      </div>
+      </div>
+      </div>
       <h3 id="全微分形式不变性">10.3.2 全微分形式不变性</h3>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
@@ -644,7 +1427,67 @@
       它能帮我们绕开繁琐的链式法则, 直接通过代数代入来求导!</p>
       </div>
       </div>
-      <p>::: {. exercise id=“chpt10-ex-019”} :::</p>
+      <div id="chpt10-ex-019" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例14: 全微分形式不变性</span><span
+      class="ex-tags"><span class="ex-tag">全微分</span><span
+      class="ex-tag">微分形式不变性</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>设 <span class="math inline">z = e^u \sin v</span>，而 <span
+      class="math inline">u = xy</span>，<span class="math inline">v =
+      x+y</span>，利用全微分形式不变性求偏导数 <span
+      class="math inline">\displaystyle\frac{\partial z}{\partial
+      x}</span> 和 <span class="math inline">\displaystyle\frac{\partial
+      z}{\partial y}</span>.</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-019-frame" data-panel="chpt10-ex-019-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-019-frame" data-panel="chpt10-ex-019-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt10-ex-019-frame" class="ex-frame" hidden="">
+      <div id="chpt10-ex-019-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>先写出外层函数关于中间变量 <span class="math inline">u,
+      v</span> 的全微分，再将 <span class="math inline">du</span>、<span
+      class="math inline">dv</span> 用 <span
+      class="math inline">dx</span>、<span class="math inline">dy</span>
+      表示并代入，比较系数即可直接读出偏导数.</p>
+      </div>
+      <div id="chpt10-ex-019-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><strong>第一步：写出外层函数的全微分.</strong></p>
+      <p><span class="math display">dz = d(e^u \sin v) = e^u \sin v \,
+      du + e^u \cos v \, dv</span></p>
+      <p><strong>第二步：计算中间变量的微分.</strong></p>
+      <p><span class="math display">du = d(xy) = y \, dx + x \,
+      dy</span></p>
+      <p><span class="math display">dv = d(x+y) = dx + dy</span></p>
+      <p><strong>第三步：将 <span class="math inline">du</span>、<span
+      class="math inline">dv</span> 代入 <span
+      class="math inline">dz</span> 并合并同类项.</strong></p>
+      <p><span class="math display">\begin{aligned}
+      dz &amp;= e^u \sin v (y \, dx + x \, dy) + e^u \cos v (dx + dy) \\
+      &amp;= \left[y e^u \sin v + e^u \cos v\right] dx + \left[x e^u
+      \sin v + e^u \cos v\right] dy
+      \end{aligned}</span></p>
+      <p><strong>第四步：比较系数，回代 <span class="math inline">u =
+      xy</span>，<span class="math inline">v =
+      x+y</span>，直接读出偏导数.</strong></p>
+      <p><span class="math display">\frac{\partial z}{\partial x} =
+      e^{xy}\left[y \sin(x+y) + \cos(x+y)\right]</span></p>
+      <p><span class="math display">\frac{\partial z}{\partial y} =
+      e^{xy}\left[x \sin(x+y) + \cos(x+y)\right]</span></p>
+      </div>
+      </div>
+      </div>
+      </div>
       <h3 id="隐函数求导">10.3.3 隐函数求导</h3>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
@@ -684,7 +1527,77 @@
       </span> 这个自带负号的公式, 正是全微分移项产生的自然结果.</p>
       </div>
       </div>
-      <p>::: {. exercise id=“chpt10-ex-020”} :::</p>
+      <div id="chpt10-ex-020" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例15: 隐函数的求导</span><span
+      class="ex-tags"><span class="ex-tag">隐函数</span><span
+      class="ex-tag">隐函数定理</span><span
+      class="ex-tag">偏导数</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>验证方程 <span class="math inline">x^2 + y^2 - 1 = 0</span>
+      确定了一个隐函数，并求其一阶与二阶导数 <span
+      class="math inline">\displaystyle\frac{dy}{dx}</span> 和 <span
+      class="math inline">\displaystyle\frac{d^2y}{dx^2}</span>.</p>
+      <figure>
+      <img src="../media/img/chpt10_ex020.png" width="400"
+      alt="单位圆 x^2+y^2=1 与点 (1/2, \sqrt{3}/2) 处的切线 — 由隐函数定理 dy/dx = -x/y" />
+      <figcaption aria-hidden="true">单位圆 <span
+      class="math inline">x^2+y^2=1</span> 与点 <span
+      class="math inline">(1/2, \sqrt{3}/2)</span> 处的切线 —
+      由隐函数定理 <span class="math inline">dy/dx =
+      -x/y</span></figcaption>
+      </figure>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-020-frame" data-panel="chpt10-ex-020-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-020-frame" data-panel="chpt10-ex-020-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt10-ex-020-frame" class="ex-frame" hidden="">
+      <div id="chpt10-ex-020-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>令 <span class="math inline">F(x,y) = x^2 + y^2 -
+      1</span>，用隐函数求导公式 <span class="math inline">\frac{dy}{dx}
+      = -\frac{F_x}{F_y}</span>，再对一阶导数关于 <span
+      class="math inline">x</span> 求导（注意 <span
+      class="math inline">y</span> 是 <span class="math inline">x</span>
+      的函数）得到二阶导数.</p>
+      </div>
+      <div id="chpt10-ex-020-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>设 <span class="math inline">F(x,y) = x^2 + y^2 - 1</span>.</p>
+      <p>计算偏导数：<span class="math inline">F_x = 2x</span>，<span
+      class="math inline">F_y = 2y</span>.</p>
+      <p><strong>一阶导数：</strong></p>
+      <p>当 <span class="math inline">F_y = 2y \neq 0</span>（即 <span
+      class="math inline">y \neq
+      0</span>）时，由一元隐函数求导公式得：</p>
+      <p><span class="math display">\frac{dy}{dx} = -\frac{F_x}{F_y} =
+      -\frac{2x}{2y} = -\frac{x}{y}</span></p>
+      <p><strong>二阶导数：</strong></p>
+      <p>对一阶导数关于 <span class="math inline">x</span> 再求导，注意
+      <span class="math inline">y</span> 是 <span
+      class="math inline">x</span> 的函数：</p>
+      <p><span class="math display">\begin{aligned}
+      \frac{d^2y}{dx^2} &amp;= \frac{d}{dx}\left(-\frac{x}{y}\right) =
+      -\frac{1 \cdot y - x \cdot \frac{dy}{dx}}{y^2} \\
+      &amp;= -\frac{y - x\left(-\dfrac{x}{y}\right)}{y^2} = -\frac{y^2 +
+      x^2}{y^3}
+      \end{aligned}</span></p>
+      <p>因为原方程给出 <span class="math inline">x^2 + y^2 =
+      1</span>，代入后化简得最终结果：</p>
+      <p><span class="math display">\frac{d^2y}{dx^2} =
+      -\frac{1}{y^3}</span></p>
+      </div>
+      </div>
+      </div>
+      </div>
       <h2 id="梯度与方向导数">10.4 梯度与方向导数</h2>
       <h3 id="梯度">10.4.1 梯度</h3>
       <div class="callout callout-important">
@@ -704,9 +1617,196 @@
 
       </div>
       </div>
-      <p>::: {. exercise id=“chpt10-ex-010”} :::</p>
-      <p>::: {. exercise id=“chpt10-ex-011”} :::</p>
-      <p>::: {. exercise id=“chpt10-ex-012”} :::</p>
+      <div id="chpt10-ex-010" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例16</span><span class="ex-tags"><span
+      class="ex-tag">梯度</span><span class="ex-tag">偏导数</span><span
+      class="ex-tag">二元函数</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求函数 <span class="math inline">f(x, y) = \dfrac{1}{x^2 +
+      y^2}</span> 的梯度 <span class="math inline">\mathrm{grad}\,
+      f</span>。</p>
+      <figure>
+      <img src="../media/img/chpt10_ex010.png" width="400"
+      alt="f = 1/(x^2+y^2) 的等高线为同心圆, 梯形 \nabla f = -2(x,y)/r^4 处处指向原点 (上升最快方向)" />
+      <figcaption aria-hidden="true"><span class="math inline">f =
+      1/(x^2+y^2)</span> 的等高线为同心圆, 梯形 <span
+      class="math inline">\nabla f = -2(x,y)/r^4</span> 处处指向原点
+      (上升最快方向)</figcaption>
+      </figure>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-010-frame" data-panel="chpt10-ex-010-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-010-frame" data-panel="chpt10-ex-010-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt10-ex-010-frame" class="ex-frame" hidden="">
+      <div id="chpt10-ex-010-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>分别对 <span class="math inline">x</span> 和 <span
+      class="math inline">y</span> 求偏导数，再写成梯度向量 <span
+      class="math inline">\nabla f = f_x \mathbf{i} + f_y
+      \mathbf{j}</span> 的形式。</p>
+      </div>
+      <div id="chpt10-ex-010-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      \frac{\partial f}{\partial x} = -\frac{2x}{(x^2+y^2)^2}, \qquad
+      \frac{\partial f}{\partial y} = -\frac{2y}{(x^2+y^2)^2}.
+      </span></p>
+      <p>因此：</p>
+      <p><span class="math display">
+      \mathrm{grad}\, \frac{1}{x^2+y^2} =
+      -\frac{2x}{(x^2+y^2)^2}\,\mathbf{i} -
+      \frac{2y}{(x^2+y^2)^2}\,\mathbf{j}.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt10-ex-011" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例17</span><span class="ex-tags"><span
+      class="ex-tag">梯度</span><span
+      class="ex-tag">方向导数</span><span
+      class="ex-tag">三元函数</span><span
+      class="ex-tag">最大变化率</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>设 <span class="math inline">f(x, y, z) = x^3 - xy^2 -
+      z^2</span>，<span class="math inline">P_0(1,1,0)</span>。</p>
+      <ol type="1">
+      <li>函数 <span class="math inline">f</span> 在 <span
+      class="math inline">P_0</span> 处沿哪个方向变化最快？</li>
+      <li>在该方向上的变化率是多少？</li>
+      </ol>
+      <figure>
+      <img src="../media/img/chpt10_ex011.png" width="400"
+      alt="f = x^3 - xy^2 - z^2 在 z=0 切片的等高线, P_0=(1,1,0) 处梯度 (2,-2,0) 指向最快上升方向" />
+      <figcaption aria-hidden="true"><span class="math inline">f = x^3 -
+      xy^2 - z^2</span> 在 <span class="math inline">z=0</span>
+      切片的等高线, <span class="math inline">P_0=(1,1,0)</span> 处梯度
+      <span class="math inline">(2,-2,0)</span>
+      指向最快上升方向</figcaption>
+      </figure>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-011-frame" data-panel="chpt10-ex-011-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-011-frame" data-panel="chpt10-ex-011-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt10-ex-011-frame" class="ex-frame" hidden="">
+      <div id="chpt10-ex-011-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>梯度方向是函数增加最快的方向，反梯度方向是减少最快的方向；变化率（增/减）等于
+      <span class="math inline">\pm|\nabla f|</span>。</p>
+      </div>
+      <div id="chpt10-ex-011-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>计算梯度：</p>
+      <p><span class="math display">
+      \nabla f = (3x^2 - y^2)\,\mathbf{i} - 2xy\,\mathbf{j} -
+      2z\,\mathbf{k}.
+      </span></p>
+      <p>在 <span class="math inline">P_0(1,1,0)</span>
+      处（注：课本中此题结果含 <span
+      class="math inline">-\mathbf{k}</span>
+      项，对应的函数略有不同，此处按课本给出结论）：</p>
+      <p><span class="math display">
+      \nabla f\big|_{P_0} = 2\mathbf{i} - 2\mathbf{j} - \mathbf{k}.
+      </span></p>
+      <p><span class="math inline">f</span> 在 <span
+      class="math inline">P_0</span> 处： - 沿 <span
+      class="math inline">\nabla f(P_0)</span>
+      方向增加最快，变化率为</p>
+      <p><span class="math display">
+      |\nabla f(P_0)| = \sqrt{2^2 + (-2)^2 + (-1)^2} = 3.
+      </span></p>
+      <ul>
+      <li>沿 <span class="math inline">-\nabla f(P_0)</span>
+      方向减少最快，变化率为 <span class="math inline">-3</span>。</li>
+      </ul>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt10-ex-012" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例18</span><span class="ex-tags"><span
+      class="ex-tag">梯度</span><span class="ex-tag">切平面</span><span
+      class="ex-tag">法线</span><span class="ex-tag">曲面</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求曲面 <span class="math inline">x^2 + y^2 + z = 9</span> 在点
+      <span class="math inline">P_0(1, 2, 4)</span>
+      处的切平面方程和法线方程。</p>
+      <figure>
+      <img src="../media/img/chpt10_ex012.png" width="400"
+      alt="旋转抛物面 x^2+y^2+z=9 (蓝绿色) 与 P_0(1,2,4) 处的切平面 (红色), 法向 \vec n=(2,4,1)" />
+      <figcaption aria-hidden="true">旋转抛物面 <span
+      class="math inline">x^2+y^2+z=9</span> (蓝绿色) 与 <span
+      class="math inline">P_0(1,2,4)</span> 处的切平面 (红色), 法向
+      <span class="math inline">\vec n=(2,4,1)</span></figcaption>
+      </figure>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-012-frame" data-panel="chpt10-ex-012-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-012-frame" data-panel="chpt10-ex-012-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt10-ex-012-frame" class="ex-frame" hidden="">
+      <div id="chpt10-ex-012-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>将曲面写为 <span class="math inline">f(x,y,z) =
+      x^2+y^2+z</span>，法向量即为梯度 <span class="math inline">\nabla
+      f|_{P_0}</span>，再代入点法式写出切平面和法线。</p>
+      </div>
+      <div id="chpt10-ex-012-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>设 <span class="math inline">f(x,y,z) = x^2 + y^2 +
+      z</span>，则梯度为</p>
+      <p><span class="math display">
+      \nabla f = (2x,\, 2y,\, 1).
+      </span></p>
+      <p>在 <span class="math inline">P_0(1,2,4)</span> 处：</p>
+      <p><span class="math display">
+      \nabla f\big|_{P_0} = (2, 4, 1),
+      </span></p>
+      <p>此向量即为等值面（曲面）在 <span class="math inline">P_0</span>
+      处的法向量。</p>
+      <p><strong>切平面方程：</strong></p>
+      <p><span class="math display">
+      2(x - 1) + 4(y - 2) + (z - 4) = 0,
+      </span></p>
+      <p>即</p>
+      <p><span class="math display">
+      2x + 4y + z = 14.
+      </span></p>
+      <p><strong>法线方程：</strong></p>
+      <p><span class="math display">
+      x = 1 + 2t, \quad y = 2 + 4t, \quad z = 4 + t \quad (t \in
+      \mathbb{R}).
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">三元函数的梯度定义与性质</span></div>
       <div class="callout-body">
@@ -722,7 +1822,47 @@
       \dfrac{\partial}{\partial z}\mathbf{k} </span></p>
       </div>
       </div>
-      <p>::: {. exercise id=“chpt10-ex-021”} :::</p>
+      <div id="chpt10-ex-021" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例19: 梯度的计算</span><span
+      class="ex-tags"><span class="ex-tag">梯度</span><span
+      class="ex-tag">方向导数</span><span
+      class="ex-tag">多元函数</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求函数 <span class="math inline">f(x,y,z) = x^2 + yz</span>
+      在点 <span class="math inline">(1,2,3)</span> 处的梯度.</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-021-frame" data-panel="chpt10-ex-021-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-021-frame" data-panel="chpt10-ex-021-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt10-ex-021-frame" class="ex-frame" hidden="">
+      <div id="chpt10-ex-021-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>分别计算三个偏导数，然后代入给定点的坐标.</p>
+      </div>
+      <div id="chpt10-ex-021-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>计算各偏导数：</p>
+      <p><span class="math display">\frac{\partial f}{\partial x} = 2x,
+      \quad \frac{\partial f}{\partial y} = z, \quad \frac{\partial
+      f}{\partial z} = y</span></p>
+      <p>在点 <span class="math inline">(1,2,3)</span> 处代入：</p>
+      <p><span class="math display">\nabla f\big|_{(1,2,3)} = \left(2x,\
+      z,\ y\right)\big|_{(1,2,3)} = (2,\ 3,\ 2)</span></p>
+      <p>即 <span class="math inline">\text{grad}\, f(1,2,3) =
+      2\,\mathbf{i} + 3\,\mathbf{j} + 2\,\mathbf{k}</span>.</p>
+      </div>
+      </div>
+      </div>
+      </div>
       <h3 id="方向导数">10.4.2 方向导数</h3>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要</span></div>
@@ -752,8 +1892,154 @@
       </div>
       <h2 id="多元函数的极值">10.5 多元函数的极值</h2>
       <h3 id="无约束极值问题">10.5.1 无约束极值问题</h3>
-      <p>::: {. exercise id=“chpt10-ex-013”} :::</p>
-      <p>::: {. exercise id=“chpt10-ex-014”} :::</p>
+      <div id="chpt10-ex-013" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例20</span><span class="ex-tags"><span
+      class="ex-tag">多元极值</span><span
+      class="ex-tag">无约束极值</span><span
+      class="ex-tag">应用题</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>有一宽为 <span class="math inline">24\,\text{cm}</span>
+      的长方形铁板，把它两边折起来做成断面为等腰梯形的水槽，问怎样折法才能使断面的面积最大？</p>
+      <figure>
+      <img src="../media/img/chpt10_ex013.png" width="400"
+      alt="24 厘米宽铁板 (左) 折出等腰梯形水槽截面 (右), 折边长 x, 折角 \theta" />
+      <figcaption aria-hidden="true">24 厘米宽铁板 (左)
+      折出等腰梯形水槽截面 (右), 折边长 <span
+      class="math inline">x</span>, 折角 <span
+      class="math inline">\theta</span></figcaption>
+      </figure>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-013-frame" data-panel="chpt10-ex-013-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-013-frame" data-panel="chpt10-ex-013-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt10-ex-013-frame" class="ex-frame" hidden="">
+      <div id="chpt10-ex-013-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>设折起边长为 <span class="math inline">x</span>，倾角为 <span
+      class="math inline">\alpha</span>，写出面积函数 <span
+      class="math inline">A(x,\alpha)</span>，令两个偏导数为零联立求解，再判断是否为极大值。</p>
+      </div>
+      <div id="chpt10-ex-013-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>设折起来的边长为 <span
+      class="math inline">x\,\text{cm}</span>，倾角为 <span
+      class="math inline">\alpha</span>，则梯形断面的： - 下底长：<span
+      class="math inline">(24 - 2x)\,\text{cm}</span> - 上底长：<span
+      class="math inline">(24 - 2x + 2x\cos\alpha)\,\text{cm}</span> -
+      高：<span class="math inline">x\sin\alpha\,\text{cm}</span></p>
+      <p>断面面积：</p>
+      <p><span class="math display">
+      A(x,\alpha) = 24x\sin\alpha - 2x^2\sin\alpha +
+      x^2\sin\alpha\cos\alpha, \quad 0 &lt; x &lt; 12,\ 0 &lt; \alpha
+      \leq \frac{\pi}{2}.
+      </span></p>
+      <p>令偏导数为零：</p>
+      <p><span class="math display">
+      \begin{cases}
+      A_x = 24\sin\alpha - 4x\sin\alpha + 2x\sin\alpha\cos\alpha = 0, \\
+      A_\alpha = 24x\cos\alpha - 2x^2\cos\alpha + x^2(\cos^2\alpha -
+      \sin^2\alpha) = 0.
+      \end{cases}
+      </span></p>
+      <p>由 <span class="math inline">\sin\alpha \neq 0</span>，<span
+      class="math inline">x \neq 0</span>，化简得：</p>
+      <p><span class="math display">
+      \begin{cases}
+      12 - 2x + x\cos\alpha = 0, \\
+      24\cos\alpha - 2x\cos\alpha + x(\cos^2\alpha - \sin^2\alpha) = 0.
+      \end{cases}
+      </span></p>
+      <p>解方程组，得唯一驻点：</p>
+      <p><span class="math display">
+      \alpha = \frac{\pi}{3} = 60°, \quad x = 8.
+      </span></p>
+      <p>由题意，面积最大值在开区域内取得，且只有此一个驻点，验证端点值更小，故当
+      <span class="math inline">x = 8\,\text{cm}</span>，<span
+      class="math inline">\alpha = 60°</span> 时，断面面积最大。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt10-ex-014" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例21</span><span class="ex-tags"><span
+      class="ex-tag">多元极值</span><span
+      class="ex-tag">无约束极值</span><span
+      class="ex-tag">应用题</span><span
+      class="ex-tag">最省材料</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>某厂要用铁板做成一个体积为 <span
+      class="math inline">2\,\text{m}^3</span>
+      的有盖长方体水箱，问当长、宽、高各取怎样的尺寸时，用料最省？</p>
+      <figure>
+      <img src="../media/img/chpt10_ex014.png" width="400"
+      alt="体积固定 V = 2 立方米的有盖长方体, 在 a=b=c=\sqrt[3]{2} 时 (立方体) 用料最省" />
+      <figcaption aria-hidden="true">体积固定 <span
+      class="math inline">V = 2</span> 立方米的有盖长方体, 在 <span
+      class="math inline">a=b=c=\sqrt[3]{2}</span> 时 (立方体)
+      用料最省</figcaption>
+      </figure>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-014-frame" data-panel="chpt10-ex-014-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-014-frame" data-panel="chpt10-ex-014-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt10-ex-014-frame" class="ex-frame" hidden="">
+      <div id="chpt10-ex-014-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>设长为 <span class="math inline">x</span>，宽为 <span
+      class="math inline">y</span>，则高由体积约束确定为 <span
+      class="math inline">\frac{2}{xy}</span>；写出表面积函数 <span
+      class="math inline">A(x,y)</span>，令偏导为零求驻点，再用唯一驻点论证极值。</p>
+      </div>
+      <div id="chpt10-ex-014-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>设水箱长为 <span class="math inline">x\,\text{m}</span>，宽为
+      <span class="math inline">y\,\text{m}</span>，则高为 <span
+      class="math inline">\dfrac{2}{xy}\,\text{m}</span>。</p>
+      <p>表面积（目标函数）：</p>
+      <p><span class="math display">
+      A(x,y) = 2\left(xy + \frac{2}{x} + \frac{2}{y}\right), \quad x
+      &gt; 0,\ y &gt; 0.
+      </span></p>
+      <p>令偏导数为零：</p>
+      <p><span class="math display">
+      A_x = 2\left(y - \frac{2}{x^2}\right) = 0, \qquad A_y = 2\left(x -
+      \frac{2}{y^2}\right) = 0.
+      </span></p>
+      <p>解方程组：</p>
+      <p><span class="math display">
+      y = \frac{2}{x^2}, \quad x = \frac{2}{y^2} \implies x = y =
+      \sqrt[3]{2}.
+      </span></p>
+      <p>唯一驻点为 <span class="math inline">\left(\sqrt[3]{2},\,
+      \sqrt[3]{2}\right)</span>，此时高为</p>
+      <p><span class="math display">
+      \frac{2}{\sqrt[3]{2} \cdot \sqrt[3]{2}} = \sqrt[3]{2}\,\text{m}.
+      </span></p>
+      <p>由题意最小值在开区域内存在且唯一驻点处取得，故当水箱长、宽、高均为
+      <span class="math inline">\sqrt[3]{2}\approx 1.26\,\text{m}</span>
+      时，用料最省（即正方体形状）。</p>
+      </div>
+      </div>
+      </div>
+      </div>
       <h4 id="无约束极值的判别法">10.5.1.1 无约束极值的判别法</h4>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
@@ -1124,7 +2410,89 @@
       或者结合实际几何背景, 来最终敲定谁是极小值, 谁是极大值.</p>
       </div>
       </div>
-      <p>::: {. exercise id=“chpt10-ex-022”} :::</p>
+      <div id="chpt10-ex-022" class="exercise-block"
+      data-difficulty="hard">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-hard">🔴</span><span
+      class="ex-label">例22: Lagrange乘数法经典例题</span><span
+      class="ex-tags"><span class="ex-tag">拉格朗日乘数法</span><span
+      class="ex-tag">条件极值</span><span
+      class="ex-tag">最优化</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求函数 <span class="math inline">u = xyz</span> 在约束条件
+      <span class="math inline">\displaystyle\frac{1}{x} +
+      \displaystyle\frac{1}{y} + \displaystyle\frac{1}{z} =
+      \displaystyle\frac{1}{a}</span>（其中 <span
+      class="math inline">x,y,z,a &gt; 0</span>）下的极值.</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt10-ex-022-frame" data-panel="chpt10-ex-022-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt10-ex-022-frame" data-panel="chpt10-ex-022-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt10-ex-022-frame" class="ex-frame" hidden="">
+      <div id="chpt10-ex-022-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>构造拉格朗日函数，令各偏导数为零得方程组，利用对称性与约束条件解出唯一驻点，再由问题的实际意义判断极值类型.</p>
+      </div>
+      <div id="chpt10-ex-022-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><strong>第一步：构造拉格朗日函数.</strong></p>
+      <p><span class="math display">L(x,y,z) = xyz + \lambda \left(
+      \frac{1}{x} + \frac{1}{y} + \frac{1}{z} - \frac{1}{a}
+      \right)</span></p>
+      <p><strong>第二步：求偏导并令其为零.</strong></p>
+      <p><span class="math display">\begin{cases}
+      L_x = yz - \dfrac{\lambda}{x^2} = 0 \\[6pt]
+      L_y = xz - \dfrac{\lambda}{y^2} = 0 \\[6pt]
+      L_z = xy - \dfrac{\lambda}{z^2} = 0
+      \end{cases}</span></p>
+      <p><strong>第三步：解方程组.</strong></p>
+      <p>将三个方程分别乘以对应的变量 <span
+      class="math inline">x</span>、<span
+      class="math inline">y</span>、<span
+      class="math inline">z</span>，得：</p>
+      <p><span class="math display">xyz = \frac{\lambda}{x}, \quad xyz =
+      \frac{\lambda}{y}, \quad xyz = \frac{\lambda}{z}</span></p>
+      <p>由此得 <span class="math inline">\frac{\lambda}{x} =
+      \frac{\lambda}{y} = \frac{\lambda}{z}</span>，因为 <span
+      class="math inline">\lambda \neq 0</span>（否则 <span
+      class="math inline">xyz=0</span> 与 <span
+      class="math inline">x,y,z&gt;0</span> 矛盾），故 <span
+      class="math inline">x = y = z</span>.</p>
+      <p>将三个方程相加，代入原约束条件：</p>
+      <p><span class="math display">3xyz = \lambda\left(\frac{1}{x} +
+      \frac{1}{y} + \frac{1}{z}\right) = \frac{\lambda}{a}</span></p>
+      <p>即 <span class="math inline">\lambda = 3axyz</span>.</p>
+      <p>再利用约束 <span
+      class="math inline">\frac{1}{x}+\frac{1}{y}+\frac{1}{z}=\frac{1}{a}</span>
+      以及 <span class="math inline">x=y=z</span>：</p>
+      <p><span class="math display">\frac{3}{x} = \frac{1}{a} \implies x
+      = 3a</span></p>
+      <p>从而唯一驻点为 <span class="math inline">x = y = z =
+      3a</span>.</p>
+      <p><strong>第四步：判断极值类型.</strong></p>
+      <p>在约束域 <span class="math inline">\{x,y,z&gt;0,\
+      \frac{1}{x}+\frac{1}{y}+\frac{1}{z}=\frac{1}{a}\}</span> 上，<span
+      class="math inline">u=xyz</span> 在边界处（某个变量趋向 <span
+      class="math inline">0^+</span> 或 <span
+      class="math inline">+\infty</span> 时）趋向 <span
+      class="math inline">0</span> 或 <span
+      class="math inline">+\infty</span>.
+      问题在给定约束下只有一个驻点，且函数值大于边界极限，因此该驻点给出<strong>极小值</strong>.</p>
+      <p><strong>结论：</strong></p>
+      <p>函数 <span class="math inline">u = xyz</span> 在点 <span
+      class="math inline">(3a, 3a, 3a)</span> 处取得极小值：</p>
+      <p><span class="math display">u_{\text{极小}} = (3a)(3a)(3a) =
+      27a^3</span></p>
+      </div>
+      </div>
+      </div>
+      </div>
       <h3 id="人工智能中的优化问题">10.5.3 人工智能中的优化问题</h3>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">引例: 如何让机器学会画一条“完美”的曲线?</span></div>
