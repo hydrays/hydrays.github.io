@@ -28,6 +28,45 @@
   <link rel="modulepreload" href="assets/three-addons/lines/LineSegments2.js">
   <link rel="modulepreload" href="assets/three-addons/lines/LineSegmentsGeometry.js">
   <link rel="modulepreload" href="assets/three-addons/renderers/CSS2DRenderer.js">
+
+  <style media="print">
+    html, body {
+      height: auto !important;
+      overflow: visible !important;
+      font-size: 12pt;
+    }
+    #sidebar, #overlay, #topbar, #video-panel { display: none !important; }
+    #main {
+      margin-left: 0 !important;
+      padding-left: 0 !important;
+      width: 100% !important;
+      max-width: none !important;
+      height: auto !important;
+      overflow: visible !important;
+      transform: none !important;
+    }
+    #content {
+      max-width: none !important;
+      width: 100% !important;
+      height: auto !important;
+      overflow: visible !important;
+      padding: 0 12mm !important;
+    }
+    /* Three.js canvases don't render in PDF — leave space, avoid breaking */
+    [id^="chpt"][id*="-"], [id^="vf3d-"] {
+      max-height: 320px !important;
+      page-break-inside: avoid;
+    }
+    figure, table, blockquote, .callout, .ex-block, .exercise-block {
+      page-break-inside: avoid;
+    }
+    h1 { page-break-before: page; }
+    h1:first-of-type { page-break-before: avoid; }
+    h2, h3 { page-break-after: avoid; }
+    img { max-width: 100%; height: auto; page-break-inside: avoid; }
+    a { color: #1a3d8f; text-decoration: none; }
+    .open-sidebar-btn, .menu-toggle, .floating-btn, .video-btn { display: none !important; }
+  </style>
 </head>
 <body>
   <div id="sidebar">
