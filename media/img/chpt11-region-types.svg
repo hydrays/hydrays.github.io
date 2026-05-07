@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280" font-family="Times New Roman, serif" font-size="14">
+  <!-- Left panel: X-型 -->
+  <g transform="translate(20,20)">
+    <text x="120" y="0" text-anchor="middle" font-size="14" font-weight="600">X-型</text>
+    <!-- axes -->
+    <line x1="20" y1="220" x2="240" y2="220" stroke="#333" stroke-width="1"/>
+    <line x1="40" y1="240" x2="40" y2="20" stroke="#333" stroke-width="1"/>
+    <polygon points="240,220 233,217 233,223" fill="#333"/>
+    <polygon points="40,20 37,27 43,27" fill="#333"/>
+    <text x="245" y="225" font-style="italic">x</text>
+    <text x="32" y="18" font-style="italic">y</text>
+    <!-- region D: between g1(x) (lower curve) and g2(x) (upper curve), x in [a,b] -->
+    <!-- g2: upper curve: parabola opening downward; g1: lower curve: gentle rise -->
+    <path d="M 70,180 Q 130,80 200,150 L 200,200 Q 130,170 70,200 Z"
+          fill="#e5e7eb" stroke="#666" stroke-width="1.2"/>
+    <!-- vertical strip at x = x0 -->
+    <line x1="135" y1="100" x2="135" y2="180" stroke="#dc2626" stroke-width="2"/>
+    <circle cx="135" cy="100" r="3" fill="#dc2626"/>
+    <circle cx="135" cy="180" r="3" fill="#dc2626"/>
+    <!-- a, b ticks -->
+    <line x1="70" y1="218" x2="70" y2="222" stroke="#333"/>
+    <line x1="200" y1="218" x2="200" y2="222" stroke="#333"/>
+    <text x="70" y="238" text-anchor="middle" font-style="italic">a</text>
+    <text x="200" y="238" text-anchor="middle" font-style="italic">b</text>
+    <text x="135" y="238" text-anchor="middle" font-style="italic">x</text>
+    <!-- curve labels -->
+    <text x="125" y="78" font-style="italic" fill="#1d4ed8">y = g₂(x)</text>
+    <text x="120" y="216" font-style="italic" fill="#1d4ed8">y = g₁(x)</text>
+    <text x="145" y="142" font-size="13" fill="#dc2626">g₁(x) ≤ y ≤ g₂(x)</text>
+  </g>
+
+  <!-- Right panel: Y-型 -->
+  <g transform="translate(320,20)">
+    <text x="120" y="0" text-anchor="middle" font-size="14" font-weight="600">Y-型</text>
+    <line x1="20" y1="220" x2="240" y2="220" stroke="#333" stroke-width="1"/>
+    <line x1="40" y1="240" x2="40" y2="20" stroke="#333" stroke-width="1"/>
+    <polygon points="240,220 233,217 233,223" fill="#333"/>
+    <polygon points="40,20 37,27 43,27" fill="#333"/>
+    <text x="245" y="225" font-style="italic">x</text>
+    <text x="32" y="18" font-style="italic">y</text>
+    <!-- region D: between h1(y) (left curve) and h2(y) (right curve), y in [c,d] -->
+    <path d="M 80,180 Q 60,130 100,80 L 170,80 Q 200,130 180,180 Z"
+          fill="#e5e7eb" stroke="#666" stroke-width="1.2"/>
+    <!-- horizontal strip at y = y0 -->
+    <line x1="68" y1="135" x2="195" y2="135" stroke="#dc2626" stroke-width="2"/>
+    <circle cx="68" cy="135" r="3" fill="#dc2626"/>
+    <circle cx="195" cy="135" r="3" fill="#dc2626"/>
+    <!-- c, d ticks -->
+    <line x1="38" y1="80" x2="42" y2="80" stroke="#333"/>
+    <line x1="38" y1="180" x2="42" y2="180" stroke="#333"/>
+    <text x="28" y="84" text-anchor="end" font-style="italic">d</text>
+    <text x="28" y="184" text-anchor="end" font-style="italic">c</text>
+    <text x="28" y="139" text-anchor="end" font-style="italic">y</text>
+    <!-- curve labels -->
+    <text x="40" y="120" font-style="italic" fill="#1d4ed8">x = h₁(y)</text>
+    <text x="178" y="120" font-style="italic" fill="#1d4ed8">x = h₂(y)</text>
+    <text x="86" y="158" font-size="13" fill="#dc2626">h₁(y) ≤ x ≤ h₂(y)</text>
+  </g>
+</svg>

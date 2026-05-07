@@ -15,8 +15,19 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <script type="importmap">
-  {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160/examples/jsm/"}}
+  {"imports":{"three":"./assets/three.module.js","three/addons/":"./assets/three-addons/"}}
   </script>
+  <!-- Preload three.js and the addons our scenes use, so they parse in
+       parallel with the page and the lazy-imported scene modules don't
+       have to wait for the 1.3 MB core to arrive. -->
+  <link rel="modulepreload" href="assets/three.module.js">
+  <link rel="modulepreload" href="assets/three-addons/controls/OrbitControls.js">
+  <link rel="modulepreload" href="assets/three-addons/lines/Line2.js">
+  <link rel="modulepreload" href="assets/three-addons/lines/LineGeometry.js">
+  <link rel="modulepreload" href="assets/three-addons/lines/LineMaterial.js">
+  <link rel="modulepreload" href="assets/three-addons/lines/LineSegments2.js">
+  <link rel="modulepreload" href="assets/three-addons/lines/LineSegmentsGeometry.js">
+  <link rel="modulepreload" href="assets/three-addons/renderers/CSS2DRenderer.js">
 </head>
 <body>
   <div id="sidebar">
@@ -78,7 +89,7 @@
       <h1 id="第十二章-曲线积分和曲面积分">第十二章:
       曲线积分和曲面积分</h1>
       <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">章引言</span></div>
       <div class="callout-body">
       <p>本章综合运用多元函数微积分, 解决物理中的核心问题:
       力沿路径做的功, 流体穿过曲面的通量,
@@ -87,12 +98,17 @@
       </div>
       </div>
       <h2 id="场与向量场">12.1 场与向量场</h2>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">动机 — 空间中处处变化的物理量</span></div>
+      <div class="callout-body">
       <p>自然界中许多物理量随空间位置变化: 温度在房间各处不同,
       风速在每个地点有大小和方向, 引力场在不同位置指向不同的方向.
       数学上,
       我们用<strong>场</strong>来描述这类”空间中每个点都对应一个量”的结构.</p>
+      </div>
+      </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义: 标量场与向量场</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义 — 标量场与向量场</span></div>
       <div class="callout-body">
       <p>设 <span class="math inline">D \subset \mathbb{R}^n</span>
       为一区域.</p>
@@ -106,8 +122,6 @@
       class="math inline">\mathbf{F}: D \to \mathbb{R}^n</span>,
       每个点对应一个向量. 例: 引力场, 流速场, 电 (力) 场.</li>
       </ul>
-      </div>
-      </div>
       <p>向量场的<strong>分量形式</strong>:</p>
       <p><span class="math display">
       \mathbf{F}(x,y) = P(x,y)\,\hat{\mathbf{i}} +
@@ -121,36 +135,39 @@
       <p>其中 <span class="math inline">P, Q, R</span> 是普通的多元函数,
       分别表示向量在 <span class="math inline">x, y, z</span>
       方向的分量.</p>
+      </div>
+      </div>
       <div class="callout callout-note">
       <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">几个二维向量场的例子</span></div>
       <div class="callout-body">
-      <p>==例 1==　<span class="math inline">\mathbf{F}(x,y) =
-      2\hat{\mathbf{i}} + 3\hat{\mathbf{j}}</span>　— 均匀场,
-      每处方向和大小相同.</p>
+      <p><strong>例 1</strong>　<span
+      class="math inline">\mathbf{F}(x,y) = 2\hat{\mathbf{i}} +
+      3\hat{\mathbf{j}}</span>　— 均匀场, 每处方向和大小相同.</p>
       <figure>
       <img src="media/img/fig2-4-1.png" style="width:200pt"
       alt="均匀向量场" />
       <figcaption aria-hidden="true">均匀向量场</figcaption>
       </figure>
-      <p>==例 2==　<span class="math inline">\mathbf{F}(x,y) =
-      x\hat{\mathbf{i}}</span>　— 水平分量随 <span
-      class="math inline">x</span> 增大, 无竖直分量.</p>
+      <p><strong>例 2</strong>　<span
+      class="math inline">\mathbf{F}(x,y) = x\hat{\mathbf{i}}</span>　—
+      水平分量随 <span class="math inline">x</span> 增大,
+      无竖直分量.</p>
       <figure>
       <img src="media/img/fig2-4-3.png" style="width:200pt"
       alt="水平向量场" />
       <figcaption aria-hidden="true">水平向量场</figcaption>
       </figure>
-      <p>==例 3==　<span class="math inline">\mathbf{F}(x,y) =
-      x\hat{\mathbf{i}} + y\hat{\mathbf{j}}</span>　—
-      从原点向外辐射的源场.</p>
+      <p><strong>例 3</strong>　<span
+      class="math inline">\mathbf{F}(x,y) = x\hat{\mathbf{i}} +
+      y\hat{\mathbf{j}}</span>　— 从原点向外辐射的源场.</p>
       <figure>
       <img src="media/img/fig2-4-2.png" style="width:200pt"
       alt="辐射向量场" />
       <figcaption aria-hidden="true">辐射向量场</figcaption>
       </figure>
-      <p>==例 4==　<span class="math inline">\mathbf{F}(x,y) =
-      y\hat{\mathbf{i}} + x\hat{\mathbf{j}}</span>　—
-      场线呈双曲线形.</p>
+      <p><strong>例 4</strong>　<span
+      class="math inline">\mathbf{F}(x,y) = y\hat{\mathbf{i}} +
+      x\hat{\mathbf{j}}</span>　— 场线呈双曲线形.</p>
       <figure>
       <img src="media/img/fig2-4-4.png" style="width:200pt"
       alt="双曲向量场" />
@@ -159,14 +176,13 @@
       </div>
       </div>
       <div class="callout callout-note">
-      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">注</span></div>
+      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">三维向量场示例</span></div>
       <div class="callout-body">
       <p><strong>三维向量场</strong>的结构更为丰富. 下面是两个典型例子,
       可拖动旋转查看: 左图为螺旋场 <span
       class="math inline">\mathbf{F}=(-z,\tfrac{1}{2},x)</span>,
       右图为磁偶极子场.</p>
-      </div>
-      </div>
+      <blockquote>
       <div style="display:flex;gap:10px;margin:1.2em 0 0.2em;">
       <div id="vf3d-helix"
       style="flex:1;height:400px;min-width:0;position:relative;background:#04080f;border-radius:8px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,0.5);">
@@ -178,7 +194,17 @@
       </div>
       </div>
       <script data-lazy-module="threejs/chapter12-vectorfield.js?v=20260414b"></script>
-      <p>本章的核心问题是: <strong>如何在向量场中进行积分?</strong></p>
+      </blockquote>
+      </div>
+      </div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">本章的核心问题</span></div>
+      <div class="callout-body">
+      <p><strong>如何在向量场中进行积分?</strong>
+      接下来三节回答这个问题: 沿曲线积分 (第一类、第二类), 穿越曲面积分;
+      然后用三大公式将”内部累积”与”边界总和”联系起来.</p>
+      </div>
+      </div>
       <h2 id="第一类曲线积分">12.2 第一类曲线积分</h2>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">引入问题: 不均匀细线的质量</span></div>
@@ -198,13 +224,31 @@
       <p><span class="math display">M = \lim_{\lambda\to
       0}\sum_{i=1}^{N}\rho(x_i,y_i)\,\Delta s_i,</span></p>
       <p>其中 <span class="math inline">\lambda = \max_i \Delta
-      s_i</span> 为最大小段弧长.</p>
-      </div>
-      </div>
-      <p>这个极限就是<strong>第一类曲线积分</strong>
+      s_i</span> 为最大小段弧长.
+      这个极限就是<strong>第一类曲线积分</strong>
       (或<strong>弧长曲线积分</strong>) 的定义.</p>
+      <blockquote>
+      <div id="chpt12-line-density"
+      style="width:100%; height:480px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; margin:1.2em 0;">
+
+      </div>
+      <script data-lazy-module="threejs/chpt12-line-density.js?v=7"></script>
+      </blockquote>
+      <p>上图是 <span class="math inline">\rho(x,y) = 0.25 +
+      0.95\,e^{-0.6((x-\pi)^2 + (y-0.4)^2)}</span> 在一段正弦曲线 <span
+      class="math inline">L: y = 0.7\sin x,\; x\in[0, 2\pi]</span>
+      上的可视化: 浅色背景是整个 <span
+      class="math inline">\rho(x,y)</span> 的快照 (颜色越亮密度越大);
+      路径上的黑点是质点, 它已经走过的部分按当下密度着色,
+      未走的部分保持灰色. 拖动滑块, 黑点沿 <span
+      class="math inline">L</span> 移动, 下方实时显示当前密度 <span
+      class="math inline">\rho</span> 和已积累的质量 <span
+      class="math inline">M(t)</span>, 与真实总质量 <span
+      class="math inline">M</span> 比较.</p>
+      </div>
+      </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义: 第一类曲线积分</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义 — 第一类曲线积分</span></div>
       <div class="callout-body">
       <p>设 <span class="math inline">f(x,y)</span> 在曲线 <span
       class="math inline">L</span> 上连续. 将 <span
@@ -226,8 +270,8 @@
       称为<strong>弧长微元</strong>.</p>
       </div>
       </div>
-      <div class="callout callout-note">
-      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">计算方法 (参数化化简)</span></div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">计算方法 — 参数化化简</span></div>
       <div class="callout-body">
       <p>若 <span class="math inline">L</span> 由参数方程 <span
       class="math inline">x=x(t),\,y=y(t),\,t\in[t_0,t_1]</span> 给出,
@@ -244,8 +288,8 @@
       \int_{t_0}^{t_1}f\bigl(x(t),y(t)\bigr)\sqrt{[x&#39;(t)]^2+[y&#39;(t)]^2}\,\mathrm{d}t.</span></p>
       </div>
       </div>
-      <div class="callout callout-note">
-      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">推广到空间曲线</span></div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">推广到空间曲线</span></div>
       <div class="callout-body">
       <p>对空间曲线 <span class="math inline">L</span>: <span
       class="math inline">x=x(t),\,y=y(t),\,z=z(t),\,t\in[t_0,t_1]</span>,
@@ -257,8 +301,8 @@
       \int_{t_0}^{t_1}f(x(t),y(t),z(t))\sqrt{[x&#39;(t)]^2+[y&#39;(t)]^2+[z&#39;(t)]^2}\,\mathrm{d}t</span>.</p>
       </div>
       </div>
-      <div class="callout callout-note">
-      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">基本性质</span></div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">性质 — 与方向无关 / 对路径可加</span></div>
       <div class="callout-body">
       <p>第一类曲线积分有两个重要性质:</p>
       <ol type="1">
@@ -444,10 +488,32 @@
       <p><span class="math display">W = \lim_{\lambda\to
       0}\sum_{i=1}^{N}\bigl(P(x_i,y_i)\Delta x_i + Q(x_i,y_i)\Delta
       y_i\bigr).</span></p>
+      <blockquote>
+      <div id="chpt12-work-along-path"
+      style="width:100%; height:520px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; margin:1.2em 0;">
+
+      </div>
+      <script data-lazy-module="threejs/chpt12-work-along-path.js?v=4"></script>
+      </blockquote>
+      <p>上图是 <span class="math inline">\mathbf{F}(x,y) = (1.5 - y,\;
+      x)</span> 在一段半圆形路径 (从 <span
+      class="math inline">(-1,0)</span> 经上半部到 <span
+      class="math inline">(1,0)</span>) 上做功的过程:
+      浅灰箭头是整个场的快照; 路径按照 <span
+      class="math inline">\mathbf{F}\cdot\boldsymbol\tau</span>
+      的符号着色 —— <strong>绿色</strong>段 <span
+      class="math inline">\mathbf{F}\cdot\boldsymbol\tau &gt; 0</span>,
+      场推动质点前进, 做正功; <strong>红色</strong>段方向相反, 做负功.
+      拖动滑块, 黑点 (质点) 沿路径移动, 红箭头是该处的 <span
+      class="math inline">\mathbf{F}</span>, 蓝箭头是单位切向 <span
+      class="math inline">\boldsymbol\tau</span>, 下方实时显示 <span
+      class="math inline">\mathbf{F}\cdot\boldsymbol\tau</span>
+      与已积累的功 <span class="math inline">W(t)</span>.
+      红、绿两段几乎相互抵消, 总功只略小于零.</p>
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义: 第二类曲线积分</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义 — 第二类曲线积分</span></div>
       <div class="callout-body">
       <p>设向量场 <span
       class="math inline">\mathbf{F}(x,y)=P(x,y)\hat{\mathbf{i}}+Q(x,y)\hat{\mathbf{j}}</span>
@@ -465,7 +531,7 @@
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">方向性</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">性质 — 方向性</span></div>
       <div class="callout-body">
       <p>第二类曲线积分与曲线的<strong>方向</strong>有关: 若 <span
       class="math inline">-L</span> 表示 <span
@@ -478,8 +544,8 @@
       0</span> 与方向无关).</p>
       </div>
       </div>
-      <div class="callout callout-note">
-      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">计算方法 (参数化化简)</span></div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">计算方法 — 参数化化简</span></div>
       <div class="callout-body">
       <p>若 <span class="math inline">L</span>: <span
       class="math inline">x=x(t),\,y=y(t)</span>, <span
@@ -498,8 +564,8 @@
       则交换 <span class="math inline">t_1, t_2</span>, 积分变号.</p>
       </div>
       </div>
-      <div class="callout callout-note">
-      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">两类曲线积分的联系</span></div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">两类曲线积分的联系</span></div>
       <div class="callout-body">
       <p>设 <span class="math inline">\boldsymbol{\tau}</span> 为 <span
       class="math inline">L</span> 的单位切向量 (与定向一致), 则 <span
@@ -934,12 +1000,13 @@
       class="math inline">C</span> (逆时针方向) 一圈的环量 <span
       class="math inline">\displaystyle\oint_C\mathbf{F}\cdot\mathrm{d}\mathbf{r}</span>
       是否能用 <span class="math inline">D</span>
-      内部每一点的”局部旋转”信息来计算?</p>
+      内部每一点的”局部旋转”信息来计算? 为此,
+      先用一个局部量刻画向量场在一点的旋转倾向 ——
+      <strong>旋度</strong>.</p>
       </div>
       </div>
-      <p>为刻画向量场在一点的旋转倾向, 引入<strong>旋度</strong>:</p>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义: 二维旋度</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义 — 二维旋度</span></div>
       <div class="callout-body">
       <p>设 <span class="math inline">\mathbf{F}=(P,Q)</span> 在区域
       <span class="math inline">D</span> 上有连续偏导数, 称</p>
@@ -954,10 +1021,10 @@
       class="math inline">=0</span> 表示无旋.</p>
       </div>
       </div>
-      <p>格林公式将区域内所有点的旋度”积累”起来, 得到边界上的环量:</p>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">格林公式</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定理 — 格林公式</span></div>
       <div class="callout-body">
+      <p>格林公式把区域内所有点的旋度”积累”起来, 得到边界上的环量.</p>
       <p>设 <span class="math inline">D</span>
       为平面上由分段光滑曲线围成的有界闭区域, <span
       class="math inline">P(x,y)</span> 和 <span
@@ -968,11 +1035,34 @@
       <p><span class="math display">\oint_{C} P\,\mathrm{d}x +
       Q\,\mathrm{d}y = \iint_{D}\left(\frac{\partial Q}{\partial
       x}-\frac{\partial P}{\partial y}\right)\mathrm{d}A.</span></p>
+      <blockquote>
+      <div id="chpt12-green"
+      style="width:100%; height:520px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; margin:1.2em 0;">
+
       </div>
-      </div>
-      <div class="callout callout-extension">
-      <div class="callout-header callout-header-extension"><span class="callout-icon"></span><span class="callout-label">证明</span></div>
-      <div class="callout-body">
+      <script data-lazy-module="threejs/chpt12-green.js?v=1"></script>
+      </blockquote>
+      <p>上图取 <span class="math inline">D</span> 为单位圆盘, <span
+      class="math inline">\mathbf{F}(x,y) = (y,\, -x^2)</span>, 故 <span
+      class="math inline">\mathrm{curl}\,\mathbf{F} = -2x - 1</span>, 在
+      <span class="math inline">D</span> 内随 <span
+      class="math inline">x</span> 由 <span
+      class="math inline">+1</span> (左缘) 单调降到 <span
+      class="math inline">-3</span> (右缘). 圆盘内部以发散色谱画出旋度
+      (绿正红负), 浅灰箭头是场快照. 拖动滑块, 黑色质点沿 <span
+      class="math inline">\partial D</span> 逆时针行进, 边界按 <span
+      class="math inline">\mathbf{F}\cdot\boldsymbol\tau</span> 着色 (与
+      §12.3 同一色谱); 下方实时显示 <span
+      class="math inline">\oint_{\partial D}
+      \mathbf{F}\cdot\mathrm{d}\mathbf{r}</span> 累积值与 <span
+      class="math inline">\iint_D \mathrm{curl}\,\mathbf{F}\,\mathrm{d}A
+      = -\pi</span>. 当滑块到达 <span class="math inline">t=1</span>,
+      二者相等 —— 这就是格林公式. 点击 <strong>反向</strong>
+      让边界顺时针走, 此时 <span class="math inline">\oint</span> 变号,
+      而面积积分 <span class="math inline">\iint</span> 不变.</p>
+      <div class="callout-fold" data-label="证明">
+      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 证明</button>
+      <div class="callout-fold-body" hidden>
       <p>只需分别证明:</p>
       <p><span class="math display">\oint_C P\,\mathrm{d}x = -\iint_D
       P_y\,\mathrm{d}A, \qquad \oint_C Q\,\mathrm{d}y = \iint_D
@@ -997,7 +1087,7 @@
       y}\,\mathrm{d}y\,\mathrm{d}x =
       -\int_a^b\bigl[P(x,f_2(x))-P(x,f_1(x))\bigr]\mathrm{d}x.</span></p>
       <p>两式相等, 第一式对竖直简单区域得证.</p>
-      <p><strong>第二步: 一般区域. </strong> 将 <span
+      <p><strong>第二步: 一般区域.</strong> 将 <span
       class="math inline">D</span> 用一条竖直线段分成两个竖直简单子区域
       <span class="math inline">D_1, D_2</span>, 对每个子区域应用第一步.
       内部公共边界的贡献方向相反而相消: <span
@@ -1007,10 +1097,11 @@
       class="math inline">(*)</span> 的第二式类似处理,
       两式相加即得格林公式. <span
       class="math inline">\blacksquare</span></p>
+      </div></div>
       </div>
       </div>
       <div class="callout callout-note">
-      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">应用: 用边界曲线计算面积</span></div>
+      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">应用 — 用边界曲线计算面积</span></div>
       <div class="callout-body">
       <p>取 <span class="math inline">P=-y,\,Q=x</span>, 则 <span
       class="math inline">Q_x-P_y=1+1=2</span>, 格林公式给出</p>
@@ -1256,7 +1347,7 @@
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义: 保守场与势函数</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义 — 保守场与势函数</span></div>
       <div class="callout-body">
       <p>设 <span
       class="math inline">\mathbf{F}=P\hat{\mathbf{i}}+Q\hat{\mathbf{j}}</span>
@@ -1274,7 +1365,7 @@
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">曲线积分基本定理</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定理 — 曲线积分基本定理</span></div>
       <div class="callout-body">
       <p>若 <span class="math inline">\mathbf{F}=\nabla f</span>
       在包含有向曲线 <span class="math inline">L</span>
@@ -1284,8 +1375,37 @@
       <p><span
       class="math display">\int_L\mathbf{F}\cdot\mathrm{d}\mathbf{r} =
       f(B) - f(A).</span></p>
-      <p><strong>证明</strong>: 设 <span class="math inline">L</span>:
-      <span class="math inline">\mathbf{r}(t)=(x(t),y(t))</span>, <span
+      <p>这是一元微积分基本定理 <span class="math inline">\int_a^b
+      f&#39;(x)\,\mathrm{d}x=f(b)-f(a)</span> 的直接推广:
+      <strong>“对梯度的曲线积分只取决于边界”</strong>.</p>
+      <blockquote>
+      <div id="chpt12-conservative"
+      style="width:100%; height:520px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; margin:1.2em 0;">
+
+      </div>
+      <script data-lazy-module="threejs/chpt12-conservative.js?v=1"></script>
+      </blockquote>
+      <p>上图取势函数 <span class="math inline">f(x,y) = -e^{-(x^2 +
+      y^2)/2}</span> (一个高斯势阱), <span
+      class="math inline">\mathbf{F} = \nabla f</span> 是它产生的保守场.
+      起点 <span class="math inline">A = (0, 0)</span> (势阱底部, <span
+      class="math inline">f(A) = -1</span>), 终点 <span
+      class="math inline">B = (1.5,\, 1)</span> (<span
+      class="math inline">f(B) \approx -0.197</span>). 拖动滑块
+      <strong>路径形状 α</strong> 让 <span class="math inline">A \to
+      B</span> 的路径在直线 (<span class="math inline">\alpha =
+      0</span>) 与上下两条圆弧之间连续变形; 拖动滑块 <strong>质点位置
+      t</strong> 让红点沿当前路径移动. <strong>不论 α 取何值</strong>,
+      当 <span class="math inline">t = 1</span> 时积分总是 <span
+      class="math inline">f(B) - f(A) \approx 0.803</span> ——
+      这就是保守场的路径无关性. 路径上的颜色仍然按 <span
+      class="math inline">\mathbf{F}\cdot\boldsymbol\tau</span>
+      的符号与大小变化, 但绿色与红色总会”刚好”相加成同一数值.</p>
+      <div class="callout-fold" data-label="证明">
+      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 证明</button>
+      <div class="callout-fold-body" hidden>
+      <p>设 <span class="math inline">L</span>: <span
+      class="math inline">\mathbf{r}(t)=(x(t),y(t))</span>, <span
       class="math inline">t\in[t_0,t_1]</span>, <span
       class="math inline">\mathbf{r}(t_0)=A</span>, <span
       class="math inline">\mathbf{r}(t_1)=B</span>, 则</p>
@@ -1296,13 +1416,11 @@
       y}y&#39;(t)\right)\mathrm{d}t =
       \int_{t_0}^{t_1}\frac{\mathrm{d}}{\mathrm{d}t}f(x(t),y(t))\,\mathrm{d}t
       = f(B)-f(A). \quad\blacksquare</span></p>
+      </div></div>
       </div>
       </div>
-      <p>这是一元微积分基本定理 <span class="math inline">\int_a^b
-      f&#39;(x)\,\mathrm{d}x=f(b)-f(a)</span> 的直接推广:
-      <strong>“对梯度的曲线积分只取决于边界”</strong>.</p>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">保守场的等价条件</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定理 — 保守场的等价条件</span></div>
       <div class="callout-body">
       <p>在<strong>单连通区域</strong> <span
       class="math inline">D</span> (无”洞”的区域) 上,
@@ -1334,8 +1452,8 @@
       class="math inline">\mathbf{F}=\dfrac{(-y,\,x)}{x^2+y^2}</span>).</p>
       </div>
       </div>
-      <div class="callout callout-note">
-      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">求势函数的方法</span></div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">求势函数的方法</span></div>
       <div class="callout-body">
       <p>已知 <span class="math inline">\mathbf{F}=(P,Q)</span> 满足
       <span class="math inline">\operatorname{curl}\mathbf{F}=0</span>,
@@ -1460,10 +1578,15 @@
       </div>
       </div>
       <h2 id="曲面积分">12.5 曲面积分</h2>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">从二维到三维</span></div>
+      <div class="callout-body">
       <p>至此, 二维的积分理论已经完整: 沿曲线积分 (第一类, 第二类)
       以及将区域内部与边界联系起来的格林公式.
-      现在将同样的思路推广到三维空间: <strong>曲面</strong>取代曲线,
+      现在把同样的思路推广到三维空间: <strong>曲面</strong>取代曲线,
       <strong>通量</strong>取代做功.</p>
+      </div>
+      </div>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">引入问题: 流体穿过曲面的通量</span></div>
       <div class="callout-body">
@@ -1484,7 +1607,7 @@
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义: 曲面积分 (通量型)</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义 — 曲面积分 (通量型)</span></div>
       <div class="callout-body">
       <p>设 <span
       class="math inline">\mathbf{F}=P\hat{\mathbf{i}}+Q\hat{\mathbf{j}}+R\hat{\mathbf{k}}</span>
@@ -1496,10 +1619,33 @@
       <p><span
       class="math display">\iint_S\mathbf{F}\cdot\mathbf{n}\,\mathrm{d}S
       = \iint_S\mathbf{F}\cdot\mathrm{d}\mathbf{S}.</span></p>
+      <blockquote>
+      <div id="chpt12-flux"
+      style="width:100%; height:520px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; margin:1.2em 0;">
+
+      </div>
+      <script data-lazy-module="threejs/chpt12-flux.js?v=1"></script>
+      </blockquote>
+      <p>上图取 <span class="math inline">S</span> 为单位上半球面, 边界
+      <span class="math inline">\partial S</span> 为单位圆. 场 <span
+      class="math inline">\mathbf{F}</span> 是一个均匀场, 但其方向由滑块
+      <span class="math inline">\alpha</span> 在垂直 (y 轴方向) 与水平
+      (x 轴方向) 之间连续旋转: <span
+      class="math inline">\mathbf{F}(\alpha) = (\sin\alpha,\,
+      \cos\alpha,\, 0)</span>. 球面按 <span
+      class="math inline">\mathbf{F}\cdot\mathbf{n}</span> 染色
+      (绿正红负), 黑色短箭是若干代表点处的外法向 <span
+      class="math inline">\mathbf{n}</span>, 浅蓝箭头是空间中的场. 通量
+      <span class="math inline">\iint_S
+      \mathbf{F}\cdot\mathrm{d}\mathbf{S} = \pi \cos\alpha</span>: 当
+      <span class="math inline">\alpha = 0</span> 时场垂直, 通量最大
+      <span class="math inline">\pi</span>; 当 <span
+      class="math inline">\alpha = 90°</span> 时场水平,
+      球面正负贡献相消, 通量为零. 鼠标左键拖拽可旋转视角.</p>
       </div>
       </div>
-      <div class="callout callout-note">
-      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">计算方法</span></div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">计算方法 — 投影到坐标平面</span></div>
       <div class="callout-body">
       <p>设 <span class="math inline">S</span> 由 <span
       class="math inline">z=g(x,y)</span>, <span
@@ -1518,8 +1664,8 @@
       R\bigr)\,\mathrm{d}x\,\mathrm{d}y.</span></p>
       </div>
       </div>
-      <div class="callout callout-note">
-      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">方向的选取</span></div>
+      <div class="callout callout-caution">
+      <div class="callout-header callout-header-caution"><span class="callout-icon"></span><span class="callout-label">易错 — 方向的选取</span></div>
       <div class="callout-body">
       <p>曲面积分与曲面的<strong>定向</strong>有关,
       改变法向量方向则积分变号. 对<strong>封闭曲面</strong> (如球面),
@@ -1643,7 +1789,7 @@
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义: 散度</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义 — 散度</span></div>
       <div class="callout-body">
       <p>设 <span
       class="math inline">\mathbf{F}=P\hat{\mathbf{i}}+Q\hat{\mathbf{j}}+R\hat{\mathbf{k}}</span>
@@ -1661,7 +1807,7 @@
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">高斯公式 (散度定理)</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定理 — 高斯公式 (散度定理)</span></div>
       <div class="callout-body">
       <p>设 <span class="math inline">V</span>
       为空间中由分片光滑封闭曲面 <span
@@ -1673,11 +1819,35 @@
       <p><span
       class="math display">\oiint_{\Sigma}\mathbf{F}\cdot\mathbf{n}\,\mathrm{d}S
       = \iiint_V\nabla\cdot\mathbf{F}\,\mathrm{d}V.</span></p>
+      <blockquote>
+      <div id="chpt12-gauss"
+      style="width:100%; height:540px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; margin:1.2em 0;">
+
       </div>
-      </div>
-      <div class="callout callout-extension">
-      <div class="callout-header callout-header-extension"><span class="callout-icon"></span><span class="callout-label">证明思路</span></div>
-      <div class="callout-body">
+      <script data-lazy-module="threejs/chpt12-gauss.js?v=1"></script>
+      </blockquote>
+      <p>上图取 <span class="math inline">V</span> 为单位立方体 <span
+      class="math inline">[-1, 1]^3</span>, <span
+      class="math inline">\mathbf{F}(x,y,z) = \kappa\,(x^2,\, y,\,
+      z^2)</span>, 故 <span class="math inline">\nabla\cdot\mathbf{F} =
+      \kappa(2x + 1 + 2z)</span>. 立方体的六个面按 <span
+      class="math inline">\mathbf{F}\cdot\mathbf{n}</span> 半透明染色
+      (绿正红负); 中央 <span class="math inline">y = 0</span>
+      切片为不透明面板, 显示散度 <span
+      class="math inline">\nabla\cdot\mathbf{F}</span> 在内部如何随
+      <span class="math inline">x, z</span> 变化, 同样用绿/红着色.
+      黑色短箭头是各面中心的外法向 <span
+      class="math inline">\mathbf{n}</span>. 拖动滑块 <span
+      class="math inline">\kappa</span> 让场强按比例缩放, 两侧读数 <span
+      class="math inline">\oiint_{\partial
+      V}\mathbf{F}\cdot\mathrm{d}\mathbf{S}</span> 与 <span
+      class="math inline">\iiint_V
+      \nabla\cdot\mathbf{F}\,\mathrm{d}V</span> 始终相等 (本场二者皆为
+      <span class="math inline">8\kappa</span>). 鼠标左键拖拽旋转,
+      滚轮缩放.</p>
+      <div class="callout-fold" data-label="证明思路">
+      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 证明思路</button>
+      <div class="callout-fold-body" hidden>
       <p>分别证明 (以 <span class="math inline">R</span> 分量为例):</p>
       <p><span class="math display">\oiint_\Sigma
       R\,\mathrm{d}x\,\mathrm{d}y = \iiint_V \frac{\partial R}{\partial
@@ -1704,10 +1874,11 @@
       <p>两式相等. <span class="math inline">P</span> 和 <span
       class="math inline">Q</span> 分量类似处理, 三式相加即得高斯公式.
       <span class="math inline">\blacksquare</span></p>
+      </div></div>
       </div>
       </div>
-      <div class="callout callout-note">
-      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">与格林公式的类比</span></div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">与格林公式的类比</span></div>
       <div class="callout-body">
       <p>高斯公式是格林公式通量形式的三维版本:</p>
       <table>
@@ -2020,8 +2191,8 @@
       </div>
       </div>
       <h3 id="斯托克斯公式">12.6.2 斯托克斯公式</h3>
-      <div class="callout callout-note">
-      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">三维曲线积分</span></div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">三维曲线积分</span></div>
       <div class="callout-body">
       <p>三维空间中的曲线积分是二维情形的自然推广:</p>
       <p><span
@@ -2044,7 +2215,7 @@
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义: 三维旋度</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义 — 三维旋度</span></div>
       <div class="callout-body">
       <p>设 <span
       class="math inline">\mathbf{F}=P\hat{\mathbf{i}}+Q\hat{\mathbf{j}}+R\hat{\mathbf{k}}</span>
@@ -2057,8 +2228,8 @@
       (R_y-Q_z)\hat{\mathbf{i}}+(P_z-R_x)\hat{\mathbf{j}}+(Q_x-P_y)\hat{\mathbf{k}}.</span></p>
       </div>
       </div>
-      <div class="callout callout-note">
-      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">二维旋度是三维旋度的分量</span></div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">二维旋度是三维旋度的分量</span></div>
       <div class="callout-body">
       <p>对平面向量场 <span
       class="math inline">\mathbf{F}=(P,Q,0)</span>, 三维旋度为 <span
@@ -2069,7 +2240,7 @@
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">斯托克斯公式</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定理 — 斯托克斯公式</span></div>
       <div class="callout-body">
       <p>设 <span class="math inline">S</span> 为分片光滑的有向曲面,
       其边界 <span class="math inline">\partial S</span>
@@ -2080,11 +2251,35 @@
       <p><span class="math display">\oint_{\partial
       S}\mathbf{F}\cdot\mathrm{d}\mathbf{r} =
       \iint_S(\nabla\times\mathbf{F})\cdot\mathbf{n}\,\mathrm{d}S.</span></p>
+      <blockquote>
+      <div id="chpt12-stokes"
+      style="width:100%; height:540px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; margin:1.2em 0;">
+
       </div>
-      </div>
-      <div class="callout callout-extension">
-      <div class="callout-header callout-header-extension"><span class="callout-icon"></span><span class="callout-label">证明思路</span></div>
-      <div class="callout-body">
+      <script data-lazy-module="threejs/chpt12-stokes.js?v=1"></script>
+      </blockquote>
+      <p>上图取 <span class="math inline">S</span> 为单位上半球面, 边界
+      <span class="math inline">\partial S</span> 为单位圆 (位于 <span
+      class="math inline">xy</span> 平面). 场 <span
+      class="math inline">\mathbf{F}(x,y,z) = (-y + 1.5x,\, x,\,
+      0)</span>, 旋度 <span class="math inline">\nabla\times\mathbf{F} =
+      (0,0,2)</span>, 处处指向 <span class="math inline">+z</span> ——
+      半球面用 <span
+      class="math inline">(\nabla\times\mathbf{F})\cdot\mathbf{n} =
+      2z</span> 着色, 因此球顶最绿、向赤道渐淡.
+      几支绿色短箭头是表面上代表点处的旋度向量. 拖动滑块, 黑点沿 <span
+      class="math inline">\partial S</span> 行进, 边界丝带按 <span
+      class="math inline">\mathbf{F}\cdot\boldsymbol\tau</span>
+      的符号与大小着色 (与 §12.3、§12.4 同色谱), 红绿交替清晰可见. 当
+      <span class="math inline">t = 1</span> 完成一周时, 累积的 <span
+      class="math inline">\oint_{\partial
+      S}\mathbf{F}\cdot\mathrm{d}\mathbf{r}</span> 等于面积积分 <span
+      class="math inline">\iint_S
+      (\nabla\times\mathbf{F})\cdot\mathrm{d}\mathbf{S} = 2\pi</span>.
+      反向按钮翻转方向, 二者同时变号. 鼠标左键拖拽旋转视角.</p>
+      <div class="callout-fold" data-label="证明思路">
+      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 证明思路</button>
+      <div class="callout-fold-body" hidden>
       <p>将 <span class="math inline">S</span> 用参数方程 <span
       class="math inline">\mathbf{r}(u,v)=(x(u,v),y(u,v),z(u,v))</span>,
       <span class="math inline">(u,v)\in R</span> 参数化. 用链式法则将
@@ -2098,10 +2293,11 @@
       中的对应项相等. 对 <span class="math inline">P,Q,R</span>
       三项逐一处理后相加, 即得斯托克斯公式. <span
       class="math inline">\blacksquare</span></p>
+      </div></div>
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">三维保守场的判定</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定理 — 三维保守场的判定</span></div>
       <div class="callout-body">
       <p>在单连通空间区域 <span class="math inline">D</span> 上,
       以下条件等价:</p>
@@ -2362,10 +2558,10 @@
       </div>
       <h2 id="统一视角-广义牛顿-莱布尼茨公式">12.7 统一视角:
       广义牛顿-莱布尼茨公式</h2>
-      <p>本章的四个核心定理并非彼此独立的结论——它们是同一件事在不同维度的面貌.</p>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">四个定理的统一形式</span></div>
       <div class="callout-body">
+      <p>本章的四个核心定理并非彼此独立的结论——它们是同一件事在不同维度的面貌.</p>
       <table>
       <colgroup>
       <col style="width: 25%" />
@@ -2429,12 +2625,12 @@
       </tr>
       </tbody>
       </table>
-      </div>
-      </div>
       <p><strong>规律</strong>: 对区域上某种”导数”的积分,
       等于对其边界上”原函数”的积分.</p>
-      <div class="callout callout-note">
-      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">微分形式语言</span></div>
+      </div>
+      </div>
+      <div class="callout callout-extension">
+      <div class="callout-header callout-header-extension"><span class="callout-icon"></span><span class="callout-label">拓展 — 微分形式语言</span></div>
       <div class="callout-body">
       <p>在<strong>微分形式</strong> (differential forms) 的语言中,
       上述四个公式统一为一个公式:</p>
@@ -2447,16 +2643,24 @@
       感兴趣的读者可在后续课程中深入探索.</p>
       </div>
       </div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">章末小结</span></div>
+      <div class="callout-body">
       <p>回顾本章的旅程: 我们从<strong>场</strong>出发,
       建立了沿曲线积分和穿越曲面积分的概念,
       发现了将区域与边界联系起来的三大定理. 每一个定理的背后,
       都是牛顿和莱布尼茨三百年前的那个洞见——<strong>积分与微分互为逆运算</strong>——在更广阔的空间中回响.</p>
-      <p>格林公式告诉我们,
-      平面区域内所有点的旋转强度可以”抵消”为边界上的一圈环量.
-      高斯公式告诉我们, 封闭区域内所有的源与汇,
-      最终体现为穿越边界曲面的净通量. 斯托克斯公式告诉我们,
-      曲面上所有点的旋转, 都在曲面边界的循环中留下完整的印记.</p>
+      <ul>
+      <li><strong>格林公式</strong>: 平面区域内所有点的旋转强度,
+      可以”抵消”为边界上的一圈环量.</li>
+      <li><strong>高斯公式</strong>: 封闭区域内所有的源与汇,
+      最终体现为穿越边界曲面的净通量.</li>
+      <li><strong>斯托克斯公式</strong>: 曲面上所有点的旋转,
+      都在曲面边界的循环中留下完整的印记.</li>
+      </ul>
       <p>这不仅仅是计算技巧——这是微积分统一性最深刻的一句话.</p>
+      </div>
+      </div>
     </div>
   </div>
 

@@ -96,7 +96,7 @@
           if (itemFile !== currentFile) return;
 
           a.classList.add("current");
-          li.classList.add("nav-chapter-current");
+          li.classList.add("nav-chapter-current", "open");
 
           // Inline the new chapter's TOC
           var newTocUl = doc.querySelector("#toc-nav ul");
@@ -106,18 +106,14 @@
             li.appendChild(tocUl);
           }
 
-          // Toggle chapter TOC on click
-          a.onclick = function (e) {
-            e.preventDefault();
-            li.classList.toggle("open");
-          };
-
           setTimeout(function () { a.scrollIntoView({ block: "nearest" }); }, 0);
         });
 
-        // Re-execute scripts from new content (innerHTML does not run scripts)
+        // Re-execute scripts from new content (innerHTML does not run scripts).
+        // Skip data-lazy-module scripts — three-lazy.js re-observes them itself.
         Array.from(newContent.querySelectorAll("script")).forEach(function (s) {
           if ((s.getAttribute("type") || "") === "importmap") return;
+          if (s.hasAttribute("data-lazy-module")) return;
           var el = document.createElement("script");
           Array.from(s.attributes).forEach(function (a) { el.setAttribute(a.name, a.value); });
           if (!s.getAttribute("src")) el.textContent = s.textContent;
@@ -137,6 +133,7 @@
         buildFigureCaptions();
         initVideo();
         renderMath(contentEl);
+        if (typeof window.threeLazyReinit === "function") window.threeLazyReinit();
       })
       .catch(function () {
         // Fall back to normal navigation on any error
@@ -175,7 +172,7 @@
 
       if (isCurrent) {
         a.className = "current";
-        li.classList.add("nav-chapter-current");
+        li.classList.add("nav-chapter-current", "open");
 
         // Move the page TOC into this list item as an inline sub-list
         var tocNav = document.getElementById("toc-nav");
@@ -190,25 +187,27 @@
           if (divider) divider.style.display = "none";
         }
 
-        // Toggle chapter TOC on click — use onclick so navigate() can replace it
-        a.onclick = function (e) {
-          e.preventDefault();
-          li.classList.toggle("open");
-        };
-
         setTimeout(function () {
           a.scrollIntoView({ block: "nearest" });
         }, 0);
-      } else {
-        // SPA navigation for other chapters — use onclick so it can be replaced after nav
-        a.onclick = function (e) {
-          e.preventDefault();
-          navigate(item.url);
-        };
       }
 
       li.insertBefore(a, li.firstChild);
       list.appendChild(li);
+    });
+
+    // Delegated click handler: decide navigate vs. toggle based on current
+    // state, not on a stale onclick set when the chapter was last current.
+    list.addEventListener("click", function (e) {
+      var a = e.target.closest("li.nav-chapter > a");
+      if (!a || !list.contains(a)) return;
+      e.preventDefault();
+      var li = a.parentElement;
+      if (li.classList.contains("nav-chapter-current")) {
+        li.classList.toggle("open");
+      } else {
+        navigate(a.getAttribute("href"));
+      }
     });
   }
 
@@ -392,6 +391,44 @@
       closeVideoPanel();
     } else {
       openVideoPanelFor(btn);
+    }
+  });
+
+  // ── Fold toggle inside callouts ─────────────────────────────
+  // Author writes ::: {.fold label="证明"} ⟨body⟩ :::
+  // Filter renders a button + a hidden body. Click toggles.
+
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest(".callout-fold-btn");
+    if (!btn) return;
+    e.preventDefault();
+
+    var wrap = btn.closest(".callout-fold");
+    if (!wrap) return;
+    var body = wrap.querySelector(".callout-fold-body");
+    if (!body) return;
+
+    var nowOpen = body.hasAttribute("hidden");
+    if (nowOpen) {
+      body.removeAttribute("hidden");
+      btn.setAttribute("aria-expanded", "true");
+    } else {
+      body.setAttribute("hidden", "");
+      btn.setAttribute("aria-expanded", "false");
+    }
+
+    // Swap the leading arrow glyph (▶ ↔ ▼) without disturbing the label.
+    var label = wrap.getAttribute("data-label") || "展开";
+    btn.innerHTML = (nowOpen ? "&#9660; " : "&#9654; ") + label;
+
+    // KaTeX may need to render any math that just became visible.
+    if (nowOpen && typeof renderMathInElement === "function") {
+      renderMathInElement(body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true  },
+          { left: "$",  right: "$",  display: false }
+        ]
+      });
     }
   });
 

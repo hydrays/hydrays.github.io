@@ -15,8 +15,19 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <script type="importmap">
-  {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160/examples/jsm/"}}
+  {"imports":{"three":"./assets/three.module.js","three/addons/":"./assets/three-addons/"}}
   </script>
+  <!-- Preload three.js and the addons our scenes use, so they parse in
+       parallel with the page and the lazy-imported scene modules don't
+       have to wait for the 1.3 MB core to arrive. -->
+  <link rel="modulepreload" href="assets/three.module.js">
+  <link rel="modulepreload" href="assets/three-addons/controls/OrbitControls.js">
+  <link rel="modulepreload" href="assets/three-addons/lines/Line2.js">
+  <link rel="modulepreload" href="assets/three-addons/lines/LineGeometry.js">
+  <link rel="modulepreload" href="assets/three-addons/lines/LineMaterial.js">
+  <link rel="modulepreload" href="assets/three-addons/lines/LineSegments2.js">
+  <link rel="modulepreload" href="assets/three-addons/lines/LineSegmentsGeometry.js">
+  <link rel="modulepreload" href="assets/three-addons/renderers/CSS2DRenderer.js">
 </head>
 <body>
   <div id="sidebar">
@@ -30,18 +41,19 @@
       <li><a href="#第十一章-多元函数的积分"
       id="toc-第十一章-多元函数的积分">第十一章: 多元函数的积分</a>
       <ul>
-      <li><a href="#二重积分" id="toc-二重积分">11.1 二重积分</a>
-      <ul>
-      <li><a href="#二重积分的概念" id="toc-二重积分的概念">11.1.1
-      二重积分的概念</a></li>
-      <li><a href="#二重积分的计算" id="toc-二重积分的计算">11.1.2
-      二重积分的计算</a></li>
-      </ul></li>
-      <li><a href="#多变量积分的换元法" id="toc-多变量积分的换元法">11.2
-      多变量积分的换元法</a></li>
-      <li><a href="#重积分的应用" id="toc-重积分的应用">11.3
-      重积分的应用</a></li>
-      <li><a href="#三重积分" id="toc-三重积分">11.4 三重积分</a></li>
+      <li><a href="#物理动机-不均匀薄片的质量"
+      id="toc-物理动机-不均匀薄片的质量">11.1 物理动机:
+      不均匀薄片的质量</a></li>
+      <li><a href="#把动机变成定义-二重积分"
+      id="toc-把动机变成定义-二重积分">11.2 把动机变成定义:
+      二重积分</a></li>
+      <li><a href="#通过累次积分求解-fubini"
+      id="toc-通过累次积分求解-fubini">11.3 通过累次积分求解
+      (Fubini)</a></li>
+      <li><a href="#坐标变换" id="toc-坐标变换">11.4 坐标变换</a></li>
+      <li><a href="#推广到三维-三重积分"
+      id="toc-推广到三维-三重积分">11.5 推广到三维: 三重积分</a></li>
+      <li><a href="#更多应用" id="toc-更多应用">11.6 更多应用</a></li>
       </ul></li>
       </ul>
     </div>
@@ -63,143 +75,112 @@
     <div id="content">
       <h1 id="第十一章-多元函数的积分">第十一章: 多元函数的积分</h1>
       <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">章引言</span></div>
       <div class="callout-body">
-      <p>在单变量积分中, 我们通过定积分研究了一个变量在区间上的累积问题,
-      例如曲线下的面积, 物体的位移等. 然而,
-      现实世界中的许多问题涉及多个变量的相互作用, 例如:
-      三维空间中不均匀物体的质量 (质量密度随位置变化),
-      平面区域上的温度分布平均值等.
-      这些问题要求我们将积分的概念从一维推广到高维空间. 重积分 (Multiple
-      Integrals) 正是解决这类问题的核心工具. 本章将系统学习二重积分
-      (Double Integrals) 与三重积分 (Triple Integrals) 的定义,
-      计算方法及其应用.</p>
+      <p>单变量积分把一段曲线下的面积写成 <span
+      class="math inline">\int_a^b f(x)\,\mathrm{d}x</span>.
+      当被积对象从一段曲线变成一块薄片或一团立体, 当密度从均匀变成 <span
+      class="math inline">\rho(x,y)</span> 或 <span
+      class="math inline">\rho(x,y,z)</span>, 我们需要新的积分:
+      <strong>二重积分</strong>与<strong>三重积分</strong>.
+      本章贯穿一条物理主线 —— 不均匀薄片 / 立体的质量.</p>
+      <p>每一节都重复同样的四步: <strong>分割 → 近似 → 求和 →
+      取极限</strong>. 把这四步看清楚,
+      多元积分就只是单变量积分在更高维度上的自然延展.</p>
       </div>
       </div>
-      <h2 id="二重积分">11.1 二重积分</h2>
+      <h2 id="物理动机-不均匀薄片的质量">11.1 物理动机:
+      不均匀薄片的质量</h2>
       <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">动机 — 不均匀薄片的质量</span></div>
       <div class="callout-body">
-      <p>跟单变量积分一样,
-      二重积分的本质仍然是“分割-近似-求和”的极限过程.</p>
+      <p>一块均匀薄片的质量 <span class="math inline">M = \rho \cdot
+      A</span> —— 密度乘面积, 一步乘法搞定. 如果密度随位置变化, 写成
+      <span class="math inline">\rho(x,y)</span>,
+      这种”乘法”还能用吗?</p>
+      <p><strong>思路: 局部均匀, 整体求和.</strong> 把薄片所占区域 <span
+      class="math inline">D</span> 分成 <span
+      class="math inline">N</span> 个互不重叠的小片, 第 <span
+      class="math inline">i</span> 片面积记作 <span
+      class="math inline">\Delta A_i</span>. 当每片足够小时,
+      它内部的密度可以用一个代表点 <span class="math inline">(x_i,
+      y_i)</span> 处的值 <span class="math inline">\rho(x_i, y_i)</span>
+      来近似. 因此: <span class="math display">
+      M \approx \sum_{i=1}^N \rho(x_i, y_i)\,\Delta A_i.
+      </span> 让分割越来越细 (<span
+      class="math inline">N\to\infty</span>, 且 <span
+      class="math inline">\max\Delta A_i \to 0</span>), 上面这个 Riemann
+      和如果有极限, 这个极限就是真正的质量.</p>
+      <div id="chpt11-mass-plate"
+      style="width:100%; height:480px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; margin:1.2em 0;">
+
+      </div>
+      <script data-lazy-module="threejs/chpt11-mass-plate.js?v=1"></script>
+      <p>上图把这条思路可视化了: 颜色表示 <span
+      class="math inline">\rho(x,y) = 0.6 + 0.5\sin 2x\,\cos 1.5
+      y</span> 在 <span class="math inline">D = [0,\pi]^2</span>
+      上的取值, 网格把 <span class="math inline">D</span> 切成 <span
+      class="math inline">N\times N</span> 个小方块, 圆点是每块的代表点.
+      拖动滑块改变 <span class="math inline">N</span>, 看 Riemann
+      和如何逐步逼近真实积分.</p>
       </div>
       </div>
-      <h3 id="二重积分的概念">11.1.1 二重积分的概念</h3>
-      <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout callout-note">
+      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">数值实验 — 收敛性</span></div>
       <div class="callout-body">
-      <p>我们要计算曲线 <span class="math inline">y = f(x)</span> 在区间
-      <span class="math inline">[a, b]</span> 下的面积,
-      可以通过以下步骤实现: 将区间 <span class="math inline">[a,
-      b]</span> 等分为 <span class="math inline">N</span> 个子区间,
-      每个子区间的宽度为 <span class="math inline">\displaystyle\Delta x
-      = \frac{b-a}{N}</span>. 通过分割得到 <span
-      class="math inline">N</span> 个窄矩形 (小柱体),
-      每个矩形的左端点或右端点记为 <span class="math inline">x_i</span>
-      (例如 <span class="math inline">x_i = a + i\Delta x</span>).
-      每个窄矩形的面积可近似为底边长度 <span class="math inline">\Delta
-      x</span> 乘以高度 <span class="math inline">f(x_i)</span>, 即第
-      <span class="math inline">i</span> 个矩形的面积为 <span
-      class="math inline">\Delta x \cdot f(x_i)</span>.
-      将所有窄矩形的面积相加, 得到总面积 <span
-      class="math inline">S_N</span> 的近似值: <span
-      class="math display">
-      \displaystyle S_N = \sum_{i=1}^N \Delta x \cdot f(x_i)
-      </span> 当 <span class="math inline">N \to \infty</span>
-      (即子区间宽度 <span class="math inline">\Delta x \to 0</span>) 时,
-      近似值 <span class="math inline">S_N</span> 趋近于精确面积 <span
-      class="math inline">S</span>: <span class="math display">
-      \displaystyle S = \lim_{N \to \infty} S_N = \lim_{\Delta x \to 0}
-      S_N
-      </span> 最终, 面积 <span class="math inline">S</span>
-      可表示为定积分: <span class="math display">
-      S = \int_{a}^{b} f(x) \, \mathrm{d}x
-      </span></p>
+      <p>把上图的滑块依次拨到 <span class="math inline">N = 4, 16,
+      64</span>, 记下显示的 Riemann 和与真实积分的差距. 你会观察到:
+      误差大致以 <span class="math inline">O(1/N)</span> 的速度衰减
+      (粗网格时这条规律尤为清晰), 当 <span class="math inline">N</span>
+      足够大, 近似值与极限值的差小到任意指定阈值以下.</p>
+      <p>这正是”极限存在”的直观证据 ——
+      我们已经为非均匀薄片的”总质量”找到了精确定义. 把质量替换成”在
+      <span class="math inline">D</span> 上的总累积量”,
+      把密度替换成任意函数 <span class="math inline">f(x,y)</span>,
+      同样的步骤就给出了二重积分的一般概念.</p>
       </div>
       </div>
+      <h2 id="把动机变成定义-二重积分">11.2 把动机变成定义:
+      二重积分</h2>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">多变量积分</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义 — 二重积分</span></div>
       <div class="callout-body">
-      <script type="importmap">
-      {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160/examples/jsm/"}}
-      </script>
+      <p>设 <span class="math inline">f(x,y)</span> 在有界闭区域 <span
+      class="math inline">D \subset \mathbb{R}^2</span> 上有界. 把 <span
+      class="math inline">D</span> 任意分割为 <span
+      class="math inline">N</span> 个互不重叠的小区域 <span
+      class="math inline">\Delta D_1, \dots, \Delta D_N</span>,
+      它们的面积分别记作 <span class="math inline">\Delta A_i</span>,
+      并在每个 <span class="math inline">\Delta D_i</span>
+      中任取一个代表点 <span class="math inline">(\xi_i, \eta_i)</span>.
+      记 <span class="math inline">\lambda = \max_i \mathrm{diam}(\Delta
+      D_i)</span> 为分割的细度. 若极限 <span class="math display">
+      \lim_{\lambda\to 0}\sum_{i=1}^N f(\xi_i, \eta_i)\,\Delta A_i
+      </span> 存在且与分割方式、代表点选取无关, 则称该极限为 <span
+      class="math inline">f</span> 在 <span class="math inline">D</span>
+      上的<strong>二重积分</strong>, 记作 <span class="math display">
+      \iint_D f(x,y)\,\mathrm{d}A \quad\text{或}\quad \iint_D
+      f(x,y)\,\mathrm{d}x\mathrm{d}y.
+      </span> 这里 <span class="math inline">\mathrm{d}A</span>
+      是面积元, 在直角坐标系中就是 <span
+      class="math inline">\mathrm{d}x\,\mathrm{d}y</span>.</p>
       <div id="chpt11-double-integral"
       style="width:100%; height:440px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; margin:1.2em 0;">
 
       </div>
       <script data-lazy-module="threejs/chpt11-double-integral.js?v=1"></script>
+      <p>上图展示当 <span class="math inline">f \ge 0</span>
+      时的几何画面: Riemann 和是一族小柱体的体积之和, 极限值就是曲面
+      <span class="math inline">z = f(x,y)</span> 与底面 <span
+      class="math inline">D</span> 之间所夹立体的体积.</p>
       </div>
       </div>
-      <blockquote>
-      <p>如图所示, 对于定义在平面区域 <span class="math inline">D</span>
-      上的函数 <span class="math inline">z = f(x,y)</span>,
-      若要计算其对应的体积或物理量 (如质量, 电荷量等),
-      其思想是单变量积分在二维空间的自然推广. 首先将积分区域 <span
-      class="math inline">D</span> 分割为 <span
-      class="math inline">N</span> 个面积微元 <span
-      class="math inline">\Delta A</span>,
-      每个微元可近似视为一个小矩形区域, 并选取其代表点 <span
-      class="math inline">(x_i, y_i)</span> (例如取中心点或顶点坐标).
-      每个微元的体积可近似为底面积 <span class="math inline">\Delta
-      A</span> 乘以高度 <span class="math inline">f(x_i, y_i)</span>, 即
-      <span class="math inline">\Delta A \cdot f(x_i, y_i)</span>.
-      将所有微元的贡献叠加, 得到近似总体积: <span class="math display">
-      \displaystyle V_N = \sum_{i=1}^N \Delta A \cdot f(x_i, y_i)
-      </span> 当分割无限细化 (即 <span class="math inline">N \to
-      \infty</span>, 且每个微元面积 <span class="math inline">\Delta A
-      \to 0</span>) 时, 近似值趋于精确值: <span class="math display">
-      \displaystyle V = \lim_{N \to \infty} V_N = \lim_{\Delta A \to
-      0}V_N
-      </span> 这一极限过程即为二重积分的定义, 可表示为: <span
-      class="math display">
-      V = \iint_{D} f(x,y) \, \mathrm{d}A
-      </span> 其中 <span class="math inline">D</span> 是积分区域, <span
-      class="math inline">f(x,y)</span> 为被积函数, <span
-      class="math inline">\mathrm{d}A</span> 为面积元
-      (直角坐标系中通常写作 <span
-      class="math inline">\mathrm{d}x\mathrm{d}y</span>).</p>
-      <p><strong>如何计算?</strong> [图略, 待补充] <span
-      class="math display">
-      \displaystyle M=\sum_{i=1}^N \rho (x_i,y_i)\mathrm{d}A_i=\iint_D
-      \rho(x,y)\mathrm{d}A
-      </span></p>
-      </blockquote>
-      <h3 id="二重积分的计算">11.1.2 二重积分的计算</h3>
       <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">例1 与 例2 的几何意义</span></div>
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">几何意义 — 带符号体积 vs. 纯体积</span></div>
       <div class="callout-body">
-      <p>下面两图对应本节的 <strong>例1</strong> 与
-      <strong>例2</strong>, 两者的被积函数都是抛物面 <span
-      class="math inline">z = 1 - x^2 - y^2</span>, 唯一区别在于积分区域
-      <span class="math inline">D</span>:</p>
-      <ul>
-      <li><strong>左图 (例1)</strong> <span class="math inline">D =
-      [0,1]\times[0,1]</span> 是单位正方形. 抛物面在 <span
-      class="math inline">x^2+y^2 &lt; 1</span> 处取正值 (<span
-      style="color: #15803d">绿色</span>), 在靠近角点 <span
-      class="math inline">(1,1)</span> 的区域取负值 (<span
-      style="color: #b91c1c">红色</span>). 因此 <span
-      class="math inline">\displaystyle\iint_D (1-x^2-y^2)\,dA =
-      \tfrac{1}{3}</span> 代表的是<strong>带符号的体积</strong>:
-      绿色部分算作正贡献, 红色部分算作负贡献, 两者相抵后的净值.</li>
-      <li><strong>右图 (例2)</strong> <span class="math inline">D</span>
-      是第一象限的单位圆盘 <span class="math inline">\{x^2+y^2\le 1,
-      x,y\ge 0\}</span>, 恰好是抛物面保持非负的最大区域. 此时 <span
-      class="math inline">\displaystyle\iint_D (1-x^2-y^2)\,dA =
-      \tfrac{\pi}{8}</span> 就是<strong>纯粹的体积</strong>:
-      以四分之一圆盘为底, 以抛物面为顶盖所围成的立体的体积.</li>
-      </ul>
-      <p>对比两图可以看到: 相同的被积函数配合不同的积分区域,
-      几何意义会从“抵消后的净体积”变为“完整的立体体积”——这正是选择合适的
-      <span class="math inline">D</span> (以及合适的坐标系)
-      在重积分计算中的关键作用.</p>
-      </div>
-      </div>
-      <script type="importmap">
-      {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160/examples/jsm/"}}
-      </script>
+      <blockquote>
       <div
-      style="display: flex; gap:10px; flex-wrap: wrap; margin:1.2em 0;">
+      style="display: flex; gap:10px; flex-wrap: wrap; margin:1.0em 0;">
       <div id="chpt11-example1"
       style="flex:1 1 320px; min-width:300px; height:380px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden;">
 
@@ -211,6 +192,262 @@
       </div>
       <script data-lazy-module="threejs/chpt11-example1.js?v=1"></script>
       <script data-lazy-module="threejs/chpt11-example2.js?v=1"></script>
+      </blockquote>
+      <p>两图对应同一个被积函数 <span class="math inline">z = 1 - x^2 -
+      y^2</span>, 区别只在积分区域:</p>
+      <ul>
+      <li><strong>左图</strong> <span class="math inline">D =
+      [0,1]^2</span> 包含 <span class="math inline">z&lt;0</span>
+      的角落区域 (<span style="color:#b91c1c">红色</span>):
+      红色体积按负值计入, 绿色按正值计入, 二重积分 <span
+      class="math inline">\iint_D (1-x^2-y^2)\,\mathrm{d}A =
+      \tfrac{1}{3}</span> 是这两块体积的<strong>代数和</strong>,
+      即”带符号体积”.</li>
+      <li><strong>右图</strong> <span class="math inline">D = \{(x,y):
+      x^2+y^2\le 1, x,y\ge 0\}</span> 恰好取 <span class="math inline">z
+      \ge 0</span> 的最大区域: 此时 <span class="math inline">\iint_D
+      (1-x^2-y^2)\,\mathrm{d}A = \tfrac{\pi}{8}</span>
+      等于以四分之一圆盘为底、抛物面为顶的立体的纯体积.</li>
+      </ul>
+      <p>同一个被积函数, 选择不同的 <span class="math inline">D</span>,
+      几何含义随之改变 —— 这正是后面”何时换坐标”问题背后的几何动机.</p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">性质 — 线性 / 区域可加性 / 单调性 / 平均值</span></div>
+      <div class="callout-body">
+      <p>设 <span class="math inline">f, g</span> 在 <span
+      class="math inline">D</span> 上可积, <span class="math inline">D =
+      D_1 \cup D_2</span> 且 <span class="math inline">D_1, D_2</span>
+      仅在边界相交.</p>
+      <p><strong>(1) 线性.</strong> 对任意常数 <span
+      class="math inline">\alpha, \beta</span>, <span
+      class="math display">\iint_D (\alpha f + \beta g)\,\mathrm{d}A =
+      \alpha\iint_D f\,\mathrm{d}A + \beta\iint_D g\,\mathrm{d}A.</span>
+      <strong>(2) 区域可加性.</strong> <span class="math inline">\iint_D
+      f\,\mathrm{d}A = \iint_{D_1} f\,\mathrm{d}A + \iint_{D_2}
+      f\,\mathrm{d}A.</span></p>
+      <p><strong>(3) 单调性.</strong> 若在 <span
+      class="math inline">D</span> 上 <span class="math inline">f \le
+      g</span>, 则 <span class="math inline">\iint_D f\,\mathrm{d}A \le
+      \iint_D g\,\mathrm{d}A.</span> 特别地, <span
+      class="math inline">|\iint_D f\,\mathrm{d}A| \le \iint_D
+      |f|\,\mathrm{d}A.</span></p>
+      <p><strong>(4) 平均值.</strong> 设 <span class="math inline">A =
+      \iint_D \mathrm{d}A</span> 为 <span class="math inline">D</span>
+      的面积, 则 <span class="math inline">f</span> 在 <span
+      class="math inline">D</span> 上的平均值为 <span
+      class="math inline">\bar f = \dfrac{1}{A}\iint_D
+      f\,\mathrm{d}A.</span> 若 <span class="math inline">f</span> 连续,
+      存在 <span class="math inline">(x^*, y^*) \in D</span> 使 <span
+      class="math inline">f(x^*, y^*) = \bar f</span>
+      (二维积分中值定理).</p>
+      </div>
+      </div>
+      <div class="callout callout-extension">
+      <div class="callout-header callout-header-extension"><span class="callout-icon"></span><span class="callout-label">拓展 — 可积性的充分条件</span></div>
+      <div class="callout-body">
+      <p>一个常用结论: 若 <span class="math inline">f</span>
+      在有界闭区域 <span class="math inline">D</span>
+      上<strong>连续</strong>, 则 <span class="math inline">f</span> 在
+      <span class="math inline">D</span> 上可积. 更一般地, 若 <span
+      class="math inline">f</span> 在 <span class="math inline">D</span>
+      上有界且仅在测度为零的子集 (例如有限条曲线) 上不连续, 则 <span
+      class="math inline">f</span> 仍然可积. 严格证明属于实分析内容,
+      此处仅作了解.</p>
+      </div>
+      </div>
+      <h2 id="通过累次积分求解-fubini">11.3 通过累次积分求解
+      (Fubini)</h2>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">直觉 — 切片求和</span></div>
+      <div class="callout-body">
+      <p>计算曲面下立体的体积有一个朴素的办法: <strong>切片</strong>. 沿
+      <span class="math inline">x</span> 方向把立体切成无穷多个薄片,
+      每片在 <span class="math inline">x = x_0</span>
+      处的截面是一个二维图形, 其面积记作 <span
+      class="math inline">A(x_0)</span>; 把所有片的”面积 × 厚度”加起来,
+      体积 <span class="math inline">V = \int_a^b
+      A(x_0)\,\mathrm{d}x_0</span>. 而每片的截面面积 <span
+      class="math inline">A(x_0) = \int f(x_0, y)\,\mathrm{d}y</span>,
+      又是一个一维积分. 这样,
+      二重积分就被拆成了<strong>两次一维积分</strong>.</p>
+      <blockquote>
+      <div
+      style="display: flex; gap:10px; flex-wrap: wrap; margin:1.0em 0;">
+      <div id="chpt11-iterated-x"
+      style="flex:1 1 320px; min-width:300px; height:380px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden;">
+
+      </div>
+      <div id="chpt11-iterated-y"
+      style="flex:1 1 320px; min-width:300px; height:380px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden;">
+
+      </div>
+      </div>
+      <script data-lazy-module="threejs/chpt11-iterated.js?v=1"></script>
+      </blockquote>
+      <p>左图沿 <span class="math inline">x</span> 切, 右图沿 <span
+      class="math inline">y</span> 切. 拖动滑块,
+      高亮的截面随之扫过整个立体.
+      两种切法对应两种”先内后外”的累次积分顺序,
+      而它们都应该得到同一个体积 —— 这正是下面 Fubini
+      定理要保证的事.</p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定理 — Fubini (矩形区域)</span></div>
+      <div class="callout-body">
+      <p>设 <span class="math inline">f(x,y)</span> 在矩形 <span
+      class="math inline">D = [a,b]\times[c,d]</span> 上连续, 则 <span
+      class="math display">
+      \iint_D f(x,y)\,\mathrm{d}A
+      = \int_a^b\!\left(\int_c^d f(x,y)\,\mathrm{d}y\right)\mathrm{d}x
+      = \int_c^d\!\left(\int_a^b f(x,y)\,\mathrm{d}x\right)\mathrm{d}y.
+      </span> 即: 二重积分等于两次累次积分, 且两种顺序结果相同.</p>
+      <div class="callout-fold" data-label="证明">
+      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 证明</button>
+      <div class="callout-fold-body" hidden>
+      <p>把 <span class="math inline">[a,b]</span> 等分为 <span
+      class="math inline">m</span> 段, <span
+      class="math inline">[c,d]</span> 等分为 <span
+      class="math inline">n</span> 段, 形成 <span
+      class="math inline">m\times n</span> 个小矩形 <span
+      class="math inline">\Delta D_{ij}</span>, 面积 <span
+      class="math inline">\Delta x\,\Delta y</span>. 取代表点 <span
+      class="math inline">(x_i, y_j)</span>, Riemann 和为 <span
+      class="math display">
+      S_{m,n} = \sum_{i=1}^m\sum_{j=1}^n f(x_i, y_j)\,\Delta x\,\Delta y
+      = \sum_{i=1}^m \left(\sum_{j=1}^n f(x_i, y_j)\,\Delta
+      y\right)\Delta x.
+      </span> 由 <span class="math inline">f</span> 在闭矩形上一致连续,
+      当 <span class="math inline">n\to\infty</span>
+      时内层和一致地收敛到 <span class="math inline">\int_c^d f(x_i,
+      y)\,\mathrm{d}y</span>. 记此一维积分为 <span
+      class="math inline">A(x_i)</span>, 它仍是 <span
+      class="math inline">x</span> 的连续函数. 再令 <span
+      class="math inline">m\to\infty</span>, 外层 Riemann 和收敛到 <span
+      class="math inline">\int_a^b A(x)\,\mathrm{d}x</span>. 因此 <span
+      class="math display">
+      \iint_D f\,\mathrm{d}A = \lim_{m,n\to\infty} S_{m,n} =
+      \int_a^b\!\int_c^d f\,\mathrm{d}y\,\mathrm{d}x.
+      </span> 把内外层互换重复以上推理, 得到对偶的累次顺序. <span
+      class="math inline">\blacksquare</span></p>
+      </div></div>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定理 — 一般区域上的累次积分 (X-型 / Y-型)</span></div>
+      <div class="callout-body">
+      <p>把 <span class="math inline">D</span>
+      按”沿哪一个方向是单调的纵向条带”分类:</p>
+      <ul>
+      <li><p><strong>X-型区域</strong>: <span class="math inline">D =
+      \{(x,y): a\le x\le b,\ g_1(x)\le y\le g_2(x)\}</span>, 其中 <span
+      class="math inline">g_1, g_2</span> 在 <span
+      class="math inline">[a,b]</span> 上连续. 则 <span
+      class="math display">
+      \iint_D f\,\mathrm{d}A = \int_a^b\!\int_{g_1(x)}^{g_2(x)}
+      f(x,y)\,\mathrm{d}y\,\mathrm{d}x.
+      </span></p></li>
+      <li><p><strong>Y-型区域</strong>: <span class="math inline">D =
+      \{(x,y): c\le y\le d,\ h_1(y)\le x\le h_2(y)\}</span>. 则 <span
+      class="math display">
+      \iint_D f\,\mathrm{d}A = \int_c^d\!\int_{h_1(y)}^{h_2(y)}
+      f(x,y)\,\mathrm{d}x\,\mathrm{d}y.
+      </span></p></li>
+      </ul>
+      <p>同一个 <span class="math inline">D</span> 可能同时是 X-型与
+      Y-型, 此时两种顺序均可,
+      通常选<strong>内层积分更易算</strong>的那一种.</p>
+      <blockquote>
+      <figure>
+      <img src="media/img/chpt11-region-types.svg" width="560"
+      alt="X-型 与 Y-型 区域" />
+      <figcaption aria-hidden="true">X-型 与 Y-型 区域</figcaption>
+      </figure>
+      </blockquote>
+      </div>
+      </div>
+      <div class="callout callout-note">
+      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">例 1 — 矩形区域上的二重积分</span></div>
+      <div class="callout-body">
+      <p>计算 <span class="math inline">\displaystyle\iint_D
+      (x+y)\,\mathrm{d}A</span>, 其中 <span class="math inline">D =
+      [0,1]\times[0,2]</span>.</p>
+      <div class="callout-fold" data-label="详细计算">
+      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 详细计算</button>
+      <div class="callout-fold-body" hidden>
+      <p>选择”先 <span class="math inline">y</span> 后 <span
+      class="math inline">x</span>“的顺序: <span class="math display">
+      \iint_D (x+y)\,\mathrm{d}A
+      = \int_0^1\!\int_0^2 (x+y)\,\mathrm{d}y\,\mathrm{d}x
+      = \int_0^1 \left[xy + \tfrac{y^2}{2}\right]_{y=0}^{y=2}\mathrm{d}x
+      = \int_0^1 (2x + 2)\,\mathrm{d}x = 1 + 2 = 3.
+      </span> 反过来”先 <span class="math inline">x</span> 后 <span
+      class="math inline">y</span>“也得 3, 验证 Fubini.</p>
+      </div></div>
+      </div>
+      </div>
+      <div class="callout callout-note">
+      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">例 2 — X-型区域</span></div>
+      <div class="callout-body">
+      <p>设 <span class="math inline">D</span> 为曲线 <span
+      class="math inline">y = x</span> 与 <span class="math inline">y =
+      x^2</span> 在第一象限围成的区域. 求 <span
+      class="math inline">\displaystyle\iint_D
+      xy\,\mathrm{d}A</span>.</p>
+      <div class="callout-fold" data-label="详细计算">
+      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 详细计算</button>
+      <div class="callout-fold-body" hidden>
+      <p>两曲线交于 <span class="math inline">(0,0)</span> 与 <span
+      class="math inline">(1,1)</span>. 在 <span
+      class="math inline">0\le x\le 1</span> 上, <span
+      class="math inline">x^2 \le y \le x</span>, 因此 <span
+      class="math inline">D</span> 是 X-型. 于是 <span
+      class="math display">
+      \iint_D xy\,\mathrm{d}A
+      = \int_0^1\!\int_{x^2}^{x} xy\,\mathrm{d}y\,\mathrm{d}x
+      = \int_0^1 x \cdot \tfrac{1}{2}(x^2 - x^4)\,\mathrm{d}x
+      = \tfrac{1}{2}\int_0^1 (x^3 - x^5)\,\mathrm{d}x =
+      \tfrac{1}{2}\left(\tfrac{1}{4} - \tfrac{1}{6}\right) =
+      \tfrac{1}{24}.
+      </span></p>
+      </div></div>
+      </div>
+      </div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">何时换序? — 简化计算</span></div>
+      <div class="callout-body">
+      <p>当内层积分<strong>没有初等原函数</strong>时,
+      调换累次顺序常能救场. 经典例子: <span class="math display">
+      I = \int_0^1\!\int_x^1 e^{y^2}\,\mathrm{d}y\,\mathrm{d}x.
+      </span> 内层 <span class="math inline">\int
+      e^{y^2}\,\mathrm{d}y</span> 没有初等表达, 直接算无从下手.
+      把积分区域 <span class="math inline">\{0\le x\le 1,\ x\le y\le
+      1\}</span> 重新看作 Y-型 <span class="math inline">\{0\le y\le 1,\
+      0\le x\le y\}</span>, 换序得 <span class="math display">
+      I = \int_0^1\!\int_0^y e^{y^2}\,\mathrm{d}x\,\mathrm{d}y
+      = \int_0^1 y\,e^{y^2}\,\mathrm{d}y
+      = \tfrac{1}{2}(e - 1).
+      </span> 一次换序, 一个无初等原函数的难题立刻可算 ——
+      这正是累次积分的灵活之处.</p>
+      </div>
+      </div>
+      <div class="callout callout-caution">
+      <div class="callout-header callout-header-caution"><span class="callout-icon"></span><span class="callout-label">易错 — 上下限的依赖关系</span></div>
+      <div class="callout-body">
+      <p>在累次积分中, <strong>内层积分的上下限只能依赖外层变量,
+      反过来不行</strong>. 比如写 <span
+      class="math inline">\int_a^b\!\int_{g_1(y)}^{g_2(y)}
+      f\,\mathrm{d}y\,\mathrm{d}x</span> 是错的: 内层是对 <span
+      class="math inline">y</span> 积分, 上下限里却又出现了 <span
+      class="math inline">y</span>, 积完之后表达式仍含 <span
+      class="math inline">y</span>, 无法继续对 <span
+      class="math inline">x</span> 积. 写累次积分时检查:
+      最外层积分的上下限必须是常数,
+      中间各层的上下限只能含<strong>外侧</strong>变量.</p>
+      </div>
+      </div>
       <div id="chpt11-ex-001" class="exercise-block"
       data-difficulty="easy">
       <div class="ex-banner">
@@ -541,49 +778,23 @@
       </div>
       </div>
       </div>
-      <h2 id="多变量积分的换元法">11.2 多变量积分的换元法</h2>
-      <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">变量替换与雅可比行列式</span></div>
+      <h2 id="坐标变换">11.4 坐标变换</h2>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">直觉 — 面积元在变换下放缩多少?</span></div>
       <div class="callout-body">
-      <p>考虑坐标变换 <span class="math inline">\begin{cases} u = u(x,y)
-      \\ v = v(x,y) \end{cases}</span>, 其全微分形式可表示为: <span
-      class="math display">
-      \begin{cases}
-      \mathrm{d}u = \frac{\partial u}{\partial x}\mathrm{d}x +
-      \frac{\partial u}{\partial y}\mathrm{d}y \\
-      \mathrm{d}v = \frac{\partial v}{\partial x}\mathrm{d}x +
-      \frac{\partial v}{\partial y}\mathrm{d}y
-      \end{cases}
-      </span> 该微分系统可写成矩阵形式: <span class="math display">
-      \begin{bmatrix}
-      \mathrm{d}u \\
-      \mathrm{d}v
-      \end{bmatrix} =
-      \begin{bmatrix}
-      \frac{\partial u}{\partial x} &amp; \frac{\partial u}{\partial y}
-      \\
-      \frac{\partial v}{\partial x} &amp; \frac{\partial v}{\partial y}
-      \end{bmatrix}
-      \begin{bmatrix}
-      \mathrm{d}x \\
-      \mathrm{d}y
-      \end{bmatrix}
-      </span> [图略, 待补充] <span class="math display">
-      \mathrm{d}u\mathrm{d}v = \left|\frac{\partial (u,v)}{\partial
-      (x,y)}\right|\mathrm{d}x\mathrm{d}y =
-      \left|\begin{vmatrix}
-      \frac{\partial u}{\partial x} &amp; \frac{\partial u}{\partial
-      y}\\
-      \frac{\partial v}{\partial x} &amp; \frac{\partial v}{\partial y}
-      \end{vmatrix}\right|\mathrm{d}x\mathrm{d}y = \left|\frac{\partial
-      u}{\partial x}\frac{\partial v}{\partial y}-\frac{\partial
-      u}{\partial y}\frac{\partial v}{\partial
-      x}\right|\mathrm{d}x\mathrm{d}y
-      </span></p>
-      </div>
-      </div>
+      <p>一个变换 <span class="math inline">\varphi: (u,v) \mapsto
+      (x,y)</span> 把 <span class="math inline">(u,v)</span>
+      平面的一个小矩形 <span
+      class="math inline">\mathrm{d}u\,\mathrm{d}v</span> 送到 <span
+      class="math inline">(x,y)</span>
+      平面的一个<strong>小平行四边形</strong>.
+      这个平行四边形的面积一般不再等于 <span
+      class="math inline">\mathrm{d}u\,\mathrm{d}v</span>,
+      而是放大了某个倍数.
+      这个倍数就是变换的<strong>雅可比行列式</strong>的绝对值.</p>
+      <blockquote>
       <div
-      style="display: flex; gap:10px; flex-wrap: wrap; margin:1.2em 0;">
+      style="display: flex; gap:10px; flex-wrap: wrap; margin:1.0em 0;">
       <div id="chpt11-jacobian-uv"
       style="flex:1 1 280px; min-width:260px; height:320px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; background: #fff;">
 
@@ -594,76 +805,133 @@
       </div>
       </div>
       <script data-lazy-module="threejs/chpt11-jacobian.js?v=1"></script>
-      <p><em>图: 线性变换 <span class="math inline">\varphi(u,v) = (1.2u
-      + 0.6v,\; 0.4u + 1.3v)</span> 把 <span
-      class="math inline">(u,v)</span>-平面的单位正方形网格映射为 <span
-      class="math inline">(x,y)</span>-平面的平行四边形网格.
-      每个小格的面积都被放大为原来的 <span class="math inline">|J| =
-      1.32</span> 倍. 两个彩色向量是像 <span
-      class="math inline">\partial\varphi/\partial u</span>, <span
-      class="math inline">\partial\varphi/\partial v</span>,
-      它们正是所得平行四边形的两条边.</em></p>
+      </blockquote>
+      <p>上图展示线性变换 <span class="math inline">\varphi(u,v) = (1.2u
+      + 0.6v,\ 0.4u + 1.3v)</span>. 左侧 <span
+      class="math inline">(u,v)</span> 平面上的单位正方格被均匀映成右侧
+      <span class="math inline">(x,y)</span> 平面上的平行四边形格.
+      每个小格的面积放大了 <span class="math inline">|J| = 1.2\cdot 1.3
+      - 0.6\cdot 0.4 = 1.32</span> 倍. 两根彩色向量正是 <span
+      class="math inline">\partial\varphi/\partial u,
+      \partial\varphi/\partial v</span>, 它们是平行四边形的两条边.</p>
+      </div>
+      </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">雅可比行列式与坐标变换的深层关系</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义 — 雅可比行列式</span></div>
       <div class="callout-body">
-      <p>在坐标变换 <span class="math inline">(x,y) \leftrightarrow
-      (u,v)</span> 中, 雅可比行列式不仅描述面积元的缩放比例,
-      更揭示了双向变换的对称性. 由基本关系: <span class="math display">
-      \mathrm{d}u\mathrm{d}v=\left|J\right|\mathrm{d}x\mathrm{d}y=\left|\frac{\partial
-      (u,v)}{\partial (x,y)}\right|\mathrm{d}x\mathrm{d}y
-      </span> 通过反函数定理, 可得逆变换关系: <span
-      class="math display">
-      \mathrm{d}x\mathrm{d}y=\left|\frac{\partial (x,y)}{\partial
-      (u,v)}\right|\mathrm{d}u\mathrm{d}v
-      </span> 这建立了双向变换的精确对应: 雅可比行列式互为倒数, 即:
+      <p>设 <span class="math inline">C^1</span> 变换 <span
+      class="math inline">\varphi: (u,v) \mapsto (x,y)</span>, 即 <span
+      class="math inline">x = x(u,v),\ y = y(u,v)</span>.
+      它的<strong>雅可比矩阵</strong>与<strong>雅可比行列式</strong>分别为
       <span class="math display">
-      \left| \frac{\partial (x,y)}{\partial (u,v)} \right| = \left|
-      \frac{\partial (u,v)}{\partial (x,y)} \right|^{-1}
-      </span> <strong>经典示例: 极坐标变换</strong> 对极坐标变换 <span
-      class="math inline">\begin{cases} x = \rho \cos\theta \\ y = \rho
-      \sin\theta \end{cases}</span>, 其雅可比矩阵为: <span
+      \frac{\partial(x,y)}{\partial(u,v)}
+      = \begin{pmatrix}
+      \dfrac{\partial x}{\partial u} &amp; \dfrac{\partial x}{\partial
+      v} \\[2pt]
+      \dfrac{\partial y}{\partial u} &amp; \dfrac{\partial y}{\partial
+      v}
+      \end{pmatrix},
+      \quad
+      J = \det\frac{\partial(x,y)}{\partial(u,v)}
+      = \frac{\partial x}{\partial u}\frac{\partial y}{\partial v} -
+      \frac{\partial x}{\partial v}\frac{\partial y}{\partial u}.
+      </span></p>
+      <div class="callout-fold" data-label="为什么是这个公式">
+      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 为什么是这个公式</button>
+      <div class="callout-fold-body" hidden>
+      <p>全微分给出 <span class="math display">
+      \mathrm{d}x = \frac{\partial x}{\partial u}\,\mathrm{d}u +
+      \frac{\partial x}{\partial v}\,\mathrm{d}v,
+      \quad
+      \mathrm{d}y = \frac{\partial y}{\partial u}\,\mathrm{d}u +
+      \frac{\partial y}{\partial v}\,\mathrm{d}v.
+      </span> 把 <span class="math inline">\mathrm{d}u,
+      \mathrm{d}v</span> 看作 <span class="math inline">(u,v)</span>
+      平面上沿坐标轴的两个无穷小向量, 则它们在 <span
+      class="math inline">(x,y)</span> 平面上的像分别是行向量 <span
       class="math display">
-      J(\rho ,\theta)=\frac{\partial (x,y)}{\partial (\rho ,\theta)}=
-      \begin{vmatrix}
-      \frac{\partial x}{\partial \rho } &amp; \frac{\partial x}{\partial
-      \theta}\\
-      \frac{\partial y}{\partial \rho } &amp; \frac{\partial y}{\partial
-      \theta}
-      \end{vmatrix}=
-      \begin{vmatrix}
-      \cos\theta &amp; -\rho \sin\theta\\
-      \sin\theta &amp; \rho \cos\theta
-      \end{vmatrix} = \rho
-      </span> 因此面积元变换为: <span class="math display">
-      \mathrm{d}x\mathrm{d}y = \left|\rho\right|
-      \mathrm{d}\rho\mathrm{d}\theta = \rho
-      \mathrm{d}\rho\mathrm{d}\theta
-      </span> <strong>矩阵互逆性的几何诠释</strong>
-      变换矩阵的互逆性直接体现在坐标系转换中: <span
+      \vec a = \left(\tfrac{\partial x}{\partial u},\ \tfrac{\partial
+      y}{\partial u}\right)\mathrm{d}u,
+      \quad
+      \vec b = \left(\tfrac{\partial x}{\partial v},\ \tfrac{\partial
+      y}{\partial v}\right)\mathrm{d}v.
+      </span> 二维空间中以 <span class="math inline">\vec a, \vec
+      b</span> 为邻边的平行四边形的有向面积等于行列式 <span
+      class="math inline">\det(\vec a, \vec b)</span>, 取绝对值即面积.
+      化简后: <span class="math display">
+      \mathrm{d}x\,\mathrm{d}y = |J|\,\mathrm{d}u\,\mathrm{d}v.
+      </span></p>
+      <p><strong>互逆性.</strong> 由反函数定理, 若 <span
+      class="math inline">J\ne 0</span>,
+      反向变换的雅可比行列式与原方向<strong>互为倒数</strong>: <span
       class="math display">
-      \begin{bmatrix}
-      \frac{\partial x}{\partial u} &amp; \frac{\partial x}{\partial v}
-      \\
-      \frac{\partial y}{\partial u} &amp; \frac{\partial y}{\partial v}
-      \end{bmatrix}
-      \quad\text{与}\quad
-      \begin{bmatrix}
-      \frac{\partial u}{\partial x} &amp; \frac{\partial u}{\partial y}
-      \\
-      \frac{\partial v}{\partial x} &amp; \frac{\partial v}{\partial y}
-      \end{bmatrix}
-      </span> 这两个雅可比矩阵的乘积为单位矩阵, 其行列式乘积为1. 例如当
-      <span class="math inline">J_{uv} = 5</span> 时, 逆变换的行列式为
-      <span class="math inline">\displaystyle\frac{1}{5}</span>, 此时:
-      <span class="math display">
-      \mathrm{d}x\mathrm{d}y = \frac{1}{5} \mathrm{d}u\mathrm{d}v
-      </span>
-      这种精确的倒数关系确保了积分在不同坐标系下计算结果的一致性,
-      是多重积分变量替换定理的核心数学基础.</p>
+      \det\frac{\partial(u,v)}{\partial(x,y)} =
+      \left[\det\frac{\partial(x,y)}{\partial(u,v)}\right]^{-1}.
+      </span> 这保证了 <span
+      class="math inline">\mathrm{d}u\,\mathrm{d}v</span> 与 <span
+      class="math inline">\mathrm{d}x\,\mathrm{d}y</span>
+      之间的双向换算前后一致.</p>
+      </div></div>
       </div>
       </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定理 — 二重积分换元公式</span></div>
+      <div class="callout-body">
+      <p>设 <span class="math inline">\varphi: D&#39; \to D</span> 是
+      <span class="math inline">C^1</span> 双射, 在 <span
+      class="math inline">D&#39;</span> 内部 <span class="math inline">J
+      = \det\dfrac{\partial(x,y)}{\partial(u,v)} \ne 0</span>, 函数
+      <span class="math inline">f</span> 在 <span
+      class="math inline">D</span> 上连续. 则 <span
+      class="math display">
+      \iint_D f(x,y)\,\mathrm{d}x\,\mathrm{d}y
+      = \iint_{D&#39;} f\bigl(x(u,v),
+      y(u,v)\bigr)\,|J|\,\mathrm{d}u\,\mathrm{d}v.
+      </span></p>
+      <div class="callout-fold" data-label="证明思路">
+      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 证明思路</button>
+      <div class="callout-fold-body" hidden>
+      <p>把 <span class="math inline">D&#39;</span> 划分为若干小矩形
+      <span class="math inline">\Delta_k</span>, 每个 <span
+      class="math inline">\Delta_k</span> 经 <span
+      class="math inline">\varphi</span> 映成 <span
+      class="math inline">D</span> 中的一片”小弯曲四边形” <span
+      class="math inline">\varphi(\Delta_k)</span>. 由前面的几何论证, 当
+      <span class="math inline">\Delta_k</span> 足够小时, <span
+      class="math inline">\varphi(\Delta_k)</span> 的面积近似为 <span
+      class="math inline">|J(u_k^*, v_k^*)|\cdot
+      \mathrm{Area}(\Delta_k)</span>, 其中 <span
+      class="math inline">(u_k^*, v_k^*)</span> 是 <span
+      class="math inline">\Delta_k</span> 中的代表点. 于是 <span
+      class="math display">
+      \sum_k f\bigl(\varphi(u_k^*,
+      v_k^*)\bigr)\,\mathrm{Area}(\varphi(\Delta_k))
+      \approx \sum_k f\bigl(\varphi(u_k^*, v_k^*)\bigr)\,|J(u_k^*,
+      v_k^*)|\,\mathrm{Area}(\Delta_k).
+      </span> 左侧极限是 <span class="math inline">\iint_D
+      f\,\mathrm{d}x\mathrm{d}y</span>, 右侧极限是 <span
+      class="math inline">\iint_{D&#39;}
+      f(\varphi)\,|J|\,\mathrm{d}u\mathrm{d}v</span>. 把误差严格控制需要
+      <span class="math inline">\varphi</span> 的 <span
+      class="math inline">C^1</span> 性质保证 <span
+      class="math inline">J</span> 在闭包上一致连续, 细节留给实分析教材.
+      <span class="math inline">\blacksquare</span></p>
+      </div></div>
+      </div>
+      </div>
+      <div class="callout callout-note">
+      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">例 3 — 极坐标作为重要特例</span></div>
+      <div class="callout-body">
+      <p>极坐标变换 <span class="math inline">x = r\cos\theta,\ y =
+      r\sin\theta</span> 的雅可比行列式为 <span class="math display">
+      J = \begin{vmatrix}\cos\theta &amp; -r\sin\theta\\ \sin\theta
+      &amp; r\cos\theta\end{vmatrix} = r.
+      </span> 因此 <span class="math inline">\mathrm{d}x\,\mathrm{d}y =
+      r\,\mathrm{d}r\,\mathrm{d}\theta</span>.
+      这是后面所有”圆形区域”积分的工作原理.</p>
+      <blockquote>
       <div
-      style="display: flex; gap:10px; flex-wrap: wrap; margin:1.2em 0;">
+      style="display: flex; gap:10px; flex-wrap: wrap; margin:1.0em 0;">
       <div id="chpt11-polar-rtheta"
       style="flex:1 1 280px; min-width:260px; height:320px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; background: #fff;">
 
@@ -674,17 +942,72 @@
       </div>
       </div>
       <script data-lazy-module="threejs/chpt11-polar-change.js?v=1"></script>
-      <p><em>图: 极坐标变换 <span class="math inline">(r,\theta)\mapsto
-      (r\cos\theta,\, r\sin\theta)</span>. 左侧 <span
-      class="math inline">(r,\theta)</span>-矩形 <span
-      class="math inline">[0,1]\times[0,\pi/2]</span> 被等分为 <span
-      class="math inline">5\times 6</span> 个同样大小的小矩形;
-      右侧映射为四分之一圆盘的极坐标网格. 每个”小矩形”的面积是 <span
-      class="math inline">dr\,d\theta</span>; 其像的面积约为 <span
-      class="math inline">r\,dr\,d\theta</span>, 因此靠近 <span
-      class="math inline">r=0</span> 的格子变得很小, 靠近 <span
-      class="math inline">r=1</span> 的格子最大——这正是雅可比行列式
-      <span class="math inline">|J| = r</span> 的几何含义.</em></p>
+      </blockquote>
+      <p>左侧 <span class="math inline">(r,\theta)</span>-矩形 <span
+      class="math inline">[0,1]\times[0,\pi/2]</span> 被等分成 <span
+      class="math inline">5\times 6</span> 个等大小矩形,
+      右侧映射成四分之一圆盘的极坐标网格. 靠近 <span
+      class="math inline">r=0</span> 的格子被压得很小, 靠近 <span
+      class="math inline">r=1</span> 的最大 —— 这正是 <span
+      class="math inline">|J| = r</span> 的几何含义.</p>
+      </div>
+      </div>
+      <div class="callout callout-note">
+      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">例 4 — 用极坐标计算抛物面下的体积</span></div>
+      <div class="callout-body">
+      <p>计算 <span class="math inline">\displaystyle V = \iint_D (1 -
+      x^2 - y^2)\,\mathrm{d}A</span>, 其中 <span class="math inline">D =
+      \{(x,y): x^2 + y^2 \le 1\}</span> 是单位圆盘.</p>
+      <div class="callout-fold" data-label="详细计算">
+      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 详细计算</button>
+      <div class="callout-fold-body" hidden>
+      <p>直接用直角坐标: <span class="math inline">D</span> 在 <span
+      class="math inline">-\sqrt{1-x^2}\le y\le \sqrt{1-x^2}</span>,
+      内层积分能算但形状不”自然”. 换极坐标: <span
+      class="math inline">D&#39; = \{(r,\theta): 0\le r\le 1,\ 0\le
+      \theta\le 2\pi\}</span>, 被积函数 <span class="math inline">1 -
+      r^2</span>, <span class="math inline">\mathrm{d}A =
+      r\,\mathrm{d}r\,\mathrm{d}\theta</span>. 因此 <span
+      class="math display">
+      V = \int_0^{2\pi}\!\int_0^1
+      (1-r^2)\,r\,\mathrm{d}r\,\mathrm{d}\theta
+      = 2\pi \int_0^1 (r - r^3)\,\mathrm{d}r
+      = 2\pi \left(\tfrac{1}{2} - \tfrac{1}{4}\right) = \tfrac{\pi}{2}.
+      </span></p>
+      </div></div>
+      </div>
+      </div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">何时换坐标?</span></div>
+      <div class="callout-body">
+      <p>几个经验法则:</p>
+      <ul>
+      <li>圆形 / 扇形 / 环形区域 → <strong>极坐标</strong> <span
+      class="math inline">x = r\cos\theta,\ y = r\sin\theta</span>.</li>
+      <li>椭圆区域 <span class="math inline">\dfrac{x^2}{a^2} +
+      \dfrac{y^2}{b^2}\le 1</span> → 仿射变换 <span
+      class="math inline">x = au,\ y = bv</span>.</li>
+      <li>平行四边形或线性条带 → 一般<strong>线性变换</strong>, 直接读出
+      <span class="math inline">|J| = |\det A|</span>.</li>
+      <li>双曲线型边界 (<span class="math inline">xy = c</span> 之类) →
+      取 <span class="math inline">u = xy,\ v = x/y</span>
+      或类似的非线性组合.</li>
+      </ul>
+      <p>总原则: 让积分区域在新坐标下变成最简单的”标准形” (矩形 /
+      长方体), 哪怕被积函数稍变复杂也值得.</p>
+      </div>
+      </div>
+      <div class="callout callout-caution">
+      <div class="callout-header callout-header-caution"><span class="callout-icon"></span><span class="callout-label">易错 — 雅可比行列式的绝对值</span></div>
+      <div class="callout-body">
+      <p>换元公式里出现的是 <span class="math inline">|J|</span>, 不是
+      <span class="math inline">J</span>. 当 <span
+      class="math inline">J</span> 可能取负
+      (例如反射型变换或参数化方向反了), 漏写绝对值会让积分莫名变号.
+      任何”面积或体积应当为正”的情景中, <span
+      class="math inline">|J|</span> 才是物理上正确的放缩因子.</p>
+      </div>
+      </div>
       <div id="chpt11-ex-013" class="exercise-block"
       data-difficulty="medium">
       <div class="ex-banner">
@@ -744,464 +1067,245 @@
       </div>
       </div>
       </div>
-      <h2 id="重积分的应用">11.3 重积分的应用</h2>
+      <h2 id="推广到三维-三重积分">11.5 推广到三维: 三重积分</h2>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">动机 — 不均匀立体</span></div>
+      <div class="callout-body">
+      <p>把 §11.1 的薄片换成立体: 占据 <span
+      class="math inline">\mathbb{R}^3</span> 中区域 <span
+      class="math inline">V</span> 的物体, 密度 <span
+      class="math inline">\rho(x,y,z)</span> 随位置变化. 同样的四步
+      (分割 → 近似 → 求和 → 取极限) 给出总质量 <span
+      class="math display">
+      M = \iiint_V \rho(x,y,z)\,\mathrm{d}V.
+      </span></p>
+      <blockquote>
+      <div id="chpt11-mass-solid"
+      style="width:100%; height:460px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; margin:1.0em 0;">
+
+      </div>
+      <script data-lazy-module="threejs/chpt11-mass-solid.js?v=1"></script>
+      </blockquote>
+      <p>上图把单位圆柱体上的密度 <span class="math inline">\rho(x,y,z)
+      = 0.5 + 0.4 z + 0.3(x^2+y^2)</span> 用颜色画出来;
+      拖动滑块看一片片水平截面如何揭示密度的空间变化.</p>
+      </div>
+      </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">质量</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义 — 三重积分</span></div>
       <div class="callout-body">
-      <p>对于分布在平面区域 <span class="math inline">D</span> 上的物体
-      (如薄片), 若其密度函数为 <span
-      class="math inline">\rho(x,y)</span>, 则总质量可通过二重积分计算:
+      <p>设 <span class="math inline">f(x,y,z)</span> 在有界闭体 <span
+      class="math inline">V \subset \mathbb{R}^3</span> 上有界. 把 <span
+      class="math inline">V</span> 分割为 <span
+      class="math inline">\Delta V_1, \dots, \Delta V_N</span>,
+      体积分别为 <span class="math inline">\Delta V_i</span>, 取代表点
+      <span class="math inline">(\xi_i, \eta_i, \zeta_i) \in \Delta
+      V_i</span>, 记 <span class="math inline">\lambda = \max_i
+      \mathrm{diam}(\Delta V_i)</span>. 若极限 <span
+      class="math display">
+      \lim_{\lambda\to 0}\sum_{i=1}^N f(\xi_i, \eta_i, \zeta_i)\,\Delta
+      V_i
+      </span> 存在且与分割、代表点选取无关, 则称之为 <span
+      class="math inline">f</span> 在 <span class="math inline">V</span>
+      上的<strong>三重积分</strong>, 记作 <span class="math display">
+      \iiint_V f(x,y,z)\,\mathrm{d}V \quad\text{或}\quad \iiint_V
+      f\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z.
+      </span></p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定理 — 三维 Fubini (投影到底面)</span></div>
+      <div class="callout-body">
+      <p>设 <span class="math inline">V = \{(x,y,z): (x,y) \in D_{xy},\
+      z_1(x,y)\le z\le z_2(x,y)\}</span>, 其中 <span
+      class="math inline">D_{xy}</span> 是 <span
+      class="math inline">V</span> 在 <span
+      class="math inline">xy</span>-平面的投影, <span
+      class="math inline">z_1, z_2</span> 在 <span
+      class="math inline">D_{xy}</span> 上连续, <span
+      class="math inline">f</span> 在 <span class="math inline">V</span>
+      上连续. 则 <span class="math display">
+      \iiint_V f\,\mathrm{d}V
+      = \iint_{D_{xy}}\!\left(\int_{z_1(x,y)}^{z_2(x,y)}
+      f(x,y,z)\,\mathrm{d}z\right)\mathrm{d}A.
+      </span> 类似地可投影到 <span class="math inline">xz</span>-平面或
+      <span class="math inline">yz</span>-平面. 三种顺序得到相同的值,
+      选择何种投影由 <span class="math inline">V</span>
+      的几何形状决定.</p>
+      <div class="callout-fold" data-label="证明要点">
+      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 证明要点</button>
+      <div class="callout-fold-body" hidden>
+      <p>与二维 Fubini 平行: 把 <span class="math inline">V</span>
+      切成柱状的小条 (底为 <span class="math inline">D_{xy}</span>
+      中的小区域 <span class="math inline">\Delta D</span>, 顶底由 <span
+      class="math inline">z_2, z_1</span> 限定), 每条体积为 <span
+      class="math inline">\int_{z_1}^{z_2}\mathrm{d}z\cdot \Delta
+      A</span>. 内层积分给出 <span class="math inline">z</span>
+      方向的”线密度”, 外层是该线密度在 <span
+      class="math inline">D_{xy}</span> 上的二重积分.
+      一致连续性保证内外极限可交换. <span
+      class="math inline">\blacksquare</span></p>
+      </div></div>
+      </div>
+      </div>
+      <div class="callout callout-note">
+      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">例 5 — 直接累次积分</span></div>
+      <div class="callout-body">
+      <p>计算 <span class="math inline">\displaystyle \iiint_{[0,1]^3}
+      xyz\,\mathrm{d}V</span>.</p>
+      <div class="callout-fold" data-label="详细计算">
+      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 详细计算</button>
+      <div class="callout-fold-body" hidden>
+      <p>三个变量分离, 一次累次积分即可: <span class="math display">
+      \iiint_{[0,1]^3} xyz\,\mathrm{d}V
+      = \int_0^1 x\,\mathrm{d}x \cdot \int_0^1 y\,\mathrm{d}y \cdot
+      \int_0^1 z\,\mathrm{d}z
+      = \tfrac{1}{2}\cdot \tfrac{1}{2}\cdot \tfrac{1}{2} = \tfrac{1}{8}.
+      </span></p>
+      </div></div>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">坐标变换 — 柱面坐标</span></div>
+      <div class="callout-body">
+      <p>柱面坐标 <span class="math inline">(\rho, \theta, z)</span>
+      与直角坐标的关系: <span class="math display">
+      x = \rho\cos\theta,\quad y = \rho\sin\theta,\quad z = z, \qquad
+      \rho\ge 0,\ \theta\in [0, 2\pi).
+      </span> 雅可比行列式 <span class="math inline">|J| = \rho</span>,
+      因此体积元 <span class="math display">
+      \mathrm{d}V = \rho\,\mathrm{d}\rho\,\mathrm{d}\theta\,\mathrm{d}z.
+      </span> 几何上: 体积元是一根高 <span
+      class="math inline">\mathrm{d}z</span>、底面是半径 <span
+      class="math inline">\rho</span> 处宽 <span
+      class="math inline">\mathrm{d}\rho</span>、弧长 <span
+      class="math inline">\rho\,\mathrm{d}\theta</span> 的小薄片.</p>
+      <blockquote>
+      <div id="chpt11-cylindrical"
+      style="width:100%; height:480px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; margin:1.0em 0;">
+
+      </div>
+      <script data-lazy-module="threejs/chpt11-cylindrical.js?v=1"></script>
+      </blockquote>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">坐标变换 — 球面坐标</span></div>
+      <div class="callout-body">
+      <p>球面坐标 <span class="math inline">(\rho, \varphi,
+      \theta)</span> 的约定 (<span class="math inline">\rho</span>
+      是到原点距离, <span class="math inline">\varphi</span> 是与 <span
+      class="math inline">z</span>-轴正向夹角, <span
+      class="math inline">\theta</span> 是在 <span
+      class="math inline">xy</span> 平面的方位角): <span
+      class="math display">
+      x = \rho\sin\varphi\cos\theta,\quad y =
+      \rho\sin\varphi\sin\theta,\quad z = \rho\cos\varphi,
+      </span> 其中 <span class="math inline">\rho\ge 0,\
+      \varphi\in[0,\pi],\ \theta\in[0, 2\pi)</span>. 雅可比行列式 <span
+      class="math display">
+      |J| = \rho^2\sin\varphi,
+      \qquad
+      \mathrm{d}V =
+      \rho^2\sin\varphi\,\mathrm{d}\rho\,\mathrm{d}\varphi\,\mathrm{d}\theta.
+      </span></p>
+      <blockquote>
+      <div id="chpt11-spherical"
+      style="width:100%; height:480px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden; margin:1.0em 0;">
+
+      </div>
+      <script data-lazy-module="threejs/chpt11-spherical.js?v=1"></script>
+      </blockquote>
+      <div class="callout-fold" data-label="为什么是 ρ²sin φ">
+      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 为什么是 ρ²sin φ</button>
+      <div class="callout-fold-body" hidden>
+      <p>球坐标体积元可以由几何分解直接读出: 给三个变量分别一个微小增量,
+      立方体边长依次为</p>
+      <ul>
+      <li>沿 <span class="math inline">\rho</span> 方向: <span
+      class="math inline">\mathrm{d}\rho</span>;</li>
+      <li>沿 <span class="math inline">\varphi</span> 方向
+      (以原点为圆心、半径 <span class="math inline">\rho</span>
+      的子午圆): <span
+      class="math inline">\rho\,\mathrm{d}\varphi</span>;</li>
+      <li>沿 <span class="math inline">\theta</span> 方向 (以 <span
+      class="math inline">z</span>-轴为轴、半径 <span
+      class="math inline">\rho\sin\varphi</span> 的纬度圆): <span
+      class="math inline">\rho\sin\varphi\,\mathrm{d}\theta</span>.</li>
+      </ul>
+      <p>三者两两正交, 所以体积元 <span class="math inline">=
+      \mathrm{d}\rho \cdot \rho\,\mathrm{d}\varphi \cdot
+      \rho\sin\varphi\,\mathrm{d}\theta =
+      \rho^2\sin\varphi\,\mathrm{d}\rho\,\mathrm{d}\varphi\,\mathrm{d}\theta.</span>
+      形式化的 <span class="math inline">|J|</span> 计算可作为练习,
+      结果一致.</p>
+      </div></div>
+      </div>
+      </div>
+      <div class="callout callout-note">
+      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">例 6 — 球的体积, 算两遍</span></div>
+      <div class="callout-body">
+      <p>半径 <span class="math inline">R</span> 的球 <span
+      class="math inline">V = \{x^2+y^2+z^2\le R^2\}</span> 的体积 <span
+      class="math inline">V = \iiint_V \mathrm{d}V</span>,
+      分别在球坐标和柱坐标下计算, 互相验证.</p>
+      <blockquote>
+      <div
+      style="display: flex; gap:10px; flex-wrap: wrap; margin:1.2em 0;">
+      <div id="chpt11-example12"
+      style="flex:1 1 320px; min-width:300px; height:400px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden;">
+
+      </div>
+      <div id="chpt11-example13"
+      style="flex:1 1 320px; min-width:300px; height:400px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden;">
+
+      </div>
+      </div>
+      <script data-lazy-module="threejs/chpt11-example12.js?v=2"></script>
+      <script data-lazy-module="threejs/chpt11-example13.js?v=2"></script>
+      </blockquote>
+      <div class="callout-fold" data-label="详细计算 (球坐标 / 柱坐标)">
+      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 详细计算 (球坐标 / 柱坐标)</button>
+      <div class="callout-fold-body" hidden>
+      <p><strong>球坐标.</strong> <span class="math inline">V = \{0\le
+      \rho\le R,\ 0\le \varphi\le \pi,\ 0\le\theta\le 2\pi\}</span>:
       <span class="math display">
-      M = \iint_D \rho(x,y) \, \mathrm{d}\sigma
-      </span> 其中 <span class="math inline">\mathrm{d}\sigma</span>
-      表示面积元 (即直角坐标系中的 <span
-      class="math inline">\mathrm{d}x\mathrm{d}y</span>). 当密度均匀时
-      (<span class="math inline">\rho</span> 为常数),
-      总质量退化为密度与面积的乘积 <span class="math inline">M = \rho
-      \cdot A</span>, 其中 <span class="math inline">\displaystyle A =
-      \iint_D \mathrm{d}\sigma</span> 为区域 <span
-      class="math inline">D</span> 的面积.</p>
-      <p><strong>质心</strong></p>
-      <p>质心是物体质量分布的加权平均位置. 对于离散质点系, 质心坐标
-      <span class="math inline">(\bar{x}, \bar{y})</span> 定义为: <span
-      class="math display">
-      \displaystyle \bar{x} = \frac{\sum_{i=1}^n m_i x_i}{\sum_{i=1}^n
-      m_i}, \quad \bar{y} = \frac{\sum_{i=1}^n m_i y_i}{\sum_{i=1}^n
-      m_i}
-      </span> 将其推广到连续情形, 则质心坐标通过二重积分表达.
-      当密度函数为 <span class="math inline">\mu(x,y)</span> 时: <span
-      class="math display">
-      \displaystyle \bar{x} = \frac{\iint_D x \mu(x,y) \,
-      \mathrm{d}\sigma}{\iint_D \mu(x,y) \, \mathrm{d}\sigma}, \quad
-      \bar{y} = \frac{\iint_D y \mu(x,y) \, \mathrm{d}\sigma}{\iint_D
-      \mu(x,y) \, \mathrm{d}\sigma}
+      V = \int_0^{2\pi}\!\int_0^\pi\!\int_0^R
+      \rho^2\sin\varphi\,\mathrm{d}\rho\,\mathrm{d}\varphi\,\mathrm{d}\theta
+      = 2\pi \cdot 2 \cdot \tfrac{R^3}{3} = \tfrac{4\pi R^3}{3}.
       </span></p>
-      </div>
-      </div>
-      <div id="chpt11-ex-005" class="exercise-block"
-      data-difficulty="medium">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例7</span><span class="ex-tags"><span
-      class="ex-tag">二重积分</span><span
-      class="ex-tag">极坐标</span><span
-      class="ex-tag">重积分应用</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>如图所示，求</p>
-      <p><span class="math display">
-      I = \iint_D
-      r^2(\rho,\theta)\,\rho\,\mathrm{d}\rho\,\mathrm{d}\theta,
-      </span></p>
-      <p>其中积分区域 <span class="math inline">D</span> 由极坐标曲线
-      <span class="math inline">\rho = 2\cos\theta</span>（<span
-      class="math inline">\theta \in [-\pi/2, \pi/2]</span>）围成。</p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt11-ex-005-frame" data-panel="chpt11-ex-005-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt11-ex-005-frame" data-panel="chpt11-ex-005-ans-0">答案</button></span>
-      </div>
-      </div>
-      <div id="chpt11-ex-005-frame" class="ex-frame" hidden="">
-      <div id="chpt11-ex-005-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>区域 <span class="math inline">D</span> 为 <span
-      class="math inline">0 \leq \rho \leq 2\cos\theta</span>，<span
-      class="math inline">-\pi/2 \leq \theta \leq \pi/2</span>。这里
-      <span class="math inline">r^2 = \rho^2</span>（题中 <span
-      class="math inline">r(\rho,\theta)=\rho</span>），先对 <span
-      class="math inline">\rho</span> 积分再对 <span
-      class="math inline">\theta</span> 积分，利用 <span
-      class="math inline">\cos^4\theta</span> 的降幂公式。</p>
-      </div>
-      <div id="chpt11-ex-005-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p><span class="math display">
-      I = \int_{-\pi/2}^{\pi/2}\!\int_0^{2\cos\theta}
-      \rho^3\,\mathrm{d}\rho\,\mathrm{d}\theta
-      =
-      \int_{-\pi/2}^{\pi/2}\left[\frac{\rho^4}{4}\right]_0^{2\cos\theta}\mathrm{d}\theta
-      = \int_{-\pi/2}^{\pi/2} 4\cos^4\theta\,\mathrm{d}\theta.
-      </span></p>
-      <p>利用偶函数对称：</p>
-      <p><span class="math display">
-      I = 8\int_0^{\pi/2}\cos^4\theta\,\mathrm{d}\theta = 8 \cdot
-      \frac{3\pi}{16} = \frac{3\pi}{2}.
-      </span></p>
-      <p>（其中 <span
-      class="math inline">\displaystyle\int_0^{\pi/2}\cos^4\theta\,\mathrm{d}\theta
-      = \frac{3\pi}{16}</span>。）</p>
-      </div>
-      </div>
-      </div>
-      </div>
-      <div id="chpt11-ex-006" class="exercise-block"
-      data-difficulty="medium">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例8</span><span class="ex-tags"><span
-      class="ex-tag">二重积分</span><span
-      class="ex-tag">极坐标</span><span
-      class="ex-tag">重积分应用</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>如图所示，求</p>
-      <p><span class="math display">
-      I = \iint_D (1 + \rho^2 -
-      2\rho\cos\theta)\,\rho\,\mathrm{d}\rho\,\mathrm{d}\theta,
-      </span></p>
-      <p>其中积分区域 <span class="math inline">D</span> 由极坐标曲线
-      <span class="math inline">\rho = 2\cos\theta</span> 围成。</p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span class="ex-sol-label">解法一</span> <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt11-ex-006-frame" data-panel="chpt11-ex-006-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt11-ex-006-frame" data-panel="chpt11-ex-006-ans-0">答案</button></span>
-      </div>
-      <div class="ex-sol-row">
-      <span class="ex-sol-label">解法二</span> <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt11-ex-006-frame" data-panel="chpt11-ex-006-hint-1">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt11-ex-006-frame" data-panel="chpt11-ex-006-ans-1">答案</button></span>
-      </div>
-      </div>
-      <div id="chpt11-ex-006-frame" class="ex-frame" hidden="">
-      <div id="chpt11-ex-006-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>区域为 <span class="math inline">0 \leq \rho \leq
-      2\cos\theta</span>，<span class="math inline">-\pi/2 \leq \theta
-      \leq \pi/2</span>；展开被积函数后逐项积分。</p>
-      </div>
-      <div id="chpt11-ex-006-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p><span class="math display">
-      I =
-      \int_{-\pi/2}^{\pi/2}\!\int_0^{2\cos\theta}(1+\rho^2-2\rho\cos\theta)\,\rho\,\mathrm{d}\rho\,\mathrm{d}\theta
-      = \frac{\pi}{2}.
-      </span></p>
-      </div>
-      <div id="chpt11-ex-006-hint-1" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>注意 <span class="math inline">D</span> 是以 <span
-      class="math inline">(1,0)</span> 为圆心、半径为 <span
-      class="math inline">1</span> 的圆盘（直角坐标下 <span
-      class="math inline">(x-1)^2+y^2=1</span>），利用直角坐标的对称性直接计算：</p>
-      <p><span class="math display">
-      I = \int_0^{2\pi}\!\int_0^1 \rho^2 \cdot
-      \rho\,\mathrm{d}\rho\,\mathrm{d}\theta.
-      </span></p>
-      </div>
-      <div id="chpt11-ex-006-ans-1" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p><span class="math display">
-      I = \int_0^{2\pi}\!\int_0^1
-      \rho^3\,\mathrm{d}\rho\,\mathrm{d}\theta = 2\pi \cdot \frac{1}{4}
-      = \frac{\pi}{2}.
-      </span></p>
-      </div>
-      </div>
-      </div>
-      </div>
-      <div class="callout callout-warning">
-      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">转动惯量与质心的关系(不要求)</span></div>
-      <div class="callout-body">
-      <p>对于平面区域 <span class="math inline">D</span> 上的质量分布,
-      若密度函数为 <span class="math inline">\mu(x,y)</span>,
-      则系统对某点 <span class="math inline">(x_0, y_0)</span>
-      的转动惯量为: <span class="math display">
-      I(x_0, y_0) = \iint_D \mu(x,y) \left[ (x-x_0)^2 + (y-y_0)^2
-      \right] \mathrm{d}x\mathrm{d}y
-      </span> 此式可视为质量元 <span
-      class="math inline">\mu(x,y)\mathrm{d}x\mathrm{d}y</span>
-      到参考点距离平方的加权积分. 特别地, 当参考点为原点时,
-      转动惯量简化为: <span class="math display">
-      I = \iint_D \mu(x,y) r^2(x,y) \mathrm{d}x\mathrm{d}y \quad (r^2 =
-      x^2 + y^2)
-      </span></p>
-      <p><strong>质心的极值特性</strong>: 质心具有重要物理性质:
-      它是使系统转动惯量取极小值的位置. 为证明这一点, 对 <span
-      class="math inline">I(x_0, y_0)</span> 分别关于 <span
-      class="math inline">x_0, y_0</span> 求偏导并令其为零: <span
-      class="math display">
-      \frac{\partial I}{\partial x_0} = \iint_D 2\mu(x,y)(x_0 -
-      x)\mathrm{d}x\mathrm{d}y = 0 \\
-      \frac{\partial I}{\partial y_0} = \iint_D 2\mu(x,y)(y_0 -
-      y)\mathrm{d}x\mathrm{d}y = 0
-      </span> 由此可得方程组: <span class="math display">
-      x_0 \iint_D \mu\mathrm{d}x\mathrm{d}y = \iint_D \mu
-      x\mathrm{d}x\mathrm{d}y \\
-      y_0 \iint_D \mu\mathrm{d}x\mathrm{d}y = \iint_D \mu
-      y\mathrm{d}x\mathrm{d}y
-      </span> 最终解得质心坐标为: <span class="math display">
-      \displaystyle x_0 = \frac{\iint_D \mu
-      x\mathrm{d}x\mathrm{d}y}{\iint_D \mu\mathrm{d}x\mathrm{d}y}, \quad
-      y_0 = \frac{\iint_D \mu y\mathrm{d}x\mathrm{d}y}{\iint_D
-      \mu\mathrm{d}x\mathrm{d}y}
-      </span> 这与离散质点系的质心公式一致: <span class="math display">
-      \displaystyle \begin{cases}
-      x_0 = \frac{\sum m_i x_i}{\sum m_i} &amp; \text{（质量加权平均）}
-      \\
-      y_0 = \frac{\sum m_i y_i}{\sum m_i} &amp; \text{（质量加权平均）}
-      \end{cases}
-      </span></p>
-      </div>
-      </div>
-      <div class="callout callout-warning">
-      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">平行轴定理</span></div>
-      <div class="callout-body">
-      <p>平行轴定理揭示了物体绕不同轴转动惯量之间的关系:
-      <strong>绕任意轴的转动惯量等于绕质心轴的转动惯量加上总质量与该轴到质心距离平方的乘积</strong>.
-      其数学推导可通过二重积分展开:</p>
-      <p>设质心坐标为 <span class="math inline">(x_c, y_c)</span>, 绕点
-      <span class="math inline">(x_0, y_0)</span> 的转动惯量为: <span
-      class="math display">
-      \begin{aligned}
-      I(x_0,y_0) &amp;= \iint_D \mu \left[ (x-x_0)^2 + (y-y_0)^2 \right]
-      \mathrm{d}x\mathrm{d}y \\
-      &amp;= \iint_D \mu \left[ (x-x_c + x_c - x_0)^2 + (y-y_c + y_c -
-      y_0)^2 \right] \mathrm{d}x\mathrm{d}y
-      \end{aligned}
-      </span></p>
-      <p>展开平方项并重组积分: <span class="math display">
-      \begin{aligned}
-      &amp;= \underbrace{\iint_D \mu \left[ (x-x_c)^2 + (y-y_c)^2
-      \right] \mathrm{d}x\mathrm{d}y}_{I_c \ (\text{绕质心的转动惯量})}
-      \\
-      &amp;\quad + \underbrace{\iint_D \mu \left[ (x_c - x_0)^2 + (y_c -
-      y_0)^2 \right] \mathrm{d}x\mathrm{d}y}_{M r^2 \ (\text{总质量}
-      \times \text{距离平方})} \\
-      &amp;\quad + 2(x_c - x_0)\underbrace{\iint_D \mu (x - x_c)
-      \mathrm{d}x\mathrm{d}y}_{0 \ (\text{质心定义})} \\
-      &amp;\quad + 2(y_c - y_0)\underbrace{\iint_D \mu (y - y_c)
-      \mathrm{d}x\mathrm{d}y}_{0 \ (\text{质心定义})}
-      \end{aligned}
-      </span></p>
-      <p>关键消去项: 根据质心坐标的定义 <span
-      class="math inline">\displaystyle x_c = \frac{1}{M}\iint_D \mu x
-      \mathrm{d}x\mathrm{d}y</span>, 交叉项中的积分 <span
-      class="math inline">\displaystyle\iint_D \mu(x -
-      x_c)\mathrm{d}x\mathrm{d}y</span> 和 <span
-      class="math inline">\displaystyle\iint_D \mu(y -
-      y_c)\mathrm{d}x\mathrm{d}y</span> 必然为零. 最终得到简洁形式:
+      <p><strong>柱坐标.</strong> 在柱坐标下, 球内 <span
+      class="math inline">z</span> 介于 <span
+      class="math inline">\pm\sqrt{R^2 - \rho^2}</span> 之间, <span
+      class="math inline">\rho \in [0, R],\ \theta\in[0,2\pi)</span>:
       <span class="math display">
-      I(x_0, y_0) = I_c + M r^2
-      </span> 其中 <span class="math inline">r = \sqrt{(x_c - x_0)^2 +
-      (y_c - y_0)^2}</span> 为两轴间距离, <span
-      class="math inline">\displaystyle M = \iint_D \mu
-      \mathrm{d}x\mathrm{d}y</span> 为总质量.</p>
-      </div>
-      </div>
-      <div id="chpt11-ex-007" class="exercise-block"
-      data-difficulty="hard">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-hard">🔴</span><span
-      class="ex-label">例9</span><span class="ex-tags"><span
-      class="ex-tag">二重积分</span><span
-      class="ex-tag">极坐标</span><span class="ex-tag">体积</span><span
-      class="ex-tag">重积分应用</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>求球体 <span class="math inline">x^2 + y^2 + z^2 \leq
-      4a^2</span> 被圆柱面 <span class="math inline">x^2 + y^2 =
-      2ax</span>（<span class="math inline">a &gt;
-      0</span>）截得的含在圆柱面内的立体体积。</p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt11-ex-007-frame" data-panel="chpt11-ex-007-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt11-ex-007-frame" data-panel="chpt11-ex-007-ans-0">答案</button></span>
-      </div>
-      </div>
-      <div id="chpt11-ex-007-frame" class="ex-frame" hidden="">
-      <div id="chpt11-ex-007-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>利用对称性，体积为上半部分的 4 倍：<span class="math inline">V
-      = 4\iint_D
-      \sqrt{4a^2-x^2-y^2}\,\mathrm{d}x\,\mathrm{d}y</span>，其中 <span
-      class="math inline">D</span> 为圆柱截面在 <span
-      class="math inline">xy</span> 平面的投影。换极坐标：<span
-      class="math inline">x^2+y^2=2ax</span> 变为 <span
-      class="math inline">\rho = 2a\cos\theta</span>，内层对 <span
-      class="math inline">\rho</span> 积分用凑微分。</p>
-      </div>
-      <div id="chpt11-ex-007-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p>利用上下对称性：</p>
-      <p><span class="math display">
-      V = 4\iint_D \sqrt{4a^2-x^2-y^2}\,\mathrm{d}x\,\mathrm{d}y,
-      </span></p>
-      <p>其中 <span class="math inline">D: x^2+y^2 \leq
-      2ax</span>，即极坐标下 <span class="math inline">0 \leq \rho \leq
-      2a\cos\theta</span>，<span class="math inline">-\pi/2 \leq \theta
-      \leq \pi/2</span>。</p>
-      <p><span class="math display">
       V =
-      4\int_0^{\pi/2}\!\int_0^{2a\cos\theta}\sqrt{4a^2-\rho^2}\,\rho\,\mathrm{d}\rho\,\mathrm{d}\theta.
-      </span></p>
-      <p><strong>内层积分（令 <span class="math inline">u =
-      4a^2-\rho^2</span>）：</strong></p>
-      <p><span class="math display">
-      \int_0^{2a\cos\theta}\sqrt{4a^2-\rho^2}\,\rho\,\mathrm{d}\rho
-      = \left[-\frac{1}{3}(4a^2-\rho^2)^{3/2}\right]_0^{2a\cos\theta}
-      = \frac{8a^3}{3}(1 - \sin^3\theta).
-      </span></p>
-      <p><strong>外层积分：</strong></p>
-      <p><span class="math display">
-      V =
-      4\int_0^{\pi/2}\frac{8a^3}{3}(1-\sin^3\theta)\,\mathrm{d}\theta
-      = \frac{32a^3}{3}\left[\frac{\pi}{2} - \frac{2}{3}\right]
-      = \frac{32a^3}{3}\left(\frac{\pi}{2}-\frac{2}{3}\right).
-      </span></p>
+      \int_0^{2\pi}\!\int_0^R\!\int_{-\sqrt{R^2-\rho^2}}^{\sqrt{R^2-\rho^2}}
+      \rho\,\mathrm{d}z\,\mathrm{d}\rho\,\mathrm{d}\theta
+      = 2\pi \int_0^R 2\rho\sqrt{R^2-\rho^2}\,\mathrm{d}\rho
+      = 2\pi \cdot \tfrac{2R^3}{3} = \tfrac{4\pi R^3}{3}.
+      </span> 两种坐标给出同一答案. <span
+      class="math inline">\blacksquare</span></p>
+      </div></div>
       </div>
       </div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">何时用哪种坐标?</span></div>
+      <div class="callout-body">
+      <ul>
+      <li>圆柱形 / 含轴对称的立体 → <strong>柱坐标</strong>.</li>
+      <li>球状 / 锥状 / 含中心对称 → <strong>球坐标</strong>.</li>
+      <li>长方体 / 平面边界 → 直角坐标累次积分.</li>
+      <li>一般原则: 让积分区域成为新坐标网格的”自然形状”, 即让 <span
+      class="math inline">V</span> 在新坐标下变成简单的矩形盒.</li>
+      </ul>
       </div>
       </div>
-      <div id="chpt11-ex-008" class="exercise-block"
-      data-difficulty="medium">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例10</span><span class="ex-tags"><span
-      class="ex-tag">二重积分</span><span
-      class="ex-tag">换元法</span><span
-      class="ex-tag">椭圆面积</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>已知椭圆 <span
-      class="math inline">\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1</span>，求椭圆的面积
-      <span
-      class="math inline">\displaystyle\iint_D\mathrm{d}x\,\mathrm{d}y</span>。</p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span class="ex-sol-label">解法一</span> <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt11-ex-008-frame" data-panel="chpt11-ex-008-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt11-ex-008-frame" data-panel="chpt11-ex-008-ans-0">答案</button></span>
-      </div>
-      <div class="ex-sol-row">
-      <span class="ex-sol-label">解法二</span> <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt11-ex-008-frame" data-panel="chpt11-ex-008-hint-1">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt11-ex-008-frame" data-panel="chpt11-ex-008-ans-1">答案</button></span>
-      </div>
-      </div>
-      <div id="chpt11-ex-008-frame" class="ex-frame" hidden="">
-      <div id="chpt11-ex-008-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>直接将椭圆区域展开为累次积分，内层对 <span
-      class="math inline">y</span> 积分，外层利用三角换元 <span
-      class="math inline">x = a\sin\theta</span>。</p>
-      </div>
-      <div id="chpt11-ex-008-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p><span class="math display">
-      \iint_D\mathrm{d}x\,\mathrm{d}y
-      = 4\int_0^a\int_0^{b\sqrt{1-x^2/a^2}}\mathrm{d}y\,\mathrm{d}x
-      = 4\int_0^a b\sqrt{1-\frac{x^2}{a^2}}\,\mathrm{d}x.
-      </span></p>
-      <p>令 <span class="math inline">x = a\sin\theta</span>，<span
-      class="math inline">\mathrm{d}x =
-      a\cos\theta\,\mathrm{d}\theta</span>：</p>
-      <p><span class="math display">
-      = 4\int_0^{\pi/2} b\cos\theta \cdot a\cos\theta\,\mathrm{d}\theta
-      = 4ab\int_0^{\pi/2}\frac{1+\cos 2\theta}{2}\,\mathrm{d}\theta =
-      \pi ab.
-      </span></p>
-      </div>
-      <div id="chpt11-ex-008-hint-1" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>用换元 <span class="math inline">x = au</span>，<span
-      class="math inline">y = bv</span>
-      将椭圆变为单位圆，再乘以雅可比行列式 <span
-      class="math inline">ab</span>。</p>
-      </div>
-      <div id="chpt11-ex-008-ans-1" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p>令 <span class="math inline">x = au</span>，<span
-      class="math inline">y = bv</span>，则 <span
-      class="math inline">\mathrm{d}x\,\mathrm{d}y =
-      ab\,\mathrm{d}u\,\mathrm{d}v</span>，椭圆变为单位圆 <span
-      class="math inline">u^2+v^2\leq 1</span>：</p>
-      <p><span class="math display">
-      \iint_D\mathrm{d}x\,\mathrm{d}y = ab\iint_{u^2+v^2\leq
-      1}\mathrm{d}u\,\mathrm{d}v = ab \cdot \pi = \pi ab.
-      </span></p>
-      </div>
-      </div>
-      </div>
-      </div>
-      <div id="chpt11-ex-009" class="exercise-block"
-      data-difficulty="medium">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例11</span><span class="ex-tags"><span
-      class="ex-tag">二重积分</span><span
-      class="ex-tag">换元法</span><span
-      class="ex-tag">雅可比行列式</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>已知变量替换 <span class="math inline">u = 3x -
-      2y</span>，<span class="math inline">v = x +
-      y</span>，求雅可比行列式 <span
-      class="math inline">\dfrac{\partial(u,v)}{\partial(x,y)}</span>，并建立面积元素的关系式。</p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt11-ex-009-frame" data-panel="chpt11-ex-009-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt11-ex-009-frame" data-panel="chpt11-ex-009-ans-0">答案</button></span>
-      </div>
-      </div>
-      <div id="chpt11-ex-009-frame" class="ex-frame" hidden="">
-      <div id="chpt11-ex-009-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>直接计算 <span class="math inline">2\times 2</span>
-      雅可比行列式（偏导数矩阵的行列式）。</p>
-      </div>
-      <div id="chpt11-ex-009-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p><span class="math display">
-      J = \frac{\partial(u,v)}{\partial(x,y)} =
-      \begin{vmatrix}
-      \dfrac{\partial u}{\partial x} &amp; \dfrac{\partial u}{\partial
-      y} \\[6pt]
-      \dfrac{\partial v}{\partial x} &amp; \dfrac{\partial v}{\partial
-      y}
-      \end{vmatrix}
-      =
-      \begin{vmatrix}
-      3 &amp; -2 \\ 1 &amp; 1
-      \end{vmatrix}
-      = 3 \cdot 1 - (-2) \cdot 1 = 5.
-      </span></p>
-      <p>因此面积元素关系为</p>
-      <p><span class="math display">
-      \mathrm{d}u\,\mathrm{d}v = 5\,\mathrm{d}x\,\mathrm{d}y,
-      </span></p>
-      <p>即</p>
-      <p><span class="math display">
-      \iint_D \mathrm{d}x\,\mathrm{d}y = \iint_{D&#39;}
-      \frac{1}{5}\,\mathrm{d}u\,\mathrm{d}v,
-      </span></p>
-      <p>其中 <span class="math inline">D&#39;</span> 是 <span
-      class="math inline">D</span> 在 <span
-      class="math inline">(u,v)</span> 坐标下对应的区域。</p>
-      </div>
-      </div>
-      </div>
-      </div>
-      <h2 id="三重积分">11.4 三重积分</h2>
       <div id="chpt11-ex-010" class="exercise-block"
       data-difficulty="medium">
       <div class="ex-banner">
       <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例12</span><span class="ex-tags"><span
+      class="ex-label">例7</span><span class="ex-tags"><span
       class="ex-tag">三重积分</span><span
       class="ex-tag">累次积分</span></span>
       </div>
@@ -1294,7 +1398,7 @@
       data-difficulty="medium">
       <div class="ex-banner">
       <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例13</span><span class="ex-tags"><span
+      class="ex-label">例8</span><span class="ex-tags"><span
       class="ex-tag">三重积分</span><span
       class="ex-tag">柱面坐标</span></span>
       </div>
@@ -1354,19 +1458,470 @@
       </div>
       </div>
       </div>
-      <div
-      style="display: flex; gap:10px; flex-wrap: wrap; margin:1.2em 0;">
-      <div id="chpt11-example12"
-      style="flex:1 1 320px; min-width:300px; height:400px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden;">
-
+      <h2 id="更多应用">11.6 更多应用</h2>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">应用 — 质量与质心</span></div>
+      <div class="callout-body">
+      <p>设密度函数为 <span class="math inline">\mu(x,y)</span> (二维)
+      或 <span class="math inline">\mu(x,y,z)</span> (三维). 总质量
+      <span class="math display">
+      M = \iint_D \mu(x,y)\,\mathrm{d}A, \qquad
+      M = \iiint_V \mu(x,y,z)\,\mathrm{d}V.
+      </span> <strong>质心</strong>是质量分布的加权平均位置. 二维情形:
+      <span class="math display">
+      \bar x = \frac{1}{M}\iint_D x\,\mu\,\mathrm{d}A,\quad
+      \bar y = \frac{1}{M}\iint_D y\,\mu\,\mathrm{d}A.
+      </span> 三维情形把每个公式各换为 <span
+      class="math inline">\iiint_V</span> 即可, 再增加一条 <span
+      class="math inline">\bar z</span>. 当 <span
+      class="math inline">\mu</span>
+      为常数时质心退化为<strong>几何形心</strong>. 当 <span
+      class="math inline">D</span> 关于某条直线对称且 <span
+      class="math inline">\mu</span> 也对称, 质心必落在对称轴上 ——
+      这条对称性常常省去一半计算.</p>
       </div>
-      <div id="chpt11-example13"
-      style="flex:1 1 320px; min-width:300px; height:400px; position: relative; border:1px solid #e5e7eb; border-radius:8px; overflow: hidden;">
-
+      </div>
+      <div class="callout callout-note">
+      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">例 7 — 半圆盘的质心</span></div>
+      <div class="callout-body">
+      <p>取 <span class="math inline">D = \{(x,y): x^2 + y^2\le R^2,\ y
+      \ge 0\}</span> (上半圆盘), 密度均匀 <span class="math inline">\mu
+      \equiv 1</span>. 求质心 <span class="math inline">(\bar x, \bar
+      y)</span>.</p>
+      <div class="callout-fold" data-label="详细计算">
+      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 详细计算</button>
+      <div class="callout-fold-body" hidden>
+      <p>总质量 (即面积) <span class="math inline">M = \tfrac{1}{2}\pi
+      R^2</span>.</p>
+      <p><span class="math inline">D</span> 关于 <span
+      class="math inline">y</span>-轴对称, <span
+      class="math inline">\mu</span> 也对称, 因此 <span
+      class="math inline">\bar x = 0</span>. 计算 <span
+      class="math inline">\bar y</span>, 用极坐标 <span
+      class="math inline">0\le r\le R,\ 0\le\theta\le \pi</span>: <span
+      class="math display">
+      \iint_D y\,\mathrm{d}A
+      = \int_0^\pi\!\int_0^R
+      (r\sin\theta)\,r\,\mathrm{d}r\,\mathrm{d}\theta
+      = \int_0^\pi \sin\theta\,\mathrm{d}\theta \cdot \int_0^R
+      r^2\,\mathrm{d}r
+      = 2\cdot \tfrac{R^3}{3} = \tfrac{2R^3}{3}.
+      </span> 因此 <span class="math inline">\bar y = \dfrac{2R^3/3}{\pi
+      R^2/2} = \dfrac{4R}{3\pi}.</span></p>
+      </div></div>
       </div>
       </div>
-      <script data-lazy-module="threejs/chpt11-example12.js?v=2"></script>
-      <script data-lazy-module="threejs/chpt11-example13.js?v=2"></script>
+      <div class="callout callout-extension">
+      <div class="callout-header callout-header-extension"><span class="callout-icon"></span><span class="callout-label">拓展 — 转动惯量</span></div>
+      <div class="callout-body">
+      <p>二维区域 <span class="math inline">D</span> 上密度为 <span
+      class="math inline">\mu</span> 的质量分布, 关于某点 <span
+      class="math inline">(x_0, y_0)</span> 的转动惯量 <span
+      class="math display">
+      I(x_0, y_0) = \iint_D \mu\bigl[(x-x_0)^2 +
+      (y-y_0)^2\bigr]\,\mathrm{d}A.
+      </span> 它衡量物体绕该点转动时的”惯性大小”:
+      同等角加速度所需的力矩与 <span class="math inline">I</span>
+      成正比.</p>
+      <div class="callout-fold" data-label="为什么质心使 I 最小">
+      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 为什么质心使 I 最小</button>
+      <div class="callout-fold-body" hidden>
+      <p>把 <span class="math inline">I</span> 看作 <span
+      class="math inline">(x_0, y_0)</span> 的函数. 求驻点: <span
+      class="math display">
+      \tfrac{\partial I}{\partial x_0} = -2\iint_D \mu(x -
+      x_0)\,\mathrm{d}A = 0
+      \;\Longrightarrow\;
+      x_0 = \tfrac{1}{M}\iint_D \mu x\,\mathrm{d}A = \bar x,
+      </span> 同理 <span class="math inline">y_0 = \bar y</span>. 二阶项
+      <span class="math inline">\partial^2 I/\partial x_0^2 = 2M &gt;
+      0</span> 给出极小.
+      因此<strong>质心是使转动惯量最小的位置</strong>,
+      这给出了”最易转动”的轴.</p>
+      </div></div>
+      </div>
+      </div>
+      <div class="callout callout-extension">
+      <div class="callout-header callout-header-extension"><span class="callout-icon"></span><span class="callout-label">拓展 — 平行轴定理</span></div>
+      <div class="callout-body">
+      <p>设质心为 <span class="math inline">C = (\bar x, \bar y)</span>,
+      绕过质心的 (垂直于 <span class="math inline">D</span> 的)
+      转动惯量记作 <span class="math inline">I_C</span>. 则绕另一点
+      <span class="math inline">(x_0, y_0)</span> 的转动惯量为 <span
+      class="math display">
+      I(x_0, y_0) = I_C + M\,r^2,
+      </span> 其中 <span class="math inline">r = \sqrt{(\bar x - x_0)^2
+      + (\bar y - y_0)^2}</span> 是两轴之间的距离, <span
+      class="math inline">M</span> 是总质量.</p>
+      <div class="callout-fold" data-label="证明">
+      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 证明</button>
+      <div class="callout-fold-body" hidden>
+      <p>把 <span class="math inline">(x - x_0)^2 + (y - y_0)^2</span>
+      改写为 <span class="math inline">\bigl((x - \bar x) + (\bar x -
+      x_0)\bigr)^2 + \bigl((y-\bar y) + (\bar y - y_0)\bigr)^2</span>,
+      展开: <span class="math display">
+      I = \underbrace{\iint_D \mu\bigl[(x-\bar x)^2 + (y-\bar
+      y)^2\bigr]\,\mathrm{d}A}_{I_C}
+      + \underbrace{\bigl[(\bar x - x_0)^2 + (\bar y -
+      y_0)^2\bigr]\iint_D \mu\,\mathrm{d}A}_{M r^2}
+      + 2(\bar x - x_0)\underbrace{\iint_D \mu(x - \bar
+      x)\,\mathrm{d}A}_{=\,0}
+      + 2(\bar y - y_0)\underbrace{\iint_D \mu(y - \bar
+      y)\,\mathrm{d}A}_{=\,0}.
+      </span> 末两项的积分由质心定义恒为零, 故 <span
+      class="math inline">I = I_C + Mr^2.</span> <span
+      class="math inline">\blacksquare</span></p>
+      <p>推论: 在所有平行于过质心的轴中, 过质心那条转动惯量最小;
+      远离质心 <span class="math inline">r</span> 单位, 惯量增加 <span
+      class="math inline">Mr^2</span>.</p>
+      </div></div>
+      </div>
+      </div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">速查 — 体积 / 表面积 / 流量</span></div>
+      <div class="callout-body">
+      <ul>
+      <li><strong>平面区域面积</strong>: <span class="math inline">A =
+      \iint_D \mathrm{d}A.</span></li>
+      <li><strong>曲面 <span class="math inline">z = f(x,y)</span>
+      下方体积</strong> (<span class="math inline">f\ge 0</span>): <span
+      class="math inline">V = \iint_D f\,\mathrm{d}A.</span></li>
+      <li><strong>三维区域体积</strong>: <span class="math inline">V =
+      \iiint_V \mathrm{d}V.</span></li>
+      <li><strong>流量、第一/第二型曲面积分、引力</strong>: 留待第 12 章
+      (向量场与曲线/曲面积分) 系统处理.</li>
+      </ul>
+      </div>
+      </div>
+      <div id="chpt11-ex-005" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例9</span><span class="ex-tags"><span
+      class="ex-tag">二重积分</span><span
+      class="ex-tag">极坐标</span><span
+      class="ex-tag">重积分应用</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>如图所示，求</p>
+      <p><span class="math display">
+      I = \iint_D
+      r^2(\rho,\theta)\,\rho\,\mathrm{d}\rho\,\mathrm{d}\theta,
+      </span></p>
+      <p>其中积分区域 <span class="math inline">D</span> 由极坐标曲线
+      <span class="math inline">\rho = 2\cos\theta</span>（<span
+      class="math inline">\theta \in [-\pi/2, \pi/2]</span>）围成。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt11-ex-005-frame" data-panel="chpt11-ex-005-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt11-ex-005-frame" data-panel="chpt11-ex-005-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt11-ex-005-frame" class="ex-frame" hidden="">
+      <div id="chpt11-ex-005-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>区域 <span class="math inline">D</span> 为 <span
+      class="math inline">0 \leq \rho \leq 2\cos\theta</span>，<span
+      class="math inline">-\pi/2 \leq \theta \leq \pi/2</span>。这里
+      <span class="math inline">r^2 = \rho^2</span>（题中 <span
+      class="math inline">r(\rho,\theta)=\rho</span>），先对 <span
+      class="math inline">\rho</span> 积分再对 <span
+      class="math inline">\theta</span> 积分，利用 <span
+      class="math inline">\cos^4\theta</span> 的降幂公式。</p>
+      </div>
+      <div id="chpt11-ex-005-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      I = \int_{-\pi/2}^{\pi/2}\!\int_0^{2\cos\theta}
+      \rho^3\,\mathrm{d}\rho\,\mathrm{d}\theta
+      =
+      \int_{-\pi/2}^{\pi/2}\left[\frac{\rho^4}{4}\right]_0^{2\cos\theta}\mathrm{d}\theta
+      = \int_{-\pi/2}^{\pi/2} 4\cos^4\theta\,\mathrm{d}\theta.
+      </span></p>
+      <p>利用偶函数对称：</p>
+      <p><span class="math display">
+      I = 8\int_0^{\pi/2}\cos^4\theta\,\mathrm{d}\theta = 8 \cdot
+      \frac{3\pi}{16} = \frac{3\pi}{2}.
+      </span></p>
+      <p>（其中 <span
+      class="math inline">\displaystyle\int_0^{\pi/2}\cos^4\theta\,\mathrm{d}\theta
+      = \frac{3\pi}{16}</span>。）</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt11-ex-006" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例10</span><span class="ex-tags"><span
+      class="ex-tag">二重积分</span><span
+      class="ex-tag">极坐标</span><span
+      class="ex-tag">重积分应用</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>如图所示，求</p>
+      <p><span class="math display">
+      I = \iint_D (1 + \rho^2 -
+      2\rho\cos\theta)\,\rho\,\mathrm{d}\rho\,\mathrm{d}\theta,
+      </span></p>
+      <p>其中积分区域 <span class="math inline">D</span> 由极坐标曲线
+      <span class="math inline">\rho = 2\cos\theta</span> 围成。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span class="ex-sol-label">解法一</span> <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt11-ex-006-frame" data-panel="chpt11-ex-006-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt11-ex-006-frame" data-panel="chpt11-ex-006-ans-0">答案</button></span>
+      </div>
+      <div class="ex-sol-row">
+      <span class="ex-sol-label">解法二</span> <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt11-ex-006-frame" data-panel="chpt11-ex-006-hint-1">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt11-ex-006-frame" data-panel="chpt11-ex-006-ans-1">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt11-ex-006-frame" class="ex-frame" hidden="">
+      <div id="chpt11-ex-006-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>区域为 <span class="math inline">0 \leq \rho \leq
+      2\cos\theta</span>，<span class="math inline">-\pi/2 \leq \theta
+      \leq \pi/2</span>；展开被积函数后逐项积分。</p>
+      </div>
+      <div id="chpt11-ex-006-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      I =
+      \int_{-\pi/2}^{\pi/2}\!\int_0^{2\cos\theta}(1+\rho^2-2\rho\cos\theta)\,\rho\,\mathrm{d}\rho\,\mathrm{d}\theta
+      = \frac{\pi}{2}.
+      </span></p>
+      </div>
+      <div id="chpt11-ex-006-hint-1" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>注意 <span class="math inline">D</span> 是以 <span
+      class="math inline">(1,0)</span> 为圆心、半径为 <span
+      class="math inline">1</span> 的圆盘（直角坐标下 <span
+      class="math inline">(x-1)^2+y^2=1</span>），利用直角坐标的对称性直接计算：</p>
+      <p><span class="math display">
+      I = \int_0^{2\pi}\!\int_0^1 \rho^2 \cdot
+      \rho\,\mathrm{d}\rho\,\mathrm{d}\theta.
+      </span></p>
+      </div>
+      <div id="chpt11-ex-006-ans-1" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      I = \int_0^{2\pi}\!\int_0^1
+      \rho^3\,\mathrm{d}\rho\,\mathrm{d}\theta = 2\pi \cdot \frac{1}{4}
+      = \frac{\pi}{2}.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt11-ex-007" class="exercise-block"
+      data-difficulty="hard">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-hard">🔴</span><span
+      class="ex-label">例11</span><span class="ex-tags"><span
+      class="ex-tag">二重积分</span><span
+      class="ex-tag">极坐标</span><span class="ex-tag">体积</span><span
+      class="ex-tag">重积分应用</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求球体 <span class="math inline">x^2 + y^2 + z^2 \leq
+      4a^2</span> 被圆柱面 <span class="math inline">x^2 + y^2 =
+      2ax</span>（<span class="math inline">a &gt;
+      0</span>）截得的含在圆柱面内的立体体积。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt11-ex-007-frame" data-panel="chpt11-ex-007-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt11-ex-007-frame" data-panel="chpt11-ex-007-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt11-ex-007-frame" class="ex-frame" hidden="">
+      <div id="chpt11-ex-007-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>利用对称性，体积为上半部分的 4 倍：<span class="math inline">V
+      = 4\iint_D
+      \sqrt{4a^2-x^2-y^2}\,\mathrm{d}x\,\mathrm{d}y</span>，其中 <span
+      class="math inline">D</span> 为圆柱截面在 <span
+      class="math inline">xy</span> 平面的投影。换极坐标：<span
+      class="math inline">x^2+y^2=2ax</span> 变为 <span
+      class="math inline">\rho = 2a\cos\theta</span>，内层对 <span
+      class="math inline">\rho</span> 积分用凑微分。</p>
+      </div>
+      <div id="chpt11-ex-007-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>利用上下对称性：</p>
+      <p><span class="math display">
+      V = 4\iint_D \sqrt{4a^2-x^2-y^2}\,\mathrm{d}x\,\mathrm{d}y,
+      </span></p>
+      <p>其中 <span class="math inline">D: x^2+y^2 \leq
+      2ax</span>，即极坐标下 <span class="math inline">0 \leq \rho \leq
+      2a\cos\theta</span>，<span class="math inline">-\pi/2 \leq \theta
+      \leq \pi/2</span>。</p>
+      <p><span class="math display">
+      V =
+      4\int_0^{\pi/2}\!\int_0^{2a\cos\theta}\sqrt{4a^2-\rho^2}\,\rho\,\mathrm{d}\rho\,\mathrm{d}\theta.
+      </span></p>
+      <p><strong>内层积分（令 <span class="math inline">u =
+      4a^2-\rho^2</span>）：</strong></p>
+      <p><span class="math display">
+      \int_0^{2a\cos\theta}\sqrt{4a^2-\rho^2}\,\rho\,\mathrm{d}\rho
+      = \left[-\frac{1}{3}(4a^2-\rho^2)^{3/2}\right]_0^{2a\cos\theta}
+      = \frac{8a^3}{3}(1 - \sin^3\theta).
+      </span></p>
+      <p><strong>外层积分：</strong></p>
+      <p><span class="math display">
+      V =
+      4\int_0^{\pi/2}\frac{8a^3}{3}(1-\sin^3\theta)\,\mathrm{d}\theta
+      = \frac{32a^3}{3}\left[\frac{\pi}{2} - \frac{2}{3}\right]
+      = \frac{32a^3}{3}\left(\frac{\pi}{2}-\frac{2}{3}\right).
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt11-ex-008" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例12</span><span class="ex-tags"><span
+      class="ex-tag">二重积分</span><span
+      class="ex-tag">换元法</span><span
+      class="ex-tag">椭圆面积</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>已知椭圆 <span
+      class="math inline">\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1</span>，求椭圆的面积
+      <span
+      class="math inline">\displaystyle\iint_D\mathrm{d}x\,\mathrm{d}y</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span class="ex-sol-label">解法一</span> <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt11-ex-008-frame" data-panel="chpt11-ex-008-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt11-ex-008-frame" data-panel="chpt11-ex-008-ans-0">答案</button></span>
+      </div>
+      <div class="ex-sol-row">
+      <span class="ex-sol-label">解法二</span> <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt11-ex-008-frame" data-panel="chpt11-ex-008-hint-1">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt11-ex-008-frame" data-panel="chpt11-ex-008-ans-1">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt11-ex-008-frame" class="ex-frame" hidden="">
+      <div id="chpt11-ex-008-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>直接将椭圆区域展开为累次积分，内层对 <span
+      class="math inline">y</span> 积分，外层利用三角换元 <span
+      class="math inline">x = a\sin\theta</span>。</p>
+      </div>
+      <div id="chpt11-ex-008-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      \iint_D\mathrm{d}x\,\mathrm{d}y
+      = 4\int_0^a\int_0^{b\sqrt{1-x^2/a^2}}\mathrm{d}y\,\mathrm{d}x
+      = 4\int_0^a b\sqrt{1-\frac{x^2}{a^2}}\,\mathrm{d}x.
+      </span></p>
+      <p>令 <span class="math inline">x = a\sin\theta</span>，<span
+      class="math inline">\mathrm{d}x =
+      a\cos\theta\,\mathrm{d}\theta</span>：</p>
+      <p><span class="math display">
+      = 4\int_0^{\pi/2} b\cos\theta \cdot a\cos\theta\,\mathrm{d}\theta
+      = 4ab\int_0^{\pi/2}\frac{1+\cos 2\theta}{2}\,\mathrm{d}\theta =
+      \pi ab.
+      </span></p>
+      </div>
+      <div id="chpt11-ex-008-hint-1" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>用换元 <span class="math inline">x = au</span>，<span
+      class="math inline">y = bv</span>
+      将椭圆变为单位圆，再乘以雅可比行列式 <span
+      class="math inline">ab</span>。</p>
+      </div>
+      <div id="chpt11-ex-008-ans-1" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>令 <span class="math inline">x = au</span>，<span
+      class="math inline">y = bv</span>，则 <span
+      class="math inline">\mathrm{d}x\,\mathrm{d}y =
+      ab\,\mathrm{d}u\,\mathrm{d}v</span>，椭圆变为单位圆 <span
+      class="math inline">u^2+v^2\leq 1</span>：</p>
+      <p><span class="math display">
+      \iint_D\mathrm{d}x\,\mathrm{d}y = ab\iint_{u^2+v^2\leq
+      1}\mathrm{d}u\,\mathrm{d}v = ab \cdot \pi = \pi ab.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt11-ex-009" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例13</span><span class="ex-tags"><span
+      class="ex-tag">二重积分</span><span
+      class="ex-tag">换元法</span><span
+      class="ex-tag">雅可比行列式</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>已知变量替换 <span class="math inline">u = 3x -
+      2y</span>，<span class="math inline">v = x +
+      y</span>，求雅可比行列式 <span
+      class="math inline">\dfrac{\partial(u,v)}{\partial(x,y)}</span>，并建立面积元素的关系式。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt11-ex-009-frame" data-panel="chpt11-ex-009-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt11-ex-009-frame" data-panel="chpt11-ex-009-ans-0">答案</button></span>
+      </div>
+      </div>
+      <div id="chpt11-ex-009-frame" class="ex-frame" hidden="">
+      <div id="chpt11-ex-009-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>直接计算 <span class="math inline">2\times 2</span>
+      雅可比行列式（偏导数矩阵的行列式）。</p>
+      </div>
+      <div id="chpt11-ex-009-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      J = \frac{\partial(u,v)}{\partial(x,y)} =
+      \begin{vmatrix}
+      \dfrac{\partial u}{\partial x} &amp; \dfrac{\partial u}{\partial
+      y} \\[6pt]
+      \dfrac{\partial v}{\partial x} &amp; \dfrac{\partial v}{\partial
+      y}
+      \end{vmatrix}
+      =
+      \begin{vmatrix}
+      3 &amp; -2 \\ 1 &amp; 1
+      \end{vmatrix}
+      = 3 \cdot 1 - (-2) \cdot 1 = 5.
+      </span></p>
+      <p>因此面积元素关系为</p>
+      <p><span class="math display">
+      \mathrm{d}u\,\mathrm{d}v = 5\,\mathrm{d}x\,\mathrm{d}y,
+      </span></p>
+      <p>即</p>
+      <p><span class="math display">
+      \iint_D \mathrm{d}x\,\mathrm{d}y = \iint_{D&#39;}
+      \frac{1}{5}\,\mathrm{d}u\,\mathrm{d}v,
+      </span></p>
+      <p>其中 <span class="math inline">D&#39;</span> 是 <span
+      class="math inline">D</span> 在 <span
+      class="math inline">(u,v)</span> 坐标下对应的区域。</p>
+      </div>
+      </div>
+      </div>
+      </div>
     </div>
   </div>
 

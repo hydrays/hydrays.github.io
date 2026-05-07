@@ -366,6 +366,48 @@ ul.chapter-toc > li > ul > li > ul > li > a {
   padding: 1px 9px;
 }
 
+/* Foldable content inside a callout — proof of a theorem, derivation
+   detail, alternate solution. Visually echoes the "答案" reveal of an
+   exercise: emerald left bar, near-black text, white background. */
+.callout-fold {
+  margin: 0.8em 0 0.2em;
+}
+
+.callout-fold-btn {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 2em;          /* indent only the button to match the theorem's 2em text-indent */
+  padding: 3px 12px;
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  color: inherit;
+  font: inherit;
+  font-size: 0.88em;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.callout-fold-btn:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+.callout-fold-btn[aria-expanded="true"] {
+  background: rgba(0, 0, 0, 0.10);
+  border-width: 2px;
+  padding: 2px 11px;  /* keep the same outer size as the closed state */
+}
+
+.callout-fold-body {
+  margin-top: 0.6em;
+  padding: 10px 14px;
+  background: #fff;
+  color: #111;
+  border-left: 3px solid #10b981;   /* emerald — same as ex-ans-panel */
+  border-radius: 0 4px 4px 0;
+  font-size: 0.95em;
+}
+.callout-fold-body > *:first-child { margin-top: 0; }
+.callout-fold-body > *:last-child  { margin-bottom: 0; }
+
 
 /* ── Highlighted text ==text== ──────────────────────────────── */
 

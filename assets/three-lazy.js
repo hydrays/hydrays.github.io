@@ -7,8 +7,14 @@
 // to
 //   <script data-lazy-module="threejs/foo.js"></script>
 // so the browser no longer eagerly fetches/evaluates every scene on load.
+//
+// SPA navigation re-runs init() after each content swap. Module URLs are
+// cache-busted on revisit so each chapter's scene re-executes against the
+// fresh DOM (top-level module code that does getElementById).
 
 (function () {
+  var navGen = 0;
+
   function findTarget(scriptEl) {
     let el = scriptEl.previousElementSibling;
     while (el) {
@@ -21,18 +27,29 @@
   }
 
   function load(src) {
-    import(src).catch(function (err) {
+    var url = src;
+    if (navGen > 0) {
+      url += (src.indexOf('?') >= 0 ? '&' : '?') + '_nav=' + navGen;
+    }
+    var resolved = new URL(url, document.baseURI).href;
+    import(resolved).catch(function (err) {
       console.error('[three-lazy] failed to import', src, err);
     });
   }
 
   function init() {
-    var scripts = document.querySelectorAll('script[data-lazy-module]');
+    // Only pick up scripts that haven't been observed yet — SPA navigation
+    // calls this multiple times and the previous chapter's scripts are gone
+    // from #content, but new chapter's scripts are fresh DOM nodes.
+    var scripts = document.querySelectorAll(
+      'script[data-lazy-module]:not([data-three-lazy-observed])'
+    );
     if (!scripts.length) return;
 
     var supported = 'IntersectionObserver' in window;
 
     scripts.forEach(function (s) {
+      s.setAttribute('data-three-lazy-observed', '1');
       var src = s.getAttribute('data-lazy-module');
       var target = findTarget(s);
 
@@ -54,6 +71,12 @@
       io.observe(target);
     });
   }
+
+  // Called by app.js navigate() after each SPA content swap.
+  window.threeLazyReinit = function () {
+    navGen++;
+    init();
+  };
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);

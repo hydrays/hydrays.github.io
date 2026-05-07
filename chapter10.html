@@ -15,8 +15,19 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <script type="importmap">
-  {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160/examples/jsm/"}}
+  {"imports":{"three":"./assets/three.module.js","three/addons/":"./assets/three-addons/"}}
   </script>
+  <!-- Preload three.js and the addons our scenes use, so they parse in
+       parallel with the page and the lazy-imported scene modules don't
+       have to wait for the 1.3 MB core to arrive. -->
+  <link rel="modulepreload" href="assets/three.module.js">
+  <link rel="modulepreload" href="assets/three-addons/controls/OrbitControls.js">
+  <link rel="modulepreload" href="assets/three-addons/lines/Line2.js">
+  <link rel="modulepreload" href="assets/three-addons/lines/LineGeometry.js">
+  <link rel="modulepreload" href="assets/three-addons/lines/LineMaterial.js">
+  <link rel="modulepreload" href="assets/three-addons/lines/LineSegments2.js">
+  <link rel="modulepreload" href="assets/three-addons/lines/LineSegmentsGeometry.js">
+  <link rel="modulepreload" href="assets/three-addons/renderers/CSS2DRenderer.js">
 </head>
 <body>
   <div id="sidebar">
@@ -509,9 +520,6 @@
 
       </div>
       </div>
-      <script type="importmap">
-      {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160/examples/jsm/"}}
-      </script>
       <div id="grad3d"
       style="width:100%; max-width:780px; height:450px; position: relative; margin:1.5em auto; background: #0B6E4F; border-radius:8px; overflow: hidden; box-shadow:0 10px 30px rgba(6,18,10,0.28);">
 
