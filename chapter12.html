@@ -95,8 +95,16 @@
       <ul>
       <li><a href="#旋度" id="toc-旋度">12.5.1 旋度</a></li>
       <li><a href="#格林公式" id="toc-格林公式">12.5.2 格林公式</a></li>
+      <li><a href="#格林公式的法向形式"
+      id="toc-格林公式的法向形式">12.5.3 格林公式的法向形式</a></li>
       </ul></li>
-      <li><a href="#曲面积分" id="toc-曲面积分">12.6 曲面积分</a></li>
+      <li><a href="#曲面积分" id="toc-曲面积分">12.6 曲面积分</a>
+      <ul>
+      <li><a href="#第一类曲面积分" id="toc-第一类曲面积分">12.6.1
+      第一类曲面积分</a></li>
+      <li><a href="#第二类曲面积分" id="toc-第二类曲面积分">12.6.2
+      第二类曲面积分</a></li>
+      </ul></li>
       <li><a href="#高斯公式与斯托克斯公式"
       id="toc-高斯公式与斯托克斯公式">12.7 高斯公式与斯托克斯公式</a>
       <ul>
@@ -1778,16 +1786,303 @@
       </div>
       </div>
       </div>
+      <h3 id="格林公式的法向形式">12.5.3 格林公式的法向形式</h3>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">引入问题: 边界处的”流出量”</span></div>
+      <div class="callout-body">
+      <p>上一小节问的是”沿边界绕一圈做了多少功” (切向问题),
+      答案与内部旋度的总和相等. 换一个问法: 单位时间内,
+      <strong>从边界流出 <span class="math inline">D</span>
+      的总量是多少</strong>? 即沿边界 <span class="math inline">\partial
+      D</span> 的<strong>通量</strong> <span
+      class="math inline">\displaystyle\oint_{\partial
+      D}\mathbf{F}\cdot\mathbf{n}\,\mathrm{d}s</span>, 其中 <span
+      class="math inline">\mathbf{n}</span>
+      是边界的<strong>外法向单位向量</strong>, <span
+      class="math inline">\mathrm{d}s</span> 是弧长微元.
+      答案由格林公式的另一形式给出: 它等于 <span
+      class="math inline">D</span>
+      内部所有点的<strong>散度</strong>之和.</p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义 — 二维散度</span></div>
+      <div class="callout-body">
+      <p>设 <span class="math inline">\mathbf{F}=(P,Q)</span> 在区域
+      <span class="math inline">D</span> 上有连续偏导数, 称</p>
+      <p><span class="math display">\operatorname{div}\mathbf{F} =
+      \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial
+      y}</span></p>
+      <p>为 <span class="math inline">\mathbf{F}</span>
+      的<strong>散度</strong> (二维). <span
+      class="math inline">\operatorname{div}\mathbf{F}&gt;0</span>
+      表示该点为”源” (流体向外膨胀), <span
+      class="math inline">&lt;0</span> 为”汇” (向内汇聚), <span
+      class="math inline">=0</span> 表示该点处不可压缩.</p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定理 — 格林公式 (法向 / 通量形式)</span></div>
+      <div class="callout-body">
+      <p>设 <span class="math inline">D</span>
+      为分段光滑边界的有界闭区域, <span
+      class="math inline">\mathbf{F}=(P,Q)</span> 在 <span
+      class="math inline">D</span> 上 <span
+      class="math inline">C^1</span>, <span
+      class="math inline">\mathbf{n}</span> 为 <span
+      class="math inline">\partial D^+</span>
+      的<strong>外法向</strong>单位向量, <span
+      class="math inline">\mathrm{d}s</span> 为弧长微元, 则</p>
+      <p><span class="math display">\oint_{\partial
+      D^+}\mathbf{F}\cdot\mathbf{n}\,\mathrm{d}s = \iint_D
+      \operatorname{div}\mathbf{F}\,\mathrm{d}A.</span></p>
+      <p>在正向 (逆时针) 边界上 <span
+      class="math inline">\mathbf{n}\,\mathrm{d}s =
+      (\mathrm{d}y,\,-\mathrm{d}x)</span>, 故等价地</p>
+      <p><span class="math display">\oint_{\partial D^+} P\,\mathrm{d}y
+      - Q\,\mathrm{d}x = \iint_D\Bigl(\frac{\partial P}{\partial x} +
+      \frac{\partial Q}{\partial y}\Bigr)\mathrm{d}A.</span></p>
+      <div class="callout-fold" data-label="推导">
+      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 推导</button>
+      <div class="callout-fold-body" hidden>
+      <p>把 <span class="math inline">\mathbf{F}</span> 旋转 <span
+      class="math inline">90°</span>: 令 <span
+      class="math inline">\tilde{\mathbf{F}}=(-Q,\,P)</span>, 则 <span
+      class="math inline">\tilde{\mathbf{F}}\cdot\boldsymbol\tau =
+      \mathbf{F}\cdot\mathbf{n}</span> (沿正向边界), 且 <span
+      class="math inline">\operatorname{curl}\tilde{\mathbf{F}} = P_x +
+      Q_y = \operatorname{div}\mathbf{F}</span>. 对 <span
+      class="math inline">\tilde{\mathbf{F}}</span>
+      用切向形式的格林公式即得</p>
+      <p><span class="math display">\oint_{\partial
+      D^+}\mathbf{F}\cdot\mathbf{n}\,\mathrm{d}s
+      = \oint_{\partial
+      D^+}\tilde{\mathbf{F}}\cdot\boldsymbol\tau\,\mathrm{d}s
+      = \iint_D \operatorname{curl}\tilde{\mathbf{F}}\,\mathrm{d}A
+      = \iint_D \operatorname{div}\mathbf{F}\,\mathrm{d}A.
+      \quad\blacksquare</span></p>
+      </div></div>
+      </div>
+      </div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">切向形式与法向形式 — 同一公式的两面</span></div>
+      <div class="callout-body">
+      <p>二维格林公式有两种等价表述, 角色完全对偶:</p>
+      <table>
+      <colgroup>
+      <col style="width: 25%" />
+      <col style="width: 25%" />
+      <col style="width: 25%" />
+      <col style="width: 25%" />
+      </colgroup>
+      <thead>
+      <tr>
+      <th>形式</th>
+      <th>边界积分</th>
+      <th>内部积分</th>
+      <th>物理意义</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>切向 (旋度形式)</td>
+      <td><span
+      class="math inline">\displaystyle\oint_C\mathbf{F}\cdot\boldsymbol\tau\,\mathrm{d}s</span></td>
+      <td><span
+      class="math inline">\displaystyle\iint_D\operatorname{curl}\mathbf{F}\,\mathrm{d}A</span></td>
+      <td>环量 = 总旋度</td>
+      </tr>
+      <tr>
+      <td>法向 (散度形式)</td>
+      <td><span
+      class="math inline">\displaystyle\oint_C\mathbf{F}\cdot\mathbf{n}\,\mathrm{d}s</span></td>
+      <td><span
+      class="math inline">\displaystyle\iint_D\operatorname{div}\mathbf{F}\,\mathrm{d}A</span></td>
+      <td>通量 = 总散度</td>
+      </tr>
+      </tbody>
+      </table>
+      <p>二者只差一个”把 <span class="math inline">\mathbf{F}</span>
+      旋转 <span class="math inline">90°</span>“的代换. 推广到三维,
+      切向形式变成<strong>斯托克斯公式</strong> (§12.7),
+      法向形式变成<strong>高斯公式</strong> (§12.7).</p>
+      </div>
+      </div>
       <h2 id="曲面积分">12.6 曲面积分</h2>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">从二维到三维</span></div>
       <div class="callout-body">
       <p>至此, 二维的积分理论已经完整: 沿曲线积分 (第一类, 第二类)
       以及将区域内部与边界联系起来的格林公式.
-      现在把同样的思路推广到三维空间: <strong>曲面</strong>取代曲线,
-      <strong>通量</strong>取代做功.</p>
+      现在把同样的思路推广到三维空间: <strong>曲面</strong>取代曲线.
+      与曲线积分一样, 曲面积分也分两类:
+      第一类对<strong>面积</strong>积分 (用于质量, 表面密度等标量问题),
+      第二类对<strong>有向面元</strong>积分 (用于通量等矢量问题).</p>
       </div>
       </div>
+      <h3 id="第一类曲面积分">12.6.1 第一类曲面积分</h3>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">引入问题: 不均匀曲面壳的质量</span></div>
+      <div class="callout-body">
+      <p>一块薄壳弯曲成空间曲面 <span class="math inline">\Sigma</span>
+      的形状, 其<strong>面密度</strong> (单位面积的质量) 在不同位置不同,
+      记为 <span class="math inline">\rho(x,y,z)</span>.
+      如何计算这块壳的总质量?</p>
+      <p>将 <span class="math inline">\Sigma</span> 划分成 <span
+      class="math inline">N</span> 个小面片, 第 <span
+      class="math inline">i</span> 片面积为 <span
+      class="math inline">\Delta S_i</span>, 在其上任取一点 <span
+      class="math inline">(x_i,y_i,z_i)</span>, 则该片质量约为 <span
+      class="math inline">\rho(x_i,y_i,z_i)\,\Delta S_i</span>.
+      对所有小片求和并令最大直径 <span class="math inline">\to 0</span>,
+      即得总质量</p>
+      <p><span class="math display">M = \lim_{\lambda\to
+      0}\sum_{i=1}^N\rho(x_i,y_i,z_i)\,\Delta S_i.</span></p>
+      <p>这就是<strong>第一类曲面积分</strong>
+      (或<strong>对面积的曲面积分</strong>) 的定义.</p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义 — 第一类曲面积分</span></div>
+      <div class="callout-body">
+      <p>设 <span class="math inline">f(x,y,z)</span> 在曲面 <span
+      class="math inline">\Sigma</span> 上连续. 把 <span
+      class="math inline">\Sigma</span> 划分为 <span
+      class="math inline">N</span> 个小面片, 第 <span
+      class="math inline">i</span> 片面积 <span
+      class="math inline">\Delta S_i</span>, 直径 <span
+      class="math inline">\operatorname{diam}(\Sigma_i)</span>,
+      在该片上取任一点 <span class="math inline">(x_i,y_i,z_i)</span>,
+      令 <span class="math inline">\lambda =
+      \max_i\operatorname{diam}(\Sigma_i)</span>. 若极限</p>
+      <p><span class="math display">\lim_{\lambda\to 0}\sum_{i=1}^N
+      f(x_i,y_i,z_i)\,\Delta S_i</span></p>
+      <p>存在且与划分方式及取点无关, 则称该极限为 <span
+      class="math inline">f</span> 在 <span
+      class="math inline">\Sigma</span>
+      上的<strong>第一类曲面积分</strong>, 记作</p>
+      <p><span class="math display">\iint_\Sigma f(x,y,z)\,\mathrm{d}S =
+      \lim_{\lambda\to 0}\sum_{i=1}^N f(x_i,y_i,z_i)\,\Delta
+      S_i,</span></p>
+      <p><span class="math inline">\mathrm{d}S</span>
+      称为<strong>面积微元</strong>.</p>
+      </div>
+      </div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">计算方法 — 显式方程投影</span></div>
+      <div class="callout-body">
+      <p>若 <span class="math inline">\Sigma</span> 由显式方程 <span
+      class="math inline">z = g(x,y),\ (x,y)\in D_{xy}</span> 给出, 且
+      <span class="math inline">g</span> 在 <span
+      class="math inline">D_{xy}</span> 上有连续偏导数, 则面积微元为</p>
+      <p><span class="math display">\mathrm{d}S = \sqrt{1 + g_x^2 +
+      g_y^2}\,\mathrm{d}x\,\mathrm{d}y,</span></p>
+      <p>从而</p>
+      <p><span class="math display">\iint_\Sigma f(x,y,z)\,\mathrm{d}S =
+      \iint_{D_{xy}}
+      f\bigl(x,y,g(x,y)\bigr)\sqrt{1+g_x^2+g_y^2}\,\mathrm{d}x\,\mathrm{d}y.</span></p>
+      <p>若 <span class="math inline">\Sigma</span> 由 <span
+      class="math inline">x=h(y,z)</span> 或 <span
+      class="math inline">y=k(x,z)</span> 给出, 投影到对应坐标平面即可,
+      公式形式相同.</p>
+      </div>
+      </div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">计算方法 — 一般参数化</span></div>
+      <div class="callout-body">
+      <p>若 <span class="math inline">\Sigma</span> 由参数方程 <span
+      class="math inline">\mathbf{r}(u,v)=(x(u,v),y(u,v),z(u,v)),\
+      (u,v)\in R</span> 给出, <span
+      class="math inline">\mathbf{r}_u\times\mathbf{r}_v\ne\mathbf{0}</span>,
+      则</p>
+      <p><span class="math display">\mathrm{d}S =
+      |\mathbf{r}_u\times\mathbf{r}_v|\,\mathrm{d}u\,\mathrm{d}v,</span></p>
+      <p>积分公式为</p>
+      <p><span class="math display">\iint_\Sigma f\,\mathrm{d}S =
+      \iint_R
+      f\bigl(\mathbf{r}(u,v)\bigr)\,|\mathbf{r}_u\times\mathbf{r}_v|\,\mathrm{d}u\,\mathrm{d}v.</span></p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">性质 — 与定向无关 / 对曲面可加</span></div>
+      <div class="callout-body">
+      <p>第一类曲面积分有两条基本性质 (与第一类曲线积分平行):</p>
+      <ol type="1">
+      <li><strong>与定向无关</strong>: 改变 <span
+      class="math inline">\Sigma</span> 的”正负侧”不改变积分值 (<span
+      class="math inline">\mathrm{d}S</span> 始终为正).</li>
+      <li><strong>对曲面可加</strong>: <span
+      class="math inline">\displaystyle\iint_{\Sigma_1+\Sigma_2}f\,\mathrm{d}S
+      = \iint_{\Sigma_1}f\,\mathrm{d}S +
+      \iint_{\Sigma_2}f\,\mathrm{d}S</span>.</li>
+      </ol>
+      </div>
+      </div>
+      <div class="callout callout-note">
+      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">例 — 平面在第一卦限的部分 (投影法)</span></div>
+      <div class="callout-body">
+      <p>计算 <span class="math inline">\displaystyle\iint_\Sigma
+      xy\,\mathrm{d}S</span>, 其中 <span
+      class="math inline">\Sigma</span> 为平面 <span
+      class="math inline">x+y+z=1</span> 被三个坐标面所截的三角形
+      (在第一卦限).</p>
+      <div class="callout-fold" data-label="计算">
+      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 计算</button>
+      <div class="callout-fold-body" hidden>
+      <p>由 <span class="math inline">z=1-x-y</span> 得 <span
+      class="math inline">z_x=z_y=-1</span>, 故面积微元 <span
+      class="math inline">\mathrm{d}S=\sqrt{1+z_x^2+z_y^2}\,\mathrm{d}A=\sqrt{3}\,\mathrm{d}A</span>.
+      投影区域 <span class="math inline">D=\{(x,y):x\ge 0,\,y\ge
+      0,\,x+y\le 1\}</span>.</p>
+      <p><span class="math display">\iint_\Sigma xy\,\mathrm{d}S
+      =
+      \sqrt{3}\!\int_0^1\!\!x\!\int_0^{1-x}\!\!y\,\mathrm{d}y\,\mathrm{d}x
+      = \frac{\sqrt{3}}{2}\!\int_0^1\!x(1-x)^2\,\mathrm{d}x
+      = \frac{\sqrt{3}}{2}\cdot\frac{1}{12}
+      = \frac{\sqrt{3}}{24}.</span></p>
+      </div></div>
+      </div>
+      </div>
+      <div class="callout callout-note">
+      <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">例 — 球面上的对称性技巧</span></div>
+      <div class="callout-body">
+      <p>计算 <span class="math inline">\displaystyle\iint_\Sigma
+      z^2\,\mathrm{d}S</span>, 其中 <span
+      class="math inline">\Sigma</span> 为球面 <span
+      class="math inline">x^2+y^2+z^2=R^2</span>.</p>
+      <div class="callout-fold" data-label="计算">
+      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 计算</button>
+      <div class="callout-fold-body" hidden>
+      <p><strong>解法一 (对称性).</strong> 球面关于 <span
+      class="math inline">x,y,z</span> 完全对称, 故</p>
+      <p><span class="math display">\iint_\Sigma x^2\,\mathrm{d}S =
+      \iint_\Sigma y^2\,\mathrm{d}S = \iint_\Sigma
+      z^2\,\mathrm{d}S.</span></p>
+      <p>三式相加得</p>
+      <p><span class="math display">3\!\iint_\Sigma z^2\,\mathrm{d}S =
+      \iint_\Sigma(x^2+y^2+z^2)\,\mathrm{d}S =
+      R^2\!\iint_\Sigma\mathrm{d}S = R^2\cdot 4\pi R^2 = 4\pi
+      R^4,</span></p>
+      <p>故 <span class="math inline">\displaystyle\iint_\Sigma
+      z^2\,\mathrm{d}S = \frac{4\pi R^4}{3}</span>.</p>
+      <p><strong>解法二 (球面参数化).</strong> 取 <span
+      class="math inline">\mathbf{r}(\varphi,\theta)=(R\sin\varphi\cos\theta,R\sin\varphi\sin\theta,R\cos\varphi)</span>,
+      <span
+      class="math inline">\varphi\in[0,\pi],\theta\in[0,2\pi]</span>, 则
+      <span
+      class="math inline">|\mathbf{r}_\varphi\times\mathbf{r}_\theta|=R^2\sin\varphi</span>,
+      从而</p>
+      <p><span class="math display">\iint_\Sigma z^2\,\mathrm{d}S
+      = \int_0^{2\pi}\!\!\int_0^\pi R^2\cos^2\varphi\cdot
+      R^2\sin\varphi\,\mathrm{d}\varphi\,\mathrm{d}\theta
+      = 2\pi
+      R^4\!\int_0^\pi\!\cos^2\varphi\sin\varphi\,\mathrm{d}\varphi
+      = 2\pi R^4\cdot\frac{2}{3}
+      = \frac{4\pi R^4}{3}.</span></p>
+      </div></div>
+      </div>
+      </div>
+      <h3 id="第二类曲面积分">12.6.2 第二类曲面积分</h3>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">引入问题: 流体穿过曲面的通量</span></div>
       <div class="callout-body">
