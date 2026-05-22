@@ -81,32 +81,28 @@
       id="toc-第十三章-无穷级数">第十三章: 无穷级数</a>
       <ul>
       <li><a href="#常数项级数的概念和性质"
-      id="toc-常数项级数的概念和性质">13.1 13.1
+      id="toc-常数项级数的概念和性质">13.1
       常数项级数的概念和性质</a></li>
       <li><a href="#常数项级数的审敛法" id="toc-常数项级数的审敛法">13.2
-      13.2 常数项级数的审敛法</a>
+      常数项级数的审敛法</a>
       <ul>
       <li><a href="#正项级数及其审敛法"
-      id="toc-正项级数及其审敛法">13.2.1 13.2.1
-      正项级数及其审敛法</a></li>
+      id="toc-正项级数及其审敛法">13.2.1 正项级数及其审敛法</a></li>
       <li><a href="#交错级数与任意项级数"
-      id="toc-交错级数与任意项级数">13.2.2 13.2.2
-      交错级数与任意项级数</a></li>
+      id="toc-交错级数与任意项级数">13.2.2 交错级数与任意项级数</a></li>
       </ul></li>
-      <li><a href="#幂级数及其展开" id="toc-幂级数及其展开">13.3 13.3
+      <li><a href="#幂级数及其展开" id="toc-幂级数及其展开">13.3
       幂级数及其展开</a></li>
       <li><a href="#傅里叶级数与傅里叶变换"
-      id="toc-傅里叶级数与傅里叶变换">13.4 13.4
-      傅里叶级数与傅里叶变换</a>
+      id="toc-傅里叶级数与傅里叶变换">13.4 傅里叶级数与傅里叶变换</a>
       <ul>
       <li><a href="#三角级数与傅里叶展开"
-      id="toc-三角级数与傅里叶展开">13.4.1 13.4.1
-      三角级数与傅里叶展开</a></li>
+      id="toc-三角级数与傅里叶展开">13.4.1 三角级数与傅里叶展开</a></li>
       <li><a href="#引入欧拉公式与复数形式"
-      id="toc-引入欧拉公式与复数形式">13.4.2 13.4.2
+      id="toc-引入欧拉公式与复数形式">13.4.2
       引入欧拉公式与复数形式</a></li>
       <li><a href="#从傅里叶级数走向傅里叶变换"
-      id="toc-从傅里叶级数走向傅里叶变换">13.4.3 13.4.3
+      id="toc-从傅里叶级数走向傅里叶变换">13.4.3
       从傅里叶级数走向傅里叶变换</a></li>
       </ul></li>
       </ul></li>
@@ -132,21 +128,41 @@
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">章引言</span></div>
       <div class="callout-body">
-      <p>本章把”加法”从有限多项扩展到<strong>无限</strong>多项 ——
-      这就是<strong>无穷级数</strong>.
-      收敛性、绝对收敛、幂级数、傅里叶级数,
-      是这条路径上的关键里程碑.</p>
-      <p>一个核心张力贯穿全章:
-      <strong>无限多个数相加未必有意义</strong>. 当它有意义时,
-      它常常是某个简单解析对象 (<span class="math inline">e^x</span>,
-      <span class="math inline">\sin x</span>, 一段方波信号)
-      的精确数值表达. 用简单的多项式或三角函数无穷叠加去表示复杂函数,
-      既是分析学最有威力的思想之一,
-      也是现代数值计算与人工智能的基石.</p>
+      <p>本章只做一件事:
+      <strong>用简单函数的无穷叠加来逼近复杂函数</strong>.
+      最自然的”简单函数”是单项式 <span
+      class="math inline">1,\,x,\,x^2,\,\ldots</span>,
+      把它们带系数地叠加起来, 就是<strong>幂级数</strong>. 例如 <span
+      class="math display"> e^x = 1 + x + \frac{x^2}{2!} +
+      \frac{x^3}{3!} + \cdots, </span> 之后只要保留前若干项, 就得到
+      <span class="math inline">e^x</span> 的一个可计算的多项式近似.
+      类似的展开对 <span class="math inline">\sin x,\cos
+      x,\ln(1+x),\ldots</span> 都成立 ——
+      这是分析、数值计算、信号处理乃至现代机器学习的共同根基.</p>
+      <p>但”无穷叠加”未必有意义. 把 <span class="math inline">x</span>
+      固定为某个具体的 <span class="math inline">x_0</span>,
+      幂级数就退化成一串具体数的”无穷和” <span class="math inline">\sum
+      a_n x_0^n</span> —— 这一串数加起来是否给出<strong>有限值</strong>,
+      直接决定了”<span class="math inline">e^{x_0}</span>
+      能否等于这个级数”是否合法. 所以在动用幂级数之前,
+      必须先回答一个更基本的问题: <strong>无穷多个数相加,
+      何时是有限的?</strong></p>
+      <p>沿着这条逻辑链, 全章三大主题依次展开:</p>
+      <ol type="1">
+      <li><strong>常数项级数 (数项级数)</strong> ——
+      先把”无穷和何时有限”这件事讲清楚, 给出收敛性的判别法则;</li>
+      <li><strong>幂级数</strong> —— 把变量 <span
+      class="math inline">x</span> 加回来, 研究在哪些 <span
+      class="math inline">x</span> 处收敛 (收敛域),
+      以及如何把常见函数展开成幂级数;</li>
+      <li><strong>傅里叶级数</strong> ——
+      把”叠加的简单函数”从单项式换成三角函数 <span
+      class="math inline">\sin nx,\cos nx</span>,
+      用于周期信号与不连续函数的逼近.</li>
+      </ol>
       </div>
       </div>
-      <h2 id="常数项级数的概念和性质">13.1 13.1
-      常数项级数的概念和性质</h2>
+      <h2 id="常数项级数的概念和性质">13.1 常数项级数的概念和性质</h2>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">直觉 — 用部分和定义”无穷和”</span></div>
       <div class="callout-body">
@@ -368,7 +384,7 @@
       </div>
       </div>
       </div>
-      <h2 id="常数项级数的审敛法">13.2 13.2 常数项级数的审敛法</h2>
+      <h2 id="常数项级数的审敛法">13.2 常数项级数的审敛法</h2>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">为何需要审敛法</span></div>
       <div class="callout-body">
@@ -379,7 +395,7 @@
       接下来按”通项符号”的不同分类整理:<strong>正项级数</strong>、<strong>交错级数</strong>和<strong>任意项级数</strong>.</p>
       </div>
       </div>
-      <h3 id="正项级数及其审敛法">13.2.1 13.2.1 正项级数及其审敛法</h3>
+      <h3 id="正项级数及其审敛法">13.2.1 正项级数及其审敛法</h3>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">正项级数的关键事实</span></div>
       <div class="callout-body">
@@ -572,8 +588,7 @@
       </div>
       </div>
       </div>
-      <h3 id="交错级数与任意项级数">13.2.2 13.2.2
-      交错级数与任意项级数</h3>
+      <h3 id="交错级数与任意项级数">13.2.2 交错级数与任意项级数</h3>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定理 — 莱布尼茨判别法 (交错级数)</span></div>
       <div class="callout-body">
@@ -666,7 +681,7 @@
       </div>
       </div>
       </div>
-      <h2 id="幂级数及其展开">13.3 13.3 幂级数及其展开</h2>
+      <h2 id="幂级数及其展开">13.3 幂级数及其展开</h2>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">从常数项到函数项</span></div>
       <div class="callout-body">
@@ -838,8 +853,7 @@
       </div>
       </div>
       </div>
-      <h2 id="傅里叶级数与傅里叶变换">13.4 13.4
-      傅里叶级数与傅里叶变换</h2>
+      <h2 id="傅里叶级数与傅里叶变换">13.4 傅里叶级数与傅里叶变换</h2>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">动机 — 周期信号需要不同的展开方式</span></div>
       <div class="callout-body">
@@ -854,8 +868,7 @@
       图像与音频处理的绝对基石.</p>
       </div>
       </div>
-      <h3 id="三角级数与傅里叶展开">13.4.1 13.4.1
-      三角级数与傅里叶展开</h3>
+      <h3 id="三角级数与傅里叶展开">13.4.1 三角级数与傅里叶展开</h3>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定义 — 傅里叶级数</span></div>
       <div class="callout-body">
@@ -916,8 +929,7 @@
       </div></div>
       </div>
       </div>
-      <h3 id="引入欧拉公式与复数形式">13.4.2 13.4.2
-      引入欧拉公式与复数形式</h3>
+      <h3 id="引入欧拉公式与复数形式">13.4.2 引入欧拉公式与复数形式</h3>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">简化 — 把 sin/cos 合二为一</span></div>
       <div class="callout-body">
@@ -957,7 +969,7 @@
       class="math inline">\arg c_n</span> 是其<strong>相位</strong>.</p>
       </div>
       </div>
-      <h3 id="从傅里叶级数走向傅里叶变换">13.4.3 13.4.3
+      <h3 id="从傅里叶级数走向傅里叶变换">13.4.3
       从傅里叶级数走向傅里叶变换</h3>
       <div class="callout callout-extension">
       <div class="callout-header callout-header-extension"><span class="callout-icon"></span><span class="callout-label">拓展 — 傅里叶变换</span></div>
