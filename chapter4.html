@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>新工科数学分析</title>
+  <title>积分 · 山海问道</title>
   <meta name="author" content="首师大交叉科学研究院">
-  <meta name="description" content="首都师范大学新工科数学分析">
+  <meta name="description" content="高等数学文科版 · 山海问道">
   <meta name="keywords" content="高等数学,微积分,数学分析,讲义">
   
   
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="assets/chapter.css">
   <link rel="stylesheet" href="assets/app.css">
+  <link rel="stylesheet" href="assets/reader.css?v=20261010-boss">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <script type="importmap">
@@ -69,52 +69,59 @@
   </style>
 </head>
 <body>
-  <div id="sidebar">
+  <aside id="sidebar" aria-label="讲义目录">
+    <a class="reader-brand" href="index.html"><span class="reader-seal">悟</span><span>山海问道<small>高等数学 · 文科版</small></span></a>
+    <div class="reader-nav-label">卷 目</div>
     <div id="doc-nav">
       <ul id="doc-nav-list"></ul>
     </div>
     <div class="nav-divider"></div>
     <div id="toc-nav">
-      <div class="nav-section-title">Contents</div>
+      <div class="nav-section-title">本篇目录</div>
       <ul>
-      <li><a href="#第四章-积分" id="toc-第四章-积分">第四章: 积分</a>
+      <li><a href="#第三回-积分" id="toc-第三回-积分">第三回 · 积分</a>
       <ul>
-      <li><a href="#积分的概念" id="toc-积分的概念">4.1
-      积分的概念</a></li>
-      <li><a href="#微积分基本定理" id="toc-微积分基本定理">4.2
-      微积分基本定理</a></li>
-      <li><a href="#积分的性质和运算" id="toc-积分的性质和运算">4.3
-      积分的性质和运算</a>
+      <li><a href="#第一节-积分的概念" id="toc-第一节-积分的概念">第一节
+      · 积分的概念</a></li>
+      <li><a href="#第二节-微积分基本定理"
+      id="toc-第二节-微积分基本定理">第二节 · 微积分基本定理</a></li>
+      <li><a href="#第三节-积分的性质和运算"
+      id="toc-第三节-积分的性质和运算">第三节 · 积分的性质和运算</a>
       <ul>
-      <li><a href="#积分的性质" id="toc-积分的性质">4.3.1
+      <li><a href="#积分的性质" id="toc-积分的性质">3.3.1
       积分的性质</a></li>
-      <li><a href="#不定积分的运算" id="toc-不定积分的运算">4.3.2
+      <li><a href="#不定积分的运算" id="toc-不定积分的运算">3.3.2
       不定积分的运算</a></li>
-      <li><a href="#定积分的运算" id="toc-定积分的运算">4.3.3
+      <li><a href="#定积分的运算" id="toc-定积分的运算">3.3.3
       定积分的运算</a></li>
       </ul></li>
       </ul></li>
       </ul>
     </div>
-  </div>
+    <a class="reader-science" href="science.html">理工版 · 完整目录 ↗</a>
+  </aside>
 
   <div id="overlay" onclick="closeSidebar()"></div>
 
   <div id="main">
     <div id="topbar">
-      <button id="sidebar-toggle" onclick="toggleSidebar()" aria-label="Toggle sidebar">&#9776;</button>
-      <span id="topbar-title">新工科数学分析</span>
-      <button id="pdf-btn" onclick="window.print()" title="Print / Save as PDF">&#128438;</button>
+      <button id="sidebar-toggle" onclick="toggleSidebar()" aria-label="打开目录" aria-expanded="false" aria-controls="sidebar">&#9776;</button>
+      <span id="topbar-title">积分</span>
+      <span id="reading-progress" aria-label="本篇阅读进度">0%</span>
+      <button id="reading-mode" type="button" aria-pressed="false">夜读</button>
+      <button id="pdf-btn" onclick="window.print()" title="打印或保存为 PDF" aria-label="打印或保存为 PDF">打印</button>
     </div>
+    <div class="reader-progress-track" aria-hidden="true"><span id="reading-progress-bar"></span></div>
+    <header class="reader-banner" style="--scene:url(home/integrals.png)"><div class="reader-banner-art" style="background-image:url(assets/home/integrals.png)"></div><div class="reader-banner-copy"><h1 class="reader-chapter-title">第三回 · 聚沙成丘</h1></div><a class="reader-home" href="index.html">返回山门 ↗</a></header><figure class="reader-epigraph" aria-label="篇首引文"><blockquote>不积跬步，无以至千里。</blockquote><figcaption>—— 荀子《劝学》</figcaption></figure>
     <div id="video-panel">
       <button id="video-close-btn" aria-label="Close video">&times;</button>
       <iframe id="video-frame" src="" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
       <button id="video-close-bottom" onclick="void(0)">&#9650; 收起视频</button>
     </div>
-    <div id="content">
-      <h1 id="第四章-积分">第四章: 积分</h1>
+    <article id="content" tabindex="-1">
+      <h1 id="第三回-积分">第三回 · 积分</h1>
       <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">省</span></div>
       <div class="callout-body">
       <p>在微积分的发展历程中, 积分与微分如同一对孪生兄弟,
       共同构成了现代数学的基石.
@@ -143,7 +150,7 @@
       最后掌握计算积分的基本方法.</p>
       </div>
       </div>
-      <h2 id="积分的概念">4.1 积分的概念</h2>
+      <h2 id="第一节-积分的概念">第一节 · 积分的概念</h2>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">问题引入: 从规则图形到曲边图形</span></div>
       <div class="callout-body">
@@ -437,9 +444,9 @@
       <p>从这两个例子我们看到, 用定义计算积分虽然思路直接, 但过程繁琐.
       在下一节中, 我们将介绍微积分基本定理,
       它提供了计算定积分的强大工具.</p>
-      <h2 id="微积分基本定理">4.2 微积分基本定理</h2>
+      <h2 id="第二节-微积分基本定理">第二节 · 微积分基本定理</h2>
       <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">省</span></div>
       <div class="callout-body">
       <p>在上一节中, 我们通过黎曼和的极限定义了定积分,
       并用这种方法计算了几个简单函数的积分. 然而, 这种方法极其繁琐,
@@ -631,10 +638,10 @@
       </div>
       </div>
       <p>这些例子展示了微积分基本定理的强大威力——它将复杂的极限计算简化为简单的代数运算.</p>
-      <h2 id="积分的性质和运算">4.3 积分的性质和运算</h2>
-      <h3 id="积分的性质">4.3.1 积分的性质</h3>
+      <h2 id="第三节-积分的性质和运算">第三节 · 积分的性质和运算</h2>
+      <h3 id="积分的性质">3.3.1 积分的性质</h3>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">悟</span></div>
       <div class="callout-body">
       <p>定积分具有一系列重要的性质,
       这些性质不仅有助于我们理解积分的本质, 还能简化积分的计算.</p>
@@ -656,7 +663,7 @@
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">悟</span></div>
       <div class="callout-body">
       <p><strong>2. 区间可加性</strong></p>
       <p>若函数 <span class="math inline">f</span> 在包含 <span
@@ -673,7 +680,7 @@
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">悟</span></div>
       <div class="callout-body">
       <p><strong>3. 积分上下限交换</strong></p>
       <p><span class="math display">
@@ -684,7 +691,7 @@
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">悟</span></div>
       <div class="callout-body">
       <p><strong>4. 绝对值不等式</strong></p>
       <p><span class="math display">
@@ -696,7 +703,7 @@
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">悟</span></div>
       <div class="callout-body">
       <p><strong>5. 积分比较定理</strong></p>
       <p>若在 <span class="math inline">[a, b]</span> 上 <span
@@ -708,9 +715,9 @@
       函数值较大的曲线在相同区间上围成的面积也较大.</p>
       </div>
       </div>
-      <h3 id="不定积分的运算">4.3.2 不定积分的运算</h3>
+      <h3 id="不定积分的运算">3.3.2 不定积分的运算</h3>
       <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">省</span></div>
       <div class="callout-body">
       <p>不定积分是求原函数的过程, 其结果是一个函数族 (相差一个常数).
       以下是计算不定积分的两种基本方法.</p>
@@ -922,9 +929,9 @@
       </div>
       </div>
       </div>
-      <h3 id="定积分的运算">4.3.3 定积分的运算</h3>
+      <h3 id="定积分的运算">3.3.3 定积分的运算</h3>
       <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">提示</span></div>
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">省</span></div>
       <div class="callout-body">
       <p>定积分的计算可以使用与不定积分相同的方法, 但有一些重要区别:</p>
       </div>
@@ -1195,14 +1202,16 @@
       让生命的定积分值不断增长, 最终收获丰盈而充实的人生.</p>
       </div>
       </div>
-    </div>
+    </article>
+    <nav class="reader-pagination" aria-label="篇章翻页"><a href="chapter2.html"><span>← 第二回 · 微分</span></a><a href="chapter5.html"><span>第四回 · 应用 →</span></a></nav>
   </div>
 
   <script>
-    window.docLib = [{"title": "\u5e8f\u8a00", "url": "chapter0.html"}, {"title": "\u7b2c\u4e00\u7ae0: \u6781\u9650", "url": "chapter1.html"}, {"title": "\u7b2c\u4e8c\u7ae0: \u5bfc\u6570", "url": "chapter2.html"}, {"title": "\u7b2c\u4e09\u7ae0: \u5fae\u5206", "url": "chapter3.html"}, {"title": "\u7b2c\u56db\u7ae0: \u79ef\u5206", "url": "chapter4.html"}, {"title": "\u7b2c\u4e94\u7ae0: \u5fae\u5206\u7684\u5e94\u7528", "url": "chapter5.html"}, {"title": "\u7b2c\u516d\u7ae0: \u79ef\u5206\u7684\u5e94\u7528", "url": "chapter6.html"}, {"title": "\u7b2c\u4e03\u7ae0: \u5e38\u5fae\u5206\u65b9\u7a0b", "url": "chapter7.html"}, {"title": "\u7b2c\u516b\u7ae0: \u6570\u503c\u65b9\u6cd5", "url": "chapter8.html"}, {"title": "\u7b2c\u4e5d\u7ae0: \u5411\u91cf\u4e0e\u7a7a\u95f4\u89e3\u6790\u51e0\u4f55", "url": "chapter9.html"}, {"title": "\u7b2c\u5341\u7ae0: \u591a\u5143\u51fd\u6570\u7684\u5fae\u5206", "url": "chapter10.html"}, {"title": "\u7b2c\u5341\u4e00\u7ae0: \u591a\u5143\u51fd\u6570\u7684\u79ef\u5206", "url": "chapter11.html"}, {"title": "\u7b2c\u5341\u4e8c\u7ae0: \u66f2\u7ebf\u79ef\u5206\u548c\u66f2\u9762\u79ef\u5206", "url": "chapter12.html"}, {"title": "\u7b2c\u5341\u4e09\u7ae0: \u65e0\u7a77\u7ea7\u6570", "url": "chapter13.html"}, {"title": "\u7b2c\u5341\u56db\u7ae0: \u504f\u5fae\u5206\u65b9\u7a0b", "url": "chapter14.html"}];
+    window.docLib = [{"title": "\u542f\u7a0b", "url": "chapter0.html"}, {"title": "\u7b2c\u4e00\u56de \u00b7 \u6781\u9650", "url": "chapter1.html"}, {"title": "\u7b2c\u4e8c\u56de \u00b7 \u5fae\u5206", "url": "chapter2.html"}, {"title": "\u7b2c\u4e09\u56de \u00b7 \u79ef\u5206", "url": "chapter4.html"}, {"title": "\u7b2c\u56db\u56de \u00b7 \u5e94\u7528", "url": "chapter5.html"}];
     window.chpAutonum = "";
   </script>
-  <script src="assets/app.js"></script>
+  <script src="assets/app.js?v=20261010-gallery"></script>
   <script src="assets/three-lazy.js"></script>
+  <script src="assets/reader.js"></script>
 </body>
 </html>

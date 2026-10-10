@@ -36,7 +36,7 @@
 
   var tocHighlightObserver = null;
 
-  function navigate(url) {
+  function navigate(url, fromHistory) {
     fetch(url)
       .then(function (r) {
         if (!r.ok) throw new Error("fetch failed");
@@ -48,7 +48,13 @@
         // Swap main content
         var newContent = doc.getElementById("content");
         var contentEl  = document.getElementById("content");
-        if (newContent && contentEl) contentEl.innerHTML = newContent.innerHTML;
+        if (!newContent || !contentEl) { window.location.href = url; return; }
+        contentEl.innerHTML = newContent.innerHTML;
+        [".reader-banner", ".reader-epigraph", ".reader-pagination"].forEach(function (selector) {
+          var oldPart = document.querySelector(selector);
+          var newPart = doc.querySelector(selector);
+          if (oldPart && newPart) oldPart.replaceWith(newPart.cloneNode(true));
+        });
 
         // Update page title and topbar
         document.title = doc.title;
@@ -78,7 +84,7 @@
         if (panel && contentEl) contentEl.appendChild(panel);
 
         // Update URL and scroll to top
-        history.pushState({ url: url }, "", url);
+        if (!fromHistory) history.pushState({ url: url }, "", url);
         var mainEl = document.getElementById("main");
         if (mainEl) mainEl.scrollTo(0, 0);
 
@@ -134,6 +140,8 @@
         initVideo();
         renderMath(contentEl);
         if (typeof window.threeLazyReinit === "function") window.threeLazyReinit();
+        closeSidebar();
+        document.dispatchEvent(new Event("reader:chapter"));
       })
       .catch(function () {
         // Fall back to normal navigation on any error
@@ -147,7 +155,7 @@
   // TOC section clicks from re-navigating and collapsing the accordion.
   window.addEventListener("popstate", function (e) {
     if (!e.state || !e.state.url) return;
-    navigate(e.state.url);
+    navigate(e.state.url, true);
   });
 
   // ── Chapter navigation ───────────────────────────────────────
@@ -200,7 +208,7 @@
     // state, not on a stale onclick set when the chapter was last current.
     list.addEventListener("click", function (e) {
       var a = e.target.closest("li.nav-chapter > a");
-      if (!a || !list.contains(a)) return;
+      if (!a || !list.contains(a) || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button !== 0) return;
       e.preventDefault();
       var li = a.parentElement;
       if (li.classList.contains("nav-chapter-current")) {
@@ -229,6 +237,7 @@
     var overlay = document.getElementById("overlay");
     sidebar.classList.toggle("open");
     overlay.classList.toggle("visible");
+    document.getElementById("sidebar-toggle").setAttribute("aria-expanded", String(sidebar.classList.contains("open")));
   }
 
   function closeSidebar() {
@@ -236,6 +245,7 @@
     var overlay = document.getElementById("overlay");
     sidebar.classList.remove("open");
     overlay.classList.remove("visible");
+    document.getElementById("sidebar-toggle").setAttribute("aria-expanded", "false");
   }
 
   window.toggleSidebar = toggleSidebar;
@@ -275,6 +285,7 @@
   function buildFigureCaptions() {
     var imgs = document.querySelectorAll("#content img");
     imgs.forEach(function (img) {
+      if (img.closest(".polygon-gallery")) return;
       var alt = img.getAttribute("alt");
       if (!alt || alt.match(/^https?:\/\//)) return;
       if (img.parentElement && img.parentElement.tagName === "FIGURE") return;
@@ -323,6 +334,7 @@
           if (!target || !mainEl) return;
           var offset = target.getBoundingClientRect().top + mainEl.scrollTop - 56;
           mainEl.scrollTo({ top: offset, behavior: "smooth" });
+          closeSidebar();
         });
       }
     });
@@ -435,6 +447,7 @@
   // ── Init ─────────────────────────────────────────────────────
 
   function init() {
+    history.replaceState({ url: location.pathname + location.search }, "", location.href);
     buildDocNav();
     applyAutonum();
     initTocAccordion();

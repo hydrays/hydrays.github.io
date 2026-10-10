@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 310"><title>弦长、圆弧长与外侧切线折线的比较</title>
+<path d="M222.92702031100015 67.48041662376951 A155 155 0 0 1 222.92702031100015 242.51958337623049" fill="none" stroke="#37594b" stroke-width="4"/>
+<path d="M222.92702031100015 67.48041662376951 L222.92702031100015 242.51958337623049" fill="none" stroke="#496e93" stroke-width="2"/>
+<path d="M222.92702031100015 67.48041662376951 L282.8023887494091 155 L222.92702031100015 242.51958337623049" fill="none" stroke="#9a7542" stroke-width="3"/>
+<path d="M222.92702031100015 67.48041662376951 L95 155 L222.92702031100015 242.51958337623049 M95 155 L282.8023887494091 155" fill="none" stroke="#807765" stroke-width="1.5" stroke-dasharray="5 4"/>
+<g font-family="serif" font-size="20" fill="#3f493b"><text x="70" y="160">O</text><text x="207.92702031100015" y="55.480416623769514">P</text><text x="207.92702031100015" y="267.51958337623046">Q</text><text x="292.8023887494091" y="160">T</text><text x="145" y="143">t</text><text x="145" y="184">t</text><text x="145" y="85">1</text><text x="145" y="245">1</text><text x="220" y="294" text-anchor="middle">2 sin t ≤ 2t ≤ 2 tan t</text></g></svg>

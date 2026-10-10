@@ -1,140 +1,56 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>新工科数学分析</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; }
-        body { background-color: #f5f7fa; color: #333; line-height: 1.4; padding: 15px; max-width: 1400px; margin: 0 auto; }
-        .container { background-color: white; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); overflow: hidden; margin-bottom: 30px; }
-        .image-container { width: 100%; height: 300px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-        .custom-image { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .image-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); display: flex; justify-content: center; align-items: center; color: white; font-size: 32px; font-weight: 600; text-align: center; padding: 20px; }
-        .main-content { --content-rail-width: 80%; column-count: 2; column-gap: 20px; margin-top: 20px; }
-        .intro-link { display: block; }
-        .section-divider { display: flex; align-items: center; gap: 10px; width: var(--content-rail-width); margin: 0 auto 8px; break-inside: avoid; }
-        .section-divider::before, .section-divider::after { content: ""; flex: 1; height: 1px; background: #d7dee7; }
-        .section-divider span { color: #94a3b8; font-size: 13px; letter-spacing: 0.08em; white-space: nowrap; }
-        .chapter-card { background: white; border-radius: 12px; padding: 10px 14px; box-shadow: 0 3px 12px rgba(15,23,42,0.06); transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; border: 1px solid #dbe4ee; min-height: 68px; display: flex; align-items: center; gap: 10px; height: 100%; }
-        .chapter-card:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(15,23,42,0.1); border-color: #aac7e6; }
-        .chapter-number { width: 40px; height: 40px; background: #2f7fbf; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; font-size: 16px; }
-        .chapter-info { flex: 1 1 auto; }
-        .chapter-info h3 { font-size: 17px; margin: 0; color: #2c3e50; line-height: 1.2; }
-        .chapter-link { text-decoration: none; color: inherit; display: block; width: var(--content-rail-width); margin-bottom: 8px; margin-left: auto; margin-right: auto; break-inside: avoid; }
-        footer { text-align: center; padding: 20px; color: #7f8c8d; font-size: 14px; margin-top: 30px; }
-        @media (max-width: 768px) { .main-content { column-count: 1; --content-rail-width: 100%; } .image-overlay { font-size: 28px; } }
-        @media (max-width: 480px) { body { padding: 10px; } .chapter-card { padding: 10px 12px; min-height: 66px; } .chapter-number { width: 36px; height: 36px; font-size: 14px; } .image-container { height: 200px; } .image-overlay { font-size: 24px; } }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151613">
+  <meta name="description" content="微积分。从极限到应用，踏过四境，步步有悟。">
+  <title>微积分</title>
+  <link rel="icon" href="data:,">
+  <link rel="preload" as="image" href="assets/home/hero.png">
+  <link rel="stylesheet" href="assets/home/home.css?v=20261010-fontswap">
 </head>
 <body>
-    <div class="container">
-        <div class="image-container">
-            <img src="../media/img/cover.jpg" alt="新工科数学分析" class="custom-image">
-            <div class="image-overlay"><h2 style="margin-top: 2em;">新工科数学分析</h2></div>
-        </div>
-    </div>
-    <div class="main-content">
-        <a href="chapter0.html" class="chapter-link intro-link">
-            <div class="chapter-card">
-                <div class="chapter-number">0</div>
-                <div class="chapter-info"><h3>序言</h3></div>
-            </div>
+  <a class="skip-link" href="#chapters">跳转至章节</a>
+  <header class="masthead">
+    <a class="brand" href="index.html" aria-label="微积分首页"><span class="seal" aria-hidden="true">悟</span><span>山海问道<span class="brand-note">微积分</span></span></a>
+    <nav aria-label="主导航"><a class="edition" href="science.html">理工版 <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <img class="hero-art" src="assets/home/hero.png" alt="云海群山之间，一位行者立于古老石门前" fetchpriority="high" width="2172" height="724">
+      <div class="hero-shade"></div>
+      <div class="hero-copy">
+        <h1 id="page-title">微积分</h1>
+        <p class="hero-verse">循微入境，积步成山</p>
+        <a class="journey-link" href="chapter0.html">启 程 <span aria-hidden="true">⟶</span></a>
+      </div>
+    </section>
+    <section class="chapter-section" id="chapters" aria-label="课程章节">
+      <div class="chapter-grid">
+        <a class="chapter-card" href="chapter1.html" aria-label="第一回 极限：动中取静，进入篇章">
+          <img src="assets/home/limits.png" alt="飞瀑入静潭，古桥横跨山谷" width="1024" height="1536">
+          <span class="card-shade"></span>
+          <span class="chapter-theme"><span class="chapter-prefix">第一回</span>动中取静</span><span class="chapter-body"><span class="chapter-title">极限</span></span>
         </a>
-        <div class="section-divider" aria-hidden="true"><span>上册</span></div>
-        <a href="chapter1.html" class="chapter-link">
-            <div class="chapter-card">
-                <div class="chapter-number">1</div>
-                <div class="chapter-info"><h3>极限</h3></div>
-            </div>
+        <a class="chapter-card" href="chapter2.html" aria-label="第二回 微分：投桃报李，进入篇章">
+          <img src="assets/home/derivatives.png" alt="桃花古树掩映着山间石祠与铜铃" width="1024" height="1536">
+          <span class="card-shade"></span>
+          <span class="chapter-theme"><span class="chapter-prefix">第二回</span>投桃报李</span><span class="chapter-body"><span class="chapter-title">微分</span></span>
         </a>
-        <a href="chapter2.html" class="chapter-link">
-            <div class="chapter-card">
-                <div class="chapter-number">2</div>
-                <div class="chapter-info"><h3>导数</h3></div>
-            </div>
+        <a class="chapter-card" href="chapter4.html" aria-label="第三回 积分：聚沙成丘，进入篇章">
+          <img src="assets/home/integrals.png" alt="夕照下，流沙环绕着苍茫荒原上的古塔" width="1024" height="1536">
+          <span class="card-shade"></span>
+          <span class="chapter-theme"><span class="chapter-prefix">第三回</span>聚沙成丘</span><span class="chapter-body"><span class="chapter-title">积分</span></span>
         </a>
-        <a href="chapter3.html" class="chapter-link">
-            <div class="chapter-card">
-                <div class="chapter-number">3</div>
-                <div class="chapter-info"><h3>微分</h3></div>
-            </div>
+        <a class="chapter-card" href="chapter5.html" aria-label="第四回 应用：未竟，进入篇章">
+          <img src="assets/home/applications.png" alt="月下石阶穿越云海，通向远方山门" width="1024" height="1536">
+          <span class="card-shade"></span>
+          <span class="chapter-theme"><span class="chapter-prefix">第四回</span>未竟</span><span class="chapter-body"><span class="chapter-title">应用</span></span>
         </a>
-        <a href="chapter4.html" class="chapter-link">
-            <div class="chapter-card">
-                <div class="chapter-number">4</div>
-                <div class="chapter-info"><h3>积分</h3></div>
-            </div>
-        </a>
-        <a href="chapter5.html" class="chapter-link">
-            <div class="chapter-card">
-                <div class="chapter-number">5</div>
-                <div class="chapter-info"><h3>微分的应用</h3></div>
-            </div>
-        </a>
-        <a href="chapter6.html" class="chapter-link">
-            <div class="chapter-card">
-                <div class="chapter-number">6</div>
-                <div class="chapter-info"><h3>积分的应用</h3></div>
-            </div>
-        </a>
-        <a href="chapter7.html" class="chapter-link">
-            <div class="chapter-card">
-                <div class="chapter-number">7</div>
-                <div class="chapter-info"><h3>常微分方程</h3></div>
-            </div>
-        </a>
-        <a href="chapter8.html" class="chapter-link">
-            <div class="chapter-card">
-                <div class="chapter-number">8</div>
-                <div class="chapter-info"><h3>数值方法</h3></div>
-            </div>
-        </a>
-        <div class="section-divider" aria-hidden="true"><span>下册</span></div>
-        <a href="chapter9.html" class="chapter-link">
-            <div class="chapter-card">
-                <div class="chapter-number">9</div>
-                <div class="chapter-info"><h3>向量与空间解析几何</h3></div>
-            </div>
-        </a>
-        <a href="chapter10.html" class="chapter-link">
-            <div class="chapter-card">
-                <div class="chapter-number">10</div>
-                <div class="chapter-info"><h3>多元函数的微分</h3></div>
-            </div>
-        </a>
-        <a href="chapter11.html" class="chapter-link">
-            <div class="chapter-card">
-                <div class="chapter-number">11</div>
-                <div class="chapter-info"><h3>多元函数的积分</h3></div>
-            </div>
-        </a>
-        <a href="chapter12.html" class="chapter-link">
-            <div class="chapter-card">
-                <div class="chapter-number">12</div>
-                <div class="chapter-info"><h3>曲线积分和曲面积分</h3></div>
-            </div>
-        </a>
-        <a href="chapter13.html" class="chapter-link">
-            <div class="chapter-card">
-                <div class="chapter-number">13</div>
-                <div class="chapter-info"><h3>无穷级数</h3></div>
-            </div>
-        </a>
-        <a href="chapter14.html" class="chapter-link">
-            <div class="chapter-card">
-                <div class="chapter-number">14</div>
-                <div class="chapter-info"><h3>偏微分方程</h3></div>
-            </div>
-        </a>
-    </div>
-    <footer><p>首都师范大学交叉科学研究院 &copy; 2025</p></footer>
-    <script>
-        document.querySelector('.custom-image').addEventListener('error', function() {
-            this.style.display = 'none';
-            var c = document.querySelector('.image-container');
-            c.style.background = 'linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)';
-        });
-    </script>
+      </div>
+    </section>
+  </main>
+  <footer><span>微积分</span><span>首都师范大学交叉科学研究院</span></footer>
 </body>
 </html>

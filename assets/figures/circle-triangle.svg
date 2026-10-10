@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="70 40 310 220" role="img"><title>circle-triangle</title><g stroke-linejoin="round"><path d="M130 150 L296.2983158520316 81.11698217428383 L296.2983158520316 218.88301782571617 Z" fill="#789584" fill-opacity=".3" stroke="#37594b" stroke-width="2"/>
+<path d="M130 150 L296.2983158520316 150" stroke="#9a7542" stroke-dasharray="6 4" stroke-width="2"/>
+<path d="M284.2983158520316 150 V138 H296.2983158520316" fill="none" stroke="#9a7542"/>
+<path d="M178.0417356905869 130.10046151701533 A52 52 0 0 1 178.0417356905869 169.89953848298467" fill="none" stroke="#9a7542" stroke-width="2"/>
+<g fill="#3f493b" font-family="serif" font-size="21">
+<text x="107" y="158">O</text><text x="304.2983158520316" y="76.11698217428383">P</text><text x="304.2983158520316" y="236.88301782571617">Q</text>
+<text x="208" y="101">r</text><text x="208" y="214">r</text>
+<text x="187" y="158">2π/n</text><text x="308.2983158520316" y="155">M</text>
+</g></g></svg>
