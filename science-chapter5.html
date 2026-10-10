@@ -12,8 +12,8 @@
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="assets/app.css">
   <link rel="stylesheet" href="assets/reader.css?v=20261010-boss">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <link rel="stylesheet" href="assets/katex/katex.min.css">
+  <script src="assets/katex/katex.min.js"></script>
   <script type="importmap">
   {"imports":{"three":"./assets/three.module.js","three/addons/":"./assets/three-addons/"}}
   </script>
@@ -320,7 +320,7 @@
       x_2</span>，找出满足拉格朗日中值定理的中值点 <span
       class="math inline">c</span>。</p>
       <figure>
-      <img src="../media/img/chpt5_ex003.png" width="400"
+      <img src="media/img/chpt5_ex003.png" width="400"
       alt="f(x)=x^2 上 x_1, x_2 之间的割线 (红虚) 与某个 c 处的切线 (绿) 平行 — 这就是拉格朗日中值定理" />
       <figcaption aria-hidden="true"><span
       class="math inline">f(x)=x^2</span> 上 <span
@@ -379,7 +379,7 @@
       = 1</span>，找出满足拉格朗日中值定理的中值点 <span
       class="math inline">c</span>。</p>
       <figure>
-      <img src="../media/img/chpt5_ex004.png" width="400"
+      <img src="media/img/chpt5_ex004.png" width="400"
       alt="f(x)=x^3 在 [0,1] 的割线斜率 =1, 切线在 c=1/\sqrt{3} 处与之平行" />
       <figcaption aria-hidden="true"><span
       class="math inline">f(x)=x^3</span> 在 <span
@@ -661,7 +661,7 @@
       class="math inline">[0, 2]</span> 上满足积分中值定理的点 <span
       class="math inline">c</span>。</p>
       <figure>
-      <img src="../media/img/chpt5_ex006.png" width="400"
+      <img src="media/img/chpt5_ex006.png" width="400"
       alt="\int_0^2 x^2\,dx 的面积 (红色) 等于以 f(c)=4/3 为高、宽 2 的等高矩形 (绿色)" />
       <figcaption aria-hidden="true"><span class="math inline">\int_0^2
       x^2\,dx</span> 的面积 (红色) 等于以 <span
@@ -718,7 +718,7 @@
       0</span>，则存在 <span class="math inline">c \in [a, b]</span>
       使得 <span class="math inline">f(c) = 0</span>。</p>
       <figure>
-      <img src="../media/img/chpt5_ex007.png" width="400"
+      <img src="media/img/chpt5_ex007.png" width="400"
       alt="连续函数 f 的正负面积大小相同 (积分为 0), 函数图像必在某 c 处穿越 x 轴" />
       <figcaption aria-hidden="true">连续函数 <span
       class="math inline">f</span> 的正负面积大小相同 (积分为 0),
@@ -765,7 +765,7 @@
       <p>估计积分 <span class="math inline">\displaystyle\int_0^1
       e^{-x^2}\,dx</span> 的值范围。</p>
       <figure>
-      <img src="../media/img/chpt5_ex008.png" width="400"
+      <img src="media/img/chpt5_ex008.png" width="400"
       alt="\int_0^1 e^{-x^2}\,dx 的下界 e^{-1} (红虚) 与上界 1 (绿虚) 之间夹住真实值" />
       <figcaption aria-hidden="true"><span class="math inline">\int_0^1
       e^{-x^2}\,dx</span> 的下界 <span class="math inline">e^{-1}</span>
@@ -1028,7 +1028,7 @@
       \dfrac{1}{2}x^2</span></li>
       </ol>
       <figure>
-      <img src="../media/img/chpt5_ex018.png" width="400"
+      <img src="media/img/chpt5_ex018.png" width="400"
       alt="三个 x\to 0 渐近关系 — 左 x^2 = o(x), 中 \sin x\sim x, 右 1-\cos x \sim x^2/2" />
       <figcaption aria-hidden="true">三个 <span class="math inline">x\to
       0</span> 渐近关系 — 左 <span class="math inline">x^2 =
@@ -1138,7 +1138,7 @@
       class="math inline">x = 0</span>
       附近的一阶、二阶、三阶多项式近似，并说明各阶近似的形式规律。</p>
       <figure>
-      <img src="../media/img/chpt5_ex009.png" width="400"
+      <img src="media/img/chpt5_ex009.png" width="400"
       alt="e^x (黑实线) 与其 1, 2, 3 阶 Taylor 多项式 — 阶数越高, 在 0 附近吻合越远" />
       <figcaption aria-hidden="true"><span
       class="math inline">e^x</span> (黑实线) 与其 1, 2, 3 阶 Taylor
@@ -1196,7 +1196,7 @@
       class="math inline">x = 0</span>
       附近的一阶、三阶、五阶多项式近似，并说明为何只有奇数次项出现。</p>
       <figure>
-      <img src="../media/img/chpt5_ex010.png" width="400"
+      <img src="media/img/chpt5_ex010.png" width="400"
       alt="\sin x (黑实线) 与其 1 阶 / 3 阶 / 5 阶 Taylor 多项式 — 只含奇次项 (因为 \sin 是奇函数)" />
       <figcaption aria-hidden="true"><span class="math inline">\sin
       x</span> (黑实线) 与其 1 阶 / 3 阶 / 5 阶 Taylor 多项式 —
@@ -1818,7 +1818,7 @@
       <span class="math inline">\pi</span>
       的近似值，并估计要达到小数点后 6 位精度需要多少项。</p>
       <figure>
-      <img src="../media/img/chpt5_ex020.png" width="400"
+      <img src="media/img/chpt5_ex020.png" width="400"
       alt="Leibniz 级数 4\sum (-1)^{n-1}/(2n-1) 部分和 — 80 项后只稳定到小数点后两位, 收敛极慢" />
       <figcaption aria-hidden="true">Leibniz 级数 <span
       class="math inline">4\sum (-1)^{n-1}/(2n-1)</span> 部分和 — 80
@@ -2220,7 +2220,7 @@
       class="math inline">\displaystyle e^x &gt; 1 + x +
       \frac{x^2}{2}</span>。</p>
       <figure>
-      <img src="../media/img/chpt5_ex014.png" width="400"
+      <img src="media/img/chpt5_ex014.png" width="400"
       alt="e^x 始终在 1+x+x^2/2 之上 — 二者之差 (绿色阴影) 等于 Taylor 余项, 在 x&gt;0 处恒正" />
       <figcaption aria-hidden="true"><span
       class="math inline">e^x</span> 始终在 <span
@@ -2278,7 +2278,7 @@
       class="math inline">\displaystyle\sin x &gt; x -
       \frac{x^3}{6}</span>。</p>
       <figure>
-      <img src="../media/img/chpt5_ex015.png" width="400"
+      <img src="media/img/chpt5_ex015.png" width="400"
       alt="\sin x 在 (0, \pi/2) 上始终略大于 x - x^3/6 — Taylor 余项的下一阶 (+x^5/120) 恒正" />
       <figcaption aria-hidden="true"><span class="math inline">\sin
       x</span> 在 <span class="math inline">(0, \pi/2)</span>
@@ -2509,7 +2509,7 @@
       <div class="ex-problem-box">
       <p>比较梯形公式和辛普森公式的数值积分误差阶数，说明辛普森公式为何收敛更快。</p>
       <figure>
-      <img src="../media/img/chpt5_ex017.png" width="400"
+      <img src="media/img/chpt5_ex017.png" width="400"
       alt="同一函数的两种数值积分 — 左 梯形公式 (一阶折线), 右 辛普森公式 (二阶抛物线), 误差阶分别为 O(h^2) 与 O(h^4)" />
       <figcaption aria-hidden="true">同一函数的两种数值积分 — 左
       梯形公式 (一阶折线), 右 辛普森公式 (二阶抛物线), 误差阶分别为
