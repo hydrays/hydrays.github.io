@@ -46,9 +46,9 @@ html[data-reading-mode=night] .callout-practice{--callout-accent:#c4b2d2}
 .banner-epigraph blockquote{margin:0;padding:0;border:0;font-family:var(--reader-serif);font-size:23px;letter-spacing:.12em;line-height:1.8}
 .banner-epigraph figcaption{margin-top:7px;font-size:12px;letter-spacing:.06em;color:#c6b894}
 .chapter-prologue{border:1px solid var(--v-bd);background:var(--paper-panel);padding:26px 30px;margin:0 0 2.4em}
-#content .chapter-prologue .prologue-title{margin:0 0 22px;padding:0 0 14px;font-size:25px;font-weight:400;letter-spacing:.08em}
+#content .chapter-prologue>h2{margin:0 0 22px;padding:0 0 14px;font-size:25px;font-weight:400;letter-spacing:.08em}
 .chapter-prologue p:last-child{margin-bottom:0}
-@media(max-width:560px){.banner-epigraph{margin-top:18px}.banner-epigraph blockquote{font-size:18px;letter-spacing:.04em}.chapter-prologue{padding:20px 16px}#content .chapter-prologue .prologue-title{font-size:22px}}
+@media(max-width:560px){.banner-epigraph{margin-top:18px}.banner-epigraph blockquote{font-size:18px;letter-spacing:.04em}.chapter-prologue{padding:20px 16px}#content .chapter-prologue>h2{font-size:22px}}
 
 #content .encounter-frame>h2{margin:0 0 22px;padding:0 0 14px;font-size:25px;font-weight:400;letter-spacing:.08em}
 .polygon-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:25px 0 8px;padding:16px;background:#f0e7d3;border:1px solid #9a754244}
