@@ -98,20 +98,24 @@
       无穷之惑—希尔伯特的酒店</a></li>
       <li><a href="#第七节-极限的数学定义"
       id="toc-第七节-极限的数学定义">第七节 · 极限的数学定义</a></li>
-      <li><a href="#第八节-极限的计算" id="toc-第八节-极限的计算">第八节
-      · 极限的计算</a></li>
-      <li><a href="#第九节-两边夹定理" id="toc-第九节-两边夹定理">第九节
+      <li><a href="#第八节-极限的四则运算"
+      id="toc-第八节-极限的四则运算">第八节 · 极限的四则运算</a></li>
+      <li><a href="#第九节-七十二变换元法"
+      id="toc-第九节-七十二变换元法">第九节 · 七十二变—换元法</a></li>
+      <li><a href="#第十节-两边夹定理" id="toc-第十节-两边夹定理">第十节
       · 两边夹定理</a></li>
-      <li><a href="#第十节-boss-战-圆面积"
-      id="toc-第十节-boss-战-圆面积">第十节 · Boss 战 · 圆面积</a></li>
-      <li><a href="#第十一节-伯努利的贪婪"
-      id="toc-第十一节-伯努利的贪婪">第十一节 · 伯努利的贪婪</a></li>
-      <li><a href="#第十二节-单调有界定理"
-      id="toc-第十二节-单调有界定理">第十二节 · 单调有界定理</a></li>
-      <li><a href="#第十三节-boss-战-数-e"
-      id="toc-第十三节-boss-战-数-e">第十三节 · Boss 战 · 数 e</a></li>
-      <li><a href="#第十四节-总结" id="toc-第十四节-总结">第十四节 ·
-      总结</a></li>
+      <li><a href="#第十一节-boss-战圆面积"
+      id="toc-第十一节-boss-战圆面积">第十一节 · Boss 战—圆面积</a></li>
+      <li><a href="#第十二节-利上生利贪婪的极限"
+      id="toc-第十二节-利上生利贪婪的极限">第十二节 ·
+      利上生利—贪婪的极限</a></li>
+      <li><a href="#第十三节-单调有界有极限"
+      id="toc-第十三节-单调有界有极限">第十三节 ·
+      单调有界有极限</a></li>
+      <li><a href="#第十四节-boss-战数-e"
+      id="toc-第十四节-boss-战数-e">第十四节 · Boss 战—数 e</a></li>
+      <li><a href="#第十五节-回望来路"
+      id="toc-第十五节-回望来路">第十五节 · 回望来路</a></li>
       </ul>
     </div>
     <a class="reader-science" href="science.html">理工版 · 完整目录 ↗</a>
@@ -138,13 +142,15 @@
       <section id="第一节-楔子圆的面积" class="chapter-prologue">
       <h2>第一节 · 楔子—圆的面积</h2>
       <p>初入山门，拦路的没有妖魔，只有石板上画着的一个圆。旁边留下一问：<strong>半径为
-      <span class="math inline">r</span> 的圆，面积是多少？</strong></p>
-      <p>你大概会不假思索地答：<span class="math inline">S=\pi
+      <span class="math inline">\displaystyle r</span>
+      的圆，面积是多少？</strong></p>
+      <p>你大概会不假思索地答：<span class="math inline">\displaystyle
+      S=\pi
       r^2</span>。这么熟悉的公式，也配做第一关的难题？正要往前走，石板上却又浮出一行字：<strong>“答案不错。可是，为什么？”</strong></p>
       <p>先把记住的公式放在一旁。矩形的面积，我们会算；三角形的面积，可以借助拼接来求；遇到一个多边形，也能把它分成若干个三角形，再将面积相加。这些招式，你早已用得熟练。</p>
       <p>可眼前偏偏是一个圆。试着在圆里画一个正方形，面积算出来了，四周却空着几块；再换一个边数更多的多边形，空隙小了，仍旧没有消失。你不断加边，图形越来越像圆，可只要边数还是有限的，它就终究不是圆。<strong>差得很少，能算作完全相等吗？</strong></p>
       <p>也许你还记得，把圆切成许多扇形，再交错拼成一个近似的长方形。可那个“近似”，究竟如何才能成为“准确”？一幅看起来越来越像的图，足以说明面积恰好等于
-      <span class="math inline">\pi r^2</span> 吗？</p>
+      <span class="math inline">\displaystyle \pi r^2</span> 吗？</p>
       <p>难处终于显出了真身：我们会算有限个直边图形的面积，却还缺少一座桥，把一次次近似带到一个确定的答案。<strong>仅凭目前掌握的有限分割与拼接，我们还不能完成这一步。</strong>
       那座尚未搭起的桥，正是本回要学习的“极限”。</p>
       <p>先把这个圆留在山门前。待我们习得新的本领，再回来回答它：<strong>如何通过极限，求出圆的准确面积？这便是第一关的大
@@ -154,14 +160,16 @@
       class="chapter-prologue encounter-frame">
       <h2>第二节 · 初识对手—多边形面积</h2>
       <p>要闯过这一关，先得认清对手。圆的面积暂时不会求，但圆里面的多边形，我们会算。于是，先固定一个半径为
-      <span class="math inline">r=1</span>
+      <span class="math inline">\displaystyle r=1</span>
       的圆（单位圆），在里面画一个<strong>内接正多边形</strong>：“内接”是说顶点都在圆上，“正”是说各边相等、各角也相等。</p>
-      <p>把边数记为 <span
-      class="math inline">n</span>，这个多边形的面积记为 <span
-      class="math inline">A_n</span>。这里的下标是一张身份牌：<span
-      class="math inline">A_3</span> 是正三角形的面积，<span
-      class="math inline">A_4</span> 是正方形的面积，<span
-      class="math inline">A_6</span>
+      <p>把边数记为 <span class="math inline">\displaystyle
+      n</span>，这个多边形的面积记为 <span
+      class="math inline">\displaystyle
+      A_n</span>。这里的下标是一张身份牌：<span
+      class="math inline">\displaystyle A_3</span>
+      是正三角形的面积，<span class="math inline">\displaystyle
+      A_4</span> 是正方形的面积，<span class="math inline">\displaystyle
+      A_6</span>
       是正六边形的面积。圆的大小始终不变，改变的只有边数。</p>
       <div class="polygon-gallery">
       <img src="assets/figures/circle-polygon-3.svg" alt="圆的内接正3边形，连接圆心与各顶点分成3个等腰三角形" loading="lazy">
@@ -176,10 +184,11 @@
       </p>
       <p>先看图：边数增加后，多边形的边界似乎越来越贴近圆。但眼睛只能帮助我们发现线索。要追踪这种变化，还得把图形变成可以计算的数。</p>
       <p><strong>从一个三角形算起。</strong> 连接圆心与每个顶点，内接正
-      <span class="math inline">n</span> 边形便被分成 <span
-      class="math inline">n</span>
+      <span class="math inline">\displaystyle n</span> 边形便被分成
+      <span class="math inline">\displaystyle n</span>
       个完全相同的等腰三角形。它们的两条腰都是圆的半径 <span
-      class="math inline">1</span>，顶角合起来是一整周，所以每个顶角为</p>
+      class="math inline">\displaystyle
+      1</span>，顶角合起来是一整周，所以每个顶角为</p>
       <p><span class="math display">
       \theta=\frac{360^\circ}{n}=\frac{2\pi}{n}\quad\text{（弧度）}.
       </span></p>
@@ -190,16 +199,18 @@
       </figcaption>
       </figure>
       <p>还记得三角形的“底乘高除以二”吗？高 <span
-      class="math inline">OM</span>
+      class="math inline">\displaystyle OM</span>
       把顶角平分，在一侧的直角三角形中，半条底边为 <span
-      class="math inline">\sin(\pi/n)</span>，高为 <span
-      class="math inline">\cos(\pi/n)</span>。因此，这一块的面积是</p>
+      class="math inline">\displaystyle \sin(\pi/n)</span>，高为 <span
+      class="math inline">\displaystyle
+      \cos(\pi/n)</span>。因此，这一块的面积是</p>
       <p><span class="math display">
       \frac12\times 2\sin\frac{\pi}{n}\times \cos\frac{\pi}{n}
       =\frac12\sin\frac{2\pi}{n}.
       </span></p>
-      <p>最后一步用了倍角公式 <span class="math inline">2\sin t\cos
-      t=\sin(2t)</span>。把这 <span class="math inline">n</span>
+      <p>最后一步用了倍角公式 <span class="math inline">\displaystyle
+      2\sin t\cos t=\sin(2t)</span>。把这 <span
+      class="math inline">\displaystyle n</span>
       块面积相加，就得到我们需要面对的对手：</p>
       <p><span class="math display">
       \boxed{A_n=\frac{n}{2}\sin\frac{2\pi}{n},\qquad n=3,4,5,\ldots}
@@ -208,14 +219,15 @@
       <h2 id="第三节-再识对手集合与映射">第三节 ·
       再识对手—集合与映射</h2>
       <p>我们先来看看，这个对手究竟长什么样。让边数依次取 <span
-      class="math inline">n=3,4,5,6,\ldots</span>，代入公式，就能算出相应的面积。先看前四项（保留六位小数）：</p>
+      class="math inline">\displaystyle
+      n=3,4,5,6,\ldots</span>，代入公式，就能算出相应的面积。先看前四项（保留六位小数）：</p>
       <table>
       <thead>
       <tr>
       <th style="text-align: right;">边数 <span
-      class="math inline">n</span></th>
+      class="math inline">\displaystyle n</span></th>
       <th style="text-align: right;">面积 <span
-      class="math inline">A_n</span></th>
+      class="math inline">\displaystyle A_n</span></th>
       </tr>
       </thead>
       <tbody>
@@ -238,40 +250,46 @@
       </tbody>
       </table>
       <p>把这些面积按边数依次排开，就得到 <span
-      class="math inline">A_3,A_4,A_5,\ldots</span>。这样一串按次序排列的数，在数学上称为<strong>数列</strong>。</p>
-      <p>在这个数列中，<span class="math inline">n</span>
-      表示多边形的边数，<span class="math inline">A_n</span>
+      class="math inline">\displaystyle
+      A_3,A_4,A_5,\ldots</span>。这样一串按次序排列的数，在数学上称为<strong>数列</strong>。</p>
+      <p>在这个数列中，<span class="math inline">\displaystyle n</span>
+      表示多边形的边数，<span class="math inline">\displaystyle
+      A_n</span>
       表示对应的面积。这是一个具体的实例。为了让研究得到的结论适用于更一般的问题，数学上要做的第一步，就是把研究对象进行<strong>抽象</strong>。为此，我们先引入<strong>集合</strong>与<strong>映射</strong>。</p>
       <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">集合 · 研究对象的抽象</span></div>
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">集合</span></div>
       <div class="callout-body">
       <p>我们把所有允许的边数放在一起，得到集合 <span
-      class="math inline">D=\{3,4,5,\ldots\}</span>；把面积看作实数，用实数集
-      <span class="math inline">\mathbb{R}</span>
+      class="math inline">\displaystyle
+      D=\{3,4,5,\ldots\}</span>；把面积看作实数，用实数集 <span
+      class="math inline">\displaystyle \mathbb{R}</span>
       容纳它们的取值。<strong>集合把选定的对象组织起来，让“研究哪些东西”有了明确的界定。</strong></p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">集合的概念</span></div>
       <div class="callout-body">
-      <p>我们把所要研究的对象统称为<strong>元素</strong> (element),
-      这些元素所组成的总体叫做<strong>集合</strong> (set).
-      一般用大写字母如 <span class="math inline">A, B, C</span>
-      表示集合, 用小写字母如 <span class="math inline">x</span> 或 <span
-      class="math inline">a, b, c</span> 来表示集合中的元素.</p>
+      <p>我们把所要研究的对象统称为<strong>元素</strong>（element），这些元素组成的总体叫做<strong>集合</strong>（set）。一般用大写字母如
+      <span class="math inline">\displaystyle A,B,C</span>
+      表示集合，用小写字母如 <span class="math inline">\displaystyle
+      x</span> 或 <span class="math inline">\displaystyle a,b,c</span>
+      表示元素。</p>
       <ul>
-      <li>如果 <span class="math inline">x</span> 是集合 <span
-      class="math inline">A</span> 的元素, 就说 <span
-      class="math inline">x</span> <strong>属于</strong> 集合 <span
-      class="math inline">A</span> , 记作 <span class="math inline">x\in
-      A</span> ;</li>
-      <li>如果 <span class="math inline">x</span> 不是集合 <span
-      class="math inline">A</span> 中的元素, 就说 <span
-      class="math inline">x</span> <strong>不属于</strong> 集合 <span
-      class="math inline">A</span>, 记作 <span class="math inline">x
-      \notin A</span>.</li>
-      <li>不包含任何元素的集合叫做 <strong>空集</strong> (emptyset),
-      记为 <span class="math inline">\varnothing</span>.</li>
+      <li>如果 <span class="math inline">\displaystyle x</span> 是集合
+      <span class="math inline">\displaystyle A</span> 的元素，就说
+      <span class="math inline">\displaystyle x</span>
+      <strong>属于</strong>集合 <span class="math inline">\displaystyle
+      A</span>，记作 <span class="math inline">\displaystyle x\in
+      A</span>。</li>
+      <li>如果 <span class="math inline">\displaystyle x</span> 不是集合
+      <span class="math inline">\displaystyle A</span> 的元素，就说
+      <span class="math inline">\displaystyle x</span>
+      <strong>不属于</strong>集合 <span
+      class="math inline">\displaystyle A</span>，记作 <span
+      class="math inline">\displaystyle x\notin A</span>。</li>
+      <li>不包含任何元素的集合叫做<strong>空集</strong>（empty
+      set），记为 <span
+      class="math inline">\displaystyle\varnothing</span>。</li>
       </ul>
       </div>
       </div>
@@ -279,107 +297,102 @@
       <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">集合举例</span></div>
       <div class="callout-body">
       <ol type="1">
-      <li><em><code>自然数集</code></em> — <span
-      class="math inline">\mathbb{N} = \left\{0, 1, 2, 3, \cdots
-      \right\}</span></li>
-      <li><em><code>实数集</code></em> — <span
-      class="math inline">\mathbb{R} = \left\{x: -\infty &lt; x &lt;
-      \infty \right\}</span></li>
-      <li><em><code>满足不等式 x-3&lt;10 的所有实数 x</code></em> —
-      <span class="math inline">E=\{x\in\mathbb{R}:x&lt;13\}</span></li>
+      <li>自然数集：<span class="math inline">\displaystyle\mathbb
+      N=\{0,1,2,3,\ldots\}</span>。</li>
+      <li>实数集：<span class="math inline">\displaystyle\mathbb
+      R</span>，包含有理数和无理数。</li>
+      <li>满足不等式 <span class="math inline">\displaystyle
+      x-3&lt;10</span> 的所有实数构成集合 <span
+      class="math inline">\displaystyle E=\{x\in\mathbb
+      R:x&lt;13\}</span>。</li>
       </ol>
       </div>
       </div>
       <p>集合为我们搭建了舞台，接下来要介绍的<strong>映射</strong>的概念则是这个舞台上的演员。</p>
       <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">映射 · 连接对象的规则</span></div>
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">映射</span></div>
       <div class="callout-body">
       <p>映射给出一条从输入到输出的<strong>规则</strong>。我们真正关心的，不只是几个孤立的数，而是这条规则怎样把它们联系起来。回看本回的大
       Boss——圆的面积，我们已经把它化成了要追踪的面积规则：</p>
       <p><span class="math display">
       \boxed{A_n=\frac{n}{2}\sin\frac{2\pi}{n},\qquad n=3,4,5,\ldots}
       </span></p>
-      <p>任意给定一个允许的边数 <span class="math inline">n\in
-      D</span>，都能按照同一条规则算出唯一的面积 <span
-      class="math inline">A_n\in\mathbb{R}</span>。<strong>这条对应规则，才是接下来要研究的对象。</strong>
+      <p>任意给定一个允许的边数 <span class="math inline">\displaystyle
+      n\in D</span>，都能按照同一条规则算出唯一的面积 <span
+      class="math inline">\displaystyle
+      A_n\in\mathbb{R}</span>。<strong>这条对应规则，才是接下来要研究的对象。</strong>
       映射把这种想法抽象出来，使它也能用于边数与面积之外的其他对象。</p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">映射的定义</span></div>
       <div class="callout-body">
-      <p>映射 (map) 描述了从一个集合到另一个集合的某种对映关系. 设 <span
-      class="math inline">A</span>, <span class="math inline">B</span>
-      是两个集合, 如果存在一个对映关系 <span
-      class="math inline">f</span>, 使得集合 <span
-      class="math inline">A</span> 中的每个元素都唯一的对映到 <span
-      class="math inline">B</span> 中的一个元素, 则称 <span
-      class="math inline">f</span> 为从 <span
-      class="math inline">A</span> 到 <span class="math inline">B</span>
-      的映射, 记作 <span class="math display">
-      f: A \rightarrow B
+      <p>设 <span class="math inline">\displaystyle A,B</span>
+      是两个集合。如果一条规则 <span class="math inline">\displaystyle
+      f</span> 使集合 <span class="math inline">\displaystyle A</span>
+      中的每个元素都对应于集合 <span class="math inline">\displaystyle
+      B</span> 中唯一的一个元素，就称 <span
+      class="math inline">\displaystyle f</span> 为从 <span
+      class="math inline">\displaystyle A</span> 到 <span
+      class="math inline">\displaystyle B</span>
+      的<strong>映射</strong>（map），记作 <span class="math display">
+      f:A\longrightarrow B.
       </span></p>
-      <p>映射 <span class="math inline">f</span> 把集合 <span
-      class="math inline">A</span> 中的元素 <span
-      class="math inline">a</span> 对映到 <span
-      class="math inline">B</span> 中的元素 <span
-      class="math inline">b</span>, 可记作 <span class="math display">
-      f(a) = b
-      </span> 此时 <span class="math inline">b</span> 称为 <span
-      class="math inline">a</span> 的<strong>象</strong>, <span
-      class="math inline">a</span> 称为 <span
-      class="math inline">b</span> 的<strong>原象</strong>.</p>
-      <p>映射可以通过下面的图像来理解:</p>
+      <p>若映射 <span class="math inline">\displaystyle f</span> 把元素
+      <span class="math inline">\displaystyle a\in A</span> 对应到元素
+      <span class="math inline">\displaystyle b\in B</span>，记作 <span
+      class="math display">
+      f(a)=b.
+      </span> 此时 <span class="math inline">\displaystyle b</span> 称为
+      <span class="math inline">\displaystyle a</span>
+      的<strong>像</strong>，<span class="math inline">\displaystyle
+      a</span> 称为 <span class="math inline">\displaystyle b</span>
+      的一个<strong>原像</strong>。</p>
+      <p>映射可以通过下面的示意图来理解：</p>
       <figure>
       <img src="media/img/chpt1_Function_color_example.png" height="200"
       alt="映射" />
       <figcaption aria-hidden="true">映射</figcaption>
       </figure>
-      <p>图中箭头表示了集合 <span class="math inline">A</span>
-      中元素与集合 <span class="math inline">B</span>
-      中元素的对映关系.</p>
-      <p>根据定义, 映射需要满足两个要求: <strong>随处取值,
-      唯一对映</strong>.</p>
+      <p>图中的 <span class="math inline">\displaystyle X,Y</span>
+      分别表示输入集合和输出集合，箭头表示元素之间的对应关系。</p>
+      <p>映射需要满足两个要求：<strong>每个输入都有输出，且输出唯一</strong>。</p>
       <ul>
-      <li><strong>随处取值</strong>是指 <span
-      class="math inline">A</span> 中的任何一个元素在 <span
-      class="math inline">B</span> 中都有对映.</li>
-      <li><strong>唯一对映</strong>是指 <span
-      class="math inline">f</span> 可以把 <span
-      class="math inline">A</span> 中的不同元素映射到 <span
-      class="math inline">B</span> 中的同一个元素, 但不能把 <span
-      class="math inline">A</span> 中的一个元素映射到 <span
-      class="math inline">B</span> 中的多个元素.</li>
+      <li>对 <span class="math inline">\displaystyle A</span>
+      中的每个元素，都必须给出 <span class="math inline">\displaystyle
+      B</span> 中的一个对应元素。</li>
+      <li>不同输入可以对应同一个输出，但同一个输入不能对应多个输出。</li>
       </ul>
       </div>
       </div>
       <div class="callout callout-practice">
-      <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">名与字 · 一个映射</span></div>
+      <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">名与字</span></div>
       <div class="callout-body">
-      <p>取人物集合 <span
-      class="math inline">P=\{\text{李白},\text{杜甫},\text{苏轼}\}</span>，把其中每个人对应到他的字：李白
-      <span class="math inline">\mapsto</span> 太白，杜甫 <span
-      class="math inline">\mapsto</span> 子美，苏轼 <span
-      class="math inline">\mapsto</span>
+      <p>取人物集合 <span class="math inline">\displaystyle
+      P=\{\text{李白},\text{杜甫},\text{苏轼}\}</span>，把其中每个人对应到他的字：李白
+      <span class="math inline">\displaystyle \mapsto</span> 太白，杜甫
+      <span class="math inline">\displaystyle \mapsto</span> 子美，苏轼
+      <span class="math inline">\displaystyle \mapsto</span>
       子瞻。在这个选定的范围内，每个人都有一个确定的输出，因此这是一种映射。输入和输出都不是数，映射照样成立。</p>
       </div>
       </div>
       <div class="callout callout-practice">
-      <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">作品与词牌 · 方向很重要</span></div>
+      <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">作品与词牌</span></div>
       <div class="callout-body">
       <p>把李清照的两首词《如梦令·常记溪亭日暮》和《如梦令·昨夜雨疏风骤》分别对应到它们的词牌名，输出都是“如梦令”。<strong>不同的输入可以有相同的输出</strong>，这仍然是映射。</p>
       <p>反过来，若规定“给一个词牌名，找出所有使用它的作品”，并把每一首作品分别作为输出，那么“如梦令”会对应多首词，不能唯一确定一首作品，因而不是从词牌集合到作品集合的映射。若另行约定输出是“这些作品组成的集合”，那便换了输出对象，可以构成另一种映射。</p>
       </div>
       </div>
       <div class="callout callout-practice">
-      <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">有输入却无输出 · 另一个反例</span></div>
+      <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">有输入却无输出</span></div>
       <div class="callout-body">
-      <p>仍取 <span
-      class="math inline">P=\{\text{李白},\text{杜甫},\text{苏轼}\}</span>，却把输出集合限定为
-      <span
-      class="math inline">Q=\{\text{太白},\text{子瞻}\}</span>。若规则仍是“对应到自己的字”，杜甫就找不到属于
-      <span class="math inline">Q</span> 的输出。这条规则不构成从 <span
-      class="math inline">P</span> 到 <span class="math inline">Q</span>
+      <p>仍取 <span class="math inline">\displaystyle
+      P=\{\text{李白},\text{杜甫},\text{苏轼}\}</span>，却把输出集合限定为
+      <span class="math inline">\displaystyle
+      Q=\{\text{太白},\text{子瞻}\}</span>。若规则仍是“对应到自己的字”，杜甫就找不到属于
+      <span class="math inline">\displaystyle Q</span>
+      的输出。这条规则不构成从 <span class="math inline">\displaystyle
+      P</span> 到 <span class="math inline">\displaystyle Q</span>
       的映射：<strong>定义域里的每个元素都必须被照顾到。</strong></p>
       </div>
       </div>
@@ -387,65 +400,74 @@
       三识对手—数列与函数</h2>
       <p>映射的天地很广：人名、字、词牌、作品，都可以成为它的研究对象。现在，我们把目光收回来：许多映射只和<strong>数</strong>有关，而数可以比较大小、进行运算，还能标在坐标轴上。对接下来的研究而言，还有什么比数更方便处理呢！于是，我们把输入和输出的集合都限制为数集，就得到了<strong>函数</strong>。</p>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">函数 · 数集之间的映射</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">函数</span></div>
       <div class="callout-body">
       <p>在本课程中，从一个数集到另一个数集的映射，称为<strong>函数</strong>。通常写作
-      <span class="math inline">y=f(x)</span>：<span
-      class="math inline">x</span>
+      <span class="math inline">\displaystyle y=f(x)</span>：<span
+      class="math inline">\displaystyle x</span>
       是自变量，允许输入的数构成<strong>定义域</strong>；<span
-      class="math inline">f(x)</span> 是输入 <span
-      class="math inline">x</span> 后得到的唯一函数值。</p>
+      class="math inline">\displaystyle f(x)</span> 是输入 <span
+      class="math inline">\displaystyle x</span>
+      后得到的唯一函数值。</p>
       <p>函数仍然遵守映射的要求：每个允许的输入，都有且只有一个输出。</p>
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">数列 · 输入按整数取值的函数</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">数列</span></div>
       <div class="callout-body">
-      <p>数列是一类特殊的函数：它按整数下标依次取值，通常记作 <span
-      class="math inline">a_1,a_2,a_3,\ldots</span>。我们的面积数列以边数为下标，从
-      <span class="math inline">3</span> 开始：</p>
+      <p>数列是一类特殊的函数，通常以正整数为自变量，按下标依次取值，记作
+      <span class="math inline">\displaystyle
+      a_1,a_2,a_3,\ldots</span>。我们的面积数列以边数为下标，从 <span
+      class="math inline">\displaystyle 3</span> 开始：</p>
       <p><span class="math display">
-      A:D\longrightarrow\mathbb{R},\qquad A_n=\frac
-      n2\sin\frac{2\pi}{n},\qquad D=\{3,4,5,\ldots\}.
+      \begin{gathered}
+      A:D\longrightarrow\mathbb R,\qquad D=\{3,4,5,\ldots\},\\
+      A_n=\frac n2\sin\frac{2\pi}{n}.
+      \end{gathered}
       </span></p>
       <p>每给定一个允许的边数，就得到唯一的面积。因此，这个数列也是一个函数，只是它的输入只能取
-      <span class="math inline">3,4,5,\ldots</span>，不能取 <span
-      class="math inline">3.5</span>。下面再看两个自变量可以取任意实数的函数。</p>
+      <span class="math inline">\displaystyle
+      3,4,5,\ldots</span>，不能取 <span
+      class="math inline">\displaystyle
+      3.5</span>。下面再看两个自变量可以取任意实数的函数。</p>
       </div>
       </div>
       <div class="callout callout-practice">
-      <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">一次函数 · 每增加一步</span></div>
+      <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">一次函数</span></div>
       <div class="callout-body">
-      <p>取 <span class="math inline">f(x)=2x+1</span>，定义域为 <span
-      class="math inline">\mathbb{R}</span>。输入 <span
-      class="math inline">x=-1,0,1,2</span>，输出依次为 <span
-      class="math inline">-1,1,3,5</span>。自变量每增加 <span
-      class="math inline">1</span>，函数值就增加 <span
-      class="math inline">2</span>。把所有点 <span
-      class="math inline">(x,2x+1)</span>
+      <p>取 <span class="math inline">\displaystyle
+      f(x)=2x+1</span>，定义域为 <span class="math inline">\displaystyle
+      \mathbb{R}</span>。输入 <span class="math inline">\displaystyle
+      x=-1,0,1,2</span>，输出依次为 <span
+      class="math inline">\displaystyle -1,1,3,5</span>。自变量每增加
+      <span class="math inline">\displaystyle 1</span>，函数值就增加
+      <span class="math inline">\displaystyle 2</span>。把所有点 <span
+      class="math inline">\displaystyle (x,2x+1)</span>
       画在平面上，会得到一条直线。</p>
       </div>
       </div>
       <div class="callout callout-practice">
-      <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">二次函数 · 平方的模样</span></div>
+      <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">二次函数</span></div>
       <div class="callout-body">
-      <p>取 <span class="math inline">g(x)=x^2</span>，定义域也为 <span
-      class="math inline">\mathbb{R}</span>。输入 <span
-      class="math inline">x=-2,-1,0,1,2</span>，输出依次为 <span
-      class="math inline">4,1,0,1,4</span>。不同输入可以给出相同输出，例如
-      <span
-      class="math inline">g(-2)=g(2)=4</span>，但每个输入仍只对应一个值。它的图像是一条抛物线。</p>
+      <p>取 <span class="math inline">\displaystyle
+      g(x)=x^2</span>，定义域也为 <span
+      class="math inline">\displaystyle \mathbb{R}</span>。输入 <span
+      class="math inline">\displaystyle x=-2,-1,0,1,2</span>，输出依次为
+      <span class="math inline">\displaystyle
+      4,1,0,1,4</span>。不同输入可以给出相同输出，例如 <span
+      class="math inline">\displaystyle
+      g(-2)=g(2)=4</span>，但每个输入仍只对应一个值。它的图像是一条抛物线。</p>
       </div>
       </div>
       <h2 id="第五节-火眼金睛函数图像">第五节 · 火眼金睛—函数图像</h2>
       <p>认清了函数的规则，还要看清它变化的模样。只盯着公式，有时很难看出端倪；把输入与输出画成坐标平面上的点，变化便有了形状。<strong>函数图像，就是让函数无所遁形的法宝，也是我们的火眼金睛。</strong></p>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">图像 · 让对应关系显形</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">函数图像</span></div>
       <div class="callout-body">
-      <p>函数 <span class="math inline">y=f(x)</span>
+      <p>函数 <span class="math inline">\displaystyle y=f(x)</span>
       的<strong>图像</strong>，就是定义域中所有 <span
-      class="math inline">x</span> 所对应的点 <span
-      class="math inline">(x,f(x))</span>
+      class="math inline">\displaystyle x</span> 所对应的点 <span
+      class="math inline">\displaystyle (x,f(x))</span>
       组成的集合。横坐标放输入，纵坐标放输出，一个点记录一组对应关系。公式把规则写出来，图像则把规则画出来。</p>
       </div>
       </div>
@@ -459,17 +481,18 @@
       <p>学会了这件法宝，就要经常用它。以后遇到一个函数或数列，不妨先问：<strong>它的图像是什么模样？</strong>
       它往上走还是往下走，变化快还是慢，有没有逐渐靠近某个高度？每个实变量实值函数都有自己的图像，数列也不例外；实际作图时，我们选取合适的范围和代表性的点来观察，而不必把无穷多个点逐一画完。</p>
       <p>现在，就让圆面积的对手显形。面积数列的图像由 <span
-      class="math inline">(3,A_3),(4,A_4),(5,A_5),\ldots</span>
+      class="math inline">\displaystyle
+      (3,A_3),(4,A_4),(5,A_5),\ldots</span>
       这些<strong>离散的点</strong>组成。点与点之间不能随意添值或连成连续曲线：多边形没有
-      <span class="math inline">3.5</span> 条边。</p>
+      <span class="math inline">\displaystyle 3.5</span> 条边。</p>
       <p>让边数继续增大，把数列看得更远一些。下表列出更多的面积值，均保留六位小数。</p>
       <table>
       <thead>
       <tr>
       <th style="text-align: right;">边数 <span
-      class="math inline">n</span></th>
+      class="math inline">\displaystyle n</span></th>
       <th style="text-align: right;">面积 <span
-      class="math inline">A_n</span></th>
+      class="math inline">\displaystyle A_n</span></th>
       </tr>
       </thead>
       <tbody>
@@ -526,11 +549,12 @@
       </figcaption>
       </figure>
       <div class="callout callout-practice">
-      <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">观察 · 寻找变化中的趋向</span></div>
+      <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">观察数列</span></div>
       <div class="callout-body">
       <ol type="1">
       <li>表中的面积怎样变化？变化的幅度是否相同？选取 <span
-      class="math inline">n=12,24,48,96</span>，比较每次边数翻倍后面积增加了多少。</li>
+      class="math inline">\displaystyle
+      n=12,24,48,96</span>，比较每次边数翻倍后面积增加了多少。</li>
       <li>后几行的数字让你想到了哪个熟悉的数？你猜测，当边数继续增加时，面积会趋向哪里？先写下猜想和理由。</li>
       <li>如果两个面积在保留六位小数后完全相同，能否断定它们真正相等？图形看不出空隙，是否就意味着空隙已经消失？</li>
       <li>这十一行数据，足以说明所有更大的边数都遵循同样的规律吗？要把观察变成结论，我们还缺少什么？</li>
@@ -540,23 +564,25 @@
       </div>
       </div>
       <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">换一个角度 · 看清公式的核心</span></div>
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">换一个角度</span></div>
       <div class="callout-body">
       <p>这条面积规则看起来还有些复杂。先把它改写为</p>
       <p><span class="math display">
       A_n=\pi\frac{\sin(2\pi/n)}{2\pi/n}.
       </span></p>
-      <p>外面的 <span class="math inline">\pi</span>
-      只是固定的倍数。把面积除以 <span
-      class="math inline">\pi</span>，再把里面反复出现的 <span
-      class="math inline">2\pi/n</span> 记作 <span
-      class="math inline">x</span>，就露出了一个更简单的函数：</p>
+      <p>外面的 <span class="math inline">\displaystyle \pi</span>
+      只是固定的倍数。把面积除以 <span class="math inline">\displaystyle
+      \pi</span>，再把里面反复出现的 <span
+      class="math inline">\displaystyle 2\pi/n</span> 记作 <span
+      class="math inline">\displaystyle
+      x</span>，就露出了一个更简单的函数：</p>
       <p><span class="math display">
       f(x)=\frac{\sin x}{x},\qquad x\ne0.
       </span></p>
-      <p>这不是把 <span class="math inline">\pi</span>
+      <p>这不是把 <span class="math inline">\displaystyle \pi</span>
       随意删掉，而是换了一把纵轴的尺子，并重新标记输入。记 <span
-      class="math inline">x_n=2\pi/n</span>，二者的准确关系是</p>
+      class="math inline">\displaystyle
+      x_n=2\pi/n</span>，二者的准确关系是</p>
       <p><span class="math display">
       \boxed{\frac{A_n}{\pi}=f(x_n),\qquad x_n=\frac{2\pi}{n}.}
       </span></p>
@@ -566,72 +592,77 @@
       <img src="assets/figures/area-sinc-correspondence.svg" alt="左图为归一化面积数列An除以π的离散点，右图为sin(x)/x的函数图像；n等于3、6、12、24的点以相同颜色和连线对应，横坐标变为2π/n，纵坐标相同，x等于0处为空心点">
       <figcaption>
       同色点表示同一项：左图横坐标为 <span
-      class="math inline">n</span>，右图横坐标为 <span
-      class="math inline">2\pi/n</span>，两点的高度都等于 <span
-      class="math inline">A_n/\pi</span>。
+      class="math inline">\displaystyle n</span>，右图横坐标为 <span
+      class="math inline">\displaystyle 2\pi/n</span>，两点的高度都等于
+      <span class="math inline">\displaystyle A_n/\pi</span>。
       </figcaption>
       </figure>
       <div class="callout callout-practice">
-      <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">对照 · 两幅图中的同一个对手</span></div>
+      <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">图像对照</span></div>
       <div class="callout-body">
-      <p>例如 <span class="math inline">n=6</span> 时，左图取第 <span
-      class="math inline">6</span> 项的高度 <span
-      class="math inline">A_6/\pi</span>；右图则在 <span
-      class="math inline">x_6=\pi/3</span> 处取值，得到完全相同的高度
-      <span class="math inline">f(\pi/3)</span>。每一个允许的 <span
-      class="math inline">n</span>，都在右边的曲线上选出一个点；右边还有许多点，并不对应整数边数。</p>
+      <p>例如 <span class="math inline">\displaystyle n=6</span>
+      时，左图取第 <span class="math inline">\displaystyle 6</span>
+      项的高度 <span class="math inline">\displaystyle
+      A_6/\pi</span>；右图则在 <span class="math inline">\displaystyle
+      x_6=\pi/3</span> 处取值，得到完全相同的高度 <span
+      class="math inline">\displaystyle f(\pi/3)</span>。每一个允许的
+      <span class="math inline">\displaystyle
+      n</span>，都在右边的曲线上选出一个点；右边还有许多点，并不对应整数边数。</p>
       <ol type="1">
-      <li>沿左图让 <span class="math inline">n</span>
+      <li>沿左图让 <span class="math inline">\displaystyle n</span>
       越来越大，同色点在右图中向哪个方向移动？请用 <span
-      class="math inline">x_n=2\pi/n</span> 解释。</li>
+      class="math inline">\displaystyle x_n=2\pi/n</span> 解释。</li>
       <li>这些点的高度似乎越来越接近多少？若 <span
-      class="math inline">A_n/\pi</span> 趋近 <span
-      class="math inline">1</span>，原来的面积 <span
-      class="math inline">A_n</span> 应趋近多少？</li>
-      <li>右图在 <span class="math inline">(0,1)</span>
+      class="math inline">\displaystyle A_n/\pi</span> 趋近 <span
+      class="math inline">\displaystyle 1</span>，原来的面积 <span
+      class="math inline">\displaystyle A_n</span> 应趋近多少？</li>
+      <li>右图在 <span class="math inline">\displaystyle (0,1)</span>
       处画了空心点。为什么不能直接把 <span
-      class="math inline">x=0</span> 代入 <span class="math inline">\sin
+      class="math inline">\displaystyle x=0</span> 代入 <span
+      class="math inline">\displaystyle \sin
       x/x</span>？“附近的值趋向哪里”和“这一点有没有值”，是同一个问题吗？</li>
       </ol>
       </div>
       </div>
       <p>我们终于看清：<strong>边数不断增大，对应角度不断缩小；面积数列的趋向，藏在函数
-      <span class="math inline">\sin x/x</span> 靠近 <span
-      class="math inline">0</span> 时的模样里。</strong>
+      <span class="math inline">\displaystyle \sin x/x</span> 靠近 <span
+      class="math inline">\displaystyle 0</span> 时的模样里。</strong>
       对圆面积来说，只需从正数一侧靠近 <span
-      class="math inline">0</span>；函数本身在负数处也有定义，图中一并画出，供我们比较。</p>
+      class="math inline">\displaystyle
+      0</span>；函数本身在负数处也有定义，图中一并画出，供我们比较。</p>
       <p>观察这些点与曲线，我们有了一种<strong>“趋近于”</strong>的感觉：边数越大，面积似乎越靠近一个确定的数；<span
-      class="math inline">x</span> 越靠近 <span
-      class="math inline">0</span>，<span class="math inline">\sin
-      x/x</span> 的值似乎越靠近 <span
-      class="math inline">1</span>。但我们目前还缺少准确描述<strong>无限趋近</strong>的工具。图像让我们看见了方向，怎样把这种感觉说清楚，还要继续探寻。</p>
+      class="math inline">\displaystyle x</span> 越靠近 <span
+      class="math inline">\displaystyle 0</span>，<span
+      class="math inline">\displaystyle \sin x/x</span> 的值似乎越靠近
+      <span class="math inline">\displaystyle
+      1</span>。但我们目前还缺少准确描述<strong>无限趋近</strong>的工具。图像让我们看见了方向，怎样把这种感觉说清楚，还要继续探寻。</p>
       <h2 id="第六节-无穷之惑希尔伯特的酒店">第六节 ·
       无穷之惑—希尔伯特的酒店</h2>
       <p>刚才，我们让边数不断增加，追问面积会趋向哪里。“继续下去”说起来轻巧，却把我们带到了一个新世界：<strong>无限</strong>。在那里，一些在有限情形下屡试不爽的直觉，未必还能直接照搬。</p>
       <div class="callout callout-caution">
       <div class="callout-header callout-header-caution"><span class="callout-icon"></span><span class="callout-label">希尔伯特的酒店</span><button class="callout-video-btn" type="button" data-video-url="https://player.bilibili.com/player.html?isOutside=true&amp;aid=217018325&amp;bvid=BV1Aa411N7Sg&amp;cid=804913368&amp;p=1&amp;autoplay=0">&#9654; 观看视频</button></div>
       <div class="callout-body">
-      <p>想象一家酒店，房间按 <span
-      class="math inline">1,2,3,\ldots</span>
+      <p>想象一家酒店，房间按 <span class="math inline">\displaystyle
+      1,2,3,\ldots</span>
       编号，有无穷多个房间，而且每间都住着客人。此时又来了一位客人。店已住满，还能安排他住下吗？</p>
       <p>对只有有限间客房的酒店，答案很明确。但这家酒店的经理让原来住在第
-      <span class="math inline">n</span> 间的客人搬到第 <span
-      class="math inline">n+1</span>
+      <span class="math inline">\displaystyle n</span> 间的客人搬到第
+      <span class="math inline">\displaystyle n+1</span>
       间。这样，每位原有的客人都有新房间，没有两人挤在同一间，第 <span
-      class="math inline">1</span> 间却空了出来。</p>
+      class="math inline">\displaystyle 1</span> 间却空了出来。</p>
       <p>关键在于：这里没有“最后一间”。有限酒店这样搬，总会把最后一位客人挤出去；而对每一个正整数
-      <span class="math inline">n</span>，编号 <span
-      class="math inline">n+1</span>
+      <span class="math inline">\displaystyle n</span>，编号 <span
+      class="math inline">\displaystyle n+1</span>
       的房间都存在。先看视频，再想想，你原先认定的哪一步，在这里发生了变化？</p>
       </div>
       </div>
       <div class="callout callout-practice">
-      <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">无穷减无穷 · 等于零吗？</span></div>
+      <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">无穷减无穷</span></div>
       <div class="callout-body">
       <p>还是这家住满客人的无限酒店。若有无穷多位客人退房，还会剩下多少位？分别想一想：</p>
       <ol type="1">
       <li>所有房间的客人都退房。</li>
-      <li>除了第 <span class="math inline">1</span>
+      <li>除了第 <span class="math inline">\displaystyle 1</span>
       间，其余房间的客人都退房。</li>
       <li>所有偶数号房间的客人退房，奇数号房间的客人留下。</li>
       </ol>
@@ -644,413 +675,1198 @@
       <p>敌人藏在“无穷”之中，而我们手里的招式，却是在有限的世界里练成的。<strong>能不能用有限的方法，解决无穷的问题？</strong>
       从十七世纪微积分的建立，到十九世纪极限语言逐步严格化，数学家们为此经历了一个多世纪的探索。</p>
       <p>不妨把他们找到的办法，想象成师傅与徒弟的一场较量。两人先盯住一个候选的数
-      <span
-      class="math inline">L</span>：数列真的会无限趋近于它吗？师傅负责出题：“我要误差小于百分之一。”徒弟负责应答：“从这一项往后，每一项都能做到。”师傅又把要求收紧到万分之一、百万分之一，徒弟便给出相应的新起点。</p>
-      <p>师傅手里的题，叫作 <span
-      class="math inline">\varepsilon</span>，是一个任意给定的正数；徒弟交出的答案，叫作
-      <span
-      class="math inline">N</span>，是一个有限的正整数。徒弟不能只挑出几项交差，而要说明：<strong>所有
-      <span class="math inline">n&gt;N</span> 的项，都满足 <span
-      class="math inline">|a_n-L|&lt;\varepsilon</span>。</strong>
+      <span class="math inline">\displaystyle
+      A</span>：数列真的会无限趋近于它吗？师傅负责出题：“我要误差小于百分之一。”徒弟负责应答：“从这一项往后，每一项都能做到。”师傅又把要求收紧到万分之一、百万分之一，徒弟便给出相应的新起点。</p>
+      <p>师傅手里的题，叫作 <span class="math inline">\displaystyle
+      \varepsilon</span>，是一个任意给定的正数；徒弟交出的答案，叫作
+      <span class="math inline">\displaystyle
+      N</span>，是一个有限的正整数。徒弟不能只挑出几项交差，而要说明：<strong>所有
+      <span class="math inline">\displaystyle n&gt;N</span> 的项，都满足
+      <span class="math inline">\displaystyle
+      |a_n-A|&lt;\varepsilon</span>。</strong>
       出题、找起点、比较大小，用的仍是有限数的运算与不等式。</p>
       <p>真正的本领，不是接住刚才那几道题，而是有一套应答办法：<strong>无论师傅把正的误差要求定得多小，徒弟总能找到一个起点，并保证其后的所有项都过关。</strong>
       这场较量不需要真的进行无穷多轮；能证明每一道可能的题都有答案，就把“无限趋近于
-      <span
-      class="math inline">L</span>”说清楚了。这便是数列极限的定义。</p>
+      <span class="math inline">\displaystyle
+      A</span>”说清楚了。这便是数列极限的定义。</p>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">数列极限 · 数学定义</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">数列极限的定义</span></div>
       <div class="callout-body">
-      <p>设 <span class="math inline">\{a_n\}</span>
-      是一个实数数列，<span class="math inline">L</span>
-      是实数。如果对任意 <span
-      class="math inline">\varepsilon&gt;0</span>，都能找到正整数 <span
-      class="math inline">N</span>，使所有满足 <span
-      class="math inline">n&gt;N</span> 的项都有</p>
+      <p>设 <span class="math inline">\displaystyle \{a_n\}</span>
+      是一个实数数列，<span class="math inline">\displaystyle A</span>
+      是实数。如果对任意 <span class="math inline">\displaystyle
+      \varepsilon&gt;0</span>，都能找到正整数 <span
+      class="math inline">\displaystyle N</span>，使所有满足 <span
+      class="math inline">\displaystyle n&gt;N</span> 的项都有</p>
       <p><span class="math display">
-      |a_n-L|&lt;\varepsilon,
+      |a_n-A|&lt;\varepsilon,
       </span></p>
-      <p>就称数列的极限为 <span class="math inline">L</span>，记为 <span
-      class="math inline">\displaystyle\lim_{n\to\infty}a_n=L</span>。</p>
+      <p>就称数列的极限为 <span class="math inline">\displaystyle
+      A</span>，记为 <span
+      class="math inline">\displaystyle\lim_{n\to\infty}a_n=A</span>。</p>
       </div>
       </div>
-      <div class="callout callout-practice">
-      <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">用定义验证</span></div>
+      <figure class="limit-figure limit-definition-single">
+      <img src="assets/figures/epsilon-N-summary.svg" alt="数列极限的ε–N示意图">
+      <figcaption>
+      数列极限：<span class="math inline">\displaystyle n&gt;N</span>
+      时，所有项都在 <span class="math inline">\displaystyle A</span>
+      上下的 <span class="math inline">\displaystyle \varepsilon</span>
+      误差带内。
+      </figcaption>
+      </figure>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">注</span></div>
       <div class="callout-body">
-      <p>证明 <span
-      class="math inline">\displaystyle\lim_{n\to\infty}\frac1n=0</span>。给定任何
-      <span class="math inline">\varepsilon&gt;0</span>，只需选正整数
-      <span class="math inline">N&gt;1/\varepsilon</span>。当 <span
-      class="math inline">n&gt;N</span> 时，便有 <span
-      class="math inline">|1/n-0|=1/n&lt;\varepsilon</span>。</p>
-      <p>例如要求误差小于 <span class="math inline">0.01</span>，取
-      <span class="math inline">N=100</span> 即可；要求小于 <span
-      class="math inline">0.0001</span>，取 <span
-      class="math inline">N=10000</span>
-      即可。取法不唯一，能保证后续所有项满足要求就行。</p>
+      <p>数列的点可以不规则起伏，不要求单调变化；关键是越过 <span
+      class="math inline">\displaystyle N</span> 后，每一项都落在 <span
+      class="math inline">\displaystyle A</span> 上下的 <span
+      class="math inline">\displaystyle \varepsilon</span>
+      误差带内。点不连线，图中只展示有限项；定义要求控制全部后续项。</p>
       </div>
       </div>
-      <div class="callout callout-practice">
-      <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">再试一次 · 平方的倒数</span></div>
-      <div class="callout-body">
-      <p>证明 <span
-      class="math inline">\displaystyle\lim_{n\to\infty}\frac1{n^2}=0</span>。师傅给出任意误差
+      <div id="chpt1-ex-037" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例1：用定义验证数列极限</span><span
+      class="ex-tags"><span class="ex-tag">极限</span><span
+      class="ex-tag">极限定义</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>用极限的定义证明 <span
+      class="math inline">\displaystyle\lim_{n\to\infty}\frac1n=0</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
       <span
-      class="math inline">\varepsilon&gt;0</span>，徒弟先倒着想：要让
-      <span class="math inline">1/n^2&lt;\varepsilon</span>，只要 <span
-      class="math inline">n&gt;1/\sqrt{\varepsilon}</span>。于是，选一个正整数
-      <span class="math inline">N\ge 1/\sqrt{\varepsilon}</span>。对所有
-      <span class="math inline">n&gt;N</span>，都有</p>
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-037-frame" data-panel="chpt1-ex-037-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-037-frame" data-panel="chpt1-ex-037-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-037-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-037-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>给定 <span
+      class="math inline">\displaystyle\varepsilon&gt;0</span>，从 <span
+      class="math inline">\displaystyle1/n&lt;\varepsilon</span>
+      出发，确定 <span class="math inline">\displaystyle N</span>
+      的取法。</p>
+      </div>
+      <div id="chpt1-ex-037-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>任给 <span
+      class="math inline">\displaystyle\varepsilon&gt;0</span>，选取正整数
+      <span class="math inline">\displaystyle
+      N\ge1/\varepsilon</span>。对任意正整数 <span
+      class="math inline">\displaystyle n&gt;N</span>，都有</p>
       <p><span class="math display">
-      \left|\frac1{n^2}-0\right|=\frac1{n^2}&lt;\varepsilon.
+      \left|\frac1n-0\right|=\frac1n&lt;\frac1N\le\varepsilon.
       </span></p>
-      <p>无论师傅怎样出题，这个办法都能给出合适的起点，因此极限就是
-      <span class="math inline">0</span>。例如，要求误差小于 <span
-      class="math inline">0.01</span>，取 <span
-      class="math inline">N=10</span> 即可；要求小于 <span
-      class="math inline">0.0001</span>，取 <span
-      class="math inline">N=100</span> 即可。与前面的 <span
-      class="math inline">1/n</span>
-      相比，同样的误差要求，这次可以更早满足。</p>
+      <p>因此，按照数列极限的定义，<span
+      class="math inline">\displaystyle\lim_{n\to\infty}1/n=0</span>。</p>
+      <p>例如，要求误差小于 <span
+      class="math inline">\displaystyle0.01</span>，可取 <span
+      class="math inline">\displaystyle N=100</span>；要求小于 <span
+      class="math inline">\displaystyle0.0001</span>，可取 <span
+      class="math inline">\displaystyle
+      N=10000</span>。取法不唯一，能保证其后所有项满足要求即可。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt1-ex-038" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例2：平方的倒数</span><span class="ex-tags"><span
+      class="ex-tag">极限</span><span
+      class="ex-tag">极限定义</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>用极限的定义证明 <span
+      class="math inline">\displaystyle\lim_{n\to\infty}\frac1{n^2}=0</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-038-frame" data-panel="chpt1-ex-038-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-038-frame" data-panel="chpt1-ex-038-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-038-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-038-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>要使 <span
+      class="math inline">\displaystyle1/n^2&lt;\varepsilon</span>，只需
+      <span class="math inline">\displaystyle
+      n&gt;1/\sqrt{\varepsilon}</span>。据此选择正整数 <span
+      class="math inline">\displaystyle N</span>。</p>
+      </div>
+      <div id="chpt1-ex-038-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>任给 <span
+      class="math inline">\displaystyle\varepsilon&gt;0</span>，选取正整数
+      <span class="math inline">\displaystyle
+      N\ge1/\sqrt{\varepsilon}</span>。对任意正整数 <span
+      class="math inline">\displaystyle n&gt;N</span>，都有</p>
+      <p><span class="math display">
+      \left|\frac1{n^2}-0\right|=\frac1{n^2}&lt;\frac1{N^2}\le\varepsilon.
+      </span></p>
+      <p>因此，按照数列极限的定义，<span
+      class="math inline">\displaystyle\lim_{n\to\infty}1/n^2=0</span>。</p>
+      <p>例如，要求误差小于 <span
+      class="math inline">\displaystyle0.01</span>，可取 <span
+      class="math inline">\displaystyle N=10</span>；要求小于 <span
+      class="math inline">\displaystyle0.0001</span>，可取 <span
+      class="math inline">\displaystyle N=100</span>。与 <span
+      class="math inline">\displaystyle1/n</span>
+      相比，同样的误差要求可以更早满足。</p>
+      </div>
+      </div>
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">函数极限 · 数学定义</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">函数极限的定义</span></div>
       <div class="callout-body">
-      <p>设函数 <span class="math inline">f</span> 在 <span
-      class="math inline">x_0</span> 附近、除 <span
-      class="math inline">x_0</span> 本身外有定义。如果对任意 <span
-      class="math inline">\varepsilon&gt;0</span>，都存在 <span
-      class="math inline">\delta&gt;0</span>，使得</p>
+      <p>设 <span class="math inline">\displaystyle A</span>
+      为实数，函数 <span class="math inline">\displaystyle f</span> 在
+      <span class="math inline">\displaystyle x_0</span> 附近、除 <span
+      class="math inline">\displaystyle x_0</span>
+      本身外有定义。如果对任意 <span class="math inline">\displaystyle
+      \varepsilon&gt;0</span>，都存在 <span
+      class="math inline">\displaystyle \delta&gt;0</span>，使得</p>
       <p><span class="math display">
       0&lt;|x-x_0|&lt;\delta
       \quad\Longrightarrow\quad
-      |f(x)-L|&lt;\varepsilon,
+      |f(x)-A|&lt;\varepsilon,
       </span></p>
-      <p>就称 <span class="math inline">f(x)</span> 在 <span
-      class="math inline">x\to x_0</span> 时的极限为 <span
-      class="math inline">L</span>，记作 <span
+      <p>就称 <span class="math inline">\displaystyle f(x)</span> 在
+      <span class="math inline">\displaystyle x\to x_0</span> 时的极限为
+      <span class="math inline">\displaystyle A</span>，记作 <span
       class="math inline">\displaystyle\lim_{x\to
-      x_0}f(x)=L</span>。</p>
-      <p><span class="math inline">\delta</span> 控制输入离 <span
-      class="math inline">x_0</span> 多近，<span
-      class="math inline">\varepsilon</span> 控制输出离 <span
-      class="math inline">L</span> 多近。条件中的 <span
-      class="math inline">0&lt;</span>
+      x_0}f(x)=A</span>。</p>
+      <p><span class="math inline">\displaystyle \delta</span>
+      控制输入离 <span class="math inline">\displaystyle x_0</span>
+      多近，<span class="math inline">\displaystyle \varepsilon</span>
+      控制输出离 <span class="math inline">\displaystyle A</span>
+      多近。条件中的 <span class="math inline">\displaystyle
+      0&lt;</span>
       表示我们研究的是<strong>靠近这个点的过程</strong>，不要求函数在这个点有定义。</p>
       </div>
       </div>
-      <h2 id="第八节-极限的计算">第八节 · 极限的计算</h2>
+      <div class="limit-definition-figures">
+      <figure>
+      <img src="assets/figures/epsilon-delta-summary.svg" alt="函数极限的ε–δ示意图">
+      <figcaption>
+      函数极限：<span class="math inline">\displaystyle 0&lt;\lvert
+      x-x_0\rvert&lt;\delta</span> 时，所有函数值都在误差带内。
+      </figcaption>
+      </figure>
+      </div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">注</span></div>
+      <div class="callout-body">
+      <p>图中实线表示极限高度 <span class="math inline">\displaystyle
+      A</span>，虚线标出 <span class="math inline">\displaystyle
+      \varepsilon</span>
+      误差带和输入界线；绿色点或曲线表示相应的数列项或函数值。示意图只展示一次误差要求，定义要求对每一个
+      <span class="math inline">\displaystyle \varepsilon&gt;0</span>
+      都成立。</p>
+      <p>这里 <span class="math inline">\displaystyle n</span>
+      取正整数，<span class="math inline">\displaystyle x</span>
+      取函数定义域内的值，且 <span class="math inline">\displaystyle
+      x_0</span> 的任意去心邻域内都有定义域中的点。<span
+      class="math inline">\displaystyle N</span> 或 <span
+      class="math inline">\displaystyle \delta</span> 可以依赖于 <span
+      class="math inline">\displaystyle
+      \varepsilon</span>；选定后，须对满足输入条件的所有 <span
+      class="math inline">\displaystyle n</span> 或 <span
+      class="math inline">\displaystyle x</span> 都有效。函数在 <span
+      class="math inline">\displaystyle x_0</span>
+      处的取值不参与这一要求。</p>
+      </div>
+      </div>
+      <div class="limit-language-table">
+      <table id="limit-language-summary">
+      <caption>极限的 <span class="math inline">\displaystyle
+      \varepsilon</span>–<span class="math inline">\displaystyle
+      N</span> / <span class="math inline">\displaystyle
+      \varepsilon</span>–<span class="math inline">\displaystyle
+      \delta</span> 语言</caption>
+      <colgroup>
+      <col style="width: 38%" />
+      <col style="width: 30%" />
+      <col style="width: 30%" />
+      </colgroup>
+      <thead>
+      <tr>
+      <th style="text-align: center;"></th>
+      <th style="text-align: left;">数列</th>
+      <th style="text-align: left;">函数</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td style="text-align: center;"><strong>图像</strong></td>
+      <td
+      style="text-align: left;"><img src="assets/figures/epsilon-N-summary.svg" alt="一列绿色离散点不规则起伏并趋近极限A，水平虚线标出A减ε与A加ε，竖虚线为N，N右侧的所有项都落在误差带内"></td>
+      <td
+      style="text-align: left;"><img src="assets/figures/epsilon-delta-summary.svg" alt="一条弯曲的函数曲线穿过极限高度A，水平虚线标出ε误差带，竖虚线标出x零两侧的δ范围，去心邻域内绿色曲线全部落在误差带内，中心为空心点"></td>
+      </tr>
+      <tr>
+      <td style="text-align: center;"><strong>中文</strong></td>
+      <td style="text-align: left;">对任意 <span
+      class="math inline">\displaystyle \varepsilon&gt;0</span>，存在
+      <span class="math inline">\displaystyle N&gt;0</span>，使得当
+      <span class="math inline">\displaystyle n&gt;N</span> 时，都有
+      <span class="math inline">\displaystyle \lvert
+      a_n-A\rvert&lt;\varepsilon</span>。</td>
+      <td style="text-align: left;">对任意 <span
+      class="math inline">\displaystyle \varepsilon&gt;0</span>，存在
+      <span class="math inline">\displaystyle \delta&gt;0</span>，使得当
+      <span class="math inline">\displaystyle 0&lt;\lvert
+      x-x_0\rvert&lt;\delta</span> 时，都有 <span
+      class="math inline">\displaystyle \lvert
+      f(x)-A\rvert&lt;\varepsilon</span>。</td>
+      </tr>
+      <tr>
+      <td style="text-align: center;"><strong>英文</strong></td>
+      <td style="text-align: left;">For all <span
+      class="math inline">\displaystyle \varepsilon&gt;0</span>, there
+      exists <span class="math inline">\displaystyle N&gt;0</span> such
+      that <span class="math inline">\displaystyle \lvert
+      a_n-A\rvert&lt;\varepsilon</span> if <span
+      class="math inline">\displaystyle n&gt;N</span>.</td>
+      <td style="text-align: left;">For all <span
+      class="math inline">\displaystyle \varepsilon&gt;0</span>, there
+      exists <span class="math inline">\displaystyle \delta&gt;0</span>
+      such that <span class="math inline">\displaystyle \lvert
+      f(x)-A\rvert&lt;\varepsilon</span> if <span
+      class="math inline">\displaystyle 0&lt;\lvert
+      x-x_0\rvert&lt;\delta</span>.</td>
+      </tr>
+      <tr>
+      <td style="text-align: center;"><strong>数学</strong></td>
+      <td style="text-align: left;"><span
+      class="math inline">\displaystyle\begin{gathered}\forall\varepsilon&gt;0,\
+      \exists N&gt;0,\ \text{s.t.}\\\lvert a_n-A\rvert&lt;\varepsilon\
+      \text{if }n&gt;N.\end{gathered}</span></td>
+      <td style="text-align: left;"><span
+      class="math inline">\displaystyle\begin{gathered}\forall\varepsilon&gt;0,\
+      \exists\delta&gt;0,\ \text{s.t.}\\\lvert
+      f(x)-A\rvert&lt;\varepsilon\\\text{if }0&lt;\lvert
+      x-x_0\rvert&lt;\delta.\end{gathered}</span></td>
+      </tr>
+      </tbody>
+      </table>
+      </div>
+      <div class="callout callout-practice">
+      <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">圆面积的极限</span></div>
+      <div class="callout-body">
+      <p>回看大 Boss 对应的面积数列 <span
+      class="math inline">\displaystyle A_n=\dfrac
+      n2\sin\dfrac{2\pi}{n}</span>。我们猜测它趋向 <span
+      class="math inline">\displaystyle
+      \pi</span>。若直接用定义证明，就要对任意 <span
+      class="math inline">\displaystyle \varepsilon&gt;0</span>，找到
+      <span class="math inline">\displaystyle N&gt;0</span>，保证所有
+      <span class="math inline">\displaystyle n&gt;N</span> 都满足</p>
+      <p><span class="math display">
+      \left|\frac n2\sin\frac{2\pi}{n}-\pi\right|&lt;\varepsilon.
+      </span></p>
+      <p>若改看函数 <span class="math inline">\displaystyle f(x)=\sin
+      x/x</span>，要证明其在 <span class="math inline">\displaystyle
+      x\to0</span> 时趋向 <span class="math inline">\displaystyle
+      1</span>，就要找到 <span class="math inline">\displaystyle
+      \delta&gt;0</span>，保证</p>
+      <p><span class="math display">
+      0&lt;|x|&lt;\delta\quad\Longrightarrow\quad
+      \left|\frac{\sin x}{x}-1\right|&lt;\varepsilon.
+      </span></p>
+      <p><strong>困难在于：我们目前还没有合适的不等式来控制这两种误差，因而暂时难以给出满足要求的
+      <span class="math inline">\displaystyle N</span> 或 <span
+      class="math inline">\displaystyle \delta</span>。</strong></p>
+      </div>
+      </div>
+      <p>若把从定义出发逐一控制误差看作<strong>普攻</strong>，接下来就要学习一套<strong>连招</strong>：把已经掌握的极限组合起来，求出新极限。这套连续技，就是极限的四则运算。它也有使用条件；先学会出招，再回头试试大
+      Boss。</p>
+      <h2 id="第八节-极限的四则运算">第八节 · 极限的四则运算</h2>
+      <div class="limit-arithmetic-section">
       <p>定义让我们说清了什么叫“趋近”，但每遇到一个新式子，都重新与师傅较量一番，未免费力。能不能借助已经知道的极限，算出更多极限？<strong>四则运算，就是把简单结果组合起来的基本招式。</strong></p>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">四则运算法则</span></div>
       <div class="callout-body">
+      <p><span
+      class="law-subheading"><strong>数列极限的四则运算法则</strong></span></p>
       <p>若两个数列分别趋向<strong>有限数</strong> <span
-      class="math inline">L,M</span>，即 <span
-      class="math inline">a_n\to L</span>、<span
-      class="math inline">b_n\to M</span>，则</p>
+      class="math inline">\displaystyle A,B</span>，即 <span
+      class="math inline">\displaystyle a_n\to A</span>、<span
+      class="math inline">\displaystyle b_n\to B</span>，则</p>
       <p><span class="math display">
       \begin{aligned}
-      \lim_{n\to\infty}(a_n+b_n)&amp;=L+M,\\
-      \lim_{n\to\infty}(a_n-b_n)&amp;=L-M,\\
-      \lim_{n\to\infty}(a_nb_n)&amp;=LM,\\
-      \lim_{n\to\infty}\frac{a_n}{b_n}&amp;=\frac LM\qquad(M\ne0).
+      &amp;\lim_{n\to\infty}(a_n+b_n)=A+B,\\
+      &amp;\lim_{n\to\infty}(a_n-b_n)=A-B,\\
+      &amp;\lim_{n\to\infty}(a_nb_n)=AB,\\
+      &amp;\lim_{n\to\infty}\frac{a_n}{b_n}=\frac AB\qquad(B\ne0).
       \end{aligned}
       </span></p>
-      <p>最后一条要求分母的极限不为零，此时分母从某一项起也不为零。常数
-      <span class="math inline">c</span> 的极限就是 <span
-      class="math inline">c</span>，所以还可得到 <span
-      class="math inline">\lim_{n\to\infty}(ca_n)=cL</span>。</p>
-      <p><strong>函数极限也遵守同样的法则。</strong> 当 <span
-      class="math inline">x\to x_0</span> 时，若 <span
-      class="math inline">f(x)\to L</span>、<span
-      class="math inline">g(x)\to M</span>，则和、差、积分别趋向 <span
-      class="math inline">L+M,L-M,LM</span>；当 <span
-      class="math inline">M\ne0</span> 时，商趋向 <span
-      class="math inline">L/M</span>。各个极限必须对应同一个趋近过程。这些法则都可以从极限定义推出。</p>
-      </div>
-      </div>
-      <div class="callout callout-practice">
-      <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">加减与乘法</span></div>
-      <div class="callout-body">
-      <p>已知 <span class="math inline">1/n\to0</span>、<span
-      class="math inline">1/n^2\to0</span>，便可以逐项计算：</p>
+      <p><span
+      class="law-subheading"><strong>函数极限的四则运算法则</strong></span></p>
+      <p>若同一趋近过程 <span class="math inline">\displaystyle x\to
+      x_0</span> 下，两个有限极限同时存在：</p>
       <p><span class="math display">
-      \lim_{n\to\infty}\left(3-\frac2n+\frac1{n^2}\right)
-      =3-2\times0+0=3.
+      \lim_{x\to x_0}f(x)=A,\qquad
+      \lim_{x\to x_0}g(x)=B,
       </span></p>
-      <p>再把两个式子相乘：</p>
+      <p>则</p>
       <p><span class="math display">
-      \lim_{n\to\infty}\left(2+\frac1n\right)\left(3-\frac1n\right)
-      =(2+0)(3-0)=6.
+      \begin{aligned}
+      &amp;\lim_{x\to x_0}\bigl(f(x)+g(x)\bigr)=A+B,\\
+      &amp;\lim_{x\to x_0}\bigl(f(x)-g(x)\bigr)=A-B,\\
+      &amp;\lim_{x\to x_0}\bigl(f(x)g(x)\bigr)=AB,\\
+      &amp;\lim_{x\to x_0}\frac{f(x)}{g(x)}=\frac AB\qquad(B\ne0).
+      \end{aligned}
       </span></p>
-      <p>不必先展开乘积，只要两部分的极限都已知，就可以直接使用乘法法则。</p>
       </div>
       </div>
-      <div class="callout callout-practice">
-      <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">商 · 先把式子整理好</span></div>
+      <div class="callout callout-warning">
+      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">使用四则运算法则的前提</span></div>
       <div class="callout-body">
+      <p><strong>数列和函数的上述运算法则，都要求两个极限 <span
+      class="math inline">\displaystyle A</span>、<span
+      class="math inline">\displaystyle B</span>
+      同时存在，且都是有限数。只要有一个不存在，就不能直接使用上述法则。</strong></p>
+      <p><strong>需要特别小心：使用除法时，还要求分母的极限 <span
+      class="math inline">\displaystyle B\ne0</span>。</strong></p>
+      <p><strong>分母的极限为零，不能直接使用商法则。</strong> 例如，当
+      <span class="math inline">\displaystyle x\to0</span>
+      时，下面两式的分子、分母都趋向零，但在 <span
+      class="math inline">\displaystyle x\ne0</span> 时，</p>
+      <p><span class="math display">
+      \frac{x}{x}=1,\qquad \frac{x^2}{x}=x.
+      </span></p>
+      <p>它们的极限分别是 <span class="math inline">\displaystyle
+      1</span> 和 <span class="math inline">\displaystyle
+      0</span>。所以，“分子、分母都趋于零”还不能告诉我们商趋向什么，更不能把
+      <span class="math inline">\displaystyle 0/0</span>
+      当成答案。遇到这种情形，要先化简，或寻找其他方法。</p>
+      </div>
+      </div>
+      <div id="chpt1-ex-025" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例3：数列的四则运算</span><span
+      class="ex-tags"><span class="ex-tag">极限</span><span
+      class="ex-tag">四则运算</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>已知 <span class="math inline">\displaystyle
+      \lim_{n\to\infty}1/n=0</span>、<span
+      class="math inline">\displaystyle
+      \lim_{n\to\infty}1/n^2=0</span>，求下列极限：</p>
+      <ol type="1">
+      <li><span
+      class="math inline">\displaystyle\lim_{n\to\infty}\left(3-\frac2n+\frac1{n^2}\right)</span>；</li>
+      <li><span
+      class="math inline">\displaystyle\lim_{n\to\infty}\left(2+\frac1n\right)\left(3-\frac1n\right)</span>。</li>
+      </ol>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-025-frame" data-panel="chpt1-ex-025-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-025-frame" data-panel="chpt1-ex-025-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-025-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-025-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>分别考察各部分的极限，再使用加减、常数倍和乘法法则。</p>
+      </div>
+      <div id="chpt1-ex-025-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>由已知的两个极限及四则运算法则，</p>
+      <p><span class="math display">
+      \lim_{n\to\infty}\left(3-\frac2n+\frac1{n^2}\right)=3-2\times0+0=3.
+      </span></p>
+      <p>两因子的极限都存在且有限，所以</p>
+      <p><span class="math display">
+      \lim_{n\to\infty}\left(2+\frac1n\right)\left(3-\frac1n\right)=(2+0)(3-0)=6.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt1-ex-026" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例4：数列的四则运算</span><span
+      class="ex-tags"><span class="ex-tag">极限</span><span
+      class="ex-tag">四则运算</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
       <p>求 <span
-      class="math inline">\displaystyle\lim_{n\to\infty}\frac{2n+1}{n+3}</span>。分子、分母都不断增大，不能把它们当作两个有限极限直接相除。先将分子、分母同除以
-      <span class="math inline">n</span>：</p>
+      class="math inline">\displaystyle\lim_{n\to\infty}\frac{2n+1}{n+3}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-026-frame" data-panel="chpt1-ex-026-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-026-frame" data-panel="chpt1-ex-026-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-026-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-026-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>将分子、分母同除以 <span class="math inline">\displaystyle
+      n</span>，再检查商法则的条件。</p>
+      </div>
+      <div id="chpt1-ex-026-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>分子、分母都没有有限极限，不能对原式直接使用商法则。将分子、分母同除以
+      <span class="math inline">\displaystyle n</span>：</p>
       <p><span class="math display">
       \lim_{n\to\infty}\frac{2n+1}{n+3}
       =\lim_{n\to\infty}\frac{2+1/n}{1+3/n}
       =\frac{2+0}{1+0}=2.
       </span></p>
-      <p>整理后，分母趋向 <span
-      class="math inline">1\ne0</span>，商法则才用得上。</p>
+      <p>整理后，分子极限为 <span class="math inline">\displaystyle
+      2</span>，分母极限为 <span class="math inline">\displaystyle
+      1\ne0</span>，满足商法则的条件。</p>
       </div>
       </div>
-      <div class="callout callout-practice">
-      <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">函数 · 同样的招式</span></div>
-      <div class="callout-body">
-      <p>当 <span class="math inline">x\to2</span> 时，<span
-      class="math inline">x\to2</span>，于是</p>
+      </div>
+      </div>
+      <div id="chpt1-ex-027" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例5：函数的四则运算</span><span
+      class="ex-tags"><span class="ex-tag">极限</span><span
+      class="ex-tag">四则运算</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求 <span
+      class="math inline">\displaystyle\lim_{x\to2}\frac{x^2+1}{x+1}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-027-frame" data-panel="chpt1-ex-027-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-027-frame" data-panel="chpt1-ex-027-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-027-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-027-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>从 <span class="math inline">\displaystyle
+      \lim_{x\to2}x=2</span> 出发，依次使用乘法、加法和商法则。</p>
+      </div>
+      <div id="chpt1-ex-027-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>当 <span class="math inline">\displaystyle x\to2</span>
+      时，</p>
       <p><span class="math display">
-      \lim_{x\to2}\frac{x^2+1}{x+1}
-      =\frac{2^2+1}{2+1}=\frac53.
+      \lim_{x\to2}(x^2+1)=2^2+1=5,\qquad
+      \lim_{x\to2}(x+1)=2+1=3\ne0.
       </span></p>
-      <p>这里依次用了乘法、加法和除法法则。看起来只是“代入”，背后却有条件：分子、分母的极限都存在，而且分母的极限
-      <span class="math inline">3</span> 不为零。</p>
-      </div>
-      </div>
-      <div class="callout callout-warning">
-      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">分母趋于零时</span></div>
-      <div class="callout-body">
-      <p><strong>分母的极限为零，不能直接使用商法则。</strong> 例如，当
-      <span class="math inline">x\to0</span>
-      时，下面两式的分子、分母都趋向零，但在 <span
-      class="math inline">x\ne0</span> 时，</p>
+      <p>两个极限同时存在且有限，分母极限不为零，因此</p>
       <p><span class="math display">
-      \frac{x}{x}=1,\qquad \frac{x^2}{x}=x.
+      \lim_{x\to2}\frac{x^2+1}{x+1}=\frac53.
       </span></p>
-      <p>它们的极限分别是 <span class="math inline">1</span> 和 <span
-      class="math inline">0</span>。所以，“分子、分母都趋于零”还不能告诉我们商趋向什么，更不能把
-      <span class="math inline">0/0</span>
-      当成答案。遇到这种情形，要先化简，或寻找其他方法。</p>
       </div>
       </div>
-      <h2 id="第九节-两边夹定理">第九节 · 两边夹定理</h2>
+      </div>
+      </div>
+      <div id="chpt1-ex-028" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例6：函数的四则运算</span><span
+      class="ex-tags"><span class="ex-tag">极限</span><span
+      class="ex-tag">四则运算</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求 <span
+      class="math inline">\displaystyle\lim_{x\to1}\frac{x^3-1}{x^2-1}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-028-frame" data-panel="chpt1-ex-028-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-028-frame" data-panel="chpt1-ex-028-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-028-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-028-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>先检查原式是否满足商法则的条件，再将分子、分母因式分解。</p>
+      </div>
+      <div id="chpt1-ex-028-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>当 <span class="math inline">\displaystyle x\to1</span>
+      时，分子、分母的极限都为 <span
+      class="math inline">\displaystyle0</span>，不能直接使用商法则。对
+      <span class="math inline">\displaystyle x\ne1</span> 且充分靠近
+      <span class="math inline">\displaystyle 1</span> 的 <span
+      class="math inline">\displaystyle x</span>，</p>
+      <p><span class="math display">
+      \frac{x^3-1}{x^2-1}
+      =\frac{(x-1)(x^2+x+1)}{(x-1)(x+1)}
+      =\frac{x^2+x+1}{x+1}.
+      </span></p>
+      <p>化简后，分子极限为 <span class="math inline">\displaystyle
+      3</span>，分母极限为 <span class="math inline">\displaystyle
+      2\ne0</span>，因此</p>
+      <p><span class="math display">
+      \lim_{x\to1}\frac{x^3-1}{x^2-1}=\frac{1+1+1}{1+1}=\frac32.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt1-ex-029" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例7：函数的四则运算</span><span
+      class="ex-tags"><span class="ex-tag">极限</span><span
+      class="ex-tag">四则运算</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求 <span
+      class="math inline">\displaystyle\lim_{x\to4}\frac{\sqrt{x}-2}{x-4}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-029-frame" data-panel="chpt1-ex-029-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-029-frame" data-panel="chpt1-ex-029-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-029-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-029-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>将分子、分母同乘 <span
+      class="math inline">\displaystyle\sqrt{x}+2</span>，先消去导致分母趋于零的因子。</p>
+      </div>
+      <div id="chpt1-ex-029-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>原式的分子、分母都趋于 <span class="math inline">\displaystyle
+      0</span>，不能直接使用商法则。对 <span
+      class="math inline">\displaystyle x\ge0</span> 且 <span
+      class="math inline">\displaystyle x\ne4</span>，有</p>
+      <p><span class="math display">
+      \frac{\sqrt{x}-2}{x-4}
+      =\frac{x-4}{(x-4)(\sqrt{x}+2)}
+      =\frac1{\sqrt{x}+2}.
+      </span></p>
+      <p>由</p>
+      <p><span class="math display">
+      |\sqrt{x}-2|=\frac{|x-4|}{\sqrt{x}+2}\le\frac{|x-4|}{2},
+      </span></p>
+      <p>可知 <span class="math inline">\displaystyle x\to4</span> 时
+      <span
+      class="math inline">\displaystyle\sqrt{x}\to2</span>。化简后的分母极限为
+      <span class="math inline">\displaystyle4\ne0</span>，所以</p>
+      <p><span class="math display">
+      \lim_{x\to4}\frac{\sqrt{x}-2}{x-4}=\frac1{2+2}=\frac14.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-caution">
+      <div class="callout-header callout-header-caution"><span class="callout-icon"></span><span class="callout-label">再试大 Boss</span></div>
+      <div class="callout-body">
+      <p>先试数列的四则运算。面积数列可以写成</p>
+      <p><span class="math display">
+      A_n=\frac n2\sin\frac{2\pi}{n}
+      =\pi\frac{\sin(2\pi/n)}{2\pi/n}.
+      </span></p>
+      <p>第一种写法中，<span class="math inline">\displaystyle
+      n/2</span>
+      没有有限极限，不能直接使用前面的乘法法则；第二种写法中，分子、分母都趋于
+      <span class="math inline">\displaystyle
+      0</span>，又不能直接使用商法则。</p>
+      <p>再试函数的商法则。我们知道</p>
+      <p><span class="math display">
+      \lim_{x\to0}\sin x=0,\qquad \lim_{x\to0}x=0.
+      </span></p>
+      <p>两个极限都存在，但<strong>分母的极限是 <span
+      class="math inline">\displaystyle 0</span>，不能直接用商法则求
+      <span class="math inline">\displaystyle \lim_{x\to0}\sin
+      x/x</span></strong>。这里是分母趋于零，不是允许把 <span
+      class="math inline">\displaystyle x=0</span> 代入；<span
+      class="math inline">\displaystyle 0/0</span>
+      也不是一个极限值。</p>
+      <p><strong>这套连招暂时还拿不下大
+      Boss：仅凭上述四则运算法则，无法直接求出这里的极限。</strong>
+      这不表示极限不存在，而是提醒我们还需要新的估计方法。</p>
+      </div>
+      </div>
+      </div>
+      <h2 id="第九节-七十二变换元法">第九节 · 七十二变—换元法</h2>
+      <p>同一个式子，换一个变量来写，结构可能更清楚。<strong>换元法</strong>就是给式子中反复出现或较复杂的部分取一个新名字，再用新变量计算。</p>
+      <div id="chpt1-ex-031" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例8：极限的换元法</span><span
+      class="ex-tags"><span class="ex-tag">极限</span><span
+      class="ex-tag">换元法</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>用换元法计算 <span
+      class="math inline">\displaystyle\lim_{x\to2}\frac{x^2-4}{x-2}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-031-frame" data-panel="chpt1-ex-031-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-031-frame" data-panel="chpt1-ex-031-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-031-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-031-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>令 <span class="math inline">\displaystyle t=x-2</span>，则
+      <span class="math inline">\displaystyle x=t+2</span>。先写出 <span
+      class="math inline">\displaystyle t</span> 的趋向。</p>
+      </div>
+      <div id="chpt1-ex-031-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>令 <span class="math inline">\displaystyle t=x-2</span>，则
+      <span class="math inline">\displaystyle x=t+2</span>，且 <span
+      class="math inline">\displaystyle x\to2</span> 时 <span
+      class="math inline">\displaystyle t\to0</span>。在 <span
+      class="math inline">\displaystyle t\ne0</span> 时，</p>
+      <p><span class="math display">
+      \frac{x^2-4}{x-2}
+      =\frac{(t+2)^2-4}{t}
+      =t+4.
+      </span></p>
+      <p>因此</p>
+      <p><span class="math display">
+      \lim_{x\to2}\frac{x^2-4}{x-2}
+      =\lim_{t\to0}(t+4)=4.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt1-ex-032" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例9：极限的换元法</span><span
+      class="ex-tags"><span class="ex-tag">极限</span><span
+      class="ex-tag">换元法</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>用换元法计算 <span
+      class="math inline">\displaystyle\lim_{x\to0}\frac{(1+3x)^2-1}{x}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-032-frame" data-panel="chpt1-ex-032-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-032-frame" data-panel="chpt1-ex-032-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-032-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-032-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>令 <span class="math inline">\displaystyle
+      t=3x</span>，注意原分母 <span class="math inline">\displaystyle
+      x=t/3</span>。</p>
+      </div>
+      <div id="chpt1-ex-032-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>令 <span class="math inline">\displaystyle t=3x</span>，则
+      <span class="math inline">\displaystyle x=t/3</span>，且 <span
+      class="math inline">\displaystyle x\to0</span> 时 <span
+      class="math inline">\displaystyle t\to0</span>。对 <span
+      class="math inline">\displaystyle t\ne0</span>，</p>
+      <p><span class="math display">
+      \frac{(1+3x)^2-1}{x}
+      =\frac{(1+t)^2-1}{t/3}
+      =3\frac{2t+t^2}{t}=3(2+t).
+      </span></p>
+      <p>故</p>
+      <p><span class="math display">
+      \lim_{x\to0}\frac{(1+3x)^2-1}{x}
+      =\lim_{t\to0}3(2+t)=6.
+      </span></p>
+      <p>分母由 <span class="math inline">\displaystyle x</span> 变为
+      <span class="math inline">\displaystyle t/3</span>，所以系数 <span
+      class="math inline">\displaystyle3</span> 不能遗漏。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt1-ex-033" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例10：极限的换元法</span><span
+      class="ex-tags"><span class="ex-tag">极限</span><span
+      class="ex-tag">换元法</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>用换元法计算 <span
+      class="math inline">\displaystyle\lim_{x\to0}\frac{\sqrt{1+x}-1}{x}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-033-frame" data-panel="chpt1-ex-033-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-033-frame" data-panel="chpt1-ex-033-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-033-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-033-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>令 <span class="math inline">\displaystyle
+      t=\sqrt{1+x}-1</span>，由 <span
+      class="math inline">\displaystyle\sqrt{1+x}=t+1</span> 写出 <span
+      class="math inline">\displaystyle x</span>。</p>
+      </div>
+      <div id="chpt1-ex-033-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>令 <span class="math inline">\displaystyle
+      t=\sqrt{1+x}-1</span>。因为</p>
+      <p><span class="math display">
+      |t|=\frac{|x|}{\sqrt{1+x}+1}\le|x|\qquad(x&gt;-1),
+      </span></p>
+      <p>所以 <span class="math inline">\displaystyle x\to0</span> 时
+      <span class="math inline">\displaystyle t\to0</span>。又有</p>
+      <p><span class="math display">
+      x=(t+1)^2-1=t(t+2).
+      </span></p>
+      <p>在充分靠近 <span class="math inline">\displaystyle0</span>
+      的去心邻域内，<span class="math inline">\displaystyle x\ne0</span>
+      等价于 <span class="math inline">\displaystyle
+      t\ne0</span>，于是</p>
+      <p><span class="math display">
+      \frac{\sqrt{1+x}-1}{x}
+      =\frac{t}{t(t+2)}=\frac1{t+2}.
+      </span></p>
+      <p>因此</p>
+      <p><span class="math display">
+      \lim_{x\to0}\frac{\sqrt{1+x}-1}{x}
+      =\lim_{t\to0}\frac1{t+2}=\frac12.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
       <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">再找一个对手</span></div>
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">换元法的用处</span></div>
       <div class="callout-body">
-      <p>定义告诉我们什么叫趋近，却没有自动告诉我们怎样算。直接控制一个复杂表达式的误差，可能很费力。如果能找到两个容易研究的量，把它夹在中间，会怎样？</p>
-      <p>圆的面积正好提供了线索：内接多边形从里面逼近，我们还可以画一个<strong>外接正多边形</strong>，让每条边都与圆相切，从外面围住它。如果内外两边最终到达同一个数，中间的圆面积就无处可去。这便是两边夹的思想。</p>
+      <p>后面计算极限、研究复合函数，以及学习求导和积分时，还会反复用到换元法。换元时，要把表达式和变量的趋向一起改写。</p>
       </div>
       </div>
-      <figure class="limit-figure">
-      <img src="assets/figures/circle-sandwich.svg" alt="正四边形、正八边形、正十六边形从内外夹住同一个圆">
-      <figcaption>
-      绿色为内接多边形，金色为外接多边形，圆被夹在两者之间。
-      </figcaption>
-      </figure>
+      <h2 id="第十节-两边夹定理">第十节 · 两边夹定理</h2>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">从定义证明定理</span></div>
+      <div class="callout-body">
+      <p><strong>两边夹定理可以直接根据极限的定义证明。</strong>
+      这是本书为数不多的定理证明之一：我们分别写出数列和函数的证明，看看定义怎样成为推理的工具。</p>
+      </div>
+      </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">两边夹定理</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">数列的两边夹定理</span></div>
       <div class="callout-body">
-      <p>若从某一项开始有 <span class="math inline">l_n\le a_n\le
-      u_n</span>，且</p>
+      <p>设 <span class="math inline">\displaystyle\{a_n\}</span>、<span
+      class="math inline">\displaystyle\{b_n\}</span>、<span
+      class="math inline">\displaystyle\{c_n\}</span> 为实数数列。若存在
+      <span class="math inline">\displaystyle N_0&gt;0</span>，使得</p>
       <p><span class="math display">
-      \lim_{n\to\infty}l_n=\lim_{n\to\infty}u_n=L,
+      a_n\le b_n\le c_n,\qquad \forall n&gt;N_0,
       </span></p>
-      <p>则 <span
-      class="math inline">\displaystyle\lim_{n\to\infty}a_n=L</span>。它也叫<strong>夹逼定理</strong>。</p>
-      <p>对函数同样成立：若在 <span class="math inline">x_0</span>
-      附近（可除去 <span class="math inline">x_0</span>）有 <span
-      class="math inline">l(x)\le f(x)\le u(x)</span>，且两侧函数在
-      <span class="math inline">x\to x_0</span> 时都趋向 <span
-      class="math inline">L</span>，则中间的函数也趋向 <span
-      class="math inline">L</span>。</p>
-      <p>理由很直接：给定任意误差，两侧最终都进入 <span
-      class="math inline">(L-\varepsilon,L+\varepsilon)</span>，夹在中间的量也只能留在其中。<strong>两边必须趋向同一个数。</strong></p>
+      <p>且</p>
+      <p><span class="math display">
+      \lim_{n\to\infty}a_n=\lim_{n\to\infty}c_n=A\in\mathbb R,
+      </span></p>
+      <p>则 <span class="math inline">\displaystyle\{b_n\}</span>
+      收敛，且</p>
+      <p><span class="math display">
+      \boxed{\lim_{n\to\infty}b_n=A.}
+      </span></p>
+      <div class="callout-fold" data-label="数列的两边夹定理证明">
+      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 数列的两边夹定理证明</button>
+      <div class="callout-fold-body" hidden>
+      <p>任取 <span
+      class="math inline">\displaystyle\varepsilon&gt;0</span>。由 <span
+      class="math inline">\displaystyle\lim_{n\to\infty}a_n=A</span>，存在
+      <span class="math inline">\displaystyle N_1&gt;0</span>，使所有
+      <span class="math inline">\displaystyle n&gt;N_1</span> 都满足
+      <span
+      class="math inline">\displaystyle|a_n-A|&lt;\varepsilon</span>；由
+      <span
+      class="math inline">\displaystyle\lim_{n\to\infty}c_n=A</span>，存在
+      <span class="math inline">\displaystyle N_2&gt;0</span>，使所有
+      <span class="math inline">\displaystyle n&gt;N_2</span> 都满足
+      <span
+      class="math inline">\displaystyle|c_n-A|&lt;\varepsilon</span>。</p>
+      <p>取 <span class="math inline">\displaystyle
+      N=\max\{N_0,N_1,N_2\}</span>。对任意正整数 <span
+      class="math inline">\displaystyle
+      n&gt;N</span>，上述三个条件同时成立，故</p>
+      <p><span class="math display">
+      A-\varepsilon&lt;a_n\le b_n\le c_n&lt;A+\varepsilon.
+      </span></p>
+      <p>于是 <span
+      class="math inline">\displaystyle|b_n-A|&lt;\varepsilon</span>。由于
+      <span class="math inline">\displaystyle\varepsilon&gt;0</span>
+      任意，按照数列极限的定义，<span
+      class="math inline">\displaystyle\lim_{n\to\infty}b_n=A</span>。证毕。</p>
+      </div></div>
       </div>
       </div>
-      <div class="callout callout-practice">
-      <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">先试一招</span></div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">函数的两边夹定理</span></div>
       <div class="callout-body">
-      <p>因为 <span class="math inline">-1\le(-1)^n\le1</span>，所以</p>
+      <p>设 <span class="math inline">\displaystyle f,g,h</span> 在
+      <span class="math inline">\displaystyle x_0</span>
+      的某个去心邻域内都有定义。若存在 <span
+      class="math inline">\displaystyle\delta_0&gt;0</span>，使得</p>
+      <p><span class="math display">
+      0&lt;|x-x_0|&lt;\delta_0\quad\Longrightarrow\quad f(x)\le g(x)\le
+      h(x),
+      </span></p>
+      <p>且</p>
+      <p><span class="math display">
+      \lim_{x\to x_0}f(x)=\lim_{x\to x_0}h(x)=A\in\mathbb R,
+      </span></p>
+      <p>则 <span class="math inline">\displaystyle g</span> 在 <span
+      class="math inline">\displaystyle x\to x_0</span>
+      时的极限存在，且</p>
+      <p><span class="math display">
+      \boxed{\lim_{x\to x_0}g(x)=A.}
+      </span></p>
+      <div class="callout-fold" data-label="函数的两边夹定理证明">
+      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 函数的两边夹定理证明</button>
+      <div class="callout-fold-body" hidden>
+      <p>任取 <span
+      class="math inline">\displaystyle\varepsilon&gt;0</span>。由 <span
+      class="math inline">\displaystyle\lim_{x\to
+      x_0}f(x)=A</span>，存在 <span
+      class="math inline">\displaystyle\delta_1&gt;0</span>，使得 <span
+      class="math inline">\displaystyle0&lt;|x-x_0|&lt;\delta_1</span>
+      时有 <span
+      class="math inline">\displaystyle|f(x)-A|&lt;\varepsilon</span>；由
+      <span class="math inline">\displaystyle\lim_{x\to
+      x_0}h(x)=A</span>，存在 <span
+      class="math inline">\displaystyle\delta_2&gt;0</span>，使得 <span
+      class="math inline">\displaystyle0&lt;|x-x_0|&lt;\delta_2</span>
+      时有 <span
+      class="math inline">\displaystyle|h(x)-A|&lt;\varepsilon</span>。</p>
+      <p>取 <span
+      class="math inline">\displaystyle\delta=\min\{\delta_0,\delta_1,\delta_2\}&gt;0</span>。对任意满足
+      <span
+      class="math inline">\displaystyle0&lt;|x-x_0|&lt;\delta</span> 的
+      <span class="math inline">\displaystyle
+      x</span>，上述三个条件同时成立，故</p>
+      <p><span class="math display">
+      A-\varepsilon&lt;f(x)\le g(x)\le h(x)&lt;A+\varepsilon.
+      </span></p>
+      <p>于是 <span
+      class="math inline">\displaystyle|g(x)-A|&lt;\varepsilon</span>。由于
+      <span class="math inline">\displaystyle\varepsilon&gt;0</span>
+      任意，按照函数极限的定义，<span
+      class="math inline">\displaystyle\lim_{x\to
+      x_0}g(x)=A</span>。证毕。</p>
+      </div></div>
+      </div>
+      </div>
+      <div id="chpt1-ex-030" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例11：数列的两边夹定理</span><span
+      class="ex-tags"><span class="ex-tag">极限</span><span
+      class="ex-tag">两边夹定理</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求 <span
+      class="math inline">\displaystyle\lim_{n\to\infty}\frac{(-1)^n}{n}</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-030-frame" data-panel="chpt1-ex-030-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-030-frame" data-panel="chpt1-ex-030-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-030-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-030-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>由 <span
+      class="math inline">\displaystyle-1\le(-1)^n\le1</span>，给出这个数列的上下界。</p>
+      </div>
+      <div id="chpt1-ex-030-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>对每个正整数 <span class="math inline">\displaystyle
+      n</span>，有</p>
       <p><span class="math display">
       -\frac1n\le\frac{(-1)^n}{n}\le\frac1n.
       </span></p>
-      <p>两边都趋向零，中间也趋向零。中间的数列虽然左右摆动，仍然可以有极限；每次摆动的范围正在缩小。</p>
-      </div>
-      </div>
-      <p>要计算多边形面积的极限，我们需要 <span
-      class="math inline">\displaystyle\lim_{x\to0}\sin
-      x/x</span>。先用纯粹的<strong>长度比较</strong>建立不等式，不借用圆或扇形的面积公式。</p>
-      <p>在单位圆上取夹角为 <span class="math inline">2t</span>
-      的两个半径，<span
-      class="math inline">0&lt;t&lt;\pi/2</span>。对应的弦长是 <span
-      class="math inline">2\sin t</span>，圆弧长按弧度定义是 <span
-      class="math inline">2t</span>，两个端点处的切线相交，外侧两段切线的总长是
-      <span class="math inline">2\tan
-      t</span>。弦最短，圆弧不超过外侧切线折线，因此</p>
+      <p>由于 <span
+      class="math inline">\displaystyle\lim_{n\to\infty}(-1/n)=\lim_{n\to\infty}(1/n)=0</span>，由数列的两边夹定理，</p>
       <p><span class="math display">
-      2\sin t\le2t\le2\tan t,
-      \qquad\text{即}\qquad \sin t\le t\le\tan t.
+      \boxed{\lim_{n\to\infty}\frac{(-1)^n}{n}=0.}
       </span></p>
-      <figure class="limit-figure arc-figure">
-      <img src="assets/figures/arc-length-bounds.svg" alt="单位圆中蓝色弦PQ、绿色圆弧PQ和金色切线折线PTQ的长度依次增大">
+      </div>
+      </div>
+      </div>
+      </div>
+      <h2 id="第十一节-boss-战圆面积">第十一节 · Boss 战—圆面积</h2>
+      <p>为了攻克圆面积这个大
+      Boss，我们需要一个不等式。这个不等式可以直接从下面的单位圆图中看出来。角
+      <span class="math inline">\displaystyle x</span> 用弧度表示，当
+      <span class="math inline">\displaystyle0&lt;x&lt;\pi/2</span>
+      时，</p>
+      <p><span class="math display">
+      \boxed{\sin x&lt;x&lt;\tan x.}
+      </span></p>
+      <figure class="limit-figure unit-sector-figure">
+      <img src="assets/figures/unit-circle-sin-x-tan.svg" alt="单位圆中的小扇形，蓝色竖线表示sin x，绿色圆弧表示弧度数x对应的弧长，橙色切线段表示tan x">
       <figcaption>
-      比较弦、弧与切线折线的长度；角度使用弧度制。
+      单位圆中，蓝色线段长为 <span class="math inline">\displaystyle\sin
+      x</span>，绿色圆弧长为 <span class="math inline">\displaystyle
+      x</span>，橙色切线段长为 <span
+      class="math inline">\displaystyle\tan x</span>。
       </figcaption>
       </figure>
-      <div class="callout-fold" data-label="为什么圆弧不超过切线折线？">
-      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 为什么圆弧不超过切线折线？</button>
-      <div class="callout-fold-body" hidden>
-      <p>把圆弧用依次连接的短弦近似。每条短弦与竖直方向的夹角不超过
-      <span
-      class="math inline">t</span>，所以它的竖直投影长度至少是自身长度的
-      <span class="math inline">\cos t</span> 倍。所有竖直投影相加恰好是
-      <span class="math inline">PQ=2\sin
-      t</span>，因此每条这样的内接折线总长都不超过 <span
-      class="math inline">2\sin t/\cos t=2\tan
-      t</span>。圆弧长是这些折线长度的上确界，也就不超过这个上界。另一方面，直线段是两点之间最短的路径，故弦长不超过弧长。这一论证只涉及长度。</p>
-      </div></div>
-      <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">夹住正弦比值</span></div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">长度比较</span></div>
       <div class="callout-body">
-      <p>将上面的不等式整理，得到</p>
-      <p><span class="math display">
-      \cos t\le\frac{\sin t}{t}\le1.
-      </span></p>
-      <p>左边为什么趋向 <span class="math inline">1</span>？由 <span
-      class="math inline">|\sin u|\le|u|</span> 和半角恒等式，</p>
-      <p><span class="math display">
-      0\le1-\cos t=2\sin^2(t/2)\le t^2/2\longrightarrow0.
-      </span></p>
-      <p>所以两边都趋向 <span
-      class="math inline">1</span>，两边夹定理给出右侧趋近时的结论。又因为
-      <span class="math inline">\sin(-t)/(-t)=\sin
-      t/t</span>，从左侧趋近也一样。因此</p>
-      <p><span class="math display">
-      \boxed{\lim_{x\to0}\frac{\sin x}{x}=1}.
-      </span></p>
-      <p>这里的 <span class="math inline">x</span>
-      必须用<strong>弧度</strong>表示。这个结论说的是极限，不是说 <span
-      class="math inline">\sin x</span> 与 <span
-      class="math inline">x</span> 在非零时完全相等。</p>
-      <p>虽然 <span class="math inline">\sin x/x</span> 在 <span
-      class="math inline">x=0</span> 处没有定义，但它在 <span
-      class="math inline">x\to0</span>
-      时的极限仍然存在：<strong>极限关心的是附近的变化，而不是点上的取值。</strong></p>
+      <p>图中取单位圆上的点 <span class="math inline">\displaystyle
+      P=(\cos x,\sin x)</span>，从 <span
+      class="math inline">\displaystyle Q=(1,0)</span> 作切线，与射线
+      <span class="math inline">\displaystyle OP</span> 交于 <span
+      class="math inline">\displaystyle T</span>。<span
+      class="math inline">\displaystyle P</span> 到横轴的距离为 <span
+      class="math inline">\displaystyle\sin x</span>，圆弧 <span
+      class="math inline">\displaystyle QP</span> 的长度为 <span
+      class="math inline">\displaystyle x</span>——这里使用了弧长公式
+      <span class="math inline">\displaystyle s=r\theta</span>（<span
+      class="math inline">\displaystyle\theta</span>
+      用弧度表示），单位圆中 <span class="math inline">\displaystyle
+      r=1</span>、<span
+      class="math inline">\displaystyle\theta=x</span>，所以 <span
+      class="math inline">\displaystyle s=x</span>；切线段 <span
+      class="math inline">\displaystyle QT</span> 的长度为 <span
+      class="math inline">\displaystyle\tan
+      x</span>。这三个长度的比较给出上述不等式；这里比较的是长度，不借用圆或扇形的面积公式。</p>
       </div>
       </div>
-      <h2 id="第十节-boss-战-圆面积">第十节 · Boss 战 · 圆面积</h2>
-      <p>回到山门前，这次考虑一般的半径 <span
-      class="math inline">r&gt;0</span>；单位圆中的各个面积相应乘以
-      <span class="math inline">r^2</span>。现在，我们不只会说出 <span
-      class="math inline">\pi
-      r^2</span>，也已经备好了说明它为什么成立的工具。</p>
-      <p><strong>从里面逼近。</strong> 内接正 <span
-      class="math inline">n</span> 边形的面积已经算过：</p>
+      <p>由 <span class="math inline">\displaystyle\sin x&lt;x&lt;\tan
+      x</span>，除以正数 <span class="math inline">\displaystyle\sin
+      x</span>，得到</p>
+      <p><span class="math display">
+      1&lt;\frac{x}{\sin x}&lt;\frac1{\cos x}.
+      </span></p>
+      <p>三者都为正数，取倒数后不等号方向改变，整理得到</p>
+      <p><span class="math display">
+      \cos x&lt;\frac{\sin x}{x}&lt;1,\qquad 0&lt;x&lt;\frac\pi2.
+      </span></p>
+      <p>当 <span class="math inline">\displaystyle x\to0</span>
+      时，<span class="math inline">\displaystyle\cos
+      x\to1</span>，这一点可以从余弦函数的图像上直观地看出来。由两边夹定理，得到</p>
+      <p><span class="math display">
+      \boxed{\lim_{x\to0}\frac{\sin x}{x}=1.}
+      </span></p>
+      <p>上面只讨论了 <span class="math inline">\displaystyle x</span>
+      从正数方向趋于 <span class="math inline">\displaystyle0</span>
+      的情况；从负数方向趋于 <span
+      class="math inline">\displaystyle0</span>
+      也有相同结论，补充说明见本节末尾的注。</p>
+      <p>这里 <span class="math inline">\displaystyle x</span>
+      必须用弧度表示。函数在 <span class="math inline">\displaystyle
+      x=0</span> 处没有定义，并不妨碍它在这里存在极限。</p>
+      <p>现在回到半径为 <span class="math inline">\displaystyle r</span>
+      的圆。其内接正 <span class="math inline">\displaystyle n</span>
+      边形的面积为</p>
       <p><span class="math display">
       A_n=\frac{nr^2}{2}\sin\frac{2\pi}{n}
       =\pi r^2\frac{\sin(2\pi/n)}{2\pi/n}.
       </span></p>
-      <p>当 <span class="math inline">n\to\infty</span> 时，<span
-      class="math inline">2\pi/n\to0</span>。代入刚刚得到的重要极限，便有</p>
+      <p>当 <span class="math inline">\displaystyle n\to\infty</span>
+      时，<span
+      class="math inline">\displaystyle2\pi/n\to0</span>。利用刚得到的极限，</p>
       <p><span class="math display">
       \lim_{n\to\infty}A_n=\pi r^2.
       </span></p>
-      <p><strong>从外面包围。</strong> 画圆的外接正 <span
-      class="math inline">n</span> 边形，面积记为 <span
-      class="math inline">B_n</span>。连接圆心与顶点，并作圆心到边的垂线。一块三角形的高是
-      <span class="math inline">r</span>，半条底边是 <span
-      class="math inline">r\tan(\pi/n)</span>，所以</p>
-      <p><span class="math display">
-      B_n=n\cdot\frac12\cdot2r\tan\frac\pi n\cdot r
-      =nr^2\tan\frac\pi n
-      =\pi r^2\frac{\sin(\pi/n)}{\pi/n}\frac1{\cos(\pi/n)}.
-      </span></p>
-      <p>正弦比值趋向 <span class="math inline">1</span>，余弦趋向 <span
-      class="math inline">1</span>，由极限的乘除法则，</p>
-      <p><span class="math display">
-      \lim_{n\to\infty}B_n=\pi r^2.
-      </span></p>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">圆的面积 · 内外合围</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">圆的面积</span></div>
       <div class="callout-body">
-      <p>记圆的面积为 <span
-      class="math inline">S</span>。内接多边形在圆内，圆又在外接多边形内，因此对每个
-      <span class="math inline">n\ge3</span>，都有</p>
+      <p>按内接正多边形逼近的方式定义圆面积，圆面积就是上述面积数列的极限。因此</p>
       <p><span class="math display">
-      A_n\le S\le B_n.
+      \boxed{S=\lim_{n\to\infty}A_n=\pi r^2.}
       </span></p>
-      <p>两侧都趋向 <span class="math inline">\pi
-      r^2</span>，把中间的固定数 <span class="math inline">S</span>
-      看成常数数列，两边夹定理便给出</p>
-      <p><span class="math display">
-      \boxed{S=\pi r^2}.
-      </span></p>
-      <p>若从面积的构造出发看，内外多边形面积之差也趋于零，因此它们确定了同一个面积值。这说明这里没有把“看起来贴合”当作证明。</p>
       </div>
       </div>
+      <p><span
+      class="law-subheading"><strong>两边夹定理的几何解释</strong></span></p>
+      <figure class="limit-figure">
+      <img src="assets/figures/circle-sandwich.svg" alt="圆的内接和外接正多边形，展示边数增加时从内外近似圆">
+      <figcaption>
+      绿色内接正多边形从里面近似圆，金色外接正多边形从外面近似圆。
+      </figcaption>
+      </figure>
+      <p>内接面积 <span class="math inline">\displaystyle A_n</span>
+      不超过圆面积，外接面积 <span class="math inline">\displaystyle
+      B_n</span> 不小于圆面积。随着边数增大，两者都趋向同一个数 <span
+      class="math inline">\displaystyle\pi r^2</span>，并且</p>
+      <p><span class="math display">
+      \lim_{n\to\infty}(B_n-A_n)=\pi r^2-\pi r^2=0.
+      </span></p>
+      <p>因此，内外两种近似之间的面积差<strong>趋于零</strong>，夹在它们之间的圆面积被确定为
+      <span class="math inline">\displaystyle\pi
+      r^2</span>。有限边数时，面积差仍大于零；我们没有把某个有限多边形直接当成圆。</p>
+      <div class="callout-fold" data-label="注：正弦比值极限的严格证明">
+      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 注：正弦比值极限的严格证明</button>
+      <div class="callout-fold-body" hidden>
+      <p>设角度用弧度表示。由单位圆中的长度比较，当 <span
+      class="math inline">\displaystyle0&lt;t&lt;\pi/2</span> 时，</p>
+      <p><span class="math display">
+      \sin t&lt;t&lt;\tan t,
+      </span></p>
+      <p>从而</p>
+      <p><span class="math display">
+      \cos t&lt;\frac{\sin t}{t}&lt;1.
+      </span></p>
+      <p>先控制 <span class="math inline">\displaystyle\cos t</span> 与
+      <span class="math inline">\displaystyle1</span>
+      的误差。由上述长度不等式及正弦函数的奇偶关系，当 <span
+      class="math inline">\displaystyle|u|&lt;\pi/2</span> 时，有 <span
+      class="math inline">\displaystyle|\sin
+      u|\le|u|</span>。结合半角恒等式，当 <span
+      class="math inline">\displaystyle|t|&lt;\pi</span> 时，</p>
+      <p><span class="math display">
+      0\le1-\cos t=2\sin^2(t/2)\le\frac{t^2}{2}.
+      </span></p>
+      <p>因此，任给 <span
+      class="math inline">\displaystyle\varepsilon&gt;0</span>，只要
+      <span
+      class="math inline">\displaystyle0&lt;|t|&lt;\min\{1,\sqrt{2\varepsilon}\}</span>，就有
+      <span class="math inline">\displaystyle|\cos
+      t-1|&lt;\varepsilon</span>。这也从定义证明了 <span
+      class="math inline">\displaystyle\lim_{t\to0}\cos t=1</span>。</p>
+      <p>下面直接验证正弦比值的极限定义。任取 <span
+      class="math inline">\displaystyle\varepsilon&gt;0</span>，取</p>
+      <p><span class="math display">
+      \delta=\min\left\{\frac\pi2,\sqrt{2\varepsilon}\right\}&gt;0.
+      </span></p>
+      <p>当 <span
+      class="math inline">\displaystyle0&lt;x&lt;\delta</span>
+      时，由前面的不等式，</p>
+      <p><span class="math display">
+      0&lt;1-\frac{\sin x}{x}&lt;1-\cos x
+      \le\frac{x^2}{2}&lt;\varepsilon.
+      </span></p>
+      <p>所以 <span class="math inline">\displaystyle\left|\frac{\sin
+      x}{x}-1\right|&lt;\varepsilon</span>。</p>
+      <p>当 <span
+      class="math inline">\displaystyle-\delta&lt;x&lt;0</span> 时，令
+      <span class="math inline">\displaystyle t=-x</span>，则 <span
+      class="math inline">\displaystyle0&lt;t&lt;\delta</span>，并且</p>
+      <p><span class="math display">
+      \frac{\sin x}{x}=\frac{\sin(-t)}{-t}=\frac{\sin t}{t}.
+      </span></p>
+      <p>由正数情形的估计，同样有</p>
+      <p><span class="math display">
+      \left|\frac{\sin x}{x}-1\right|
+      =\left|\frac{\sin t}{t}-1\right|&lt;\varepsilon.
+      </span></p>
+      <p>综上，对任意 <span
+      class="math inline">\displaystyle\varepsilon&gt;0</span>，上述
+      <span class="math inline">\displaystyle\delta</span> 都能保证</p>
+      <p><span class="math display">
+      0&lt;|x|&lt;\delta\quad\Longrightarrow\quad
+      \left|\frac{\sin x}{x}-1\right|&lt;\varepsilon.
+      </span></p>
+      <p>因此，根据函数极限的定义，</p>
+      <p><span class="math display">
+      \boxed{\lim_{x\to0}\frac{\sin x}{x}=1.}
+      </span></p>
+      <p>证毕。</p>
+      </div></div>
       <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">过关所得</span></div>
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">Boss 战小结</span></div>
       <div class="callout-body">
-      <p>任意一个有限边数的内接多边形，都不曾变成圆。我们也没有假设有一个可以直接拿来计算的“无穷多边形”。我们做的是：<strong>用两个可计算的数列，控制一个暂时不会直接计算的量，再通过极限确定它。</strong></p>
-      <p>从图形到数列，从直观到定义，再到两侧合围，这就是这一关真正练成的本领。</p>
+      <p>这一战，我们先把圆面积化成内接正多边形的面积数列，再用两边夹定理求出关键极限</p>
+      <p><span class="math display">
+      \lim_{x\to0}\frac{\sin x}{x}=1.
+      </span></p>
+      <p>把它代回面积数列，结合极限的四则运算，就得到</p>
+      <p><span class="math display">
+      S=\lim_{n\to\infty}\frac{nr^2}{2}\sin\frac{2\pi}{n}=\pi r^2.
+      </span></p>
+      <p><strong>定义说明要达到什么要求，四则运算组合已有结果，两边夹定理帮助我们确定暂时算不出的极限。</strong>
+      有限多边形始终不是圆；通过极限，我们把一次次近似变成了准确的面积。</p>
       </div>
       </div>
-      <div class="callout callout-practice">
-      <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">回望这一战</span></div>
-      <div class="callout-body">
-      <ol type="1">
-      <li>为什么只算出内接面积趋向 <span class="math inline">\pi
-      r^2</span>，还需要补上它与圆面积的关系？外接多边形帮助我们排除了什么可能？</li>
-      <li>若只知道 <span class="math inline">A_n\le S\le
-      B_n</span>，但两侧趋向不同的数，能否确定 <span
-      class="math inline">S</span>？</li>
-      <li>半径变成原来的两倍时，<span
-      class="math inline">A_n</span>、<span
-      class="math inline">B_n</span>
-      和圆面积分别怎样变化？请从公式与图形两方面说明。</li>
-      </ol>
-      </div>
-      </div>
-      <h2 id="第十一节-伯努利的贪婪">第十一节 · 伯努利的贪婪</h2>
+      <h2 id="第十二节-利上生利贪婪的极限">第十二节 ·
+      利上生利—贪婪的极限</h2>
       <div class="chapter-prologue">
       <h3 class="prologue-title">
       隐藏关卡
       </h3>
       <p>圆面积的大 Boss
       刚刚倒下，山路旁又亮起一盏灯。灯下不是几何图形，而是一本账簿。让我们借伯努利的复利问题，讲一段“还想多得一点”的故事。</p>
-      <p>你存入 <span class="math inline">1</span>
+      <p>你存入 <span class="math inline">\displaystyle 1</span>
       元，与掌柜约定：为方便计算，<strong>名义年利率取 <span
-      class="math inline">100\%</span></strong>。一年结一次利息，年末便拿到
-      <span class="math inline">2</span>
+      class="math inline">\displaystyle
+      100\%</span></strong>。一年结一次利息，年末便拿到 <span
+      class="math inline">\displaystyle 2</span>
       元。你正要收起账簿，却想到：如果利息早点到账，也能继续生利息，岂不是还能多拿一些？</p>
       <p>掌柜答应半年结一次，但全年约定的名义利率不变，所以每半年的利率是
-      <span class="math inline">50\%</span>。半年后，本息变为 <span
-      class="math inline">1\times(1+1/2)</span>；再过半年，连同刚到账的利息一起计息，年末得到
-      <span class="math inline">(1+1/2)^2=2.25</span> 元。</p>
-      <p>一年结四次呢？每次的利率是 <span
-      class="math inline">1/4</span>，连续乘四个 <span
-      class="math inline">1+1/4</span>，便得到 <span
-      class="math inline">(1+1/4)^4</span>。<strong>次数越多，每次给的利率也越小</strong>；我们没有把每一次的利率都保持为
-      <span class="math inline">100\%</span>。</p>
-      </div>
-      <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">复利数列</span></div>
-      <div class="callout-body">
-      <p>一年等分为 <span class="math inline">n</span>
-      个计息期，每期利率为 <span
-      class="math inline">1/n</span>，利息立即加入本金，且期间不存取资金。每结一次利息，本息就乘以
-      <span class="math inline">1+1/n</span>。因此，一年后的本息为</p>
+      <span class="math inline">\displaystyle
+      50\%</span>。半年后，本息变为 <span
+      class="math inline">\displaystyle
+      1\times(1+1/2)</span>；再过半年，连同刚到账的利息一起计息，年末得到
+      <span class="math inline">\displaystyle (1+1/2)^2=2.25</span>
+      元。</p>
+      <p>一般地，把一年等分为 <span class="math inline">\displaystyle
+      n</span> 个计息期，每期利率为 <span
+      class="math inline">\displaystyle
+      1/n</span>，利息立即加入本金，期间不存取资金。一年后的本息构成<strong>复利数列</strong>：</p>
       <p><span class="math display">
       a_n=\left(1+\frac1n\right)^n,\qquad n=1,2,3,\ldots.
       </span></p>
-      <p><span class="math inline">n</span>
-      表示<strong>同一年内的结息次数</strong>，不是经过了多少年。我们比较的是期限相同、名义年利率相同，只改变结息频率的一组方案。</p>
-      </div>
+      <p>这里的 <span class="math inline">\displaystyle n</span>
+      是同一年内的结息次数；名义年利率始终不变。</p>
+      <p>如果每年结息 <span class="math inline">\displaystyle4</span>
+      次、<span class="math inline">\displaystyle12</span> 次、<span
+      class="math inline">\displaystyle365</span> 次，甚至 <span
+      class="math inline">\displaystyle365\times24</span>
+      次呢？结息越来越频繁，本息会无限增长吗？我们怎样才能打败这个“还想多得一点”的贪婪魔鬼？</p>
       </div>
       <table>
       <thead>
       <tr>
       <th style="text-align: right;">每年结息次数 <span
-      class="math inline">n</span></th>
+      class="math inline">\displaystyle n</span></th>
       <th style="text-align: right;">一年后的本息 <span
-      class="math inline">a_n</span></th>
+      class="math inline">\displaystyle a_n</span></th>
       </tr>
       </thead>
       <tbody>
@@ -1083,35 +1899,27 @@
       <td style="text-align: right;">2.716924</td>
       </tr>
       <tr>
+      <td style="text-align: right;"><span
+      class="math inline">\displaystyle365\times24</span></td>
+      <td style="text-align: right;">2.718127</td>
+      </tr>
+      <tr>
       <td style="text-align: right;">10000</td>
       <td style="text-align: right;">2.718146</td>
       </tr>
       </tbody>
       </table>
-      <p>表中保留六位小数。这次没有圆的面积公式可以提示答案，我们只能先观察：本息似乎不断增加，增加的幅度却在缩小。</p>
-      <div class="callout callout-practice">
-      <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">还能多拿多少？</span></div>
-      <div class="callout-body">
-      <ol type="1">
-      <li>从一年结一次改为两次，本息增加多少？从 <span
-      class="math inline">1000</span> 次改为 <span
-      class="math inline">10000</span> 次呢？</li>
-      <li>如果继续提高频率，本息会超过 <span
-      class="math inline">3</span>
-      元吗？会无限增长吗？先提出猜想，再说明表格还不能证明什么。</li>
-      <li><span class="math inline">1+1/n</span> 趋向 <span
-      class="math inline">1</span>，为什么不能立刻断定 <span
-      class="math inline">a_n</span> 趋向 <span
-      class="math inline">1</span>？注意：这里的指数也在变化。</li>
-      </ol>
-      </div>
-      </div>
-      <p><strong>底数越来越小，乘的次数却越来越多，谁会占上风？</strong>
-      这就是隐藏
-      Boss。要攻克它，我们先找两条线索：本息是否一直增加，是否始终越不过某条界限。</p>
-      <h2 id="第十二节-单调有界定理">第十二节 · 单调有界定理</h2>
+      <figure>
+      <img src="assets/figures/compound-interest.svg" alt="复利数列的图像：结息次数增加时，一年后的本息逐渐增加，但逐渐趋于平缓；横轴采用对数刻度。">
+      <figcaption>
+      复利数列 <span class="math inline">\displaystyle
+      a_n=(1+1/n)^n</span>；横轴采用对数刻度，以便同时观察每年结息几次与几千次的情形。
+      </figcaption>
+      </figure>
+      <p>本息似乎不断增加，增加的幅度却在缩小，仿佛正趋向某个极限。找到这个极限，便能看清贪婪的边界，终结无止境的索求。</p>
+      <h2 id="第十三节-单调有界有极限">第十三节 · 单调有界有极限</h2>
       <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">只进不退，会走到哪里？</span></div>
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">单调与有界的直观</span></div>
       <div class="callout-body">
       <p>想象沿着数轴向右走，每一步都不后退，而且前方有一道永远不能越过的界限。我们未必预先知道终点是多少，却可以证明：这些位置一定趋向某个确定的数。这是另一种得到极限的方法——<strong>先证明终点存在，再研究终点是谁。</strong></p>
       </div>
@@ -1119,197 +1927,252 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">单调与有界</span></div>
       <div class="callout-body">
-      <p>若每一步都有 <span class="math inline">a_{n+1}\ge
-      a_n</span>，称数列<strong>单调不减</strong>；若始终严格大于，则称严格递增。若存在一个固定的实数
-      <span class="math inline">M</span>，使所有项都满足 <span
-      class="math inline">a_n\le
-      M</span>，称数列<strong>有上界</strong>。</p>
+      <p>若每一步都有 <span class="math inline">\displaystyle a_{n+1}\ge
+      a_n</span>，称数列<strong>单调不减</strong>；若每一步都有 <span
+      class="math inline">\displaystyle
+      a_{n+1}&gt;a_n</span>，称<strong>严格递增</strong>。将不等号分别反向，就得到<strong>单调不增</strong>与<strong>严格递减</strong>的定义。</p>
+      <p>若存在固定实数 <span class="math inline">\displaystyle
+      B</span>，使所有项都满足 <span class="math inline">\displaystyle
+      a_n\le B</span>，称数列<strong>有上界</strong>；将不等号改为 <span
+      class="math inline">\displaystyle a_n\ge
+      B</span>，就得到<strong>有下界</strong>的定义。同时有上界与下界的数列，称为<strong>有界数列</strong>。</p>
       <p><strong>单调不减且有上界的实数数列，必有有限极限。</strong>
       同样，单调不增且有下界的实数数列，也必有有限极限。这就是单调有界定理。</p>
       <p>有界不等于知道准确极限。一个上界可以留有余地：为了证明数列有极限，我们可以先找一道容易验证的“围墙”。</p>
       </div>
       </div>
-      <div class="callout-fold" data-label="为什么一定有极限？">
-      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 为什么一定有极限？</button>
-      <div class="callout-fold-body" hidden>
-      <p>实数的完备性保证：一个非空且有上界的实数集合，有最小的上界，称为<strong>上确界</strong>。设
-      <span class="math inline">L</span> 是所有数列项的上确界。任取
-      <span class="math inline">\varepsilon&gt;0</span>，<span
-      class="math inline">L-\varepsilon</span>
-      都不可能还是上界，所以有某一项 <span
-      class="math inline">a_N&gt;L-\varepsilon</span>。由于数列单调不减，之后的每项都满足
-      <span class="math inline">L-\varepsilon&lt;a_n\le L</span>，于是
+      <div id="chpt1-ex-035" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例12：单调但无上界</span><span
+      class="ex-tags"><span class="ex-tag">极限</span><span
+      class="ex-tag">单调有界</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>判断数列 <span class="math inline">\displaystyle a_n=n</span>
+      的单调性、有界性及收敛性。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
       <span
-      class="math inline">|a_n-L|&lt;\varepsilon</span>。这正是极限的定义。这里“没有空隙”的实数系统是关键。</p>
-      </div></div>
-      <div class="callout callout-practice">
-      <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">条件缺一不可</span></div>
-      <div class="callout-body">
-      <p>数列 <span class="math inline">n</span>
-      单调增加，却没有上界，因而没有有限极限；数列 <span
-      class="math inline">(-1)^n</span> 有界，却不单调，也不收敛。</p>
-      <p><span class="math inline">1-1/n</span> 则单调不减，并以 <span
-      class="math inline">1</span>
-      为上界，所以有极限；进一步计算才知道极限就是 <span
-      class="math inline">1</span>。请注意：定理给出的是保证收敛的一组条件，不是说所有收敛数列都必须单调。</p>
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-035-frame" data-panel="chpt1-ex-035-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-035-frame" data-panel="chpt1-ex-035-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-035-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-035-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>比较 <span class="math inline">\displaystyle a_{n+1}</span> 与
+      <span class="math inline">\displaystyle a_n</span>，并考察 <span
+      class="math inline">\displaystyle n</span>
+      能否超过任意给定的实数。</p>
+      </div>
+      <div id="chpt1-ex-035-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>数列 <span class="math inline">\displaystyle a_n=n</span>
+      严格递增，但没有上界，也没有有限极限。这说明只有单调性，不能保证数列收敛。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt1-ex-036" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例13：有界但不单调</span><span
+      class="ex-tags"><span class="ex-tag">极限</span><span
+      class="ex-tag">单调有界</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>判断数列 <span class="math inline">\displaystyle
+      a_n=(-1)^n</span> 的单调性、有界性及收敛性。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-036-frame" data-panel="chpt1-ex-036-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-036-frame" data-panel="chpt1-ex-036-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-036-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-036-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>分别写出奇数项和偶数项。</p>
+      </div>
+      <div id="chpt1-ex-036-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>数列各项在 <span class="math inline">\displaystyle-1</span> 与
+      <span class="math inline">\displaystyle1</span>
+      之间交替，因此有界，但不单调。它不收敛：若极限为 <span
+      class="math inline">\displaystyle A</span>，取 <span
+      class="math inline">\displaystyle\varepsilon=1/2</span>，充分靠后的奇数项与偶数项都应满足
+      <span class="math inline">\displaystyle|-1-A|&lt;1/2</span> 和
+      <span
+      class="math inline">\displaystyle|1-A|&lt;1/2</span>。由三角不等式便有
+      <span
+      class="math inline">\displaystyle2\le|-1-A|+|1-A|&lt;1</span>，矛盾。这说明只有有界性，也不能保证数列收敛。</p>
+      </div>
+      </div>
       </div>
       </div>
       <p>回到复利数列。现在任务明确了：<strong>证明它向上走，再找一个共同的上界。</strong>
-      两件事都完成，就能确认隐藏 Boss 的极限确实存在。</p>
-      <h2 id="第十三节-boss-战-数-e">第十三节 · Boss 战 · 数 e</h2>
-      <p><strong>先看清结构。</strong>
-      直接比较两个幂不太方便。借助二项式定理，把 <span
-      class="math inline">a_n=(1+1/n)^n</span> 展开。记 <span
-      class="math inline">k!=1\cdot2\cdots k</span>，并约定 <span
-      class="math inline">0!=1</span>，则</p>
+      两件事都完成，就能确认隐藏 Boss
+      的极限确实存在。注意，这只是一个<strong>存在性证明</strong>，尚未求出极限的具体值。在数学中，证明一个对象存在，往往比求出它的具体表达式更为根本。</p>
+      <h2 id="第十四节-boss-战数-e">第十四节 · Boss 战—数 e</h2>
+      <p>设 <span class="math inline">\displaystyle
+      a_n=\left(1+\frac1n\right)^n</span>。我们借助二项式展开，可以把
+      <span class="math inline">\displaystyle a_n</span> 写成</p>
       <p><span class="math display">
-      a_n=\sum_{k=0}^{n}\binom nk\frac1{n^k}
-      =2+\sum_{k=2}^{n}\frac1{k!}
-      \left(1-\frac1n\right)\left(1-\frac2n\right)\cdots
-      \left(1-\frac{k-1}{n}\right).
+      \begin{aligned}
+      a_n={}&amp;1+1+\frac1{2!}\left(1-\frac1n\right)
+      \\
+      &amp;+\frac1{3!}\left(1-\frac1n\right)\left(1-\frac2n\right)\\
+      &amp;+\cdots+\frac1{n!}\left(1-\frac1n\right)\cdots\left(1-\frac{n-1}{n}\right).
+      \end{aligned}
       </span></p>
-      <p>求和符号 <span class="math inline">\sum</span>
-      只是“把这些项加起来”的简写。例如 <span
-      class="math inline">n=3</span> 时，展开式为 <span
-      class="math inline">1+1+1/3+1/27</span>。当 <span
-      class="math inline">n=1</span>
-      时，上式后面的求和没有项，值为零。</p>
+      <p>这里 <span class="math inline">\displaystyle k!=1\cdot2\cdots
+      k</span>，并约定 <span
+      class="math inline">\displaystyle0!=1</span>。展开式只保留实际存在的项，首尾重合的项只计一次。下面分别证明这个数列的单调性与有界性。</p>
+      <div class="callout-fold" data-label="注：二项式展开">
+      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 注：二项式展开</button>
+      <div class="callout-fold-body" hidden>
+      <p>二项式定理把一个和的整数次幂写成逐项相加的形式：</p>
+      <p><span class="math display">
+      \begin{aligned}
+      (1+u)^n={}&amp;1+nu+\frac{n(n-1)}{2!}u^2+\cdots\\
+      &amp;+\frac{n(n-1)\cdots(n-k+1)}{k!}u^k+\cdots+u^n.
+      \end{aligned}
+      </span></p>
+      <p>代入 <span class="math inline">\displaystyle
+      u=1/n</span>，常数项与一次项分别为 <span
+      class="math inline">\displaystyle1</span> 和 <span
+      class="math inline">\displaystyle1</span>。对 <span
+      class="math inline">\displaystyle2\le k\le n</span>，含 <span
+      class="math inline">\displaystyle u^k</span> 的项化为</p>
+      <p><span class="math display">
+      \begin{aligned}
+      &amp;\frac{n(n-1)\cdots(n-k+1)}{k!}\cdot\frac1{n^k}\\
+      &amp;\qquad=\frac1{k!}\cdot\frac
+      nn\cdot\frac{n-1}n\cdots\frac{n-k+1}n\\
+      &amp;\qquad=\frac1{k!}\left(1-\frac1n\right)\cdots\left(1-\frac{k-1}{n}\right).
+      \end{aligned}
+      </span></p>
+      <p>这就得到下面使用的展开式。把 <span
+      class="math inline">\displaystyle n</span> 换成 <span
+      class="math inline">\displaystyle
+      n+1</span>，便得到另一个展开式；它的最后一项为 <span
+      class="math inline">\displaystyle1/(n+1)^{n+1}</span>。当 <span
+      class="math inline">\displaystyle n=1</span> 时，<span
+      class="math inline">\displaystyle a_n</span> 在 <span
+      class="math inline">\displaystyle1+1</span>
+      后没有其他项，比较时也就没有对应项。</p>
+      </div></div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">第一步 · 单调</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">单调性</span></div>
       <div class="callout-body">
-      <p>比较 <span class="math inline">a_n</span> 与 <span
-      class="math inline">a_{n+1}</span> 的展开式。对每一个原有的 <span
-      class="math inline">k\ge2</span>，因子 <span
-      class="math inline">1-j/n</span> 在 <span
-      class="math inline">n</span>
-      增大后都会增大，且它们都是正数；展开式还多出一个正项。前面的两项仍然是
-      <span class="math inline">1+1</span>。因此</p>
+      <p>将两个展开式对照来看：<strong>蓝色部分是对应项，赭色方框是新增项。</strong></p>
       <p><span class="math display">
-      a_{n+1}&gt;a_n.
+      \begin{aligned}
+      a_n={}&amp;1+1+{\color{#387b9b}\frac1{2!}\left(1-\frac1n\right)}+\cdots\\
+      &amp;+{\color{#387b9b}\frac1{n!}\left(1-\frac1n\right)\cdots\left(1-\frac{n-1}{n}\right)},
+      \end{aligned}
       </span></p>
-      <p>对最初一步也有 <span
-      class="math inline">a_2=2.25&gt;a_1=2</span>。所以复利数列严格递增。</p>
+      <p><span class="math display">
+      \begin{aligned}
+      a_{n+1}={}&amp;1+1+{\color{#387b9b}\frac1{2!}\left(1-\frac1{n+1}\right)}+\cdots\\
+      &amp;+{\color{#387b9b}\frac1{n!}\left(1-\frac1{n+1}\right)\cdots\left(1-\frac{n-1}{n+1}\right)}\\
+      &amp;+{\color{#b16c27}\boxed{\frac1{(n+1)^{n+1}}}}.
+      \end{aligned}
+      </span></p>
+      <p>对任意 <span class="math inline">\displaystyle2\le k\le
+      n</span>，两个展开式中分母为 <span
+      class="math inline">\displaystyle k!</span>
+      的项相互对应。它们的每一个括号都满足</p>
+      <p><span class="math display">
+      \boxed{0&lt;1-\frac jn&lt;1-\frac j{n+1}},\qquad 1\le j\le k-1.
+      </span></p>
+      <p>因此，相同数目的正因子逐一相乘，再除以同一个正数 <span
+      class="math inline">\displaystyle k!</span>，得到</p>
+      <p><span class="math display">
+      \begin{aligned}
+      &amp;{\color{#387b9b}\frac1{k!}\left(1-\frac1{n+1}\right)\cdots\left(1-\frac{k-1}{n+1}\right)}\\
+      &amp;\qquad&gt;{\color{#387b9b}\frac1{k!}\left(1-\frac1n\right)\cdots\left(1-\frac{k-1}{n}\right)}.
+      \end{aligned}
+      </span></p>
+      <p>原有的对应项都增大，前面的 <span
+      class="math inline">\displaystyle1+1</span>
+      不变，还多出赭色方框中的正项，故对每个正整数 <span
+      class="math inline">\displaystyle n</span>，都有</p>
+      <p><span class="math display">
+      \boxed{a_{n+1}-a_n\ge\frac1{(n+1)^{n+1}}&gt;0.}
+      </span></p>
+      <p>所以，<strong>复利数列严格递增</strong>。</p>
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">第二步 · 上界</span></div>
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">有界性</span></div>
       <div class="callout-body">
-      <p>展开式中每个括号都不超过 <span
-      class="math inline">1</span>，故</p>
+      <p>对 <span class="math inline">\displaystyle
+      n\ge2</span>，展开式中每个括号都在 <span
+      class="math inline">\displaystyle0</span> 与 <span
+      class="math inline">\displaystyle1</span> 之间，因此</p>
       <p><span class="math display">
-      a_n\le2+\sum_{k=2}^{n}\frac1{k!}.
+      a_n\le2+\frac1{2!}+\frac1{3!}+\cdots+\frac1{n!}.
       </span></p>
-      <p>当 <span class="math inline">k\ge2</span> 时，<span
-      class="math inline">k!\ge2^{k-1}</span>，因而</p>
+      <p>当 <span class="math inline">\displaystyle k\ge2</span>
+      时，<span class="math inline">\displaystyle k!=1\cdot2\cdot3\cdots
+      k\ge2^{k-1}</span>，于是</p>
       <p><span class="math display">
-      a_n\le2+\sum_{k=2}^{n}\frac1{2^{k-1}}&lt;3.
+      \begin{aligned}
+      a_n&amp;\le2+\frac12+\frac1{2^2}+\cdots+\frac1{2^{n-1}}\\
+      &amp;=3-\frac1{2^{n-1}}&lt;3.
+      \end{aligned}
       </span></p>
-      <p>最后的和是 <span class="math inline">1/2+1/4+\cdots</span>
-      的有限部分，不到 <span
-      class="math inline">1</span>。于是，<strong>无论结息多少次，本息都小于
-      <span class="math inline">3</span> 元。</strong></p>
+      <p>再结合 <span class="math inline">\displaystyle
+      a_1=2&lt;3</span>，可知<strong>无论结息多少次，本息都小于 <span
+      class="math inline">\displaystyle3</span>
+      元</strong>。这就找到了整个数列的共同上界。</p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">极限存在</span></div>
       <div class="callout-body">
-      <p>复利数列单调递增且有上界，按单调有界定理，它必有一个有限极限。我们把这个数记作
-      <span class="math inline">e</span>：</p>
+      <p>复利数列严格递增且有上界，由单调有界定理，它必有一个有限极限。我们把这个数记作
+      <span class="math inline">\displaystyle e</span>：</p>
       <p><span class="math display">
-      \boxed{e=\lim_{n\to\infty}\left(1+\frac1n\right)^n}
-      \qquad e\approx2.718281828459\ldots.
+      \begin{gathered}
+      \boxed{e=\lim_{n\to\infty}\left(1+\frac1n\right)^n},\\
+      e\approx2.718281828459\ldots.
+      \end{gathered}
       </span></p>
-      <p>这不是把 <span class="math inline">n=\infty</span>
-      代入公式，也不是凭表格猜出一个数。我们已经证明了极限存在，再为它命名。提高计息频率可以增加收益，却不能让收益无限增长。</p>
+      <p>先证明极限存在，再为它命名。提高结息频率可以增加本息，却无法使它无限增长；贪婪的边界，由此确定。</p>
       </div>
       </div>
-      <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">无理数 · 还差一步</span></div>
-      <div class="callout-body">
-      <p>证明极限存在，并没有自动证明它无理；有限位小数也不能说明一个数是否无理。要确认
-      <span class="math inline">e</span>
-      不能写成两个整数之比，还需要下面的论证。第一次阅读可以先掌握上面的单调、有界两步，再展开这一段。</p>
-      </div>
-      </div>
-      <div class="callout-fold" data-label="证明 e 是无理数">
-      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 证明 e 是无理数</button>
-      <div class="callout-fold-body" hidden>
-      <p>先把 <span class="math inline">e</span>
-      与一个便于控制误差的和联系起来。令 <span
-      class="math inline">s_m=\sum_{k=0}^{m}1/k!</span>。它单调增加且有上界
-      <span class="math inline">3</span>，所以存在极限 <span
-      class="math inline">E</span>。</p>
-      <p>由前面的展开式，<span class="math inline">a_n\le
-      s_n</span>，所以 <span class="math inline">e\le
-      E</span>。反过来，固定任意 <span
-      class="math inline">m</span>，只保留 <span
-      class="math inline">a_n</span> 展开式的前 <span
-      class="math inline">m+1</span> 项（<span class="math inline">n\ge
-      m</span>）；当 <span class="math inline">n\to\infty</span>
-      时，有限多个括号都趋向 <span class="math inline">1</span>，因此
-      <span class="math inline">e\ge s_m</span>。再令 <span
-      class="math inline">m\to\infty</span>，得到 <span
-      class="math inline">e\ge E</span>。所以</p>
-      <p><span class="math display">
-      e=E=\sum_{k=0}^{\infty}\frac1{k!}.
-      </span></p>
-      <p>这里的无穷和指部分和的极限。我们先固定有限的 <span
-      class="math inline">m</span>，再取极限，没有直接把极限搬进一个不断增加项数的和里。</p>
-      <p>假设 <span class="math inline">e=p/q</span>，其中 <span
-      class="math inline">p,q</span> 为正整数。取整数 <span
-      class="math inline">m\ge\max\{q,2\}</span>。因为 <span
-      class="math inline">q</span> 整除 <span
-      class="math inline">m!</span>，<span
-      class="math inline">m!e</span> 是整数；而 <span
-      class="math inline">m!s_m</span> 也是整数。因此</p>
-      <p><span class="math display">
-      R=m!(e-s_m)
-      </span></p>
-      <p>应是一个整数。但用上面的无穷和表示，</p>
-      <p><span class="math display">
-      0&lt;R=\sum_{j=1}^{\infty}\frac1{(m+1)(m+2)\cdots(m+j)}
-      \le\sum_{j=1}^{\infty}\frac1{(m+1)^j}
-      =\frac1m&lt;1.
-      </span></p>
-      <p>一个整数不可能严格介于 <span class="math inline">0</span> 与
-      <span class="math inline">1</span> 之间，矛盾。因此 <span
-      class="math inline">e</span> 是<strong>无理数</strong>。</p>
-      </div></div>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">隐藏关卡所得</span></div>
       <div class="callout-body">
-      <p>圆面积一战，我们从两侧夹住目标；复利这一战，我们先凭单调与有界确认终点存在，再研究这个终点的性质。<strong>有时先知道答案再证明，有时先证明有答案，才逐步认出它。</strong>
-      两条路，都是以有限的推理掌握无限的变化。</p>
+      <p>圆面积一战，我们从两侧夹住目标；复利这一战，我们先凭单调与有界确认极限存在，再把这个极限记作
+      <span class="math inline">\displaystyle
+      e</span>。<strong>有时先知道答案再证明，有时先证明有答案，才逐步认出它。</strong>
+      两条路，都是数学江湖中的惯用招数。</p>
       </div>
       </div>
-      <div class="callout callout-practice">
-      <div class="callout-header callout-header-practice"><span class="callout-icon"></span><span class="callout-label">再想一步</span></div>
-      <div class="callout-body">
-      <ol type="1">
-      <li>数列的每一项 <span class="math inline">a_n</span>
-      都是有理数，为什么它的极限仍可能是无理数？这与“希尔伯特的忠告”有什么呼应？</li>
-      <li>若本金为 <span
-      class="math inline">P&gt;0</span>，名义年利率仍为 <span
-      class="math inline">100\%</span>，一年等分为 <span
-      class="math inline">n</span> 期结息，写出本息表达式及其极限。</li>
-      <li>只凭 <span class="math inline">a_n&lt;3</span> 能否断定 <span
-      class="math inline">e&lt;3</span>？先辨别它直接能推出什么；再尝试改进阶乘倒数的上界，证明更强的结论。</li>
-      </ol>
-      </div>
-      </div>
-      <section id="第十四节-总结" class="chapter-prologue">
-      <h2>第十四节 · 总结</h2>
+      <section id="第十五节-回望来路" class="chapter-prologue">
+      <h2>第十五节 · 回望来路</h2>
       <p>这一回，我们从一个圆和一本账簿出发，走进了极限的世界。圆的面积与复利看似毫不相干，却都把我们带到了同一个问题面前：<strong>变化不断继续，是否会趋向一个确定的结果？</strong></p>
       <p><strong>我们先学会了描述问题。</strong>
       从具体事物中提取数量，用集合说明研究哪些对象，用映射与函数说明它们怎样对应。内接多边形的面积与不同结息频率下的本息，都成了可以逐项计算、比较和研究的数列。</p>
       <p><strong>我们也学会了谨慎地谈论无限。</strong>
-      希尔伯特的旅店提醒我们，有限情形下的直觉不能不加检查地搬进无限。极限不要求某一步真正到达终点；<span
-      class="math inline">\varepsilon</span>–<span
-      class="math inline">N</span> 与 <span
-      class="math inline">\varepsilon</span>–<span
-      class="math inline">\delta</span>
-      语言，让我们能够用明确的误差、有限的界限和统一的推理，约束无穷多种情形。</p>
-      <p><strong>面对不同的对手，我们得到了两种工具。</strong></p>
+      希尔伯特的酒店提醒我们，有限情形下的直觉不能不加检查地搬进无限。极限不要求某一步真正到达终点；<span
+      class="math inline">\displaystyle \varepsilon</span>–<span
+      class="math inline">\displaystyle N</span> 与 <span
+      class="math inline">\displaystyle \varepsilon</span>–<span
+      class="math inline">\displaystyle \delta</span>
+      语言，让我们能够用有限世界的工具，迎战无穷世界的敌人。</p>
+      <p><strong>两场 Boss 战，各有一条关键定理。</strong></p>
       <table>
       <colgroup>
       <col style="width: 33%" />
@@ -1328,27 +2191,27 @@
       <td style="text-align: left;">两边夹定理</td>
       <td
       style="text-align: left;">目标被夹在两侧之间，两侧趋向同一个数</td>
-      <td
-      style="text-align: left;">推出正弦的重要极限，再由内外多边形合围，确定圆面积</td>
+      <td style="text-align: left;">推出重要极限 <span
+      class="math inline">\displaystyle\lim_{x\to0}\frac{\sin
+      x}{x}=1</span>，证明圆面积公式</td>
       </tr>
       <tr>
       <td style="text-align: left;">单调有界定理</td>
       <td
       style="text-align: left;">数列单调不减且有上界，或单调不增且有下界</td>
       <td style="text-align: left;">证明复利数列收敛，为它的极限命名为
-      <span class="math inline">e</span></td>
+      <span class="math inline">\displaystyle e</span></td>
       </tr>
       </tbody>
       </table>
       <p>两场 Boss 战留下了两个结果：</p>
       <p><span class="math display">
-      S_{\text{圆}}=\pi r^2,
-      \qquad
+      \begin{gathered}
+      S_{\text{圆}}=\pi r^2,\\
       \lim_{n\to\infty}\left(1+\frac1n\right)^n=e.
+      \end{gathered}
       </span></p>
-      <p>但过关所得不止于公式。圆面积一战，我们<strong>把已经知道的答案变成了有依据的结论</strong>；复利一战，我们<strong>先证明极限存在，再认识这个新的数</strong>。进一步的论证还告诉我们，<span
-      class="math inline">e</span>
-      是无理数——这不能只凭它的小数模样判断。</p>
+      <p>过关所得不止于公式。我们学会了综合运用<strong>火眼金睛（图像）</strong>、<strong>极限的定义（普攻）</strong>、<strong>四则运算（连招）</strong>和<strong>换元法（七十二变）</strong>，在面对不同的对手时选择合适的招式。</p>
       <p>合上这一回之前，试着不看讲义，回答三个问题：</p>
       <ol type="1">
       <li>我能否说清圆面积与复利分别对应哪个数列，下标表示什么？</li>
