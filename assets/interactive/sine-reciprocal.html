@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>sin(1/x) 在零点附近的图像</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f5efe2;
+      --ink: #302e26;
+      --muted: #746b58;
+      --border: #c9bda2;
+      --curve: #366782;
+      --upper: #a94e2e;
+      --lower: #357461;
+      --button: #e9dfcb;
+      --focus: #855031;
+    }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --paper: #2b3329;
+      --ink: #ded8c7;
+      --muted: #b4ae9c;
+      --border: #5f654d;
+      --curve: #8ab8d0;
+      --upper: #efac83;
+      --lower: #9dcdb6;
+      --button: #394332;
+      --focus: #d6b782;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Songti SC", "SimSun", Georgia, serif;
+    }
+    main {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 12px 14px 14px;
+      border: 1px solid var(--border);
+    }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 36px; }
+    h1 { margin: 0; font-size: 22px; font-weight: 400; line-height: 1.4; }
+    math { font-size: 1em; }
+    .legend { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 5px 12px; font-size: 13px; white-space: nowrap; }
+    .legend span { display: inline-flex; align-items: center; gap: 5px; }
+    .legend i { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+    .upper { color: var(--upper); }
+    .lower { color: var(--lower); }
+    .plot { width: 100%; height: 310px; margin: 4px 0 8px; }
+    canvas { display: block; width: 100%; height: 100%; }
+    .range-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; font-size: 14px; line-height: 1.7; }
+    output { font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--muted); }
+    .controls { display: flex; align-items: center; gap: 8px; min-height: 42px; }
+    input[type="range"] { display: block; flex: 1 1 auto; min-width: 0; width: 100%; height: 32px; margin: 0 3px 0 0; accent-color: var(--curve); cursor: pointer; }
+    button { flex: 0 0 auto; min-height: 36px; padding: 5px 12px; border: 1px solid var(--border); border-radius: 3px; background: var(--button); color: var(--ink); font: inherit; font-size: 14px; cursor: pointer; }
+    button:hover { border-color: var(--focus); }
+    button:focus-visible, input:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+    @media (max-width: 380px) {
+      main { padding: 10px; }
+      h1 { font-size: 20px; }
+      .legend { gap: 5px 8px; font-size: 12px; }
+      .plot { height: 310px; }
+      button { padding: 5px 9px; }
+    }
+    @media print {
+      :root, :root[data-theme="dark"] { color-scheme: light; --paper: #fff; --ink: #111; --muted: #444; --border: #aaa; --upper: #a94e2e; --lower: #357461; }
+      main { border: 0; padding: 0; break-inside: avoid; }
+      .range-heading, .controls { display: none; }
+      .plot { margin-bottom: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main aria-label="零点附近的振荡图像">
+    <header>
+      <h1 id="graph-title"><math aria-label="y 等于 sin 一除以 x"><mi>y</mi><mo>=</mo><mi mathvariant="normal">sin</mi><mo>(</mo><mfrac><mn>1</mn><mi>x</mi></mfrac><mo>)</mo></math></h1>
+      <div class="legend" aria-label="标出的两类取值">
+        <span class="upper"><i aria-hidden="true"></i>y = 1</span>
+        <span class="lower"><i aria-hidden="true"></i>y = −1</span>
+      </div>
+    </header>
+    <div class="plot" id="plot">
+      <canvas id="graph" role="img" aria-labelledby="graph-title" aria-describedby="graph-description">函数在零点两侧不断振荡；零点处没有定义。</canvas>
+    </div>
+    <p class="sr-only" id="graph-description">横轴关于零点对称，纵轴范围始终为负一点二五到一点二五。缩小横轴范围时，函数仍能取到一和负一；在零点处没有定义，因而图像在零点断开。</p>
+    <div class="range-heading">
+      <label for="x-range">x 取值范围</label>
+      <output id="range-value" for="x-range" aria-live="off">[−1, 1]</output>
+    </div>
+    <div class="controls">
+      <input id="x-range" type="range" min="0" max="1000" step="1" value="0" aria-controls="graph" aria-valuetext="负一到一，零点除外">
+      <button id="play" type="button" aria-pressed="false">播放</button>
+      <button id="reset" type="button">重置</button>
+    </div>
+  </main>
+  <script>
+    (() => {
+      'use strict';
+      const canvas = document.getElementById('graph');
+      const plot = document.getElementById('plot');
+      const range = document.getElementById('x-range');
+      const output = document.getElementById('range-value');
+      const play = document.getElementById('play');
+      const reset = document.getElementById('reset');
+      const context = canvas.getContext('2d');
+      const darkPreference = window.matchMedia('(prefers-color-scheme: dark)');
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const TAU = Math.PI * 2;
+      const RANGE_END = 1000;
+      const MIN_RADIUS = 0.005;
+      const LOG_RADIUS = Math.log(MIN_RADIUS);
+      const DURATION = 22000;
+      const PHASE_STEP = Math.PI / 24;
+      const MAX_PHASE_SAMPLES = 65536;
+      const FRAME_INTERVAL = 1000 / 30;
+      let radius = 1;
+      let playing = false;
+      let animation = 0;
+      let startTime = 0;
+      let startValue = 0;
+      let lastDrawTime = 0;
+      let printing = false;
+      let parentRoot = null;
+
+      function format(value) {
+        return Number(value.toPrecision(3)).toString();
+      }
+
+      function colors() {
+        const style = getComputedStyle(document.documentElement);
+        const read = name => style.getPropertyValue(name).trim();
+        if (printing) {
+          return { paper: '#fff', ink: '#111', muted: '#444', border: '#bcb5a5', curve: '#366782', upper: '#a94e2e', lower: '#357461' };
+        }
+        return { paper: read('--paper'), ink: read('--ink'), muted: read('--muted'), border: read('--border'), curve: read('--curve'), upper: read('--upper'), lower: read('--lower') };
+      }
+
+      function draw() {
+        if (!context) return;
+        const bounds = plot.getBoundingClientRect();
+        const width = Math.max(1, bounds.width);
+        const height = Math.max(1, bounds.height);
+        const pixelRatio = Math.min(window.devicePixelRatio || 1, 3);
+        const pixelWidth = Math.round(width * pixelRatio);
+        const pixelHeight = Math.round(height * pixelRatio);
+        if (canvas.width !== pixelWidth || canvas.height !== pixelHeight) {
+          canvas.width = pixelWidth;
+          canvas.height = pixelHeight;
+        }
+        context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+        context.clearRect(0, 0, width, height);
+        const color = colors();
+        context.fillStyle = color.paper;
+        context.fillRect(0, 0, width, height);
+        const box = { left: 35, right: width - 15, top: 22, bottom: height - 43 };
+        const plotWidth = Math.max(1, box.right - box.left);
+        const plotHeight = Math.max(1, box.bottom - box.top);
+        const centerX = (box.left + box.right) / 2;
+        const centerY = (box.top + box.bottom) / 2;
+        const scaleX = plotWidth / (2 * radius);
+        const scaleY = plotHeight / 2.5;
+        const y = value => centerY - value * scaleY;
+        const zeroGap = 2.4;
+
+        context.save();
+        context.beginPath();
+        context.rect(box.left, box.top, plotWidth, plotHeight);
+        context.clip();
+
+        // x = 1/t: use a uniform phase grid all the way to the zero-axis gap.
+        // Its step divides pi/2, so the grid always includes both extrema and
+        // zero crossings. A bounded point budget avoids unbounded work without
+        // taking unrelated, aliased x samples or replacing the curve with a fill.
+        const firstPhase = 1 / radius;
+        const lastPhase = scaleX / zeroGap;
+        const sampleBudget = Math.max(8192, Math.min(MAX_PHASE_SAMPLES, Math.floor(plotWidth * 70)));
+        const requestedStep = Math.max(PHASE_STEP, (lastPhase - firstPhase) / (sampleBudget - 4));
+        const quarterDivisions = Math.max(1, Math.min(12, Math.floor((Math.PI / 2) / requestedStep)));
+        const phaseStep = Math.PI / (2 * quarterDivisions);
+        const firstIndex = Math.ceil(firstPhase / phaseStep);
+        const lastIndex = Math.floor(lastPhase / phaseStep);
+        for (const sign of [-1, 1]) {
+          context.save();
+          context.beginPath();
+          context.rect(sign > 0 ? centerX + zeroGap : box.left, box.top, plotWidth / 2 - zeroGap, plotHeight);
+          context.clip();
+          context.beginPath();
+          context.moveTo(centerX + sign * radius * scaleX, y(sign * Math.sin(firstPhase)));
+          let count = 0;
+          for (let index = firstIndex; index <= lastIndex && count < MAX_PHASE_SAMPLES; index++, count++) {
+            const phase = index * phaseStep;
+            const pointX = centerX + sign * scaleX / phase;
+            const pointY = y(sign * Math.sin(phase));
+            context.lineTo(pointX, pointY);
+          }
+          if (lastIndex - firstIndex + 1 <= MAX_PHASE_SAMPLES) {
+            context.lineTo(centerX + sign * zeroGap, y(sign * Math.sin(lastPhase)));
+          }
+          context.strokeStyle = color.curve;
+          context.lineWidth = 1.05;
+          context.lineJoin = 'round';
+          context.stroke();
+          context.restore();
+        }
+        context.restore();
+
+        context.lineWidth = 1;
+        context.strokeStyle = color.border;
+        context.setLineDash([4, 5]);
+        for (const value of [-1, 1]) {
+          context.beginPath();
+          context.moveTo(box.left, y(value));
+          context.lineTo(box.right, y(value));
+          context.stroke();
+        }
+        context.setLineDash([]);
+        context.strokeStyle = color.muted;
+        context.beginPath();
+        context.moveTo(box.left, centerY);
+        context.lineTo(box.right + 5, centerY);
+        context.stroke();
+        context.setLineDash([3, 4]);
+        context.beginPath();
+        context.moveTo(centerX, box.top);
+        context.lineTo(centerX, box.bottom + 2);
+        context.stroke();
+        context.setLineDash([]);
+
+        // Choose the outermost visible points with exact phases sin(t) = ±1.
+        // Their x coordinates approach zero as the viewing interval shrinks.
+        function extremum(phaseOffset) {
+          const turn = Math.max(0, Math.ceil((firstPhase - phaseOffset) / TAU));
+          return 1 / (phaseOffset + turn * TAU);
+        }
+        const upperX = extremum(Math.PI / 2);
+        const lowerX = extremum(3 * Math.PI / 2);
+        for (const [pointX, pointY] of [[upperX, 1], [lowerX, -1], [-upperX, -1], [-lowerX, 1]]) {
+          context.beginPath();
+          context.arc(centerX + pointX * scaleX, y(pointY), 4.1, 0, TAU);
+          context.fillStyle = pointY > 0 ? color.upper : color.lower;
+          context.fill();
+          context.lineWidth = 1.4;
+          context.strokeStyle = color.paper;
+          context.stroke();
+        }
+
+        context.font = '14px Georgia, "Songti SC", serif';
+        context.fillStyle = color.muted;
+        context.textBaseline = 'middle';
+        context.textAlign = 'right';
+        context.fillText('1', box.left - 9, y(1));
+        context.fillText('−1', box.left - 9, y(-1));
+        context.textAlign = 'left';
+        context.fillText('−' + format(radius), box.left, centerY + 17);
+        context.textAlign = 'right';
+        context.fillText(format(radius), box.right, centerY + 17);
+        context.fillText('0', centerX - 7, centerY + 17);
+        context.textAlign = 'left';
+        context.fillText('x', box.right + 3, centerY - 10);
+        context.fillText('y', centerX + 8, box.top - 8);
+        context.textAlign = 'center';
+        context.fillStyle = color.ink;
+        context.fillText('x = 0 处无定义', centerX, height - 14);
+      }
+
+      function update() {
+        const value = Math.min(RANGE_END, Math.max(0, Number(range.value)));
+        radius = Math.exp(LOG_RADIUS * value / RANGE_END);
+        output.value = '[−' + format(radius) + ', ' + format(radius) + ']';
+        range.setAttribute('aria-valuetext', '负' + format(radius) + '到' + format(radius) + '，零点除外');
+        draw();
+      }
+
+      function buttonState() {
+        play.textContent = reducedMotion.matches ? '靠近一步' : (playing ? '暂停' : '播放');
+        play.setAttribute('aria-pressed', String(playing));
+      }
+
+      function stop() {
+        playing = false;
+        cancelAnimationFrame(animation);
+        animation = 0;
+        buttonState();
+      }
+
+      function frame(now) {
+        if (!playing || document.hidden) { stop(); return; }
+        const value = Math.min(RANGE_END, startValue + (now - startTime) / DURATION * RANGE_END);
+        if (now - lastDrawTime >= FRAME_INTERVAL || value >= RANGE_END) {
+          range.value = String(value);
+          update();
+          lastDrawTime = now;
+        }
+        if (value >= RANGE_END) stop();
+        else animation = requestAnimationFrame(frame);
+      }
+
+      play.addEventListener('click', () => {
+        if (reducedMotion.matches) {
+          stop();
+          range.value = String(Number(range.value) >= RANGE_END ? 0 : Math.min(RANGE_END, Number(range.value) + 125));
+          update();
+          return;
+        }
+        if (playing) { stop(); return; }
+        if (Number(range.value) >= RANGE_END) { range.value = '0'; update(); }
+        playing = true;
+        startValue = Number(range.value);
+        startTime = performance.now();
+        lastDrawTime = startTime - FRAME_INTERVAL;
+        buttonState();
+        animation = requestAnimationFrame(frame);
+      });
+      range.addEventListener('pointerdown', stop);
+      range.addEventListener('input', () => { stop(); update(); });
+      range.addEventListener('keydown', event => {
+        if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End', 'PageUp', 'PageDown'].includes(event.key)) stop();
+      });
+      reset.addEventListener('click', () => { stop(); range.value = '0'; update(); });
+      document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); });
+      window.addEventListener('pagehide', stop);
+      reducedMotion.addEventListener('change', stop);
+
+      function theme() {
+        const parentMode = parentRoot && parentRoot.getAttribute('data-reading-mode');
+        const dark = parentMode ? parentMode === 'night' : darkPreference.matches;
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        draw();
+      }
+      try {
+        if (window.parent !== window) {
+          parentRoot = window.parent.document.documentElement;
+          new MutationObserver(theme).observe(parentRoot, { attributes: true, attributeFilter: ['data-reading-mode'] });
+        }
+      } catch (_) { parentRoot = null; }
+      darkPreference.addEventListener('change', theme);
+      new ResizeObserver(draw).observe(plot);
+      window.addEventListener('beforeprint', () => { printing = true; stop(); draw(); });
+      window.addEventListener('afterprint', () => { printing = false; draw(); });
+      theme();
+      buttonState();
+      update();
+    })();
+  </script>
+</body>
+</html>

@@ -430,6 +430,28 @@
     "source": "chpt1-ex-038.md"
   },
   {
+    "id": "chpt1-ex-039",
+    "chapter": 1,
+    "tags": [
+      "函数极限",
+      "反例"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt1-ex-039.md"
+  },
+  {
+    "id": "chpt1-ex-040",
+    "chapter": 1,
+    "tags": [
+      "函数极限",
+      "反例"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt1-ex-040.md"
+  },
+  {
     "id": "chpt10-ex-001",
     "chapter": 10,
     "tags": [

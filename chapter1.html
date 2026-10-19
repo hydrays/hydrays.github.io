@@ -11,7 +11,7 @@
   
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="assets/app.css">
-  <link rel="stylesheet" href="assets/reader.css?v=20261011-sections">
+  <link rel="stylesheet" href="assets/reader.css?v=20261018-status">
   <link rel="stylesheet" href="assets/katex/katex.min.css">
   <script src="assets/katex/katex.min.js"></script>
   <script type="importmap">
@@ -98,10 +98,12 @@
       无穷之惑—希尔伯特的酒店</a></li>
       <li><a href="#第七节-极限的数学定义"
       id="toc-第七节-极限的数学定义">第七节 · 极限的数学定义</a></li>
-      <li><a href="#第八节-极限的四则运算"
-      id="toc-第八节-极限的四则运算">第八节 · 极限的四则运算</a></li>
-      <li><a href="#第九节-七十二变换元法"
-      id="toc-第九节-七十二变换元法">第九节 · 七十二变—换元法</a></li>
+      <li><a href="#第八节-极限的计算四则运算"
+      id="toc-第八节-极限的计算四则运算">第八节 ·
+      极限的计算—四则运算</a></li>
+      <li><a href="#第九节-极限的计算换元法"
+      id="toc-第九节-极限的计算换元法">第九节 ·
+      极限的计算—换元法</a></li>
       <li><a href="#第十节-两边夹定理" id="toc-第十节-两边夹定理">第十节
       · 两边夹定理</a></li>
       <li><a href="#第十一节-boss-战圆面积"
@@ -127,6 +129,7 @@
     <div id="topbar">
       <button id="sidebar-toggle" onclick="toggleSidebar()" aria-label="打开目录" aria-expanded="false" aria-controls="sidebar">&#9776;</button>
       <span id="topbar-title">极限</span>
+      <a class="reader-status-link" href="character.html">查看我的状态</a>
       <span id="reading-progress" aria-label="本篇阅读进度">0%</span>
       <button id="reading-mode" type="button" aria-pressed="false">夜读</button>
       <button id="pdf-btn" onclick="window.print()" title="打印或保存为 PDF" aria-label="打印或保存为 PDF">打印</button>
@@ -889,6 +892,158 @@
       处的取值不参与这一要求。</p>
       </div>
       </div>
+      <div id="chpt1-ex-039" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例3：狄利克雷函数</span><span
+      class="ex-tags"><span class="ex-tag">函数极限</span><span
+      class="ex-tag">反例</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>狄利克雷函数定义为</p>
+      <p><span class="math display">
+      D(x)=
+      \begin{cases}
+      1, &amp; x\in\mathbb{Q},\\
+      0, &amp; x\in\mathbb{R}\setminus\mathbb{Q}.
+      \end{cases}
+      </span></p>
+      <p>其中 <span class="math inline">\displaystyle\mathbb{Q}</span>
+      表示有理数集。这个函数在 <span class="math inline">\displaystyle
+      x\to0</span> 时，是否趋向某个实数 <span
+      class="math inline">\displaystyle A</span>？</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-039-frame" data-panel="chpt1-ex-039-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-039-frame" data-panel="chpt1-ex-039-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-039-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-039-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>任意小的区间内都既有有理数，也有无理数。函数在这两类点上分别取什么值？</p>
+      </div>
+      <div id="chpt1-ex-039-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><strong>极限不存在。</strong> 无论把 <span
+      class="math inline">\displaystyle x</span> 限制在 <span
+      class="math inline">\displaystyle0</span>
+      附近多小的范围内，函数仍会取到 <span
+      class="math inline">\displaystyle1</span> 和 <span
+      class="math inline">\displaystyle0</span>，无法最终集中在某个实数附近。</p>
+      <p>用定义证明：假设极限为实数 <span
+      class="math inline">\displaystyle A</span>。取 <span
+      class="math inline">\displaystyle\varepsilon=\dfrac12</span>，则应存在
+      <span class="math inline">\displaystyle\delta&gt;0</span>，使得
+      <span class="math inline">\displaystyle0&lt;|x|&lt;\delta</span>
+      时都有 <span
+      class="math inline">\displaystyle|D(x)-A|&lt;\dfrac12</span>。</p>
+      <p>选取正整数 <span class="math inline">\displaystyle
+      n&gt;\dfrac{\sqrt2}{\delta}</span>，并令</p>
+      <p><span class="math display">
+      r=\dfrac1n,\qquad s=\dfrac{\sqrt2}{n}.
+      </span></p>
+      <p><span class="math inline">\displaystyle r</span>
+      是有理数，<span class="math inline">\displaystyle s</span>
+      是无理数，且 <span
+      class="math inline">\displaystyle0&lt;r,s&lt;\delta</span>。因此，定义要求</p>
+      <p><span class="math display">
+      |1-A|&lt;\dfrac12,\qquad |A|&lt;\dfrac12.
+      </span></p>
+      <p>然而</p>
+      <p><span class="math display">
+      1=|1-0|\le |1-A|+|A|&lt;\dfrac12+\dfrac12=1,
+      </span></p>
+      <p>矛盾。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt1-ex-040" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例4：振荡的反例</span><span class="ex-tags"><span
+      class="ex-tag">函数极限</span><span
+      class="ex-tag">反例</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>函数 <span class="math inline">\displaystyle
+      f(x)=\sin\!\left(\dfrac{1}{x}\right)</span> 在 <span
+      class="math inline">\displaystyle x\to0</span>
+      时，是否趋向某个实数 <span class="math inline">\displaystyle
+      A</span>？拖动下图的取值范围，观察靠近 <span
+      class="math inline">\displaystyle0</span> 时的图像。</p>
+      <figure class="limit-interactive-figure">
+      <iframe src="assets/interactive/sine-reciprocal.html" title="正弦一除以x的函数图像，可拖动x的取值范围" width="100%" height="480" style="display:block;width:100%;border:0;" loading="lazy" sandbox="allow-scripts">
+      </iframe>
+      <figcaption>
+      缩小横轴范围，观察函数值是否最终集中在某个高度附近。图中不包含
+      <span class="math inline">\displaystyle x=0</span>。
+      </figcaption>
+      </figure>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-040-frame" data-panel="chpt1-ex-040-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-040-frame" data-panel="chpt1-ex-040-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-040-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-040-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>当 <span class="math inline">\displaystyle\dfrac{1}{x}=2\pi
+      n+\dfrac{\pi}{2}</span> 时，函数值为 <span
+      class="math inline">\displaystyle1</span>；当 <span
+      class="math inline">\displaystyle\dfrac{1}{x}=2\pi
+      n+\dfrac{3\pi}{2}</span> 时，函数值为 <span
+      class="math inline">\displaystyle-1</span>。这两类点能否出现在任意小的范围内？</p>
+      </div>
+      <div id="chpt1-ex-040-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><strong>极限不存在。</strong> 函数值虽然始终在 <span
+      class="math inline">\displaystyle-1</span> 与 <span
+      class="math inline">\displaystyle1</span> 之间，但无论 <span
+      class="math inline">\displaystyle x</span> 多么靠近 <span
+      class="math inline">\displaystyle0</span>，仍会反复取到 <span
+      class="math inline">\displaystyle1</span> 和 <span
+      class="math inline">\displaystyle-1</span>，并不趋向某个确定的实数。</p>
+      <p>用定义证明：假设极限为实数 <span
+      class="math inline">\displaystyle A</span>。取 <span
+      class="math inline">\displaystyle\varepsilon=1</span>，则应存在
+      <span class="math inline">\displaystyle\delta&gt;0</span>，使得
+      <span class="math inline">\displaystyle0&lt;|x|&lt;\delta</span>
+      时都有 <span
+      class="math inline">\displaystyle|f(x)-A|&lt;1</span>。</p>
+      <p>选取正整数 <span class="math inline">\displaystyle
+      n&gt;\dfrac{1}{2\pi\delta}</span>，并取</p>
+      <p><span class="math display">
+      x_n=\dfrac{1}{2\pi n+\dfrac{\pi}{2}},
+      \qquad
+      z_n=\dfrac{1}{2\pi n+\dfrac{3\pi}{2}}.
+      </span></p>
+      <p>这两个数都在 <span
+      class="math inline">\displaystyle(0,\delta)</span> 内，且</p>
+      <p><span class="math display">
+      f(x_n)=1,\qquad f(z_n)=-1.
+      </span></p>
+      <p>因此，定义要求 <span
+      class="math inline">\displaystyle|1-A|&lt;1</span> 且 <span
+      class="math inline">\displaystyle|-1-A|&lt;1</span>。然而</p>
+      <p><span class="math display">
+      2=|1-(-1)|\le |1-A|+|A+1|&lt;2,
+      </span></p>
+      <p>矛盾。可见，<strong>函数有界，并不能保证它在所考察的趋近过程中存在极限。</strong></p>
+      </div>
+      </div>
+      </div>
+      </div>
       <div class="limit-language-table">
       <table id="limit-language-summary">
       <caption>极限的 <span class="math inline">\displaystyle
@@ -993,7 +1148,8 @@
       </div>
       <p>若把从定义出发逐一控制误差看作<strong>普攻</strong>，接下来就要学习一套<strong>连招</strong>：把已经掌握的极限组合起来，求出新极限。这套连续技，就是极限的四则运算。它也有使用条件；先学会出招，再回头试试大
       Boss。</p>
-      <h2 id="第八节-极限的四则运算">第八节 · 极限的四则运算</h2>
+      <h2 id="第八节-极限的计算四则运算">第八节 ·
+      极限的计算—四则运算</h2>
       <div class="limit-arithmetic-section">
       <p>定义让我们说清了什么叫“趋近”，但每遇到一个新式子，都重新与师傅较量一番，未免费力。能不能借助已经知道的极限，算出更多极限？<strong>四则运算，就是把简单结果组合起来的基本招式。</strong></p>
       <div class="callout callout-important">
@@ -1059,7 +1215,7 @@
       data-difficulty="easy">
       <div class="ex-banner">
       <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例3：数列的四则运算</span><span
+      class="ex-label">例5：数列的四则运算</span><span
       class="ex-tags"><span class="ex-tag">极限</span><span
       class="ex-tag">四则运算</span></span>
       </div>
@@ -1106,7 +1262,7 @@
       data-difficulty="easy">
       <div class="ex-banner">
       <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例4：数列的四则运算</span><span
+      class="ex-label">例6：数列的四则运算</span><span
       class="ex-tags"><span class="ex-tag">极限</span><span
       class="ex-tag">四则运算</span></span>
       </div>
@@ -1148,7 +1304,7 @@
       data-difficulty="easy">
       <div class="ex-banner">
       <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例5：函数的四则运算</span><span
+      class="ex-label">例7：函数的四则运算</span><span
       class="ex-tags"><span class="ex-tag">极限</span><span
       class="ex-tag">四则运算</span></span>
       </div>
@@ -1190,7 +1346,7 @@
       data-difficulty="medium">
       <div class="ex-banner">
       <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例6：函数的四则运算</span><span
+      class="ex-label">例8：函数的四则运算</span><span
       class="ex-tags"><span class="ex-tag">极限</span><span
       class="ex-tag">四则运算</span></span>
       </div>
@@ -1238,7 +1394,7 @@
       data-difficulty="medium">
       <div class="ex-banner">
       <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例7：函数的四则运算</span><span
+      class="ex-label">例9：函数的四则运算</span><span
       class="ex-tags"><span class="ex-tag">极限</span><span
       class="ex-tag">四则运算</span></span>
       </div>
@@ -1316,13 +1472,13 @@
       </div>
       </div>
       </div>
-      <h2 id="第九节-七十二变换元法">第九节 · 七十二变—换元法</h2>
+      <h2 id="第九节-极限的计算换元法">第九节 · 极限的计算—换元法</h2>
       <p>同一个式子，换一个变量来写，结构可能更清楚。<strong>换元法</strong>就是给式子中反复出现或较复杂的部分取一个新名字，再用新变量计算。</p>
       <div id="chpt1-ex-031" class="exercise-block"
       data-difficulty="medium">
       <div class="ex-banner">
       <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例8：极限的换元法</span><span
+      class="ex-label">例10：极限的换元法</span><span
       class="ex-tags"><span class="ex-tag">极限</span><span
       class="ex-tag">换元法</span></span>
       </div>
@@ -1370,7 +1526,7 @@
       data-difficulty="medium">
       <div class="ex-banner">
       <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例9：极限的换元法</span><span
+      class="ex-label">例11：极限的换元法</span><span
       class="ex-tags"><span class="ex-tag">极限</span><span
       class="ex-tag">换元法</span></span>
       </div>
@@ -1421,7 +1577,7 @@
       data-difficulty="medium">
       <div class="ex-banner">
       <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例10：极限的换元法</span><span
+      class="ex-label">例12：极限的换元法</span><span
       class="ex-tags"><span class="ex-tag">极限</span><span
       class="ex-tag">换元法</span></span>
       </div>
@@ -1598,7 +1754,7 @@
       data-difficulty="easy">
       <div class="ex-banner">
       <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例11：数列的两边夹定理</span><span
+      class="ex-label">例13：数列的两边夹定理</span><span
       class="ex-tags"><span class="ex-tag">极限</span><span
       class="ex-tag">两边夹定理</span></span>
       </div>
@@ -1945,7 +2101,7 @@
       data-difficulty="easy">
       <div class="ex-banner">
       <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例12：单调但无上界</span><span
+      class="ex-label">例14：单调但无上界</span><span
       class="ex-tags"><span class="ex-tag">极限</span><span
       class="ex-tag">单调有界</span></span>
       </div>
@@ -1981,7 +2137,7 @@
       data-difficulty="easy">
       <div class="ex-banner">
       <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例13：有界但不单调</span><span
+      class="ex-label">例15：有界但不单调</span><span
       class="ex-tags"><span class="ex-tag">极限</span><span
       class="ex-tag">单调有界</span></span>
       </div>
@@ -2162,67 +2318,22 @@
       </div>
       <section id="第十五节-回望来路" class="chapter-prologue">
       <h2>第十五节 · 回望来路</h2>
-      <p>这一回，我们从一个圆和一本账簿出发，走进了极限的世界。圆的面积与复利看似毫不相干，却都把我们带到了同一个问题面前：<strong>变化不断继续，是否会趋向一个确定的结果？</strong></p>
-      <p><strong>我们先学会了描述问题。</strong>
-      从具体事物中提取数量，用集合说明研究哪些对象，用映射与函数说明它们怎样对应。内接多边形的面积与不同结息频率下的本息，都成了可以逐项计算、比较和研究的数列。</p>
-      <p><strong>我们也学会了谨慎地谈论无限。</strong>
-      希尔伯特的酒店提醒我们，有限情形下的直觉不能不加检查地搬进无限。极限不要求某一步真正到达终点；<span
-      class="math inline">\displaystyle \varepsilon</span>–<span
+      <p>这一回，我们从一个圆和一本账簿出发，走进了极限的世界。<strong>我们学会了谨慎地谈论无限。</strong>
+      希尔伯特的酒店提醒我们，有限情形下的直觉不能不加检查地搬进无限。<span
+      class="math inline">\displaystyle\varepsilon</span>–<span
       class="math inline">\displaystyle N</span> 与 <span
-      class="math inline">\displaystyle \varepsilon</span>–<span
-      class="math inline">\displaystyle \delta</span>
+      class="math inline">\displaystyle\varepsilon</span>–<span
+      class="math inline">\displaystyle\delta</span>
       语言，让我们能够用有限世界的工具，迎战无穷世界的敌人。</p>
-      <p><strong>两场 Boss 战，各有一条关键定理。</strong></p>
-      <table>
-      <colgroup>
-      <col style="width: 33%" />
-      <col style="width: 33%" />
-      <col style="width: 33%" />
-      </colgroup>
-      <thead>
-      <tr>
-      <th style="text-align: left;">工具</th>
-      <th style="text-align: left;">要检查的条件</th>
-      <th style="text-align: left;">这一回的用法</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-      <td style="text-align: left;">两边夹定理</td>
-      <td
-      style="text-align: left;">目标被夹在两侧之间，两侧趋向同一个数</td>
-      <td style="text-align: left;">推出重要极限 <span
-      class="math inline">\displaystyle\lim_{x\to0}\frac{\sin
-      x}{x}=1</span>，证明圆面积公式</td>
-      </tr>
-      <tr>
-      <td style="text-align: left;">单调有界定理</td>
-      <td
-      style="text-align: left;">数列单调不减且有上界，或单调不增且有下界</td>
-      <td style="text-align: left;">证明复利数列收敛，为它的极限命名为
-      <span class="math inline">\displaystyle e</span></td>
-      </tr>
-      </tbody>
-      </table>
-      <p>两场 Boss 战留下了两个重要的极限：</p>
-      <p><span class="math display">
-      \begin{gathered}
-      \lim_{x\to0}\frac{\sin x}{x}=1,\\
-      \lim_{n\to\infty}\left(1+\frac1n\right)^n=e.
-      \end{gathered}
-      </span></p>
-      <p>这两个极限，也点明了本回的题眼：<strong>动中取静</strong>。<strong>动</strong>，是当
-      <span class="math inline">\displaystyle x</span> 趋于 <span
-      class="math inline">\displaystyle0</span>、<span
-      class="math inline">\displaystyle n</span> 趋于无穷大时，函数值
-      <span class="math inline">\displaystyle\sin x/x</span> 与数列项
-      <span class="math inline">\displaystyle(1+1/n)^n</span>
-      随之变化；<strong>静</strong>，是它们各自趋向的确定的数——<span
-      class="math inline">\displaystyle1</span> 与 <span
-      class="math inline">\displaystyle
-      e</span>。变化不必停止，我们仍能从中把握一个确定的极限。</p>
+      <p><span class="math inline">\displaystyle\varepsilon</span>–<span
+      class="math inline">\displaystyle N</span>
+      语言的本质，是一个“动中取静”的过程：<span
+      class="math inline">\displaystyle\varepsilon</span>
+      给出“静”的标准，然后我们在“动”中寻找界限 <span
+      class="math inline">\displaystyle N</span>，使所有 <span
+      class="math inline">\displaystyle n&gt;N</span>
+      的项都满足这一要求。回看篇首王维的“行到水穷处，坐看云起时”，静观变化的意境，也为这份数学心法添了一层诗意。</p>
       <p>过关所得不止于公式。我们学会了综合运用<strong>火眼金睛（图像）</strong>、<strong>极限的定义（普攻）</strong>、<strong>四则运算（连招）</strong>和<strong>换元法（七十二变）</strong>，在面对不同的对手时选择合适的招式。</p>
-      <p>回看篇首王维的“行到水穷处，坐看云起时”，一路探寻，再静观变化的趋向，也与这一回的<strong>动中取静</strong>相映照。</p>
       <p>合上这一回之前，试着不看讲义，回答三个问题：</p>
       <ol type="1">
       <li>我能否说清圆面积与复利分别对应哪个数列，下标表示什么？</li>
