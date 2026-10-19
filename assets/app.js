@@ -35,14 +35,170 @@
   // Keeps CSS, KaTeX, and app.js loaded — only content changes.
 
   var tocHighlightObserver = null;
+  var navigationSequence = 0;
+  var chapterTocCache = Object.create(null);
+  var tocEventsBound = false;
+  var activeChapterKey = location.pathname;
+
+  function chapterKey(url) {
+    return new URL(url, location.href).pathname;
+  }
+
+  function sectionId(hash) {
+    var value = (hash || "").replace(/^#/, "");
+    try { return decodeURIComponent(value); } catch (_) { return value; }
+  }
+
+  function scrollToSection(hash, smooth) {
+    var main = document.getElementById("main");
+    if (!main) return;
+    var id = sectionId(hash);
+    if (!id) { main.scrollTo({ top: 0, behavior: smooth ? "smooth" : "instant" }); return; }
+    var target = document.getElementById(id);
+    if (!target) return;
+    var topbar = document.getElementById("topbar");
+    var inset = (topbar ? topbar.getBoundingClientRect().height : 56) + 12;
+    var offset = target.getBoundingClientRect().top - main.getBoundingClientRect().top + main.scrollTop - inset;
+    main.scrollTo({ top: Math.max(0, offset), behavior: smooth ? "smooth" : "instant" });
+  }
+
+  function finishSectionNavigation(hash, sequence) {
+    scrollToSection(hash, false);
+    var target = document.getElementById(sectionId(hash));
+    var main = document.getElementById("main");
+    if (!target || !main) return;
+    // Images above the destination may acquire their height after the HTML swap.
+    // Realign once they settle, unless the reader has started another action.
+    var finished = false;
+    var timeout = setTimeout(function () { finish(false); }, 5000);
+    function finish(cancelled) {
+      if (finished) return;
+      finished = true;
+      clearTimeout(timeout);
+      main.removeEventListener("wheel", cancel);
+      main.removeEventListener("touchstart", cancel);
+      main.removeEventListener("pointerdown", cancel);
+      document.removeEventListener("keydown", cancel);
+      if (!cancelled && sequence === navigationSequence && target.isConnected) {
+        scrollToSection(hash, false);
+      }
+    }
+    function cancel() { finish(true); }
+    main.addEventListener("wheel", cancel, { passive: true });
+    main.addEventListener("touchstart", cancel, { passive: true });
+    main.addEventListener("pointerdown", cancel, { passive: true });
+    document.addEventListener("keydown", cancel);
+    var ready = Array.from(document.querySelectorAll("#content img")).filter(function (image) {
+      return image.compareDocumentPosition(target) & Node.DOCUMENT_POSITION_FOLLOWING;
+    }).map(function (image) {
+      if (image.complete) return Promise.resolve();
+      return new Promise(function (resolve) {
+        function loaded() {
+          image.removeEventListener("load", loaded);
+          image.removeEventListener("error", loaded);
+          resolve();
+        }
+        image.addEventListener("load", loaded);
+        image.addEventListener("error", loaded);
+        if (image.complete) loaded();
+      });
+    });
+    if (document.fonts) ready.push(document.fonts.ready);
+    Promise.all(ready).then(function () { requestAnimationFrame(function () { finish(false); }); });
+  }
+
+  function directChild(element, tag) {
+    for (var i = 0; i < element.children.length; i++) {
+      if (element.children[i].tagName === tag) return element.children[i];
+    }
+    return null;
+  }
+
+  function chapterTocTemplate(root, url) {
+    if (!root) throw new Error("chapter directory unavailable");
+    var toc = root.cloneNode(true);
+    // Some pages wrap their sections in a duplicate chapter-title item;
+    // others (including chapter 1) already provide a flat section list.
+    if (toc.children.length === 1) {
+      var sections = directChild(toc.firstElementChild, "UL");
+      if (sections) toc = sections;
+    }
+    toc.className = "chapter-toc";
+    toc.removeAttribute("id");
+    toc.querySelectorAll("[id]").forEach(function (element) { element.removeAttribute("id"); });
+    toc.querySelectorAll("a[href]").forEach(function (link) {
+      link.href = new URL(link.getAttribute("href"), new URL(url, location.href)).href;
+    });
+    toc.querySelectorAll("li").forEach(function (li) {
+      var children = directChild(li, "UL");
+      var link = directChild(li, "A");
+      if (children && link) {
+        li.classList.add("has-children");
+        link.setAttribute("aria-expanded", "false");
+      }
+    });
+    return toc;
+  }
+
+  function attachChapterToc(li, template, replace) {
+    var existing = directChild(li, "UL");
+    if (existing && !replace) return;
+    if (existing) existing.remove();
+    var toc = template.cloneNode(true);
+    toc.id = li.getAttribute("data-toc-id");
+    li.appendChild(toc);
+    renderMath(toc);
+  }
+
+  function setChapterOpen(li, open) {
+    li.classList.toggle("open", open);
+    li.firstElementChild.setAttribute("aria-expanded", String(open));
+  }
+
+  function loadChapterToc(li) {
+    if (directChild(li, "UL")) return;
+    var url = li.getAttribute("data-chapter-url");
+    var key = chapterKey(url);
+    var status = li.querySelector(".nav-toc-status");
+    if (!status) {
+      status = document.createElement("p");
+      status.className = "nav-toc-status";
+      status.setAttribute("role", "status");
+      li.appendChild(status);
+    }
+    status.textContent = "目录加载中…";
+    li.setAttribute("aria-busy", "true");
+    if (!chapterTocCache[key]) {
+      chapterTocCache[key] = fetch(url).then(function (response) {
+        if (!response.ok) throw new Error("chapter directory fetch failed");
+        return response.text();
+      }).then(function (html) {
+        var doc = new DOMParser().parseFromString(html, "text/html");
+        return chapterTocTemplate(doc.querySelector("#toc-nav ul"), url);
+      });
+    }
+    chapterTocCache[key].then(function (template) {
+      attachChapterToc(li, template, false);
+      status.remove();
+      li.removeAttribute("aria-busy");
+      // A response must not reopen a directory the reader already collapsed.
+    }).catch(function () {
+      delete chapterTocCache[key];
+      status.textContent = "目录加载失败，重新展开本回可重试。";
+      li.removeAttribute("aria-busy");
+    });
+  }
 
   function navigate(url, fromHistory) {
+    var sequence = ++navigationSequence;
+    var destination = new URL(url, location.href);
     fetch(url)
       .then(function (r) {
         if (!r.ok) throw new Error("fetch failed");
         return r.text();
       })
       .then(function (html) {
+        if (sequence !== navigationSequence) return;
         var doc = new DOMParser().parseFromString(html, "text/html");
 
         // Swap main content
@@ -50,6 +206,7 @@
         var contentEl  = document.getElementById("content");
         if (!newContent || !contentEl) { window.location.href = url; return; }
         contentEl.innerHTML = newContent.innerHTML;
+        activeChapterKey = destination.pathname;
         [".reader-banner", ".reader-epigraph", ".reader-pagination"].forEach(function (selector) {
           var oldPart = document.querySelector(selector);
           var newPart = doc.querySelector(selector);
@@ -88,31 +245,25 @@
         var mainEl = document.getElementById("main");
         if (mainEl) mainEl.scrollTo(0, 0);
 
-        // Update sidebar: clear current state, set new current chapter
-        var currentFile = url.split("?")[0].split("/").pop();
-        var oldToc = document.querySelector("ul.chapter-toc");
-        if (oldToc) oldToc.remove();
-
+        // Keep independently expanded directories when changing the reading page.
+        document.querySelectorAll("#doc-nav-list .toc-active").forEach(function (link) {
+          link.classList.remove("toc-active");
+        });
         document.querySelectorAll("#doc-nav-list li.nav-chapter").forEach(function (li) {
-          var a = li.querySelector("a");
-          li.classList.remove("nav-chapter-current", "open");
-          a.classList.remove("current");
-
-          var itemFile = a.getAttribute("href").split("?")[0].split("/").pop();
-          if (itemFile !== currentFile) return;
-
-          a.classList.add("current");
-          li.classList.add("nav-chapter-current", "open");
-
-          // Inline the new chapter's TOC
-          var newTocUl = doc.querySelector("#toc-nav ul");
-          if (newTocUl) {
-            var tocUl = newTocUl.cloneNode(true);
-            tocUl.className = "chapter-toc";
-            li.appendChild(tocUl);
+          var button = li.firstElementChild;
+          var current = chapterKey(li.getAttribute("data-chapter-url")) === destination.pathname;
+          li.classList.toggle("nav-chapter-current", current);
+          button.classList.toggle("current", current);
+          if (current) button.setAttribute("aria-current", "page");
+          else button.removeAttribute("aria-current");
+          if (!current) return;
+          var tocRoot = doc.querySelector("#toc-nav ul");
+          if (tocRoot) {
+            var template = chapterTocTemplate(tocRoot, url);
+            chapterTocCache[destination.pathname] = Promise.resolve(template);
+            attachChapterToc(li, template, true);
           }
-
-          setTimeout(function () { a.scrollIntoView({ block: "nearest" }); }, 0);
+          setChapterOpen(li, true);
         });
 
         // Re-execute scripts from new content (innerHTML does not run scripts).
@@ -141,20 +292,27 @@
         renderMath(contentEl);
         if (typeof window.threeLazyReinit === "function") window.threeLazyReinit();
         closeSidebar();
+        if (destination.hash) finishSectionNavigation(destination.hash, sequence);
         document.dispatchEvent(new Event("reader:chapter"));
       })
       .catch(function () {
+        if (sequence !== navigationSequence) return;
         // Fall back to normal navigation on any error
         window.location.href = url;
       });
   }
 
   // Handle browser back / forward.
-  // Only act on history entries we created via pushState({ url: ... }).
-  // Hash-link navigations have e.state === null — ignore them to prevent
-  // TOC section clicks from re-navigating and collapsing the accordion.
+  // Same-page history restores the section without fetching or resetting TOCs.
   window.addEventListener("popstate", function (e) {
     if (!e.state || !e.state.url) return;
+    var destination = new URL(e.state.url, location.href);
+    if (destination.pathname === activeChapterKey) {
+      ++navigationSequence;
+      scrollToSection(destination.hash, false);
+      closeSidebar();
+      return;
+    }
     navigate(e.state.url, true);
   });
 
@@ -164,31 +322,35 @@
     var list = document.getElementById("doc-nav-list");
     if (!list || !window.docLib || !window.docLib.length) return;
 
-    var currentFile = location.pathname.split("/").pop() || "index.html";
-
-    window.docLib.forEach(function (item) {
+    window.docLib.forEach(function (item, index) {
       var li = document.createElement("li");
       li.className = "nav-chapter";
-      var a = document.createElement("a");
-
-      a.href = item.url;
-      a.textContent = item.title;
-      a.title = item.title;
-
-      var itemFile = item.url.split("?")[0].split("/").pop();
-      var isCurrent = (itemFile === currentFile);
+      li.setAttribute("data-chapter-url", item.url);
+      li.setAttribute("data-toc-id", "chapter-toc-" + index);
+      var button = document.createElement("button");
+      button.type = "button";
+      button.className = "nav-chapter-toggle";
+      button.textContent = item.title;
+      button.title = item.title;
+      button.setAttribute("aria-expanded", "false");
+      button.setAttribute("aria-controls", "chapter-toc-" + index);
+      li.appendChild(button);
+      var isCurrent = chapterKey(item.url) === location.pathname;
 
       if (isCurrent) {
-        a.className = "current";
-        li.classList.add("nav-chapter-current", "open");
+        button.classList.add("current");
+        button.setAttribute("aria-current", "page");
+        li.classList.add("nav-chapter-current");
+        setChapterOpen(li, true);
 
-        // Move the page TOC into this list item as an inline sub-list
+        // Cache the current directory without fetching its page again.
         var tocNav = document.getElementById("toc-nav");
         if (tocNav) {
           var tocUl = tocNav.querySelector("ul");
           if (tocUl) {
-            tocUl.className = "chapter-toc";
-            li.appendChild(tocUl);
+            var template = chapterTocTemplate(tocUl, item.url);
+            chapterTocCache[chapterKey(item.url)] = Promise.resolve(template);
+            attachChapterToc(li, template, false);
           }
           tocNav.style.display = "none";
           var divider = document.querySelector(".nav-divider");
@@ -196,26 +358,22 @@
         }
 
         setTimeout(function () {
-          a.scrollIntoView({ block: "nearest" });
+          button.scrollIntoView({ block: "nearest" });
         }, 0);
       }
 
-      li.insertBefore(a, li.firstChild);
       list.appendChild(li);
     });
 
-    // Delegated click handler: decide navigate vs. toggle based on current
-    // state, not on a stale onclick set when the chapter was last current.
+    // Chapter titles control their own directories; reading navigation belongs
+    // to the child section links, even when a different chapter is open.
     list.addEventListener("click", function (e) {
-      var a = e.target.closest("li.nav-chapter > a");
-      if (!a || !list.contains(a) || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button !== 0) return;
-      e.preventDefault();
-      var li = a.parentElement;
-      if (li.classList.contains("nav-chapter-current")) {
-        li.classList.toggle("open");
-      } else {
-        navigate(a.getAttribute("href"));
-      }
+      var button = e.target.closest(".nav-chapter-toggle");
+      if (!button || !list.contains(button)) return;
+      var li = button.parentElement;
+      var open = !li.classList.contains("open");
+      setChapterOpen(li, open);
+      if (open) loadChapterToc(li);
     });
   }
 
@@ -254,7 +412,7 @@
   // ── TOC active section highlighting ─────────────────────────
 
   function initTocHighlight() {
-    var tocLinks = document.querySelectorAll("#doc-nav-list a[href^='#']");
+    var tocLinks = document.querySelectorAll("#doc-nav-list .nav-chapter-current ul.chapter-toc a");
     if (!tocLinks.length) return null;
 
     var headings = Array.from(
@@ -269,7 +427,7 @@
           var id = entry.target.id;
           if (!id) return;
           tocLinks.forEach(function (a) {
-            a.classList.toggle("toc-active", a.getAttribute("href") === "#" + id);
+            a.classList.toggle("toc-active", sectionId(new URL(a.href).hash) === id);
           });
         });
       },
@@ -304,38 +462,31 @@
   // ── TOC accordion ────────────────────────────────────────────
 
   function initTocAccordion() {
-    var chapterToc = document.querySelector("ul.chapter-toc");
-    if (!chapterToc) return;
-    var mainEl = document.getElementById("main");
-
-    chapterToc.querySelectorAll("li").forEach(function (li) {
-      var link = null;
-      var childUl = null;
-      for (var i = 0; i < li.children.length; i++) {
-        if (li.children[i].tagName === "A")  link   = li.children[i];
-        if (li.children[i].tagName === "UL") childUl = li.children[i];
+    var list = document.getElementById("doc-nav-list");
+    if (!list || tocEventsBound) return;
+    tocEventsBound = true;
+    list.addEventListener("click", function (e) {
+      var link = e.target.closest("ul.chapter-toc a");
+      if (!link || !list.contains(link) || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      e.preventDefault();
+      var li = link.parentElement;
+      if (directChild(li, "UL")) {
+        var open = !li.classList.contains("open");
+        li.classList.toggle("open", open);
+        link.setAttribute("aria-expanded", String(open));
+        return;
       }
-      if (!link) return;
-
-      if (childUl) {
-        // Section with sub-items: toggle open/close
-        li.classList.add("has-children");
-        link.addEventListener("click", function (e) {
-          e.preventDefault();
-          li.classList.toggle("open");
-        });
+      var destination = new URL(link.href);
+      if (destination.pathname === activeChapterKey) {
+        ++navigationSequence;
+        var localUrl = destination.pathname + destination.search + destination.hash;
+        if (localUrl !== location.pathname + location.search + location.hash) {
+          history.pushState({ url: localUrl }, "", localUrl);
+        }
+        scrollToSection(destination.hash, true);
+        closeSidebar();
       } else {
-        // Leaf section: scroll #main to the target heading
-        link.addEventListener("click", function (e) {
-          e.preventDefault();
-          var id = (link.getAttribute("href") || "").replace(/^#/, "");
-          if (!id) return;
-          var target = document.getElementById(id);
-          if (!target || !mainEl) return;
-          var offset = target.getBoundingClientRect().top + mainEl.scrollTop - 56;
-          mainEl.scrollTo({ top: offset, behavior: "smooth" });
-          closeSidebar();
-        });
+        navigate(destination.pathname + destination.search + destination.hash);
       }
     });
   }
@@ -447,7 +598,7 @@
   // ── Init ─────────────────────────────────────────────────────
 
   function init() {
-    history.replaceState({ url: location.pathname + location.search }, "", location.href);
+    history.replaceState({ url: location.pathname + location.search + location.hash }, "", location.href);
     buildDocNav();
     applyAutonum();
     initTocAccordion();

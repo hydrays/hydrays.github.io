@@ -97,7 +97,21 @@ code, pre {
   padding: 0;
 }
 
-#doc-nav-list li a {
+#doc-nav-list .nav-chapter-toggle {
+  appearance: none;
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  font: inherit;
+  line-height: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+#doc-nav-list li a,
+#doc-nav-list .nav-chapter-toggle {
   display: block;
   padding: 6px 20px;
   font-size: 0.85em;
@@ -110,19 +124,34 @@ code, pre {
   transition: background 0.15s, border-color 0.15s;
 }
 
-#doc-nav-list li a:hover {
+#doc-nav-list li a:hover,
+#doc-nav-list .nav-chapter-toggle:hover {
   background: var(--v-hover-bg, rgba(28,30,31,0.1));
   color: var(--v-ac, #298bcc);
 }
 
-#doc-nav-list li a.current {
+#doc-nav-list li a.current,
+#doc-nav-list .nav-chapter-toggle.current {
   border-left-color: var(--v-ac, #298bcc);
   color: var(--v-ac, #298bcc);
   font-weight: 600;
   background: var(--v-ac-bg, #ddedf8);
 }
 
-/* Inline TOC sub-list — rendered inside the current chapter's nav-chapter li */
+#doc-nav-list .nav-chapter-toggle:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: -3px;
+}
+
+.nav-toc-status {
+  margin: 4px 24px 12px;
+  color: var(--v-tt-3, #999);
+  font-size: 0.75em;
+  line-height: 1.6;
+}
+.nav-chapter:not(.open) > .nav-toc-status { display: none; }
+
+/* Each chapter owns a cached TOC; expanded chapters show their section links. */
 ul.chapter-toc {
   list-style: none;
   margin: 4px 0 4px;
@@ -131,7 +160,7 @@ ul.chapter-toc {
   margin-left: 20px;
   display: none;                        /* whole TOC hidden until chapter clicked */
 }
-.nav-chapter-current.open ul.chapter-toc          { display: block; }
+.nav-chapter.open > ul.chapter-toc { display: block; }
 
 ul.chapter-toc ul {
   list-style: none;
@@ -139,14 +168,9 @@ ul.chapter-toc ul {
   padding: 0;
 }
 
-/* The top-level sections list is always visible once the chapter is open */
-.nav-chapter-current.open ul.chapter-toc > li > ul { display: block; }
-
-/* Deeper nested lists (subsections, sub-subsections) start hidden */
-ul.chapter-toc > li > ul > li > ul               { display: none; }
-ul.chapter-toc > li > ul > li.open > ul          { display: block; }
-ul.chapter-toc > li > ul > li > ul > li > ul     { display: none; }
-ul.chapter-toc > li > ul > li > ul > li.open > ul { display: block; }
+/* Nested subsection lists open independently of their parent chapter. */
+ul.chapter-toc li > ul { display: none; }
+ul.chapter-toc li.open > ul { display: block; }
 
 ul.chapter-toc li a {
   display: block;
@@ -161,18 +185,15 @@ ul.chapter-toc li a {
   border-radius: 3px;
 }
 
-/* Hide the duplicate chapter title (top-level anchor) — must come after li a rule */
-ul.chapter-toc > li > a {
-  display: none !important;
-}
-
 /* Expand/collapse arrow on chapter nav entry */
-.nav-chapter-current > a::before {
+.nav-chapter > a::before,
+.nav-chapter > .nav-chapter-toggle::before {
   content: "▶ ";
   font-size: 0.6em;
   opacity: 0.5;
 }
-.nav-chapter-current.open > a::before {
+.nav-chapter.open > a::before,
+.nav-chapter.open > .nav-chapter-toggle::before {
   content: "▼ ";
 }
 
@@ -188,15 +209,19 @@ ul.chapter-toc li a.toc-active {
 }
 
 /* Section level (1.1): base indent */
-ul.chapter-toc > li > ul > li > a {
+ul.chapter-toc > li > a {
   padding-left: 10px !important;
 }
 
 /* Subsection level (1.1.1): extra indent */
-ul.chapter-toc > li > ul > li > ul > li > a {
+ul.chapter-toc > li > ul > li > a {
   padding-left: 28px !important;
   font-size: 0.77em;
   color: var(--v-tt-3, #999);
+}
+
+ul.chapter-toc > li > ul > li > ul > li > a {
+  padding-left: 44px !important;
 }
 
 /* Main content area */
