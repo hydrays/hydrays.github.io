@@ -10,8 +10,9 @@
   
   
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="assets/app.css?v=20261019-directory">
-  <link rel="stylesheet" href="assets/reader.css?v=20261019-directory">
+  <link rel="stylesheet" href="assets/app.css?v=20261024-proof-label">
+  <link rel="stylesheet" href="assets/reader.css?v=20261025-video-attribution">
+  <link rel="stylesheet" href="assets/secant-demo.css?v=20261024-two-plots">
   <link rel="stylesheet" href="assets/katex/katex.min.css">
   <script src="assets/katex/katex.min.js"></script>
   <script type="importmap">
@@ -151,7 +152,7 @@
       <button id="pdf-btn" onclick="window.print()" title="打印或保存为 PDF" aria-label="打印或保存为 PDF">打印</button>
     </div>
     <div class="reader-progress-track" aria-hidden="true"><span id="reading-progress-bar"></span></div>
-    <header class="reader-banner" style="--scene:url(home/applications.png)"><div class="reader-banner-art" style="background-image:url(assets/home/applications.png)"></div><div class="reader-banner-copy"><h1 class="reader-chapter-title">第四回 · 未竟</h1></div><a class="reader-home" href="index.html">返回山门 ↗</a></header><figure class="reader-epigraph" aria-label="篇首引文"><blockquote>纸上得来终觉浅，绝知此事要躬行。</blockquote><figcaption>—— 陆游《冬夜读书示子聿》</figcaption></figure>
+    <header class="reader-banner" style="--scene:url(home/applications.png)"><div class="reader-banner-art" style="background-image:url(assets/home/applications.png)"></div><div class="reader-banner-copy"><h1 class="reader-chapter-title">第四回 · 未竟</h1><figure class="banner-epigraph"><blockquote>纸上得来终觉浅，绝知此事要躬行。</blockquote><figcaption>—— 陆游《冬夜读书示子聿》</figcaption></figure></div><a class="reader-home" href="index.html">返回山门 ↗</a></header><figure class="reader-epigraph" hidden></figure>
     <div id="video-panel">
       <button id="video-close-btn" aria-label="Close video">&times;</button>
       <iframe id="video-frame" src="" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
@@ -173,18 +174,19 @@
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">悟</span></div>
       <div class="callout-body">
       <p><strong>微分中值定理 (拉格朗日中值定理)</strong>: 设函数 <span
-      class="math inline">f(x)</span> 在闭区间 <span
-      class="math inline">[a, b]</span> 上连续, 并且在开区间 <span
-      class="math inline">(a, b)</span> 上可导. 那么, 存在一个点 <span
-      class="math inline">c \in (a, b)</span>, 使得: <span
-      class="math display">
+      class="math inline">\displaystyle f(x)</span> 在闭区间 <span
+      class="math inline">\displaystyle [a, b]</span> 上连续,
+      并且在开区间 <span class="math inline">\displaystyle (a, b)</span>
+      上可导. 那么, 存在一个点 <span class="math inline">\displaystyle c
+      \in (a, b)</span>, 使得: <span class="math display">
       f&#39;(c) = \frac{f(b) - f(a)}{b - a}
       </span></p>
-      <p>该定理的几何意义是: 在曲线 <span class="math inline">y =
-      f(x)</span> 上, 至少存在一点 <span class="math inline">c</span>,
-      它的切线斜率等于割线通过点 <span class="math inline">(a,
-      f(a))</span> 和 <span class="math inline">(b, f(b))</span>
-      的斜率.</p>
+      <p>该定理的几何意义是: 在曲线 <span
+      class="math inline">\displaystyle y = f(x)</span> 上, 至少存在一点
+      <span class="math inline">\displaystyle c</span>,
+      它的切线斜率等于割线通过点 <span class="math inline">\displaystyle
+      (a, f(a))</span> 和 <span class="math inline">\displaystyle (b,
+      f(b))</span> 的斜率.</p>
       <figure>
       <img src="media/img/chpt5_mean_value_theorem.png" height="400"
       alt="中值定理" />
@@ -196,8 +198,9 @@
       <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">定理的直观理解</span></div>
       <div class="callout-body">
       <p>想象你开车从A城市到B城市, 总距离是 <span
-      class="math inline">f(b)-f(a)</span>, 总时间是 <span
-      class="math inline">b-a</span>, 那么你的平均速度就是 <span
+      class="math inline">\displaystyle f(b)-f(a)</span>, 总时间是 <span
+      class="math inline">\displaystyle b-a</span>, 那么你的平均速度就是
+      <span
       class="math inline">\displaystyle\frac{f(b)-f(a)}{b-a}</span>.</p>
       <p>微分中值定理告诉我们: 在整个旅途中,
       <strong>至少存在某一时刻</strong>, 你的瞬时速度 (导数)
@@ -211,7 +214,7 @@
       <div class="callout-body">
       <p><strong>注意</strong>:
       该定理的结论也是<strong>存在性</strong>的, 并没有给出这个点 <span
-      class="math inline">c</span> 的具体计算方法.</p>
+      class="math inline">\displaystyle c</span> 的具体计算方法.</p>
       <p>微分中值定理建立了函数的<strong>局部性质</strong> (导数)
       与<strong>整体性质</strong> (函数值变化) 之间的桥梁:</p>
       <ul>
@@ -236,9 +239,9 @@
       class="ex-tag">拉格朗日中值定理</span></span>
       </div>
       <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>证明不等式：<span class="math inline">|\sin x - \sin y| \leq |x
-      - y|</span>。</p>
+      <div class="ex-problem-box ex-proof">
+      <p>不等式：<span class="math inline">\displaystyle |\sin x - \sin
+      y| \leq |x - y|</span>。</p>
       </div>
       <div class="ex-controls">
       <div class="ex-sol-row">
@@ -250,27 +253,29 @@
       <div id="chpt5-ex-001-frame" class="ex-frame" hidden="">
       <div id="chpt5-ex-001-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>对 <span class="math inline">f(t) = \sin t</span> 在以 <span
-      class="math inline">x, y</span>
+      <p>对 <span class="math inline">\displaystyle f(t) = \sin t</span>
+      在以 <span class="math inline">\displaystyle x, y</span>
       为端点的区间上应用拉格朗日中值定理，利用 <span
-      class="math inline">|\cos c| \leq 1</span>。</p>
+      class="math inline">\displaystyle |\cos c| \leq 1</span>。</p>
       </div>
       <div id="chpt5-ex-001-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p>对函数 <span class="math inline">f(t) = \sin t</span> 在区间
-      <span class="math inline">[x, y]</span>（或 <span
-      class="math inline">[y, x]</span>）上应用拉格朗日中值定理：存在
-      <span class="math inline">c</span> 介于 <span
-      class="math inline">x, y</span> 之间，使得</p>
+      <p>对函数 <span class="math inline">\displaystyle f(t) = \sin
+      t</span> 在区间 <span class="math inline">\displaystyle [x,
+      y]</span>（或 <span class="math inline">\displaystyle [y,
+      x]</span>）上应用拉格朗日中值定理：存在 <span
+      class="math inline">\displaystyle c</span> 介于 <span
+      class="math inline">\displaystyle x, y</span> 之间，使得</p>
       <p><span class="math display">
       \frac{\sin x - \sin y}{x - y} = \cos c
       </span></p>
-      <p>由于 <span class="math inline">|\cos c| \leq 1</span>，故</p>
+      <p>由于 <span class="math inline">\displaystyle |\cos c| \leq
+      1</span>，故</p>
       <p><span class="math display">
       \left|\frac{\sin x - \sin y}{x - y}\right| = |\cos c| \leq 1
       </span></p>
-      <p>即 <span class="math inline">|\sin x - \sin y| \leq |x -
-      y|</span>。</p>
+      <p>即 <span class="math inline">\displaystyle |\sin x - \sin y|
+      \leq |x - y|</span>。</p>
       </div>
       </div>
       </div>
@@ -284,10 +289,10 @@
       class="ex-tag">拉格朗日中值定理</span></span>
       </div>
       <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>证明：如果 <span class="math inline">f&#39;(x) = 0</span>
-      在某个区间上恒成立，则 <span class="math inline">f(x)</span>
-      是常数函数。</p>
+      <div class="ex-problem-box ex-proof">
+      <p>如果 <span class="math inline">\displaystyle f&#39;(x) =
+      0</span> 在某个区间上恒成立，则 <span
+      class="math inline">\displaystyle f(x)</span> 是常数函数。</p>
       </div>
       <div class="ex-controls">
       <div class="ex-sol-row">
@@ -299,24 +304,26 @@
       <div id="chpt5-ex-002-frame" class="ex-frame" hidden="">
       <div id="chpt5-ex-002-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>任取区间上两点 <span class="math inline">a &lt; b</span>，对
-      <span class="math inline">f</span> 在 <span
-      class="math inline">[a, b]</span> 上应用拉格朗日中值定理，利用
-      <span class="math inline">f&#39;(c) = 0</span> 得到 <span
-      class="math inline">f(a) = f(b)</span>。</p>
+      <p>任取区间上两点 <span class="math inline">\displaystyle a &lt;
+      b</span>，对 <span class="math inline">\displaystyle f</span> 在
+      <span class="math inline">\displaystyle [a, b]</span>
+      上应用拉格朗日中值定理，利用 <span
+      class="math inline">\displaystyle f&#39;(c) = 0</span> 得到 <span
+      class="math inline">\displaystyle f(a) = f(b)</span>。</p>
       </div>
       <div id="chpt5-ex-002-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p>任取区间上两点 <span class="math inline">a &lt;
-      b</span>，由拉格朗日中值定理，存在 <span class="math inline">c \in
-      (a, b)</span> 使得</p>
+      <p>任取区间上两点 <span class="math inline">\displaystyle a &lt;
+      b</span>，由拉格朗日中值定理，存在 <span
+      class="math inline">\displaystyle c \in (a, b)</span> 使得</p>
       <p><span class="math display">
       f(b) - f(a) = f&#39;(c)(b - a) = 0 \cdot (b - a) = 0
       </span></p>
-      <p>因此 <span class="math inline">f(b) = f(a)</span>。由于 <span
-      class="math inline">a, b</span> 是任意选取的，<span
-      class="math inline">f</span> 在整个区间上取值恒等，故 <span
-      class="math inline">f(x)</span> 是常数函数。</p>
+      <p>因此 <span class="math inline">\displaystyle f(b) =
+      f(a)</span>。由于 <span class="math inline">\displaystyle a,
+      b</span> 是任意选取的，<span class="math inline">\displaystyle
+      f</span> 在整个区间上取值恒等，故 <span
+      class="math inline">\displaystyle f(x)</span> 是常数函数。</p>
       </div>
       </div>
       </div>
@@ -325,9 +332,10 @@
       <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">注</span></div>
       <div class="callout-body">
       <p><strong>反例:</strong></p>
-      <p>如下图, 该函数在 <span class="math inline">(0, 2)</span>
-      上不可导, 不满足拉格朗日中值定理的前提条件, 所以不能应用该定理.
-      <img src="media/img/chpt5_5.1.1_counterexample.png" /></p>
+      <p>如下图, 该函数在 <span class="math inline">\displaystyle (0,
+      2)</span> 上不可导, 不满足拉格朗日中值定理的前提条件,
+      所以不能应用该定理. <img
+      src="media/img/chpt5_5.1.1_counterexample.png" /></p>
       </div>
       </div>
       <div id="chpt5-ex-003" class="exercise-block"
@@ -340,18 +348,18 @@
       </div>
       <div class="ex-body">
       <div class="ex-problem-box">
-      <p>对于 <span class="math inline">f(x) = x^2</span>，任取两点
-      <span class="math inline">x_1 &lt;
-      x_2</span>，找出满足拉格朗日中值定理的中值点 <span
-      class="math inline">c</span>。</p>
+      <p>对于 <span class="math inline">\displaystyle f(x) =
+      x^2</span>，任取两点 <span class="math inline">\displaystyle x_1
+      &lt; x_2</span>，找出满足拉格朗日中值定理的中值点 <span
+      class="math inline">\displaystyle c</span>。</p>
       <figure>
       <img src="media/img/chpt5_ex003.png" width="400"
-      alt="f(x)=x^2 上 x_1, x_2 之间的割线 (红虚) 与某个 c 处的切线 (绿) 平行 — 这就是拉格朗日中值定理" />
+      alt="\displaystyle f(x)=x^2 上 \displaystyle x_1, x_2 之间的割线 (红虚) 与某个 \displaystyle c 处的切线 (绿) 平行 — 这就是拉格朗日中值定理" />
       <figcaption aria-hidden="true"><span
-      class="math inline">f(x)=x^2</span> 上 <span
-      class="math inline">x_1, x_2</span> 之间的割线 (红虚) 与某个 <span
-      class="math inline">c</span> 处的切线 (绿) 平行 —
-      这就是拉格朗日中值定理</figcaption>
+      class="math inline">\displaystyle f(x)=x^2</span> 上 <span
+      class="math inline">\displaystyle x_1, x_2</span> 之间的割线
+      (红虚) 与某个 <span class="math inline">\displaystyle c</span>
+      处的切线 (绿) 平行 — 这就是拉格朗日中值定理</figcaption>
       </figure>
       </div>
       <div class="ex-controls">
@@ -364,26 +372,27 @@
       <div id="chpt5-ex-003-frame" class="ex-frame" hidden="">
       <div id="chpt5-ex-003-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>计算差商 <span class="math inline">\dfrac{f(x_2) - f(x_1)}{x_2
-      - x_1}</span>，令其等于 <span class="math inline">f&#39;(c) =
-      2c</span>，解出 <span class="math inline">c</span>。</p>
+      <p>计算差商 <span class="math inline">\displaystyle \dfrac{f(x_2)
+      - f(x_1)}{x_2 - x_1}</span>，令其等于 <span
+      class="math inline">\displaystyle f&#39;(c) = 2c</span>，解出
+      <span class="math inline">\displaystyle c</span>。</p>
       </div>
       <div id="chpt5-ex-003-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p><span class="math inline">f(x) = x^2</span>
-      是多项式，在任意区间 <span class="math inline">[x_1, x_2]</span>
-      上连续且可导，满足拉格朗日中值定理的条件。</p>
+      <p><span class="math inline">\displaystyle f(x) = x^2</span>
+      是多项式，在任意区间 <span class="math inline">\displaystyle [x_1,
+      x_2]</span> 上连续且可导，满足拉格朗日中值定理的条件。</p>
       <p>计算差商：</p>
       <p><span class="math display">
       \frac{f(x_2) - f(x_1)}{x_2 - x_1} = \frac{x_2^2 - x_1^2}{x_2 -
       x_1} = x_2 + x_1
       </span></p>
-      <p>令 <span class="math inline">f&#39;(c) = 2c = x_2 +
-      x_1</span>，解得</p>
+      <p>令 <span class="math inline">\displaystyle f&#39;(c) = 2c = x_2
+      + x_1</span>，解得</p>
       <p><span class="math display">
       c = \frac{x_1 + x_2}{2}
       </span></p>
-      <p>中值点 <span class="math inline">c</span>
+      <p>中值点 <span class="math inline">\displaystyle c</span>
       恰好为区间中点，满足定理要求。</p>
       </div>
       </div>
@@ -399,18 +408,20 @@
       </div>
       <div class="ex-body">
       <div class="ex-problem-box">
-      <p>对于 <span class="math inline">f(x) = x^3</span>，取 <span
-      class="math inline">x_1 = 0</span>，<span class="math inline">x_2
-      = 1</span>，找出满足拉格朗日中值定理的中值点 <span
-      class="math inline">c</span>。</p>
+      <p>对于 <span class="math inline">\displaystyle f(x) =
+      x^3</span>，取 <span class="math inline">\displaystyle x_1 =
+      0</span>，<span class="math inline">\displaystyle x_2 =
+      1</span>，找出满足拉格朗日中值定理的中值点 <span
+      class="math inline">\displaystyle c</span>。</p>
       <figure>
       <img src="media/img/chpt5_ex004.png" width="400"
-      alt="f(x)=x^3 在 [0,1] 的割线斜率 =1, 切线在 c=1/\sqrt{3} 处与之平行" />
+      alt="\displaystyle f(x)=x^3 在 \displaystyle [0,1] 的割线斜率 \displaystyle =1, 切线在 \displaystyle c=1/\sqrt{3} 处与之平行" />
       <figcaption aria-hidden="true"><span
-      class="math inline">f(x)=x^3</span> 在 <span
-      class="math inline">[0,1]</span> 的割线斜率 <span
-      class="math inline">=1</span>, 切线在 <span
-      class="math inline">c=1/\sqrt{3}</span> 处与之平行</figcaption>
+      class="math inline">\displaystyle f(x)=x^3</span> 在 <span
+      class="math inline">\displaystyle [0,1]</span> 的割线斜率 <span
+      class="math inline">\displaystyle =1</span>, 切线在 <span
+      class="math inline">\displaystyle c=1/\sqrt{3}</span>
+      处与之平行</figcaption>
       </figure>
       </div>
       <div class="ex-controls">
@@ -423,26 +434,27 @@
       <div id="chpt5-ex-004-frame" class="ex-frame" hidden="">
       <div id="chpt5-ex-004-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>计算 <span class="math inline">\dfrac{f(1) - f(0)}{1 -
-      0}</span>，令其等于 <span class="math inline">f&#39;(c) =
-      3c^2</span>，解出 <span class="math inline">c \in (0,
-      1)</span>。</p>
+      <p>计算 <span class="math inline">\displaystyle \dfrac{f(1) -
+      f(0)}{1 - 0}</span>，令其等于 <span
+      class="math inline">\displaystyle f&#39;(c) = 3c^2</span>，解出
+      <span class="math inline">\displaystyle c \in (0, 1)</span>。</p>
       </div>
       <div id="chpt5-ex-004-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p><span class="math inline">f(x) = x^3</span> 在 <span
-      class="math inline">[0, 1]</span> 上连续且可导，满足定理条件。</p>
+      <p><span class="math inline">\displaystyle f(x) = x^3</span> 在
+      <span class="math inline">\displaystyle [0, 1]</span>
+      上连续且可导，满足定理条件。</p>
       <p>计算差商：</p>
       <p><span class="math display">
       \frac{f(1) - f(0)}{1 - 0} = \frac{1 - 0}{1} = 1
       </span></p>
-      <p>令 <span class="math inline">f&#39;(c) = 3c^2 =
+      <p>令 <span class="math inline">\displaystyle f&#39;(c) = 3c^2 =
       1</span>，解得</p>
       <p><span class="math display">
       c = \frac{1}{\sqrt{3}} \approx 0.577
       </span></p>
-      <p>中值点 <span class="math inline">c = \dfrac{1}{\sqrt{3}} \in
-      (0, 1)</span>，满足定理要求。</p>
+      <p>中值点 <span class="math inline">\displaystyle c =
+      \dfrac{1}{\sqrt{3}} \in (0, 1)</span>，满足定理要求。</p>
       </div>
       </div>
       </div>
@@ -450,18 +462,21 @@
       <div class="callout callout-caution">
       <div class="callout-header callout-header-caution"><span class="callout-icon"></span><span class="callout-label">补充应用:利普希茨Lipschitz连续</span></div>
       <div class="callout-body">
-      <p>若 <span class="math inline">f(x)</span> 在区间 <span
-      class="math inline">I</span> 上满足拉格朗日中值定理, 且导数有界
-      (即 <span class="math inline">|f&#39;(x)| \leq M</span>), 则 <span
-      class="math inline">f(x)</span> 是 <strong>Lipschitz连续</strong>
-      的, 即: <span class="math inline">\displaystyle|f(x_1) - f(x_2)|
-      \leq M |x_1 - x_2|, \quad \forall x_1, x_2 \in I.</span></p>
+      <p>若 <span class="math inline">\displaystyle f(x)</span> 在区间
+      <span class="math inline">\displaystyle I</span>
+      上满足拉格朗日中值定理, 且导数有界 (即 <span
+      class="math inline">\displaystyle |f&#39;(x)| \leq M</span>), 则
+      <span class="math inline">\displaystyle f(x)</span> 是
+      <strong>Lipschitz连续</strong> 的, 即: <span
+      class="math inline">\displaystyle|f(x_1) - f(x_2)| \leq M |x_1 -
+      x_2|, \quad \forall x_1, x_2 \in I.</span></p>
       <p><strong>有限增量公式</strong></p>
-      <p>对任意 <span class="math inline">x, y \in [a, b]</span>, 存在
-      <span class="math inline">\theta \in (0, 1)</span>, 使得: <span
-      class="math inline">\small\displaystyle f(y) - f(x) = f&#39;(x +
-      \theta \Delta x) \Delta x, \quad 0 &lt; \theta &lt; 1,</span> 其中
-      <span class="math inline">\Delta x = y - x</span></p>
+      <p>对任意 <span class="math inline">\displaystyle x, y \in [a,
+      b]</span>, 存在 <span class="math inline">\displaystyle \theta \in
+      (0, 1)</span>, 使得: <span class="math inline">\displaystyle
+      \small\displaystyle f(y) - f(x) = f&#39;(x + \theta \Delta x)
+      \Delta x, \quad 0 &lt; \theta &lt; 1,</span> 其中 <span
+      class="math inline">\displaystyle \Delta x = y - x</span></p>
       </div>
       </div>
       <h3 id="罗尔中值定理和柯西中值定理">4.1.2
@@ -470,12 +485,12 @@
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">罗尔中值定理</span></div>
       <div class="callout-body">
       <p><strong>罗尔中值定理</strong>: 设函数 <span
-      class="math inline">f(x)</span> 在闭区间 <span
-      class="math inline">[a, b]</span> 上连续, 在开区间 <span
-      class="math inline">(a, b)</span> 上可导, 并且 <span
-      class="math inline">f(a) = f(b)</span>. 那么, 存在一个点 <span
-      class="math inline">c \in (a, b)</span>, 使得: <span
-      class="math display">
+      class="math inline">\displaystyle f(x)</span> 在闭区间 <span
+      class="math inline">\displaystyle [a, b]</span> 上连续, 在开区间
+      <span class="math inline">\displaystyle (a, b)</span> 上可导, 并且
+      <span class="math inline">\displaystyle f(a) = f(b)</span>. 那么,
+      存在一个点 <span class="math inline">\displaystyle c \in (a,
+      b)</span>, 使得: <span class="math display">
       f&#39;(c) = 0
       </span></p>
       <p><strong>几何意义</strong>:
@@ -490,51 +505,58 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">拉格朗日中值定理</span></div>
       <div class="callout-body">
-      <p>设函数 <span class="math inline">f(x)</span> 在闭区间 <span
-      class="math inline">[a, b]</span> 上连续, 并且在开区间 <span
-      class="math inline">(a, b)</span> 上可导. 那么, 存在一个点 <span
-      class="math inline">c \in (a, b)</span>, 使得: <span
+      <p>设函数 <span class="math inline">\displaystyle f(x)</span>
+      在闭区间 <span class="math inline">\displaystyle [a, b]</span>
+      上连续, 并且在开区间 <span class="math inline">\displaystyle (a,
+      b)</span> 上可导. 那么, 存在一个点 <span
+      class="math inline">\displaystyle c \in (a, b)</span>, 使得: <span
       class="math display">
       f&#39;(c) = \frac{f(b) - f(a)}{b - a}
       </span></p>
-      <p><strong>几何意义</strong>: 在曲线 <span class="math inline">y =
-      f(x)</span> 上, 至少存在一点 <span class="math inline">c</span>,
-      它的切线斜率等于割线通过点 <span class="math inline">(a,
-      f(a))</span> 和 <span class="math inline">(b, f(b))</span>
-      的斜率.</p>
+      <p><strong>几何意义</strong>: 在曲线 <span
+      class="math inline">\displaystyle y = f(x)</span> 上, 至少存在一点
+      <span class="math inline">\displaystyle c</span>,
+      它的切线斜率等于割线通过点 <span class="math inline">\displaystyle
+      (a, f(a))</span> 和 <span class="math inline">\displaystyle (b,
+      f(b))</span> 的斜率.</p>
       <p><strong>证明思路</strong>: 构造辅助函数 <span
-      class="math inline">g(x) = f(x) -
+      class="math inline">\displaystyle g(x) = f(x) -
       \displaystyle\frac{f(b)-f(a)}{b-a}(x-a)</span>, 使得 <span
-      class="math inline">g(a)=g(b)</span>, 然后应用罗尔定理.</p>
+      class="math inline">\displaystyle g(a)=g(b)</span>,
+      然后应用罗尔定理.</p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">柯西中值定理</span></div>
       <div class="callout-body">
-      <p>设函数 <span class="math inline">f(x)</span> 和 <span
-      class="math inline">g(x)</span> 在闭区间 <span
-      class="math inline">[a, b]</span> 上连续, 在开区间 <span
-      class="math inline">(a, b)</span> 上可导, 且 <span
-      class="math inline">g&#39;(x) \neq 0</span> 对于所有 <span
-      class="math inline">x \in (a, b)</span> 成立. 那么, 存在一个点
-      <span class="math inline">c \in (a, b)</span>, 使得: <span
+      <p>设函数 <span class="math inline">\displaystyle f(x)</span> 和
+      <span class="math inline">\displaystyle g(x)</span> 在闭区间 <span
+      class="math inline">\displaystyle [a, b]</span> 上连续, 在开区间
+      <span class="math inline">\displaystyle (a, b)</span> 上可导, 且
+      <span class="math inline">\displaystyle g&#39;(x) \neq 0</span>
+      对于所有 <span class="math inline">\displaystyle x \in (a,
+      b)</span> 成立. 那么, 存在一个点 <span
+      class="math inline">\displaystyle c \in (a, b)</span>, 使得: <span
       class="math display">
       \frac{f(b) - f(a)}{g(b) - g(a)} = \frac{f&#39;(c)}{g&#39;(c)}
       </span></p>
       <p><strong>几何意义</strong>: 考虑由参数方程 <span
-      class="math inline">x = g(t), y = f(t)</span> 表示的曲线, 从 <span
-      class="math inline">t=a</span> 到 <span
-      class="math inline">t=b</span>. 连接曲线两端点的割线斜率为 <span
+      class="math inline">\displaystyle x = g(t), y = f(t)</span>
+      表示的曲线, 从 <span class="math inline">\displaystyle t=a</span>
+      到 <span class="math inline">\displaystyle t=b</span>.
+      连接曲线两端点的割线斜率为 <span
       class="math inline">\displaystyle\frac{f(b)-f(a)}{g(b)-g(a)}</span>,
-      而曲线上在 <span class="math inline">t=c</span> 处的切线斜率为
-      <span
+      而曲线上在 <span class="math inline">\displaystyle t=c</span>
+      处的切线斜率为 <span
       class="math inline">\displaystyle\frac{f&#39;(c)}{g&#39;(c)}</span>.
-      柯西中值定理说明, 至少存在一点 <span class="math inline">c</span>,
+      柯西中值定理说明, 至少存在一点 <span
+      class="math inline">\displaystyle c</span>,
       使得切线斜率等于割线斜率.</p>
       <p><strong>证明思路</strong>: 构造辅助函数 <span
-      class="math inline">h(x) = f(x) -
+      class="math inline">\displaystyle h(x) = f(x) -
       \displaystyle\frac{f(b)-f(a)}{g(b)-g(a)}[g(x)-g(a)]</span>, 使得
-      <span class="math inline">h(a)=h(b)</span>, 然后应用罗尔定理.</p>
+      <span class="math inline">\displaystyle h(a)=h(b)</span>,
+      然后应用罗尔定理.</p>
       </div>
       </div>
       <div class="callout callout-important">
@@ -542,10 +564,10 @@
       <div class="callout-body">
       <ul>
       <li><strong>罗尔定理</strong>是<strong>拉格朗日定理</strong>的特殊情况:
-      当 <span class="math inline">f(a)=f(b)</span> 时,
+      当 <span class="math inline">\displaystyle f(a)=f(b)</span> 时,
       拉格朗日定理的结论退化为罗尔定理的结论.</li>
       <li><strong>拉格朗日定理</strong>是<strong>柯西定理</strong>的特殊情况:
-      当 <span class="math inline">g(x)=x</span> 时,
+      当 <span class="math inline">\displaystyle g(x)=x</span> 时,
       柯西定理的结论退化为拉格朗日定理的结论.</li>
       <li>这三个定理都是描述函数在区间上整体变化率与局部变化率之间的关系,
       都是<strong>存在性</strong>定理.</li>
@@ -601,45 +623,49 @@
       <p>回顾定积分的几何意义: 它表示曲边梯形的面积. 一个自然的问题是:
       这个面积能否用某个”平均高度”乘以底边长度来表示?</p>
       <p><strong>直观理解</strong>: 对于连续函数 <span
-      class="math inline">f(x)</span> 在区间 <span
-      class="math inline">[a,b]</span> 上的定积分, 存在某个点 <span
-      class="math inline">c \in [a,b]</span>, 使得以 <span
-      class="math inline">f(c)</span>
-      为高的矩形面积等于曲边梯形的面积.</p>
+      class="math inline">\displaystyle f(x)</span> 在区间 <span
+      class="math inline">\displaystyle [a,b]</span> 上的定积分,
+      存在某个点 <span class="math inline">\displaystyle c \in
+      [a,b]</span>, 使得以 <span class="math inline">\displaystyle
+      f(c)</span> 为高的矩形面积等于曲边梯形的面积.</p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">积分中值定理</span></div>
       <div class="callout-body">
-      <p>设函数 <span class="math inline">f(x)</span> 在闭区间 <span
-      class="math inline">[a, b]</span> 上连续, 则存在一点 <span
-      class="math inline">c \in [a, b]</span>, 使得 <span
-      class="math display">
+      <p>设函数 <span class="math inline">\displaystyle f(x)</span>
+      在闭区间 <span class="math inline">\displaystyle [a, b]</span>
+      上连续, 则存在一点 <span class="math inline">\displaystyle c \in
+      [a, b]</span>, 使得 <span class="math display">
       \int_a^b f(x)  dx = f(c)(b - a)
       </span></p>
       <p>数值 <span class="math inline">\displaystyle\frac{1}{b-a}
       \int_a^b f(x)  dx</span> 称为函数 <span
-      class="math inline">f(x)</span> 在区间 <span
-      class="math inline">[a,b]</span>
+      class="math inline">\displaystyle f(x)</span> 在区间 <span
+      class="math inline">\displaystyle [a,b]</span>
       上的<strong>积分平均值</strong>.</p>
-      <p><strong>几何意义</strong>: 由曲线 <span class="math inline">y =
-      f(x)</span>, 直线 <span class="math inline">x=a</span>, <span
-      class="math inline">x=b</span> 和 <span
-      class="math inline">x</span> 轴所围成的曲边梯形的面积, 等于以
-      <span class="math inline">f(c)</span> 为高的矩形的面积.</p>
+      <p><strong>几何意义</strong>: 由曲线 <span
+      class="math inline">\displaystyle y = f(x)</span>, 直线 <span
+      class="math inline">\displaystyle x=a</span>, <span
+      class="math inline">\displaystyle x=b</span> 和 <span
+      class="math inline">\displaystyle x</span>
+      轴所围成的曲边梯形的面积, 等于以 <span
+      class="math inline">\displaystyle f(c)</span>
+      为高的矩形的面积.</p>
       <p><strong>证明</strong>:</p>
-      <p>由于 <span class="math inline">f(x)</span> 在 <span
-      class="math inline">[a, b]</span> 上连续,
+      <p>由于 <span class="math inline">\displaystyle f(x)</span> 在
+      <span class="math inline">\displaystyle [a, b]</span> 上连续,
       根据闭区间上连续函数的性质:</p>
       <ol type="1">
-      <li><p><span class="math inline">f(x)</span> 在 <span
-      class="math inline">[a, b]</span> 上取得最小值 <span
-      class="math inline">m</span> 和最大值 <span
-      class="math inline">M</span>, 即 <span class="math display">
+      <li><p><span class="math inline">\displaystyle f(x)</span> 在
+      <span class="math inline">\displaystyle [a, b]</span> 上取得最小值
+      <span class="math inline">\displaystyle m</span> 和最大值 <span
+      class="math inline">\displaystyle M</span>, 即 <span
+      class="math display">
       m \leq f(x) \leq M, \quad \forall x \in [a,b]
       </span></p></li>
-      <li><p>对不等式两边在 <span class="math inline">[a,b]</span>
-      上积分: <span class="math display">
+      <li><p>对不等式两边在 <span class="math inline">\displaystyle
+      [a,b]</span> 上积分: <span class="math display">
       \int_a^b m  dx \leq \int_a^b f(x)  dx \leq \int_a^b M  dx
       </span> 即 <span class="math display">
       m(b-a) \leq \int_a^b f(x)  dx \leq M(b-a)
@@ -647,8 +673,9 @@
       <li><p>因此: <span class="math display">
       m \leq \frac{1}{b-a} \int_a^b f(x)  dx \leq M
       </span></p></li>
-      <li><p>根据连续函数的介值定理, 存在 <span class="math inline">c
-      \in [a,b]</span>, 使得 <span class="math display">
+      <li><p>根据连续函数的介值定理, 存在 <span
+      class="math inline">\displaystyle c \in [a,b]</span>, 使得 <span
+      class="math display">
       f(c) = \frac{1}{b-a} \int_a^b f(x)  dx
       </span></p></li>
       <li><p>即: <span class="math display">
@@ -666,9 +693,10 @@
       <li><p><strong>连续性要求</strong>: 定理要求函数连续,
       这是结论成立的关键条件</p></li>
       <li><p><strong>存在性而非构造性</strong>: 定理只保证存在性,
-      不提供求 <span class="math inline">c</span> 的具体方法</p></li>
+      不提供求 <span class="math inline">\displaystyle c</span>
+      的具体方法</p></li>
       <li><p><strong>点的位置</strong>: <span
-      class="math inline">c</span> 一般在区间内部,
+      class="math inline">\displaystyle c</span> 一般在区间内部,
       但定理只保证在闭区间上</p></li>
       </ol>
       </div>
@@ -682,16 +710,18 @@
       </div>
       <div class="ex-body">
       <div class="ex-problem-box">
-      <p>求函数 <span class="math inline">f(x) = x^2</span> 在区间 <span
-      class="math inline">[0, 2]</span> 上满足积分中值定理的点 <span
-      class="math inline">c</span>。</p>
+      <p>求函数 <span class="math inline">\displaystyle f(x) =
+      x^2</span> 在区间 <span class="math inline">\displaystyle [0,
+      2]</span> 上满足积分中值定理的点 <span
+      class="math inline">\displaystyle c</span>。</p>
       <figure>
       <img src="media/img/chpt5_ex006.png" width="400"
-      alt="\int_0^2 x^2\,dx 的面积 (红色) 等于以 f(c)=4/3 为高、宽 2 的等高矩形 (绿色)" />
-      <figcaption aria-hidden="true"><span class="math inline">\int_0^2
-      x^2\,dx</span> 的面积 (红色) 等于以 <span
-      class="math inline">f(c)=4/3</span> 为高、宽 <span
-      class="math inline">2</span> 的等高矩形 (绿色)</figcaption>
+      alt="\displaystyle \int_0^2 x^2\,dx 的面积 (红色) 等于以 \displaystyle f(c)=4/3 为高、宽 \displaystyle 2 的等高矩形 (绿色)" />
+      <figcaption aria-hidden="true"><span
+      class="math inline">\displaystyle \int_0^2 x^2\,dx</span> 的面积
+      (红色) 等于以 <span class="math inline">\displaystyle
+      f(c)=4/3</span> 为高、宽 <span class="math inline">\displaystyle
+      2</span> 的等高矩形 (绿色)</figcaption>
       </figure>
       </div>
       <div class="ex-controls">
@@ -704,10 +734,11 @@
       <div id="chpt5-ex-006-frame" class="ex-frame" hidden="">
       <div id="chpt5-ex-006-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>先计算定积分 <span class="math inline">\int_0^2
+      <p>先计算定积分 <span class="math inline">\displaystyle \int_0^2
       x^2\,dx</span>，再由积分中值定理 <span
-      class="math inline">\int_a^b f\,dx = f(c)(b-a)</span> 解出 <span
-      class="math inline">c</span>。</p>
+      class="math inline">\displaystyle \int_a^b f\,dx =
+      f(c)(b-a)</span> 解出 <span class="math inline">\displaystyle
+      c</span>。</p>
       </div>
       <div id="chpt5-ex-006-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
@@ -715,8 +746,8 @@
       <p><span class="math display">
       \int_0^2 x^2\,dx = \left[\frac{x^3}{3}\right]_0^2 = \frac{8}{3}
       </span></p>
-      <p>由积分中值定理，存在 <span class="math inline">c \in [0,
-      2]</span> 使得</p>
+      <p>由积分中值定理，存在 <span class="math inline">\displaystyle c
+      \in [0, 2]</span> 使得</p>
       <p><span class="math display">
       \frac{8}{3} = f(c)(2 - 0) = 2c^2
       </span></p>
@@ -736,19 +767,21 @@
       class="ex-tag">中值定理</span></span>
       </div>
       <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>证明：若 <span class="math inline">f(x)</span> 在 <span
-      class="math inline">[a, b]</span> 上连续，且 <span
+      <div class="ex-problem-box ex-proof">
+      <p>若 <span class="math inline">\displaystyle f(x)</span> 在 <span
+      class="math inline">\displaystyle [a, b]</span> 上连续，且 <span
       class="math inline">\displaystyle\int_a^b f(x)\,dx =
-      0</span>，则存在 <span class="math inline">c \in [a, b]</span>
-      使得 <span class="math inline">f(c) = 0</span>。</p>
+      0</span>，则存在 <span class="math inline">\displaystyle c \in [a,
+      b]</span> 使得 <span class="math inline">\displaystyle f(c) =
+      0</span>。</p>
       <figure>
       <img src="media/img/chpt5_ex007.png" width="400"
-      alt="连续函数 f 的正负面积大小相同 (积分为 0), 函数图像必在某 c 处穿越 x 轴" />
+      alt="连续函数 \displaystyle f 的正负面积大小相同 (积分为 0), 函数图像必在某 \displaystyle c 处穿越 \displaystyle x 轴" />
       <figcaption aria-hidden="true">连续函数 <span
-      class="math inline">f</span> 的正负面积大小相同 (积分为 0),
-      函数图像必在某 <span class="math inline">c</span> 处穿越 <span
-      class="math inline">x</span> 轴</figcaption>
+      class="math inline">\displaystyle f</span> 的正负面积大小相同
+      (积分为 0), 函数图像必在某 <span class="math inline">\displaystyle
+      c</span> 处穿越 <span class="math inline">\displaystyle x</span>
+      轴</figcaption>
       </figure>
       </div>
       <div class="ex-controls">
@@ -761,19 +794,20 @@
       <div id="chpt5-ex-007-frame" class="ex-frame" hidden="">
       <div id="chpt5-ex-007-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>直接应用积分中值定理，得到 <span class="math inline">f(c)(b-a)
-      = 0</span>，再由 <span class="math inline">b - a \neq 0</span>
-      得结论。</p>
+      <p>直接应用积分中值定理，得到 <span
+      class="math inline">\displaystyle f(c)(b-a) = 0</span>，再由 <span
+      class="math inline">\displaystyle b - a \neq 0</span> 得结论。</p>
       </div>
       <div id="chpt5-ex-007-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p>由积分中值定理，存在 <span class="math inline">c \in [a,
-      b]</span>，使得</p>
+      <p>由积分中值定理，存在 <span class="math inline">\displaystyle c
+      \in [a, b]</span>，使得</p>
       <p><span class="math display">
       \int_a^b f(x)\,dx = f(c)(b - a) = 0
       </span></p>
-      <p>由于 <span class="math inline">b - a \neq 0</span>，故 <span
-      class="math inline">f(c) = 0</span>。</p>
+      <p>由于 <span class="math inline">\displaystyle b - a \neq
+      0</span>，故 <span class="math inline">\displaystyle f(c) =
+      0</span>。</p>
       </div>
       </div>
       </div>
@@ -791,11 +825,12 @@
       e^{-x^2}\,dx</span> 的值范围。</p>
       <figure>
       <img src="media/img/chpt5_ex008.png" width="400"
-      alt="\int_0^1 e^{-x^2}\,dx 的下界 e^{-1} (红虚) 与上界 1 (绿虚) 之间夹住真实值" />
-      <figcaption aria-hidden="true"><span class="math inline">\int_0^1
-      e^{-x^2}\,dx</span> 的下界 <span class="math inline">e^{-1}</span>
-      (红虚) 与上界 <span class="math inline">1</span> (绿虚)
-      之间夹住真实值</figcaption>
+      alt="\displaystyle \int_0^1 e^{-x^2}\,dx 的下界 \displaystyle e^{-1} (红虚) 与上界 \displaystyle 1 (绿虚) 之间夹住真实值" />
+      <figcaption aria-hidden="true"><span
+      class="math inline">\displaystyle \int_0^1 e^{-x^2}\,dx</span>
+      的下界 <span class="math inline">\displaystyle e^{-1}</span>
+      (红虚) 与上界 <span class="math inline">\displaystyle 1</span>
+      (绿虚) 之间夹住真实值</figcaption>
       </figure>
       </div>
       <div class="ex-controls">
@@ -808,25 +843,26 @@
       <div id="chpt5-ex-008-frame" class="ex-frame" hidden="">
       <div id="chpt5-ex-008-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>在 <span class="math inline">[0, 1]</span> 上确定 <span
-      class="math inline">f(x) = e^{-x^2}</span>
+      <p>在 <span class="math inline">\displaystyle [0, 1]</span> 上确定
+      <span class="math inline">\displaystyle f(x) = e^{-x^2}</span>
       的最大值和最小值，用积分的比较性质（或积分中值定理）夹出积分范围。</p>
       </div>
       <div id="chpt5-ex-008-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p>函数 <span class="math inline">f(x) = e^{-x^2}</span> 在 <span
-      class="math inline">[0, 1]</span> 上连续，且由于 <span
-      class="math inline">0 \leq x^2 \leq 1</span>，有</p>
+      <p>函数 <span class="math inline">\displaystyle f(x) =
+      e^{-x^2}</span> 在 <span class="math inline">\displaystyle [0,
+      1]</span> 上连续，且由于 <span class="math inline">\displaystyle 0
+      \leq x^2 \leq 1</span>，有</p>
       <p><span class="math display">
       e^{-1} \leq e^{-x^2} \leq 1
       </span></p>
-      <p>由积分中值定理，存在 <span class="math inline">c \in [0,
-      1]</span>，使得</p>
+      <p>由积分中值定理，存在 <span class="math inline">\displaystyle c
+      \in [0, 1]</span>，使得</p>
       <p><span class="math display">
       \int_0^1 e^{-x^2}\,dx = e^{-c^2}
       </span></p>
-      <p>由 <span class="math inline">e^{-1} \leq e^{-c^2} \leq
-      1</span>，得</p>
+      <p>由 <span class="math inline">\displaystyle e^{-1} \leq e^{-c^2}
+      \leq 1</span>，得</p>
       <p><span class="math display">
       \frac{1}{e} \leq \int_0^1 e^{-x^2}\,dx \leq 1
       </span></p>
@@ -837,11 +873,12 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">推广的积分中值定理</span></div>
       <div class="callout-body">
-      <p>设函数 <span class="math inline">f(x)</span> 和 <span
-      class="math inline">g(x)</span> 在闭区间 <span
-      class="math inline">[a, b]</span> 上连续, 且 <span
-      class="math inline">g(x)</span> 在 <span class="math inline">[a,
-      b]</span> 上不变号, 则存在一点 <span class="math inline">c \in [a,
+      <p>设函数 <span class="math inline">\displaystyle f(x)</span> 和
+      <span class="math inline">\displaystyle g(x)</span> 在闭区间 <span
+      class="math inline">\displaystyle [a, b]</span> 上连续, 且 <span
+      class="math inline">\displaystyle g(x)</span> 在 <span
+      class="math inline">\displaystyle [a, b]</span> 上不变号,
+      则存在一点 <span class="math inline">\displaystyle c \in [a,
       b]</span>, 使得 <span class="math display">
       \int_a^b f(x) g(x)  dx = f(c) \int_a^b g(x)  dx
       </span></p>
@@ -871,15 +908,16 @@
       <tbody>
       <tr>
       <td>微分中值定理</td>
-      <td>导数 <span class="math inline">f&#39;(x)</span></td>
-      <td><span class="math inline">f&#39;(c) =
+      <td>导数 <span class="math inline">\displaystyle
+      f&#39;(x)</span></td>
+      <td><span class="math inline">\displaystyle f&#39;(c) =
       \displaystyle\frac{f(b)-f(a)}{b-a}</span></td>
       </tr>
       <tr>
       <td>积分中值定理</td>
-      <td>函数 <span class="math inline">f(x)</span></td>
-      <td><span class="math inline">f(c) = \displaystyle\frac{1}{b-a}
-      \int_a^b f(x)  dx</span></td>
+      <td>函数 <span class="math inline">\displaystyle f(x)</span></td>
+      <td><span class="math inline">\displaystyle f(c) =
+      \displaystyle\frac{1}{b-a} \int_a^b f(x)  dx</span></td>
       </tr>
       </tbody>
       </table>
@@ -904,16 +942,16 @@
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">悟</span></div>
       <div class="callout-body">
       <p><strong>洛必达法则</strong>: 设函数 <span
-      class="math inline">f(x)</span> 和 <span
-      class="math inline">g(x)</span> 在点 <span
-      class="math inline">a</span> 的某个去心邻域内可导, 且满足: 1.
-      <span class="math inline">\lim\limits_{x \to a} f(x) =
-      \lim\limits_{x \to a} g(x) = 0</span> (或 <span
-      class="math inline">\infty</span>) 2. <span
-      class="math inline">g&#39;(x) \neq 0</span> 在该邻域内 3. <span
-      class="math inline">\lim\limits_{x \to a}
-      \dfrac{f&#39;(x)}{g&#39;(x)}</span> 存在 (或为 <span
-      class="math inline">\infty</span>)</p>
+      class="math inline">\displaystyle f(x)</span> 和 <span
+      class="math inline">\displaystyle g(x)</span> 在点 <span
+      class="math inline">\displaystyle a</span> 的某个去心邻域内可导,
+      且满足: 1. <span class="math inline">\displaystyle \lim\limits_{x
+      \to a} f(x) = \lim\limits_{x \to a} g(x) = 0</span> (或 <span
+      class="math inline">\displaystyle \infty</span>) 2. <span
+      class="math inline">\displaystyle g&#39;(x) \neq 0</span>
+      在该邻域内 3. <span class="math inline">\displaystyle
+      \lim\limits_{x \to a} \dfrac{f&#39;(x)}{g&#39;(x)}</span> 存在
+      (或为 <span class="math inline">\displaystyle \infty</span>)</p>
       <p>则: <span class="math display">
       \lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a}
       \frac{f&#39;(x)}{g&#39;(x)}
@@ -933,32 +971,37 @@
       0 &amp; x = a
       \end{cases}
       </span></p>
-      <p>由于 <span class="math inline">\lim\limits_{x \to a} f(x) =
-      \lim\limits_{x \to a} g(x) = 0</span>, <span
-      class="math inline">F(x)</span> 和 <span
-      class="math inline">G(x)</span> 在 <span
-      class="math inline">x=a</span> 处连续.</p>
+      <p>由于 <span class="math inline">\displaystyle \lim\limits_{x \to
+      a} f(x) = \lim\limits_{x \to a} g(x) = 0</span>, <span
+      class="math inline">\displaystyle F(x)</span> 和 <span
+      class="math inline">\displaystyle G(x)</span> 在 <span
+      class="math inline">\displaystyle x=a</span> 处连续.</p>
       <p><strong>第二步: 应用柯西中值定理</strong> 在包含 <span
-      class="math inline">a</span> 和 <span class="math inline">x</span>
-      的区间上 (<span class="math inline">x \neq a</span>), <span
-      class="math inline">F(x)</span> 和 <span
-      class="math inline">G(x)</span> 满足柯西中值定理的条件: -
-      在闭区间上连续 - 在开区间上可导 - <span
-      class="math inline">G&#39;(x) = g&#39;(x) \neq 0</span></p>
-      <p>因此, 存在 <span class="math inline">\xi</span> 介于 <span
-      class="math inline">a</span> 和 <span class="math inline">x</span>
-      之间, 使得: <span class="math display">
+      class="math inline">\displaystyle a</span> 和 <span
+      class="math inline">\displaystyle x</span> 的区间上 (<span
+      class="math inline">\displaystyle x \neq a</span>), <span
+      class="math inline">\displaystyle F(x)</span> 和 <span
+      class="math inline">\displaystyle G(x)</span>
+      满足柯西中值定理的条件: - 在闭区间上连续 - 在开区间上可导 - <span
+      class="math inline">\displaystyle G&#39;(x) = g&#39;(x) \neq
+      0</span></p>
+      <p>因此, 存在 <span class="math inline">\displaystyle \xi</span>
+      介于 <span class="math inline">\displaystyle a</span> 和 <span
+      class="math inline">\displaystyle x</span> 之间, 使得: <span
+      class="math display">
       \frac{F(x) - F(a)}{G(x) - G(a)} = \frac{F&#39;(\xi)}{G&#39;(\xi)}
       </span></p>
-      <p>由于 <span class="math inline">F(a) = G(a) = 0</span>,
-      上式化为: <span class="math display">
+      <p>由于 <span class="math inline">\displaystyle F(a) = G(a) =
+      0</span>, 上式化为: <span class="math display">
       \frac{F(x)}{G(x)} = \frac{f&#39;(\xi)}{g&#39;(\xi)}
       </span></p>
-      <p><strong>第三步: 取极限</strong> 当 <span class="math inline">x
-      \to a</span> 时, <span class="math inline">\xi \to a</span> (因为
-      <span class="math inline">\xi</span> 介于 <span
-      class="math inline">a</span> 和 <span class="math inline">x</span>
-      之间), 所以: <span class="math display">
+      <p><strong>第三步: 取极限</strong> 当 <span
+      class="math inline">\displaystyle x \to a</span> 时, <span
+      class="math inline">\displaystyle \xi \to a</span> (因为 <span
+      class="math inline">\displaystyle \xi</span> 介于 <span
+      class="math inline">\displaystyle a</span> 和 <span
+      class="math inline">\displaystyle x</span> 之间), 所以: <span
+      class="math display">
       \lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a}
       \frac{F(x)}{G(x)} = \lim_{\xi \to a}
       \frac{f&#39;(\xi)}{g&#39;(\xi)} = \lim_{x \to a}
@@ -984,20 +1027,22 @@
       <div class="callout-body">
       <p><strong>无穷小量</strong>是指在某个极限过程中趋近于零的量.
       更精确地说:</p>
-      <p>设函数 <span class="math inline">f(x)</span> 在点 <span
-      class="math inline">x_0</span> 的某个去心邻域内有定义. 如果 <span
-      class="math display">
+      <p>设函数 <span class="math inline">\displaystyle f(x)</span> 在点
+      <span class="math inline">\displaystyle x_0</span>
+      的某个去心邻域内有定义. 如果 <span class="math display">
       \lim_{x \to x_0} f(x) = 0
-      </span> 则称 <span class="math inline">f(x)</span> 为 <span
-      class="math inline">x \to x_0</span> 时的无穷小量.</p>
-      <p>类似地, 可以定义 <span class="math inline">x \to \infty</span>
+      </span> 则称 <span class="math inline">\displaystyle f(x)</span>
+      为 <span class="math inline">\displaystyle x \to x_0</span>
       时的无穷小量.</p>
-      <p><strong>例子</strong>: - 当 <span class="math inline">x \to
-      0</span> 时, <span class="math inline">x</span>, <span
-      class="math inline">x^2</span>, <span class="math inline">\sin
-      x</span> 都是无穷小量 - 当 <span class="math inline">x \to
-      \infty</span> 时, <span
-      class="math inline">\displaystyle\frac{1}{x}</span>, <span
+      <p>类似地, 可以定义 <span class="math inline">\displaystyle x \to
+      \infty</span> 时的无穷小量.</p>
+      <p><strong>例子</strong>: - 当 <span
+      class="math inline">\displaystyle x \to 0</span> 时, <span
+      class="math inline">\displaystyle x</span>, <span
+      class="math inline">\displaystyle x^2</span>, <span
+      class="math inline">\displaystyle \sin x</span> 都是无穷小量 - 当
+      <span class="math inline">\displaystyle x \to \infty</span> 时,
+      <span class="math inline">\displaystyle\frac{1}{x}</span>, <span
       class="math inline">\displaystyle\frac{1}{x^2}</span>
       都是无穷小量</p>
       </div>
@@ -1007,29 +1052,33 @@
       <div class="callout-body">
       <p>不同的无穷小量趋近于零的”速度”可能不同. 为了比较这种差异,
       我们引入以下概念:</p>
-      <p>设 <span class="math inline">\alpha(x)</span> 和 <span
-      class="math inline">\beta(x)</span> 都是 <span
-      class="math inline">x \to x_0</span> 时的无穷小量, 且 <span
-      class="math inline">\beta(x) \neq 0</span>.</p>
+      <p>设 <span class="math inline">\displaystyle \alpha(x)</span> 和
+      <span class="math inline">\displaystyle \beta(x)</span> 都是 <span
+      class="math inline">\displaystyle x \to x_0</span> 时的无穷小量,
+      且 <span class="math inline">\displaystyle \beta(x) \neq
+      0</span>.</p>
       <ol type="1">
       <li><p><strong>高阶无穷小</strong>: 如果 <span
       class="math inline">\displaystyle\lim_{x \to x_0}
       \frac{\alpha(x)}{\beta(x)} = 0</span>, 则称 <span
-      class="math inline">\alpha(x)</span> 是 <span
-      class="math inline">\beta(x)</span> 的高阶无穷小, 记作 <span
-      class="math inline">\alpha(x) = o(\beta(x))</span>.</p></li>
+      class="math inline">\displaystyle \alpha(x)</span> 是 <span
+      class="math inline">\displaystyle \beta(x)</span> 的高阶无穷小,
+      记作 <span class="math inline">\displaystyle \alpha(x) =
+      o(\beta(x))</span>.</p></li>
       <li><p><strong>等价无穷小</strong>: 如果 <span
       class="math inline">\displaystyle\lim_{x \to x_0}
       \frac{\alpha(x)}{\beta(x)} = 1</span>, 则称 <span
-      class="math inline">\alpha(x)</span> 与 <span
-      class="math inline">\beta(x)</span> 是等价无穷小, 记作 <span
-      class="math inline">\alpha(x) \sim \beta(x)</span>.</p></li>
+      class="math inline">\displaystyle \alpha(x)</span> 与 <span
+      class="math inline">\displaystyle \beta(x)</span> 是等价无穷小,
+      记作 <span class="math inline">\displaystyle \alpha(x) \sim
+      \beta(x)</span>.</p></li>
       <li><p><strong>同阶无穷小</strong>: 如果 <span
       class="math inline">\displaystyle\lim_{x \to x_0}
       \frac{\alpha(x)}{\beta(x)} = c \neq 0</span> (<span
-      class="math inline">c</span> 为常数), 则称 <span
-      class="math inline">\alpha(x)</span> 与 <span
-      class="math inline">\beta(x)</span> 是同阶无穷小.</p></li>
+      class="math inline">\displaystyle c</span> 为常数), 则称 <span
+      class="math inline">\displaystyle \alpha(x)</span> 与 <span
+      class="math inline">\displaystyle \beta(x)</span>
+      是同阶无穷小.</p></li>
       </ol>
       </div>
       </div>
@@ -1044,21 +1093,24 @@
       </div>
       <div class="ex-body">
       <div class="ex-problem-box">
-      <p>验证以下无穷小量的阶关系（当 <span class="math inline">x \to
-      0</span> 时）：</p>
+      <p>验证以下无穷小量的阶关系（当 <span
+      class="math inline">\displaystyle x \to 0</span> 时）：</p>
       <ol type="1">
-      <li><span class="math inline">x^2 = o(x)</span></li>
-      <li><span class="math inline">\sin x \sim x</span></li>
-      <li><span class="math inline">1 - \cos x \sim
+      <li><span class="math inline">\displaystyle x^2 = o(x)</span></li>
+      <li><span class="math inline">\displaystyle \sin x \sim
+      x</span></li>
+      <li><span class="math inline">\displaystyle 1 - \cos x \sim
       \dfrac{1}{2}x^2</span></li>
       </ol>
       <figure>
       <img src="media/img/chpt5_ex018.png" width="400"
-      alt="三个 x\to 0 渐近关系 — 左 x^2 = o(x), 中 \sin x\sim x, 右 1-\cos x \sim x^2/2" />
-      <figcaption aria-hidden="true">三个 <span class="math inline">x\to
-      0</span> 渐近关系 — 左 <span class="math inline">x^2 =
-      o(x)</span>, 中 <span class="math inline">\sin x\sim x</span>, 右
-      <span class="math inline">1-\cos x \sim x^2/2</span></figcaption>
+      alt="三个 \displaystyle x\to 0 渐近关系 — 左 \displaystyle x^2 = o(x), 中 \displaystyle \sin x\sim x, 右 \displaystyle 1-\cos x \sim x^2/2" />
+      <figcaption aria-hidden="true">三个 <span
+      class="math inline">\displaystyle x\to 0</span> 渐近关系 — 左
+      <span class="math inline">\displaystyle x^2 = o(x)</span>, 中
+      <span class="math inline">\displaystyle \sin x\sim x</span>, 右
+      <span class="math inline">\displaystyle 1-\cos x \sim
+      x^2/2</span></figcaption>
       </figure>
       </div>
       <div class="ex-controls">
@@ -1075,19 +1127,20 @@
       </div>
       <div id="chpt5-ex-018-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p><strong>1.</strong> 当 <span class="math inline">x \to 0</span>
-      时，<span class="math inline">x^2 = o(x)</span>，因为 <span
-      class="math display">
+      <p><strong>1.</strong> 当 <span class="math inline">\displaystyle
+      x \to 0</span> 时，<span class="math inline">\displaystyle x^2 =
+      o(x)</span>，因为 <span class="math display">
       \lim_{x \to 0} \frac{x^2}{x} = \lim_{x \to 0} x = 0
       </span></p>
-      <p><strong>2.</strong> 当 <span class="math inline">x \to 0</span>
-      时，<span class="math inline">\sin x \sim x</span>，因为 <span
-      class="math display">
+      <p><strong>2.</strong> 当 <span class="math inline">\displaystyle
+      x \to 0</span> 时，<span class="math inline">\displaystyle \sin x
+      \sim x</span>，因为 <span class="math display">
       \lim_{x \to 0} \frac{\sin x}{x} = 1
       </span></p>
-      <p><strong>3.</strong> 当 <span class="math inline">x \to 0</span>
-      时，<span class="math inline">1 - \cos x \sim
-      \dfrac{1}{2}x^2</span>，因为 <span class="math display">
+      <p><strong>3.</strong> 当 <span class="math inline">\displaystyle
+      x \to 0</span> 时，<span class="math inline">\displaystyle 1 -
+      \cos x \sim \dfrac{1}{2}x^2</span>，因为 <span
+      class="math display">
       \lim_{x \to 0} \frac{1 - \cos x}{\dfrac{1}{2}x^2} = 1
       </span></p>
       </div>
@@ -1098,46 +1151,54 @@
       <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">无穷大量</span></div>
       <div class="callout-body">
       <p>与无穷小量相对的是<strong>无穷大量</strong>:</p>
-      <p>设函数 <span class="math inline">f(x)</span> 在点 <span
-      class="math inline">x_0</span> 的某个去心邻域内有定义.
-      如果对于任意正数 <span class="math inline">M</span>, 总存在 <span
-      class="math inline">\delta &gt; 0</span>, 使得当 <span
-      class="math inline">0 &lt; |x - x_0| &lt; \delta</span> 时, 有
-      <span class="math inline">|f(x)| &gt; M</span>, 则称 <span
-      class="math inline">f(x)</span> 为 <span class="math inline">x \to
+      <p>设函数 <span class="math inline">\displaystyle f(x)</span> 在点
+      <span class="math inline">\displaystyle x_0</span>
+      的某个去心邻域内有定义. 如果对于任意正数 <span
+      class="math inline">\displaystyle M</span>, 总存在 <span
+      class="math inline">\displaystyle \delta &gt; 0</span>, 使得当
+      <span class="math inline">\displaystyle 0 &lt; |x - x_0| &lt;
+      \delta</span> 时, 有 <span class="math inline">\displaystyle
+      |f(x)| &gt; M</span>, 则称 <span class="math inline">\displaystyle
+      f(x)</span> 为 <span class="math inline">\displaystyle x \to
       x_0</span> 时的无穷大量.</p>
-      <p>类似地, 可以定义 <span class="math inline">x \to \infty</span>
-      时的无穷大量.</p>
-      <p><strong>例子</strong>: - 当 <span class="math inline">x \to
-      0</span> 时, <span
+      <p>类似地, 可以定义 <span class="math inline">\displaystyle x \to
+      \infty</span> 时的无穷大量.</p>
+      <p><strong>例子</strong>: - 当 <span
+      class="math inline">\displaystyle x \to 0</span> 时, <span
       class="math inline">\displaystyle\frac{1}{x}</span> 是无穷大量 -
-      当 <span class="math inline">x \to \infty</span> 时, <span
-      class="math inline">x</span>, <span class="math inline">x^2</span>
-      都是无穷大量</p>
+      当 <span class="math inline">\displaystyle x \to \infty</span> 时,
+      <span class="math inline">\displaystyle x</span>, <span
+      class="math inline">\displaystyle x^2</span> 都是无穷大量</p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">标准无穷小量</span></div>
       <div class="callout-body">
-      <p>幂函数 <span class="math inline">x^n</span> 在 <span
-      class="math inline">x \to 0</span> 时构成了一套自然的”标尺”,
-      用于衡量其他无穷小量的阶数:</p>
+      <p>幂函数 <span class="math inline">\displaystyle x^n</span> 在
+      <span class="math inline">\displaystyle x \to 0</span>
+      时构成了一套自然的”标尺”, 用于衡量其他无穷小量的阶数:</p>
       <ul>
-      <li><span class="math inline">x</span> 是一阶无穷小</li>
-      <li><span class="math inline">x^2</span> 是二阶无穷小</li>
-      <li><span class="math inline">x^3</span> 是三阶无穷小</li>
-      <li>一般地, <span class="math inline">x^n</span> 是 <span
-      class="math inline">n</span> 阶无穷小</li>
+      <li><span class="math inline">\displaystyle x</span>
+      是一阶无穷小</li>
+      <li><span class="math inline">\displaystyle x^2</span>
+      是二阶无穷小</li>
+      <li><span class="math inline">\displaystyle x^3</span>
+      是三阶无穷小</li>
+      <li>一般地, <span class="math inline">\displaystyle x^n</span> 是
+      <span class="math inline">\displaystyle n</span> 阶无穷小</li>
       </ul>
-      <p>当我们说 <span class="math inline">f(x) = o(x^n)</span> 时,
-      意味着 <span class="math inline">f(x)</span> 趋近于零的速度比
-      <span class="math inline">x^n</span> 更快.</p>
+      <p>当我们说 <span class="math inline">\displaystyle f(x) =
+      o(x^n)</span> 时, 意味着 <span class="math inline">\displaystyle
+      f(x)</span> 趋近于零的速度比 <span
+      class="math inline">\displaystyle x^n</span> 更快.</p>
       <p>这套标尺的重要性在于:
       <strong>任何足够光滑的函数在零点附近都可以用这些标准无穷小量的线性组合来近似表示</strong>——这正是泰勒展开的核心思想.</p>
-      <p><strong>例子</strong>: - <span class="math inline">e^x - 1 \sim
-      x</span> (一阶近似) - <span class="math inline">e^x - 1 - x \sim
-      \frac{1}{2}x^2</span> (二阶近似) - <span class="math inline">\sin
-      x - x \sim -\frac{1}{6}x^3</span> (三阶近似)</p>
+      <p><strong>例子</strong>: - <span
+      class="math inline">\displaystyle e^x - 1 \sim x</span> (一阶近似)
+      - <span class="math inline">\displaystyle e^x - 1 - x \sim
+      \frac{1}{2}x^2</span> (二阶近似) - <span
+      class="math inline">\displaystyle \sin x - x \sim
+      -\frac{1}{6}x^3</span> (三阶近似)</p>
       <p>在下一节中, 我们将看到如何系统性地构造这种近似, 即泰勒展开.</p>
       </div>
       </div>
@@ -1147,7 +1208,8 @@
       <div class="callout-body">
       <p><strong>泰勒展开的核心概念</strong></p>
       <p>任何足够光滑的函数在零点附近都可以用标准无穷小量 <span
-      class="math inline">x^n</span> 的线性组合来近似表示.</p>
+      class="math inline">\displaystyle x^n</span>
+      的线性组合来近似表示.</p>
       </div>
       </div>
       <div id="chpt5-ex-009" class="exercise-block"
@@ -1159,15 +1221,15 @@
       </div>
       <div class="ex-body">
       <div class="ex-problem-box">
-      <p>写出指数函数 <span class="math inline">e^x</span> 在 <span
-      class="math inline">x = 0</span>
+      <p>写出指数函数 <span class="math inline">\displaystyle e^x</span>
+      在 <span class="math inline">\displaystyle x = 0</span>
       附近的一阶、二阶、三阶多项式近似，并说明各阶近似的形式规律。</p>
       <figure>
       <img src="media/img/chpt5_ex009.png" width="400"
-      alt="e^x (黑实线) 与其 1, 2, 3 阶 Taylor 多项式 — 阶数越高, 在 0 附近吻合越远" />
+      alt="\displaystyle e^x (黑实线) 与其 1, 2, 3 阶 Taylor 多项式 — 阶数越高, 在 0 附近吻合越远" />
       <figcaption aria-hidden="true"><span
-      class="math inline">e^x</span> (黑实线) 与其 1, 2, 3 阶 Taylor
-      多项式 — 阶数越高, 在 0 附近吻合越远</figcaption>
+      class="math inline">\displaystyle e^x</span> (黑实线) 与其 1, 2, 3
+      阶 Taylor 多项式 — 阶数越高, 在 0 附近吻合越远</figcaption>
       </figure>
       </div>
       <div class="ex-controls">
@@ -1180,30 +1242,31 @@
       <div id="chpt5-ex-009-frame" class="ex-frame" hidden="">
       <div id="chpt5-ex-009-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>泰勒展开系数为 <span class="math inline">a_n =
+      <p>泰勒展开系数为 <span class="math inline">\displaystyle a_n =
       \dfrac{f^{(n)}(0)}{n!}</span>，利用 <span
-      class="math inline">e^x</span> 的各阶导数在 <span
-      class="math inline">0</span> 处均为 <span
-      class="math inline">1</span>，逐阶写出近似。</p>
+      class="math inline">\displaystyle e^x</span> 的各阶导数在 <span
+      class="math inline">\displaystyle 0</span> 处均为 <span
+      class="math inline">\displaystyle 1</span>，逐阶写出近似。</p>
       </div>
       <div id="chpt5-ex-009-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p>由于 <span class="math inline">f(x) = e^x</span> 的各阶导数满足
-      <span class="math inline">f^{(n)}(0) = 1</span>，系数 <span
-      class="math inline">a_n = \dfrac{1}{n!}</span>，得：</p>
+      <p>由于 <span class="math inline">\displaystyle f(x) = e^x</span>
+      的各阶导数满足 <span class="math inline">\displaystyle f^{(n)}(0)
+      = 1</span>，系数 <span class="math inline">\displaystyle a_n =
+      \dfrac{1}{n!}</span>，得：</p>
       <ul>
-      <li>一阶近似：<span class="math inline">e^x \approx 1 +
-      x</span></li>
-      <li>二阶近似：<span class="math inline">e^x \approx 1 + x +
-      \dfrac{x^2}{2}</span></li>
-      <li>三阶近似：<span class="math inline">e^x \approx 1 + x +
-      \dfrac{x^2}{2} + \dfrac{x^3}{6}</span></li>
+      <li>一阶近似：<span class="math inline">\displaystyle e^x \approx
+      1 + x</span></li>
+      <li>二阶近似：<span class="math inline">\displaystyle e^x \approx
+      1 + x + \dfrac{x^2}{2}</span></li>
+      <li>三阶近似：<span class="math inline">\displaystyle e^x \approx
+      1 + x + \dfrac{x^2}{2} + \dfrac{x^3}{6}</span></li>
       </ul>
-      <p>一般地，<span class="math inline">n</span> 阶泰勒多项式为 <span
-      class="math inline">\displaystyle\sum_{k=0}^n
+      <p>一般地，<span class="math inline">\displaystyle n</span>
+      阶泰勒多项式为 <span class="math inline">\displaystyle\sum_{k=0}^n
       \frac{x^k}{k!}</span>，每一项均为 <span
-      class="math inline">x^k</span> 的倍数，系数规律为 <span
-      class="math inline">\dfrac{1}{k!}</span>。</p>
+      class="math inline">\displaystyle x^k</span> 的倍数，系数规律为
+      <span class="math inline">\displaystyle \dfrac{1}{k!}</span>。</p>
       </div>
       </div>
       </div>
@@ -1217,15 +1280,16 @@
       </div>
       <div class="ex-body">
       <div class="ex-problem-box">
-      <p>写出正弦函数 <span class="math inline">\sin x</span> 在 <span
-      class="math inline">x = 0</span>
+      <p>写出正弦函数 <span class="math inline">\displaystyle \sin
+      x</span> 在 <span class="math inline">\displaystyle x = 0</span>
       附近的一阶、三阶、五阶多项式近似，并说明为何只有奇数次项出现。</p>
       <figure>
       <img src="media/img/chpt5_ex010.png" width="400"
-      alt="\sin x (黑实线) 与其 1 阶 / 3 阶 / 5 阶 Taylor 多项式 — 只含奇次项 (因为 \sin 是奇函数)" />
-      <figcaption aria-hidden="true"><span class="math inline">\sin
-      x</span> (黑实线) 与其 1 阶 / 3 阶 / 5 阶 Taylor 多项式 —
-      只含奇次项 (因为 <span class="math inline">\sin</span>
+      alt="\displaystyle \sin x (黑实线) 与其 1 阶 / 3 阶 / 5 阶 Taylor 多项式 — 只含奇次项 (因为 \displaystyle \sin 是奇函数)" />
+      <figcaption aria-hidden="true"><span
+      class="math inline">\displaystyle \sin x</span> (黑实线) 与其 1 阶
+      / 3 阶 / 5 阶 Taylor 多项式 — 只含奇次项 (因为 <span
+      class="math inline">\displaystyle \sin</span>
       是奇函数)</figcaption>
       </figure>
       </div>
@@ -1239,30 +1303,32 @@
       <div id="chpt5-ex-010-frame" class="ex-frame" hidden="">
       <div id="chpt5-ex-010-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>利用 <span class="math inline">\sin x</span>
+      <p>利用 <span class="math inline">\displaystyle \sin x</span>
       是奇函数，其泰勒展开只含奇数次幂；各阶导数 <span
-      class="math inline">\sin^{(n)}(0)</span> 仅当 <span
-      class="math inline">n</span> 为奇数时非零，且符号交替。</p>
+      class="math inline">\displaystyle \sin^{(n)}(0)</span> 仅当 <span
+      class="math inline">\displaystyle n</span>
+      为奇数时非零，且符号交替。</p>
       </div>
       <div id="chpt5-ex-010-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p><span class="math inline">\sin x</span> 的各阶导数在 <span
-      class="math inline">0</span> 处满足 <span
-      class="math inline">\sin^{(n)}(0) = 0</span>（<span
-      class="math inline">n</span> 为偶数），交替为 <span
-      class="math inline">\pm 1</span>（<span
-      class="math inline">n</span> 为奇数）：</p>
+      <p><span class="math inline">\displaystyle \sin x</span>
+      的各阶导数在 <span class="math inline">\displaystyle 0</span>
+      处满足 <span class="math inline">\displaystyle \sin^{(n)}(0) =
+      0</span>（<span class="math inline">\displaystyle n</span>
+      为偶数），交替为 <span class="math inline">\displaystyle \pm
+      1</span>（<span class="math inline">\displaystyle n</span>
+      为奇数）：</p>
       <ul>
-      <li>一阶近似：<span class="math inline">\sin x \approx
-      x</span></li>
-      <li>三阶近似：<span class="math inline">\sin x \approx x -
-      \dfrac{x^3}{6}</span></li>
-      <li>五阶近似：<span class="math inline">\sin x \approx x -
-      \dfrac{x^3}{6} + \dfrac{x^5}{120}</span></li>
+      <li>一阶近似：<span class="math inline">\displaystyle \sin x
+      \approx x</span></li>
+      <li>三阶近似：<span class="math inline">\displaystyle \sin x
+      \approx x - \dfrac{x^3}{6}</span></li>
+      <li>五阶近似：<span class="math inline">\displaystyle \sin x
+      \approx x - \dfrac{x^3}{6} + \dfrac{x^5}{120}</span></li>
       </ul>
-      <p>只有奇数次项出现，这与 <span class="math inline">\sin x</span>
-      是奇函数（<span class="math inline">\sin(-x) =
-      -\sin(x)</span>）一致：奇函数的泰勒展开只含奇次幂。</p>
+      <p>只有奇数次项出现，这与 <span class="math inline">\displaystyle
+      \sin x</span> 是奇函数（<span class="math inline">\displaystyle
+      \sin(-x) = -\sin(x)</span>）一致：奇函数的泰勒展开只含奇次幂。</p>
       </div>
       </div>
       </div>
@@ -1271,7 +1337,7 @@
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">数值实验证据</span></div>
       <div class="callout-body">
       <p>让我们通过数值计算来验证这些近似的有效性 (取 <span
-      class="math inline">x=0.1</span>):</p>
+      class="math inline">\displaystyle x=0.1</span>):</p>
       <table>
       <thead>
       <tr>
@@ -1284,14 +1350,14 @@
       </thead>
       <tbody>
       <tr>
-      <td><span class="math inline">e^{0.1}</span></td>
+      <td><span class="math inline">\displaystyle e^{0.1}</span></td>
       <td>1.105170918</td>
       <td>1.1</td>
       <td>1.105</td>
       <td>1.105166667</td>
       </tr>
       <tr>
-      <td><span class="math inline">\sin(0.1)</span></td>
+      <td><span class="math inline">\displaystyle \sin(0.1)</span></td>
       <td>0.099833417</td>
       <td>0.1</td>
       <td>-</td>
@@ -1308,34 +1374,36 @@
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">确定泰勒展开的系数</span></div>
       <div class="callout-body">
       <p>假设我们希望用多项式来近似函数 <span
-      class="math inline">f(x)</span>: <span class="math display">
+      class="math inline">\displaystyle f(x)</span>: <span
+      class="math display">
       f(x) \approx a_0 + a_1x + a_2x^2 + a_3x^3 + \cdots + a_nx^n
       </span></p>
-      <p>如何确定系数 <span class="math inline">a_0, a_1, a_2, \ldots,
-      a_n</span>?</p>
+      <p>如何确定系数 <span class="math inline">\displaystyle a_0, a_1,
+      a_2, \ldots, a_n</span>?</p>
       <p><strong>思路</strong>: 让近似多项式在 <span
-      class="math inline">x=0</span> 处与函数 <span
-      class="math inline">f(x)</span> 有尽可能多的”一致性”.</p>
+      class="math inline">\displaystyle x=0</span> 处与函数 <span
+      class="math inline">\displaystyle f(x)</span>
+      有尽可能多的”一致性”.</p>
       <p><strong>推导过程</strong>:</p>
       <ol type="1">
       <li><p><strong>零阶一致性</strong>: 在 <span
-      class="math inline">x=0</span> 处, 函数值与近似值相等 <span
-      class="math display">
+      class="math inline">\displaystyle x=0</span> 处,
+      函数值与近似值相等 <span class="math display">
       f(0) = a_0 \quad \Rightarrow \quad a_0 = f(0)
       </span></p></li>
       <li><p><strong>一阶一致性</strong>: 在 <span
-      class="math inline">x=0</span> 处, 一阶导数相等 <span
-      class="math display">
+      class="math inline">\displaystyle x=0</span> 处, 一阶导数相等
+      <span class="math display">
       f&#39;(0) = a_1 \quad \Rightarrow \quad a_1 = f&#39;(0)
       </span></p></li>
       <li><p><strong>二阶一致性</strong>: 在 <span
-      class="math inline">x=0</span> 处, 二阶导数相等 <span
-      class="math display">
+      class="math inline">\displaystyle x=0</span> 处, 二阶导数相等
+      <span class="math display">
       f&#39;&#39;(0) = 2a_2 \quad \Rightarrow \quad a_2 =
       \frac{f&#39;&#39;(0)}{2}
       </span></p></li>
       <li><p><strong>n阶一致性</strong>: 在 <span
-      class="math inline">x=0</span> 处, n阶导数相等 <span
+      class="math inline">\displaystyle x=0</span> 处, n阶导数相等 <span
       class="math display">
       f^{(n)}(0) = n! \cdot a_n \quad \Rightarrow \quad a_n =
       \frac{f^{(n)}(0)}{n!}
@@ -1344,24 +1412,26 @@
       <p>因此, 我们得到了泰勒展开的系数公式: <span class="math display">
       a_n = \frac{f^{(n)}(0)}{n!}
       </span></p>
-      <p>完整的泰勒公式 (在 <span class="math inline">x=0</span> 处,
-      也称为 <strong>麦克劳林公式</strong> ) 为: <span
+      <p>完整的泰勒公式 (在 <span class="math inline">\displaystyle
+      x=0</span> 处, 也称为 <strong>麦克劳林公式</strong> ) 为: <span
       class="math display">
       f(x) = f(0) + f&#39;(0)x + \frac{f&#39;&#39;(0)}{2!}x^2 +
       \frac{f&#39;&#39;&#39;(0)}{3!}x^3 + \cdots +
       \frac{f^{(n)}(0)}{n!}x^n + R_n(x)
       </span></p>
-      <p>其中 <span class="math inline">R_n(x)</span> 是余项,
-      表示近似误差.</p>
-      <p><strong>例子验证</strong>: 对于 <span class="math inline">f(x)
-      = e^x</span> - <span class="math inline">f(0) = 1</span> ⇒ <span
-      class="math inline">a_0 = 1</span> - <span
-      class="math inline">f&#39;(0) = 1</span> ⇒ <span
-      class="math inline">a_1 = 1</span> - <span
-      class="math inline">f&#39;&#39;(0) = 1</span> ⇒ <span
-      class="math inline">\displaystyle a_2 = \frac{1}{2}</span> - <span
-      class="math inline">f&#39;&#39;&#39;(0) = 1</span> ⇒ <span
-      class="math inline">\displaystyle a_3 = \frac{1}{6}</span></p>
+      <p>其中 <span class="math inline">\displaystyle R_n(x)</span>
+      是余项, 表示近似误差.</p>
+      <p><strong>例子验证</strong>: 对于 <span
+      class="math inline">\displaystyle f(x) = e^x</span> - <span
+      class="math inline">\displaystyle f(0) = 1</span> ⇒ <span
+      class="math inline">\displaystyle a_0 = 1</span> - <span
+      class="math inline">\displaystyle f&#39;(0) = 1</span> ⇒ <span
+      class="math inline">\displaystyle a_1 = 1</span> - <span
+      class="math inline">\displaystyle f&#39;&#39;(0) = 1</span> ⇒
+      <span class="math inline">\displaystyle a_2 = \frac{1}{2}</span> -
+      <span class="math inline">\displaystyle f&#39;&#39;&#39;(0) =
+      1</span> ⇒ <span class="math inline">\displaystyle a_3 =
+      \frac{1}{6}</span></p>
       <p>这与我们之前的观察完全一致!</p>
       <p>这个美妙的公式告诉我们:
       <strong>函数在一点附近的行为完全由它在该点的各阶导数决定</strong>.
@@ -1373,15 +1443,16 @@
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">省</span></div>
       <div class="callout-body">
       <p>本节我们将估计泰勒展开的余项 <span
-      class="math inline">R_n(x)</span> 的大小. 为什么余项的大小很重要?
+      class="math inline">\displaystyle R_n(x)</span> 的大小.
+      为什么余项的大小很重要?
       这是因为泰勒展开的核心价值在于用多项式来近似复杂函数,
       但作为近似我们自然关心一个关键问题: 这种近似的误差有多大?
       是否可控?</p>
       <p>答案是肯定的! 本节的余项分析告诉我们:</p>
       <ul>
       <li><p>对于充分光滑的函数, 泰勒近似的误差确实是可以控制的</p></li>
-      <li><p>误差随着展开阶数 <span class="math inline">n</span>
-      的增加而减小</p></li>
+      <li><p>误差随着展开阶数 <span class="math inline">\displaystyle
+      n</span> 的增加而减小</p></li>
       <li><p>在展开点附近, 误差比展开式的最后一项更快地趋近于零</p></li>
       </ul>
       <p>这种可控性使得泰勒展开在数值计算, 物理建模,
@@ -1391,63 +1462,66 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">皮亚诺余项</span></div>
       <div class="callout-body">
-      <p>设函数 <span class="math inline">f(x)</span> 在 <span
-      class="math inline">x=0</span> 处有 <span
-      class="math inline">n</span> 阶导数, 则存在邻域 <span
-      class="math inline">U(0)</span>, 使得对于任意 <span
-      class="math inline">x \in U(0)</span>, 有 <span
-      class="math display">
+      <p>设函数 <span class="math inline">\displaystyle f(x)</span> 在
+      <span class="math inline">\displaystyle x=0</span> 处有 <span
+      class="math inline">\displaystyle n</span> 阶导数, 则存在邻域
+      <span class="math inline">\displaystyle U(0)</span>, 使得对于任意
+      <span class="math inline">\displaystyle x \in U(0)</span>, 有
+      <span class="math display">
       f(x) = f(0) + f&#39;(0)x + \frac{f&#39;&#39;(0)}{2!}x^2 + \cdots +
       \frac{f^{(n)}(0)}{n!}x^n + o(x^n)
-      </span> 其中 <span class="math inline">o(x^n)</span> 表示当 <span
-      class="math inline">x \to 0</span> 时, 余项是 <span
-      class="math inline">x^n</span> 的高阶无穷小.</p>
+      </span> 其中 <span class="math inline">\displaystyle o(x^n)</span>
+      表示当 <span class="math inline">\displaystyle x \to 0</span> 时,
+      余项是 <span class="math inline">\displaystyle x^n</span>
+      的高阶无穷小.</p>
       <p><strong>证明</strong>:</p>
       <p>我们需要证明: <span class="math inline">\displaystyle\lim_{x
       \to 0} \frac{R_n(x)}{x^n} = 0</span>, 其中 <span
-      class="math inline">R_n(x) = f(x) - P_n(x)</span>, <span
-      class="math inline">P_n(x)</span> 是 <span
-      class="math inline">n</span> 次泰勒多项式.</p>
+      class="math inline">\displaystyle R_n(x) = f(x) - P_n(x)</span>,
+      <span class="math inline">\displaystyle P_n(x)</span> 是 <span
+      class="math inline">\displaystyle n</span> 次泰勒多项式.</p>
       <p><strong>方法一: 使用柯西中值定理</strong></p>
-      <p>考虑函数 <span class="math inline">\phi(t) = f(t) -
-      P_n(t)</span> 和 <span class="math inline">\psi(t) =
-      t^{n+1}</span></p>
-      <p>在区间 <span class="math inline">[0,x]</span>
+      <p>考虑函数 <span class="math inline">\displaystyle \phi(t) = f(t)
+      - P_n(t)</span> 和 <span class="math inline">\displaystyle \psi(t)
+      = t^{n+1}</span></p>
+      <p>在区间 <span class="math inline">\displaystyle [0,x]</span>
       上应用柯西中值定理: <span class="math display">
       \frac{\phi(x) - \phi(0)}{\psi(x) - \psi(0)} =
       \frac{\phi&#39;(\xi)}{\psi&#39;(\xi)} \quad \text{对某个 } \xi \in
       (0,x)
       </span></p>
-      <p>由于 <span class="math inline">\phi(0) = 0</span>, <span
-      class="math inline">\psi(0) = 0</span>, 我们有: <span
-      class="math display">
+      <p>由于 <span class="math inline">\displaystyle \phi(0) =
+      0</span>, <span class="math inline">\displaystyle \psi(0) =
+      0</span>, 我们有: <span class="math display">
       \frac{R_n(x)}{x^{n+1}} = \frac{\phi&#39;(\xi)}{(n+1)\xi^n}
       </span></p>
-      <p>但 <span class="math inline">\phi&#39;(t) = f&#39;(t) -
-      P_n&#39;(t)</span>, 而 <span
-      class="math inline">P_n&#39;(t)</span> 是 <span
-      class="math inline">f&#39;(t)</span> 的 <span
-      class="math inline">(n-1)</span> 阶泰勒多项式</p>
+      <p>但 <span class="math inline">\displaystyle \phi&#39;(t) =
+      f&#39;(t) - P_n&#39;(t)</span>, 而 <span
+      class="math inline">\displaystyle P_n&#39;(t)</span> 是 <span
+      class="math inline">\displaystyle f&#39;(t)</span> 的 <span
+      class="math inline">\displaystyle (n-1)</span> 阶泰勒多项式</p>
       <p>由归纳假设, <span class="math inline">\displaystyle\lim_{t \to
       0} \frac{\phi&#39;(t)}{t^n} = 0</span></p>
       <p>因此: <span class="math display">
       \lim_{x \to 0} \frac{R_n(x)}{x^{n+1}} = \lim_{\xi \to 0}
       \frac{\phi&#39;(\xi)}{(n+1)\xi^n} = 0
       </span></p>
-      <p>这就证明了 <span class="math inline">R_n(x) =
+      <p>这就证明了 <span class="math inline">\displaystyle R_n(x) =
       o(x^n)</span>.</p>
       <p><strong>方法二: 使用洛必达法则</strong></p>
       <p>考虑极限 <span class="math inline">\displaystyle\lim_{x \to 0}
       \frac{R_n(x)}{x^n}</span></p>
-      <p>注意到: - <span class="math inline">R_n(0) = 0</span> - <span
-      class="math inline">R_n&#39;(0) = 0</span> - … - <span
-      class="math inline">R_n^{(n-1)}(0) = 0</span></p>
-      <p>这是因为泰勒多项式 <span class="math inline">P_n(x)</span> 的前
-      <span class="math inline">n</span> 阶导数在 <span
-      class="math inline">x=0</span> 处与 <span
-      class="math inline">f(x)</span> 完全相同.</p>
-      <p>应用洛必达法则 <span class="math inline">n</span> 次: <span
-      class="math display">
+      <p>注意到: - <span class="math inline">\displaystyle R_n(0) =
+      0</span> - <span class="math inline">\displaystyle R_n&#39;(0) =
+      0</span> - … - <span class="math inline">\displaystyle
+      R_n^{(n-1)}(0) = 0</span></p>
+      <p>这是因为泰勒多项式 <span class="math inline">\displaystyle
+      P_n(x)</span> 的前 <span class="math inline">\displaystyle
+      n</span> 阶导数在 <span class="math inline">\displaystyle
+      x=0</span> 处与 <span class="math inline">\displaystyle
+      f(x)</span> 完全相同.</p>
+      <p>应用洛必达法则 <span class="math inline">\displaystyle n</span>
+      次: <span class="math display">
       \lim_{x \to 0} \frac{R_n(x)}{x^n} = \lim_{x \to 0}
       \frac{R_n&#39;(x)}{nx^{n-1}} = \cdots = \lim_{x \to 0}
       \frac{R_n^{(n-1)}(x)}{n!x}
@@ -1457,7 +1531,8 @@
       \to 0} \frac{R_n^{(n-1)}(x) - R_n^{(n-1)}(0)}{x}
       </span></p>
       <p>根据导数的定义, 这个极限等于 <span
-      class="math inline">\frac{1}{n!} R_n^{(n)}(0)</span></p>
+      class="math inline">\displaystyle \frac{1}{n!}
+      R_n^{(n)}(0)</span></p>
       <p>但 <span class="math display">
       \begin{aligned}
       R_n^{(n)}(0) &amp;= f^{(n)}(0) - P_n^{(n)}(0) \\
@@ -1468,7 +1543,7 @@
       <p>因此: <span class="math display">
       \lim_{x \to 0} \frac{R_n(x)}{x^n} = 0
       </span></p>
-      <p>这就证明了 <span class="math inline">R_n(x) =
+      <p>这就证明了 <span class="math inline">\displaystyle R_n(x) =
       o(x^n)</span>.</p>
       </div>
       </div>
@@ -1486,19 +1561,22 @@
       <div class="callout callout-warning">
       <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">余项的直观理解</span></div>
       <div class="callout-body">
-      <p>余项 <span class="math inline">o(x^n)</span> 的含义是: - 当
-      <span class="math inline">x</span> 很小时, 泰勒多项式的误差比
-      <span class="math inline">x^n</span> 更快地趋近于零 - 展开的阶数
-      <span class="math inline">n</span> 越高, 近似精度越高 - 对于固定的
-      <span class="math inline">n</span>, 当 <span class="math inline">x
-      \to 0</span> 时, 误差趋近于零的速度由 <span
-      class="math inline">x^n</span> 决定</p>
+      <p>余项 <span class="math inline">\displaystyle o(x^n)</span>
+      的含义是: - 当 <span class="math inline">\displaystyle x</span>
+      很小时, 泰勒多项式的误差比 <span class="math inline">\displaystyle
+      x^n</span> 更快地趋近于零 - 展开的阶数 <span
+      class="math inline">\displaystyle n</span> 越高, 近似精度越高 -
+      对于固定的 <span class="math inline">\displaystyle n</span>, 当
+      <span class="math inline">\displaystyle x \to 0</span> 时,
+      误差趋近于零的速度由 <span class="math inline">\displaystyle
+      x^n</span> 决定</p>
       <p><strong>例子</strong>: 比较 <span
-      class="math inline">e^x</span> 的不同阶泰勒近似的误差</p>
+      class="math inline">\displaystyle e^x</span>
+      的不同阶泰勒近似的误差</p>
       <table>
       <thead>
       <tr>
-      <th><span class="math inline">x</span></th>
+      <th><span class="math inline">\displaystyle x</span></th>
       <th>精确值</th>
       <th>一阶近似误差</th>
       <th>二阶近似误差</th>
@@ -1522,20 +1600,22 @@
       </tr>
       </tbody>
       </table>
-      <p>可以看到: - 误差确实随着 <span class="math inline">x</span>
-      减小而快速减小 - 高阶近似的误差减小得更快 - 当 <span
-      class="math inline">x=0.01</span> 时,
+      <p>可以看到: - 误差确实随着 <span
+      class="math inline">\displaystyle x</span> 减小而快速减小 -
+      高阶近似的误差减小得更快 - 当 <span
+      class="math inline">\displaystyle x=0.01</span> 时,
       三阶近似的误差已经可以忽略不计</p>
       </div>
       </div>
       <div class="callout callout-warning">
       <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">皮亚诺余项的意义</span></div>
       <div class="callout-body">
-      <p>皮亚诺余项 <span class="math inline">o(x^n)</span>
-      给出了泰勒近似的<strong>渐近性质</strong>: - 它告诉我们当 <span
-      class="math inline">x \to 0</span> 时误差的行为 -
-      但它不提供具体的误差界 - 对于固定的 <span
-      class="math inline">x</span>, 我们不知道误差到底有多大</p>
+      <p>皮亚诺余项 <span class="math inline">\displaystyle
+      o(x^n)</span> 给出了泰勒近似的<strong>渐近性质</strong>: -
+      它告诉我们当 <span class="math inline">\displaystyle x \to
+      0</span> 时误差的行为 - 但它不提供具体的误差界 - 对于固定的 <span
+      class="math inline">\displaystyle x</span>,
+      我们不知道误差到底有多大</p>
       <p>皮亚诺余项确认了我们的直观: 用多项式逼近光滑函数是可行的,
       且逼近误差在原点附近是可以控制的. 在实际应用中,
       我们有时需要更精确的误差估计,
@@ -1545,8 +1625,9 @@
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">省</span></div>
       <div class="callout-body">
-      <p>皮亚诺余项 <span class="math inline">o(x^n)</span>
-      告诉我们余项是 <span class="math inline">x^n</span> 的高阶无穷小,
+      <p>皮亚诺余项 <span class="math inline">\displaystyle
+      o(x^n)</span> 告诉我们余项是 <span
+      class="math inline">\displaystyle x^n</span> 的高阶无穷小,
       但它没有给出具体的误差估计. 在实际应用中,
       我们经常需要知道误差的具体范围,
       这时就需要使用<strong>拉格朗日余项</strong>.</p>
@@ -1555,12 +1636,14 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">拉格朗日余项</span></div>
       <div class="callout-body">
-      <p>设函数 <span class="math inline">f(x)</span> 在包含 <span
-      class="math inline">0</span> 和 <span class="math inline">x</span>
-      的区间上具有 <span class="math inline">n+1</span> 阶连续导数,
-      则存在 <span class="math inline">\xi</span> 介于 <span
-      class="math inline">0</span> 和 <span class="math inline">x</span>
-      之间, 使得 <span class="math display">
+      <p>设函数 <span class="math inline">\displaystyle f(x)</span>
+      在包含 <span class="math inline">\displaystyle 0</span> 和 <span
+      class="math inline">\displaystyle x</span> 的区间上具有 <span
+      class="math inline">\displaystyle n+1</span> 阶连续导数, 则存在
+      <span class="math inline">\displaystyle \xi</span> 介于 <span
+      class="math inline">\displaystyle 0</span> 和 <span
+      class="math inline">\displaystyle x</span> 之间, 使得 <span
+      class="math display">
       f(x) = f(0) + f&#39;(0)x + \frac{f&#39;&#39;(0)}{2!}x^2 + \cdots +
       \frac{f^{(n)}(0)}{n!}x^n + \frac{f^{(n+1)}(\xi)}{(n+1)!}x^{n+1}
       </span></p>
@@ -1576,9 +1659,9 @@
       <p>和 <span class="math display">
       G(t) = (x-t)^{n+1}
       </span></p>
-      <p>在区间 <span class="math inline">[0,x]</span> (或 <span
-      class="math inline">[x,0]</span>) 上应用柯西中值定理: <span
-      class="math display">
+      <p>在区间 <span class="math inline">\displaystyle [0,x]</span> (或
+      <span class="math inline">\displaystyle [x,0]</span>)
+      上应用柯西中值定理: <span class="math display">
       \frac{F(x) - F(0)}{G(x) - G(0)} = \frac{F&#39;(\xi)}{G&#39;(\xi)}
       \quad \text{对某个 } \xi \in (0,x)
       </span></p>
@@ -1596,7 +1679,7 @@
       <li><strong>具体误差界</strong>:
       拉格朗日余项给出了误差的具体表达式</li>
       <li><strong>可计算性</strong>: 如果知道 <span
-      class="math inline">f^{(n+1)}</span> 的界,
+      class="math inline">\displaystyle f^{(n+1)}</span> 的界,
       就可以计算误差的范围</li>
       <li><strong>实用性</strong>: 在数值计算和工程应用中非常有用</li>
       </ol>
@@ -1613,7 +1696,7 @@
       </div>
       <div class="ex-body">
       <div class="ex-problem-box">
-      <p>估计 <span class="math inline">e^{0.1}</span>
+      <p>估计 <span class="math inline">\displaystyle e^{0.1}</span>
       的三阶泰勒近似的误差。</p>
       </div>
       <div class="ex-controls">
@@ -1626,25 +1709,26 @@
       <div id="chpt5-ex-019-frame" class="ex-frame" hidden="">
       <div id="chpt5-ex-019-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>利用拉格朗日余项公式 <span class="math inline">R_n(x) =
-      \dfrac{f^{(n+1)}(\xi)}{(n+1)!}x^{n+1}</span>，其中 <span
-      class="math inline">\xi</span> 介于 <span
-      class="math inline">0</span> 和 <span class="math inline">x</span>
-      之间。</p>
+      <p>利用拉格朗日余项公式 <span class="math inline">\displaystyle
+      R_n(x) = \dfrac{f^{(n+1)}(\xi)}{(n+1)!}x^{n+1}</span>，其中 <span
+      class="math inline">\displaystyle \xi</span> 介于 <span
+      class="math inline">\displaystyle 0</span> 和 <span
+      class="math inline">\displaystyle x</span> 之间。</p>
       </div>
       <div id="chpt5-ex-019-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p><span class="math inline">e^x</span> 的四阶导数为 <span
-      class="math inline">e^x</span>，在 <span class="math inline">[0,
-      0.1]</span> 上，<span class="math inline">|e^x| \leq e^{0.1} &lt;
+      <p><span class="math inline">\displaystyle e^x</span> 的四阶导数为
+      <span class="math inline">\displaystyle e^x</span>，在 <span
+      class="math inline">\displaystyle [0, 0.1]</span> 上，<span
+      class="math inline">\displaystyle |e^x| \leq e^{0.1} &lt;
       1.11</span>。</p>
       <p>由拉格朗日余项公式，三阶泰勒近似的误差满足： <span
       class="math display">
       |R_3(0.1)| \leq \frac{1.11}{4!}(0.1)^4 \approx 4.625 \times
       10^{-6}
       </span></p>
-      <p>这与实际误差 <span class="math inline">4 \times 10^{-6}</span>
-      吻合，说明拉格朗日余项给出了精确的误差上界。</p>
+      <p>这与实际误差 <span class="math inline">\displaystyle 4 \times
+      10^{-6}</span> 吻合，说明拉格朗日余项给出了精确的误差上界。</p>
       </div>
       </div>
       </div>
@@ -1653,11 +1737,12 @@
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">柯西余项</span></div>
       <div class="callout-body">
       <p><strong>泰勒定理 (带柯西余项)</strong>: 设函数 <span
-      class="math inline">f(x)</span> 在包含 <span
-      class="math inline">0</span> 和 <span class="math inline">x</span>
-      的区间上具有 <span class="math inline">n+1</span> 阶连续导数,
-      则存在 <span class="math inline">\theta \in (0,1)</span>, 使得
-      <span class="math display">
+      class="math inline">\displaystyle f(x)</span> 在包含 <span
+      class="math inline">\displaystyle 0</span> 和 <span
+      class="math inline">\displaystyle x</span> 的区间上具有 <span
+      class="math inline">\displaystyle n+1</span> 阶连续导数, 则存在
+      <span class="math inline">\displaystyle \theta \in (0,1)</span>,
+      使得 <span class="math display">
       f(x) = f(0) + f&#39;(0)x + \frac{f&#39;&#39;(0)}{2!}x^2 + \cdots +
       \frac{f^{(n)}(0)}{n!}x^n + \frac{f^{(n+1)}(\theta
       x)}{n!}(1-\theta)^n x^{n+1}
@@ -1668,7 +1753,7 @@
       称为<strong>柯西余项</strong>.</p>
       <p><strong>证明思路</strong>:</p>
       <p>使用与拉格朗日余项类似的证明方法, 但选择不同的辅助函数 <span
-      class="math inline">G(t)</span>.</p>
+      class="math inline">\displaystyle G(t)</span>.</p>
       <p><strong>柯西余项的特点</strong>:</p>
       <ol type="1">
       <li><strong>形式不同</strong>:
@@ -1682,10 +1767,11 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">积分余项</span></div>
       <div class="callout-body">
-      <p>设函数 <span class="math inline">f(x)</span> 在包含 <span
-      class="math inline">0</span> 和 <span class="math inline">x</span>
-      的区间上具有 <span class="math inline">n+1</span> 阶连续导数, 则
-      <span class="math display">
+      <p>设函数 <span class="math inline">\displaystyle f(x)</span>
+      在包含 <span class="math inline">\displaystyle 0</span> 和 <span
+      class="math inline">\displaystyle x</span> 的区间上具有 <span
+      class="math inline">\displaystyle n+1</span> 阶连续导数, 则 <span
+      class="math display">
       f(x) = f(0) + f&#39;(0)x + \frac{f&#39;&#39;(0)}{2!}x^2 + \cdots +
       \frac{f^{(n)}(0)}{n!}x^n + R_n(x)
       </span> 其中积分余项为: <span class="math display">
@@ -1696,10 +1782,11 @@
       <li><p>从微积分基本定理出发: <span class="math display">
       f(x) = f(0) + \int_0^x f&#39;(t)  dt
       </span></p></li>
-      <li><p>对积分 <span class="math inline">\int_0^x
-      f&#39;(t)  dt</span> 进行分部积分, 令 <span class="math inline">u
-      = f&#39;(t)</span>, <span class="math inline">dv = dt</span>:
-      <span class="math display">
+      <li><p>对积分 <span class="math inline">\displaystyle \int_0^x
+      f&#39;(t)  dt</span> 进行分部积分, 令 <span
+      class="math inline">\displaystyle u = f&#39;(t)</span>, <span
+      class="math inline">\displaystyle dv = dt</span>: <span
+      class="math display">
       \int_0^x f&#39;(t)  dt = \left[ f&#39;(t) \cdot t \right]_0^x -
       \int_0^x t f&#39;&#39;(t)  dt = x f&#39;(0) + \int_0^x (x-t)
       f&#39;&#39;(t)  dt
@@ -1736,8 +1823,9 @@
       <ol type="1">
       <li><p><strong>计算复杂</strong>: 实际计算积分可能很困难</p></li>
       <li><p><strong>条件较强</strong>: 要求 <span
-      class="math inline">f^{(n+1)}</span> 连续, 而皮亚诺余项只需 <span
-      class="math inline">n</span> 阶导数存在</p></li>
+      class="math inline">\displaystyle f^{(n+1)}</span> 连续,
+      而皮亚诺余项只需 <span class="math inline">\displaystyle n</span>
+      阶导数存在</p></li>
       <li><p><strong>实用性有限</strong>: 在实际数值计算中,
       拉格朗日余项通常更便于使用</p></li>
       </ol>
@@ -1764,31 +1852,34 @@
       <tbody>
       <tr>
       <td>皮亚诺余项</td>
-      <td><span class="math inline">o(x^n)</span></td>
-      <td><span class="math inline">f</span> 在 <span
-      class="math inline">x_0</span> 处 <span
-      class="math inline">n</span> 阶可导</td>
+      <td><span class="math inline">\displaystyle o(x^n)</span></td>
+      <td><span class="math inline">\displaystyle f</span> 在 <span
+      class="math inline">\displaystyle x_0</span> 处 <span
+      class="math inline">\displaystyle n</span> 阶可导</td>
       <td>极限计算, 渐近分析</td>
       </tr>
       <tr>
       <td>拉格朗日余项</td>
       <td><span
       class="math inline">\displaystyle\frac{f^{(n+1)}(\xi)}{(n+1)!}x^{n+1}</span></td>
-      <td><span class="math inline">f^{(n+1)}</span> 在区间上存在</td>
+      <td><span class="math inline">\displaystyle f^{(n+1)}</span>
+      在区间上存在</td>
       <td>误差估计, 不等式证明</td>
       </tr>
       <tr>
       <td>柯西余项</td>
       <td><span class="math inline">\displaystyle\frac{f^{(n+1)}(\theta
       x)}{n!}(1-\theta)^n x^{n+1}</span></td>
-      <td><span class="math inline">f^{(n+1)}</span> 在区间上存在</td>
+      <td><span class="math inline">\displaystyle f^{(n+1)}</span>
+      在区间上存在</td>
       <td>特殊情形的误差分析</td>
       </tr>
       <tr>
       <td>积分余项</td>
       <td><span class="math inline">\displaystyle\frac{1}{n!}\int_0^x
       (x-t)^n f^{(n+1)}(t) dt</span></td>
-      <td><span class="math inline">f^{(n+1)}</span> 连续</td>
+      <td><span class="math inline">\displaystyle f^{(n+1)}</span>
+      连续</td>
       <td>理论分析, 数值方法推导</td>
       </tr>
       </tbody>
@@ -1800,8 +1891,8 @@
       <div class="callout-body">
       <p>积分余项可以推导出拉格朗日余项和柯西余项:</p>
       <p><strong>推导拉格朗日余项</strong>:</p>
-      <p>由积分中值定理, 存在 <span class="math inline">\xi \in
-      (0,x)</span> 使得: <span class="math display">
+      <p>由积分中值定理, 存在 <span class="math inline">\displaystyle
+      \xi \in (0,x)</span> 使得: <span class="math display">
       \int_0^x (x-t)^n f^{(n+1)}(t)  dt = f^{(n+1)}(\xi) \int_0^x
       (x-t)^n  dt = f^{(n+1)}(\xi) \frac{x^{n+1}}{n+1}
       </span></p>
@@ -1810,14 +1901,14 @@
       </span></p>
       <p>这正是拉格朗日余项.</p>
       <p><strong>推导柯西余项</strong>:</p>
-      <p>令 <span class="math inline">t = \theta x</span>, 则 <span
-      class="math inline">dt = x d\theta</span>, 积分变为: <span
-      class="math display">
+      <p>令 <span class="math inline">\displaystyle t = \theta x</span>,
+      则 <span class="math inline">\displaystyle dt = x d\theta</span>,
+      积分变为: <span class="math display">
       \int_0^x (x-t)^n f^{(n+1)}(t)  dt = x^{n+1} \int_0^1 (1-\theta)^n
       f^{(n+1)}(\theta x)  d\theta
       </span></p>
-      <p>由积分中值定理, 存在 <span class="math inline">\theta_0 \in
-      (0,1)</span> 使得: <span class="math display">
+      <p>由积分中值定理, 存在 <span class="math inline">\displaystyle
+      \theta_0 \in (0,1)</span> 使得: <span class="math display">
       \int_0^1 (1-\theta)^n f^{(n+1)}(\theta x)  d\theta =
       f^{(n+1)}(\theta_0 x) \int_0^1 (1-\theta)^n  d\theta =
       \frac{f^{(n+1)}(\theta_0 x)}{n+1}
@@ -1839,15 +1930,15 @@
       </div>
       <div class="ex-body">
       <div class="ex-problem-box">
-      <p>利用 <span class="math inline">\arctan x</span> 的泰勒展开计算
-      <span class="math inline">\pi</span>
+      <p>利用 <span class="math inline">\displaystyle \arctan x</span>
+      的泰勒展开计算 <span class="math inline">\displaystyle \pi</span>
       的近似值，并估计要达到小数点后 6 位精度需要多少项。</p>
       <figure>
       <img src="media/img/chpt5_ex020.png" width="400"
-      alt="Leibniz 级数 4\sum (-1)^{n-1}/(2n-1) 部分和 — 80 项后只稳定到小数点后两位, 收敛极慢" />
+      alt="Leibniz 级数 \displaystyle 4\sum (-1)^{n-1}/(2n-1) 部分和 — 80 项后只稳定到小数点后两位, 收敛极慢" />
       <figcaption aria-hidden="true">Leibniz 级数 <span
-      class="math inline">4\sum (-1)^{n-1}/(2n-1)</span> 部分和 — 80
-      项后只稳定到小数点后两位, 收敛极慢</figcaption>
+      class="math inline">\displaystyle 4\sum (-1)^{n-1}/(2n-1)</span>
+      部分和 — 80 项后只稳定到小数点后两位, 收敛极慢</figcaption>
       </figure>
       </div>
       <div class="ex-controls">
@@ -1860,27 +1951,27 @@
       <div id="chpt5-ex-020-frame" class="ex-frame" hidden="">
       <div id="chpt5-ex-020-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>利用 <span class="math inline">\arctan 1 = \pi/4</span>
-      以及拉格朗日余项来估计截断误差。</p>
+      <p>利用 <span class="math inline">\displaystyle \arctan 1 =
+      \pi/4</span> 以及拉格朗日余项来估计截断误差。</p>
       </div>
       <div id="chpt5-ex-020-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p>利用 <span class="math inline">\arctan x</span> 的泰勒展开：
-      <span class="math display">
+      <p>利用 <span class="math inline">\displaystyle \arctan x</span>
+      的泰勒展开： <span class="math display">
       \arctan x = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} +
       \cdots
       </span></p>
-      <p>取 <span class="math inline">x = 1</span>，得： <span
-      class="math display">
+      <p>取 <span class="math inline">\displaystyle x = 1</span>，得：
+      <span class="math display">
       \frac{\pi}{4} = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} +
       \cdots
       </span></p>
       <p>使用拉格朗日余项估计误差：要计算 <span
-      class="math inline">\pi</span> 到小数点后 6 位，需要： <span
-      class="math display">
+      class="math inline">\displaystyle \pi</span> 到小数点后 6
+      位，需要： <span class="math display">
       |R_n(1)| \leq \frac{1}{2n+1} &lt; 10^{-6}
       </span></p>
-      <p>解得 <span class="math inline">n &gt; 5 \times
+      <p>解得 <span class="math inline">\displaystyle n &gt; 5 \times
       10^5</span>，即需要约 50
       万项。这说明虽然泰勒展开理论上是精确的，但实际计算时收敛速度可能很慢。</p>
       </div>
@@ -1903,14 +1994,16 @@
       \cdots = \sum_{n=0}^{\infty} \frac{x^n}{n!}
       </span></p>
       <p><strong>收敛性</strong>: 对所有实数 <span
-      class="math inline">x</span> 都收敛</p>
-      <p><strong>推导</strong>: - <span class="math inline">f(x) =
-      e^x</span>, <span class="math inline">f^{(n)}(x) = e^x</span>,
-      <span class="math inline">f^{(n)}(0) = 1</span> - 代入泰勒公式:
-      <span class="math inline">\displaystyle a_n =
+      class="math inline">\displaystyle x</span> 都收敛</p>
+      <p><strong>推导</strong>: - <span
+      class="math inline">\displaystyle f(x) = e^x</span>, <span
+      class="math inline">\displaystyle f^{(n)}(x) = e^x</span>, <span
+      class="math inline">\displaystyle f^{(n)}(0) = 1</span> -
+      代入泰勒公式: <span class="math inline">\displaystyle a_n =
       \frac{f^{(n)}(0)}{n!} = \frac{1}{n!}</span></p>
-      <p><strong>应用</strong>: 计算 <span class="math inline">e</span>
-      的近似值 <span class="math display">
+      <p><strong>应用</strong>: 计算 <span
+      class="math inline">\displaystyle e</span> 的近似值 <span
+      class="math display">
       e = e^1 \approx 1 + 1 + \frac{1}{2} + \frac{1}{6} + \frac{1}{24} +
       \frac{1}{120} \approx 2.71667
       </span></p>
@@ -1924,14 +2017,14 @@
       \cdots = \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n+1}}{(2n+1)!}
       </span></p>
       <p><strong>收敛性</strong>: 对所有实数 <span
-      class="math inline">x</span> 都收敛</p>
+      class="math inline">\displaystyle x</span> 都收敛</p>
       <p><strong>推导</strong>: - <span
       class="math inline">\displaystyle\sin^{(n)}(x) = \sin\left(x +
       \frac{n\pi}{2}\right)</span> - <span
-      class="math inline">\sin^{(n)}(0)</span> 的值为: 0, 1, 0, -1, 0,
-      1, … (循环) - 只有奇数次项非零, 且符号交替</p>
+      class="math inline">\displaystyle \sin^{(n)}(0)</span> 的值为: 0,
+      1, 0, -1, 0, 1, … (循环) - 只有奇数次项非零, 且符号交替</p>
       <p><strong>特点</strong>: 只包含奇数次项, 这与 <span
-      class="math inline">\sin x</span> 是奇函数相符</p>
+      class="math inline">\displaystyle \sin x</span> 是奇函数相符</p>
       </div>
       </div>
       <div class="callout callout-important">
@@ -1942,14 +2035,14 @@
       \cdots = \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n}}{(2n)!}
       </span></p>
       <p><strong>收敛性</strong>: 对所有实数 <span
-      class="math inline">x</span> 都收敛</p>
+      class="math inline">\displaystyle x</span> 都收敛</p>
       <p><strong>推导</strong>: - <span
       class="math inline">\displaystyle\cos^{(n)}(x) = \cos\left(x +
       \frac{n\pi}{2}\right)</span> - <span
-      class="math inline">\cos^{(n)}(0)</span> 的值为: 1, 0, -1, 0, 1,
-      0, … (循环) - 只有偶数次项非零, 且符号交替</p>
+      class="math inline">\displaystyle \cos^{(n)}(0)</span> 的值为: 1,
+      0, -1, 0, 1, 0, … (循环) - 只有偶数次项非零, 且符号交替</p>
       <p><strong>特点</strong>: 只包含偶数次项, 这与 <span
-      class="math inline">\cos x</span> 是偶函数相符</p>
+      class="math inline">\displaystyle \cos x</span> 是偶函数相符</p>
       </div>
       </div>
       <div class="callout callout-important">
@@ -1959,15 +2052,17 @@
       \ln(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} +
       \cdots = \sum_{n=1}^{\infty} \frac{(-1)^{n+1} x^n}{n}
       </span></p>
-      <p><strong>收敛区间</strong>: <span class="math inline">-1 &lt; x
-      \leq 1</span></p>
+      <p><strong>收敛区间</strong>: <span
+      class="math inline">\displaystyle -1 &lt; x \leq 1</span></p>
       <p><strong>推导</strong>: - <span
       class="math inline">\displaystyle f(x) = \ln(1+x)</span>, <span
       class="math inline">\displaystyle f&#39;(x) = \frac{1}{1+x} =
       \sum_{n=0}^{\infty} (-1)^n x^n</span> (几何级数) - 逐项积分得到
-      <span class="math inline">\ln(1+x)</span> 的展开式</p>
-      <p><strong>注意</strong>: 当 <span class="math inline">x=1</span>
-      时, 得到著名的交错调和级数 <span class="math display">
+      <span class="math inline">\displaystyle \ln(1+x)</span>
+      的展开式</p>
+      <p><strong>注意</strong>: 当 <span
+      class="math inline">\displaystyle x=1</span> 时,
+      得到著名的交错调和级数 <span class="math display">
       \ln 2 = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \cdots
       </span></p>
       </div>
@@ -1981,10 +2076,11 @@
       \frac{\alpha(\alpha-1)(\alpha-2)}{3!}x^3 + \cdots
       </span></p>
       <p><strong>收敛区间</strong>: - 当 <span
-      class="math inline">\alpha</span> 是非负整数时: 对所有 <span
-      class="math inline">x</span> 成立 (有限项) - 当 <span
-      class="math inline">\alpha</span> 不是非负整数时: <span
-      class="math inline">|x| &lt; 1</span></p>
+      class="math inline">\displaystyle \alpha</span> 是非负整数时:
+      对所有 <span class="math inline">\displaystyle x</span> 成立
+      (有限项) - 当 <span class="math inline">\displaystyle
+      \alpha</span> 不是非负整数时: <span
+      class="math inline">\displaystyle |x| &lt; 1</span></p>
       <p><strong>特殊情况</strong>: - <span
       class="math inline">\displaystyle \alpha = -1</span>: <span
       class="math inline">\displaystyle\frac{1}{1+x} = 1 - x + x^2 - x^3
@@ -2016,31 +2112,35 @@
       </thead>
       <tbody>
       <tr>
-      <td><span class="math inline">e^x</span></td>
+      <td><span class="math inline">\displaystyle e^x</span></td>
       <td><span class="math inline">\displaystyle\sum
       \frac{x^n}{n!}</span></td>
-      <td><span class="math inline">(-\infty, \infty)</span></td>
+      <td><span class="math inline">\displaystyle (-\infty,
+      \infty)</span></td>
       </tr>
       <tr>
-      <td><span class="math inline">\sin x</span></td>
+      <td><span class="math inline">\displaystyle \sin x</span></td>
       <td><span class="math inline">\displaystyle\sum \frac{(-1)^n
       x^{2n+1}}{(2n+1)!}</span></td>
-      <td><span class="math inline">(-\infty, \infty)</span></td>
+      <td><span class="math inline">\displaystyle (-\infty,
+      \infty)</span></td>
       </tr>
       <tr>
-      <td><span class="math inline">\cos x</span></td>
+      <td><span class="math inline">\displaystyle \cos x</span></td>
       <td><span class="math inline">\displaystyle\sum \frac{(-1)^n
       x^{2n}}{(2n)!}</span></td>
-      <td><span class="math inline">(-\infty, \infty)</span></td>
+      <td><span class="math inline">\displaystyle (-\infty,
+      \infty)</span></td>
       </tr>
       <tr>
-      <td><span class="math inline">\ln(1+x)</span></td>
+      <td><span class="math inline">\displaystyle \ln(1+x)</span></td>
       <td><span class="math inline">\displaystyle\sum \frac{(-1)^{n+1}
       x^n}{n}</span></td>
-      <td><span class="math inline">(-1, 1]</span></td>
+      <td><span class="math inline">\displaystyle (-1, 1]</span></td>
       </tr>
       <tr>
-      <td><span class="math inline">(1+x)^\alpha</span></td>
+      <td><span class="math inline">\displaystyle
+      (1+x)^\alpha</span></td>
       <td><span class="math inline">\displaystyle\sum \binom{\alpha}{n}
       x^n</span></td>
       <td>见上文说明</td>
@@ -2093,15 +2193,16 @@
       <div id="chpt5-ex-011-frame" class="ex-frame" hidden="">
       <div id="chpt5-ex-011-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>将 <span class="math inline">e^x</span> 展开到二阶（含 <span
-      class="math inline">o(x^2)</span>
-      余项），代入后约去分子分母的公因子 <span
-      class="math inline">x^2</span>，令 <span class="math inline">x\to
-      0</span>。</p>
+      <p>将 <span class="math inline">\displaystyle e^x</span>
+      展开到二阶（含 <span class="math inline">\displaystyle
+      o(x^2)</span> 余项），代入后约去分子分母的公因子 <span
+      class="math inline">\displaystyle x^2</span>，令 <span
+      class="math inline">\displaystyle x\to 0</span>。</p>
       </div>
       <div id="chpt5-ex-011-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p>将 <span class="math inline">e^x</span> 展开到二阶：</p>
+      <p>将 <span class="math inline">\displaystyle e^x</span>
+      展开到二阶：</p>
       <p><span class="math display">
       e^x = 1 + x + \frac{x^2}{2} + o(x^2)
       </span></p>
@@ -2110,8 +2211,9 @@
       \frac{e^x - 1 - x}{x^2} = \frac{\frac{x^2}{2} + o(x^2)}{x^2} =
       \frac{1}{2} + \frac{o(x^2)}{x^2}
       </span></p>
-      <p>令 <span class="math inline">x \to 0</span>，<span
-      class="math inline">\dfrac{o(x^2)}{x^2} \to 0</span>，故</p>
+      <p>令 <span class="math inline">\displaystyle x \to
+      0</span>，<span class="math inline">\displaystyle
+      \dfrac{o(x^2)}{x^2} \to 0</span>，故</p>
       <p><span class="math display">
       \lim_{x \to 0} \frac{e^x - 1 - x}{x^2} = \frac{1}{2}
       </span></p>
@@ -2144,14 +2246,16 @@
       <div id="chpt5-ex-012-frame" class="ex-frame" hidden="">
       <div id="chpt5-ex-012-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>将 <span class="math inline">\sin x</span> 展开到三阶（含 <span
-      class="math inline">o(x^3)</span> 余项），代入后提取 <span
-      class="math inline">x^3</span> 因子，令 <span
-      class="math inline">x\to 0</span>。</p>
+      <p>将 <span class="math inline">\displaystyle \sin x</span>
+      展开到三阶（含 <span class="math inline">\displaystyle
+      o(x^3)</span> 余项），代入后提取 <span
+      class="math inline">\displaystyle x^3</span> 因子，令 <span
+      class="math inline">\displaystyle x\to 0</span>。</p>
       </div>
       <div id="chpt5-ex-012-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p>将 <span class="math inline">\sin x</span> 展开到三阶：</p>
+      <p>将 <span class="math inline">\displaystyle \sin x</span>
+      展开到三阶：</p>
       <p><span class="math display">
       \sin x = x - \frac{x^3}{6} + o(x^3)
       </span></p>
@@ -2160,8 +2264,9 @@
       \frac{\sin x - x}{x^3} = \frac{-\frac{x^3}{6} + o(x^3)}{x^3} =
       -\frac{1}{6} + \frac{o(x^3)}{x^3}
       </span></p>
-      <p>令 <span class="math inline">x \to 0</span>，<span
-      class="math inline">\dfrac{o(x^3)}{x^3} \to 0</span>，故</p>
+      <p>令 <span class="math inline">\displaystyle x \to
+      0</span>，<span class="math inline">\displaystyle
+      \dfrac{o(x^3)}{x^3} \to 0</span>，故</p>
       <p><span class="math display">
       \lim_{x \to 0} \frac{\sin x - x}{x^3} = -\frac{1}{6}
       </span></p>
@@ -2185,9 +2290,9 @@
       </div>
       <div class="ex-body">
       <div class="ex-problem-box">
-      <p>利用 <span class="math inline">\sin x</span> 的泰勒展开计算
-      <span class="math inline">\sin 1°</span> 的近似值（精确到小数点后
-      7 位）。</p>
+      <p>利用 <span class="math inline">\displaystyle \sin x</span>
+      的泰勒展开计算 <span class="math inline">\displaystyle \sin
+      1°</span> 的近似值（精确到小数点后 7 位）。</p>
       </div>
       <div class="ex-controls">
       <div class="ex-sol-row">
@@ -2199,9 +2304,9 @@
       <div id="chpt5-ex-013-frame" class="ex-frame" hidden="">
       <div id="chpt5-ex-013-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>先将 <span class="math inline">1°</span> 换算为弧度，再代入
-      <span class="math inline">\sin x \approx x -
-      \dfrac{x^3}{6}</span>，保留足够精度的项即可。</p>
+      <p>先将 <span class="math inline">\displaystyle 1°</span>
+      换算为弧度，再代入 <span class="math inline">\displaystyle \sin x
+      \approx x - \dfrac{x^3}{6}</span>，保留足够精度的项即可。</p>
       </div>
       <div id="chpt5-ex-013-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
@@ -2209,19 +2314,22 @@
       <p><span class="math display">
       1° = \frac{\pi}{180} \approx 0.0174533
       </span></p>
-      <p>使用 <span class="math inline">\sin x</span> 的展开式：</p>
+      <p>使用 <span class="math inline">\displaystyle \sin x</span>
+      的展开式：</p>
       <p><span class="math display">
       \sin x = x - \frac{x^3}{6} + \frac{x^5}{120} - \cdots
       </span></p>
-      <p>代入 <span class="math inline">x = 0.0174533</span>，由于 <span
-      class="math inline">x^3/6 \approx 8.8 \times 10^{-7}</span>，<span
-      class="math inline">x^5/120</span> 可忽略：</p>
+      <p>代入 <span class="math inline">\displaystyle x =
+      0.0174533</span>，由于 <span class="math inline">\displaystyle
+      x^3/6 \approx 8.8 \times 10^{-7}</span>，<span
+      class="math inline">\displaystyle x^5/120</span> 可忽略：</p>
       <p><span class="math display">
       \sin 1° \approx 0.0174533 - \frac{(0.0174533)^3}{6} \approx
       0.0174524
       </span></p>
-      <p>与精确值 <span class="math inline">0.0174524064</span>
-      相比，误差约为 <span class="math inline">10^{-8}</span>。</p>
+      <p>与精确值 <span class="math inline">\displaystyle
+      0.0174524064</span> 相比，误差约为 <span
+      class="math inline">\displaystyle 10^{-8}</span>。</p>
       </div>
       </div>
       </div>
@@ -2240,17 +2348,18 @@
       class="ex-tag">泰勒展开</span></span>
       </div>
       <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>证明：当 <span class="math inline">x &gt; 0</span> 时，<span
-      class="math inline">\displaystyle e^x &gt; 1 + x +
+      <div class="ex-problem-box ex-proof">
+      <p>当 <span class="math inline">\displaystyle x &gt; 0</span>
+      时，<span class="math inline">\displaystyle e^x &gt; 1 + x +
       \frac{x^2}{2}</span>。</p>
       <figure>
       <img src="media/img/chpt5_ex014.png" width="400"
-      alt="e^x 始终在 1+x+x^2/2 之上 — 二者之差 (绿色阴影) 等于 Taylor 余项, 在 x&gt;0 处恒正" />
+      alt="\displaystyle e^x 始终在 \displaystyle 1+x+x^2/2 之上 — 二者之差 (绿色阴影) 等于 Taylor 余项, 在 \displaystyle x&gt;0 处恒正" />
       <figcaption aria-hidden="true"><span
-      class="math inline">e^x</span> 始终在 <span
-      class="math inline">1+x+x^2/2</span> 之上 — 二者之差 (绿色阴影)
-      等于 Taylor 余项, 在 <span class="math inline">x&gt;0</span>
+      class="math inline">\displaystyle e^x</span> 始终在 <span
+      class="math inline">\displaystyle 1+x+x^2/2</span> 之上 — 二者之差
+      (绿色阴影) 等于 Taylor 余项, 在 <span
+      class="math inline">\displaystyle x&gt;0</span>
       处恒正</figcaption>
       </figure>
       </div>
@@ -2264,22 +2373,24 @@
       <div id="chpt5-ex-014-frame" class="ex-frame" hidden="">
       <div id="chpt5-ex-014-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>将 <span class="math inline">e^x</span>
+      <p>将 <span class="math inline">\displaystyle e^x</span>
       用带拉格朗日余项的泰勒公式展开到三阶，利用余项中 <span
-      class="math inline">e^\xi &gt; 0</span>（<span
-      class="math inline">\xi \in (0, x)</span>）得出不等式。</p>
+      class="math inline">\displaystyle e^\xi &gt; 0</span>（<span
+      class="math inline">\displaystyle \xi \in (0,
+      x)</span>）得出不等式。</p>
       </div>
       <div id="chpt5-ex-014-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
       <p>用带拉格朗日余项的泰勒公式展开 <span
-      class="math inline">e^x</span> 到三阶，存在 <span
-      class="math inline">\xi \in (0, x)</span> 使得：</p>
+      class="math inline">\displaystyle e^x</span> 到三阶，存在 <span
+      class="math inline">\displaystyle \xi \in (0, x)</span> 使得：</p>
       <p><span class="math display">
       e^x = 1 + x + \frac{x^2}{2} + \frac{e^\xi}{6}x^3
       </span></p>
-      <p>由于 <span class="math inline">e^\xi &gt; 0</span> 且 <span
-      class="math inline">x &gt; 0</span>，故 <span
-      class="math inline">\dfrac{e^\xi}{6}x^3 &gt; 0</span>，从而：</p>
+      <p>由于 <span class="math inline">\displaystyle e^\xi &gt;
+      0</span> 且 <span class="math inline">\displaystyle x &gt;
+      0</span>，故 <span class="math inline">\displaystyle
+      \dfrac{e^\xi}{6}x^3 &gt; 0</span>，从而：</p>
       <p><span class="math display">
       e^x = 1 + x + \frac{x^2}{2} + \frac{e^\xi}{6}x^3 &gt; 1 + x +
       \frac{x^2}{2}
@@ -2297,19 +2408,20 @@
       class="ex-tag">泰勒展开</span></span>
       </div>
       <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>证明：当 <span class="math inline">0 &lt; x &lt;
+      <div class="ex-problem-box ex-proof">
+      <p>当 <span class="math inline">\displaystyle 0 &lt; x &lt;
       \dfrac{\pi}{2}</span> 时，<span
       class="math inline">\displaystyle\sin x &gt; x -
       \frac{x^3}{6}</span>。</p>
       <figure>
       <img src="media/img/chpt5_ex015.png" width="400"
-      alt="\sin x 在 (0, \pi/2) 上始终略大于 x - x^3/6 — Taylor 余项的下一阶 (+x^5/120) 恒正" />
-      <figcaption aria-hidden="true"><span class="math inline">\sin
-      x</span> 在 <span class="math inline">(0, \pi/2)</span>
-      上始终略大于 <span class="math inline">x - x^3/6</span> — Taylor
-      余项的下一阶 (<span class="math inline">+x^5/120</span>)
-      恒正</figcaption>
+      alt="\displaystyle \sin x 在 \displaystyle (0, \pi/2) 上始终略大于 \displaystyle x - x^3/6 — Taylor 余项的下一阶 (\displaystyle +x^5/120) 恒正" />
+      <figcaption aria-hidden="true"><span
+      class="math inline">\displaystyle \sin x</span> 在 <span
+      class="math inline">\displaystyle (0, \pi/2)</span> 上始终略大于
+      <span class="math inline">\displaystyle x - x^3/6</span> — Taylor
+      余项的下一阶 (<span class="math inline">\displaystyle
+      +x^5/120</span>) 恒正</figcaption>
       </figure>
       </div>
       <div class="ex-controls">
@@ -2322,26 +2434,26 @@
       <div id="chpt5-ex-015-frame" class="ex-frame" hidden="">
       <div id="chpt5-ex-015-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>将 <span class="math inline">\sin x</span>
+      <p>将 <span class="math inline">\displaystyle \sin x</span>
       用带拉格朗日余项的泰勒公式展开到五阶，利用 <span
-      class="math inline">\cos\xi &gt; 0</span>（<span
-      class="math inline">\xi \in (0, x) \subset (0,
+      class="math inline">\displaystyle \cos\xi &gt; 0</span>（<span
+      class="math inline">\displaystyle \xi \in (0, x) \subset (0,
       \pi/2)</span>）得出不等式。</p>
       </div>
       <div id="chpt5-ex-015-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p>用带拉格朗日余项的泰勒公式展开 <span class="math inline">\sin
-      x</span> 到五阶，存在 <span class="math inline">\xi \in (0,
-      x)</span> 使得：</p>
+      <p>用带拉格朗日余项的泰勒公式展开 <span
+      class="math inline">\displaystyle \sin x</span> 到五阶，存在 <span
+      class="math inline">\displaystyle \xi \in (0, x)</span> 使得：</p>
       <p><span class="math display">
       \sin x = x - \frac{x^3}{6} + \frac{\cos\xi}{120}x^5
       </span></p>
-      <p>当 <span class="math inline">0 &lt; x &lt;
-      \dfrac{\pi}{2}</span> 时，<span class="math inline">\xi \in
-      \left(0, \dfrac{\pi}{2}\right)</span>，故 <span
-      class="math inline">\cos\xi &gt; 0</span>，从而 <span
-      class="math inline">\dfrac{\cos\xi}{120}x^5 &gt;
-      0</span>，因此：</p>
+      <p>当 <span class="math inline">\displaystyle 0 &lt; x &lt;
+      \dfrac{\pi}{2}</span> 时，<span class="math inline">\displaystyle
+      \xi \in \left(0, \dfrac{\pi}{2}\right)</span>，故 <span
+      class="math inline">\displaystyle \cos\xi &gt; 0</span>，从而
+      <span class="math inline">\displaystyle \dfrac{\cos\xi}{120}x^5
+      &gt; 0</span>，因此：</p>
       <p><span class="math display">
       \sin x = x - \frac{x^3}{6} + \frac{\cos\xi}{120}x^5 &gt; x -
       \frac{x^3}{6}
@@ -2356,7 +2468,7 @@
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">省</span></div>
       <div class="callout-body">
       <p>在前面的讨论中, 我们介绍了皮亚诺余项 <span
-      class="math inline">o(x^n)</span> 和拉格朗日余项.
+      class="math inline">\displaystyle o(x^n)</span> 和拉格朗日余项.
       现在我们将引入<strong>大O符号</strong>,
       它提供了另一种描述余项行为的方式,
       在数值分析和算法分析中特别有用.</p>
@@ -2365,23 +2477,25 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">大O符号的定义</span></div>
       <div class="callout-body">
-      <p>设函数 <span class="math inline">f(x)</span> 和 <span
-      class="math inline">g(x)</span> 在 <span
-      class="math inline">x_0</span> 的某个去心邻域内有定义.
-      如果存在常数 <span class="math inline">M &gt; 0</span> 和 <span
-      class="math inline">\delta &gt; 0</span>, 使得当 <span
-      class="math inline">0 &lt; |x - x_0| &lt; \delta</span> 时, 有
-      <span class="math display">
+      <p>设函数 <span class="math inline">\displaystyle f(x)</span> 和
+      <span class="math inline">\displaystyle g(x)</span> 在 <span
+      class="math inline">\displaystyle x_0</span>
+      的某个去心邻域内有定义. 如果存在常数 <span
+      class="math inline">\displaystyle M &gt; 0</span> 和 <span
+      class="math inline">\displaystyle \delta &gt; 0</span>, 使得当
+      <span class="math inline">\displaystyle 0 &lt; |x - x_0| &lt;
+      \delta</span> 时, 有 <span class="math display">
       |f(x)| \leq M|g(x)|
-      </span> 则称 <span class="math inline">f(x)</span> 是 <span
-      class="math inline">g(x)</span> 的大<span
-      class="math inline">O</span>, 记作 <span class="math inline">f(x)
-      = O(g(x))</span> (当 <span class="math inline">x \to
-      x_0</span>).</p>
-      <p><strong>直观理解</strong>: <span class="math inline">f(x) =
-      O(g(x))</span> 表示 <span class="math inline">f(x)</span>
+      </span> 则称 <span class="math inline">\displaystyle f(x)</span>
+      是 <span class="math inline">\displaystyle g(x)</span> 的大<span
+      class="math inline">\displaystyle O</span>, 记作 <span
+      class="math inline">\displaystyle f(x) = O(g(x))</span> (当 <span
+      class="math inline">\displaystyle x \to x_0</span>).</p>
+      <p><strong>直观理解</strong>: <span
+      class="math inline">\displaystyle f(x) = O(g(x))</span> 表示 <span
+      class="math inline">\displaystyle f(x)</span>
       的<strong>增长速率不超过</strong> <span
-      class="math inline">g(x)</span> 的常数倍.</p>
+      class="math inline">\displaystyle g(x)</span> 的常数倍.</p>
       <p><strong>大O符号与皮亚诺余项的比较</strong></p>
       <table>
       <colgroup>
@@ -2400,41 +2514,44 @@
       </thead>
       <tbody>
       <tr>
-      <td><span class="math inline">f(x) = o(g(x))</span></td>
+      <td><span class="math inline">\displaystyle f(x) =
+      o(g(x))</span></td>
       <td><span class="math inline">\displaystyle\lim_{x \to x_0}
       \frac{f(x)}{g(x)} = 0</span></td>
-      <td><span class="math inline">f(x)</span> 是 <span
-      class="math inline">g(x)</span> 的高阶无穷小</td>
+      <td><span class="math inline">\displaystyle f(x)</span> 是 <span
+      class="math inline">\displaystyle g(x)</span> 的高阶无穷小</td>
       <td>更强</td>
       </tr>
       <tr>
-      <td><span class="math inline">f(x) = O(g(x))</span></td>
-      <td><span class="math inline">\exists M &gt; 0</span>, <span
+      <td><span class="math inline">\displaystyle f(x) =
+      O(g(x))</span></td>
+      <td><span class="math inline">\displaystyle \exists M &gt;
+      0</span>, <span
       class="math inline">\displaystyle\left|\frac{f(x)}{g(x)}\right|\leq
       M</span></td>
-      <td><span class="math inline">f(x)</span> 不超过 <span
-      class="math inline">g(x)</span> 的常数倍</td>
+      <td><span class="math inline">\displaystyle f(x)</span> 不超过
+      <span class="math inline">\displaystyle g(x)</span> 的常数倍</td>
       <td>更弱</td>
       </tr>
       </tbody>
       </table>
       <p><strong>关键区别</strong>:</p>
       <ul>
-      <li><span class="math inline">o(x^n)</span> 保证余项比 <span
-      class="math inline">x^n</span>
+      <li><span class="math inline">\displaystyle o(x^n)</span>
+      保证余项比 <span class="math inline">\displaystyle x^n</span>
       <strong>更快地</strong>趋近于零</li>
-      <li><span class="math inline">O(x^{n+1})</span> 保证余项最多是
-      <span class="math inline">x^{n+1}</span>
-      的<strong>常数倍</strong></li>
+      <li><span class="math inline">\displaystyle O(x^{n+1})</span>
+      保证余项最多是 <span class="math inline">\displaystyle
+      x^{n+1}</span> 的<strong>常数倍</strong></li>
       </ul>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">泰勒展开中的大O符号</span></div>
       <div class="callout-body">
-      <p>设函数 <span class="math inline">f(x)</span> 在 <span
-      class="math inline">x=0</span> 处有 <span
-      class="math inline">n+1</span> 阶连续导数, 则 <span
+      <p>设函数 <span class="math inline">\displaystyle f(x)</span> 在
+      <span class="math inline">\displaystyle x=0</span> 处有 <span
+      class="math inline">\displaystyle n+1</span> 阶连续导数, 则 <span
       class="math display">
       f(x) = f(0) + f&#39;(0)x + \frac{f&#39;&#39;(0)}{2!}x^2 + \cdots +
       \frac{f^{(n)}(0)}{n!}x^n + O(x^{n+1})
@@ -2443,14 +2560,16 @@
       class="math display">
       R_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!}x^{n+1}
       </span></p>
-      <p>由于 <span class="math inline">f^{(n+1)}(x)</span> 在 <span
-      class="math inline">x=0</span> 附近连续, 故有界, 即存在 <span
-      class="math inline">M &gt; 0</span> 使得 <span
-      class="math inline">|f^{(n+1)}(x)| \leq M</span>, 因此 <span
-      class="math display">
+      <p>由于 <span class="math inline">\displaystyle
+      f^{(n+1)}(x)</span> 在 <span class="math inline">\displaystyle
+      x=0</span> 附近连续, 故有界, 即存在 <span
+      class="math inline">\displaystyle M &gt; 0</span> 使得 <span
+      class="math inline">\displaystyle |f^{(n+1)}(x)| \leq M</span>,
+      因此 <span class="math display">
       |R_n(x)| \leq \frac{M}{(n+1)!}|x|^{n+1}
       </span></p>
-      <p>即 <span class="math inline">R_n(x) = O(x^{n+1})</span>.</p>
+      <p>即 <span class="math inline">\displaystyle R_n(x) =
+      O(x^{n+1})</span>.</p>
       </div>
       </div>
       <div id="chpt5-ex-016" class="exercise-block"
@@ -2462,9 +2581,10 @@
       </div>
       <div class="ex-body">
       <div class="ex-problem-box">
-      <p>用大 <span class="math inline">O</span> 符号写出 <span
-      class="math inline">e^x</span> 和 <span class="math inline">\cos
-      x</span> 的三阶截断展开式，并比较它们的余项阶数。</p>
+      <p>用大 <span class="math inline">\displaystyle O</span> 符号写出
+      <span class="math inline">\displaystyle e^x</span> 和 <span
+      class="math inline">\displaystyle \cos x</span>
+      的三阶截断展开式，并比较它们的余项阶数。</p>
       </div>
       <div class="ex-controls">
       <div class="ex-sol-row">
@@ -2476,35 +2596,38 @@
       <div id="chpt5-ex-016-frame" class="ex-frame" hidden="">
       <div id="chpt5-ex-016-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>将 <span class="math inline">e^x</span> 展开到 <span
-      class="math inline">x^2</span> 项（余项为 <span
-      class="math inline">O(x^3)</span>），将 <span
-      class="math inline">\cos x</span> 展开到 <span
-      class="math inline">x^2</span> 项（余项为 <span
-      class="math inline">O(x^4)</span>），注意 <span
-      class="math inline">\cos x</span> 没有 <span
-      class="math inline">x^3</span> 项。</p>
+      <p>将 <span class="math inline">\displaystyle e^x</span> 展开到
+      <span class="math inline">\displaystyle x^2</span> 项（余项为
+      <span class="math inline">\displaystyle O(x^3)</span>），将 <span
+      class="math inline">\displaystyle \cos x</span> 展开到 <span
+      class="math inline">\displaystyle x^2</span> 项（余项为 <span
+      class="math inline">\displaystyle O(x^4)</span>），注意 <span
+      class="math inline">\displaystyle \cos x</span> 没有 <span
+      class="math inline">\displaystyle x^3</span> 项。</p>
       </div>
       <div id="chpt5-ex-016-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p><span class="math inline">e^x</span> 展开到二阶，余项为 <span
-      class="math inline">O(x^3)</span>：</p>
+      <p><span class="math inline">\displaystyle e^x</span>
+      展开到二阶，余项为 <span class="math inline">\displaystyle
+      O(x^3)</span>：</p>
       <p><span class="math display">
       e^x = 1 + x + \frac{x^2}{2} + O(x^3)
       </span></p>
-      <p><span class="math inline">\cos x</span> 展开到二阶，由于 <span
-      class="math inline">x^3</span> 项系数为零，余项直接跃升到 <span
-      class="math inline">O(x^4)</span>：</p>
+      <p><span class="math inline">\displaystyle \cos x</span>
+      展开到二阶，由于 <span class="math inline">\displaystyle
+      x^3</span> 项系数为零，余项直接跃升到 <span
+      class="math inline">\displaystyle O(x^4)</span>：</p>
       <p><span class="math display">
       \cos x = 1 - \frac{x^2}{2} + O(x^4)
       </span></p>
-      <p>比较： - <span class="math inline">e^x</span> 的三阶误差为
-      <span class="math inline">O(x^3)</span> - <span
-      class="math inline">\cos x</span> 的三阶误差为 <span
-      class="math inline">O(x^4)</span>，实际上更小</p>
-      <p>这说明对于同样截断到 <span class="math inline">x^2</span>
-      的近似，<span class="math inline">\cos x</span>
-      的近似精度更高。</p>
+      <p>比较： - <span class="math inline">\displaystyle e^x</span>
+      的三阶误差为 <span class="math inline">\displaystyle O(x^3)</span>
+      - <span class="math inline">\displaystyle \cos x</span>
+      的三阶误差为 <span class="math inline">\displaystyle
+      O(x^4)</span>，实际上更小</p>
+      <p>这说明对于同样截断到 <span class="math inline">\displaystyle
+      x^2</span> 的近似，<span class="math inline">\displaystyle \cos
+      x</span> 的近似精度更高。</p>
       </div>
       </div>
       </div>
@@ -2535,11 +2658,11 @@
       <p>比较梯形公式和辛普森公式的数值积分误差阶数，说明辛普森公式为何收敛更快。</p>
       <figure>
       <img src="media/img/chpt5_ex017.png" width="400"
-      alt="同一函数的两种数值积分 — 左 梯形公式 (一阶折线), 右 辛普森公式 (二阶抛物线), 误差阶分别为 O(h^2) 与 O(h^4)" />
+      alt="同一函数的两种数值积分 — 左 梯形公式 (一阶折线), 右 辛普森公式 (二阶抛物线), 误差阶分别为 \displaystyle O(h^2) 与 \displaystyle O(h^4)" />
       <figcaption aria-hidden="true">同一函数的两种数值积分 — 左
       梯形公式 (一阶折线), 右 辛普森公式 (二阶抛物线), 误差阶分别为
-      <span class="math inline">O(h^2)</span> 与 <span
-      class="math inline">O(h^4)</span></figcaption>
+      <span class="math inline">\displaystyle O(h^2)</span> 与 <span
+      class="math inline">\displaystyle O(h^4)</span></figcaption>
       </figure>
       </div>
       <div class="ex-controls">
@@ -2553,25 +2676,28 @@
       <div id="chpt5-ex-017-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
       <p>梯形公式将被积函数用线性多项式近似（截断误差 <span
-      class="math inline">O(h^2)</span>），辛普森公式用二次多项式（截断误差
-      <span class="math inline">O(h^4)</span>），步长 <span
-      class="math inline">h</span> 减小时高阶误差减小更快。</p>
+      class="math inline">\displaystyle
+      O(h^2)</span>），辛普森公式用二次多项式（截断误差 <span
+      class="math inline">\displaystyle O(h^4)</span>），步长 <span
+      class="math inline">\displaystyle h</span>
+      减小时高阶误差减小更快。</p>
       </div>
       <div id="chpt5-ex-017-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p>用大 <span class="math inline">O</span>
-      符号描述数值积分方法的截断误差（<span class="math inline">h</span>
-      为步长）：</p>
+      <p>用大 <span class="math inline">\displaystyle O</span>
+      符号描述数值积分方法的截断误差（<span
+      class="math inline">\displaystyle h</span> 为步长）：</p>
       <ul>
       <li><strong>梯形公式</strong>：误差为 <span
-      class="math inline">O(h^2)</span></li>
+      class="math inline">\displaystyle O(h^2)</span></li>
       <li><strong>辛普森公式</strong>：误差为 <span
-      class="math inline">O(h^4)</span></li>
+      class="math inline">\displaystyle O(h^4)</span></li>
       </ul>
-      <p>当步长 <span class="math inline">h</span> 减半时： -
-      梯形公式误差减少为原来的 <span class="math inline">1/4</span> -
-      辛普森公式误差减少为原来的 <span
-      class="math inline">1/16</span></p>
+      <p>当步长 <span class="math inline">\displaystyle h</span>
+      减半时： - 梯形公式误差减少为原来的 <span
+      class="math inline">\displaystyle 1/4</span> -
+      辛普森公式误差减少为原来的 <span class="math inline">\displaystyle
+      1/16</span></p>
       <p>因此辛普森公式收敛更快，精度更高。这是因为辛普森公式本质上用二次多项式（而非线性函数）来近似被积函数，保留了更多的函数信息。</p>
       </div>
       </div>
@@ -2599,9 +2725,9 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">微元法数学表述</span></div>
       <div class="callout-body">
-      <p>如果要求整体量 <span class="math inline">Q</span>, 先找出微元
-      <span class="math inline">dQ = f(x)dx</span>, 然后通过积分得到
-      <span class="math display">
+      <p>如果要求整体量 <span class="math inline">\displaystyle
+      Q</span>, 先找出微元 <span class="math inline">\displaystyle dQ =
+      f(x)dx</span>, 然后通过积分得到 <span class="math display">
       Q = \int_a^b dQ = \int_a^b f(x)dx
       </span></p>
       </div>
@@ -2616,17 +2742,19 @@
       </div>
       <div class="ex-body">
       <div class="ex-problem-box">
-      <p>计算曲线 <span class="math inline">y = f(x)</span> 在 <span
-      class="math inline">[a,b]</span> 上与 <span
-      class="math inline">x</span> 轴围成的面积。</p>
+      <p>计算曲线 <span class="math inline">\displaystyle y =
+      f(x)</span> 在 <span class="math inline">\displaystyle
+      [a,b]</span> 上与 <span class="math inline">\displaystyle x</span>
+      轴围成的面积。</p>
       <figure>
       <img src="media/img/chpt6_ex017.png" width="400"
-      alt="曲线 y=f(x) 与 x 轴在 [a,b] 围成的区域面积 \int_a^b f(x)\,dx" />
+      alt="曲线 \displaystyle y=f(x) 与 \displaystyle x 轴在 \displaystyle [a,b] 围成的区域面积 \displaystyle \int_a^b f(x)\,dx" />
       <figcaption aria-hidden="true">曲线 <span
-      class="math inline">y=f(x)</span> 与 <span
-      class="math inline">x</span> 轴在 <span
-      class="math inline">[a,b]</span> 围成的区域面积 <span
-      class="math inline">\int_a^b f(x)\,dx</span></figcaption>
+      class="math inline">\displaystyle y=f(x)</span> 与 <span
+      class="math inline">\displaystyle x</span> 轴在 <span
+      class="math inline">\displaystyle [a,b]</span> 围成的区域面积
+      <span class="math inline">\displaystyle \int_a^b
+      f(x)\,dx</span></figcaption>
       </figure>
       </div>
       <div class="ex-controls">
@@ -2639,20 +2767,21 @@
       <div id="chpt6-ex-017-frame" class="ex-frame" hidden="">
       <div id="chpt6-ex-017-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>利用微元法：将区间 <span class="math inline">[a,b]</span>
-      分成若干小区间，在每个小区间 <span class="math inline">[x,
-      x+dx]</span> 上用矩形近似面积微元，再求和取极限。</p>
+      <p>利用微元法：将区间 <span class="math inline">\displaystyle
+      [a,b]</span> 分成若干小区间，在每个小区间 <span
+      class="math inline">\displaystyle [x, x+dx]</span>
+      上用矩形近似面积微元，再求和取极限。</p>
       </div>
       <div id="chpt6-ex-017-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
       <p>利用微元法：</p>
       <ul>
       <li><strong>分割</strong>：将 <span
-      class="math inline">[a,b]</span> 分成 <span
-      class="math inline">n</span> 个小区间；</li>
+      class="math inline">\displaystyle [a,b]</span> 分成 <span
+      class="math inline">\displaystyle n</span> 个小区间；</li>
       <li><strong>近似</strong>：每个小区间 <span
-      class="math inline">[x, x+dx]</span> 上的面积微元为 <span
-      class="math inline">dA = f(x)dx</span>；</li>
+      class="math inline">\displaystyle [x, x+dx]</span> 上的面积微元为
+      <span class="math inline">\displaystyle dA = f(x)dx</span>；</li>
       <li><strong>求和取极限</strong>：</li>
       </ul>
       <p><span class="math display">
@@ -2673,8 +2802,9 @@
       </div>
       <div class="ex-body">
       <div class="ex-problem-box">
-      <p>计算底面积为 <span class="math inline">A</span>，高为 <span
-      class="math inline">h</span> 的棱柱体积。</p>
+      <p>计算底面积为 <span class="math inline">\displaystyle
+      A</span>，高为 <span class="math inline">\displaystyle h</span>
+      的棱柱体积。</p>
       </div>
       <div class="ex-controls">
       <div class="ex-sol-row">
@@ -2690,7 +2820,8 @@
       </div>
       <div id="chpt6-ex-001-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p>所有截面面积均为 <span class="math inline">A</span>，故</p>
+      <p>所有截面面积均为 <span class="math inline">\displaystyle
+      A</span>，故</p>
       <p><span class="math display">
       V = \int_0^h A\,dx = Ah.
       </span></p>
@@ -2708,15 +2839,17 @@
       </div>
       <div class="ex-body">
       <div class="ex-problem-box">
-      <p>计算底半径为 <span class="math inline">R</span>，高为 <span
-      class="math inline">h</span> 的圆锥体积。</p>
+      <p>计算底半径为 <span class="math inline">\displaystyle
+      R</span>，高为 <span class="math inline">\displaystyle h</span>
+      的圆锥体积。</p>
       <figure>
       <img src="media/img/chpt6_ex002.png" width="400"
-      alt="圆锥体积示意 — 高 z 处的截面圆半径为 r(z) = R(1 - z/h), 用切片积分得 V = \pi R^2 h / 3" />
+      alt="圆锥体积示意 — 高 \displaystyle z 处的截面圆半径为 \displaystyle r(z) = R(1 - z/h), 用切片积分得 \displaystyle V = \pi R^2 h / 3" />
       <figcaption aria-hidden="true">圆锥体积示意 — 高 <span
-      class="math inline">z</span> 处的截面圆半径为 <span
-      class="math inline">r(z) = R(1 - z/h)</span>, 用切片积分得 <span
-      class="math inline">V = \pi R^2 h / 3</span></figcaption>
+      class="math inline">\displaystyle z</span> 处的截面圆半径为 <span
+      class="math inline">\displaystyle r(z) = R(1 - z/h)</span>,
+      用切片积分得 <span class="math inline">\displaystyle V = \pi R^2 h
+      / 3</span></figcaption>
       </figure>
       </div>
       <div class="ex-controls">
@@ -2729,17 +2862,19 @@
       <div id="chpt6-ex-002-frame" class="ex-frame" hidden="">
       <div id="chpt6-ex-002-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>在高度 <span class="math inline">x</span> 处截面半径为 <span
-      class="math inline">r(x) = R \cdot x/h</span>，对截面面积从 <span
-      class="math inline">0</span> 到 <span class="math inline">h</span>
-      积分。</p>
+      <p>在高度 <span class="math inline">\displaystyle x</span>
+      处截面半径为 <span class="math inline">\displaystyle r(x) = R
+      \cdot x/h</span>，对截面面积从 <span
+      class="math inline">\displaystyle 0</span> 到 <span
+      class="math inline">\displaystyle h</span> 积分。</p>
       </div>
       <div id="chpt6-ex-002-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p>在高度 <span class="math inline">x</span> 处，截面是半径为
-      <span class="math inline">r(x) = \dfrac{Rx}{h}</span> 的圆，面积为
-      <span class="math inline">A(x) = \pi r^2(x) = \dfrac{\pi R^2
-      x^2}{h^2}</span>。</p>
+      <p>在高度 <span class="math inline">\displaystyle x</span>
+      处，截面是半径为 <span class="math inline">\displaystyle r(x) =
+      \dfrac{Rx}{h}</span> 的圆，面积为 <span
+      class="math inline">\displaystyle A(x) = \pi r^2(x) = \dfrac{\pi
+      R^2 x^2}{h^2}</span>。</p>
       <p><span class="math display">
       V = \int_0^h \frac{\pi R^2 x^2}{h^2}\,dx = \frac{\pi R^2}{h^2}
       \cdot \frac{h^3}{3} = \frac{1}{3}\pi R^2 h.
@@ -2751,15 +2886,16 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">悟</span></div>
       <div class="callout-body">
-      <p>曲线 <span class="math inline">y = f(x)</span> 绕 <span
-      class="math inline">x</span> 轴旋转一周形成的旋转体体积: <span
-      class="math display">
+      <p>曲线 <span class="math inline">\displaystyle y = f(x)</span> 绕
+      <span class="math inline">\displaystyle x</span>
+      轴旋转一周形成的旋转体体积: <span class="math display">
       V = \int_a^b \pi [f(x)]^2 dx
       </span></p>
-      <p><strong>推导</strong>: 在 <span class="math inline">x</span>
-      处垂直于 <span class="math inline">x</span> 轴的截面是半径为 <span
-      class="math inline">f(x)</span> 的圆盘, 面积 <span
-      class="math inline">A(x) = \pi [f(x)]^2</span></p>
+      <p><strong>推导</strong>: 在 <span
+      class="math inline">\displaystyle x</span> 处垂直于 <span
+      class="math inline">\displaystyle x</span> 轴的截面是半径为 <span
+      class="math inline">\displaystyle f(x)</span> 的圆盘, 面积 <span
+      class="math inline">\displaystyle A(x) = \pi [f(x)]^2</span></p>
       </div>
       </div>
       <div id="chpt6-ex-003" class="exercise-block"
@@ -2772,18 +2908,20 @@
       </div>
       <div class="ex-body">
       <div class="ex-problem-box">
-      <p>计算曲线 <span class="math inline">y = \sqrt{x}</span> 在 <span
-      class="math inline">[0,1]</span> 上绕 <span
-      class="math inline">x</span> 轴旋转一周所形成的旋转体体积。</p>
+      <p>计算曲线 <span class="math inline">\displaystyle y =
+      \sqrt{x}</span> 在 <span class="math inline">\displaystyle
+      [0,1]</span> 上绕 <span class="math inline">\displaystyle x</span>
+      轴旋转一周所形成的旋转体体积。</p>
       <figure>
       <img src="media/img/chpt6_ex003.png" width="400"
-      alt="y=\sqrt{x} 在 [0,1] 上绕 x 轴旋转, 形成的旋转体 — 在 x 处的截面是半径 \sqrt{x} 的圆" />
+      alt="\displaystyle y=\sqrt{x} 在 \displaystyle [0,1] 上绕 \displaystyle x 轴旋转, 形成的旋转体 — 在 \displaystyle x 处的截面是半径 \displaystyle \sqrt{x} 的圆" />
       <figcaption aria-hidden="true"><span
-      class="math inline">y=\sqrt{x}</span> 在 <span
-      class="math inline">[0,1]</span> 上绕 <span
-      class="math inline">x</span> 轴旋转, 形成的旋转体 — 在 <span
-      class="math inline">x</span> 处的截面是半径 <span
-      class="math inline">\sqrt{x}</span> 的圆</figcaption>
+      class="math inline">\displaystyle y=\sqrt{x}</span> 在 <span
+      class="math inline">\displaystyle [0,1]</span> 上绕 <span
+      class="math inline">\displaystyle x</span> 轴旋转, 形成的旋转体 —
+      在 <span class="math inline">\displaystyle x</span> 处的截面是半径
+      <span class="math inline">\displaystyle \sqrt{x}</span>
+      的圆</figcaption>
       </figure>
       </div>
       <div class="ex-controls">
@@ -2796,7 +2934,7 @@
       <div id="chpt6-ex-003-frame" class="ex-frame" hidden="">
       <div id="chpt6-ex-003-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>用旋转体体积公式 <span class="math inline">V =
+      <p>用旋转体体积公式 <span class="math inline">\displaystyle V =
       \displaystyle\int_a^b \pi [f(x)]^2\,dx</span>。</p>
       </div>
       <div id="chpt6-ex-003-ans-0" class="ex-panel ex-ans-panel"
@@ -2812,14 +2950,16 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">悟</span></div>
       <div class="callout-body">
-      <p>曲线 <span class="math inline">y = f(x)</span> 绕 <span
-      class="math inline">y</span> 轴旋转一周形成的旋转体体积: <span
-      class="math display">
+      <p>曲线 <span class="math inline">\displaystyle y = f(x)</span> 绕
+      <span class="math inline">\displaystyle y</span>
+      轴旋转一周形成的旋转体体积: <span class="math display">
       V = \int_a^b 2\pi x f(x) dx
       </span></p>
-      <p><strong>推导</strong>: 在 <span class="math inline">x</span>
-      处厚度为 <span class="math inline">dx</span> 的柱壳体积微元 <span
-      class="math inline">dV = 2\pi x \cdot f(x) \cdot dx</span></p>
+      <p><strong>推导</strong>: 在 <span
+      class="math inline">\displaystyle x</span> 处厚度为 <span
+      class="math inline">\displaystyle dx</span> 的柱壳体积微元 <span
+      class="math inline">\displaystyle dV = 2\pi x \cdot f(x) \cdot
+      dx</span></p>
       </div>
       </div>
       <div id="chpt6-ex-004" class="exercise-block"
@@ -2832,18 +2972,20 @@
       </div>
       <div class="ex-body">
       <div class="ex-problem-box">
-      <p>计算曲线 <span class="math inline">y = x</span> 在 <span
-      class="math inline">[0,1]</span> 上绕 <span
-      class="math inline">y</span> 轴旋转一周所形成的旋转体体积。</p>
+      <p>计算曲线 <span class="math inline">\displaystyle y = x</span>
+      在 <span class="math inline">\displaystyle [0,1]</span> 上绕 <span
+      class="math inline">\displaystyle y</span>
+      轴旋转一周所形成的旋转体体积。</p>
       <figure>
       <img src="media/img/chpt6_ex004.png" width="400"
-      alt="直线 y=x 在 [0,1] 上绕 y 轴旋转 — 形成顶端在原点的倒置圆锥, 高度 y 处的圆半径等于 y" />
+      alt="直线 \displaystyle y=x 在 \displaystyle [0,1] 上绕 \displaystyle y 轴旋转 — 形成顶端在原点的倒置圆锥, 高度 \displaystyle y 处的圆半径等于 \displaystyle y" />
       <figcaption aria-hidden="true">直线 <span
-      class="math inline">y=x</span> 在 <span
-      class="math inline">[0,1]</span> 上绕 <span
-      class="math inline">y</span> 轴旋转 — 形成顶端在原点的倒置圆锥,
-      高度 <span class="math inline">y</span> 处的圆半径等于 <span
-      class="math inline">y</span></figcaption>
+      class="math inline">\displaystyle y=x</span> 在 <span
+      class="math inline">\displaystyle [0,1]</span> 上绕 <span
+      class="math inline">\displaystyle y</span> 轴旋转 —
+      形成顶端在原点的倒置圆锥, 高度 <span
+      class="math inline">\displaystyle y</span> 处的圆半径等于 <span
+      class="math inline">\displaystyle y</span></figcaption>
       </figure>
       </div>
       <div class="ex-controls">
@@ -2856,8 +2998,8 @@
       <div id="chpt6-ex-004-frame" class="ex-frame" hidden="">
       <div id="chpt6-ex-004-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>用柱壳法（薄壳公式）：<span class="math inline">V =
-      \displaystyle\int_a^b 2\pi x f(x)\,dx</span>。</p>
+      <p>用柱壳法（薄壳公式）：<span class="math inline">\displaystyle V
+      = \displaystyle\int_a^b 2\pi x f(x)\,dx</span>。</p>
       </div>
       <div id="chpt6-ex-004-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
@@ -2873,14 +3015,14 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">直角坐标系下的弧长</span></div>
       <div class="callout-body">
-      <p>曲线 <span class="math inline">y = f(x)</span> 在 <span
-      class="math inline">[a,b]</span> 上的弧长: <span
-      class="math display">
+      <p>曲线 <span class="math inline">\displaystyle y = f(x)</span> 在
+      <span class="math inline">\displaystyle [a,b]</span> 上的弧长:
+      <span class="math display">
       L = \int_a^b \sqrt{1 + [f&#39;(x)]^2}  dx
       </span></p>
-      <p><strong>推导</strong>: 弧长微元 <span class="math inline">ds =
-      \sqrt{(dx)^2 + (dy)^2} = \sqrt{1 + \left(\frac{dy}{dx}\right)^2}
-      dx</span></p>
+      <p><strong>推导</strong>: 弧长微元 <span
+      class="math inline">\displaystyle ds = \sqrt{(dx)^2 + (dy)^2} =
+      \sqrt{1 + \left(\frac{dy}{dx}\right)^2} dx</span></p>
       </div>
       </div>
       <div id="chpt6-ex-005" class="exercise-block"
@@ -2893,17 +3035,18 @@
       </div>
       <div class="ex-body">
       <div class="ex-problem-box">
-      <p>计算曲线 <span class="math inline">y = x^{3/2}</span> 从 <span
-      class="math inline">x=0</span> 到 <span
-      class="math inline">x=1</span> 的弧长。</p>
+      <p>计算曲线 <span class="math inline">\displaystyle y =
+      x^{3/2}</span> 从 <span class="math inline">\displaystyle
+      x=0</span> 到 <span class="math inline">\displaystyle x=1</span>
+      的弧长。</p>
       <figure>
       <img src="media/img/chpt6_ex005.png" width="400"
-      alt="y=x^{3/2} 在 [0,1] 的曲线, 红色短箭头标出弧长微元 ds=\sqrt{1+(y&#39;)^2}\,dx" />
+      alt="\displaystyle y=x^{3/2} 在 \displaystyle [0,1] 的曲线, 红色短箭头标出弧长微元 \displaystyle ds=\sqrt{1+(y&#39;)^2}\,dx" />
       <figcaption aria-hidden="true"><span
-      class="math inline">y=x^{3/2}</span> 在 <span
-      class="math inline">[0,1]</span> 的曲线, 红色短箭头标出弧长微元
-      <span
-      class="math inline">ds=\sqrt{1+(y&#39;)^2}\,dx</span></figcaption>
+      class="math inline">\displaystyle y=x^{3/2}</span> 在 <span
+      class="math inline">\displaystyle [0,1]</span> 的曲线,
+      红色短箭头标出弧长微元 <span class="math inline">\displaystyle
+      ds=\sqrt{1+(y&#39;)^2}\,dx</span></figcaption>
       </figure>
       </div>
       <div class="ex-controls">
@@ -2916,23 +3059,25 @@
       <div id="chpt6-ex-005-frame" class="ex-frame" hidden="">
       <div id="chpt6-ex-005-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>用弧长公式 <span class="math inline">L = \displaystyle\int_0^1
-      \sqrt{1 + [f&#39;(x)]^2}\,dx</span>，令 <span
-      class="math inline">u = 1 + \dfrac{9}{4}x</span> 换元求积分。</p>
+      <p>用弧长公式 <span class="math inline">\displaystyle L =
+      \displaystyle\int_0^1 \sqrt{1 + [f&#39;(x)]^2}\,dx</span>，令
+      <span class="math inline">\displaystyle u = 1 +
+      \dfrac{9}{4}x</span> 换元求积分。</p>
       </div>
       <div id="chpt6-ex-005-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p><span class="math inline">f&#39;(x) =
+      <p><span class="math inline">\displaystyle f&#39;(x) =
       \dfrac{3}{2}x^{1/2}</span>，故</p>
       <p><span class="math display">
       L = \int_0^1 \sqrt{1 + \frac{9}{4}x}\,dx.
       </span></p>
-      <p>令 <span class="math inline">u = 1 + \dfrac{9}{4}x</span>，则
-      <span class="math inline">du = \dfrac{9}{4}dx</span>；当 <span
-      class="math inline">x=0</span> 时 <span
-      class="math inline">u=1</span>，当 <span
-      class="math inline">x=1</span> 时 <span
-      class="math inline">u=\dfrac{13}{4}</span>。</p>
+      <p>令 <span class="math inline">\displaystyle u = 1 +
+      \dfrac{9}{4}x</span>，则 <span class="math inline">\displaystyle
+      du = \dfrac{9}{4}dx</span>；当 <span
+      class="math inline">\displaystyle x=0</span> 时 <span
+      class="math inline">\displaystyle u=1</span>，当 <span
+      class="math inline">\displaystyle x=1</span> 时 <span
+      class="math inline">\displaystyle u=\dfrac{13}{4}</span>。</p>
       <p><span class="math display">
       L = \frac{4}{9}\int_1^{13/4} \sqrt{u}\,du = \frac{4}{9} \cdot
       \frac{2}{3}u^{3/2}\Big|_1^{13/4} =
@@ -2945,9 +3090,10 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">参数方程下的弧长</span></div>
       <div class="callout-body">
-      <p>曲线由参数方程 <span class="math inline">x = x(t), y =
-      y(t)</span> (<span class="math inline">\alpha \leq t \leq
-      \beta</span>) 给出时, 弧长为: <span class="math display">
+      <p>曲线由参数方程 <span class="math inline">\displaystyle x =
+      x(t), y = y(t)</span> (<span class="math inline">\displaystyle
+      \alpha \leq t \leq \beta</span>) 给出时, 弧长为: <span
+      class="math display">
       L = \int_\alpha^\beta \sqrt{\left(\frac{dx}{dt}\right)^2 +
       \left(\frac{dy}{dt}\right)^2}  dt
       </span></p>
@@ -2964,7 +3110,7 @@
       <div class="ex-body">
       <div class="ex-problem-box">
       <p>用参数方程下的弧长公式计算半径为 <span
-      class="math inline">R</span> 的圆的周长。</p>
+      class="math inline">\displaystyle R</span> 的圆的周长。</p>
       </div>
       <div class="ex-controls">
       <div class="ex-sol-row">
@@ -2976,9 +3122,9 @@
       <div id="chpt6-ex-006-frame" class="ex-frame" hidden="">
       <div id="chpt6-ex-006-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>圆的参数方程为 <span class="math inline">x = R\cos
-      t</span>，<span class="math inline">y = R\sin t</span>（<span
-      class="math inline">0 \leq t \leq
+      <p>圆的参数方程为 <span class="math inline">\displaystyle x =
+      R\cos t</span>，<span class="math inline">\displaystyle y = R\sin
+      t</span>（<span class="math inline">\displaystyle 0 \leq t \leq
       2\pi</span>），代入参数弧长公式。</p>
       </div>
       <div id="chpt6-ex-006-ans-0" class="ex-panel ex-ans-panel"
@@ -2997,15 +3143,16 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">极坐标下的弧长</span></div>
       <div class="callout-body">
-      <p>曲线由极坐标方程 <span class="math inline">r = r(\theta)</span>
-      (<span class="math inline">\alpha \leq \theta \leq \beta</span>)
-      给出时, 弧长为: <span class="math display">
+      <p>曲线由极坐标方程 <span class="math inline">\displaystyle r =
+      r(\theta)</span> (<span class="math inline">\displaystyle \alpha
+      \leq \theta \leq \beta</span>) 给出时, 弧长为: <span
+      class="math display">
       L = \int_\alpha^\beta \sqrt{[r(\theta)]^2 +
       \left[\frac{dr}{d\theta}\right]^2}  d\theta
       </span></p>
       <p><strong>推导</strong>: 利用直角坐标与极坐标的关系 <span
-      class="math inline">x = r\cos\theta, y = r\sin\theta</span>,
-      代入参数方程的弧长公式可得.</p>
+      class="math inline">\displaystyle x = r\cos\theta, y =
+      r\sin\theta</span>, 代入参数方程的弧长公式可得.</p>
       </div>
       </div>
       <div id="chpt6-ex-007" class="exercise-block"
@@ -3018,16 +3165,17 @@
       </div>
       <div class="ex-body">
       <div class="ex-problem-box">
-      <p>计算心形线 <span class="math inline">r =
-      a(1+\cos\theta)</span>（<span class="math inline">0 \leq \theta
-      \leq 2\pi</span>）的周长。</p>
+      <p>计算心形线 <span class="math inline">\displaystyle r =
+      a(1+\cos\theta)</span>（<span class="math inline">\displaystyle 0
+      \leq \theta \leq 2\pi</span>）的周长。</p>
       <figure>
       <img src="media/img/chpt6_ex007.png" width="400"
-      alt="心形线 r = a(1+\cos\theta), \theta\in[0, 2\pi] — 经典极坐标曲线, 周长为 8a" />
-      <figcaption aria-hidden="true">心形线 <span class="math inline">r
-      = a(1+\cos\theta)</span>, <span class="math inline">\theta\in[0,
-      2\pi]</span> — 经典极坐标曲线, 周长为 <span
-      class="math inline">8a</span></figcaption>
+      alt="心形线 \displaystyle r = a(1+\cos\theta), \displaystyle \theta\in[0, 2\pi] — 经典极坐标曲线, 周长为 \displaystyle 8a" />
+      <figcaption aria-hidden="true">心形线 <span
+      class="math inline">\displaystyle r = a(1+\cos\theta)</span>,
+      <span class="math inline">\displaystyle \theta\in[0, 2\pi]</span>
+      — 经典极坐标曲线, 周长为 <span class="math inline">\displaystyle
+      8a</span></figcaption>
       </figure>
       </div>
       <div class="ex-controls">
@@ -3040,22 +3188,22 @@
       <div id="chpt6-ex-007-frame" class="ex-frame" hidden="">
       <div id="chpt6-ex-007-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>用极坐标弧长公式 <span class="math inline">L =
+      <p>用极坐标弧长公式 <span class="math inline">\displaystyle L =
       \displaystyle\int_0^{2\pi} \sqrt{r^2 +
       (r&#39;)^2}\,d\theta</span>，利用半角公式 <span
-      class="math inline">1+\cos\theta = 2\cos^2(\theta/2)</span>
-      化简被积函数。</p>
+      class="math inline">\displaystyle 1+\cos\theta =
+      2\cos^2(\theta/2)</span> 化简被积函数。</p>
       </div>
       <div id="chpt6-ex-007-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p><span class="math inline">\dfrac{dr}{d\theta} =
+      <p><span class="math inline">\displaystyle \dfrac{dr}{d\theta} =
       -a\sin\theta</span>，故</p>
       <p><span class="math display">
       L = \int_0^{2\pi} \sqrt{a^2(1+\cos\theta)^2 +
       a^2\sin^2\theta}\,d\theta =
       a\int_0^{2\pi}\sqrt{2+2\cos\theta}\,d\theta.
       </span></p>
-      <p>利用 <span class="math inline">1+\cos\theta =
+      <p>利用 <span class="math inline">\displaystyle 1+\cos\theta =
       2\cos^2(\theta/2)</span>：</p>
       <p><span class="math display">
       L = a\int_0^{2\pi} 2\left|\cos\frac{\theta}{2}\right|d\theta =
@@ -3083,8 +3231,9 @@
       <div class="ex-body">
       <div class="ex-problem-box">
       <p>弹簧压缩做功：根据胡克定律，弹性系数为 <span
-      class="math inline">k</span> 的弹簧，将弹簧从平衡位置压缩 <span
-      class="math inline">L</span> 距离，求所做的功。</p>
+      class="math inline">\displaystyle k</span>
+      的弹簧，将弹簧从平衡位置压缩 <span
+      class="math inline">\displaystyle L</span> 距离，求所做的功。</p>
       </div>
       <div class="ex-controls">
       <div class="ex-sol-row">
@@ -3096,7 +3245,7 @@
       <div id="chpt6-ex-008-frame" class="ex-frame" hidden="">
       <div id="chpt6-ex-008-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>弹簧力 <span class="math inline">F(x) =
+      <p>弹簧力 <span class="math inline">\displaystyle F(x) =
       kx</span>，对力沿压缩方向积分。</p>
       </div>
       <div id="chpt6-ex-008-ans-0" class="ex-panel ex-ans-panel"
@@ -3119,19 +3268,19 @@
       <div class="ex-body">
       <div class="ex-problem-box">
       <p>抽水做功：设圆柱形水箱半径为 <span
-      class="math inline">R</span>，高为 <span
-      class="math inline">H</span>，装满密度为 <span
-      class="math inline">\rho</span>
+      class="math inline">\displaystyle R</span>，高为 <span
+      class="math inline">\displaystyle H</span>，装满密度为 <span
+      class="math inline">\displaystyle \rho</span>
       的液体，求将液体全部抽出水箱顶部所需做的功。</p>
       <figure>
       <img src="media/img/chpt6_ex009.png" width="400"
-      alt="圆柱形水箱 (半径 R, 高 H), 红色薄片为高 z 处厚 dz 的水层, 需提升的距离为 H-z" />
+      alt="圆柱形水箱 (半径 \displaystyle R, 高 \displaystyle H), 红色薄片为高 \displaystyle z 处厚 \displaystyle dz 的水层, 需提升的距离为 \displaystyle H-z" />
       <figcaption aria-hidden="true">圆柱形水箱 (半径 <span
-      class="math inline">R</span>, 高 <span
-      class="math inline">H</span>), 红色薄片为高 <span
-      class="math inline">z</span> 处厚 <span
-      class="math inline">dz</span> 的水层, 需提升的距离为 <span
-      class="math inline">H-z</span></figcaption>
+      class="math inline">\displaystyle R</span>, 高 <span
+      class="math inline">\displaystyle H</span>), 红色薄片为高 <span
+      class="math inline">\displaystyle z</span> 处厚 <span
+      class="math inline">\displaystyle dz</span> 的水层, 需提升的距离为
+      <span class="math inline">\displaystyle H-z</span></figcaption>
       </figure>
       </div>
       <div class="ex-controls">
@@ -3145,15 +3294,16 @@
       <div id="chpt6-ex-009-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
       <p>将水箱沿高度方向分层，距底面高度 <span
-      class="math inline">x</span> 处的薄层需提升距离为 <span
-      class="math inline">H-x</span>，建立积分。</p>
+      class="math inline">\displaystyle x</span> 处的薄层需提升距离为
+      <span class="math inline">\displaystyle H-x</span>，建立积分。</p>
       </div>
       <div id="chpt6-ex-009-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p>距底面高度 <span class="math inline">x</span> 处厚度为 <span
-      class="math inline">dx</span> 的水层的质量为 <span
-      class="math inline">\rho\pi R^2\,dx</span>，需提升距离 <span
-      class="math inline">H-x</span>，故功微元为</p>
+      <p>距底面高度 <span class="math inline">\displaystyle x</span>
+      处厚度为 <span class="math inline">\displaystyle dx</span>
+      的水层的质量为 <span class="math inline">\displaystyle \rho\pi
+      R^2\,dx</span>，需提升距离 <span class="math inline">\displaystyle
+      H-x</span>，故功微元为</p>
       <p><span class="math display">
       dW = \rho\pi R^2(H-x)\,g\,dx.
       </span></p>
@@ -3177,18 +3327,19 @@
       </div>
       <div class="ex-body">
       <div class="ex-problem-box">
-      <p>万有引力做功：质量为 <span class="math inline">m</span>
-      的物体从距地心 <span class="math inline">r</span>
-      处移动到无穷远处，求克服地球引力所做的功（地球质量 <span
-      class="math inline">M</span>，引力常数 <span
-      class="math inline">G</span>）。</p>
+      <p>万有引力做功：质量为 <span class="math inline">\displaystyle
+      m</span> 的物体从距地心 <span class="math inline">\displaystyle
+      r</span> 处移动到无穷远处，求克服地球引力所做的功（地球质量 <span
+      class="math inline">\displaystyle M</span>，引力常数 <span
+      class="math inline">\displaystyle G</span>）。</p>
       <figure>
       <img src="media/img/chpt6_ex010.png" width="400"
-      alt="引力大小 F(r) = GMm/r^2 随距离衰减, 红色阴影面积即为从 r 到无穷远做的功 W" />
+      alt="引力大小 \displaystyle F(r) = GMm/r^2 随距离衰减, 红色阴影面积即为从 \displaystyle r 到无穷远做的功 \displaystyle W" />
       <figcaption aria-hidden="true">引力大小 <span
-      class="math inline">F(r) = GMm/r^2</span> 随距离衰减,
-      红色阴影面积即为从 <span class="math inline">r</span>
-      到无穷远做的功 <span class="math inline">W</span></figcaption>
+      class="math inline">\displaystyle F(r) = GMm/r^2</span>
+      随距离衰减, 红色阴影面积即为从 <span
+      class="math inline">\displaystyle r</span> 到无穷远做的功 <span
+      class="math inline">\displaystyle W</span></figcaption>
       </figure>
       </div>
       <div class="ex-controls">
@@ -3201,9 +3352,9 @@
       <div id="chpt6-ex-010-frame" class="ex-frame" hidden="">
       <div id="chpt6-ex-010-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>引力 <span class="math inline">F(x) =
+      <p>引力 <span class="math inline">\displaystyle F(x) =
       GMm/x^2</span>，对变力沿路径积分，上限取 <span
-      class="math inline">\infty</span>（反常积分）。</p>
+      class="math inline">\displaystyle \infty</span>（反常积分）。</p>
       </div>
       <div id="chpt6-ex-010-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
@@ -3233,17 +3384,18 @@
       </div>
       <div class="ex-body">
       <div class="ex-problem-box">
-      <p>计算电场强度：考虑函数 <span class="math inline">f(x) =
-      \dfrac{1}{\sqrt{x}}</span> 在 <span
-      class="math inline">[0,1]</span>
+      <p>计算电场强度：考虑函数 <span class="math inline">\displaystyle
+      f(x) = \dfrac{1}{\sqrt{x}}</span> 在 <span
+      class="math inline">\displaystyle [0,1]</span>
       上的积分（无界函数的反常积分）。</p>
       <figure>
       <img src="media/img/chpt6_ex011.png" width="400"
-      alt="y = 1/\sqrt{x} 在 x=0 处发散, 但 \int_0^1 1/\sqrt{x}\,dx 收敛于 2 — 红色阴影即为该面积" />
-      <figcaption aria-hidden="true"><span class="math inline">y =
-      1/\sqrt{x}</span> 在 <span class="math inline">x=0</span> 处发散,
-      但 <span class="math inline">\int_0^1 1/\sqrt{x}\,dx</span> 收敛于
-      <span class="math inline">2</span> —
+      alt="\displaystyle y = 1/\sqrt{x} 在 \displaystyle x=0 处发散, 但 \displaystyle \int_0^1 1/\sqrt{x}\,dx 收敛于 \displaystyle 2 — 红色阴影即为该面积" />
+      <figcaption aria-hidden="true"><span
+      class="math inline">\displaystyle y = 1/\sqrt{x}</span> 在 <span
+      class="math inline">\displaystyle x=0</span> 处发散, 但 <span
+      class="math inline">\displaystyle \int_0^1 1/\sqrt{x}\,dx</span>
+      收敛于 <span class="math inline">\displaystyle 2</span> —
       红色阴影即为该面积</figcaption>
       </figure>
       </div>
@@ -3257,9 +3409,9 @@
       <div id="chpt6-ex-011-frame" class="ex-frame" hidden="">
       <div id="chpt6-ex-011-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p><span class="math inline">x=0</span>
+      <p><span class="math inline">\displaystyle x=0</span>
       处函数无界，通过极限定义反常积分：令下限趋于 <span
-      class="math inline">0^+</span>。</p>
+      class="math inline">\displaystyle 0^+</span>。</p>
       </div>
       <div id="chpt6-ex-011-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
@@ -3268,7 +3420,8 @@
       \frac{1}{\sqrt{x}}\,dx = \lim_{a\to 0^+}\left[2\sqrt{x}\right]_a^1
       = \lim_{a\to 0^+}(2-2\sqrt{a}) = 2.
       </span></p>
-      <p>积分收敛于 <span class="math inline">2</span>。</p>
+      <p>积分收敛于 <span class="math inline">\displaystyle
+      2</span>。</p>
       </div>
       </div>
       </div>
@@ -3289,17 +3442,18 @@
       <p>对于连续型随机变量, 我们不能像离散情况那样谈论某个具体值的概率,
       而是使用概率密度函数来描述概率分布.</p>
       <p><strong>定义</strong>: 如果存在非负函数 <span
-      class="math inline">f(x)</span>, 使得对任意实数 <span
-      class="math inline">a \leq b</span>, 随机变量 <span
-      class="math inline">X</span> 落在区间 <span
-      class="math inline">[a,b]</span> 内的概率为 <span
+      class="math inline">\displaystyle f(x)</span>, 使得对任意实数
+      <span class="math inline">\displaystyle a \leq b</span>, 随机变量
+      <span class="math inline">\displaystyle X</span> 落在区间 <span
+      class="math inline">\displaystyle [a,b]</span> 内的概率为 <span
       class="math display">
       P(a \leq X \leq b) = \int_a^b f(x)  dx
-      </span> 则称 <span class="math inline">f(x)</span> 为 <span
-      class="math inline">X</span> 的概率密度函数.</p>
+      </span> 则称 <span class="math inline">\displaystyle f(x)</span>
+      为 <span class="math inline">\displaystyle X</span>
+      的概率密度函数.</p>
       <p><strong>性质</strong>: 1. 非负性: <span
-      class="math inline">f(x) \geq 0</span> 对所有 <span
-      class="math inline">x</span> 成立 2. 归一性: <span
+      class="math inline">\displaystyle f(x) \geq 0</span> 对所有 <span
+      class="math inline">\displaystyle x</span> 成立 2. 归一性: <span
       class="math inline">\displaystyle\int_{-\infty}^\infty f(x)  dx =
       1</span></p>
       </div>
@@ -3322,12 +3476,12 @@
       <p>是否为概率密度函数。</p>
       <figure>
       <img src="media/img/chpt6_ex012.png" width="400"
-      alt="三角形概率密度 f(x)=2x 在 [0,1] 上, 阴影面积 \int_0^1 2x\,dx = 1 验证为 PDF" />
+      alt="三角形概率密度 \displaystyle f(x)=2x 在 \displaystyle [0,1] 上, 阴影面积 \displaystyle \int_0^1 2x\,dx = 1 验证为 PDF" />
       <figcaption aria-hidden="true">三角形概率密度 <span
-      class="math inline">f(x)=2x</span> 在 <span
-      class="math inline">[0,1]</span> 上, 阴影面积 <span
-      class="math inline">\int_0^1 2x\,dx = 1</span> 验证为
-      PDF</figcaption>
+      class="math inline">\displaystyle f(x)=2x</span> 在 <span
+      class="math inline">\displaystyle [0,1]</span> 上, 阴影面积 <span
+      class="math inline">\displaystyle \int_0^1 2x\,dx = 1</span>
+      验证为 PDF</figcaption>
       </figure>
       </div>
       <div class="ex-controls">
@@ -3340,22 +3494,22 @@
       <div id="chpt6-ex-012-frame" class="ex-frame" hidden="">
       <div id="chpt6-ex-012-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>检查两个条件：非负性（<span class="math inline">f(x) \geq
-      0</span>）和归一性（积分等于 <span
-      class="math inline">1</span>）。</p>
+      <p>检查两个条件：非负性（<span class="math inline">\displaystyle
+      f(x) \geq 0</span>）和归一性（积分等于 <span
+      class="math inline">\displaystyle 1</span>）。</p>
       </div>
       <div id="chpt6-ex-012-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
       <p><strong>非负性</strong>：在 <span
-      class="math inline">[0,1]</span> 上 <span class="math inline">2x
-      \geq 0</span>，满足。</p>
+      class="math inline">\displaystyle [0,1]</span> 上 <span
+      class="math inline">\displaystyle 2x \geq 0</span>，满足。</p>
       <p><strong>归一性</strong>：</p>
       <p><span class="math display">
       \int_{-\infty}^\infty f(x)\,dx = \int_0^1 2x\,dx =
       \left[x^2\right]_0^1 = 1.
       </span></p>
-      <p>两个条件均满足，故 <span class="math inline">f(x)</span>
-      是合法的概率密度函数。</p>
+      <p>两个条件均满足，故 <span class="math inline">\displaystyle
+      f(x)</span> 是合法的概率密度函数。</p>
       </div>
       </div>
       </div>
@@ -3365,15 +3519,16 @@
       <div class="callout-body">
       <p>均匀分布描述了一个随机变量在某个区间内等可能取值的现象.</p>
       <p><strong>定义</strong>: 如果随机变量 <span
-      class="math inline">X</span> 在区间 <span
-      class="math inline">[a,b]</span> 上有概率密度函数 <span
-      class="math display">
+      class="math inline">\displaystyle X</span> 在区间 <span
+      class="math inline">\displaystyle [a,b]</span> 上有概率密度函数
+      <span class="math display">
       f(x) = \begin{cases}
       \frac{1}{b-a} &amp; a \leq x \leq b \\
       0 &amp; \text{其他}
       \end{cases}
-      </span> 则称 <span class="math inline">X</span> 服从均匀分布, 记作
-      <span class="math inline">X \sim U(a,b)</span>.</p>
+      </span> 则称 <span class="math inline">\displaystyle X</span>
+      服从均匀分布, 记作 <span class="math inline">\displaystyle X \sim
+      U(a,b)</span>.</p>
       </div>
       </div>
       <div id="chpt6-ex-013" class="exercise-block"
@@ -3398,14 +3553,17 @@
       <div id="chpt6-ex-013-frame" class="ex-frame" hidden="">
       <div id="chpt6-ex-013-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>等待时间 <span class="math inline">X</span> 服从均匀分布 <span
-      class="math inline">U(0,10)</span>，用概率密度函数计算区间概率。</p>
+      <p>等待时间 <span class="math inline">\displaystyle X</span>
+      服从均匀分布 <span class="math inline">\displaystyle
+      U(0,10)</span>，用概率密度函数计算区间概率。</p>
       </div>
       <div id="chpt6-ex-013-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p><span class="math inline">X \sim U(0,10)</span>，概率密度函数
-      <span class="math inline">f(x) = \dfrac{1}{10}</span>（<span
-      class="math inline">0 \leq x \leq 10</span>）。</p>
+      <p><span class="math inline">\displaystyle X \sim
+      U(0,10)</span>，概率密度函数 <span
+      class="math inline">\displaystyle f(x) =
+      \dfrac{1}{10}</span>（<span class="math inline">\displaystyle 0
+      \leq x \leq 10</span>）。</p>
       <p><span class="math display">
       P(0 \leq X \leq 3) = \int_0^3 \frac{1}{10}\,dx = \frac{3}{10}.
       </span></p>
@@ -3418,15 +3576,16 @@
       <div class="callout-body">
       <p>指数分布常用于描述等待时间, 寿命等随机现象.</p>
       <p><strong>定义</strong>: 如果随机变量 <span
-      class="math inline">X</span> 有概率密度函数 <span
+      class="math inline">\displaystyle X</span> 有概率密度函数 <span
       class="math display">
       f(x) = \begin{cases}
       \lambda e^{-\lambda x} &amp; x \geq 0 \\
       0 &amp; x &lt; 0
       \end{cases}
-      </span> 其中 <span class="math inline">\lambda &gt; 0</span>, 则称
-      <span class="math inline">X</span> 服从参数为 <span
-      class="math inline">\lambda</span> 的指数分布.</p>
+      </span> 其中 <span class="math inline">\displaystyle \lambda &gt;
+      0</span>, 则称 <span class="math inline">\displaystyle X</span>
+      服从参数为 <span class="math inline">\displaystyle \lambda</span>
+      的指数分布.</p>
       </div>
       </div>
       <div id="chpt6-ex-014" class="exercise-block"
@@ -3439,17 +3598,18 @@
       </div>
       <div class="ex-body">
       <div class="ex-problem-box">
-      <p>某电子元件的寿命 <span
-      class="math inline">X</span>（单位：小时）服从参数 <span
-      class="math inline">\lambda = 0.001</span>
+      <p>某电子元件的寿命 <span class="math inline">\displaystyle
+      X</span>（单位：小时）服从参数 <span
+      class="math inline">\displaystyle \lambda = 0.001</span>
       的指数分布，求该元件能工作超过1000小时的概率。</p>
       <figure>
       <img src="media/img/chpt6_ex014.png" width="400"
-      alt="指数分布密度 f(x) = \lambda e^{-\lambda x}, \lambda = 0.001 — 红色阴影为尾部概率 P(X&gt;1000) = e^{-1} \approx 0.368" />
+      alt="指数分布密度 \displaystyle f(x) = \lambda e^{-\lambda x}, \displaystyle \lambda = 0.001 — 红色阴影为尾部概率 \displaystyle P(X&gt;1000) = e^{-1} \approx 0.368" />
       <figcaption aria-hidden="true">指数分布密度 <span
-      class="math inline">f(x) = \lambda e^{-\lambda x}</span>, <span
-      class="math inline">\lambda = 0.001</span> — 红色阴影为尾部概率
-      <span class="math inline">P(X&gt;1000) = e^{-1} \approx
+      class="math inline">\displaystyle f(x) = \lambda e^{-\lambda
+      x}</span>, <span class="math inline">\displaystyle \lambda =
+      0.001</span> — 红色阴影为尾部概率 <span
+      class="math inline">\displaystyle P(X&gt;1000) = e^{-1} \approx
       0.368</span></figcaption>
       </figure>
       </div>
@@ -3463,7 +3623,7 @@
       <div id="chpt6-ex-014-frame" class="ex-frame" hidden="">
       <div id="chpt6-ex-014-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p><span class="math inline">P(X &gt; 1000) =
+      <p><span class="math inline">\displaystyle P(X &gt; 1000) =
       \displaystyle\int_{1000}^\infty \lambda e^{-\lambda
       x}\,dx</span>，用反常积分计算。</p>
       </div>
@@ -3484,23 +3644,27 @@
       <p>正态分布 (高斯分布) 是概率论与统计学中最重要的分布,
       它描述了自然界中大量随机现象的分布规律.</p>
       <p><strong>定义</strong>: 如果随机变量 <span
-      class="math inline">X</span> 有概率密度函数 <span
+      class="math inline">\displaystyle X</span> 有概率密度函数 <span
       class="math display">
       f(x) = \frac{1}{\sqrt{2\pi}\sigma}
       e^{-\frac{(x-\mu)^2}{2\sigma^2}}
-      </span> 则称 <span class="math inline">X</span> 服从正态分布, 记作
-      <span class="math inline">X \sim N(\mu,\sigma^2)</span>.</p>
+      </span> 则称 <span class="math inline">\displaystyle X</span>
+      服从正态分布, 记作 <span class="math inline">\displaystyle X \sim
+      N(\mu,\sigma^2)</span>.</p>
       <p><strong>参数意义</strong>: - <span
-      class="math inline">\mu</span>: 均值, 决定分布的中心位置 - <span
-      class="math inline">\sigma</span>: 标准差, 决定分布的分散程度</p>
-      <p><strong>标准正态分布</strong>: 当 <span class="math inline">\mu
-      = 0</span>, <span class="math inline">\sigma = 1</span> 时,
+      class="math inline">\displaystyle \mu</span>: 均值,
+      决定分布的中心位置 - <span class="math inline">\displaystyle
+      \sigma</span>: 标准差, 决定分布的分散程度</p>
+      <p><strong>标准正态分布</strong>: 当 <span
+      class="math inline">\displaystyle \mu = 0</span>, <span
+      class="math inline">\displaystyle \sigma = 1</span> 时,
       称为标准正态分布, 其概率密度函数为 <span class="math display">
       \varphi(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}
       </span></p>
-      <p><strong>概率计算</strong>: 对于 <span class="math inline">X
-      \sim N(\mu,\sigma^2)</span>, <span class="math inline">P(a \leq X
-      \leq b) = \displaystyle\int_a^b \frac{1}{\sqrt{2\pi}\sigma}
+      <p><strong>概率计算</strong>: 对于 <span
+      class="math inline">\displaystyle X \sim N(\mu,\sigma^2)</span>,
+      <span class="math inline">\displaystyle P(a \leq X \leq b) =
+      \displaystyle\int_a^b \frac{1}{\sqrt{2\pi}\sigma}
       e^{-\frac{(x-\mu)^2}{2\sigma^2}}  dx</span></p>
       <p>这个积分没有初等函数形式的原函数, 谜底留到第二册.</p>
       </div>
@@ -3522,7 +3686,7 @@
       \lim_{a \to -\infty} \int_a^b f(x)  dx</span> 3. <span
       class="math inline">\displaystyle\int_{-\infty}^\infty f(x)  dx =
       \int_{-\infty}^c f(x)  dx + \int_c^\infty f(x)  dx</span> (<span
-      class="math inline">c</span> 为任意实数)</p>
+      class="math inline">\displaystyle c</span> 为任意实数)</p>
       <p><strong>收敛判别</strong>: 如果极限存在且有限,
       则称反常积分收敛; 否则称发散.</p>
       </div>
@@ -3540,15 +3704,16 @@
       <p>研究反常积分 <span
       class="math inline">\displaystyle\int_1^\infty
       \frac{1}{x^p}\,dx</span> 的收敛性（<span
-      class="math inline">p</span> 为实数）。</p>
+      class="math inline">\displaystyle p</span> 为实数）。</p>
       <figure>
       <img src="media/img/chpt6_ex015.png" width="400"
-      alt="1/x^p 几条曲线 (p=0.5, 1, 1.5, 2) — p\le 1 的尾部太胖 (积分发散), p&gt;1 收敛" />
+      alt="\displaystyle 1/x^p 几条曲线 (\displaystyle p=0.5, 1, 1.5, 2) — \displaystyle p\le 1 的尾部太胖 (积分发散), \displaystyle p&gt;1 收敛" />
       <figcaption aria-hidden="true"><span
-      class="math inline">1/x^p</span> 几条曲线 (<span
-      class="math inline">p=0.5, 1, 1.5, 2</span>) — <span
-      class="math inline">p\le 1</span> 的尾部太胖 (积分发散), <span
-      class="math inline">p&gt;1</span> 收敛</figcaption>
+      class="math inline">\displaystyle 1/x^p</span> 几条曲线 (<span
+      class="math inline">\displaystyle p=0.5, 1, 1.5, 2</span>) — <span
+      class="math inline">\displaystyle p\le 1</span> 的尾部太胖
+      (积分发散), <span class="math inline">\displaystyle p&gt;1</span>
+      收敛</figcaption>
       </figure>
       </div>
       <div class="ex-controls">
@@ -3561,34 +3726,36 @@
       <div id="chpt6-ex-015-frame" class="ex-frame" hidden="">
       <div id="chpt6-ex-015-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>对 <span class="math inline">p \neq 1</span> 和 <span
-      class="math inline">p = 1</span>
+      <p>对 <span class="math inline">\displaystyle p \neq 1</span> 和
+      <span class="math inline">\displaystyle p = 1</span>
       分情况讨论，通过求极限判断收敛发散。</p>
       </div>
       <div id="chpt6-ex-015-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p><strong>当 <span class="math inline">p \neq 1</span>
-      时</strong>：</p>
+      <p><strong>当 <span class="math inline">\displaystyle p \neq
+      1</span> 时</strong>：</p>
       <p><span class="math display">
       \int_1^\infty \frac{1}{x^p}\,dx =
       \lim_{b\to\infty}\frac{b^{1-p}-1}{1-p}.
       </span></p>
       <ul>
-      <li>若 <span class="math inline">p &gt; 1</span>：<span
-      class="math inline">b^{1-p} \to 0</span>，积分收敛于 <span
-      class="math inline">\dfrac{1}{p-1}</span>。</li>
-      <li>若 <span class="math inline">p &lt; 1</span>：<span
-      class="math inline">b^{1-p} \to \infty</span>，积分发散。</li>
+      <li>若 <span class="math inline">\displaystyle p &gt;
+      1</span>：<span class="math inline">\displaystyle b^{1-p} \to
+      0</span>，积分收敛于 <span class="math inline">\displaystyle
+      \dfrac{1}{p-1}</span>。</li>
+      <li>若 <span class="math inline">\displaystyle p &lt;
+      1</span>：<span class="math inline">\displaystyle b^{1-p} \to
+      \infty</span>，积分发散。</li>
       </ul>
-      <p><strong>当 <span class="math inline">p = 1</span>
+      <p><strong>当 <span class="math inline">\displaystyle p = 1</span>
       时</strong>：</p>
       <p><span class="math display">
       \int_1^\infty \frac{1}{x}\,dx = \lim_{b\to\infty}\ln b = \infty.
       </span></p>
       <p>发散。</p>
-      <p><strong>结论</strong>：<span class="math inline">p &gt;
-      1</span> 时收敛，<span class="math inline">p \leq 1</span>
-      时发散。</p>
+      <p><strong>结论</strong>：<span class="math inline">\displaystyle
+      p &gt; 1</span> 时收敛，<span class="math inline">\displaystyle p
+      \leq 1</span> 时发散。</p>
       </div>
       </div>
       </div>
@@ -3596,25 +3763,26 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">无界函数的反常积分 (瑕积分)</span></div>
       <div class="callout-body">
-      <p>如果函数 <span class="math inline">f(x)</span> 在点 <span
-      class="math inline">c</span> 的任意邻域内无界, 则称 <span
-      class="math inline">c</span> 为瑕点.</p>
+      <p>如果函数 <span class="math inline">\displaystyle f(x)</span>
+      在点 <span class="math inline">\displaystyle c</span>
+      的任意邻域内无界, 则称 <span class="math inline">\displaystyle
+      c</span> 为瑕点.</p>
       <p><strong>定义</strong>: 1. 若 <span
-      class="math inline">f(x)</span> 在 <span
-      class="math inline">[a,b)</span> 上连续, 且 <span
-      class="math inline">\lim_{x \to b^-} f(x) = \infty</span>, 则
-      <span class="math display">
+      class="math inline">\displaystyle f(x)</span> 在 <span
+      class="math inline">\displaystyle [a,b)</span> 上连续, 且 <span
+      class="math inline">\displaystyle \lim_{x \to b^-} f(x) =
+      \infty</span>, 则 <span class="math display">
          \int_a^b f(x)  dx = \lim_{t \to b^-} \int_a^t f(x)  dx
          </span></p>
       <ol start="2" type="1">
-      <li><p>若 <span class="math inline">f(x)</span> 在 <span
-      class="math inline">(a,b]</span> 上连续, 且 <span
-      class="math inline">\lim_{x \to a^+} f(x) = \infty</span>, 则
-      <span class="math display">
+      <li><p>若 <span class="math inline">\displaystyle f(x)</span> 在
+      <span class="math inline">\displaystyle (a,b]</span> 上连续, 且
+      <span class="math inline">\displaystyle \lim_{x \to a^+} f(x) =
+      \infty</span>, 则 <span class="math display">
       \int_a^b f(x)  dx = \lim_{t \to a^+} \int_t^b f(x)  dx
       </span></p></li>
-      <li><p>若 <span class="math inline">c \in (a,b)</span> 是瑕点, 则
-      <span class="math display">
+      <li><p>若 <span class="math inline">\displaystyle c \in
+      (a,b)</span> 是瑕点, 则 <span class="math display">
       \int_a^b f(x)  dx = \int_a^c f(x)  dx + \int_c^b f(x)  dx
       </span></p></li>
       </ol>
@@ -3632,16 +3800,17 @@
       <div class="ex-problem-box">
       <p>研究瑕积分 <span class="math inline">\displaystyle\int_0^1
       \frac{1}{x^p}\,dx</span> 的收敛性（<span
-      class="math inline">p</span> 为实数，<span
-      class="math inline">x=0</span> 为瑕点）。</p>
+      class="math inline">\displaystyle p</span> 为实数，<span
+      class="math inline">\displaystyle x=0</span> 为瑕点）。</p>
       <figure>
       <img src="media/img/chpt6_ex016.png" width="400"
-      alt="同样的 1/x^p 曲线在 x=0 附近 — 故事颠倒过来 (p&lt;1 时积分收敛, p\ge 1 时发散)" />
+      alt="同样的 \displaystyle 1/x^p 曲线在 \displaystyle x=0 附近 — 故事颠倒过来 (\displaystyle p&lt;1 时积分收敛, \displaystyle p\ge 1 时发散)" />
       <figcaption aria-hidden="true">同样的 <span
-      class="math inline">1/x^p</span> 曲线在 <span
-      class="math inline">x=0</span> 附近 — 故事颠倒过来 (<span
-      class="math inline">p&lt;1</span> 时积分收敛, <span
-      class="math inline">p\ge 1</span> 时发散)</figcaption>
+      class="math inline">\displaystyle 1/x^p</span> 曲线在 <span
+      class="math inline">\displaystyle x=0</span> 附近 — 故事颠倒过来
+      (<span class="math inline">\displaystyle p&lt;1</span> 时积分收敛,
+      <span class="math inline">\displaystyle p\ge 1</span>
+      时发散)</figcaption>
       </figure>
       </div>
       <div class="ex-controls">
@@ -3654,32 +3823,35 @@
       <div id="chpt6-ex-016-frame" class="ex-frame" hidden="">
       <div id="chpt6-ex-016-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p><span class="math inline">x=0</span> 处函数无界，通过令下限趋于
-      <span class="math inline">0^+</span> 的极限来判断收敛性。</p>
+      <p><span class="math inline">\displaystyle x=0</span>
+      处函数无界，通过令下限趋于 <span class="math inline">\displaystyle
+      0^+</span> 的极限来判断收敛性。</p>
       </div>
       <div id="chpt6-ex-016-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p><strong>当 <span class="math inline">p \neq 1</span>
-      时</strong>：</p>
+      <p><strong>当 <span class="math inline">\displaystyle p \neq
+      1</span> 时</strong>：</p>
       <p><span class="math display">
       \int_0^1 \frac{1}{x^p}\,dx = \lim_{a\to 0^+}\frac{1-a^{1-p}}{1-p}.
       </span></p>
       <ul>
-      <li>若 <span class="math inline">p &lt; 1</span>：<span
-      class="math inline">a^{1-p} \to 0</span>，积分收敛于 <span
-      class="math inline">\dfrac{1}{1-p}</span>。</li>
-      <li>若 <span class="math inline">p &gt; 1</span>：<span
-      class="math inline">a^{1-p} \to \infty</span>，积分发散。</li>
+      <li>若 <span class="math inline">\displaystyle p &lt;
+      1</span>：<span class="math inline">\displaystyle a^{1-p} \to
+      0</span>，积分收敛于 <span class="math inline">\displaystyle
+      \dfrac{1}{1-p}</span>。</li>
+      <li>若 <span class="math inline">\displaystyle p &gt;
+      1</span>：<span class="math inline">\displaystyle a^{1-p} \to
+      \infty</span>，积分发散。</li>
       </ul>
-      <p><strong>当 <span class="math inline">p = 1</span>
+      <p><strong>当 <span class="math inline">\displaystyle p = 1</span>
       时</strong>：</p>
       <p><span class="math display">
       \int_0^1 \frac{1}{x}\,dx = \lim_{a\to 0^+}(-\ln a) = \infty.
       </span></p>
       <p>发散。</p>
-      <p><strong>结论</strong>：<span class="math inline">p &lt;
-      1</span> 时收敛，<span class="math inline">p \geq 1</span>
-      时发散。</p>
+      <p><strong>结论</strong>：<span class="math inline">\displaystyle
+      p &lt; 1</span> 时收敛，<span class="math inline">\displaystyle p
+      \geq 1</span> 时发散。</p>
       </div>
       </div>
       </div>
@@ -3692,8 +3864,10 @@
     window.docLib = [{"title": "\u542f\u7a0b", "url": "chapter0.html"}, {"title": "\u7b2c\u4e00\u56de \u00b7 \u6781\u9650", "url": "chapter1.html"}, {"title": "\u7b2c\u4e8c\u56de \u00b7 \u5fae\u5206", "url": "chapter2.html"}, {"title": "\u7b2c\u4e09\u56de \u00b7 \u79ef\u5206", "url": "chapter4.html"}, {"title": "\u7b2c\u56db\u56de \u00b7 \u5e94\u7528", "url": "chapter5.html"}];
     window.chpAutonum = "";
   </script>
-  <script src="assets/app.js?v=20261019-directory"></script>
+  <script src="assets/character-link.js?v=20261019-return"></script>
+  <script src="assets/app.js?v=20261019-return"></script>
   <script src="assets/three-lazy.js"></script>
   <script src="assets/reader.js"></script>
+  <script src="assets/secant-demo.js?v=20261024-two-plots"></script>
 </body>
 </html>

@@ -10,8 +10,9 @@
   
   
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="assets/app.css?v=20261019-directory">
-  <link rel="stylesheet" href="assets/reader.css?v=20261019-directory">
+  <link rel="stylesheet" href="assets/app.css?v=20261024-proof-label">
+  <link rel="stylesheet" href="assets/reader.css?v=20261025-video-attribution">
+  <link rel="stylesheet" href="assets/secant-demo.css?v=20261024-two-plots">
   <link rel="stylesheet" href="assets/katex/katex.min.css">
   <script src="assets/katex/katex.min.js"></script>
   <script type="importmap">
@@ -113,7 +114,7 @@
       <button id="pdf-btn" onclick="window.print()" title="打印或保存为 PDF" aria-label="打印或保存为 PDF">打印</button>
     </div>
     <div class="reader-progress-track" aria-hidden="true"><span id="reading-progress-bar"></span></div>
-    <header class="reader-banner" style="--scene:url(home/integrals.png)"><div class="reader-banner-art" style="background-image:url(assets/home/integrals.png)"></div><div class="reader-banner-copy"><h1 class="reader-chapter-title">第三回 · 聚沙成丘</h1></div><a class="reader-home" href="index.html">返回山门 ↗</a></header><figure class="reader-epigraph" aria-label="篇首引文"><blockquote>不积跬步，无以至千里。</blockquote><figcaption>—— 荀子《劝学》</figcaption></figure>
+    <header class="reader-banner" style="--scene:url(home/integrals.png)"><div class="reader-banner-art" style="background-image:url(assets/home/integrals.png)"></div><div class="reader-banner-copy"><h1 class="reader-chapter-title">第三回 · 聚沙成丘</h1><figure class="banner-epigraph"><blockquote>不积跬步，无以至千里。</blockquote><figcaption>—— 荀子《劝学》</figcaption></figure></div><a class="reader-home" href="index.html">返回山门 ↗</a></header><figure class="reader-epigraph" hidden></figure>
     <div id="video-panel">
       <button id="video-close-btn" aria-label="Close video">&times;</button>
       <iframe id="video-frame" src="" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
@@ -179,56 +180,64 @@
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">通过极限定义积分</span></div>
       <div class="callout-body">
-      <p>让我们从一个具体例子出发: 计算由曲线<span class="math inline">y
-      = f(x)</span>, 直线<span class="math inline">x = a</span>, <span
-      class="math inline">x = b</span>以及<span
-      class="math inline">x</span>轴所围成的曲边梯形的面积.</p>
+      <p>让我们从一个具体例子出发: 计算由曲线<span
+      class="math inline">\displaystyle y = f(x)</span>, 直线<span
+      class="math inline">\displaystyle x = a</span>, <span
+      class="math inline">\displaystyle x = b</span>以及<span
+      class="math inline">\displaystyle
+      x</span>轴所围成的曲边梯形的面积.</p>
       <p>我们考虑一个具体的函数: 半径为<span
-      class="math inline">\sqrt{2}</span>, 圆心在<span
-      class="math inline">(\sqrt{2}, 0)</span>的圆的上半部分.
-      这个圆的方程为: <span class="math inline">(x - \sqrt{2})^2 + y^2 =
-      2</span>, 所以上半圆的函数为 <span class="math inline">y = f(x) =
-      \sqrt{2 - (x - \sqrt{2})^2}</span>. 我们计算这个上半圆在区间 <span
-      class="math inline">[0, 2\sqrt{2}]</span> 上的面积,
+      class="math inline">\displaystyle \sqrt{2}</span>, 圆心在<span
+      class="math inline">\displaystyle (\sqrt{2},
+      0)</span>的圆的上半部分. 这个圆的方程为: <span
+      class="math inline">\displaystyle (x - \sqrt{2})^2 + y^2 =
+      2</span>, 所以上半圆的函数为 <span
+      class="math inline">\displaystyle y = f(x) = \sqrt{2 - (x -
+      \sqrt{2})^2}</span>. 我们计算这个上半圆在区间 <span
+      class="math inline">\displaystyle [0, 2\sqrt{2}]</span> 上的面积,
       这正好是半个圆的面积, 中学我们已经学过圆的面积公式,
-      知道这半个圆的面积正好等于 <span
-      class="math inline">\pi</span>.</p>
+      知道这半个圆的面积正好等于 <span class="math inline">\displaystyle
+      \pi</span>.</p>
       <p><strong>第一步: 分割</strong> 将区间 <span
-      class="math inline">[0, 2\sqrt{2}]</span> 分成 <span
-      class="math inline">n</span> 个小区间, 设分点为: <span
-      class="math inline">0 = x_0 &lt; x_1 &lt; x_2 &lt; \cdots &lt; x_n
-      = 2\sqrt{2}</span> 每个小区间长度为 <span
-      class="math inline">\Delta x_i = x_i - x_{i-1}</span> 为简单起见,
-      我们可以采用等分, 即 <span class="math inline">\displaystyle\Delta
-      x =\frac{(2\sqrt{2} - 0)}{n} = \frac{2\sqrt{2}}{n}</span></p>
+      class="math inline">\displaystyle [0, 2\sqrt{2}]</span> 分成 <span
+      class="math inline">\displaystyle n</span> 个小区间, 设分点为:
+      <span class="math inline">\displaystyle 0 = x_0 &lt; x_1 &lt; x_2
+      &lt; \cdots &lt; x_n = 2\sqrt{2}</span> 每个小区间长度为 <span
+      class="math inline">\displaystyle \Delta x_i = x_i -
+      x_{i-1}</span> 为简单起见, 我们可以采用等分, 即 <span
+      class="math inline">\displaystyle\Delta x =\frac{(2\sqrt{2} -
+      0)}{n} = \frac{2\sqrt{2}}{n}</span></p>
       <p><strong>第二步: 近似代替</strong> 在每个小区间 <span
-      class="math inline">[x_{i-1}, x_i]</span> 上任取一点 <span
-      class="math inline">\xi_i</span>, 例如取右端点 <span
-      class="math inline">\xi_i = x_i</span>. 用高为 <span
-      class="math inline">f(\xi_i) = \sqrt{2 - (\xi_i -
-      \sqrt{2})^2}</span>, 宽为 <span class="math inline">\Delta
-      x</span> 的小矩形面积 <span class="math inline">f(\xi_i)\Delta
-      x</span> 来近似代替该小区间上曲边梯形的面积.</p>
+      class="math inline">\displaystyle [x_{i-1}, x_i]</span> 上任取一点
+      <span class="math inline">\displaystyle \xi_i</span>, 例如取右端点
+      <span class="math inline">\displaystyle \xi_i = x_i</span>. 用高为
+      <span class="math inline">\displaystyle f(\xi_i) = \sqrt{2 -
+      (\xi_i - \sqrt{2})^2}</span>, 宽为 <span
+      class="math inline">\displaystyle \Delta x</span> 的小矩形面积
+      <span class="math inline">\displaystyle f(\xi_i)\Delta x</span>
+      来近似代替该小区间上曲边梯形的面积.</p>
       <p><strong>第三步: 求和</strong> 将所有小矩形的面积相加,
       得到整个曲边梯形面积的近似值: <span class="math display">
       S_n = \sum_{i=1}^n f(\xi_i)\Delta x
       </span> 这个和称为<strong>黎曼和</strong>(Riemann sum)</p>
       <p><strong>第四步: 取极限</strong> 当分割越来越细, 即 <span
-      class="math inline">n \to \infty</span> 时, <span
-      class="math inline">\Delta x \to 0</span>, 如果黎曼和的极限存在,
-      我们就定义这个极限值为曲边梯形的面积: <span class="math display">
+      class="math inline">\displaystyle n \to \infty</span> 时, <span
+      class="math inline">\displaystyle \Delta x \to 0</span>,
+      如果黎曼和的极限存在, 我们就定义这个极限值为曲边梯形的面积: <span
+      class="math display">
       S = \lim_{n\to\infty} S_n = \lim_{n\to\infty} \sum_{i=1}^n
       f(\xi_i)\Delta x
       </span></p>
-      <p>取 <span class="math inline">n=4, 8, 16, 32, \ldots</span> 计算
-      <span class="math inline">S_n</span> 的值, 会发现 <span
-      class="math inline">S_n</span> 趋近于 <span
-      class="math inline">\pi</span> (见下表).</p>
+      <p>取 <span class="math inline">\displaystyle n=4, 8, 16, 32,
+      \ldots</span> 计算 <span class="math inline">\displaystyle
+      S_n</span> 的值, 会发现 <span class="math inline">\displaystyle
+      S_n</span> 趋近于 <span class="math inline">\displaystyle
+      \pi</span> (见下表).</p>
       <table>
       <thead>
       <tr>
-      <th><span class="math inline">n</span></th>
-      <th><span class="math inline">S_n</span></th>
+      <th><span class="math inline">\displaystyle n</span></th>
+      <th><span class="math inline">\displaystyle S_n</span></th>
       <th>误差</th>
       </tr>
       </thead>
@@ -281,51 +290,59 @@
       </tbody>
       </table>
       <p>这个表格直观地展示了黎曼和随着分割数 <span
-      class="math inline">n</span> 的增加而收敛于精确面积 <span
-      class="math inline">\pi</span> 的过程, 体现了积分作为”无限细分,
-      无限求和”极限过程的本质.</p>
+      class="math inline">\displaystyle n</span> 的增加而收敛于精确面积
+      <span class="math inline">\displaystyle \pi</span> 的过程,
+      体现了积分作为”无限细分, 无限求和”极限过程的本质.</p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">积分的定义</span></div>
       <div class="callout-body">
-      <p>设函数 <span class="math inline">f(x)</span> 在区间 <span
-      class="math inline">[a, b]</span> 上有定义. 用分点 <span
-      class="math inline">a = x_0 &lt; x_1 &lt; \cdots &lt; x_n =
-      b</span> 将区间任意分割成 <span class="math inline">n</span>
-      个小区间, 在每个小区间 <span class="math inline">[x_{i-1},
-      x_i]</span> 上任取一点 <span class="math inline">\xi_i</span>,
-      作黎曼和 <span class="math inline">\sum_{i=1}^n f(\xi_i)\Delta
-      x_i</span>.</p>
-      <p>如果当最大小区间长度 <span class="math inline">\lambda =
-      \max\{\Delta x_i\} \to 0</span> 时,
+      <p>设函数 <span class="math inline">\displaystyle f(x)</span>
+      在区间 <span class="math inline">\displaystyle [a, b]</span>
+      上有定义. 用分点 <span class="math inline">\displaystyle a = x_0
+      &lt; x_1 &lt; \cdots &lt; x_n = b</span> 将区间任意分割成 <span
+      class="math inline">\displaystyle n</span> 个小区间, 在每个小区间
+      <span class="math inline">\displaystyle [x_{i-1}, x_i]</span>
+      上任取一点 <span class="math inline">\displaystyle \xi_i</span>,
+      作黎曼和 <span class="math inline">\displaystyle \sum_{i=1}^n
+      f(\xi_i)\Delta x_i</span>.</p>
+      <p>如果当最大小区间长度 <span class="math inline">\displaystyle
+      \lambda = \max\{\Delta x_i\} \to 0</span> 时,
       黎曼和的极限存在且与区间的分割方式以及点 <span
-      class="math inline">\xi_i</span> 的取法无关, 则称函数 <span
-      class="math inline">f(x)</span> 在 <span class="math inline">[a,
-      b]</span> 上<strong>可积</strong>, 并称此极限值为 <span
-      class="math inline">f(x)</span> 在 <span class="math inline">[a,
-      b]</span> 上的<strong>定积分</strong>, 记作:</p>
+      class="math inline">\displaystyle \xi_i</span> 的取法无关,
+      则称函数 <span class="math inline">\displaystyle f(x)</span> 在
+      <span class="math inline">\displaystyle [a, b]</span>
+      上<strong>可积</strong>, 并称此极限值为 <span
+      class="math inline">\displaystyle f(x)</span> 在 <span
+      class="math inline">\displaystyle [a, b]</span>
+      上的<strong>定积分</strong>, 记作:</p>
       <p><span class="math display">
       \int_a^b f(x)\,dx = \lim_{\lambda\to 0} \sum_{i=1}^n
       f(\xi_i)\Delta x_i
       </span></p>
       <p>其中: - “<span class="math inline">\displaystyle\int</span>”
       是积分号, 由莱布尼茨引入, 是求和符号 “<span
-      class="math inline">S</span>” 的拉长 - <span
-      class="math inline">f(x)</span> 称为<strong>被积函数</strong> -
-      <span class="math inline">f(x)dx</span>
+      class="math inline">\displaystyle S</span>” 的拉长 - <span
+      class="math inline">\displaystyle f(x)</span>
+      称为<strong>被积函数</strong> - <span
+      class="math inline">\displaystyle f(x)dx</span>
       称为<strong>被积表达式</strong> - <span
-      class="math inline">x</span> 称为<strong>积分变量</strong> - <span
-      class="math inline">[a, b]</span> 称为<strong>积分区间</strong> -
-      <span class="math inline">a</span> 称为<strong>积分下限</strong>,
-      <span class="math inline">b</span>
+      class="math inline">\displaystyle x</span>
+      称为<strong>积分变量</strong> - <span
+      class="math inline">\displaystyle [a, b]</span>
+      称为<strong>积分区间</strong> - <span
+      class="math inline">\displaystyle a</span>
+      称为<strong>积分下限</strong>, <span
+      class="math inline">\displaystyle b</span>
       称为<strong>积分上限</strong></p>
-      <p><strong>几何意义</strong>: 当 <span class="math inline">f(x)
-      \geq 0</span> 时, 定积分 <span
-      class="math inline">\displaystyle\int_a^b f(x)\,dx</span>
-      表示由曲线 <span class="math inline">y = f(x)</span>, 直线 <span
-      class="math inline">x = a</span>, <span class="math inline">x =
-      b</span> 与 <span class="math inline">x</span>
+      <p><strong>几何意义</strong>: 当 <span
+      class="math inline">\displaystyle f(x) \geq 0</span> 时, 定积分
+      <span class="math inline">\displaystyle\int_a^b f(x)\,dx</span>
+      表示由曲线 <span class="math inline">\displaystyle y =
+      f(x)</span>, 直线 <span class="math inline">\displaystyle x =
+      a</span>, <span class="math inline">\displaystyle x = b</span> 与
+      <span class="math inline">\displaystyle x</span>
       轴所围成的曲边梯形的面积.</p>
       </div>
       </div>
@@ -343,11 +360,11 @@
       class="math inline">\displaystyle\int_0^1 x\,dx</span>。</p>
       <figure>
       <img src="media/img/chpt4_ex001.png" width="400"
-      alt="\int_0^1 x\,dx 的黎曼和 — 矩形高度采用每段右端点函数值, 当分段加密时收敛到 1/2" />
-      <figcaption aria-hidden="true"><span class="math inline">\int_0^1
-      x\,dx</span> 的黎曼和 — 矩形高度采用每段右端点函数值,
-      当分段加密时收敛到 <span
-      class="math inline">1/2</span></figcaption>
+      alt="\displaystyle \int_0^1 x\,dx 的黎曼和 — 矩形高度采用每段右端点函数值, 当分段加密时收敛到 \displaystyle 1/2" />
+      <figcaption aria-hidden="true"><span
+      class="math inline">\displaystyle \int_0^1 x\,dx</span> 的黎曼和 —
+      矩形高度采用每段右端点函数值, 当分段加密时收敛到 <span
+      class="math inline">\displaystyle 1/2</span></figcaption>
       </figure>
       </div>
       <div class="ex-controls">
@@ -360,24 +377,28 @@
       <div id="chpt4-ex-001-frame" class="ex-frame" hidden="">
       <div id="chpt4-ex-001-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>将 <span class="math inline">[0,1]</span> 等分为 <span
-      class="math inline">n</span> 份，取每个小区间的右端点作为 <span
-      class="math inline">\xi_i</span>，写出黎曼和，利用等差数列求和公式化简，然后令
-      <span class="math inline">n\to\infty</span>。</p>
+      <p>将 <span class="math inline">\displaystyle [0,1]</span> 等分为
+      <span class="math inline">\displaystyle n</span>
+      份，取每个小区间的右端点作为 <span
+      class="math inline">\displaystyle
+      \xi_i</span>，写出黎曼和，利用等差数列求和公式化简，然后令 <span
+      class="math inline">\displaystyle n\to\infty</span>。</p>
       </div>
       <div id="chpt4-ex-001-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p>将 <span class="math inline">[0,1]</span> <span
-      class="math inline">n</span> 等分，<span
-      class="math inline">\Delta x = \dfrac{1}{n}</span>，取 <span
-      class="math inline">\xi_i = \dfrac{i}{n}</span>（右端点）。</p>
+      <p>将 <span class="math inline">\displaystyle [0,1]</span> <span
+      class="math inline">\displaystyle n</span> 等分，<span
+      class="math inline">\displaystyle \Delta x =
+      \dfrac{1}{n}</span>，取 <span class="math inline">\displaystyle
+      \xi_i = \dfrac{i}{n}</span>（右端点）。</p>
       <p>黎曼和为：</p>
       <p><span class="math display">
       S_n = \sum_{i=1}^n \frac{i}{n} \cdot \frac{1}{n} = \frac{1}{n^2}
       \sum_{i=1}^n i = \frac{1}{n^2} \cdot \frac{n(n+1)}{2} =
       \frac{n+1}{2n}
       </span></p>
-      <p>令 <span class="math inline">n\to\infty</span>：</p>
+      <p>令 <span class="math inline">\displaystyle
+      n\to\infty</span>：</p>
       <p><span class="math display">
       \int_0^1 x\,dx = \lim_{n\to\infty} \frac{n+1}{2n} = \frac{1}{2}
       </span></p>
@@ -399,10 +420,11 @@
       class="math inline">\displaystyle\int_0^1 x^2\,dx</span>。</p>
       <figure>
       <img src="media/img/chpt4_ex002.png" width="400"
-      alt="\int_0^1 x^2\,dx 的黎曼和 — 抛物线下的精确面积是 1/3" />
-      <figcaption aria-hidden="true"><span class="math inline">\int_0^1
-      x^2\,dx</span> 的黎曼和 — 抛物线下的精确面积是 <span
-      class="math inline">1/3</span></figcaption>
+      alt="\displaystyle \int_0^1 x^2\,dx 的黎曼和 — 抛物线下的精确面积是 \displaystyle 1/3" />
+      <figcaption aria-hidden="true"><span
+      class="math inline">\displaystyle \int_0^1 x^2\,dx</span> 的黎曼和
+      — 抛物线下的精确面积是 <span class="math inline">\displaystyle
+      1/3</span></figcaption>
       </figure>
       </div>
       <div class="ex-controls">
@@ -415,25 +437,28 @@
       <div id="chpt4-ex-002-frame" class="ex-frame" hidden="">
       <div id="chpt4-ex-002-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>将 <span class="math inline">[0,1]</span> 等分为 <span
-      class="math inline">n</span> 份，取右端点，利用平方和公式 <span
-      class="math inline">\sum_{i=1}^n i^2 =
+      <p>将 <span class="math inline">\displaystyle [0,1]</span> 等分为
+      <span class="math inline">\displaystyle n</span>
+      份，取右端点，利用平方和公式 <span
+      class="math inline">\displaystyle \sum_{i=1}^n i^2 =
       \dfrac{n(n+1)(2n+1)}{6}</span> 化简黎曼和，令 <span
-      class="math inline">n\to\infty</span>。</p>
+      class="math inline">\displaystyle n\to\infty</span>。</p>
       </div>
       <div id="chpt4-ex-002-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p>将 <span class="math inline">[0,1]</span> <span
-      class="math inline">n</span> 等分，<span
-      class="math inline">\Delta x = \dfrac{1}{n}</span>，取 <span
-      class="math inline">\xi_i = \dfrac{i}{n}</span>。</p>
+      <p>将 <span class="math inline">\displaystyle [0,1]</span> <span
+      class="math inline">\displaystyle n</span> 等分，<span
+      class="math inline">\displaystyle \Delta x =
+      \dfrac{1}{n}</span>，取 <span class="math inline">\displaystyle
+      \xi_i = \dfrac{i}{n}</span>。</p>
       <p>黎曼和为：</p>
       <p><span class="math display">
       S_n = \sum_{i=1}^n \left(\frac{i}{n}\right)^2 \cdot \frac{1}{n} =
       \frac{1}{n^3} \sum_{i=1}^n i^2 = \frac{1}{n^3} \cdot
       \frac{n(n+1)(2n+1)}{6} = \frac{(n+1)(2n+1)}{6n^2}
       </span></p>
-      <p>令 <span class="math inline">n\to\infty</span>：</p>
+      <p>令 <span class="math inline">\displaystyle
+      n\to\infty</span>：</p>
       <p><span class="math display">
       \int_0^1 x^2\,dx = \lim_{n\to\infty} \frac{(n+1)(2n+1)}{6n^2} =
       \frac{1}{3}
@@ -464,11 +489,12 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">微积分基本定理 (牛顿-莱布尼茨公式)</span></div>
       <div class="callout-body">
-      <p>设函数 <span class="math inline">f</span> 在区间 <span
-      class="math inline">[a, b]</span> 上连续, 且 <span
-      class="math inline">F</span> 是 <span class="math inline">f</span>
-      的任意一个原函数 (即 <span class="math inline">F&#39;(x) =
-      f(x)</span>), 则 <span class="math display">
+      <p>设函数 <span class="math inline">\displaystyle f</span> 在区间
+      <span class="math inline">\displaystyle [a, b]</span> 上连续, 且
+      <span class="math inline">\displaystyle F</span> 是 <span
+      class="math inline">\displaystyle f</span> 的任意一个原函数 (即
+      <span class="math inline">\displaystyle F&#39;(x) = f(x)</span>),
+      则 <span class="math display">
       \int_a^b f(x)\,dx = F(b) - F(a)
       </span></p>
       <p>通常记作: <span class="math inline">\displaystyle\int_a^b
@@ -482,47 +508,55 @@
       <p><strong>定理的直观证明</strong></p>
       <p>让我们从直观的角度来理解为什么这个定理成立.</p>
       <p>考虑定积分 <span class="math inline">\displaystyle\int_a^b
-      f(x)\,dx</span>, 它表示曲线 <span class="math inline">y =
-      f(x)</span> 下从 <span class="math inline">a</span> 到 <span
-      class="math inline">b</span> 的面积.</p>
-      <p>现在定义一个新的函数: <span class="math inline">A(x) =
-      \displaystyle\int_a^x f(t)\,dt</span>, 它表示从 <span
-      class="math inline">a</span> 到 <span class="math inline">x</span>
-      的曲线下面积.</p>
+      f(x)\,dx</span>, 它表示曲线 <span
+      class="math inline">\displaystyle y = f(x)</span> 下从 <span
+      class="math inline">\displaystyle a</span> 到 <span
+      class="math inline">\displaystyle b</span> 的面积.</p>
+      <p>现在定义一个新的函数: <span class="math inline">\displaystyle
+      A(x) = \displaystyle\int_a^x f(t)\,dt</span>, 它表示从 <span
+      class="math inline">\displaystyle a</span> 到 <span
+      class="math inline">\displaystyle x</span> 的曲线下面积.</p>
       <p><strong>关键洞察</strong>: 当我们给 <span
-      class="math inline">x</span> 一个微小的增量 <span
-      class="math inline">\Delta x</span> 时, 面积 <span
-      class="math inline">A</span> 的增量为: <span class="math display">
+      class="math inline">\displaystyle x</span> 一个微小的增量 <span
+      class="math inline">\displaystyle \Delta x</span> 时, 面积 <span
+      class="math inline">\displaystyle A</span> 的增量为: <span
+      class="math display">
       \Delta A = A(x+\Delta x) - A(x) = \int_x^{x+\Delta x} f(t)\,dt
       </span></p>
-      <p>当 <span class="math inline">\Delta x</span> 很小时, 在小区间
-      <span class="math inline">[x, x+\Delta x]</span> 上, <span
-      class="math inline">f(t)</span> 的值近似等于 <span
-      class="math inline">f(x)</span>, 因此 <span
-      class="math inline">\Delta A \approx f(x)\Delta x</span></p>
+      <p>当 <span class="math inline">\displaystyle \Delta x</span>
+      很小时, 在小区间 <span class="math inline">\displaystyle [x,
+      x+\Delta x]</span> 上, <span class="math inline">\displaystyle
+      f(t)</span> 的值近似等于 <span class="math inline">\displaystyle
+      f(x)</span>, 因此 <span class="math inline">\displaystyle \Delta A
+      \approx f(x)\Delta x</span></p>
       <p>于是有 <span class="math inline">\displaystyle\frac{\Delta
       A}{\Delta x }\approx f(x)</span></p>
-      <p>当 <span class="math inline">\Delta x \to 0</span> 时,
-      这个近似变得精确, 所以我们发现: <span class="math display">
+      <p>当 <span class="math inline">\displaystyle \Delta x \to
+      0</span> 时, 这个近似变得精确, 所以我们发现: <span
+      class="math display">
       A&#39;(x) = \lim_{\Delta x\to 0} \frac{\Delta A}{\Delta x} = f(x)
       </span></p>
       <p>这意味着: <strong>面积函数 <span
-      class="math inline">A(x)</span> 的导数正好等于被积函数 <span
-      class="math inline">f(x)</span></strong>!</p>
-      <p>换句话说, <span class="math inline">A(x)</span> 是 <span
-      class="math inline">f(x)</span> 的一个原函数.</p>
-      <p>现在, 设 <span class="math inline">F</span> 是 <span
-      class="math inline">f</span> 的任意一个原函数,
+      class="math inline">\displaystyle A(x)</span>
+      的导数正好等于被积函数 <span class="math inline">\displaystyle
+      f(x)</span></strong>!</p>
+      <p>换句话说, <span class="math inline">\displaystyle A(x)</span>
+      是 <span class="math inline">\displaystyle f(x)</span>
+      的一个原函数.</p>
+      <p>现在, 设 <span class="math inline">\displaystyle F</span> 是
+      <span class="math inline">\displaystyle f</span> 的任意一个原函数,
       由于同一函数的任意两个原函数之间只相差一个常数, 所以 <span
-      class="math inline">A(x) = F(x) + C</span></p>
-      <p>当 <span class="math inline">x = a</span> 时, <span
-      class="math inline">A(a) = \displaystyle\int_a^a f(t)\,dt =
-      0</span>, 所以 <span class="math inline">0 = F(a) + C</span>, 即
-      <span class="math inline">C = -F(a)</span></p>
-      <p>因此 <span class="math inline">A(x) = F(x) - F(a)</span></p>
-      <p>当 <span class="math inline">x = b</span> 时, <span
-      class="math inline">A(b) = \displaystyle\int_a^b f(t)\,dt = F(b) -
+      class="math inline">\displaystyle A(x) = F(x) + C</span></p>
+      <p>当 <span class="math inline">\displaystyle x = a</span> 时,
+      <span class="math inline">\displaystyle A(a) =
+      \displaystyle\int_a^a f(t)\,dt = 0</span>, 所以 <span
+      class="math inline">\displaystyle 0 = F(a) + C</span>, 即 <span
+      class="math inline">\displaystyle C = -F(a)</span></p>
+      <p>因此 <span class="math inline">\displaystyle A(x) = F(x) -
       F(a)</span></p>
+      <p>当 <span class="math inline">\displaystyle x = b</span> 时,
+      <span class="math inline">\displaystyle A(b) =
+      \displaystyle\int_a^b f(t)\,dt = F(b) - F(a)</span></p>
       <p>这就完成了证明.</p>
       </div>
       </div>
@@ -548,13 +582,14 @@
       <div id="chpt4-ex-003-frame" class="ex-frame" hidden="">
       <div id="chpt4-ex-003-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>求 <span class="math inline">f(x) = x^2</span>
+      <p>求 <span class="math inline">\displaystyle f(x) = x^2</span>
       的一个原函数，然后代入上下限作差。</p>
       </div>
       <div id="chpt4-ex-003-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p><span class="math inline">f(x) = x^2</span> 的一个原函数为
-      <span class="math inline">F(x) = \dfrac{x^3}{3}</span>。</p>
+      <p><span class="math inline">\displaystyle f(x) = x^2</span>
+      的一个原函数为 <span class="math inline">\displaystyle F(x) =
+      \dfrac{x^3}{3}</span>。</p>
       <p>由微积分基本定理：</p>
       <p><span class="math display">
       \int_0^1 x^2\,dx = F(1) - F(0) = \frac{1}{3} - 0 = \frac{1}{3}
@@ -586,13 +621,15 @@
       <div id="chpt4-ex-004-frame" class="ex-frame" hidden="">
       <div id="chpt4-ex-004-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p><span class="math inline">\sin x</span> 的原函数是 <span
-      class="math inline">-\cos x</span>，代入上下限计算。</p>
+      <p><span class="math inline">\displaystyle \sin x</span>
+      的原函数是 <span class="math inline">\displaystyle -\cos
+      x</span>，代入上下限计算。</p>
       </div>
       <div id="chpt4-ex-004-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p><span class="math inline">\sin x</span> 的一个原函数是 <span
-      class="math inline">-\cos x</span>。由微积分基本定理：</p>
+      <p><span class="math inline">\displaystyle \sin x</span>
+      的一个原函数是 <span class="math inline">\displaystyle -\cos
+      x</span>。由微积分基本定理：</p>
       <p><span class="math display">
       \int_0^\pi \sin x\,dx = [-\cos x]_0^\pi = -\cos\pi - (-\cos 0) = 1
       + 1 = 2
@@ -624,13 +661,15 @@
       <div id="chpt4-ex-005-frame" class="ex-frame" hidden="">
       <div id="chpt4-ex-005-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p><span class="math inline">\dfrac{1}{x}</span> 的原函数是 <span
-      class="math inline">\ln|x|</span>，代入上下限计算。</p>
+      <p><span class="math inline">\displaystyle \dfrac{1}{x}</span>
+      的原函数是 <span class="math inline">\displaystyle
+      \ln|x|</span>，代入上下限计算。</p>
       </div>
       <div id="chpt4-ex-005-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p><span class="math inline">\dfrac{1}{x}</span> 的一个原函数是
-      <span class="math inline">\ln|x|</span>。由微积分基本定理：</p>
+      <p><span class="math inline">\displaystyle \dfrac{1}{x}</span>
+      的一个原函数是 <span class="math inline">\displaystyle
+      \ln|x|</span>。由微积分基本定理：</p>
       <p><span class="math display">
       \int_1^e \frac{1}{x}\,dx = \ln e - \ln 1 = 1 - 0 = 1
       </span></p>
@@ -647,10 +686,10 @@
       <p>定积分具有一系列重要的性质,
       这些性质不仅有助于我们理解积分的本质, 还能简化积分的计算.</p>
       <p><strong>1. 线性性质</strong></p>
-      <p>若函数 <span class="math inline">f</span> 和 <span
-      class="math inline">g</span> 在 <span class="math inline">[a,
-      b]</span> 上可积, <span class="math inline">c</span> 为常数,
-      则:</p>
+      <p>若函数 <span class="math inline">\displaystyle f</span> 和
+      <span class="math inline">\displaystyle g</span> 在 <span
+      class="math inline">\displaystyle [a, b]</span> 上可积, <span
+      class="math inline">\displaystyle c</span> 为常数, 则:</p>
       <ul>
       <li><strong>加法性质</strong>: <span class="math display">\int_a^b
       [f(x) + g(x)]\,dx = \int_a^b f(x)\,dx + \int_a^b
@@ -667,17 +706,18 @@
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">悟</span></div>
       <div class="callout-body">
       <p><strong>2. 区间可加性</strong></p>
-      <p>若函数 <span class="math inline">f</span> 在包含 <span
-      class="math inline">a, b, c</span> 的区间上可积, 则: <span
-      class="math display">
+      <p>若函数 <span class="math inline">\displaystyle f</span> 在包含
+      <span class="math inline">\displaystyle a, b, c</span>
+      的区间上可积, 则: <span class="math display">
       \int_a^b f(x)\,dx = \int_a^c f(x)\,dx + \int_c^b f(x)\,dx
       </span></p>
       <p><strong>几何解释</strong>: 从 <span
-      class="math inline">a</span> 到 <span class="math inline">b</span>
-      的总面积等于从 <span class="math inline">a</span> 到 <span
-      class="math inline">c</span> 的面积加上从 <span
-      class="math inline">c</span> 到 <span class="math inline">b</span>
-      的面积.</p>
+      class="math inline">\displaystyle a</span> 到 <span
+      class="math inline">\displaystyle b</span> 的总面积等于从 <span
+      class="math inline">\displaystyle a</span> 到 <span
+      class="math inline">\displaystyle c</span> 的面积加上从 <span
+      class="math inline">\displaystyle c</span> 到 <span
+      class="math inline">\displaystyle b</span> 的面积.</p>
       </div>
       </div>
       <div class="callout callout-important">
@@ -707,9 +747,9 @@
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">悟</span></div>
       <div class="callout-body">
       <p><strong>5. 积分比较定理</strong></p>
-      <p>若在 <span class="math inline">[a, b]</span> 上 <span
-      class="math inline">f(x) \leq g(x)</span>, 则 <span
-      class="math display">
+      <p>若在 <span class="math inline">\displaystyle [a, b]</span> 上
+      <span class="math inline">\displaystyle f(x) \leq g(x)</span>, 则
+      <span class="math display">
       \int_a^b f(x)\,dx \leq \int_a^b g(x)\,dx
       </span></p>
       <p><strong>几何解释</strong>:
@@ -731,20 +771,22 @@
       <p><strong>基本思想</strong>: 通过变量代换,
       将复杂的积分转化为简单的积分.</p>
       <p><strong>定理</strong>: 设函数 <span
-      class="math inline">f</span> 在区间 <span
-      class="math inline">I</span> 上连续, 函数 <span
-      class="math inline">\varphi</span> 在区间 <span
-      class="math inline">J</span> 上可导且值域包含于 <span
-      class="math inline">I</span>, 则 <span class="math display">
+      class="math inline">\displaystyle f</span> 在区间 <span
+      class="math inline">\displaystyle I</span> 上连续, 函数 <span
+      class="math inline">\displaystyle \varphi</span> 在区间 <span
+      class="math inline">\displaystyle J</span> 上可导且值域包含于
+      <span class="math inline">\displaystyle I</span>, 则 <span
+      class="math display">
       \int f(\varphi(x))\varphi&#39;(x)\,dx = \int f(u)\,du,\quad u =
       \varphi(x)
       </span></p>
       <p><strong>直观解释</strong>: 链式法则告诉我们 $ (F((x)))’ =
       F’((x))‘(x) = f((x))’(x)$ 因此, <span
       class="math inline">\displaystyle\int f(\varphi(x))\varphi&#39;(x)
-      dx</span> 应该是 <span class="math inline">F(\varphi(x)) +
-      C</span> 这正是 <span class="math inline">\displaystyle\int f(u)
-      du</span> 在 <span class="math inline">u = \varphi(x)</span>
+      dx</span> 应该是 <span class="math inline">\displaystyle
+      F(\varphi(x)) + C</span> 这正是 <span
+      class="math inline">\displaystyle\int f(u) du</span> 在 <span
+      class="math inline">\displaystyle u = \varphi(x)</span>
       时的结果.</p>
       </div>
       </div>
@@ -771,14 +813,15 @@
       <div id="chpt4-ex-006-frame" class="ex-frame" hidden="">
       <div id="chpt4-ex-006-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>令 <span class="math inline">u = x^2</span>，则 <span
-      class="math inline">du = 2x\,dx</span>，将复合函数变换为对 <span
-      class="math inline">\cos u</span> 的积分。</p>
+      <p>令 <span class="math inline">\displaystyle u = x^2</span>，则
+      <span class="math inline">\displaystyle du =
+      2x\,dx</span>，将复合函数变换为对 <span
+      class="math inline">\displaystyle \cos u</span> 的积分。</p>
       </div>
       <div id="chpt4-ex-006-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p>令 <span class="math inline">u = x^2</span>，则 <span
-      class="math inline">du = 2x\,dx</span>。</p>
+      <p>令 <span class="math inline">\displaystyle u = x^2</span>，则
+      <span class="math inline">\displaystyle du = 2x\,dx</span>。</p>
       <p><span class="math display">
       \int 2x\cos(x^2)\,dx = \int \cos u\,du = \sin u + C = \sin(x^2) +
       C
@@ -810,15 +853,17 @@
       <div id="chpt4-ex-007-frame" class="ex-frame" hidden="">
       <div id="chpt4-ex-007-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>令 <span class="math inline">u = x^2+1</span>，则 <span
-      class="math inline">du = 2x\,dx</span>，将被积式化为 <span
-      class="math inline">\sqrt{u}</span> 的积分。</p>
+      <p>令 <span class="math inline">\displaystyle u = x^2+1</span>，则
+      <span class="math inline">\displaystyle du =
+      2x\,dx</span>，将被积式化为 <span
+      class="math inline">\displaystyle \sqrt{u}</span> 的积分。</p>
       </div>
       <div id="chpt4-ex-007-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p>令 <span class="math inline">u = x^2+1</span>，则 <span
-      class="math inline">du = 2x\,dx</span>，即 <span
-      class="math inline">x\,dx = \dfrac{du}{2}</span>。</p>
+      <p>令 <span class="math inline">\displaystyle u = x^2+1</span>，则
+      <span class="math inline">\displaystyle du = 2x\,dx</span>，即
+      <span class="math inline">\displaystyle x\,dx =
+      \dfrac{du}{2}</span>。</p>
       <p><span class="math display">
       \int x\sqrt{x^2+1}\,dx = \int \sqrt{u} \cdot \frac{du}{2} =
       \frac{1}{2}\int u^{1/2}\,du = \frac{1}{2} \cdot \frac{2}{3}
@@ -834,17 +879,18 @@
       <p>分部积分法源于乘积求导法则的逆运算,
       适用于计算两个函数乘积的积分.</p>
       <p><strong>基本思想</strong>: 将难以直接计算的积分 <span
-      class="math inline">\int u\,dv</span> 转化为更容易计算的 <span
-      class="math inline">\displaystyle\int v\,du</span></p>
+      class="math inline">\displaystyle \int u\,dv</span>
+      转化为更容易计算的 <span class="math inline">\displaystyle\int
+      v\,du</span></p>
       <p><strong>公式</strong>: <span
       class="math inline">\displaystyle\int u\,dv = uv - \int
       v\,du</span></p>
       <p><strong>直观解释</strong>: 乘积法则告诉我们 <span
-      class="math inline">(uv)&#39; = u&#39;v + uv&#39;</span>
-      两边积分得: <span class="math inline">uv = \displaystyle\int
-      u&#39;v dx + \displaystyle\int uv&#39; dx</span> 整理得: <span
-      class="math inline">\displaystyle\int uv&#39; dx = uv - \int
-      u&#39;v dx</span> 这就是分部积分公式.</p>
+      class="math inline">\displaystyle (uv)&#39; = u&#39;v +
+      uv&#39;</span> 两边积分得: <span class="math inline">\displaystyle
+      uv = \displaystyle\int u&#39;v dx + \displaystyle\int uv&#39;
+      dx</span> 整理得: <span class="math inline">\displaystyle\int
+      uv&#39; dx = uv - \int u&#39;v dx</span> 这就是分部积分公式.</p>
       </div>
       </div>
       <div id="chpt4-ex-008" class="exercise-block"
@@ -870,16 +916,18 @@
       <div id="chpt4-ex-008-frame" class="ex-frame" hidden="">
       <div id="chpt4-ex-008-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>令 <span class="math inline">u = x</span>，<span
-      class="math inline">dv = e^x\,dx</span>，应用分部积分公式 <span
-      class="math inline">\int u\,dv = uv - \int v\,du</span>。</p>
+      <p>令 <span class="math inline">\displaystyle u = x</span>，<span
+      class="math inline">\displaystyle dv =
+      e^x\,dx</span>，应用分部积分公式 <span
+      class="math inline">\displaystyle \int u\,dv = uv - \int
+      v\,du</span>。</p>
       </div>
       <div id="chpt4-ex-008-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p>令 <span class="math inline">u = x</span>，<span
-      class="math inline">dv = e^x\,dx</span>，则 <span
-      class="math inline">du = dx</span>，<span class="math inline">v =
-      e^x</span>。</p>
+      <p>令 <span class="math inline">\displaystyle u = x</span>，<span
+      class="math inline">\displaystyle dv = e^x\,dx</span>，则 <span
+      class="math inline">\displaystyle du = dx</span>，<span
+      class="math inline">\displaystyle v = e^x</span>。</p>
       <p><span class="math display">
       \int x e^x\,dx = x e^x - \int e^x\,dx = x e^x - e^x + C = (x-1)e^x
       + C
@@ -911,17 +959,19 @@
       <div id="chpt4-ex-009-frame" class="ex-frame" hidden="">
       <div id="chpt4-ex-009-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>令 <span class="math inline">u = \ln x</span>，<span
-      class="math inline">dv = dx</span>，这样 <span
-      class="math inline">du = \dfrac{1}{x}\,dx</span>，<span
-      class="math inline">v = x</span>，应用分部积分。</p>
+      <p>令 <span class="math inline">\displaystyle u = \ln
+      x</span>，<span class="math inline">\displaystyle dv =
+      dx</span>，这样 <span class="math inline">\displaystyle du =
+      \dfrac{1}{x}\,dx</span>，<span class="math inline">\displaystyle v
+      = x</span>，应用分部积分。</p>
       </div>
       <div id="chpt4-ex-009-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p>令 <span class="math inline">u = \ln x</span>，<span
-      class="math inline">dv = dx</span>，则 <span
-      class="math inline">du = \dfrac{1}{x}\,dx</span>，<span
-      class="math inline">v = x</span>。</p>
+      <p>令 <span class="math inline">\displaystyle u = \ln
+      x</span>，<span class="math inline">\displaystyle dv =
+      dx</span>，则 <span class="math inline">\displaystyle du =
+      \dfrac{1}{x}\,dx</span>，<span class="math inline">\displaystyle v
+      = x</span>。</p>
       <p><span class="math display">
       \int \ln x\,dx = x\ln x - \int x \cdot \frac{1}{x}\,dx = x\ln x -
       \int dx = x\ln x - x + C
@@ -943,11 +993,13 @@
       <p>与不定积分的换元法相比, 定积分的换元法有一个重要特点:
       <strong>需要同时改变积分限</strong>.</p>
       <p><strong>定理</strong>: 设函数 <span
-      class="math inline">f</span> 在区间 <span class="math inline">[a,
-      b]</span> 上连续, 函数 <span class="math inline">\varphi</span>
-      在区间 <span class="math inline">[\alpha, \beta]</span>
-      上具有连续导数, 且 <span class="math inline">\varphi(\alpha) = a,
-      \varphi(\beta) = b</span>, 则 <span class="math display">
+      class="math inline">\displaystyle f</span> 在区间 <span
+      class="math inline">\displaystyle [a, b]</span> 上连续, 函数 <span
+      class="math inline">\displaystyle \varphi</span> 在区间 <span
+      class="math inline">\displaystyle [\alpha, \beta]</span>
+      上具有连续导数, 且 <span class="math inline">\displaystyle
+      \varphi(\alpha) = a, \varphi(\beta) = b</span>, 则 <span
+      class="math display">
       \int_a^b f(x)\,dx = \int_\alpha^\beta
       f(\varphi(t))\varphi&#39;(t)\,dt
       </span></p>
@@ -979,19 +1031,21 @@
       <div id="chpt4-ex-010-frame" class="ex-frame" hidden="">
       <div id="chpt4-ex-010-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>令 <span class="math inline">u = \sin x</span>，则 <span
-      class="math inline">du = \cos x\,dx</span>，同时将积分限从 <span
-      class="math inline">x</span> 变换为 <span
-      class="math inline">u</span>。</p>
+      <p>令 <span class="math inline">\displaystyle u = \sin
+      x</span>，则 <span class="math inline">\displaystyle du = \cos
+      x\,dx</span>，同时将积分限从 <span
+      class="math inline">\displaystyle x</span> 变换为 <span
+      class="math inline">\displaystyle u</span>。</p>
       </div>
       <div id="chpt4-ex-010-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p>令 <span class="math inline">u = \sin x</span>，则 <span
-      class="math inline">du = \cos x\,dx</span>。</p>
-      <p>当 <span class="math inline">x = 0</span> 时，<span
-      class="math inline">u = 0</span>；当 <span class="math inline">x =
-      \dfrac{\pi}{2}</span> 时，<span class="math inline">u =
-      1</span>。</p>
+      <p>令 <span class="math inline">\displaystyle u = \sin
+      x</span>，则 <span class="math inline">\displaystyle du = \cos
+      x\,dx</span>。</p>
+      <p>当 <span class="math inline">\displaystyle x = 0</span>
+      时，<span class="math inline">\displaystyle u = 0</span>；当 <span
+      class="math inline">\displaystyle x = \dfrac{\pi}{2}</span>
+      时，<span class="math inline">\displaystyle u = 1</span>。</p>
       <p><span class="math display">
       \int_0^{\pi/2} \sin^2 x \cos x\,dx = \int_0^1 u^2\,du =
       \frac{u^3}{3}\bigg|_0^1 = \frac{1}{3}
@@ -1023,19 +1077,22 @@
       <div id="chpt4-ex-011-frame" class="ex-frame" hidden="">
       <div id="chpt4-ex-011-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>令 <span class="math inline">u = 1+\sqrt{x}</span>，则 <span
-      class="math inline">\sqrt{x} = u-1</span>，<span
-      class="math inline">dx =
+      <p>令 <span class="math inline">\displaystyle u =
+      1+\sqrt{x}</span>，则 <span class="math inline">\displaystyle
+      \sqrt{x} = u-1</span>，<span class="math inline">\displaystyle dx
+      =
       2(u-1)\,du</span>，记得同步换算积分限，再将有理函数做多项式除法后逐项积分。</p>
       </div>
       <div id="chpt4-ex-011-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p>令 <span class="math inline">u = 1+\sqrt{x}</span>，则 <span
-      class="math inline">du = \dfrac{1}{2\sqrt{x}}\,dx</span>，即 <span
-      class="math inline">dx = 2(u-1)\,du</span>。</p>
-      <p>当 <span class="math inline">x = 1</span> 时，<span
-      class="math inline">u = 2</span>；当 <span class="math inline">x =
-      4</span> 时，<span class="math inline">u = 3</span>。</p>
+      <p>令 <span class="math inline">\displaystyle u =
+      1+\sqrt{x}</span>，则 <span class="math inline">\displaystyle du =
+      \dfrac{1}{2\sqrt{x}}\,dx</span>，即 <span
+      class="math inline">\displaystyle dx = 2(u-1)\,du</span>。</p>
+      <p>当 <span class="math inline">\displaystyle x = 1</span>
+      时，<span class="math inline">\displaystyle u = 2</span>；当 <span
+      class="math inline">\displaystyle x = 4</span> 时，<span
+      class="math inline">\displaystyle u = 3</span>。</p>
       <p><span class="math display">
       \int_1^4 \frac{\sqrt{x}}{1+\sqrt{x}}\,dx = \int_2^3 \frac{u-1}{u}
       \cdot 2(u-1)\,du = 2\int_2^3 \frac{(u-1)^2}{u}\,du
@@ -1064,7 +1121,8 @@
       class="math inline">\displaystyle\int_a^b u\,dv = [uv]_a^b -
       \int_a^b v\,du</span></p>
       <p><strong>关键区别</strong>: 在定积分的分部积分法中, <span
-      class="math inline">uv</span> 项需要代入上下限计算.</p>
+      class="math inline">\displaystyle uv</span>
+      项需要代入上下限计算.</p>
       </div>
       </div>
       <div id="chpt4-ex-012" class="exercise-block"
@@ -1090,17 +1148,17 @@
       <div id="chpt4-ex-012-frame" class="ex-frame" hidden="">
       <div id="chpt4-ex-012-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>令 <span class="math inline">u = x</span>，<span
-      class="math inline">dv =
+      <p>令 <span class="math inline">\displaystyle u = x</span>，<span
+      class="math inline">\displaystyle dv =
       e^x\,dx</span>，应用定积分的分部积分公式，注意 <span
-      class="math inline">uv</span> 项需代入上下限。</p>
+      class="math inline">\displaystyle uv</span> 项需代入上下限。</p>
       </div>
       <div id="chpt4-ex-012-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p>令 <span class="math inline">u = x</span>，<span
-      class="math inline">dv = e^x\,dx</span>，则 <span
-      class="math inline">du = dx</span>，<span class="math inline">v =
-      e^x</span>。</p>
+      <p>令 <span class="math inline">\displaystyle u = x</span>，<span
+      class="math inline">\displaystyle dv = e^x\,dx</span>，则 <span
+      class="math inline">\displaystyle du = dx</span>，<span
+      class="math inline">\displaystyle v = e^x</span>。</p>
       <p><span class="math display">
       \int_0^1 x e^x\,dx = [x e^x]_0^1 - \int_0^1 e^x\,dx = (e - 0) -
       [e^x]_0^1 = e - (e - 1) = 1
@@ -1132,18 +1190,19 @@
       <div id="chpt4-ex-013-frame" class="ex-frame" hidden="">
       <div id="chpt4-ex-013-hint-0" class="ex-panel ex-hint-panel"
       hidden="">
-      <p>令 <span class="math inline">u = \ln x</span>，<span
-      class="math inline">dv =
+      <p>令 <span class="math inline">\displaystyle u = \ln
+      x</span>，<span class="math inline">\displaystyle dv =
       dx</span>，应用定积分的分部积分公式，<span
-      class="math inline">uv</span> 项代入上下限 <span
-      class="math inline">[1, e]</span>。</p>
+      class="math inline">\displaystyle uv</span> 项代入上下限 <span
+      class="math inline">\displaystyle [1, e]</span>。</p>
       </div>
       <div id="chpt4-ex-013-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p>令 <span class="math inline">u = \ln x</span>，<span
-      class="math inline">dv = dx</span>，则 <span
-      class="math inline">du = \dfrac{1}{x}\,dx</span>，<span
-      class="math inline">v = x</span>。</p>
+      <p>令 <span class="math inline">\displaystyle u = \ln
+      x</span>，<span class="math inline">\displaystyle dv =
+      dx</span>，则 <span class="math inline">\displaystyle du =
+      \dfrac{1}{x}\,dx</span>，<span class="math inline">\displaystyle v
+      = x</span>。</p>
       <p><span class="math display">
       \int_1^e \ln x\,dx = [x\ln x]_1^e - \int_1^e x \cdot
       \frac{1}{x}\,dx = (e \cdot 1 - 1 \cdot 0) - \int_1^e dx = e -
@@ -1158,15 +1217,17 @@
       <div class="callout-body">
       <p>定积分还有一些不定积分不具备的特殊性质:</p>
       <p><strong>对称性</strong>: - 若 <span
-      class="math inline">f</span> 是偶函数 (<span
-      class="math inline">f(-x) = f(x)</span>), 则 <span
+      class="math inline">\displaystyle f</span> 是偶函数 (<span
+      class="math inline">\displaystyle f(-x) = f(x)</span>), 则 <span
       class="math inline">\displaystyle\int_{-a}^a f(x)\,dx = 2\int_0^a
-      f(x)\,dx</span> - 若 <span class="math inline">f</span> 是奇函数
-      (<span class="math inline">f(-x) = -f(x)</span>), 则 <span
+      f(x)\,dx</span> - 若 <span class="math inline">\displaystyle
+      f</span> 是奇函数 (<span class="math inline">\displaystyle f(-x) =
+      -f(x)</span>), 则 <span
       class="math inline">\displaystyle\int_{-a}^a f(x)\,dx =
       0</span></p>
-      <p><strong>周期性</strong>: 若 <span class="math inline">f</span>
-      是周期为 <span class="math inline">T</span> 的周期函数, 则 <span
+      <p><strong>周期性</strong>: 若 <span
+      class="math inline">\displaystyle f</span> 是周期为 <span
+      class="math inline">\displaystyle T</span> 的周期函数, 则 <span
       class="math inline">\displaystyle\int_a^{a+T} f(x)\,dx = \int_0^T
       f(x)\,dx</span></p>
       <p>这些特殊性质可以大大简化定积分的计算.</p>
@@ -1211,8 +1272,10 @@
     window.docLib = [{"title": "\u542f\u7a0b", "url": "chapter0.html"}, {"title": "\u7b2c\u4e00\u56de \u00b7 \u6781\u9650", "url": "chapter1.html"}, {"title": "\u7b2c\u4e8c\u56de \u00b7 \u5fae\u5206", "url": "chapter2.html"}, {"title": "\u7b2c\u4e09\u56de \u00b7 \u79ef\u5206", "url": "chapter4.html"}, {"title": "\u7b2c\u56db\u56de \u00b7 \u5e94\u7528", "url": "chapter5.html"}];
     window.chpAutonum = "";
   </script>
-  <script src="assets/app.js?v=20261019-directory"></script>
+  <script src="assets/character-link.js?v=20261019-return"></script>
+  <script src="assets/app.js?v=20261019-return"></script>
   <script src="assets/three-lazy.js"></script>
   <script src="assets/reader.js"></script>
+  <script src="assets/secant-demo.js?v=20261024-two-plots"></script>
 </body>
 </html>

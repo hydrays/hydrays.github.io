@@ -1,0 +1,56 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>第三讲学案 - 参考解答</title><link rel="stylesheet" href="../assets/katex/katex.min.css"><style>
+@page{size:A4;margin:0}*{box-sizing:border-box}
+body{margin:0;background:#e9e9e9;color:#1e231f;font:11pt/1.65 "Microsoft YaHei",sans-serif}
+.page{width:210mm;height:297mm;padding:14mm 17mm 17mm;position:relative;background:white;margin:8mm auto;break-after:page}
+.page:last-child{break-after:auto}.footer{position:absolute;bottom:8mm;left:17mm;right:17mm;height:5mm;text-align:center;font:9pt Georgia,serif;color:#666}
+h1{font-size:18pt;line-height:1.3;margin:0 0 5mm}h2{font-size:12.5pt;line-height:1.4;margin:4mm 0 2.5mm;break-after:avoid}
+.meta,.scope{font-size:10pt;margin:1.5mm 0}.scope{color:#555}
+.unit,.question,.survey,.map{break-inside:avoid}.question{margin:2mm 0 4mm}.question p{margin:0}
+.question-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8mm;align-items:start}
+.question-pair>.question{min-width:0}
+.question-line{display:block}.student .fill-line,.survey p{line-height:3.3}
+.survey p{margin:1mm 0}
+.blank{display:inline-block;width:25mm;min-height:1em;vertical-align:baseline;border-bottom:1px solid #666;margin:0 1mm}
+.question-number{font-weight:bold}.priority-star{font-family:"Segoe UI Symbol","Microsoft YaHei",sans-serif;font-size:15pt;line-height:1;vertical-align:-.05em;margin-right:1.6mm}
+.space{background:none}.equation{margin:2.5mm 0;line-height:2.4;text-align:left}
+.equation:has(.blank){line-height:3.3}.katex{font-size:1.03em}.diagram{display:block;max-width:100%;height:auto;object-fit:contain}
+.visual-row{display:grid;grid-template-columns:43% minmax(0,1fr);align-items:center;gap:3mm;margin:3mm 0}
+table{border-collapse:collapse;width:100%;font-size:10pt}th,td{border:1px solid #bbb;padding:2.5mm 1.5mm;text-align:center;font-weight:normal}
+.fill-table .blank{width:16mm;margin:0;min-height:1.6em}
+.map{padding:3mm 0 5mm}.map-root{border:1px solid #777;text-align:center;width:36%;margin:0 auto 8mm;padding:2mm}
+.map-branches{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5mm;position:relative}
+.map-branches::before{content:"";position:absolute;left:16.67%;right:16.67%;top:-4mm;border-top:1px solid #888}
+.map-root{position:relative}.map-root::after{content:"";position:absolute;left:50%;top:100%;height:4mm;border-left:1px solid #888}
+.map-branch{position:relative}.map-branch::before{content:"";position:absolute;left:50%;top:-4mm;height:4mm;border-left:1px solid #888}
+.map-node{border:1px solid #888;text-align:center;padding:2.5mm 1mm;min-height:12mm;display:flex;align-items:center;justify-content:center;font-size:10pt;position:relative}
+.map-node+.map-node{margin-top:5mm}.map-node+.map-node::before{content:"";position:absolute;left:50%;bottom:100%;height:5mm;border-left:1px solid #888}
+.map-node .katex{font-size:.9em}.teacher{font-size:10.5pt;line-height:1.8}.teacher .question{margin:3mm 0 5mm}.teacher .answer-title{font-weight:bold;margin-bottom:1.5mm}
+.teacher .answer{line-height:1.9}.teacher .equation{line-height:2.5}.teacher .blank{width:18mm}
+@media print{body{background:white}.page{margin:0}}
+</style><body data-edition="teacher" data-title="第三讲学案 - 参考解答"><div id="source"><div class="unit"><h2>复习</h2><div class="question"><div class="answer-title"><span class="priority-star">★</span><span class="question-number">01.</span> 数列极限</div><div class="answer">分子、分母同除以 $\displaystyle n^2$，得 $\displaystyle \lim_{n\to\infty}\dfrac{5-\dfrac1n+\dfrac2{n^2}}{2+\dfrac3n}=\dfrac52$。</div></div></div><div class="unit"><div class="question"><div class="answer-title"><span class="priority-star">★</span><span class="question-number">02.</span> 函数极限</div><div class="answer">令 $\displaystyle t=4x$，则 $\displaystyle x\to0$ 时 $\displaystyle t\to0$，原式为 $\displaystyle \lim_{t\to0}\dfrac43\dfrac{\sin t}{t}=\dfrac43$。</div></div></div><div class="unit"><h2>第一回 · Boss 战—数 $\displaystyle e$</h2><div class="question"><div class="answer-title"><span class="question-number">03.</span> 【二项式展开】</div><div class="answer">① $\displaystyle 1$，$\displaystyle n$。② $\displaystyle \dfrac{n(n-1)}{2!}$。③ $\displaystyle \dfrac{n(n-1)\cdots(n-k+1)}{k!}$。这里 $\displaystyle 2\le k\le n$。</div></div></div><div class="unit"><div class="question"><div class="answer-title"><span class="question-number">04.</span> 【整理展开式】</div><div class="answer">① $\displaystyle 1$，$\displaystyle 1$。② $\displaystyle \left(1-\dfrac{k-1}{n}\right)$；共 $\displaystyle k-1$ 个这样的括号。</div></div></div><div class="unit"><div class="question"><div class="answer-title"><span class="question-number">05.</span> 【证明有界】</div><div class="answer">① $\displaystyle \le$。② $\displaystyle \dfrac1{k-1}$，$\displaystyle \dfrac1k$。③ $\displaystyle 1-\dfrac1n$。④ $\displaystyle \le$。因为 $\displaystyle 0&lt;a_n\le3-\dfrac1n&lt;3$；$\displaystyle a_1=2$、$\displaystyle a_2=\dfrac94$ 也在 $\displaystyle 0$ 与 $\displaystyle 3$ 之间，所以数列有界。<br>这里用的是弱不等式，$\displaystyle k=2,3$ 时 $\displaystyle \dfrac1{k!}=\dfrac1{k(k-1)}$。</div></div></div><div class="unit"><div class="question"><div class="answer-title"><span class="question-number">06.</span> 【证明单调递增】</div><div class="answer">① $\displaystyle \le$。② $\displaystyle \ge$。③ $\displaystyle \dfrac1{(n+1)^{n+1}}$。④ $\displaystyle \le$，所以数列单调递增。<br>展开式前两项 $\displaystyle 1+1$ 不变；其余对应项均不减，又新增一个正项。当 $\displaystyle n=1$ 时，$\displaystyle a_2=\dfrac94\ge a_1=2$。因此所有 $\displaystyle n$ 均满足 $\displaystyle a_{n+1}\ge a_n$。</div></div></div><div class="unit"><div class="question"><div class="answer-title"><span class="question-number">07.</span> 极限存在</div><div class="answer">递增；上界；单调有界；$\displaystyle \left(1+\dfrac1n\right)^n$。这一步确定极限存在，并用 $\displaystyle e$ 为它命名。</div></div></div><div class="unit"><h2>第一回 · 举 $\displaystyle e$ 反三—与 $\displaystyle e$ 有关的极限</h2><div class="question"><div class="answer-title"><span class="priority-star">★</span><span class="question-number">08.</span> 数列换元</div><div class="answer">令 $\displaystyle m=n+1$，则 $\displaystyle n\to\infty$ 时 $\displaystyle m\to\infty$。原式化为 $\displaystyle \lim_{m\to\infty}\dfrac{\left(1+\dfrac1m\right)^m}{1+\dfrac1m}=e$。</div></div></div><div class="unit"><div class="question"><div class="answer-title"><span class="priority-star">★</span><span class="question-number">09.</span> 数列中的额外因子</div><div class="answer">拆出一个因子：$\displaystyle \left(1+\dfrac1n\right)^{n+1}=\left(1+\dfrac1n\right)^n\left(1+\dfrac1n\right)$，两个因子分别趋于 $\displaystyle e$、$\displaystyle 1$，所以极限为 $\displaystyle e$。</div></div></div><div class="unit"><div class="question"><div class="answer-title"><span class="priority-star">★</span><span class="question-number">10.</span> 函数换元</div><div class="answer">令 $\displaystyle t=2x$，则 $\displaystyle x\to0$ 时 $\displaystyle t\to0$，$\displaystyle \dfrac1x=\dfrac2t$。原式为 $\displaystyle \lim_{t\to0}\left[(1+t)^{\frac1t}\right]^2=e^2$。</div></div></div><div class="unit"><div class="question"><div class="answer-title"><span class="priority-star">★</span><span class="question-number">11.</span> 符号变换</div><div class="answer">令 $\displaystyle t=-x$，则 $\displaystyle x\to0$ 时 $\displaystyle t\to0$，$\displaystyle \dfrac1x=-\dfrac1t$。原式为 $\displaystyle \lim_{t\to0}\dfrac1{(1+t)^{\frac1t}}=\dfrac1e$。充分接近零时底数为正。</div></div></div><div class="unit"><h2>第二回 · 连续函数</h2><div class="question"><div class="answer-title"><span class="question-number">12.</span> 连续的条件</div><div class="answer">$\displaystyle f(x_0)$；选 B。</div></div></div><div class="unit"><div class="question"><div class="answer-title"><span class="question-number">13.</span> 比较极限与函数值</div><div class="answer">$\displaystyle 4$，$\displaystyle 4$；选 A。</div></div></div><div class="unit"><div class="question"><div class="answer-title"><span class="question-number">14.</span> 补齐函数</div><div class="answer">$\displaystyle 1$，$\displaystyle 1$。使用上一回的重要极限 $\displaystyle \lim_{x\to0}\dfrac{\sin x}{x}=1$。</div></div></div><div class="unit"><div class="question"><div class="answer-title"><span class="question-number">15.</span> 振荡函数</div><div class="answer">D；B。函数值持续振荡，没有共同的极限，补充单点函数值不能改变附近的极限行为。</div></div></div><div class="unit"><h2>第二回 · 导数的定义</h2><div class="question"><div class="answer-title"><span class="question-number">16.</span> 差商</div><div class="answer">水平改变量为 $\displaystyle \Delta x=h$，竖直改变量为 $\displaystyle \Delta y=(1+h)^2-1=2h+h^2$。<br>三行的 $\displaystyle \Delta y$ 依次为 $\displaystyle 1.25$、$\displaystyle 0.21$、$\displaystyle 0.0201$；差商依次为 $\displaystyle 2.5$、$\displaystyle 2.1$、$\displaystyle 2.01$，趋近 $\displaystyle 2$。</div></div></div><div class="unit"><div class="question"><div class="answer-title"><span class="priority-star">★</span><span class="question-number">17.</span> 根据定义求导</div><div class="answer">$\displaystyle f^{\prime}(2)=\lim_{h\to0}\dfrac{(2+h)^2-4}{h}=\lim_{h\to0}(4+h)=4$。</div></div></div><div class="unit"><div class="question"><div class="answer-title"><span class="priority-star">★</span><span class="question-number">18.</span> 常数函数</div><div class="answer">$\displaystyle f^{\prime}(1)=\lim_{h\to0}\dfrac{5-5}{h}=\lim_{h\to0}0=0$。</div></div></div><div class="unit"><div class="question"><div class="answer-title"><span class="question-number">19.</span> 平均速度与瞬时速度</div><div class="answer">① $\displaystyle \dfrac{1.1^2-1}{0.1}=2.1$ 米/秒。② $\displaystyle \lim_{h\to0}\dfrac{(1+h)^2-1}{h}=\lim_{h\to0}(2+h)=2$ 米/秒。</div></div></div></div><script src="../assets/katex/katex.min.js"></script><script src="../assets/katex/contrib/auto-render.min.js"></script><script>
+renderMathInElement(document.body,{delimiters:[{left:"$",right:"$",display:false}],throwOnError:true,strict:"warn"});
+document.fonts.ready.then(()=>{
+ const source=document.querySelector('#source');
+ const units=Array.from(source.children);source.remove();
+ let page=null,index=0;
+ function newPage(){
+  page=document.createElement('section');page.className='page '+document.body.dataset.edition;
+  if(index++===0){const h=document.createElement('h1');h.textContent=document.body.dataset.title;page.append(h);}
+  page.append(document.createElement('main'));
+  const footer=document.createElement('div');footer.className='footer';page.append(footer);
+  document.body.append(page);
+ }
+ function overflow(){return page.querySelector('main').getBoundingClientRect().bottom>page.querySelector('.footer').getBoundingClientRect().top-15;}
+ for(const unit of units){
+  if(!page)newPage();
+  page.querySelector('main').append(unit);
+  if(overflow()){
+   unit.remove();newPage();page.querySelector('main').append(unit);
+   if(overflow())throw Error('A worksheet unit exceeds a page: '+unit.innerText.slice(0,80));
+  }
+ }
+ const pages=Array.from(document.querySelectorAll('.page'));
+ pages.forEach((p,i)=>p.querySelector('.footer').textContent=(i+1)+' / '+pages.length);
+ document.documentElement.dataset.paginationReady='true';
+});
+</script></body></html>

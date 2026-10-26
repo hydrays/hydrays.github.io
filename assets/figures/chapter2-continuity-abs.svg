@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 310" role="img" aria-labelledby="title">
+<title id="title">绝对值函数</title>
+<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif;font-size:16px;fill:#514b3c}.axis{stroke:#81765e;stroke-width:1.3}.guide{stroke:#a59c87;stroke-width:1.1;stroke-dasharray:5 5;fill:none}</style>
+<rect x="75" y="50" width="500" height="220" fill="none" stroke="#c6bda9"/><path class="axis" d="M75 243.6H585 M325.0 280V40"/><text x="589" y="250.6" >x</text><text x="334.0" y="38" >y</text><path d="M75.00,67.60 L325.00,243.60 L575.00,67.60" fill="none" stroke="#4d736b" stroke-width="3" /><circle cx="325.0" cy="243.6" r="4" fill="#4d736b"/><text x="309.0" y="266.6" >0</text></svg>

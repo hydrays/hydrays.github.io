@@ -645,6 +645,10 @@ body.chp-autonum h4::before {
   margin-right: 0.1em;
 }
 
+.ex-problem-box.ex-proof > p:first-child::before {
+  content: "证明：";
+}
+
 .ex-tags {
   display: flex;
   flex-wrap: wrap;

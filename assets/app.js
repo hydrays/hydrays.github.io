@@ -598,7 +598,7 @@
   // ── Init ─────────────────────────────────────────────────────
 
   function init() {
-    history.replaceState({ url: location.pathname + location.search + location.hash }, "", location.href);
+    history.replaceState(Object.assign({}, history.state, { url: location.pathname + location.search + location.hash }), "", location.href);
     buildDocNav();
     applyAutonum();
     initTocAccordion();
@@ -606,6 +606,9 @@
     buildFigureCaptions();
     initVideo();
     renderMath(document);
+    var characterScroll = history.state && history.state.characterReturnScroll;
+    var restoringCharacter = characterScroll && characterScroll.url === location.href && Number.isFinite(characterScroll.top) && characterScroll.top >= 0;
+    if (location.hash && !restoringCharacter) finishSectionNavigation(location.hash, navigationSequence);
   }
 
   if (document.readyState === "loading") {

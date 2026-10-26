@@ -10,8 +10,9 @@
   
   
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="assets/app.css?v=20261019-directory">
-  <link rel="stylesheet" href="assets/reader.css?v=20261019-directory">
+  <link rel="stylesheet" href="assets/app.css?v=20261024-proof-label">
+  <link rel="stylesheet" href="assets/reader.css?v=20261025-video-attribution">
+  <link rel="stylesheet" href="assets/secant-demo.css?v=20261024-two-plots">
   <link rel="stylesheet" href="assets/katex/katex.min.css">
   <script src="assets/katex/katex.min.js"></script>
   <script type="importmap">
@@ -267,7 +268,7 @@
       \begin{align*}
       f&#39;(1) &amp;= \lim_{\Delta x \to 0} \frac{f(1 + \Delta x) -
       f(1)}{\Delta x} \\
-      &amp;= \lim_{\Delta x \to 0} \frac{C - C}{\Delta x} = 0.
+      &amp;= \lim_{\Delta x \to 0} \frac{c - c}{\Delta x} = 0.
       \end{align*}
       </span></p>
       </div>
@@ -286,15 +287,6 @@
       <div class="ex-problem-box">
       <p>求函数 <span class="math inline">f(x) = x^2</span> 在 <span
       class="math inline">x_0 = 2</span> 处的导数。</p>
-      <figure>
-      <img src="media/img/chpt2_ex002.png" width="400"
-      alt="y=x^2 与 x=2 处的切线 y=4x-4, 斜率 f&#39;(2)=4" />
-      <figcaption aria-hidden="true"><span
-      class="math inline">y=x^2</span> 与 <span
-      class="math inline">x=2</span> 处的切线 <span
-      class="math inline">y=4x-4</span>, 斜率 <span
-      class="math inline">f&#39;(2)=4</span></figcaption>
-      </figure>
       </div>
       <div class="ex-controls">
       <div class="ex-sol-row">
@@ -322,6 +314,15 @@
       &amp;= \lim_{\Delta x \to 0} (4 + \Delta x) = 4.
       \end{align*}
       </span></p>
+      <figure>
+      <img src="media/img/chpt2_ex002.png" width="400"
+      alt="y=x^2 与 x=2 处的切线 y=4x-4, 斜率 f&#39;(2)=4" />
+      <figcaption aria-hidden="true"><span
+      class="math inline">y=x^2</span> 与 <span
+      class="math inline">x=2</span> 处的切线 <span
+      class="math inline">y=4x-4</span>, 斜率 <span
+      class="math inline">f&#39;(2)=4</span></figcaption>
+      </figure>
       </div>
       </div>
       </div>
@@ -367,15 +368,6 @@
       <div class="ex-problem-box">
       <p>求函数 <span class="math inline">f(x) = x^2</span>
       的导函数。</p>
-      <figure>
-      <img src="media/img/chpt2_ex003.png" width="400"
-      alt="函数 y=x^2 与导函数 y&#39;=2x 并排展示 — 同一 x 处, 抛物线的切线斜率即为 2x" />
-      <figcaption aria-hidden="true">函数 <span
-      class="math inline">y=x^2</span> 与导函数 <span
-      class="math inline">y&#39;=2x</span> 并排展示 — 同一 <span
-      class="math inline">x</span> 处, 抛物线的切线斜率即为 <span
-      class="math inline">2x</span></figcaption>
-      </figure>
       </div>
       <div class="ex-controls">
       <div class="ex-sol-row">
@@ -402,6 +394,15 @@
       &amp;= \lim_{\Delta x\to 0} (2x + \Delta x) = 2x.
       \end{align*}
       </span></p>
+      <figure>
+      <img src="media/img/chpt2_ex003.png" width="400"
+      alt="函数 y=x^2 与导函数 y&#39;=2x 并排展示 — 同一 x 处, 抛物线的切线斜率即为 2x" />
+      <figcaption aria-hidden="true">函数 <span
+      class="math inline">y=x^2</span> 与导函数 <span
+      class="math inline">y&#39;=2x</span> 并排展示 — 同一 <span
+      class="math inline">x</span> 处, 抛物线的切线斜率即为 <span
+      class="math inline">2x</span></figcaption>
+      </figure>
       </div>
       </div>
       </div>
@@ -418,14 +419,6 @@
       <div class="ex-problem-box">
       <p>求函数 <span class="math inline">f(x) = \cos x</span>
       的导数。</p>
-      <figure>
-      <img src="media/img/chpt2_ex004.png" width="400"
-      alt="y=\cos x 与其导数 y&#39;=-\sin x 同框显示 — 余弦的极值处正弦取零, 余弦的零点处正弦达极值" />
-      <figcaption aria-hidden="true"><span class="math inline">y=\cos
-      x</span> 与其导数 <span class="math inline">y&#39;=-\sin x</span>
-      同框显示 — 余弦的极值处正弦取零,
-      余弦的零点处正弦达极值</figcaption>
-      </figure>
       </div>
       <div class="ex-controls">
       <div class="ex-sol-row">
@@ -456,6 +449,14 @@
       &amp;= -\sin x.
       \end{align*}
       </span></p>
+      <figure>
+      <img src="media/img/chpt2_ex004.png" width="400"
+      alt="y=\cos x 与其导数 y&#39;=-\sin x 同框显示 — 余弦的极值处正弦取零, 余弦的零点处正弦达极值" />
+      <figcaption aria-hidden="true"><span class="math inline">y=\cos
+      x</span> 与其导数 <span class="math inline">y&#39;=-\sin x</span>
+      同框显示 — 余弦的极值处正弦取零,
+      余弦的零点处正弦达极值</figcaption>
+      </figure>
       </div>
       </div>
       </div>
@@ -1086,14 +1087,6 @@
       <div class="ex-body">
       <div class="ex-problem-box">
       <p>求函数 <span class="math inline">y = \tan x</span> 的导数。</p>
-      <figure>
-      <img src="media/img/chpt2_ex009.png" width="400"
-      alt="y=\tan x (蓝实线) 与导数 y&#39;=\sec^2 x (红虚线), 在 x=\pm\pi/2 处有竖直渐近线" />
-      <figcaption aria-hidden="true"><span class="math inline">y=\tan
-      x</span> (蓝实线) 与导数 <span class="math inline">y&#39;=\sec^2
-      x</span> (红虚线), 在 <span class="math inline">x=\pm\pi/2</span>
-      处有竖直渐近线</figcaption>
-      </figure>
       </div>
       <div class="ex-controls">
       <div class="ex-sol-row">
@@ -1118,6 +1111,14 @@
       &amp;= \frac{\cos^2 x + \sin^2 x}{\cos^2 x} = \frac{1}{\cos^2 x}.
       \end{align*}
       </span></p>
+      <figure>
+      <img src="media/img/chpt2_ex009.png" width="400"
+      alt="y=\tan x (蓝实线) 与导数 y&#39;=\sec^2 x (红虚线), 在 x=\pm\pi/2 处有竖直渐近线" />
+      <figcaption aria-hidden="true"><span class="math inline">y=\tan
+      x</span> (蓝实线) 与导数 <span class="math inline">y&#39;=\sec^2
+      x</span> (红虚线), 在 <span class="math inline">x=\pm\pi/2</span>
+      处有竖直渐近线</figcaption>
+      </figure>
       </div>
       </div>
       </div>
@@ -1350,15 +1351,6 @@
       <div class="ex-problem-box">
       <p>讨论函数 <span class="math inline">y = x + \cos x</span> 在
       <span class="math inline">[0, 2\pi]</span> 上的单调性。</p>
-      <figure>
-      <img src="media/img/chpt2_ex012.png" width="400"
-      alt="左图 y=x+\cos x 在 [0,2\pi] 单调递增; 右图 y&#39;=1-\sin x \geq 0 处处非负 — 这就是单调的依据" />
-      <figcaption aria-hidden="true">左图 <span
-      class="math inline">y=x+\cos x</span> 在 <span
-      class="math inline">[0,2\pi]</span> 单调递增; 右图 <span
-      class="math inline">y&#39;=1-\sin x \geq 0</span> 处处非负 —
-      这就是单调的依据</figcaption>
-      </figure>
       </div>
       <div class="ex-controls">
       <div class="ex-sol-row">
@@ -1381,6 +1373,15 @@
       </span></p>
       <p>故函数 <span class="math inline">y = x + \cos x</span> 在 <span
       class="math inline">[0, 2\pi]</span> 上单调递增。</p>
+      <figure>
+      <img src="media/img/chpt2_ex012.png" width="400"
+      alt="左图 y=x+\cos x 在 [0,2\pi] 单调递增; 右图 y&#39;=1-\sin x \geq 0 处处非负 — 这就是单调的依据" />
+      <figcaption aria-hidden="true">左图 <span
+      class="math inline">y=x+\cos x</span> 在 <span
+      class="math inline">[0,2\pi]</span> 单调递增; 右图 <span
+      class="math inline">y&#39;=1-\sin x \geq 0</span> 处处非负 —
+      这就是单调的依据</figcaption>
+      </figure>
       </div>
       </div>
       </div>
@@ -1397,15 +1398,6 @@
       <div class="ex-problem-box">
       <p>讨论函数 <span class="math inline">y = e^x - x + 3</span>
       的单调性。</p>
-      <figure>
-      <img src="media/img/chpt2_ex013.png" width="400"
-      alt="y=e^x-x+3 在 x=0 处取得最小值 4 — 左侧 (y&#39;&lt;0) 递减, 右侧 (y&#39;&gt;0) 递增" />
-      <figcaption aria-hidden="true"><span
-      class="math inline">y=e^x-x+3</span> 在 <span
-      class="math inline">x=0</span> 处取得最小值 4 — 左侧 (<span
-      class="math inline">y&#39;&lt;0</span>) 递减, 右侧 (<span
-      class="math inline">y&#39;&gt;0</span>) 递增</figcaption>
-      </figure>
       </div>
       <div class="ex-controls">
       <div class="ex-sol-row">
@@ -1435,6 +1427,15 @@
       class="math inline">y&#39; \ge 0</span>，故函数在 <span
       class="math inline">[0, +\infty)</span> 上单调递增。</li>
       </ul>
+      <figure>
+      <img src="media/img/chpt2_ex013.png" width="400"
+      alt="y=e^x-x+3 在 x=0 处取得最小值 4 — 左侧 (y&#39;&lt;0) 递减, 右侧 (y&#39;&gt;0) 递增" />
+      <figcaption aria-hidden="true"><span
+      class="math inline">y=e^x-x+3</span> 在 <span
+      class="math inline">x=0</span> 处取得最小值 4 — 左侧 (<span
+      class="math inline">y&#39;&lt;0</span>) 递减, 右侧 (<span
+      class="math inline">y&#39;&gt;0</span>) 递增</figcaption>
+      </figure>
       </div>
       </div>
       </div>
@@ -1469,16 +1470,6 @@
       <div class="ex-problem-box">
       <p>求函数 <span class="math inline">f(x) = x^4 - 4x^2</span>
       的极值。</p>
-      <figure>
-      <img src="media/img/chpt2_ex014.png" width="400"
-      alt="y=x^4-4x^2 是经典的 W 形曲线 — 在 x=\pm\sqrt{2} 取两个极小值 -4, 在 x=0 取局部极大值 0" />
-      <figcaption aria-hidden="true"><span
-      class="math inline">y=x^4-4x^2</span> 是经典的 W 形曲线 — 在 <span
-      class="math inline">x=\pm\sqrt{2}</span> 取两个极小值 <span
-      class="math inline">-4</span>, 在 <span
-      class="math inline">x=0</span> 取局部极大值 <span
-      class="math inline">0</span></figcaption>
-      </figure>
       </div>
       <div class="ex-controls">
       <div class="ex-sol-row">
@@ -1522,6 +1513,16 @@
       0</span>，为极小值，<span class="math inline">f(-\sqrt{2}) =
       -4</span>。</li>
       </ul>
+      <figure>
+      <img src="media/img/chpt2_ex014.png" width="400"
+      alt="y=x^4-4x^2 是经典的 W 形曲线 — 在 x=\pm\sqrt{2} 取两个极小值 -4, 在 x=0 取局部极大值 0" />
+      <figcaption aria-hidden="true"><span
+      class="math inline">y=x^4-4x^2</span> 是经典的 W 形曲线 — 在 <span
+      class="math inline">x=\pm\sqrt{2}</span> 取两个极小值 <span
+      class="math inline">-4</span>, 在 <span
+      class="math inline">x=0</span> 取局部极大值 <span
+      class="math inline">0</span></figcaption>
+      </figure>
       </div>
       </div>
       </div>
@@ -1683,17 +1684,6 @@
       <span class="math inline">P = (x, 0)</span>，<span
       class="math inline">x \in [0, l]</span>。</p>
       <p><strong>注意</strong>：对这个题目而言，镜面反射原理不适用，但微积分方法仍然适用。</p>
-      <figure>
-      <img src="media/img/chpt2_light_shortest_problem.png"
-      width="400"
-      alt="A\to P\to B 路径示意 — 上半区 (空气, 速度 v_1) 入射角 \theta_1, 下半区 (水, 速度 v_2) 折射角 \theta_2" />
-      <figcaption aria-hidden="true"><span class="math inline">A\to P\to
-      B</span> 路径示意 — 上半区 (空气, 速度 <span
-      class="math inline">v_1</span>) 入射角 <span
-      class="math inline">\theta_1</span>, 下半区 (水, 速度 <span
-      class="math inline">v_2</span>) 折射角 <span
-      class="math inline">\theta_2</span></figcaption>
-      </figure>
       </div>
       <div class="ex-controls">
       <div class="ex-sol-row">
@@ -1746,6 +1736,17 @@
       <img src="media/img/chpt2_specular_reflection.png" width="400"
       alt="问题2" />
       <figcaption aria-hidden="true">问题2</figcaption>
+      </figure>
+      <figure>
+      <img src="media/img/chpt2_light_shortest_problem.png"
+      width="400"
+      alt="A\to P\to B 路径示意 — 上半区 (空气, 速度 v_1) 入射角 \theta_1, 下半区 (水, 速度 v_2) 折射角 \theta_2" />
+      <figcaption aria-hidden="true"><span class="math inline">A\to P\to
+      B</span> 路径示意 — 上半区 (空气, 速度 <span
+      class="math inline">v_1</span>) 入射角 <span
+      class="math inline">\theta_1</span>, 下半区 (水, 速度 <span
+      class="math inline">v_2</span>) 折射角 <span
+      class="math inline">\theta_2</span></figcaption>
       </figure>
       </div>
       </div>
@@ -1846,13 +1847,6 @@
       <div class="ex-problem-box">
       <p>判断函数 <span class="math inline">y = \sqrt{x}</span>（<span
       class="math inline">x \ge 0</span>）的凹凸性。</p>
-      <figure>
-      <img src="media/img/chpt2_ex017.png" width="400"
-      alt="y=\sqrt{x} 是凹函数 (concave) — 任意两点之间的弦都在曲线下方" />
-      <figcaption aria-hidden="true"><span
-      class="math inline">y=\sqrt{x}</span> 是凹函数 (concave) —
-      任意两点之间的弦都在曲线下方</figcaption>
-      </figure>
       </div>
       <div class="ex-controls">
       <div class="ex-sol-row">
@@ -1878,6 +1872,13 @@
       <p>在函数定义域 <span class="math inline">(0, +\infty)</span> 内
       <span class="math inline">y&#39;&#39; &lt; 0</span>，故 <span
       class="math inline">y = \sqrt{x}</span> 为凹函数。</p>
+      <figure>
+      <img src="media/img/chpt2_ex017.png" width="400"
+      alt="y=\sqrt{x} 是凹函数 (concave) — 任意两点之间的弦都在曲线下方" />
+      <figcaption aria-hidden="true"><span
+      class="math inline">y=\sqrt{x}</span> 是凹函数 (concave) —
+      任意两点之间的弦都在曲线下方</figcaption>
+      </figure>
       </div>
       </div>
       </div>
@@ -1894,13 +1895,6 @@
       <div class="ex-problem-box">
       <p>判断函数 <span class="math inline">y = x^2</span>
       的凹凸性。</p>
-      <figure>
-      <img src="media/img/chpt2_ex018.png" width="400"
-      alt="y=x^2 是凸函数 (convex) — 任意两点之间的弦都在曲线上方" />
-      <figcaption aria-hidden="true"><span
-      class="math inline">y=x^2</span> 是凸函数 (convex) —
-      任意两点之间的弦都在曲线上方</figcaption>
-      </figure>
       </div>
       <div class="ex-controls">
       <div class="ex-sol-row">
@@ -1919,6 +1913,13 @@
       <p>计算二阶导数：<span class="math inline">y&#39;&#39; = 2 &gt;
       0</span>，故 <span class="math inline">y = x^2</span>
       为凸函数。</p>
+      <figure>
+      <img src="media/img/chpt2_ex018.png" width="400"
+      alt="y=x^2 是凸函数 (convex) — 任意两点之间的弦都在曲线上方" />
+      <figcaption aria-hidden="true"><span
+      class="math inline">y=x^2</span> 是凸函数 (convex) —
+      任意两点之间的弦都在曲线上方</figcaption>
+      </figure>
       </div>
       </div>
       </div>
@@ -1935,13 +1936,6 @@
       <div class="ex-problem-box">
       <p>判断函数 <span class="math inline">y = \ln x</span>（<span
       class="math inline">x &gt; 0</span>）的凹凸性。</p>
-      <figure>
-      <img src="media/img/chpt2_ex019.png" width="400"
-      alt="y=\ln x (x&gt;0) 是凹函数 (concave) — 任意两点之间的弦都在曲线下方" />
-      <figcaption aria-hidden="true"><span class="math inline">y=\ln
-      x</span> (<span class="math inline">x&gt;0</span>) 是凹函数
-      (concave) — 任意两点之间的弦都在曲线下方</figcaption>
-      </figure>
       </div>
       <div class="ex-controls">
       <div class="ex-sol-row">
@@ -1960,6 +1954,13 @@
       <p>计算二阶导数：<span class="math inline">y&#39;&#39; =
       -\dfrac{1}{x^2} &lt; 0</span>，故 <span class="math inline">y =
       \ln x</span> 为凹函数。</p>
+      <figure>
+      <img src="media/img/chpt2_ex019.png" width="400"
+      alt="y=\ln x (x&gt;0) 是凹函数 (concave) — 任意两点之间的弦都在曲线下方" />
+      <figcaption aria-hidden="true"><span class="math inline">y=\ln
+      x</span> (<span class="math inline">x&gt;0</span>) 是凹函数
+      (concave) — 任意两点之间的弦都在曲线下方</figcaption>
+      </figure>
       </div>
       </div>
       </div>
@@ -2052,14 +2053,6 @@
       <p>考虑凸函数 <span class="math inline">f(x) = x^2</span>，取
       <span class="math inline">a = 2, b = 1</span>，验证 <span
       class="math inline">k(x) = f(2x + 1)</span> 也是凸函数。</p>
-      <figure>
-      <img src="media/img/chpt2_ex020.png" width="400"
-      alt="f(x)=x^2 与 k(x)=f(2x+1)=(2x+1)^2 都是开口向上的抛物线 — 仿射代换不破坏凸性" />
-      <figcaption aria-hidden="true"><span
-      class="math inline">f(x)=x^2</span> 与 <span
-      class="math inline">k(x)=f(2x+1)=(2x+1)^2</span>
-      都是开口向上的抛物线 — 仿射代换不破坏凸性</figcaption>
-      </figure>
       </div>
       <div class="ex-controls">
       <div class="ex-sol-row">
@@ -2081,6 +2074,14 @@
       </span> 也是凸函数，因为 <span class="math display">
       k&#39;&#39;(x) = 8 &gt; 0
       </span></p>
+      <figure>
+      <img src="media/img/chpt2_ex020.png" width="400"
+      alt="f(x)=x^2 与 k(x)=f(2x+1)=(2x+1)^2 都是开口向上的抛物线 — 仿射代换不破坏凸性" />
+      <figcaption aria-hidden="true"><span
+      class="math inline">f(x)=x^2</span> 与 <span
+      class="math inline">k(x)=f(2x+1)=(2x+1)^2</span>
+      都是开口向上的抛物线 — 仿射代换不破坏凸性</figcaption>
+      </figure>
       </div>
       </div>
       </div>
@@ -2280,8 +2281,10 @@
     window.docLib = [{"title": "\u5e8f\u8a00", "url": "science-chapter0.html"}, {"title": "\u7b2c\u4e00\u7ae0: \u6781\u9650", "url": "science-chapter1.html"}, {"title": "\u7b2c\u4e8c\u7ae0: \u5bfc\u6570", "url": "science-chapter2.html"}, {"title": "\u7b2c\u4e09\u7ae0: \u5fae\u5206", "url": "science-chapter3.html"}, {"title": "\u7b2c\u56db\u7ae0: \u79ef\u5206", "url": "science-chapter4.html"}, {"title": "\u7b2c\u4e94\u7ae0: \u5fae\u5206\u7684\u5e94\u7528", "url": "science-chapter5.html"}, {"title": "\u7b2c\u516d\u7ae0: \u79ef\u5206\u7684\u5e94\u7528", "url": "science-chapter6.html"}, {"title": "\u7b2c\u4e03\u7ae0: \u5e38\u5fae\u5206\u65b9\u7a0b", "url": "science-chapter7.html"}, {"title": "\u7b2c\u516b\u7ae0: \u6570\u503c\u65b9\u6cd5", "url": "science-chapter8.html"}, {"title": "\u7b2c\u4e5d\u7ae0: \u5411\u91cf\u4e0e\u7a7a\u95f4\u89e3\u6790\u51e0\u4f55", "url": "science-chapter9.html"}, {"title": "\u7b2c\u5341\u7ae0: \u591a\u5143\u51fd\u6570\u7684\u5fae\u5206", "url": "science-chapter10.html"}, {"title": "\u7b2c\u5341\u4e00\u7ae0: \u591a\u5143\u51fd\u6570\u7684\u79ef\u5206", "url": "science-chapter11.html"}, {"title": "\u7b2c\u5341\u4e8c\u7ae0: \u66f2\u7ebf\u79ef\u5206\u548c\u66f2\u9762\u79ef\u5206", "url": "science-chapter12.html"}, {"title": "\u7b2c\u5341\u4e09\u7ae0: \u65e0\u7a77\u7ea7\u6570", "url": "science-chapter13.html"}, {"title": "\u7b2c\u5341\u56db\u7ae0: \u504f\u5fae\u5206\u65b9\u7a0b", "url": "science-chapter14.html"}];
     window.chpAutonum = "";
   </script>
-  <script src="assets/app.js?v=20261019-directory"></script>
+  <script src="assets/character-link.js?v=20261019-return"></script>
+  <script src="assets/app.js?v=20261019-return"></script>
   <script src="assets/three-lazy.js"></script>
   <script src="assets/reader.js"></script>
+  <script src="assets/secant-demo.js?v=20261024-two-plots"></script>
 </body>
 </html>

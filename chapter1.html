@@ -10,8 +10,9 @@
   
   
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="assets/app.css?v=20261019-directory">
-  <link rel="stylesheet" href="assets/reader.css?v=20261019-directory">
+  <link rel="stylesheet" href="assets/app.css?v=20261024-proof-label">
+  <link rel="stylesheet" href="assets/reader.css?v=20261025-video-attribution">
+  <link rel="stylesheet" href="assets/secant-demo.css?v=20261024-two-plots">
   <link rel="stylesheet" href="assets/katex/katex.min.css">
   <script src="assets/katex/katex.min.js"></script>
   <script type="importmap">
@@ -116,8 +117,12 @@
       单调有界有极限</a></li>
       <li><a href="#第十四节-boss-战数-e"
       id="toc-第十四节-boss-战数-e">第十四节 · Boss 战—数 e</a></li>
-      <li><a href="#第十五节-回望来路"
-      id="toc-第十五节-回望来路">第十五节 · 回望来路</a></li>
+      <li><a href="#e-limit-examples" id="toc-e-limit-examples">第十五节
+      · 举 <span class="math inline">\displaystyle e</span> 反三—与
+      <span class="math inline">\displaystyle e</span>
+      有关的极限</a></li>
+      <li><a href="#第十六节-回望来路"
+      id="toc-第十六节-回望来路">第十六节 · 回望来路</a></li>
       </ul>
     </div>
     <a class="reader-science" href="science.html">理工版 · 完整目录 ↗</a>
@@ -645,6 +650,13 @@
       <div class="callout callout-caution">
       <div class="callout-header callout-header-caution"><span class="callout-icon"></span><span class="callout-label">希尔伯特的酒店</span><button class="callout-video-btn" type="button" data-video-url="https://player.bilibili.com/player.html?isOutside=true&amp;aid=217018325&amp;bvid=BV1Aa411N7Sg&amp;cid=804913368&amp;p=1&amp;autoplay=0">&#9654; 观看视频</button></div>
       <div class="callout-body">
+      <p class="video-attribution">
+      <span>视频：<a href="https://www.bilibili.com/video/BV1Aa411N7Sg/" target="_blank" rel="noopener noreferrer">希尔伯特旅馆的故事</a></span><span>UP
+      主：<a href="https://space.bilibili.com/402766853" target="_blank" rel="noopener noreferrer">yue5945</a>
+      ·
+      <a href="https://www.bilibili.com/video/BV1Aa411N7Sg/" target="_blank" rel="noopener noreferrer">原视频
+      ↗</a></span>
+      </p>
       <p>想象一家酒店，房间按 <span class="math inline">\displaystyle
       1,2,3,\ldots</span>
       编号，有无穷多个房间，而且每间都住着客人。此时又来了一位客人。店已住满，还能安排他住下吗？</p>
@@ -737,7 +749,7 @@
       class="ex-tag">极限定义</span></span>
       </div>
       <div class="ex-body">
-      <div class="ex-problem-box">
+      <div class="ex-problem-box ex-proof">
       <p>用极限的定义证明 <span
       class="math inline">\displaystyle\lim_{n\to\infty}\frac1n=0</span>。</p>
       </div>
@@ -788,7 +800,7 @@
       class="ex-tag">极限定义</span></span>
       </div>
       <div class="ex-body">
-      <div class="ex-problem-box">
+      <div class="ex-problem-box ex-proof">
       <p>用极限的定义证明 <span
       class="math inline">\displaystyle\lim_{n\to\infty}\frac1{n^2}=0</span>。</p>
       </div>
@@ -2075,26 +2087,31 @@
       <p>本息似乎不断增加，增加的幅度却在缩小，仿佛正趋向某个极限。找到这个极限，便能看清贪婪的边界，终结无止境的索求。</p>
       <h2 id="第十三节-单调有界有极限">第十三节 · 单调有界有极限</h2>
       <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">单调与有界的直观</span></div>
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">单调与有界的直观</span><button class="callout-video-btn" type="button" data-video-url="https://player.bilibili.com/player.html?bvid=BV18c411J77G&amp;p=1&amp;autoplay=0">&#9654; 观看视频</button></div>
       <div class="callout-body">
-      <p>想象沿着数轴向右走，每一步都不后退，而且前方有一道永远不能越过的界限。我们未必预先知道终点是多少，却可以证明：这些位置一定趋向某个确定的数。这是另一种得到极限的方法——<strong>先证明终点存在，再研究终点是谁。</strong></p>
+      <p class="video-attribution">
+      <span>视频：<a href="https://www.bilibili.com/video/BV18c411J77G/" target="_blank" rel="noopener noreferrer">体育课上孩子们开始比赛摸高，直到体育老师们亲自下场。气氛真好</a></span><span>UP
+      主：账号已注销（当前显示） ·
+      <a href="https://www.bilibili.com/video/BV18c411J77G/" target="_blank" rel="noopener noreferrer">原视频
+      ↗</a></span>
+      </p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">单调与有界</span></div>
       <div class="callout-body">
-      <p>若每一步都有 <span class="math inline">\displaystyle a_{n+1}\ge
-      a_n</span>，称数列<strong>单调不减</strong>；若每一步都有 <span
-      class="math inline">\displaystyle
-      a_{n+1}&gt;a_n</span>，称<strong>严格递增</strong>。将不等号分别反向，就得到<strong>单调不增</strong>与<strong>严格递减</strong>的定义。</p>
+      <p>若对每个正整数 <span class="math inline">\displaystyle n</span>
+      都有 <span class="math inline">\displaystyle a_{n+1}\ge
+      a_n</span>，称数列<strong>单调递增</strong>；若都有 <span
+      class="math inline">\displaystyle a_{n+1}\le
+      a_n</span>，称数列<strong>单调递减</strong>。</p>
       <p>若存在固定实数 <span class="math inline">\displaystyle
       B</span>，使所有项都满足 <span class="math inline">\displaystyle
       a_n\le B</span>，称数列<strong>有上界</strong>；将不等号改为 <span
       class="math inline">\displaystyle a_n\ge
       B</span>，就得到<strong>有下界</strong>的定义。同时有上界与下界的数列，称为<strong>有界数列</strong>。</p>
-      <p><strong>单调不减且有上界的实数数列，必有有限极限。</strong>
-      同样，单调不增且有下界的实数数列，也必有有限极限。这就是单调有界定理。</p>
-      <p>有界不等于知道准确极限。一个上界可以留有余地：为了证明数列有极限，我们可以先找一道容易验证的“围墙”。</p>
+      <p><strong>单调递增且有上界的实数数列，必有有限极限；单调递减且有下界的实数数列，也必有有限极限。</strong>
+      这就是单调有界定理。</p>
       </div>
       </div>
       <div id="chpt1-ex-035" class="exercise-block"
@@ -2127,8 +2144,10 @@
       </div>
       <div id="chpt1-ex-035-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p>数列 <span class="math inline">\displaystyle a_n=n</span>
-      严格递增，但没有上界，也没有有限极限。这说明只有单调性，不能保证数列收敛。</p>
+      <p>对每个正整数 <span class="math inline">\displaystyle
+      n</span>，都有 <span class="math inline">\displaystyle
+      a_{n+1}=n+1\ge
+      n=a_n</span>，所以数列单调递增，但没有上界，也没有有限极限。这说明只有单调性，不能保证数列收敛。</p>
       </div>
       </div>
       </div>
@@ -2174,9 +2193,8 @@
       </div>
       </div>
       </div>
-      <p>回到复利数列。现在任务明确了：<strong>证明它向上走，再找一个共同的上界。</strong>
-      两件事都完成，就能确认隐藏 Boss
-      的极限确实存在。注意，这只是一个<strong>存在性证明</strong>，尚未求出极限的具体值。在数学中，证明一个对象存在，往往比求出它的具体表达式更为根本。</p>
+      <p>回到复利数列：<strong>先证明它有界，再证明它单调递增（看图），这样就能说明这个数列的极限存在。</strong>
+      注意，这只是一个<strong>存在性证明</strong>，尚未求出极限的具体值。在数学中，证明一个对象存在，往往比求出它的具体表达式更为根本。</p>
       <h2 id="第十四节-boss-战数-e">第十四节 · Boss 战—数 e</h2>
       <p>设 <span class="math inline">\displaystyle
       a_n=\left(1+\frac1n\right)^n</span>。我们借助二项式展开，可以把
@@ -2191,11 +2209,11 @@
       </span></p>
       <p>这里 <span class="math inline">\displaystyle k!=1\cdot2\cdots
       k</span>，并约定 <span
-      class="math inline">\displaystyle0!=1</span>。展开式只保留实际存在的项，首尾重合的项只计一次。下面分别证明这个数列的单调性与有界性。</p>
+      class="math inline">\displaystyle0!=1</span>。下面先证明这个数列有界，再证明它单调递增。</p>
       <div class="callout-fold" data-label="注：二项式展开">
       <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 注：二项式展开</button>
       <div class="callout-fold-body" hidden>
-      <p>二项式定理把一个和的整数次幂写成逐项相加的形式：</p>
+      <p>二项式展开的一般公式为：</p>
       <p><span class="math display">
       \begin{aligned}
       (1+u)^n={}&amp;1+nu+\frac{n(n-1)}{2!}u^2+\cdots\\
@@ -2216,16 +2234,37 @@
       &amp;\qquad=\frac1{k!}\left(1-\frac1n\right)\cdots\left(1-\frac{k-1}{n}\right).
       \end{aligned}
       </span></p>
-      <p>这就得到下面使用的展开式。把 <span
-      class="math inline">\displaystyle n</span> 换成 <span
-      class="math inline">\displaystyle
-      n+1</span>，便得到另一个展开式；它的最后一项为 <span
-      class="math inline">\displaystyle1/(n+1)^{n+1}</span>。当 <span
-      class="math inline">\displaystyle n=1</span> 时，<span
-      class="math inline">\displaystyle a_n</span> 在 <span
-      class="math inline">\displaystyle1+1</span>
-      后没有其他项，比较时也就没有对应项。</p>
       </div></div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">有界性</span></div>
+      <div class="callout-body">
+      <p>对 <span class="math inline">\displaystyle
+      n\ge2</span>，展开式中每个括号都在 <span
+      class="math inline">\displaystyle0</span> 与 <span
+      class="math inline">\displaystyle1</span> 之间，因此</p>
+      <p><span class="math display">
+      a_n\le1+1+\frac1{2!}+\frac1{3!}+\cdots+\frac1{n!}.
+      </span></p>
+      <p>当 <span class="math inline">\displaystyle k\ge2</span> 时，由
+      <span class="math inline">\displaystyle k!=k(k-1)(k-2)!\ge
+      k(k-1)</span>，得到</p>
+      <p><span class="math display">
+      \frac1{k!}\le\frac1{k(k-1)}=\frac1{k-1}-\frac1k.
+      </span></p>
+      <p>代入上面的估计，相邻分数依次抵消：</p>
+      <p><span class="math display">
+      \begin{aligned}
+      a_n&amp;\le1+1+\left(1-\frac12\right)+\left(\frac12-\frac13\right)\\
+      &amp;\quad+\cdots+\left(\frac1{n-1}-\frac1n\right)\\
+      &amp;=3-\frac1n&lt;3.
+      \end{aligned}
+      </span></p>
+      <p>再结合 <span class="math inline">\displaystyle
+      a_1=2&lt;3</span> 及 <span class="math inline">\displaystyle
+      a_n&gt;0</span>，可知 <span
+      class="math inline">\displaystyle0&lt;a_n&lt;3</span>，所以<strong>这个数列有界</strong>。</p>
+      </div>
+      </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">单调性</span></div>
       <div class="callout-body">
@@ -2248,55 +2287,30 @@
       class="math inline">\displaystyle k!</span>
       的项相互对应。它们的每一个括号都满足</p>
       <p><span class="math display">
-      \boxed{0&lt;1-\frac jn&lt;1-\frac j{n+1}},\qquad 1\le j\le k-1.
+      \boxed{0&lt;1-\frac jn\le1-\frac j{n+1}},\qquad 1\le j\le k-1.
       </span></p>
       <p>因此，相同数目的正因子逐一相乘，再除以同一个正数 <span
       class="math inline">\displaystyle k!</span>，得到</p>
       <p><span class="math display">
       \begin{aligned}
       &amp;{\color{#387b9b}\frac1{k!}\left(1-\frac1{n+1}\right)\cdots\left(1-\frac{k-1}{n+1}\right)}\\
-      &amp;\qquad&gt;{\color{#387b9b}\frac1{k!}\left(1-\frac1n\right)\cdots\left(1-\frac{k-1}{n}\right)}.
+      &amp;\qquad\ge{\color{#387b9b}\frac1{k!}\left(1-\frac1n\right)\cdots\left(1-\frac{k-1}{n}\right)}.
       \end{aligned}
       </span></p>
-      <p>原有的对应项都增大，前面的 <span
+      <p>原有的对应项均不减，前面的 <span
       class="math inline">\displaystyle1+1</span>
       不变，还多出赭色方框中的正项，故对每个正整数 <span
       class="math inline">\displaystyle n</span>，都有</p>
       <p><span class="math display">
-      \boxed{a_{n+1}-a_n\ge\frac1{(n+1)^{n+1}}&gt;0.}
+      \boxed{a_{n+1}\ge a_n.}
       </span></p>
-      <p>所以，<strong>复利数列严格递增</strong>。</p>
-      </div>
-      </div>
-      <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">有界性</span></div>
-      <div class="callout-body">
-      <p>对 <span class="math inline">\displaystyle
-      n\ge2</span>，展开式中每个括号都在 <span
-      class="math inline">\displaystyle0</span> 与 <span
-      class="math inline">\displaystyle1</span> 之间，因此</p>
-      <p><span class="math display">
-      a_n\le2+\frac1{2!}+\frac1{3!}+\cdots+\frac1{n!}.
-      </span></p>
-      <p>当 <span class="math inline">\displaystyle k\ge2</span>
-      时，<span class="math inline">\displaystyle k!=1\cdot2\cdot3\cdots
-      k\ge2^{k-1}</span>，于是</p>
-      <p><span class="math display">
-      \begin{aligned}
-      a_n&amp;\le2+\frac12+\frac1{2^2}+\cdots+\frac1{2^{n-1}}\\
-      &amp;=3-\frac1{2^{n-1}}&lt;3.
-      \end{aligned}
-      </span></p>
-      <p>再结合 <span class="math inline">\displaystyle
-      a_1=2&lt;3</span>，可知<strong>无论结息多少次，本息都小于 <span
-      class="math inline">\displaystyle3</span>
-      元</strong>。这就找到了整个数列的共同上界。</p>
+      <p>所以，<strong>复利数列单调递增</strong>。</p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">极限存在</span></div>
       <div class="callout-body">
-      <p>复利数列严格递增且有上界，由单调有界定理，它必有一个有限极限。我们把这个数记作
+      <p>复利数列单调递增且有上界，由单调有界定理，它必有一个有限极限。我们把这个数记作
       <span class="math inline">\displaystyle e</span>：</p>
       <p><span class="math display">
       \begin{gathered}
@@ -2316,8 +2330,537 @@
       两条路，都是数学江湖中的惯用招数。</p>
       </div>
       </div>
-      <section id="第十五节-回望来路" class="chapter-prologue">
-      <h2>第十五节 · 回望来路</h2>
+      <h2 id="e-limit-examples">第十五节 · 举 <span
+      class="math inline">\displaystyle e</span> 反三—与 <span
+      class="math inline">\displaystyle e</span> 有关的极限</h2>
+      <p>上一节，我们得到了一个重要极限：</p>
+      <p><span class="math display">
+      \lim_{n\to\infty}\left(1+\frac1n\right)^n=e.
+      </span></p>
+      <p>合理运用换元法，可以把一些新的极限问题转化为这一已知结果来求解。</p>
+      <div id="chpt1-ex-045" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例16</span><span class="ex-tags"><span
+      class="ex-tag">极限</span><span class="ex-tag">数e</span><span
+      class="ex-tag">换元法</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求 <span class="math inline">\displaystyle
+      \lim_{n\to\infty}\left(1+\frac1{n+1}\right)^n.</span></p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-045-frame" data-panel="chpt1-ex-045-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-045-frame" data-panel="chpt1-ex-045-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-045-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-045-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>令 <span class="math inline">\displaystyle
+      m=n+1</span>，注意指数比 <span class="math inline">\displaystyle
+      m</span> 少 <span class="math inline">\displaystyle1</span>。</p>
+      </div>
+      <div id="chpt1-ex-045-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <ul>
+      <li><p><strong>选择换元。</strong> 为把底数化成已知的 <span
+      class="math inline">\displaystyle1+\frac1m</span>，令 <span
+      class="math inline">\displaystyle m=n+1</span>，则 <span
+      class="math inline">\displaystyle n=m-1</span>。</p></li>
+      <li><p><strong>变量的趋向。</strong> 当 <span
+      class="math inline">\displaystyle n\to\infty</span> 时，<span
+      class="math inline">\displaystyle m</span> 仍取正整数，且 <span
+      class="math inline">\displaystyle m\to\infty</span>。</p></li>
+      <li><p><strong>改写与求极限。</strong> 指数比 <span
+      class="math inline">\displaystyle m</span> 少 <span
+      class="math inline">\displaystyle1</span>，所以要从标准形式中除去一个因子
+      <span class="math inline">\displaystyle1+\frac1m</span>：</p>
+      <p><span class="math display">
+      \begin{aligned}
+      \left(1+\frac1{n+1}\right)^n
+      &amp;=\left(1+\frac1m\right)^{m-1}\\
+      &amp;=\frac{\left(1+\frac1m\right)^m}{1+\frac1m}.
+      \end{aligned}
+      </span></p>
+      <p>利用已知的数列极限，分子趋于 <span
+      class="math inline">\displaystyle e</span>；分母趋于 <span
+      class="math inline">\displaystyle1</span>，不为零。由商法则，</p>
+      <p><span class="math display">
+      \boxed{\lim_{n\to\infty}\left(1+\frac1{n+1}\right)^n=e.}
+      </span></p></li>
+      </ul>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt1-ex-041" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例17</span><span class="ex-tags"><span
+      class="ex-tag">极限</span><span class="ex-tag">数e</span><span
+      class="ex-tag">换元法</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求 <span class="math inline">\displaystyle
+      \lim_{n\to\infty}\left(1+\frac1n\right)^{n+1}.</span></p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-041-frame" data-panel="chpt1-ex-041-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-041-frame" data-panel="chpt1-ex-041-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-041-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-041-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>令 <span class="math inline">\displaystyle
+      m=n+1</span>，再把式子与 <span
+      class="math inline">\displaystyle\left(1+\frac1{m-1}\right)^{m-1}</span>
+      比较。</p>
+      </div>
+      <div id="chpt1-ex-041-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <ul>
+      <li><p><strong>选择换元。</strong> 为把指数记作新下标，令 <span
+      class="math inline">\displaystyle m=n+1</span>，则 <span
+      class="math inline">\displaystyle n=m-1</span>。</p></li>
+      <li><p><strong>变量的趋向。</strong> 当 <span
+      class="math inline">\displaystyle n\to\infty</span> 时，<span
+      class="math inline">\displaystyle m</span> 仍取正整数，且 <span
+      class="math inline">\displaystyle m\to\infty</span>。</p></li>
+      <li><p><strong>改写与求极限。</strong>
+      代入后，把多出的一个因子拆出来：</p>
+      <p><span class="math display">
+      \begin{aligned}
+      \left(1+\frac1n\right)^{n+1}
+      &amp;=\left(1+\frac1{m-1}\right)^m\\
+      &amp;=\left(1+\frac1{m-1}\right)^{m-1}
+        \left(1+\frac1{m-1}\right).
+      \end{aligned}
+      </span></p>
+      <p>当 <span class="math inline">\displaystyle m\to\infty</span>
+      时，<span class="math inline">\displaystyle
+      m-1\to\infty</span>，第一个因子趋于 <span
+      class="math inline">\displaystyle e</span>，第二个因子趋于 <span
+      class="math inline">\displaystyle1</span>。由乘法法则，</p>
+      <p><span class="math display">
+      \boxed{\lim_{n\to\infty}\left(1+\frac1n\right)^{n+1}=e.}
+      </span></p></li>
+      </ul>
+      </div>
+      </div>
+      </div>
+      </div>
+      <p>上述关于离散变量 <span class="math inline">\displaystyle
+      n</span> 的数列极限，也有关于连续变量 <span
+      class="math inline">\displaystyle x</span> 的函数形式：</p>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">重要极限的函数形式</span></div>
+      <div class="callout-body">
+      <p><span class="math display">
+      \boxed{\lim_{x\to0}(1+x)^{\frac1x}=e.}
+      </span></p>
+      </div>
+      </div>
+      <p>下面我们通过两个习题来说明这一结论。</p>
+      <div id="chpt1-ex-047" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例18：正数情形</span><span class="ex-tags"><span
+      class="ex-tag">极限</span><span class="ex-tag">数e</span><span
+      class="ex-tag">换元法</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>用换元直观说明：当 <span class="math inline">\displaystyle
+      x</span> 取正数并趋于 <span
+      class="math inline">\displaystyle0</span> 时，<span
+      class="math inline">\displaystyle(1+x)^{\frac1x}\longrightarrow
+      e</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-047-frame" data-panel="chpt1-ex-047-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-047-frame" data-panel="chpt1-ex-047-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-047-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-047-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>令 <span class="math inline">\displaystyle
+      x=\frac1n</span>，同时改写底数和指数，并注意变量的趋向。</p>
+      </div>
+      <div id="chpt1-ex-047-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <ul>
+      <li><p><strong>选择换元。</strong> 为把数列中的 <span
+      class="math inline">\displaystyle\frac1n</span> 写成新变量，令
+      <span class="math inline">\displaystyle x=\frac1n</span>，则 <span
+      class="math inline">\displaystyle n=\frac1x</span>。</p></li>
+      <li><p><strong>变量的趋向。</strong> 当 <span
+      class="math inline">\displaystyle n\to\infty</span> 时，<span
+      class="math inline">\displaystyle x&gt;0</span> 且 <span
+      class="math inline">\displaystyle x\to0</span>。</p></li>
+      <li><p><strong>改写并引出函数形式。</strong> 代入新变量，</p>
+      <p><span class="math display">
+      \left(1+\frac1n\right)^n=(1+x)^{\frac1x}.
+      </span></p>
+      <p>由已知的数列极限，直观引出正数情形的函数极限：当 <span
+      class="math inline">\displaystyle x</span> 取正数并趋于 <span
+      class="math inline">\displaystyle0</span> 时，</p>
+      <p><span class="math display">
+      (1+x)^{\frac1x}\longrightarrow e.
+      </span></p></li>
+      </ul>
+      <p>严格地说，<span class="math inline">\displaystyle
+      x=\frac1n</span>
+      只取到一列离散值；这里的换元是直观说明，严格证明如下。</p>
+      <div class="callout-fold" data-label="严格证明">
+      <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 严格证明</button>
+      <div class="callout-fold-body" hidden>
+      <p>当 <span class="math inline">\displaystyle x&gt;0</span>
+      充分接近 <span class="math inline">\displaystyle0</span>
+      时，取正整数 <span class="math inline">\displaystyle
+      n</span>，使</p>
+      <p><span class="math display">
+      n\le\frac1x&lt;n+1,
+      \qquad
+      \frac1{n+1}&lt;x\le\frac1n.
+      </span></p>
+      <p>当 <span class="math inline">\displaystyle x\to0</span>
+      时，<span class="math inline">\displaystyle
+      n\to\infty</span>。各底数均大于 <span
+      class="math inline">\displaystyle1</span>，逐次比较底数和指数，得到</p>
+      <p><span class="math display">
+      \left(1+\frac1{n+1}\right)^n
+      \le (1+x)^{\frac1x}
+      \le \left(1+\frac1n\right)^{n+1}.
+      </span></p>
+      <p>前两道数列题已说明，两端都趋于 <span
+      class="math inline">\displaystyle e</span>。因此，对任意 <span
+      class="math inline">\displaystyle\varepsilon&gt;0</span>，存在
+      <span class="math inline">\displaystyle N&gt;0</span>，使所有
+      <span class="math inline">\displaystyle n&gt;N</span> 都满足</p>
+      <p><span class="math display">
+      e-\varepsilon
+      &lt;\left(1+\frac1{n+1}\right)^n
+      \le(1+x)^{\frac1x}
+      \le\left(1+\frac1n\right)^{n+1}
+      &lt;e+\varepsilon.
+      </span></p>
+      <p>取 <span
+      class="math inline">\displaystyle\delta=\frac1{N+1}</span>。当
+      <span class="math inline">\displaystyle0&lt;x&lt;\delta</span>
+      时，<span
+      class="math inline">\displaystyle\frac1x&gt;N+1</span>，所选的整数
+      <span class="math inline">\displaystyle
+      n&gt;N</span>，所以上述估计成立，即 <span
+      class="math inline">\displaystyle\left|(1+x)^{\frac1x}-e\right|&lt;\varepsilon</span>。这就严格证明了正数情形的结论。</p>
+      </div></div>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt1-ex-046" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例19：负数情形</span><span class="ex-tags"><span
+      class="ex-tag">极限</span><span class="ex-tag">数e</span><span
+      class="ex-tag">换元法</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box ex-proof">
+      <p>当 <span class="math inline">\displaystyle x</span>
+      取负数并趋于 <span class="math inline">\displaystyle0</span>
+      时，<span
+      class="math inline">\displaystyle(1+x)^{\frac1x}\longrightarrow
+      e</span>。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-046-frame" data-panel="chpt1-ex-046-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-046-frame" data-panel="chpt1-ex-046-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-046-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-046-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>先令 <span class="math inline">\displaystyle
+      t=-x</span>，把负数变量换成正数变量。再观察 <span
+      class="math inline">\displaystyle\frac1{1-t}=1+\frac
+      t{1-t}</span>，把后一分式记成新变量 <span
+      class="math inline">\displaystyle u</span>。</p>
+      </div>
+      <div id="chpt1-ex-046-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <ul>
+      <li><p><strong>第一次换元：令 <span
+      class="math inline">\displaystyle
+      t=-x</span>，把负数变量变为正数变量。</strong></p>
+      <p>当 <span class="math inline">\displaystyle x</span>
+      取负数并趋于 <span class="math inline">\displaystyle0</span>
+      时，<span class="math inline">\displaystyle t</span> 取正数并趋于
+      <span class="math inline">\displaystyle0</span>。同时，</p>
+      <p><span class="math display">
+      x=-t,\qquad 1+x=1-t,\qquad \frac1x=-\frac1t.
+      </span></p>
+      <p>所以原式改写为</p>
+      <p><span class="math display">
+      (1+x)^{\frac1x}=(1-t)^{-\frac1t}.
+      </span></p></li>
+      <li><p><strong>第二次换元：把底数改写成已知形式。</strong></p>
+      <p>原式指数为负，可以先对底数取倒数：</p>
+      <p><span class="math display">
+      (1-t)^{-\frac1t}=\left(\frac1{1-t}\right)^{\frac1t}.
+      </span></p>
+      <p>注意到</p>
+      <p><span class="math display">
+      \frac1{1-t}=1+\frac t{1-t}.
+      </span></p>
+      <p>令 <span class="math inline">\displaystyle u=\frac
+      t{1-t}</span>。当 <span class="math inline">\displaystyle
+      t&gt;0</span> 充分接近 <span
+      class="math inline">\displaystyle0</span> 时，<span
+      class="math inline">\displaystyle1-t&gt;0</span>，所以 <span
+      class="math inline">\displaystyle u&gt;0</span>；当 <span
+      class="math inline">\displaystyle t\to0</span> 时，分子趋于 <span
+      class="math inline">\displaystyle0</span>、分母趋于 <span
+      class="math inline">\displaystyle1</span>，所以 <span
+      class="math inline">\displaystyle u\to0</span>。</p>
+      <p>由换元关系，</p>
+      <p><span class="math display">
+      t=\frac u{1+u},\qquad
+      1-t=\frac1{1+u},\qquad
+      -\frac1t=-\frac{1+u}{u}.
+      </span></p>
+      <p>于是</p>
+      <p><span class="math display">
+      \begin{aligned}
+      (1-t)^{-\frac1t}
+      &amp;=\left(\frac1{1+u}\right)^{-\frac{1+u}{u}}\\
+      &amp;=(1+u)^{\frac{1+u}{u}}\\
+      &amp;=(1+u)^{\frac1u}(1+u).
+      \end{aligned}
+      </span></p>
+      <p>此时 <span class="math inline">\displaystyle u</span>
+      取正数并趋于 <span
+      class="math inline">\displaystyle0</span>，由已知结果，第一个因子趋于
+      <span class="math inline">\displaystyle e</span>，第二个因子趋于
+      <span
+      class="math inline">\displaystyle1</span>。由乘法法则，原式趋于
+      <span class="math inline">\displaystyle e</span>。</p></li>
+      </ul>
+      <p>所以，<span class="math inline">\displaystyle x</span>
+      取负数并趋于 <span class="math inline">\displaystyle0</span>
+      时，原式也趋于 <span class="math inline">\displaystyle
+      e</span>。</p>
+      <p>结合前面正数情形的结果，无论 <span
+      class="math inline">\displaystyle x</span> 取正数还是负数趋于
+      <span class="math inline">\displaystyle0</span>，原式都趋于 <span
+      class="math inline">\displaystyle e</span>，于是可以统一写成</p>
+      <p><span class="math display">
+      \boxed{\lim_{x\to0}(1+x)^{\frac1x}=e.}
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <p>接下来再做几个换元法的例题。</p>
+      <div id="chpt1-ex-044" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例20：平方换元</span><span class="ex-tags"><span
+      class="ex-tag">极限</span><span class="ex-tag">数e</span><span
+      class="ex-tag">换元法</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求 <span class="math inline">\displaystyle
+      \lim_{x\to0}(1+x^2)^{\frac1{x^2}}.</span></p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-044-frame" data-panel="chpt1-ex-044-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-044-frame" data-panel="chpt1-ex-044-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-044-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-044-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>把底数和指数中共同出现的 <span
+      class="math inline">\displaystyle x^2</span> 记作新变量。</p>
+      </div>
+      <div id="chpt1-ex-044-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <ul>
+      <li><p><strong>选择换元。</strong> 底数和指数中共同出现 <span
+      class="math inline">\displaystyle x^2</span>，令 <span
+      class="math inline">\displaystyle t=x^2</span>，原式就能化成 <span
+      class="math inline">\displaystyle(1+t)^{\frac1t}</span>。</p></li>
+      <li><p><strong>变量的趋向。</strong> 不论 <span
+      class="math inline">\displaystyle x</span> 取正数还是负数，只要
+      <span class="math inline">\displaystyle x\ne0</span> 且 <span
+      class="math inline">\displaystyle x\to0</span>，都有 <span
+      class="math inline">\displaystyle t&gt;0</span> 且 <span
+      class="math inline">\displaystyle t\to0</span>。</p></li>
+      <li><p><strong>改写与求极限。</strong> 代入新变量，</p>
+      <p><span class="math display">
+      (1+x^2)^{\frac1{x^2}}=(1+t)^{\frac1t}.
+      </span></p>
+      <p>这里新变量 <span class="math inline">\displaystyle t</span>
+      始终取正数，利用正数情形的结果，即得</p>
+      <p><span class="math display">
+      \boxed{\lim_{x\to0}(1+x^2)^{\frac1{x^2}}=e.}
+      </span></p></li>
+      </ul>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt1-ex-042" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例21：符号变换</span><span class="ex-tags"><span
+      class="ex-tag">极限</span><span class="ex-tag">数e</span><span
+      class="ex-tag">换元法</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求 <span class="math inline">\displaystyle
+      \lim_{x\to0}(1-x)^{\frac1x}.</span></p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-042-frame" data-panel="chpt1-ex-042-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-042-frame" data-panel="chpt1-ex-042-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-042-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-042-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>令 <span class="math inline">\displaystyle
+      t=-x</span>，同时改写底数和指数。</p>
+      </div>
+      <div id="chpt1-ex-042-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <ul>
+      <li><p><strong>选择换元。</strong> 为把底数 <span
+      class="math inline">\displaystyle1-x</span> 写成 <span
+      class="math inline">\displaystyle1+t</span>，令 <span
+      class="math inline">\displaystyle t=-x</span>。于是 <span
+      class="math inline">\displaystyle x=-t</span>，指数变为 <span
+      class="math inline">\displaystyle\frac1x=-\frac1t</span>。</p></li>
+      <li><p><strong>变量的趋向。</strong> <span
+      class="math inline">\displaystyle x</span> 取正数时，<span
+      class="math inline">\displaystyle t</span> 取负数；<span
+      class="math inline">\displaystyle x</span> 取负数时，<span
+      class="math inline">\displaystyle t</span>
+      取正数。两种情形下，<span class="math inline">\displaystyle
+      x\to0</span> 时都有 <span class="math inline">\displaystyle
+      t\to0</span>。</p></li>
+      <li><p><strong>改写与求极限。</strong> 代入新变量，</p>
+      <p><span class="math display">
+      (1-x)^{\frac1x}
+      =(1+t)^{-\frac1t}
+      =\frac1{(1+t)^{\frac1t}}.
+      </span></p>
+      <p>前面已分别给出正数和负数情形下的结果，因此分母都趋于 <span
+      class="math inline">\displaystyle e</span>。再由 <span
+      class="math inline">\displaystyle e&gt;0</span> 和商法则，得到</p>
+      <p><span class="math display">
+      \boxed{\lim_{x\to0}(1-x)^{\frac1x}=\frac1e.}
+      </span></p></li>
+      </ul>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt1-ex-043" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例22：系数变换</span><span class="ex-tags"><span
+      class="ex-tag">极限</span><span class="ex-tag">数e</span><span
+      class="ex-tag">换元法</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求 <span class="math inline">\displaystyle
+      \lim_{x\to0}(1+3x)^{\frac1x}.</span></p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt1-ex-043-frame" data-panel="chpt1-ex-043-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt1-ex-043-frame" data-panel="chpt1-ex-043-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt1-ex-043-frame" class="ex-frame" hidden="">
+      <div id="chpt1-ex-043-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>令 <span class="math inline">\displaystyle t=3x</span>，注意
+      <span
+      class="math inline">\displaystyle\frac1x=\frac3t</span>。</p>
+      </div>
+      <div id="chpt1-ex-043-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <ul>
+      <li><p><strong>选择换元。</strong> 为把底数 <span
+      class="math inline">\displaystyle1+3x</span> 写成 <span
+      class="math inline">\displaystyle1+t</span>，令 <span
+      class="math inline">\displaystyle t=3x</span>。于是 <span
+      class="math inline">\displaystyle x=\frac t3</span>，指数变为
+      <span
+      class="math inline">\displaystyle\frac1x=\frac3t</span>。</p></li>
+      <li><p><strong>变量的趋向。</strong> <span
+      class="math inline">\displaystyle x</span> 取正数时，<span
+      class="math inline">\displaystyle t</span> 也取正数；<span
+      class="math inline">\displaystyle x</span> 取负数时，<span
+      class="math inline">\displaystyle t</span>
+      也取负数。两种情形下，<span class="math inline">\displaystyle
+      x\to0</span> 时都有 <span class="math inline">\displaystyle
+      t\to0</span>。</p></li>
+      <li><p><strong>改写与求极限。</strong> 代入新变量，</p>
+      <p><span class="math display">
+      (1+3x)^{\frac1x}
+      =(1+t)^{\frac3t}
+      =\left[(1+t)^{\frac1t}\right]^3.
+      </span></p>
+      <p>方括号中的式子趋于 <span class="math inline">\displaystyle
+      e</span>，由乘法法则，</p>
+      <p><span class="math display">
+      \boxed{\lim_{x\to0}(1+3x)^{\frac1x}=e^3.}
+      </span></p></li>
+      </ul>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">化未知为已知</span></div>
+      <div class="callout-body">
+      <p>一个重要的数学思想，是<strong>把不会做的转化为会做的</strong>。在这一节，我们把陌生的极限化成熟悉的极限，而<strong>换元法正是实现这一想法的利器</strong>。</p>
+      <p>换元要有目的：先认清要用哪个已知结果，再决定怎样选新变量。换元后，<strong>式子要改写完整，变量的取值范围和趋向也要同时处理清楚</strong>，然后才能使用相应的极限。</p>
+      </div>
+      </div>
+      <section id="第十六节-回望来路" class="chapter-prologue">
+      <h2>第十六节 · 回望来路</h2>
       <p>这一回，我们从一个圆和一本账簿出发，走进了极限的世界。<strong>我们学会了谨慎地谈论无限。</strong>
       希尔伯特的酒店提醒我们，有限情形下的直觉不能不加检查地搬进无限。<span
       class="math inline">\displaystyle\varepsilon</span>–<span
@@ -2333,15 +2876,64 @@
       class="math inline">\displaystyle N</span>，使所有 <span
       class="math inline">\displaystyle n&gt;N</span>
       的项都满足这一要求。回看篇首王维的“行到水穷处，坐看云起时”，静观变化的意境，也为这份数学心法添了一层诗意。</p>
-      <p>过关所得不止于公式。我们学会了综合运用<strong>火眼金睛（图像）</strong>、<strong>极限的定义（普攻）</strong>、<strong>四则运算（连招）</strong>和<strong>换元法（七十二变）</strong>，在面对不同的对手时选择合适的招式。</p>
-      <p>合上这一回之前，试着不看讲义，回答三个问题：</p>
-      <ol type="1">
-      <li>我能否说清圆面积与复利分别对应哪个数列，下标表示什么？</li>
-      <li>我能否用自己的话解释“无论误差要求多小，最终都能一直满足”？</li>
-      <li>我能否说明两场 Boss
-      战各用了什么定理，并逐一核对它的条件？</li>
-      </ol>
-      <p>若还能把某一步为什么成立讲给别人听，这份本领便更扎实了一分。下一回，我们将把极限用在另一个问题上：<strong>怎样描述某一瞬间的变化？</strong></p>
+      <p>从用 <span
+      class="math inline">\displaystyle\varepsilon</span>–<span
+      class="math inline">\displaystyle N</span> 与 <span
+      class="math inline">\displaystyle\varepsilon</span>–<span
+      class="math inline">\displaystyle\delta</span>
+      语言表述的极限定义出发，我们可以推导出极限的四则运算法则与换元法，并在此基础上学习证明两边夹定理、单调有界有极限等重要结论。这些工具帮助我们更方便、更快捷地分析更多的极限问题。本回最重要的两个结果，体现在下面的两个公式中，其中的奥妙，请各位反复体会。</p>
+      <div id="two-important-limits" class="important-limit-summary">
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">两个重要极限</span></div>
+      <div class="callout-body">
+      <p><span class="math display">
+      \begin{aligned}
+      &amp;\lim_{x\to0}\frac{\sin x}{x}=1,\\[0.6em]
+      &amp;\lim_{x\to0}(1+x)^{\frac1x}=e.
+      \end{aligned}
+      </span></p>
+      </div>
+      </div>
+      </div>
+      <p>过关所得不止于公式。我们还体会到了<strong>火眼金睛（图像）</strong>和<strong>七十二变（换元法）</strong>在处理实际问题中的重要作用，学会在面对不同的对手时选择合适的招式。</p>
+      <div id="chapter-limit-map" class="limit-mindmap" role="group"
+      aria-label="本章思维导图：由极限定义分出三路，分别是运算与换元、两边夹定理、单调有界定理">
+      <div class="limit-map-tree">
+      <div class="limit-map-root">
+      <p><strong>极限的定义</strong></p>
+      </div>
+      <div class="limit-map-branches">
+      <div class="limit-map-branch limit-map-tools">
+      <div class="limit-map-method">
+      <p><strong>四则运算</strong></p>
+      </div>
+      <div class="limit-map-result">
+      <p><strong>换元法</strong></p>
+      </div>
+      </div>
+      <div class="limit-map-branch limit-map-squeeze">
+      <div class="limit-map-method">
+      <p><strong>两边夹定理</strong></p>
+      </div>
+      <div class="limit-map-result">
+      <p><span class="math display">
+      \lim_{x\to0}\frac{\sin x}{x}=1
+      </span></p>
+      </div>
+      </div>
+      <div class="limit-map-branch limit-map-monotone">
+      <div class="limit-map-method">
+      <p><strong>单调有界有极限</strong></p>
+      </div>
+      <div class="limit-map-result">
+      <p><span class="math display">
+      \lim_{n\to\infty}\left(1+\frac1n\right)^n=e
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
       </section>
     </article>
     <nav class="reader-pagination" aria-label="篇章翻页"><a href="chapter0.html"><span>← 启程</span></a><a href="chapter2.html"><span>第二回 · 微分 →</span></a></nav>
@@ -2351,8 +2943,10 @@
     window.docLib = [{"title": "\u542f\u7a0b", "url": "chapter0.html"}, {"title": "\u7b2c\u4e00\u56de \u00b7 \u6781\u9650", "url": "chapter1.html"}, {"title": "\u7b2c\u4e8c\u56de \u00b7 \u5fae\u5206", "url": "chapter2.html"}, {"title": "\u7b2c\u4e09\u56de \u00b7 \u79ef\u5206", "url": "chapter4.html"}, {"title": "\u7b2c\u56db\u56de \u00b7 \u5e94\u7528", "url": "chapter5.html"}];
     window.chpAutonum = "";
   </script>
-  <script src="assets/app.js?v=20261019-directory"></script>
+  <script src="assets/character-link.js?v=20261019-return"></script>
+  <script src="assets/app.js?v=20261019-return"></script>
   <script src="assets/three-lazy.js"></script>
   <script src="assets/reader.js"></script>
+  <script src="assets/secant-demo.js?v=20261024-two-plots"></script>
 </body>
 </html>

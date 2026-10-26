@@ -167,7 +167,6 @@
     "chapter": 1,
     "tags": [
       "连续性",
-      "间断点",
       "函数极限"
     ],
     "difficulty": "easy",
@@ -179,7 +178,6 @@
     "chapter": 1,
     "tags": [
       "连续性",
-      "间断点",
       "函数极限"
     ],
     "difficulty": "easy",
@@ -191,7 +189,6 @@
     "chapter": 1,
     "tags": [
       "连续性",
-      "间断点",
       "函数极限"
     ],
     "difficulty": "medium",
@@ -450,6 +447,90 @@
     "difficulty": "medium",
     "video": null,
     "source": "chpt1-ex-040.md"
+  },
+  {
+    "id": "chpt1-ex-041",
+    "chapter": 1,
+    "tags": [
+      "极限",
+      "数e",
+      "换元法"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt1-ex-041.md"
+  },
+  {
+    "id": "chpt1-ex-042",
+    "chapter": 1,
+    "tags": [
+      "极限",
+      "数e",
+      "换元法"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt1-ex-042.md"
+  },
+  {
+    "id": "chpt1-ex-043",
+    "chapter": 1,
+    "tags": [
+      "极限",
+      "数e",
+      "换元法"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt1-ex-043.md"
+  },
+  {
+    "id": "chpt1-ex-044",
+    "chapter": 1,
+    "tags": [
+      "极限",
+      "数e",
+      "换元法"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt1-ex-044.md"
+  },
+  {
+    "id": "chpt1-ex-045",
+    "chapter": 1,
+    "tags": [
+      "极限",
+      "数e",
+      "换元法"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt1-ex-045.md"
+  },
+  {
+    "id": "chpt1-ex-046",
+    "chapter": 1,
+    "tags": [
+      "极限",
+      "数e",
+      "换元法"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt1-ex-046.md"
+  },
+  {
+    "id": "chpt1-ex-047",
+    "chapter": 1,
+    "tags": [
+      "极限",
+      "数e",
+      "换元法"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt1-ex-047.md"
   },
   {
     "id": "chpt10-ex-001",
@@ -1513,6 +1594,85 @@
     "difficulty": "easy",
     "video": null,
     "source": "chpt2-ex-020.md"
+  },
+  {
+    "id": "chpt2-ex-021",
+    "chapter": 2,
+    "tags": [
+      "导数",
+      "最值",
+      "折射定律"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "chpt2-ex-021.md"
+  },
+  {
+    "id": "chpt2-ex-022",
+    "chapter": 2,
+    "tags": [
+      "连续性",
+      "函数极限"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt2-ex-022.md"
+  },
+  {
+    "id": "chpt2-ex-023",
+    "chapter": 2,
+    "tags": [
+      "微分",
+      "线性近似"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt2-ex-023.md"
+  },
+  {
+    "id": "chpt2-ex-024",
+    "chapter": 2,
+    "tags": [
+      "连续性",
+      "可导性"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt2-ex-024.md"
+  },
+  {
+    "id": "chpt2-ex-025",
+    "chapter": 2,
+    "tags": [
+      "导数定义",
+      "三角函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt2-ex-025.md"
+  },
+  {
+    "id": "chpt2-ex-026",
+    "chapter": 2,
+    "tags": [
+      "高阶导数",
+      "三角函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt2-ex-026.md"
+  },
+  {
+    "id": "chpt2-ex-027",
+    "chapter": 2,
+    "tags": [
+      "导数",
+      "凸性",
+      "分式函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "chpt2-ex-027.md"
   },
   {
     "id": "chpt3-ex-001",

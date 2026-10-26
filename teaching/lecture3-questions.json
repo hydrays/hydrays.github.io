@@ -1,0 +1,173 @@
+[
+  {
+    "number": 1,
+    "section": "复习",
+    "title": "数列极限",
+    "problem": "计算 $\\lim_{n\\to\\infty}\\dfrac{5n^2-n+2}{2n^2+3n}$。",
+    "answer": "分子、分母同除以 $n^2$，得 $\\lim_{n\\to\\infty}\\dfrac{5-\\dfrac1n+\\dfrac2{n^2}}{2+\\dfrac3n}=\\dfrac52$。",
+    "space": 19,
+    "star": true
+  },
+  {
+    "number": 2,
+    "section": "复习",
+    "title": "函数极限",
+    "problem": "计算 $\\lim_{x\\to0}\\dfrac{\\sin(4x)}{3x}$。",
+    "answer": "令 $t=4x$，则 $x\\to0$ 时 $t\\to0$，原式为 $\\lim_{t\\to0}\\dfrac43\\dfrac{\\sin t}{t}=\\dfrac43$。",
+    "space": 19,
+    "star": true
+  },
+  {
+    "number": 3,
+    "section": "第一回 · Boss 战—数 $e$",
+    "title": "二项式展开",
+    "problem": "记 $k!=1\\cdot2\\cdots k$，约定 $0!=1$。将 $(1+u)^n$ 看作 $n$ 个 $(1+u)$ 相乘，填空。<br>① 常数项的系数为____，一次项的系数为____。<br>② 选出两个括号中的 $u$：按顺序选有 $n(n-1)$ 种，每一组被重复 $2!$ 次，所以 $u^2$ 的系数为____。<br>③ 一般地，按顺序选 $k$ 个括号有 $n(n-1)\\cdots(n-k+1)$ 种，每一组被重复 $k!$ 次，所以 $u^k$ 的系数为<span class=\"blank\" style=\"width:55mm\"></span>。",
+    "answer": "① $1$，$n$。② $\\dfrac{n(n-1)}{2!}$。③ $\\dfrac{n(n-1)\\cdots(n-k+1)}{k!}$。这里 $2\\le k\\le n$。",
+    "space": 0,
+    "star": false
+  },
+  {
+    "number": 4,
+    "section": "第一回 · Boss 战—数 $e$",
+    "title": "整理展开式",
+    "problem": "设 $a_n=\\left(1+\\dfrac1n\\right)^n$，在二项式展开中代入 $u=\\dfrac1n$。<br>① 常数项为____，一次项 $nu=$____。<br>② 对 $2\\le k\\le n$，先写成<div class=\"equation\">$\\dfrac{n(n-1)\\cdots(n-k+1)}{k!\\,n^k}=\\dfrac1{k!}\\dfrac nn\\dfrac{n-1}n\\cdots\\dfrac{n-k+1}n$。</div><span class=\"question-line fill-line\">把分式改写成 $1-\\dfrac jn$ 的形式后，最后一个括号为____。</span>",
+    "answer": "① $1$，$1$。② $\\left(1-\\dfrac{k-1}{n}\\right)$；共 $k-1$ 个这样的括号。",
+    "space": 0,
+    "star": false
+  },
+  {
+    "number": 5,
+    "section": "第一回 · Boss 战—数 $e$",
+    "title": "证明有界",
+    "problem": "当 $n\\ge3$ 时，二项式展开为<div class=\"equation\">$a_n=1+1+\\dfrac1{2!}\\left(1-\\dfrac1n\\right)+\\cdots+\\dfrac1{n!}\\left(1-\\dfrac1n\\right)\\cdots\\left(1-\\dfrac{n-1}{n}\\right)$。</div><span class=\"question-line\">其中每个括号都在 $0$ 和 $1$ 之间，所以</span><div class=\"equation\">$0<a_n\\le1+1+\\dfrac1{2!}+\\dfrac1{3!}+\\cdots+\\dfrac1{n!}$。</div><span class=\"question-line fill-line\">① 当 $k\\ge2$ 时，$k!=k(k-1)(k-2)!\\ge k(k-1)$，故 $\\dfrac1{k!}$____$\\dfrac1{k(k-1)}$（填 $\\le$ 或 $\\ge$）。</span><span class=\"question-line fill-line\">② 分式拆分：$\\dfrac1{k(k-1)}=$____$-$____。</span><span class=\"question-line fill-line\">③ 相邻项抵消：$\\left(1-\\dfrac12\\right)+\\left(\\dfrac12-\\dfrac13\\right)+\\cdots+\\left(\\dfrac1{n-1}-\\dfrac1n\\right)=$____。</span><span class=\"question-line fill-line\">④ 综上，$a_n$____$3$（填 $\\le$ 或 $\\ge$）。</span>",
+    "answer": "① $\\le$。② $\\dfrac1{k-1}$，$\\dfrac1k$。③ $1-\\dfrac1n$。④ $\\le$。因为 $0<a_n\\le3-\\dfrac1n<3$；$a_1=2$、$a_2=\\dfrac94$ 也在 $0$ 与 $3$ 之间，所以数列有界。<br>这里用的是弱不等式，$k=2,3$ 时 $\\dfrac1{k!}=\\dfrac1{k(k-1)}$。",
+    "space": 0,
+    "star": false
+  },
+  {
+    "number": 6,
+    "section": "第一回 · Boss 战—数 $e$",
+    "title": "证明单调递增",
+    "problem": "比较 $a_n$ 与 $a_{n+1}$ 的二项式展开。以下先取 $n\\ge2$。<br>① 对 $1\\le j\\le n-1$，$0<1-\\dfrac jn$____$1-\\dfrac j{n+1}$（填 $\\le$ 或 $\\ge$）。<br>② 对应项的正因子逐一相乘，再除以相同的 $k!$，所以 $a_{n+1}$ 中的对应项____$a_n$ 中的对应项（填 $\\le$ 或 $\\ge$）。<br>③ $a_{n+1}$ 还多出最后一个正项 $\\left(\\dfrac1{n+1}\\right)^{n+1}=$____。<br>④ 综上，$a_n$____$a_{n+1}$（填 $\\le$ 或 $\\ge$）。",
+    "answer": "① $\\le$。② $\\ge$。③ $\\dfrac1{(n+1)^{n+1}}$。④ $\\le$，所以数列单调递增。<br>展开式前两项 $1+1$ 不变；其余对应项均不减，又新增一个正项。当 $n=1$ 时，$a_2=\\dfrac94\\ge a_1=2$。因此所有 $n$ 均满足 $a_{n+1}\\ge a_n$。",
+    "space": 0,
+    "star": false
+  },
+  {
+    "number": 7,
+    "section": "第一回 · Boss 战—数 $e$",
+    "title": "极限存在",
+    "problem": "数列 $a_n$ 单调____，且有____，由____定理，它有有限极限。把这个极限记作 $e$，即<div class=\"equation\">$e=\\lim_{n\\to\\infty}$____。</div>",
+    "answer": "递增；上界；单调有界；$\\left(1+\\dfrac1n\\right)^n$。这一步确定极限存在，并用 $e$ 为它命名。",
+    "space": 0,
+    "star": false
+  },
+  {
+    "number": 8,
+    "section": "第一回 · 举 $e$ 反三—与 $e$ 有关的极限",
+    "title": "数列换元",
+    "problem": "计算 $\\lim_{n\\to\\infty}\\left(1+\\dfrac1{n+1}\\right)^n$。",
+    "answer": "令 $m=n+1$，则 $n\\to\\infty$ 时 $m\\to\\infty$。原式化为 $\\lim_{m\\to\\infty}\\dfrac{\\left(1+\\dfrac1m\\right)^m}{1+\\dfrac1m}=e$。",
+    "space": 22,
+    "star": true
+  },
+  {
+    "number": 9,
+    "section": "第一回 · 举 $e$ 反三—与 $e$ 有关的极限",
+    "title": "数列中的额外因子",
+    "problem": "计算 $\\lim_{n\\to\\infty}\\left(1+\\dfrac1n\\right)^{n+1}$。",
+    "answer": "拆出一个因子：$\\left(1+\\dfrac1n\\right)^{n+1}=\\left(1+\\dfrac1n\\right)^n\\left(1+\\dfrac1n\\right)$，两个因子分别趋于 $e$、$1$，所以极限为 $e$。",
+    "space": 22,
+    "star": true
+  },
+  {
+    "number": 10,
+    "section": "第一回 · 举 $e$ 反三—与 $e$ 有关的极限",
+    "title": "函数换元",
+    "problem": "计算 $\\lim_{x\\to0}(1+2x)^{\\frac1x}$。",
+    "answer": "令 $t=2x$，则 $x\\to0$ 时 $t\\to0$，$\\dfrac1x=\\dfrac2t$。原式为 $\\lim_{t\\to0}\\left[(1+t)^{\\frac1t}\\right]^2=e^2$。",
+    "space": 23,
+    "star": true
+  },
+  {
+    "number": 11,
+    "section": "第一回 · 举 $e$ 反三—与 $e$ 有关的极限",
+    "title": "符号变换",
+    "problem": "计算 $\\lim_{x\\to0}(1-x)^{\\frac1x}$。",
+    "answer": "令 $t=-x$，则 $x\\to0$ 时 $t\\to0$，$\\dfrac1x=-\\dfrac1t$。原式为 $\\lim_{t\\to0}\\dfrac1{(1+t)^{\\frac1t}}=\\dfrac1e$。充分接近零时底数为正。",
+    "space": 23,
+    "star": true
+  },
+  {
+    "number": 12,
+    "section": "第二回 · 连续函数",
+    "title": "连续的条件",
+    "problem": "函数在 $x_0$ 处连续，要求该点的函数值有定义，附近的函数值有有限极限，而且<div class=\"equation\">$\\lim_{x\\to x_0}f(x)=$____。</div><span class=\"question-line\">若 $f(x_0)$ 没有定义，能否说函数在 $x_0$ 处连续？（　）A. 能　B. 不能</span>",
+    "answer": "$f(x_0)$；选 B。",
+    "space": 0,
+    "star": false
+  },
+  {
+    "number": 13,
+    "section": "第二回 · 连续函数",
+    "title": "比较极限与函数值",
+    "problem": "对 $f(x)=x^2$，$\\lim_{x\\to2}f(x)=$____，$f(2)=$____。<br>因此函数在 $x=2$ 处（　）。A. 连续　B. 不连续",
+    "answer": "$4$，$4$；选 A。",
+    "space": 0,
+    "star": false
+  },
+  {
+    "number": 14,
+    "section": "第二回 · 连续函数",
+    "title": "补齐函数",
+    "problem": "设 $G(x)=\\begin{cases}\\dfrac{\\sin x}{x},&x\\ne0,\\\\c,&x=0.\\end{cases}$<br>要使 $G$ 在零点连续，应取 $c=$____；此时 $\\lim_{x\\to0}G(x)=$____$=G(0)$。",
+    "answer": "$1$，$1$。使用上一回的重要极限 $\\lim_{x\\to0}\\dfrac{\\sin x}{x}=1$。",
+    "space": 0,
+    "star": false
+  },
+  {
+    "number": 15,
+    "section": "第二回 · 连续函数",
+    "title": "振荡函数",
+    "problem": "对 $f(x)=\\sin\\dfrac1x$，当 $x\\to0$ 时，函数的极限是（　）。<br>A. $0$　B. $1$　C. $-1$　D. 不存在<br>给零点补上一个函数值，能否使它在零点连续？（　）A. 能　B. 不能",
+    "answer": "D；B。函数值持续振荡，没有共同的极限，补充单点函数值不能改变附近的极限行为。",
+    "space": 0,
+    "star": false
+  },
+  {
+    "number": 16,
+    "section": "第二回 · 导数的定义",
+    "title": "差商",
+    "problem": "对 $f(x)=x^2$，固定 $x_0=1$，取另一点的横坐标为 $1+h$。<br>在图上标出 $\\Delta x$ 和 $\\Delta y$，并补全下表。<div class=\"visual-row\"><img class=\"diagram\" src=\"../assets/figures/lecture3-difference-quotient.svg\" alt=\"固定点P与右侧点Q之间的水平和竖直改变量\"><table class=\"fill-table\"><thead><tr><th>$h=\\Delta x$</th><th>$\\Delta y$</th><th>$\\dfrac{\\Delta y}{\\Delta x}$</th></tr></thead><tbody><tr><td>$0.5$</td><td>____</td><td>____</td></tr><tr><td>$0.1$</td><td>____</td><td>____</td></tr><tr><td>$0.01$</td><td>____</td><td>____</td></tr></tbody></table></div>",
+    "answer": "水平改变量为 $\\Delta x=h$，竖直改变量为 $\\Delta y=(1+h)^2-1=2h+h^2$。<br>三行的 $\\Delta y$ 依次为 $1.25$、$0.21$、$0.0201$；差商依次为 $2.5$、$2.1$、$2.01$，趋近 $2$。",
+    "space": 0,
+    "star": false
+  },
+  {
+    "number": 17,
+    "section": "第二回 · 导数的定义",
+    "title": "根据定义求导",
+    "problem": "根据定义，求函数 $f(x)=x^2$ 在 $x_0=2$ 处的导数。请写出差商、化简后的式子及其极限。",
+    "answer": "$f^{\\prime}(2)=\\lim_{h\\to0}\\dfrac{(2+h)^2-4}{h}=\\lim_{h\\to0}(4+h)=4$。",
+    "space": 23,
+    "star": true
+  },
+  {
+    "number": 18,
+    "section": "第二回 · 导数的定义",
+    "title": "常数函数",
+    "problem": "根据定义，求常数函数 $f(x)=5$ 在 $x_0=1$ 处的导数。",
+    "answer": "$f^{\\prime}(1)=\\lim_{h\\to0}\\dfrac{5-5}{h}=\\lim_{h\\to0}0=0$。",
+    "space": 18,
+    "star": true
+  },
+  {
+    "number": 19,
+    "section": "第二回 · 导数的定义",
+    "title": "平均速度与瞬时速度",
+    "problem": "位移为 $s(t)=t^2$，单位为米，时间单位为秒。<br>① 从 $t=1$ 到 $t=1.1$ 的平均速度为____米/秒。<br>② 用定义计算 $t=1$ 时的瞬时速度：<div class=\"equation\">$v(1)=\\lim_{h\\to0}\\dfrac{s(1+h)-s(1)}h=$____米/秒。</div>",
+    "answer": "① $\\dfrac{1.1^2-1}{0.1}=2.1$ 米/秒。② $\\lim_{h\\to0}\\dfrac{(1+h)^2-1}{h}=\\lim_{h\\to0}(2+h)=2$ 米/秒。",
+    "space": 0,
+    "star": false
+  }
+]

@@ -1,0 +1,24 @@
+.secant-demo{margin:28px 0;padding:16px 10px 10px;border:1px solid var(--v-bd);background:var(--paper-panel);color:var(--v-tt);--secant-curve:#365c67;--secant-line:#a34b30;--secant-tangent:#6a7540}
+.secant-demo-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.secant-demo-chart{min-width:0}.secant-demo-chart+.secant-demo-chart{border-left:1px solid var(--v-bd);padding-left:10px}
+.secant-demo-equation,.secant-demo-quotient{min-height:52px;display:flex;align-items:center;justify-content:center;font-size:16px;line-height:1.5}
+.secant-demo-quotient{color:var(--secant-line)}
+.secant-demo svg{display:block;width:100%;height:auto;overflow:visible;user-select:none}
+.secant-demo svg text{font-family:Georgia,'KaiTi',serif;font-size:25px;fill:var(--v-tt)}
+.secant-demo svg .secant-gridline{stroke:var(--v-bd);stroke-width:1;opacity:.35}
+.secant-demo svg .secant-axis{stroke:var(--v-tt);stroke-width:1.6;opacity:.65}
+.secant-demo svg .secant-curve{stroke:var(--secant-curve);stroke-width:3;fill:none}
+.secant-demo svg .secant-tangent{stroke:var(--secant-tangent);stroke-width:2.5;stroke-dasharray:9 6}
+.secant-demo svg .secant-line{stroke:var(--secant-line);stroke-width:3}
+.secant-demo svg .secant-step{stroke:var(--secant-line);stroke-width:2;stroke-dasharray:5 5;fill:none;opacity:.8}
+.secant-demo svg .secant-point-p{fill:var(--secant-curve);stroke:var(--paper-panel);stroke-width:2}
+.secant-demo svg .secant-point-q{cursor:grab;touch-action:none}
+.secant-demo svg .secant-point-q:active{cursor:grabbing}
+.secant-demo svg .secant-point-q:focus-visible{outline:none;stroke:var(--reader-gold);stroke-width:4}
+.secant-demo svg .secant-increment-label{fill:var(--secant-line);font-size:27px}
+.secant-demo-controls{border-top:1px solid var(--v-bd);padding:8px 4px 0;margin-top:12px;text-align:center}
+.secant-demo-h{font-size:14px;font-family:Georgia,'KaiTi',serif;font-variant-numeric:tabular-nums}
+.secant-demo-controls input{display:block;width:100%;margin:10px 0;accent-color:var(--secant-line);cursor:ew-resize}
+html[data-reading-mode=night] .secant-demo{--secant-curve:#88bac4;--secant-line:#edac86;--secant-tangent:#bfca8a}
+@media(max-width:420px){.secant-demo{padding:10px 4px 6px}.secant-demo-grid{gap:4px}.secant-demo-chart+.secant-demo-chart{padding-left:4px}.secant-demo-equation,.secant-demo-quotient{font-size:13px;min-height:45px}}
+@media print{.secant-demo-controls{display:none}.secant-demo{break-inside:avoid}}

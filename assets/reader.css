@@ -100,6 +100,7 @@ html[data-reading-mode=night] .callout-practice{--callout-accent:#c4b2d2}
 .law-subheading{display:block;text-align:left}
 #content .limit-arithmetic-section .katex-display{text-align:left}
 #content .limit-arithmetic-section .katex-display>.katex{text-align:left}
+#content .important-limit-summary .katex-display,#content .important-limit-summary .katex-display>.katex{text-align:left}
 
 /* Exercises use plain headings and flush-left paragraphs throughout. */
 .exercise-block .ex-dot{display:none}
@@ -111,3 +112,30 @@ html[data-reading-mode=night] .callout-practice{--callout-accent:#c4b2d2}
 /* Long formulas scroll within their own row, including inside folded proofs. */
 #content .katex-display{overflow-x:auto;overflow-y:hidden}
 #content .katex-display>.katex{width:max-content;min-width:100%}
+
+/* Chapter recap follows the manuscript sketch: one root above three paths. */
+#content .limit-mindmap{margin:2em 0;padding:18px 12px;border:1px solid var(--v-bd);background:var(--paper-panel);font-size:16px;overflow-x:auto}
+#content .limit-map-tree{display:grid;gap:36px;min-width:600px;padding:0 1px}
+#content .limit-mindmap p{margin:.35em 0;text-indent:0;line-height:1.65}
+#content .limit-map-root{position:relative;justify-self:center;min-width:150px;text-align:center;padding:8px 12px;border:2px solid #9a814d;background:var(--paper)}
+#content .limit-map-root::after{content:"";position:absolute;left:50%;top:100%;height:20px;border-left:1px solid #9a814d}
+#content .limit-map-branches{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+#content .limit-map-branches::before{content:"";position:absolute;top:-18px;left:calc((100% - 48px)/6);right:calc((100% - 48px)/6);border-top:1px solid #9a814d}
+#content .limit-map-branch{--map-accent:#776244;position:relative;display:grid;grid-template-rows:64px minmax(82px,1fr);gap:28px;min-width:0}
+#content .limit-map-branch::before{content:"";position:absolute;left:50%;top:-18px;height:18px;border-left:1px solid #9a814d}
+#content .limit-map-squeeze{--map-accent:#4d736b}
+#content .limit-map-monotone{--map-accent:#85614b}
+#content .limit-map-method{position:relative;display:flex;flex-direction:column;justify-content:center;padding:10px 8px;text-align:center;color:var(--map-accent);border:1px solid var(--map-accent);background:var(--paper)}
+#content .limit-map-method::after{content:"";position:absolute;left:50%;top:100%;height:28px;border-left:1px solid var(--map-accent)}
+#content .limit-map-result{position:relative;display:flex;flex-direction:column;justify-content:center;min-width:0;padding:10px 8px;text-align:center;border:1px solid var(--map-accent);background:var(--paper)}
+#content .limit-map-result>p:first-child{color:var(--map-accent)}
+#content .limit-mindmap .katex-display{margin:.5em 0;font-size:.85em}
+@media(max-width:760px){
+  #content .limit-map-tree{min-width:360px}
+  #content .limit-map-branches{gap:12px}
+  #content .limit-map-branches::before{left:calc((100% - 24px)/6);right:calc((100% - 24px)/6)}
+  #content .limit-map-method,#content .limit-map-result{padding:6px 4px;font-size:14px}
+  #content .limit-mindmap .katex-display{font-size:.65em}
+}
+@media print{#content .limit-map-tree{min-width:0}}
+.video-attribution{display:flex;flex-direction:column;gap:.25em;margin:.65em 0;font-size:.85em;line-height:1.65;color:inherit;overflow-wrap:anywhere}.video-attribution a{color:inherit;text-underline-offset:.18em}
