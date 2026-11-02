@@ -2828,5 +2828,753 @@
     "difficulty": "medium",
     "video": null,
     "source": "chpt9-ex-012.md"
+  },
+  {
+    "id": "humanities-app-ex-001",
+    "chapter": 5,
+    "tags": [
+      "中值定理",
+      "拉格朗日中值定理"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "humanities-app-ex-001.md"
+  },
+  {
+    "id": "humanities-app-ex-002",
+    "chapter": 5,
+    "tags": [
+      "中值定理",
+      "拉格朗日中值定理"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "humanities-app-ex-002.md"
+  },
+  {
+    "id": "humanities-app-ex-003",
+    "chapter": 5,
+    "tags": [
+      "中值定理",
+      "拉格朗日中值定理"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-app-ex-003.md"
+  },
+  {
+    "id": "humanities-app-ex-004",
+    "chapter": 5,
+    "tags": [
+      "中值定理",
+      "拉格朗日中值定理"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-app-ex-004.md"
+  },
+  {
+    "id": "humanities-app-ex-006",
+    "chapter": 5,
+    "tags": [
+      "中值定理"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-app-ex-006.md"
+  },
+  {
+    "id": "humanities-app-ex-007",
+    "chapter": 5,
+    "tags": [
+      "中值定理"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "humanities-app-ex-007.md"
+  },
+  {
+    "id": "humanities-app-ex-008",
+    "chapter": 5,
+    "tags": [
+      "中值定理"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "humanities-app-ex-008.md"
+  },
+  {
+    "id": "humanities-app-ex-009",
+    "chapter": 5,
+    "tags": [
+      "泰勒展开"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-app-ex-009.md"
+  },
+  {
+    "id": "humanities-app-ex-010",
+    "chapter": 5,
+    "tags": [
+      "泰勒展开"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-app-ex-010.md"
+  },
+  {
+    "id": "humanities-app-ex-013",
+    "chapter": 5,
+    "tags": [
+      "泰勒展开"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-app-ex-013.md"
+  },
+  {
+    "id": "humanities-app-ex-021",
+    "chapter": 5,
+    "tags": [
+      "微分方程"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-app-ex-021.md"
+  },
+  {
+    "id": "humanities-app-ex-022",
+    "chapter": 5,
+    "tags": [
+      "微分方程"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-app-ex-022.md"
+  },
+  {
+    "id": "humanities-app-ex-023",
+    "chapter": 5,
+    "tags": [
+      "微分方程"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-app-ex-023.md"
+  },
+  {
+    "id": "humanities-full-chpt4-ex-001",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "黎曼和"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "humanities-full-chpt4-ex-001.md"
+  },
+  {
+    "id": "humanities-full-chpt4-ex-002",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "黎曼和"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "humanities-full-chpt4-ex-002.md"
+  },
+  {
+    "id": "humanities-full-chpt4-ex-003",
+    "chapter": 4,
+    "tags": [
+      "不定积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-full-chpt4-ex-003.md"
+  },
+  {
+    "id": "humanities-full-chpt4-ex-004",
+    "chapter": 4,
+    "tags": [
+      "不定积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-full-chpt4-ex-004.md"
+  },
+  {
+    "id": "humanities-full-chpt4-ex-005",
+    "chapter": 4,
+    "tags": [
+      "不定积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-full-chpt4-ex-005.md"
+  },
+  {
+    "id": "humanities-full-chpt4-ex-006",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "换元法"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-full-chpt4-ex-006.md"
+  },
+  {
+    "id": "humanities-full-chpt4-ex-007",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "换元法"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-full-chpt4-ex-007.md"
+  },
+  {
+    "id": "humanities-full-chpt4-ex-008",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "分部积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-full-chpt4-ex-008.md"
+  },
+  {
+    "id": "humanities-full-chpt4-ex-009",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "分部积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-full-chpt4-ex-009.md"
+  },
+  {
+    "id": "humanities-full-chpt4-ex-010",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "换元法"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-full-chpt4-ex-010.md"
+  },
+  {
+    "id": "humanities-full-chpt4-ex-011",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "换元法"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "humanities-full-chpt4-ex-011.md"
+  },
+  {
+    "id": "humanities-full-chpt4-ex-012",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "分部积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-full-chpt4-ex-012.md"
+  },
+  {
+    "id": "humanities-full-chpt4-ex-013",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "分部积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-full-chpt4-ex-013.md"
+  },
+  {
+    "id": "humanities-full-chpt6-ex-001",
+    "chapter": 4,
+    "tags": [
+      "定积分",
+      "体积"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-full-chpt6-ex-001.md"
+  },
+  {
+    "id": "humanities-full-chpt6-ex-002",
+    "chapter": 4,
+    "tags": [
+      "定积分",
+      "体积"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-full-chpt6-ex-002.md"
+  },
+  {
+    "id": "humanities-full-chpt6-ex-003",
+    "chapter": 4,
+    "tags": [
+      "定积分",
+      "体积"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-full-chpt6-ex-003.md"
+  },
+  {
+    "id": "humanities-full-chpt6-ex-004",
+    "chapter": 4,
+    "tags": [
+      "定积分",
+      "体积"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-full-chpt6-ex-004.md"
+  },
+  {
+    "id": "humanities-full-chpt6-ex-005",
+    "chapter": 4,
+    "tags": [
+      "定积分",
+      "弧长",
+      "换元法"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "humanities-full-chpt6-ex-005.md"
+  },
+  {
+    "id": "humanities-full-chpt6-ex-006",
+    "chapter": 4,
+    "tags": [
+      "定积分",
+      "弧长"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-full-chpt6-ex-006.md"
+  },
+  {
+    "id": "humanities-full-chpt6-ex-007",
+    "chapter": 4,
+    "tags": [
+      "定积分",
+      "弧长",
+      "极坐标"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "humanities-full-chpt6-ex-007.md"
+  },
+  {
+    "id": "humanities-full-chpt6-ex-008",
+    "chapter": 4,
+    "tags": [
+      "定积分",
+      "面积"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-full-chpt6-ex-008.md"
+  },
+  {
+    "id": "humanities-full-chpt6-ex-009",
+    "chapter": 4,
+    "tags": [
+      "定积分",
+      "面积"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "humanities-full-chpt6-ex-009.md"
+  },
+  {
+    "id": "humanities-full-chpt6-ex-010",
+    "chapter": 4,
+    "tags": [
+      "定积分",
+      "面积"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "humanities-full-chpt6-ex-010.md"
+  },
+  {
+    "id": "humanities-full-chpt6-ex-011",
+    "chapter": 4,
+    "tags": [
+      "定积分",
+      "面积"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-full-chpt6-ex-011.md"
+  },
+  {
+    "id": "humanities-full-chpt6-ex-012",
+    "chapter": 4,
+    "tags": [
+      "定积分",
+      "面积"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-full-chpt6-ex-012.md"
+  },
+  {
+    "id": "humanities-full-chpt6-ex-013",
+    "chapter": 4,
+    "tags": [
+      "定积分",
+      "面积"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-full-chpt6-ex-013.md"
+  },
+  {
+    "id": "humanities-full-chpt6-ex-014",
+    "chapter": 4,
+    "tags": [
+      "定积分",
+      "面积"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "humanities-full-chpt6-ex-014.md"
+  },
+  {
+    "id": "humanities-full-chpt6-ex-015",
+    "chapter": 4,
+    "tags": [
+      "定积分",
+      "面积"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "humanities-full-chpt6-ex-015.md"
+  },
+  {
+    "id": "humanities-full-chpt6-ex-016",
+    "chapter": 4,
+    "tags": [
+      "定积分",
+      "面积"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "humanities-full-chpt6-ex-016.md"
+  },
+  {
+    "id": "humanities-full-chpt6-ex-017",
+    "chapter": 4,
+    "tags": [
+      "定积分",
+      "面积"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-full-chpt6-ex-017.md"
+  },
+  {
+    "id": "humanities-integral-checked-002",
+    "chapter": 4,
+    "tags": [
+      "定积分",
+      "体积"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-integral-checked-002.md"
+  },
+  {
+    "id": "humanities-integral-checked-004",
+    "chapter": 4,
+    "tags": [
+      "定积分",
+      "体积"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-integral-checked-004.md"
+  },
+  {
+    "id": "humanities-integral-checked-017",
+    "chapter": 4,
+    "tags": [
+      "定积分",
+      "面积"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-integral-checked-017.md"
+  },
+  {
+    "id": "humanities-integral-ex-001",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "黎曼和"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "humanities-integral-ex-001.md"
+  },
+  {
+    "id": "humanities-integral-ex-002",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "黎曼和"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "humanities-integral-ex-002.md"
+  },
+  {
+    "id": "humanities-integral-ex-003",
+    "chapter": 4,
+    "tags": [
+      "不定积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-integral-ex-003.md"
+  },
+  {
+    "id": "humanities-integral-ex-004",
+    "chapter": 4,
+    "tags": [
+      "不定积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-integral-ex-004.md"
+  },
+  {
+    "id": "humanities-integral-ex-005",
+    "chapter": 4,
+    "tags": [
+      "不定积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-integral-ex-005.md"
+  },
+  {
+    "id": "humanities-integral-ex-006",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "换元法"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-integral-ex-006.md"
+  },
+  {
+    "id": "humanities-integral-ex-007",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "换元法"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-integral-ex-007.md"
+  },
+  {
+    "id": "humanities-integral-ex-008",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "分部积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-integral-ex-008.md"
+  },
+  {
+    "id": "humanities-integral-ex-009",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "分部积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-integral-ex-009.md"
+  },
+  {
+    "id": "humanities-integral-ex-010",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "换元法"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-integral-ex-010.md"
+  },
+  {
+    "id": "humanities-integral-ex-012",
+    "chapter": 4,
+    "tags": [
+      "不定积分",
+      "分部积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-integral-ex-012.md"
+  },
+  {
+    "id": "humanities-integral-ex-014",
+    "chapter": 4,
+    "tags": [
+      "积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-integral-ex-014.md"
+  },
+  {
+    "id": "humanities-integral-ex-015",
+    "chapter": 4,
+    "tags": [
+      "积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-integral-ex-015.md"
+  },
+  {
+    "id": "humanities-integral-ex-016",
+    "chapter": 4,
+    "tags": [
+      "积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-integral-ex-016.md"
+  },
+  {
+    "id": "humanities-integral-ex-017",
+    "chapter": 4,
+    "tags": [
+      "积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-integral-ex-017.md"
+  },
+  {
+    "id": "humanities-integral-ex-018",
+    "chapter": 4,
+    "tags": [
+      "积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-integral-ex-018.md"
+  },
+  {
+    "id": "humanities-integral-ex-019",
+    "chapter": 4,
+    "tags": [
+      "积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-integral-ex-019.md"
+  },
+  {
+    "id": "humanities-integral-ex-020",
+    "chapter": 4,
+    "tags": [
+      "积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-integral-ex-020.md"
+  },
+  {
+    "id": "humanities-integral-ex-021",
+    "chapter": 4,
+    "tags": [
+      "积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-integral-ex-021.md"
+  },
+  {
+    "id": "humanities-integral-ex-022",
+    "chapter": 4,
+    "tags": [
+      "积分"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-integral-ex-022.md"
+  },
+  {
+    "id": "humanities-integral-ex-023",
+    "chapter": 4,
+    "tags": [
+      "积分",
+      "概率"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-integral-ex-023.md"
+  },
+  {
+    "id": "humanities-integral-sign-ex-001",
+    "chapter": 4,
+    "tags": [
+      "定积分",
+      "几何意义"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-integral-sign-ex-001.md"
+  },
+  {
+    "id": "humanities-riemann-ex-001",
+    "chapter": 4,
+    "tags": [
+      "定积分",
+      "黎曼和"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "humanities-riemann-ex-001.md"
+  },
+  {
+    "id": "humanities-riemann-ex-002",
+    "chapter": 4,
+    "tags": [
+      "定积分",
+      "黎曼和"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "humanities-riemann-ex-002.md"
   }
 ]

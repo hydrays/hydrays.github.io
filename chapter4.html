@@ -11,7 +11,7 @@
   
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="assets/app.css?v=20261024-proof-label">
-  <link rel="stylesheet" href="assets/reader.css?v=20261025-video-attribution">
+  <link rel="stylesheet" href="assets/reader.css?v=20261101-flush-labels">
   <link rel="stylesheet" href="assets/secant-demo.css?v=20261024-two-plots">
   <link rel="stylesheet" href="assets/katex/katex.min.css">
   <script src="assets/katex/katex.min.js"></script>
@@ -68,6 +68,7 @@
     a { color: #1a3d8f; text-decoration: none; }
     .open-sidebar-btn, .menu-toggle, .floating-btn, .video-btn { display: none !important; }
   </style>
+  <link rel="stylesheet" href="assets/teaching-motion.css?v=20261101-accumulation-concave">
 </head>
 <body>
   <aside id="sidebar" aria-label="讲义目录">
@@ -80,23 +81,28 @@
     <div id="toc-nav">
       <div class="nav-section-title">本篇目录</div>
       <ul>
-      <li><a href="#第三回-积分" id="toc-第三回-积分">第三回 · 积分</a>
-      <ul>
-      <li><a href="#第一节-积分的概念" id="toc-第一节-积分的概念">第一节
-      · 积分的概念</a></li>
-      <li><a href="#第二节-微积分基本定理"
-      id="toc-第二节-微积分基本定理">第二节 · 微积分基本定理</a></li>
-      <li><a href="#第三节-积分的性质和运算"
-      id="toc-第三节-积分的性质和运算">第三节 · 积分的性质和运算</a>
-      <ul>
-      <li><a href="#积分的性质" id="toc-积分的性质">3.3.1
-      积分的性质</a></li>
-      <li><a href="#不定积分的运算" id="toc-不定积分的运算">3.3.2
-      不定积分的运算</a></li>
-      <li><a href="#定积分的运算" id="toc-定积分的运算">3.3.3
-      定积分的运算</a></li>
-      </ul></li>
-      </ul></li>
+      <li><a href="#第一节-楔子" id="toc-第一节-楔子">第一节 ·
+      楔子</a></li>
+      <li><a href="#第二节-积零为整积分的概念"
+      id="toc-第二节-积零为整积分的概念">第二节 ·
+      积零为整—积分的概念</a></li>
+      <li><a href="#第三节-积分的性质" id="toc-第三节-积分的性质">第三节
+      · 积分的性质</a></li>
+      <li><a href="#第四节-微积分基本定理"
+      id="toc-第四节-微积分基本定理">第四节 · 微积分基本定理</a></li>
+      <li><a href="#第五节-不定积分的计算换元法"
+      id="toc-第五节-不定积分的计算换元法">第五节 ·
+      不定积分的计算—换元法</a></li>
+      <li><a href="#第六节-不定积分的计算分部积分法"
+      id="toc-第六节-不定积分的计算分部积分法">第六节 ·
+      不定积分的计算—分部积分法</a></li>
+      <li><a href="#第七节-定积分的计算"
+      id="toc-第七节-定积分的计算">第七节 · 定积分的计算</a></li>
+      <li><a href="#第八节-打上凌霄宝殿微元法"
+      id="toc-第八节-打上凌霄宝殿微元法">第八节 ·
+      打上凌霄宝殿—微元法</a></li>
+      <li><a href="#第九节-回望来路" id="toc-第九节-回望来路">第九节 ·
+      回望来路</a></li>
       </ul>
     </div>
     <a class="reader-science" href="science.html">理工版 · 完整目录 ↗</a>
@@ -121,10 +127,8 @@
       <button id="video-close-bottom" onclick="void(0)">&#9650; 收起视频</button>
     </div>
     <article id="content" tabindex="-1">
-      <h1 id="第三回-积分">第三回 · 积分</h1>
-      <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">省</span></div>
-      <div class="callout-body">
+      <section id="第一节-楔子" class="chapter-prologue">
+      <h2>第一节 · 楔子</h2>
       <p>在微积分的发展历程中, 积分与微分如同一对孪生兄弟,
       共同构成了现代数学的基石.
       如果说微分研究的是函数在<strong>局部</strong>的瞬时变化率,
@@ -150,55 +154,25 @@
       <p>本章将带领大家沿着历史发展的轨迹, 首先建立积分的概念,
       然后揭示积分与微分之间深刻的内在联系——微积分基本定理,
       最后掌握计算积分的基本方法.</p>
-      </div>
-      </div>
-      <h2 id="第一节-积分的概念">第一节 · 积分的概念</h2>
-      <div class="callout callout-tip">
-      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">问题引入: 从规则图形到曲边图形</span></div>
-      <div class="callout-body">
-      <p><strong>什么是面积?</strong> 这是一个看似简单却深奥的问题.</p>
-      <p>在初等几何中,
-      我们以边长为1的正方形作为<strong>单位面积</strong>, 基于此定义了:
-      - 矩形的面积 = 长 × 宽 - 三角形的面积 = ½ × 底 × 高 -
-      多边形的面积可通过分割为三角形求和得到</p>
-      <p>这套方法在古代丈量田地时已经足够实用. 然而,
-      当人类文明的触角伸向更精深的科学领域时, 我们遇到了新的挑战:</p>
-      <ul>
-      <li><p><strong>圆的面积</strong>: 如何精确计算圆的面积?
-      古希腊的阿基米德用”穷竭法”不断用内接正多边形逼近圆,
-      已经蕴含了积分思想的萌芽.</p></li>
-      <li><p><strong>椭圆面积</strong>: 行星轨道是椭圆,
-      计算椭圆面积对天文学至关重要.</p></li>
-      <li><p><strong>一般曲线围成的面积</strong>: 在物理学和工程学中,
-      经常需要计算由复杂曲线围成的区域的面积.</p></li>
-      </ul>
-      <p>这些问题的共同特点是: <strong>边界不再是直线,
-      而是曲线</strong>. 传统的几何方法对此无能为力,
-      我们需要一种全新的数学工具——这就是积分诞生的背景.</p>
-      </div>
-      </div>
+      </section>
+      <h2 id="第二节-积零为整积分的概念">第二节 ·
+      积零为整—积分的概念</h2>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">通过极限定义积分</span></div>
       <div class="callout-body">
-      <p>让我们从一个具体例子出发: 计算由曲线<span
-      class="math inline">\displaystyle y = f(x)</span>, 直线<span
-      class="math inline">\displaystyle x = a</span>, <span
-      class="math inline">\displaystyle x = b</span>以及<span
-      class="math inline">\displaystyle
-      x</span>轴所围成的曲边梯形的面积.</p>
-      <p>我们考虑一个具体的函数: 半径为<span
-      class="math inline">\displaystyle \sqrt{2}</span>, 圆心在<span
-      class="math inline">\displaystyle (\sqrt{2},
-      0)</span>的圆的上半部分. 这个圆的方程为: <span
-      class="math inline">\displaystyle (x - \sqrt{2})^2 + y^2 =
-      2</span>, 所以上半圆的函数为 <span
-      class="math inline">\displaystyle y = f(x) = \sqrt{2 - (x -
-      \sqrt{2})^2}</span>. 我们计算这个上半圆在区间 <span
-      class="math inline">\displaystyle [0, 2\sqrt{2}]</span> 上的面积,
-      这正好是半个圆的面积, 中学我们已经学过圆的面积公式,
-      知道这半个圆的面积正好等于 <span class="math inline">\displaystyle
-      \pi</span>.</p>
-      <p><strong>第一步: 分割</strong> 将区间 <span
+      <p>我们还是从圆的面积出发。第一回中，我们用圆的内接正多边形的面积逼近圆的面积；现在换一种逼近的方法，用小矩形的面积之和逼近。</p>
+      <p>考虑一个半径为 <span
+      class="math inline">\displaystyle\sqrt{2}</span>、圆心在 <span
+      class="math inline">\displaystyle(\sqrt{2},0)</span>
+      的圆，取它的上半部分。圆的方程为 <span
+      class="math inline">\displaystyle(x-\sqrt{2})^2+y^2=2</span>，所以上半圆对应的函数为
+      <span class="math inline">\displaystyle
+      y=f(x)=\sqrt{2-(x-\sqrt{2})^2}</span>。</p>
+      <p>我们要计算它在区间 <span
+      class="math inline">\displaystyle[0,2\sqrt{2}]</span>
+      上与横轴围成的面积。由圆面积公式可知，这个半圆的面积为 <span
+      class="math inline">\displaystyle\pi</span>。下面看看，小矩形的面积之和怎样逼近这个结果。</p>
+      <p class="lead-label"><strong>第一步: 分割</strong> 将区间 <span
       class="math inline">\displaystyle [0, 2\sqrt{2}]</span> 分成 <span
       class="math inline">\displaystyle n</span> 个小区间, 设分点为:
       <span class="math inline">\displaystyle 0 = x_0 &lt; x_1 &lt; x_2
@@ -207,7 +181,7 @@
       x_{i-1}</span> 为简单起见, 我们可以采用等分, 即 <span
       class="math inline">\displaystyle\Delta x =\frac{(2\sqrt{2} -
       0)}{n} = \frac{2\sqrt{2}}{n}</span></p>
-      <p><strong>第二步: 近似代替</strong> 在每个小区间 <span
+      <p class="lead-label"><strong>第二步: 近似代替</strong> 在每个小区间 <span
       class="math inline">\displaystyle [x_{i-1}, x_i]</span> 上任取一点
       <span class="math inline">\displaystyle \xi_i</span>, 例如取右端点
       <span class="math inline">\displaystyle \xi_i = x_i</span>. 用高为
@@ -216,11 +190,13 @@
       class="math inline">\displaystyle \Delta x</span> 的小矩形面积
       <span class="math inline">\displaystyle f(\xi_i)\Delta x</span>
       来近似代替该小区间上曲边梯形的面积.</p>
-      <p><strong>第三步: 求和</strong> 将所有小矩形的面积相加,
+      <p class="lead-label"><strong>第三步: 求和</strong> 将所有小矩形的面积相加,
       得到整个曲边梯形面积的近似值: <span class="math display">
       S_n = \sum_{i=1}^n f(\xi_i)\Delta x
-      </span> 这个和称为<strong>黎曼和</strong>(Riemann sum)</p>
-      <p><strong>第四步: 取极限</strong> 当分割越来越细, 即 <span
+      </span> 这个和称为<strong>黎曼和</strong>(Riemann sum)。</p>
+      <figure data-teaching-motion="riemann">
+      </figure>
+      <p class="lead-label"><strong>第四步: 取极限</strong> 当分割越来越细, 即 <span
       class="math inline">\displaystyle n \to \infty</span> 时, <span
       class="math inline">\displaystyle \Delta x \to 0</span>,
       如果黎曼和的极限存在, 我们就定义这个极限值为曲边梯形的面积: <span
@@ -228,71 +204,6 @@
       S = \lim_{n\to\infty} S_n = \lim_{n\to\infty} \sum_{i=1}^n
       f(\xi_i)\Delta x
       </span></p>
-      <p>取 <span class="math inline">\displaystyle n=4, 8, 16, 32,
-      \ldots</span> 计算 <span class="math inline">\displaystyle
-      S_n</span> 的值, 会发现 <span class="math inline">\displaystyle
-      S_n</span> 趋近于 <span class="math inline">\displaystyle
-      \pi</span> (见下表).</p>
-      <table>
-      <thead>
-      <tr>
-      <th><span class="math inline">\displaystyle n</span></th>
-      <th><span class="math inline">\displaystyle S_n</span></th>
-      <th>误差</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-      <td>4</td>
-      <td>2.732</td>
-      <td>0.4096</td>
-      </tr>
-      <tr>
-      <td>8</td>
-      <td>2.995</td>
-      <td>0.1466</td>
-      </tr>
-      <tr>
-      <td>16</td>
-      <td>3.084</td>
-      <td>0.0576</td>
-      </tr>
-      <tr>
-      <td>32</td>
-      <td>3.121</td>
-      <td>0.0206</td>
-      </tr>
-      <tr>
-      <td>64</td>
-      <td>3.134</td>
-      <td>0.0076</td>
-      </tr>
-      <tr>
-      <td>128</td>
-      <td>3.139</td>
-      <td>0.0026</td>
-      </tr>
-      <tr>
-      <td>256</td>
-      <td>3.141</td>
-      <td>0.0006</td>
-      </tr>
-      <tr>
-      <td>512</td>
-      <td>3.1415</td>
-      <td>0.0001</td>
-      </tr>
-      <tr>
-      <td>1024</td>
-      <td>3.14157</td>
-      <td>0.00002</td>
-      </tr>
-      </tbody>
-      </table>
-      <p>这个表格直观地展示了黎曼和随着分割数 <span
-      class="math inline">\displaystyle n</span> 的增加而收敛于精确面积
-      <span class="math inline">\displaystyle \pi</span> 的过程,
-      体现了积分作为”无限细分, 无限求和”极限过程的本质.</p>
       </div>
       </div>
       <div class="callout callout-important">
@@ -307,6 +218,9 @@
       上任取一点 <span class="math inline">\displaystyle \xi_i</span>,
       作黎曼和 <span class="math inline">\displaystyle \sum_{i=1}^n
       f(\xi_i)\Delta x_i</span>.</p>
+      <figure>
+      <img src="assets/figures/integral-definition.svg?v=20261031-equal" alt="等距分割、任意取点以及宽为Δx_i、高为f(ξ_i)的近似矩形" style="width:100%;max-width:760px;height:auto">
+      </figure>
       <p>如果当最大小区间长度 <span class="math inline">\displaystyle
       \lambda = \max\{\Delta x_i\} \to 0</span> 时,
       黎曼和的极限存在且与区间的分割方式以及点 <span
@@ -321,22 +235,25 @@
       \int_a^b f(x)\,dx = \lim_{\lambda\to 0} \sum_{i=1}^n
       f(\xi_i)\Delta x_i
       </span></p>
-      <p>其中: - “<span class="math inline">\displaystyle\int</span>”
-      是积分号, 由莱布尼茨引入, 是求和符号 “<span
-      class="math inline">\displaystyle S</span>” 的拉长 - <span
-      class="math inline">\displaystyle f(x)</span>
-      称为<strong>被积函数</strong> - <span
-      class="math inline">\displaystyle f(x)dx</span>
-      称为<strong>被积表达式</strong> - <span
-      class="math inline">\displaystyle x</span>
-      称为<strong>积分变量</strong> - <span
-      class="math inline">\displaystyle [a, b]</span>
-      称为<strong>积分区间</strong> - <span
-      class="math inline">\displaystyle a</span>
+      <p>其中:</p>
+      <ul>
+      <li>“<span class="math inline">\displaystyle\int</span>” 是积分号,
+      由莱布尼茨引入, 是求和符号 “<span
+      class="math inline">\displaystyle S</span>” 的拉长</li>
+      <li><span class="math inline">\displaystyle f(x)</span>
+      称为<strong>被积函数</strong></li>
+      <li><span class="math inline">\displaystyle f(x)dx</span>
+      称为<strong>被积表达式</strong></li>
+      <li><span class="math inline">\displaystyle x</span>
+      称为<strong>积分变量</strong></li>
+      <li><span class="math inline">\displaystyle [a, b]</span>
+      称为<strong>积分区间</strong></li>
+      <li><span class="math inline">\displaystyle a</span>
       称为<strong>积分下限</strong>, <span
       class="math inline">\displaystyle b</span>
-      称为<strong>积分上限</strong></p>
-      <p><strong>几何意义</strong>: 当 <span
+      称为<strong>积分上限</strong></li>
+      </ul>
+      <p class="lead-label"><strong>几何意义</strong>: 当 <span
       class="math inline">\displaystyle f(x) \geq 0</span> 时, 定积分
       <span class="math inline">\displaystyle\int_a^b f(x)\,dx</span>
       表示由曲线 <span class="math inline">\displaystyle y =
@@ -346,37 +263,30 @@
       轴所围成的曲边梯形的面积.</p>
       </div>
       </div>
-      <div id="chpt4-ex-001" class="exercise-block"
+      <div id="humanities-riemann-ex-001" class="exercise-block"
       data-difficulty="medium">
       <div class="ex-banner">
       <span class="ex-dot difficulty-medium">🟡</span><span
       class="ex-label">例1</span><span class="ex-tags"><span
-      class="ex-tag">不定积分</span><span
+      class="ex-tag">定积分</span><span
       class="ex-tag">黎曼和</span></span>
       </div>
       <div class="ex-body">
       <div class="ex-problem-box">
       <p>用定义（黎曼和极限）计算定积分 <span
       class="math inline">\displaystyle\int_0^1 x\,dx</span>。</p>
-      <figure>
-      <img src="media/img/chpt4_ex001.png" width="400"
-      alt="\displaystyle \int_0^1 x\,dx 的黎曼和 — 矩形高度采用每段右端点函数值, 当分段加密时收敛到 \displaystyle 1/2" />
-      <figcaption aria-hidden="true"><span
-      class="math inline">\displaystyle \int_0^1 x\,dx</span> 的黎曼和 —
-      矩形高度采用每段右端点函数值, 当分段加密时收敛到 <span
-      class="math inline">\displaystyle 1/2</span></figcaption>
-      </figure>
       </div>
       <div class="ex-controls">
       <div class="ex-sol-row">
       <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt4-ex-001-frame" data-panel="chpt4-ex-001-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt4-ex-001-frame" data-panel="chpt4-ex-001-ans-0">解答</button></span>
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="humanities-riemann-ex-001-frame" data-panel="humanities-riemann-ex-001-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="humanities-riemann-ex-001-frame" data-panel="humanities-riemann-ex-001-ans-0">解答</button></span>
       </div>
       </div>
-      <div id="chpt4-ex-001-frame" class="ex-frame" hidden="">
-      <div id="chpt4-ex-001-hint-0" class="ex-panel ex-hint-panel"
+      <div id="humanities-riemann-ex-001-frame" class="ex-frame"
       hidden="">
+      <div id="humanities-riemann-ex-001-hint-0"
+      class="ex-panel ex-hint-panel" hidden="">
       <p>将 <span class="math inline">\displaystyle [0,1]</span> 等分为
       <span class="math inline">\displaystyle n</span>
       份，取每个小区间的右端点作为 <span
@@ -384,8 +294,8 @@
       \xi_i</span>，写出黎曼和，利用等差数列求和公式化简，然后令 <span
       class="math inline">\displaystyle n\to\infty</span>。</p>
       </div>
-      <div id="chpt4-ex-001-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
+      <div id="humanities-riemann-ex-001-ans-0"
+      class="ex-panel ex-ans-panel" hidden="">
       <p>将 <span class="math inline">\displaystyle [0,1]</span> <span
       class="math inline">\displaystyle n</span> 等分，<span
       class="math inline">\displaystyle \Delta x =
@@ -402,41 +312,36 @@
       <p><span class="math display">
       \int_0^1 x\,dx = \lim_{n\to\infty} \frac{n+1}{2n} = \frac{1}{2}
       </span></p>
+      <p><img src="media/img/humanities-riemann-example-1.svg"
+      width="400" /></p>
       </div>
       </div>
       </div>
       </div>
-      <div id="chpt4-ex-002" class="exercise-block"
+      <div id="humanities-riemann-ex-002" class="exercise-block"
       data-difficulty="medium">
       <div class="ex-banner">
       <span class="ex-dot difficulty-medium">🟡</span><span
       class="ex-label">例2</span><span class="ex-tags"><span
-      class="ex-tag">不定积分</span><span
+      class="ex-tag">定积分</span><span
       class="ex-tag">黎曼和</span></span>
       </div>
       <div class="ex-body">
       <div class="ex-problem-box">
       <p>用定义（黎曼和极限）计算定积分 <span
       class="math inline">\displaystyle\int_0^1 x^2\,dx</span>。</p>
-      <figure>
-      <img src="media/img/chpt4_ex002.png" width="400"
-      alt="\displaystyle \int_0^1 x^2\,dx 的黎曼和 — 抛物线下的精确面积是 \displaystyle 1/3" />
-      <figcaption aria-hidden="true"><span
-      class="math inline">\displaystyle \int_0^1 x^2\,dx</span> 的黎曼和
-      — 抛物线下的精确面积是 <span class="math inline">\displaystyle
-      1/3</span></figcaption>
-      </figure>
       </div>
       <div class="ex-controls">
       <div class="ex-sol-row">
       <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt4-ex-002-frame" data-panel="chpt4-ex-002-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt4-ex-002-frame" data-panel="chpt4-ex-002-ans-0">解答</button></span>
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="humanities-riemann-ex-002-frame" data-panel="humanities-riemann-ex-002-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="humanities-riemann-ex-002-frame" data-panel="humanities-riemann-ex-002-ans-0">解答</button></span>
       </div>
       </div>
-      <div id="chpt4-ex-002-frame" class="ex-frame" hidden="">
-      <div id="chpt4-ex-002-hint-0" class="ex-panel ex-hint-panel"
+      <div id="humanities-riemann-ex-002-frame" class="ex-frame"
       hidden="">
+      <div id="humanities-riemann-ex-002-hint-0"
+      class="ex-panel ex-hint-panel" hidden="">
       <p>将 <span class="math inline">\displaystyle [0,1]</span> 等分为
       <span class="math inline">\displaystyle n</span>
       份，取右端点，利用平方和公式 <span
@@ -444,8 +349,8 @@
       \dfrac{n(n+1)(2n+1)}{6}</span> 化简黎曼和，令 <span
       class="math inline">\displaystyle n\to\infty</span>。</p>
       </div>
-      <div id="chpt4-ex-002-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
+      <div id="humanities-riemann-ex-002-ans-0"
+      class="ex-panel ex-ans-panel" hidden="">
       <p>将 <span class="math inline">\displaystyle [0,1]</span> <span
       class="math inline">\displaystyle n</span> 等分，<span
       class="math inline">\displaystyle \Delta x =
@@ -463,21 +368,190 @@
       \int_0^1 x^2\,dx = \lim_{n\to\infty} \frac{(n+1)(2n+1)}{6n^2} =
       \frac{1}{3}
       </span></p>
+      <p><img src="media/img/humanities-riemann-example-2.svg"
+      width="400" /></p>
       </div>
       </div>
       </div>
       </div>
-      <p>从这两个例子我们看到, 用定义计算积分虽然思路直接, 但过程繁琐.
-      在下一节中, 我们将介绍微积分基本定理,
-      它提供了计算定积分的强大工具.</p>
-      <h2 id="第二节-微积分基本定理">第二节 · 微积分基本定理</h2>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">注意</span></div>
+      <div class="callout-body">
+      <p>当我们说积分相当于函数 <span class="math inline">\displaystyle
+      f</span> 的图像与 <span class="math inline">\displaystyle x</span>
+      轴围成的面积时，需要注意：这个面积是<strong>有符号的</strong>。</p>
+      <p>如下图所示，在区间 I、III 中，<span
+      class="math inline">\displaystyle f(x)&gt;0</span>，图像位于 <span
+      class="math inline">\displaystyle x</span>
+      轴上方，对积分的贡献为正，对应正面积；在区间 II 中，<span
+      class="math inline">\displaystyle f(x)&lt;0</span>，图像位于 <span
+      class="math inline">\displaystyle x</span>
+      轴下方，对积分的贡献为负，对应负面积。</p>
+      <figure>
+      <img src="assets/figures/integral-signed-area.svg?v=20261031-intervals" alt="区间I和III中的正面积，以及区间II中的负面积" style="width:100%;max-width:540px;height:auto">
+      </figure>
+      <p>因此，整个区间上的积分相当于正、负面积相抵后的结果。</p>
+      </div>
+      </div>
+      <div id="humanities-integral-sign-ex-001" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例3</span><span class="ex-tags"><span
+      class="ex-tag">定积分</span><span
+      class="ex-tag">几何意义</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>利用几何面积，分别求 <span
+      class="math inline">\displaystyle\int_{-1}^1x\,dx</span>，以及直线
+      <span class="math inline">\displaystyle y=x</span> 与横轴在 <span
+      class="math inline">\displaystyle[-1,1]</span>
+      上围成的总面积。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="humanities-integral-sign-ex-001-frame" data-panel="humanities-integral-sign-ex-001-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="humanities-integral-sign-ex-001-frame" data-panel="humanities-integral-sign-ex-001-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="humanities-integral-sign-ex-001-frame" class="ex-frame"
+      hidden="">
+      <div id="humanities-integral-sign-ex-001-hint-0"
+      class="ex-panel ex-hint-panel" hidden="">
+      <p>左右两侧都是直角三角形。先计算各自的面积，再区分“积分”和“总面积”的符号。</p>
+      </div>
+      <div id="humanities-integral-sign-ex-001-ans-0"
+      class="ex-panel ex-ans-panel" hidden="">
+      <p>左侧三角形在横轴下方，对积分的贡献为 <span
+      class="math inline">\displaystyle-\frac12</span>；右侧在横轴上方，贡献为
+      <span class="math inline">\displaystyle\frac12</span>。因此</p>
+      <p><span
+      class="math display">\int_{-1}^1x\,dx=-\frac12+\frac12=0.</span></p>
+      <p>总面积为 <span class="math inline">\displaystyle
+      S=\frac12+\frac12=1</span>。</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <p>前面用定义计算的两个例子表明，用定义计算积分虽然思路直接，但过程繁琐。
+      先了解定积分的基本性质，再借助微积分基本定理学习更方便的计算方法。</p>
+      <h2 id="第三节-积分的性质">第三节 · 积分的性质</h2>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">1. 被积函数的可加性</span></div>
+      <div class="callout-body">
+      <p><span
+      class="math display">\boxed{\int_a^b[f(x)+g(x)]\,dx=\int_a^b
+      f(x)\,dx+\int_a^b g(x)\,dx}</span></p>
+      <figure>
+      <img src="assets/figures/integral-property-addition.svg?v=20261031-axes" alt="被积函数相加的面积解释" style="width:100%;max-width:540px;height:auto">
+      </figure>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">2. 积分区间的可加性</span></div>
+      <div class="callout-body">
+      <p><span class="math display">\boxed{\int_a^b f(x)\,dx=\int_a^c
+      f(x)\,dx+\int_c^b f(x)\,dx}</span></p>
+      <figure>
+      <img src="assets/figures/integral-property-intervals.svg?v=20261031-axes" alt="积分区间分段的面积解释" style="width:100%;max-width:540px;height:auto">
+      </figure>
+      <p class="lead-label"><strong>注：</strong>规定 <span
+      class="math inline">\displaystyle\int_a^a
+      f(x)\,dx=0</span>。结合积分区间的可加性，有</p>
+      <p><span class="math display">\int_a^b f(x)\,dx+\int_b^a
+      f(x)\,dx=\int_a^a f(x)\,dx=0.</span></p>
+      <p>因而，交换积分上下限时，积分变号：</p>
+      <p><span class="math display">\boxed{\int_b^a f(x)\,dx=-\int_a^b
+      f(x)\,dx}</span></p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">3. 数乘</span></div>
+      <div class="callout-body">
+      <p><span class="math display">\boxed{\int_a^b
+      c\,f(x)\,dx=c\int_a^b f(x)\,dx,\;(c\text{ 为常数})}</span></p>
+      <figure>
+      <img src="assets/figures/integral-property-scalar.svg?v=20261031-axes" alt="以两倍为例的数乘解释" style="width:100%;max-width:540px;height:auto">
+      </figure>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">4. 绝对值不等式</span></div>
+      <div class="callout-body">
+      <p><span class="math display">\boxed{\left|\int_a^b
+      f(x)\,dx\right|\leq\int_a^b|f(x)|\,dx,\;(a&lt;b)}</span></p>
+      <figure>
+      <img src="assets/figures/integral-property-absolute.svg?v=20261031-axes" alt="青色加号为正贡献，金色减号为负贡献；取绝对值后都为正贡献" style="width:100%;max-width:540px;height:auto">
+      </figure>
+      <p>左边先把正负贡献相加再取绝对值；右边把各部分的面积直接相加。</p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">5. 积分比较不等式</span></div>
+      <div class="callout-body">
+      <p>若 <span class="math inline">\displaystyle a&lt;b</span>，且在
+      <span class="math inline">\displaystyle[a,b]</span> 上 <span
+      class="math inline">\displaystyle f(x)\leq g(x)</span>，则</p>
+      <p><span class="math display">\boxed{\int_a^b f(x)\,dx\leq\int_a^b
+      g(x)\,dx}</span></p>
+      <figure>
+      <img src="assets/figures/integral-property-comparison.svg?v=20261031-axes" alt="同一区间内，较高曲线对应较大的积分" style="width:100%;max-width:540px;height:auto">
+      </figure>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">6. 对称性</span></div>
+      <div class="callout-body">
+      <p>设 <span class="math inline">\displaystyle a&gt;0</span>，函数
+      <span class="math inline">\displaystyle f</span> 在 <span
+      class="math inline">\displaystyle[-a,a]</span> 上可积。</p>
+      <p class="lead-label"><strong>偶函数：</strong>若 <span
+      class="math inline">\displaystyle f(-x)=f(x)</span>，则</p>
+      <p><span
+      class="math display">\boxed{\int_{-a}^{a}f(x)\,dx=2\int_0^a
+      f(x)\,dx}</span></p>
+      <figure>
+      <img src="assets/figures/integral-property-even.svg?v=20261101" alt="偶函数关于纵轴对称，整个区间的积分等于右半区间积分的两倍" style="width:100%;max-width:540px;height:auto">
+      </figure>
+      <p>图像关于纵轴对称，左右两侧的带符号面积相等，因此只需算右边一半，再乘
+      <span class="math inline">\displaystyle2</span>。</p>
+      <p class="lead-label"><strong>奇函数：</strong>若 <span
+      class="math inline">\displaystyle f(-x)=-f(x)</span>，则</p>
+      <p><span
+      class="math display">\boxed{\int_{-a}^{a}f(x)\,dx=0}</span></p>
+      <figure>
+      <img src="assets/figures/integral-property-odd.svg?v=20261101" alt="奇函数的正负贡献大小相等，相互抵消" style="width:100%;max-width:540px;height:auto">
+      </figure>
+      <p>图像关于原点对称，左右两侧对应的面积大小相等、符号相反，恰好抵消。</p>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">7. 周期性</span></div>
+      <div class="callout-body">
+      <p>若可积函数 <span class="math inline">\displaystyle f</span>
+      的周期为 <span class="math inline">\displaystyle
+      T&gt;0</span>，则</p>
+      <p><span class="math display">\boxed{\int_a^{a+T}f(x)\,dx=\int_0^T
+      f(x)\,dx}</span></p>
+      <figure>
+      <img src="assets/figures/integral-property-periodic.svg?v=20261101" alt="区间平移后，左端移走的青色部分与右端补上的青色部分相等" style="width:100%;max-width:540px;height:auto">
+      </figure>
+      <p>图中以 <span
+      class="math inline">\displaystyle0&lt;a&lt;T</span>
+      为例，把积分区间从 <span
+      class="math inline">\displaystyle[0,T]</span> 平移到 <span
+      class="math inline">\displaystyle[a,a+T]</span>。由于周期性，左端移走的青色部分与右端补上的青色部分相等，所以一个周期内的积分与起点无关。</p>
+      </div>
+      </div>
+      <h2 id="第四节-微积分基本定理">第四节 · 微积分基本定理</h2>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">省</span></div>
       <div class="callout-body">
-      <p>在上一节中, 我们通过黎曼和的极限定义了定积分,
-      并用这种方法计算了几个简单函数的积分. 然而, 这种方法极其繁琐,
-      对于复杂函数几乎无法实际应用. 我们需要一种更高效,
-      更强大的工具来计算定积分.</p>
+      <p>前面，我们通过黎曼和的极限定义了定积分，并了解了它的基本性质。
+      然而, 这种方法极其繁琐, 对于复杂函数几乎无法实际应用.
+      我们需要一种更高效, 更强大的工具来计算定积分.</p>
       <p>微积分基本定理正是这样的工具,
       它被誉为”整个微积分学中最重要的定理”.
       这个定理的核心内容由牛顿和莱布尼茨在17世纪独立发现,
@@ -490,81 +564,52 @@
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">微积分基本定理 (牛顿-莱布尼茨公式)</span></div>
       <div class="callout-body">
       <p>设函数 <span class="math inline">\displaystyle f</span> 在区间
-      <span class="math inline">\displaystyle [a, b]</span> 上连续, 且
-      <span class="math inline">\displaystyle F</span> 是 <span
-      class="math inline">\displaystyle f</span> 的任意一个原函数 (即
-      <span class="math inline">\displaystyle F&#39;(x) = f(x)</span>),
-      则 <span class="math display">
+      <span class="math inline">\displaystyle[a,b]</span> 上连续，若
+      <span class="math inline">\displaystyle
+      F&#39;(x)=f(x)</span>（这样的 <span
+      class="math inline">\displaystyle F</span> 称为 <span
+      class="math inline">\displaystyle f</span> 的一个原函数），则
+      <span class="math display">
       \int_a^b f(x)\,dx = F(b) - F(a)
       </span></p>
       <p>通常记作: <span class="math inline">\displaystyle\int_a^b
       f(x)\,dx = F(x)\big|_a^b = F(b) - F(a)</span></p>
-      <p><strong>定理的意义</strong> -
-      它将复杂的积分计算问题转化为相对简单的求原函数问题. -
-      它建立了微分与积分之间的互逆关系:
-      求导和积分在某种意义上是”相反”的运算. -
-      它统一了微积分的两大核心操作,
-      揭示了变化率与累积量之间的深刻联系.</p>
-      <p><strong>定理的直观证明</strong></p>
-      <p>让我们从直观的角度来理解为什么这个定理成立.</p>
-      <p>考虑定积分 <span class="math inline">\displaystyle\int_a^b
-      f(x)\,dx</span>, 它表示曲线 <span
-      class="math inline">\displaystyle y = f(x)</span> 下从 <span
+      <p class="lead-label"><strong>定理的直观证明</strong></p>
+      <p>从几何上看，定积分 <span
+      class="math inline">\displaystyle\int_a^b f(t)\,dt</span>
+      表示曲线与横轴之间从 <span class="math inline">\displaystyle
+      a</span> 到 <span class="math inline">\displaystyle b</span>
+      的带符号面积。定义函数 <span class="math inline">\displaystyle
+      A(x)=\int_a^x f(t)\,dt</span>，表示从 <span
       class="math inline">\displaystyle a</span> 到 <span
-      class="math inline">\displaystyle b</span> 的面积.</p>
-      <p>现在定义一个新的函数: <span class="math inline">\displaystyle
-      A(x) = \displaystyle\int_a^x f(t)\,dt</span>, 它表示从 <span
-      class="math inline">\displaystyle a</span> 到 <span
-      class="math inline">\displaystyle x</span> 的曲线下面积.</p>
-      <p><strong>关键洞察</strong>: 当我们给 <span
-      class="math inline">\displaystyle x</span> 一个微小的增量 <span
-      class="math inline">\displaystyle \Delta x</span> 时, 面积 <span
-      class="math inline">\displaystyle A</span> 的增量为: <span
-      class="math display">
-      \Delta A = A(x+\Delta x) - A(x) = \int_x^{x+\Delta x} f(t)\,dt
-      </span></p>
-      <p>当 <span class="math inline">\displaystyle \Delta x</span>
-      很小时, 在小区间 <span class="math inline">\displaystyle [x,
-      x+\Delta x]</span> 上, <span class="math inline">\displaystyle
-      f(t)</span> 的值近似等于 <span class="math inline">\displaystyle
-      f(x)</span>, 因此 <span class="math inline">\displaystyle \Delta A
-      \approx f(x)\Delta x</span></p>
-      <p>于是有 <span class="math inline">\displaystyle\frac{\Delta
-      A}{\Delta x }\approx f(x)</span></p>
-      <p>当 <span class="math inline">\displaystyle \Delta x \to
-      0</span> 时, 这个近似变得精确, 所以我们发现: <span
-      class="math display">
-      A&#39;(x) = \lim_{\Delta x\to 0} \frac{\Delta A}{\Delta x} = f(x)
-      </span></p>
-      <p>这意味着: <strong>面积函数 <span
-      class="math inline">\displaystyle A(x)</span>
-      的导数正好等于被积函数 <span class="math inline">\displaystyle
-      f(x)</span></strong>!</p>
-      <p>换句话说, <span class="math inline">\displaystyle A(x)</span>
-      是 <span class="math inline">\displaystyle f(x)</span>
-      的一个原函数.</p>
-      <p>现在, 设 <span class="math inline">\displaystyle F</span> 是
-      <span class="math inline">\displaystyle f</span> 的任意一个原函数,
-      由于同一函数的任意两个原函数之间只相差一个常数, 所以 <span
-      class="math inline">\displaystyle A(x) = F(x) + C</span></p>
-      <p>当 <span class="math inline">\displaystyle x = a</span> 时,
-      <span class="math inline">\displaystyle A(a) =
-      \displaystyle\int_a^a f(t)\,dt = 0</span>, 所以 <span
-      class="math inline">\displaystyle 0 = F(a) + C</span>, 即 <span
-      class="math inline">\displaystyle C = -F(a)</span></p>
-      <p>因此 <span class="math inline">\displaystyle A(x) = F(x) -
-      F(a)</span></p>
-      <p>当 <span class="math inline">\displaystyle x = b</span> 时,
-      <span class="math inline">\displaystyle A(b) =
-      \displaystyle\int_a^b f(t)\,dt = F(b) - F(a)</span></p>
-      <p>这就完成了证明.</p>
+      class="math inline">\displaystyle x</span> 的累积面积。</p>
+      <figure data-teaching-motion="accumulation">
+      <img src="assets/figures/fundamental-theorem-area.svg?v=20261101-concave" alt="凹函数的累积面积与面积增量" style="width:100%;max-width:500px;height:auto">
+      </figure>
+      <p>自变量改变 <span class="math inline">\displaystyle\Delta
+      x</span>，累积面积的增量为 <span
+      class="math inline">\displaystyle\Delta A=\int_x^{x+\Delta
+      x}f(t)\,dt</span>。由 <span class="math inline">\displaystyle
+      f</span> 的连续性，当 <span
+      class="math inline">\displaystyle\Delta x</span> 很小时，<span
+      class="math inline">\displaystyle\Delta A\approx f(x)\Delta
+      x</span>，因此</p>
+      <p><span class="math display">A&#39;(x)=\lim_{\Delta
+      x\to0}\frac{\Delta A}{\Delta x}=f(x).</span></p>
+      <p>由于 <span class="math inline">\displaystyle
+      A&#39;=F&#39;=f</span>，两函数相差一个常数；又 <span
+      class="math inline">\displaystyle A(a)=0</span>，所以 <span
+      class="math inline">\displaystyle A(x)=F(x)-F(a)</span>。取 <span
+      class="math inline">\displaystyle x=b</span>，就得到</p>
+      <p><span class="math display">\int_a^b
+      f(t)\,dt=A(b)=F(b)-F(a).</span></p>
       </div>
       </div>
       <div id="chpt4-ex-003" class="exercise-block"
       data-difficulty="easy">
       <div class="ex-banner">
       <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例3</span><span class="ex-tags"><span
+      class="ex-label">例4</span><span class="ex-tags"><span
       class="ex-tag">不定积分</span></span>
       </div>
       <div class="ex-body">
@@ -602,7 +647,7 @@
       data-difficulty="easy">
       <div class="ex-banner">
       <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例4</span><span class="ex-tags"><span
+      class="ex-label">例5</span><span class="ex-tags"><span
       class="ex-tag">不定积分</span></span>
       </div>
       <div class="ex-body">
@@ -642,7 +687,7 @@
       data-difficulty="easy">
       <div class="ex-banner">
       <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例5</span><span class="ex-tags"><span
+      class="ex-label">例6</span><span class="ex-tags"><span
       class="ex-tag">不定积分</span></span>
       </div>
       <div class="ex-body">
@@ -678,99 +723,25 @@
       </div>
       </div>
       <p>这些例子展示了微积分基本定理的强大威力——它将复杂的极限计算简化为简单的代数运算.</p>
-      <h2 id="第三节-积分的性质和运算">第三节 · 积分的性质和运算</h2>
-      <h3 id="积分的性质">3.3.1 积分的性质</h3>
-      <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">悟</span></div>
-      <div class="callout-body">
-      <p>定积分具有一系列重要的性质,
-      这些性质不仅有助于我们理解积分的本质, 还能简化积分的计算.</p>
-      <p><strong>1. 线性性质</strong></p>
-      <p>若函数 <span class="math inline">\displaystyle f</span> 和
-      <span class="math inline">\displaystyle g</span> 在 <span
-      class="math inline">\displaystyle [a, b]</span> 上可积, <span
-      class="math inline">\displaystyle c</span> 为常数, 则:</p>
-      <ul>
-      <li><strong>加法性质</strong>: <span class="math display">\int_a^b
-      [f(x) + g(x)]\,dx = \int_a^b f(x)\,dx + \int_a^b
-      g(x)\,dx</span></li>
-      <li><strong>数乘性质</strong>: <span class="math display">\int_a^b
-      c\cdot f(x)\,dx = c\cdot \int_a^b f(x)\,dx</span></li>
-      </ul>
-      <p><strong>几何解释</strong>:
-      加法性质表示两个函数围成的总面积等于各自面积的代数和;
-      数乘性质表示函数值按比例缩放时, 面积也按相同比例缩放.</p>
-      </div>
-      </div>
-      <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">悟</span></div>
-      <div class="callout-body">
-      <p><strong>2. 区间可加性</strong></p>
-      <p>若函数 <span class="math inline">\displaystyle f</span> 在包含
-      <span class="math inline">\displaystyle a, b, c</span>
-      的区间上可积, 则: <span class="math display">
-      \int_a^b f(x)\,dx = \int_a^c f(x)\,dx + \int_c^b f(x)\,dx
-      </span></p>
-      <p><strong>几何解释</strong>: 从 <span
-      class="math inline">\displaystyle a</span> 到 <span
-      class="math inline">\displaystyle b</span> 的总面积等于从 <span
-      class="math inline">\displaystyle a</span> 到 <span
-      class="math inline">\displaystyle c</span> 的面积加上从 <span
-      class="math inline">\displaystyle c</span> 到 <span
-      class="math inline">\displaystyle b</span> 的面积.</p>
-      </div>
-      </div>
-      <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">悟</span></div>
-      <div class="callout-body">
-      <p><strong>3. 积分上下限交换</strong></p>
-      <p><span class="math display">
-      \int_a^b f(x)\,dx = -\int_b^a f(x)\,dx
-      </span></p>
-      <p><strong>几何解释</strong>: 当积分方向反转时, 面积值变号,
-      这保证了面积的方向性.</p>
-      </div>
-      </div>
-      <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">悟</span></div>
-      <div class="callout-body">
-      <p><strong>4. 绝对值不等式</strong></p>
-      <p><span class="math display">
-      \left|\int_a^b f(x)\,dx\right| \leq \int_a^b |f(x)|\,dx
-      </span></p>
-      <p><strong>几何解释</strong>:
-      函数积分的绝对值不超过函数绝对值积分, 因为绝对值积分计算的是总面积
-      (不考虑正负), 而普通积分计算的是代数和.</p>
-      </div>
-      </div>
-      <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">悟</span></div>
-      <div class="callout-body">
-      <p><strong>5. 积分比较定理</strong></p>
-      <p>若在 <span class="math inline">\displaystyle [a, b]</span> 上
-      <span class="math inline">\displaystyle f(x) \leq g(x)</span>, 则
-      <span class="math display">
-      \int_a^b f(x)\,dx \leq \int_a^b g(x)\,dx
-      </span></p>
-      <p><strong>几何解释</strong>:
-      函数值较大的曲线在相同区间上围成的面积也较大.</p>
-      </div>
-      </div>
-      <h3 id="不定积分的运算">3.3.2 不定积分的运算</h3>
+      <h2 id="第五节-不定积分的计算换元法">第五节 ·
+      不定积分的计算—换元法</h2>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">省</span></div>
       <div class="callout-body">
-      <p>不定积分是求原函数的过程, 其结果是一个函数族 (相差一个常数).
-      以下是计算不定积分的两种基本方法.</p>
+      <p>求不定积分，就是寻找原函数（求导后得到被积函数的函数）。若
+      <span class="math inline">\displaystyle
+      F&#39;(x)=f(x)</span>，记为 <span
+      class="math inline">\displaystyle\int f(x)\,dx=F(x)+C</span>，其中
+      <span class="math inline">\displaystyle C</span> 为任意常数。</p>
       </div>
       </div>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">换元积分法</span></div>
       <div class="callout-body">
       <p>换元积分法源于链式法则的逆运算, 是计算积分最强大的工具之一.</p>
-      <p><strong>基本思想</strong>: 通过变量代换,
+      <p class="lead-label"><strong>基本思想</strong>: 通过变量代换,
       将复杂的积分转化为简单的积分.</p>
-      <p><strong>定理</strong>: 设函数 <span
+      <p class="lead-label"><strong>定理</strong>: 设函数 <span
       class="math inline">\displaystyle f</span> 在区间 <span
       class="math inline">\displaystyle I</span> 上连续, 函数 <span
       class="math inline">\displaystyle \varphi</span> 在区间 <span
@@ -780,21 +751,22 @@
       \int f(\varphi(x))\varphi&#39;(x)\,dx = \int f(u)\,du,\quad u =
       \varphi(x)
       </span></p>
-      <p><strong>直观解释</strong>: 链式法则告诉我们 $ (F((x)))’ =
-      F’((x))‘(x) = f((x))’(x)$ 因此, <span
-      class="math inline">\displaystyle\int f(\varphi(x))\varphi&#39;(x)
-      dx</span> 应该是 <span class="math inline">\displaystyle
-      F(\varphi(x)) + C</span> 这正是 <span
-      class="math inline">\displaystyle\int f(u) du</span> 在 <span
-      class="math inline">\displaystyle u = \varphi(x)</span>
-      时的结果.</p>
+      <p class="lead-label"><strong>直观解释</strong>：若 <span
+      class="math inline">\displaystyle
+      F&#39;=f</span>，由链式法则，<span
+      class="math inline">\displaystyle[F(\varphi(x))]&#39;=F&#39;(\varphi(x))\cdot\varphi&#39;(x)=f(\varphi(x))\varphi&#39;(x)</span>。
+      因此，<span class="math inline">\displaystyle\int
+      f(\varphi(x))\varphi&#39;(x)\,dx=F(\varphi(x))+C</span>，这正是
+      <span class="math inline">\displaystyle\int f(u)\,du</span> 在
+      <span class="math inline">\displaystyle u=\varphi(x)</span>
+      时的结果。</p>
       </div>
       </div>
       <div id="chpt4-ex-006" class="exercise-block"
       data-difficulty="easy">
       <div class="ex-banner">
       <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例6</span><span class="ex-tags"><span
+      class="ex-label">例7</span><span class="ex-tags"><span
       class="ex-tag">不定积分</span><span
       class="ex-tag">换元法</span></span>
       </div>
@@ -834,7 +806,7 @@
       data-difficulty="easy">
       <div class="ex-banner">
       <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例7</span><span class="ex-tags"><span
+      class="ex-label">例8</span><span class="ex-tags"><span
       class="ex-tag">不定积分</span><span
       class="ex-tag">换元法</span></span>
       </div>
@@ -873,19 +845,21 @@
       </div>
       </div>
       </div>
+      <h2 id="第六节-不定积分的计算分部积分法">第六节 ·
+      不定积分的计算—分部积分法</h2>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">分部积分法</span></div>
       <div class="callout-body">
       <p>分部积分法源于乘积求导法则的逆运算,
       适用于计算两个函数乘积的积分.</p>
-      <p><strong>基本思想</strong>: 将难以直接计算的积分 <span
+      <p class="lead-label"><strong>基本思想</strong>: 将难以直接计算的积分 <span
       class="math inline">\displaystyle \int u\,dv</span>
       转化为更容易计算的 <span class="math inline">\displaystyle\int
       v\,du</span></p>
-      <p><strong>公式</strong>: <span
+      <p class="lead-label"><strong>公式</strong>: <span
       class="math inline">\displaystyle\int u\,dv = uv - \int
       v\,du</span></p>
-      <p><strong>直观解释</strong>: 乘积法则告诉我们 <span
+      <p class="lead-label"><strong>直观解释</strong>: 乘积法则告诉我们 <span
       class="math inline">\displaystyle (uv)&#39; = u&#39;v +
       uv&#39;</span> 两边积分得: <span class="math inline">\displaystyle
       uv = \displaystyle\int u&#39;v dx + \displaystyle\int uv&#39;
@@ -897,7 +871,7 @@
       data-difficulty="easy">
       <div class="ex-banner">
       <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例8</span><span class="ex-tags"><span
+      class="ex-label">例9</span><span class="ex-tags"><span
       class="ex-tag">不定积分</span><span
       class="ex-tag">分部积分</span></span>
       </div>
@@ -940,7 +914,7 @@
       data-difficulty="easy">
       <div class="ex-banner">
       <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例9</span><span class="ex-tags"><span
+      class="ex-label">例10</span><span class="ex-tags"><span
       class="ex-tag">不定积分</span><span
       class="ex-tag">分部积分</span></span>
       </div>
@@ -980,7 +954,7 @@
       </div>
       </div>
       </div>
-      <h3 id="定积分的运算">3.3.3 定积分的运算</h3>
+      <h2 id="第七节-定积分的计算">第七节 · 定积分的计算</h2>
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">省</span></div>
       <div class="callout-body">
@@ -992,18 +966,20 @@
       <div class="callout-body">
       <p>与不定积分的换元法相比, 定积分的换元法有一个重要特点:
       <strong>需要同时改变积分限</strong>.</p>
-      <p><strong>定理</strong>: 设函数 <span
+      <p class="lead-label"><strong>定理</strong>: 设函数 <span
       class="math inline">\displaystyle f</span> 在区间 <span
       class="math inline">\displaystyle [a, b]</span> 上连续, 函数 <span
       class="math inline">\displaystyle \varphi</span> 在区间 <span
       class="math inline">\displaystyle [\alpha, \beta]</span>
       上具有连续导数, 且 <span class="math inline">\displaystyle
-      \varphi(\alpha) = a, \varphi(\beta) = b</span>, 则 <span
+      \varphi(\alpha) = a, \varphi(\beta) =
+      b</span>，其值在整个区间上均落在 <span
+      class="math inline">\displaystyle[a,b]</span> 内，则 <span
       class="math display">
       \int_a^b f(x)\,dx = \int_\alpha^\beta
       f(\varphi(t))\varphi&#39;(t)\,dt
       </span></p>
-      <p><strong>关键区别</strong>: 在定积分中使用换元法时,
+      <p class="lead-label"><strong>关键区别</strong>: 在定积分中使用换元法时,
       不仅要进行变量代换, 还要相应地改变积分上下限.</p>
       </div>
       </div>
@@ -1011,7 +987,7 @@
       data-difficulty="easy">
       <div class="ex-banner">
       <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例10</span><span class="ex-tags"><span
+      class="ex-label">例11</span><span class="ex-tags"><span
       class="ex-tag">不定积分</span><span
       class="ex-tag">换元法</span></span>
       </div>
@@ -1058,7 +1034,7 @@
       data-difficulty="medium">
       <div class="ex-banner">
       <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例11</span><span class="ex-tags"><span
+      class="ex-label">例12</span><span class="ex-tags"><span
       class="ex-tag">不定积分</span><span
       class="ex-tag">换元法</span></span>
       </div>
@@ -1117,10 +1093,10 @@
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定积分的分部积分法</span></div>
       <div class="callout-body">
       <p>定积分的分部积分法与不定积分类似, 但结果是一个数值而非函数.</p>
-      <p><strong>公式</strong>: <span
+      <p class="lead-label"><strong>公式</strong>: <span
       class="math inline">\displaystyle\int_a^b u\,dv = [uv]_a^b -
       \int_a^b v\,du</span></p>
-      <p><strong>关键区别</strong>: 在定积分的分部积分法中, <span
+      <p class="lead-label"><strong>关键区别</strong>: 在定积分的分部积分法中, <span
       class="math inline">\displaystyle uv</span>
       项需要代入上下限计算.</p>
       </div>
@@ -1129,7 +1105,7 @@
       data-difficulty="easy">
       <div class="ex-banner">
       <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例12</span><span class="ex-tags"><span
+      class="ex-label">例13</span><span class="ex-tags"><span
       class="ex-tag">不定积分</span><span
       class="ex-tag">分部积分</span></span>
       </div>
@@ -1171,7 +1147,7 @@
       data-difficulty="easy">
       <div class="ex-banner">
       <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例13</span><span class="ex-tags"><span
+      class="ex-label">例14</span><span class="ex-tags"><span
       class="ex-tag">不定积分</span><span
       class="ex-tag">分部积分</span></span>
       </div>
@@ -1212,58 +1188,641 @@
       </div>
       </div>
       </div>
-      <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">定积分的特殊性质</span></div>
+      <h2 id="第八节-打上凌霄宝殿微元法">第八节 ·
+      打上凌霄宝殿—微元法</h2>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">省</span></div>
       <div class="callout-body">
-      <p>定积分还有一些不定积分不具备的特殊性质:</p>
-      <p><strong>对称性</strong>: - 若 <span
-      class="math inline">\displaystyle f</span> 是偶函数 (<span
-      class="math inline">\displaystyle f(-x) = f(x)</span>), 则 <span
-      class="math inline">\displaystyle\int_{-a}^a f(x)\,dx = 2\int_0^a
-      f(x)\,dx</span> - 若 <span class="math inline">\displaystyle
-      f</span> 是奇函数 (<span class="math inline">\displaystyle f(-x) =
-      -f(x)</span>), 则 <span
-      class="math inline">\displaystyle\int_{-a}^a f(x)\,dx =
-      0</span></p>
-      <p><strong>周期性</strong>: 若 <span
-      class="math inline">\displaystyle f</span> 是周期为 <span
-      class="math inline">\displaystyle T</span> 的周期函数, 则 <span
-      class="math inline">\displaystyle\int_a^{a+T} f(x)\,dx = \int_0^T
-      f(x)\,dx</span></p>
-      <p>这些特殊性质可以大大简化定积分的计算.</p>
-      <p>通过掌握这些积分方法, 我们能够解决各种复杂的积分计算问题,
-      为后续的数学学习和应用打下坚实基础.</p>
-      </div>
-      </div>
-      <div class="callout callout-warning">
-      <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">人生就像一场积分</span></div>
-      <div class="callout-body">
-      <p>人生就像一场积分, <strong>考上大学, 从一个环境到另一个环境,
-      就像积分中的换元法</strong>. 但换元法的精髓在于:
-      <strong>改变变量的同时, 必须调整积分的上下限</strong>.</p>
-      <p>这意味着: - 你不能用高中的标准来衡量大学的生活 -
-      你不能用过去的思维来解决现在的问题 -
-      你不能用旧的习惯来面对新的环境</p>
-      <p>就像在定积分的换元中, 如果只改变被积函数而忘记改变积分限,
-      结果必然是错误的. 在人生的换元中,
-      如果只改变环境而不调整自己的心态, 目标和行为方式,
-      同样难以获得正确的人生积分.</p>
-      <p>每一次重要的转变——无论是升学, 就业, 结婚,
-      还是任何重大的人生抉择——都是一次换元. 成功的换元需要我们:</p>
+      <p>微元法是积分学中解决几何与物理问题的核心思想,
+      它将复杂的整体问题分解为无穷多个简单的局部问题.</p>
+      <p class="lead-label"><strong>基本思路</strong>:</p>
       <ol type="1">
-      <li><strong>认清新旧变量的对应关系</strong>:
-      理解新旧环境之间的差异和联系</li>
-      <li><strong>准确计算新的上下限</strong>:
-      明确在新阶段中的起点和目标</li>
-      <li><strong>勇敢地执行变换</strong>: 主动适应新的规则和节奏</li>
+      <li><strong>分割</strong>:
+      将所求的整体量对应的区域分割成许多微小部分</li>
+      <li><strong>近似</strong>: 在每个微小部分上,
+      用简单的几何量近似代替复杂的实际量</li>
+      <li><strong>求和取极限</strong>: 将所有微小部分的近似值相加,
+      然后通过取极限得到精确值</li>
       </ol>
-      <p>积分教会我们的不仅是数学技巧, 更是一种人生智慧:
-      <strong>懂得在变化中保持本质, 在转型中完成累积</strong>.</p>
-      <p>愿你善于运用人生的”换元法”,
-      在每一个转折点都能准确调整自己的”积分上下限”,
-      让生命的定积分值不断增长, 最终收获丰盈而充实的人生.</p>
       </div>
       </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">微元法数学表述</span></div>
+      <div class="callout-body">
+      <p>如果要求整体量 <span class="math inline">\displaystyle
+      Q</span>, 先找出微元 <span class="math inline">\displaystyle dQ =
+      f(x)dx</span>, 然后通过积分得到 <span class="math display">
+      Q = \int_a^b dQ = \int_a^b f(x)dx
+      </span></p>
+      </div>
+      </div>
+      <div id="humanities-integral-checked-017" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例15：曲线下面积的计算</span><span
+      class="ex-tags"><span class="ex-tag">定积分</span><span
+      class="ex-tag">面积</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>设 <span class="math inline">\displaystyle f</span> 在 <span
+      class="math inline">\displaystyle[a,b]</span> 上连续且非负，求曲线
+      <span class="math inline">\displaystyle y=f(x)</span>、直线 <span
+      class="math inline">\displaystyle x=a</span>、<span
+      class="math inline">\displaystyle x=b</span>
+      与横轴围成的面积。</p>
+      <figure>
+      <img src="media/img/chpt6_ex017.png" width="400"
+      alt="曲线 \displaystyle y=f(x) 与 \displaystyle x 轴在 \displaystyle [a,b] 围成的区域面积 \displaystyle \int_a^b f(x)\,dx" />
+      <figcaption aria-hidden="true">曲线 <span
+      class="math inline">\displaystyle y=f(x)</span> 与 <span
+      class="math inline">\displaystyle x</span> 轴在 <span
+      class="math inline">\displaystyle [a,b]</span> 围成的区域面积
+      <span class="math inline">\displaystyle \int_a^b
+      f(x)\,dx</span></figcaption>
+      </figure>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="humanities-integral-checked-017-frame" data-panel="humanities-integral-checked-017-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="humanities-integral-checked-017-frame" data-panel="humanities-integral-checked-017-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="humanities-integral-checked-017-frame" class="ex-frame"
+      hidden="">
+      <div id="humanities-integral-checked-017-hint-0"
+      class="ex-panel ex-hint-panel" hidden="">
+      <p>利用微元法：将区间 <span class="math inline">\displaystyle
+      [a,b]</span> 分成若干小区间，在每个小区间 <span
+      class="math inline">\displaystyle [x, x+dx]</span>
+      上用矩形近似面积微元，再求和取极限。</p>
+      </div>
+      <div id="humanities-integral-checked-017-ans-0"
+      class="ex-panel ex-ans-panel" hidden="">
+      <p>利用微元法：</p>
+      <ul>
+      <li><strong>分割</strong>：将 <span
+      class="math inline">\displaystyle [a,b]</span> 分成 <span
+      class="math inline">\displaystyle n</span> 个小区间；</li>
+      <li><strong>近似</strong>：每个小区间 <span
+      class="math inline">\displaystyle [x, x+dx]</span> 上的面积微元为
+      <span class="math inline">\displaystyle dA = f(x)dx</span>；</li>
+      <li><strong>求和取极限</strong>：</li>
+      </ul>
+      <p><span class="math display">
+      A = \int_a^b f(x)\,dx
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <p class="lead-label"><strong>体积的计算</strong></p>
+      <figure data-teaching-motion="slice">
+      </figure>
+      <div id="chpt6-ex-001" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例16</span><span class="ex-tags"><span
+      class="ex-tag">定积分</span><span
+      class="ex-tag">体积</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>计算底面积为 <span class="math inline">\displaystyle
+      A</span>，高为 <span class="math inline">\displaystyle h</span>
+      的棱柱体积。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-001-frame" data-panel="chpt6-ex-001-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-001-frame" data-panel="chpt6-ex-001-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt6-ex-001-frame" class="ex-frame" hidden="">
+      <div id="chpt6-ex-001-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>利用截面法：棱柱所有截面面积相同，直接积分。</p>
+      </div>
+      <div id="chpt6-ex-001-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>所有截面面积均为 <span class="math inline">\displaystyle
+      A</span>，故</p>
+      <p><span class="math display">
+      V = \int_0^h A\,dx = Ah.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="humanities-integral-checked-002" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例17</span><span class="ex-tags"><span
+      class="ex-tag">定积分</span><span
+      class="ex-tag">体积</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>计算底半径为 <span class="math inline">\displaystyle
+      R</span>，高为 <span class="math inline">\displaystyle h</span>
+      的圆锥体积。</p>
+      <figure>
+      <img src="media/img/chpt6_ex002.png" width="400"
+      alt="圆锥体积示意 — 高 \displaystyle z 处的截面圆半径为 \displaystyle r(z) = R(1 - z/h), 用切片积分得 \displaystyle V = \pi R^2 h / 3" />
+      <figcaption aria-hidden="true">圆锥体积示意 — 高 <span
+      class="math inline">\displaystyle z</span> 处的截面圆半径为 <span
+      class="math inline">\displaystyle r(z) = R(1 - z/h)</span>,
+      用切片积分得 <span class="math inline">\displaystyle V = \pi R^2 h
+      / 3</span></figcaption>
+      </figure>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="humanities-integral-checked-002-frame" data-panel="humanities-integral-checked-002-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="humanities-integral-checked-002-frame" data-panel="humanities-integral-checked-002-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="humanities-integral-checked-002-frame" class="ex-frame"
+      hidden="">
+      <div id="humanities-integral-checked-002-hint-0"
+      class="ex-panel ex-hint-panel" hidden="">
+      <p>按图中从底面到顶点的方向取坐标，利用相似三角形求截面半径。</p>
+      </div>
+      <div id="humanities-integral-checked-002-ans-0"
+      class="ex-panel ex-ans-panel" hidden="">
+      <p>以底面为 <span class="math inline">\displaystyle
+      x=0</span>，顶点为 <span class="math inline">\displaystyle
+      x=h</span>。截面半径为 <span class="math inline">\displaystyle
+      r(x)=R\left(1-\frac{x}{h}\right)</span>，所以</p>
+      <p><span class="math display">V=\pi
+      R^2\int_0^h\left(1-\frac{x}{h}\right)^2\,dx=\frac13\pi
+      R^2h.</span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">悟</span></div>
+      <div class="callout-body">
+      <p>曲线 <span class="math inline">\displaystyle y = f(x)</span> 绕
+      <span class="math inline">\displaystyle x</span>
+      轴旋转一周形成的旋转体体积: <span class="math display">
+      V = \int_a^b \pi [f(x)]^2 dx
+      </span></p>
+      <p class="lead-label"><strong>推导</strong>: 在 <span
+      class="math inline">\displaystyle x</span> 处垂直于 <span
+      class="math inline">\displaystyle x</span> 轴的截面是半径为 <span
+      class="math inline">\displaystyle f(x)</span> 的圆盘, 面积 <span
+      class="math inline">\displaystyle A(x) = \pi [f(x)]^2</span></p>
+      </div>
+      </div>
+      <div id="chpt6-ex-003" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例18</span><span class="ex-tags"><span
+      class="ex-tag">定积分</span><span
+      class="ex-tag">体积</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>计算曲线 <span class="math inline">\displaystyle y =
+      \sqrt{x}</span> 在 <span class="math inline">\displaystyle
+      [0,1]</span> 上绕 <span class="math inline">\displaystyle x</span>
+      轴旋转一周所形成的旋转体体积。</p>
+      <figure>
+      <img src="media/img/chpt6_ex003.png" width="400"
+      alt="\displaystyle y=\sqrt{x} 在 \displaystyle [0,1] 上绕 \displaystyle x 轴旋转, 形成的旋转体 — 在 \displaystyle x 处的截面是半径 \displaystyle \sqrt{x} 的圆" />
+      <figcaption aria-hidden="true"><span
+      class="math inline">\displaystyle y=\sqrt{x}</span> 在 <span
+      class="math inline">\displaystyle [0,1]</span> 上绕 <span
+      class="math inline">\displaystyle x</span> 轴旋转, 形成的旋转体 —
+      在 <span class="math inline">\displaystyle x</span> 处的截面是半径
+      <span class="math inline">\displaystyle \sqrt{x}</span>
+      的圆</figcaption>
+      </figure>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-003-frame" data-panel="chpt6-ex-003-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-003-frame" data-panel="chpt6-ex-003-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt6-ex-003-frame" class="ex-frame" hidden="">
+      <div id="chpt6-ex-003-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>用旋转体体积公式 <span class="math inline">\displaystyle V =
+      \displaystyle\int_a^b \pi [f(x)]^2\,dx</span>。</p>
+      </div>
+      <div id="chpt6-ex-003-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      V = \int_0^1 \pi(\sqrt{x})^2\,dx = \pi\int_0^1 x\,dx = \pi \cdot
+      \frac{1}{2} = \frac{\pi}{2}.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">悟</span></div>
+      <div class="callout-body">
+      <p>曲线 <span class="math inline">\displaystyle y = f(x)</span> 绕
+      <span class="math inline">\displaystyle y</span>
+      轴旋转一周形成的旋转体体积: <span class="math display">
+      V = \int_a^b 2\pi x f(x) dx
+      </span></p>
+      <p class="lead-label"><strong>推导</strong>: 在 <span
+      class="math inline">\displaystyle x</span> 处厚度为 <span
+      class="math inline">\displaystyle dx</span> 的柱壳体积微元 <span
+      class="math inline">\displaystyle dV = 2\pi x \cdot f(x) \cdot
+      dx</span></p>
+      </div>
+      </div>
+      <div id="humanities-integral-checked-004" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例19</span><span class="ex-tags"><span
+      class="ex-tag">定积分</span><span
+      class="ex-tag">体积</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>求直线 <span class="math inline">\displaystyle
+      y=x</span>、<span class="math inline">\displaystyle y</span>
+      轴和直线 <span class="math inline">\displaystyle y=1</span>
+      围成的区域绕 <span class="math inline">\displaystyle y</span>
+      轴旋转一周所得的体积。</p>
+      <figure>
+      <img src="media/img/chpt6_ex004.png" width="400"
+      alt="直线 \displaystyle y=x 在 \displaystyle [0,1] 上绕 \displaystyle y 轴旋转 — 形成顶端在原点的倒置圆锥, 高度 \displaystyle y 处的圆半径等于 \displaystyle y" />
+      <figcaption aria-hidden="true">直线 <span
+      class="math inline">\displaystyle y=x</span> 在 <span
+      class="math inline">\displaystyle [0,1]</span> 上绕 <span
+      class="math inline">\displaystyle y</span> 轴旋转 —
+      形成顶端在原点的倒置圆锥, 高度 <span
+      class="math inline">\displaystyle y</span> 处的圆半径等于 <span
+      class="math inline">\displaystyle y</span></figcaption>
+      </figure>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="humanities-integral-checked-004-frame" data-panel="humanities-integral-checked-004-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="humanities-integral-checked-004-frame" data-panel="humanities-integral-checked-004-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="humanities-integral-checked-004-frame" class="ex-frame"
+      hidden="">
+      <div id="humanities-integral-checked-004-hint-0"
+      class="ex-panel ex-hint-panel" hidden="">
+      <p>沿高度切片，在高度 <span class="math inline">\displaystyle
+      y</span> 处的截面是半径为 <span class="math inline">\displaystyle
+      y</span> 的圆。</p>
+      </div>
+      <div id="humanities-integral-checked-004-ans-0"
+      class="ex-panel ex-ans-panel" hidden="">
+      <p>以 <span class="math inline">\displaystyle y</span>
+      为积分变量，截面面积为 <span class="math inline">\displaystyle\pi
+      y^2</span>，所以</p>
+      <p><span class="math display">V=\int_0^1\pi
+      y^2\,dy=\frac\pi3.</span></p>
+      <p>也可以用柱壳法：半径为 <span class="math inline">\displaystyle
+      x</span> 的薄壳高度为 <span
+      class="math inline">\displaystyle1-x</span>，因此</p>
+      <p><span class="math display">V=\int_0^1 2\pi
+      x(1-x)\,dx=\frac\pi3.</span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <p class="lead-label"><strong>曲线弧长</strong></p>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">直角坐标系下的弧长</span></div>
+      <div class="callout-body">
+      <p>曲线 <span class="math inline">\displaystyle y = f(x)</span> 在
+      <span class="math inline">\displaystyle [a,b]</span> 上的弧长:
+      <span class="math display">
+      L = \int_a^b \sqrt{1 + [f&#39;(x)]^2}  dx
+      </span></p>
+      <p class="lead-label"><strong>推导</strong>: 弧长微元 <span
+      class="math inline">\displaystyle ds = \sqrt{(dx)^2 + (dy)^2} =
+      \sqrt{1 + \left(\frac{dy}{dx}\right)^2} dx</span></p>
+      </div>
+      </div>
+      <div id="chpt6-ex-005" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例20</span><span class="ex-tags"><span
+      class="ex-tag">定积分</span><span class="ex-tag">弧长</span><span
+      class="ex-tag">换元法</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>计算曲线 <span class="math inline">\displaystyle y =
+      x^{3/2}</span> 从 <span class="math inline">\displaystyle
+      x=0</span> 到 <span class="math inline">\displaystyle x=1</span>
+      的弧长。</p>
+      <figure>
+      <img src="media/img/chpt6_ex005.png" width="400"
+      alt="\displaystyle y=x^{3/2} 在 \displaystyle [0,1] 的曲线, 红色短箭头标出弧长微元 \displaystyle ds=\sqrt{1+(y&#39;)^2}\,dx" />
+      <figcaption aria-hidden="true"><span
+      class="math inline">\displaystyle y=x^{3/2}</span> 在 <span
+      class="math inline">\displaystyle [0,1]</span> 的曲线,
+      红色短箭头标出弧长微元 <span class="math inline">\displaystyle
+      ds=\sqrt{1+(y&#39;)^2}\,dx</span></figcaption>
+      </figure>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-005-frame" data-panel="chpt6-ex-005-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-005-frame" data-panel="chpt6-ex-005-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt6-ex-005-frame" class="ex-frame" hidden="">
+      <div id="chpt6-ex-005-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>用弧长公式 <span class="math inline">\displaystyle L =
+      \displaystyle\int_0^1 \sqrt{1 + [f&#39;(x)]^2}\,dx</span>，令
+      <span class="math inline">\displaystyle u = 1 +
+      \dfrac{9}{4}x</span> 换元求积分。</p>
+      </div>
+      <div id="chpt6-ex-005-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math inline">\displaystyle f&#39;(x) =
+      \dfrac{3}{2}x^{1/2}</span>，故</p>
+      <p><span class="math display">
+      L = \int_0^1 \sqrt{1 + \frac{9}{4}x}\,dx.
+      </span></p>
+      <p>令 <span class="math inline">\displaystyle u = 1 +
+      \dfrac{9}{4}x</span>，则 <span class="math inline">\displaystyle
+      du = \dfrac{9}{4}dx</span>；当 <span
+      class="math inline">\displaystyle x=0</span> 时 <span
+      class="math inline">\displaystyle u=1</span>，当 <span
+      class="math inline">\displaystyle x=1</span> 时 <span
+      class="math inline">\displaystyle u=\dfrac{13}{4}</span>。</p>
+      <p><span class="math display">
+      L = \frac{4}{9}\int_1^{13/4} \sqrt{u}\,du = \frac{4}{9} \cdot
+      \frac{2}{3}u^{3/2}\Big|_1^{13/4} =
+      \frac{8}{27}\left[\left(\frac{13}{4}\right)^{3/2} - 1\right].
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">参数方程下的弧长</span></div>
+      <div class="callout-body">
+      <p>曲线由参数方程 <span class="math inline">\displaystyle x =
+      x(t), y = y(t)</span> (<span class="math inline">\displaystyle
+      \alpha \leq t \leq \beta</span>) 给出时, 弧长为: <span
+      class="math display">
+      L = \int_\alpha^\beta \sqrt{\left(\frac{dx}{dt}\right)^2 +
+      \left(\frac{dy}{dt}\right)^2}  dt
+      </span></p>
+      </div>
+      </div>
+      <div id="chpt6-ex-006" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例21</span><span class="ex-tags"><span
+      class="ex-tag">定积分</span><span
+      class="ex-tag">弧长</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>用参数方程下的弧长公式计算半径为 <span
+      class="math inline">\displaystyle R</span> 的圆的周长。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-006-frame" data-panel="chpt6-ex-006-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-006-frame" data-panel="chpt6-ex-006-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt6-ex-006-frame" class="ex-frame" hidden="">
+      <div id="chpt6-ex-006-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>圆的参数方程为 <span class="math inline">\displaystyle x =
+      R\cos t</span>，<span class="math inline">\displaystyle y = R\sin
+      t</span>（<span class="math inline">\displaystyle 0 \leq t \leq
+      2\pi</span>），代入参数弧长公式。</p>
+      </div>
+      <div id="chpt6-ex-006-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      \frac{dx}{dt} = -R\sin t, \quad \frac{dy}{dt} = R\cos t.
+      </span></p>
+      <p><span class="math display">
+      L = \int_0^{2\pi} \sqrt{(-R\sin t)^2 + (R\cos t)^2}\,dt =
+      \int_0^{2\pi} R\,dt = 2\pi R.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">极坐标下的弧长</span></div>
+      <div class="callout-body">
+      <p>曲线由极坐标方程 <span class="math inline">\displaystyle r =
+      r(\theta)</span> (<span class="math inline">\displaystyle \alpha
+      \leq \theta \leq \beta</span>) 给出时, 弧长为: <span
+      class="math display">
+      L = \int_\alpha^\beta \sqrt{[r(\theta)]^2 +
+      \left[\frac{dr}{d\theta}\right]^2}  d\theta
+      </span></p>
+      <p class="lead-label"><strong>推导</strong>: 利用直角坐标与极坐标的关系 <span
+      class="math inline">\displaystyle x = r\cos\theta, y =
+      r\sin\theta</span>, 代入参数方程的弧长公式可得.</p>
+      </div>
+      </div>
+      <div id="chpt6-ex-007" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例22</span><span class="ex-tags"><span
+      class="ex-tag">定积分</span><span class="ex-tag">弧长</span><span
+      class="ex-tag">极坐标</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>计算心形线 <span class="math inline">\displaystyle r =
+      a(1+\cos\theta)</span>（<span class="math inline">\displaystyle 0
+      \leq \theta \leq 2\pi</span>）的周长。</p>
+      <figure>
+      <img src="media/img/chpt6_ex007.png" width="400"
+      alt="心形线 \displaystyle r = a(1+\cos\theta), \displaystyle \theta\in[0, 2\pi] — 经典极坐标曲线, 周长为 \displaystyle 8a" />
+      <figcaption aria-hidden="true">心形线 <span
+      class="math inline">\displaystyle r = a(1+\cos\theta)</span>,
+      <span class="math inline">\displaystyle \theta\in[0, 2\pi]</span>
+      — 经典极坐标曲线, 周长为 <span class="math inline">\displaystyle
+      8a</span></figcaption>
+      </figure>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-007-frame" data-panel="chpt6-ex-007-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-007-frame" data-panel="chpt6-ex-007-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt6-ex-007-frame" class="ex-frame" hidden="">
+      <div id="chpt6-ex-007-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>用极坐标弧长公式 <span class="math inline">\displaystyle L =
+      \displaystyle\int_0^{2\pi} \sqrt{r^2 +
+      (r&#39;)^2}\,d\theta</span>，利用半角公式 <span
+      class="math inline">\displaystyle 1+\cos\theta =
+      2\cos^2(\theta/2)</span> 化简被积函数。</p>
+      </div>
+      <div id="chpt6-ex-007-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math inline">\displaystyle \dfrac{dr}{d\theta} =
+      -a\sin\theta</span>，故</p>
+      <p><span class="math display">
+      L = \int_0^{2\pi} \sqrt{a^2(1+\cos\theta)^2 +
+      a^2\sin^2\theta}\,d\theta =
+      a\int_0^{2\pi}\sqrt{2+2\cos\theta}\,d\theta.
+      </span></p>
+      <p>利用 <span class="math inline">\displaystyle 1+\cos\theta =
+      2\cos^2(\theta/2)</span>：</p>
+      <p><span class="math display">
+      L = a\int_0^{2\pi} 2\left|\cos\frac{\theta}{2}\right|d\theta =
+      4a\int_0^{\pi}\cos\frac{\theta}{2}\,d\theta = 8a.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <p class="lead-label"><strong>做功的计算</strong></p>
+      <blockquote>
+      <p>在物理学中, 力沿路径做的功定义为力与位移的乘积. 当力是变力时,
+      需要用积分计算.</p>
+      </blockquote>
+      <p class="lead-label"><strong>有限区域内的变力做功</strong></p>
+      <div id="chpt6-ex-008" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例23</span><span class="ex-tags"><span
+      class="ex-tag">定积分</span><span
+      class="ex-tag">面积</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>弹簧压缩做功：根据胡克定律，弹性系数为 <span
+      class="math inline">\displaystyle k</span>
+      的弹簧，将弹簧从平衡位置压缩 <span
+      class="math inline">\displaystyle L</span> 距离，求所做的功。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-008-frame" data-panel="chpt6-ex-008-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-008-frame" data-panel="chpt6-ex-008-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt6-ex-008-frame" class="ex-frame" hidden="">
+      <div id="chpt6-ex-008-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>弹簧力 <span class="math inline">\displaystyle F(x) =
+      kx</span>，对力沿压缩方向积分。</p>
+      </div>
+      <div id="chpt6-ex-008-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p><span class="math display">
+      W = \int_0^L kx\,dx = \frac{1}{2}kL^2.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="chpt6-ex-009" class="exercise-block"
+      data-difficulty="medium">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-medium">🟡</span><span
+      class="ex-label">例24</span><span class="ex-tags"><span
+      class="ex-tag">定积分</span><span
+      class="ex-tag">面积</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>抽水做功：设圆柱形水箱半径为 <span
+      class="math inline">\displaystyle R</span>，高为 <span
+      class="math inline">\displaystyle H</span>，装满密度为 <span
+      class="math inline">\displaystyle \rho</span>
+      的液体，求将液体全部抽出水箱顶部所需做的功。</p>
+      <figure>
+      <img src="media/img/chpt6_ex009.png" width="400"
+      alt="圆柱形水箱 (半径 \displaystyle R, 高 \displaystyle H), 红色薄片为高 \displaystyle z 处厚 \displaystyle dz 的水层, 需提升的距离为 \displaystyle H-z" />
+      <figcaption aria-hidden="true">圆柱形水箱 (半径 <span
+      class="math inline">\displaystyle R</span>, 高 <span
+      class="math inline">\displaystyle H</span>), 红色薄片为高 <span
+      class="math inline">\displaystyle z</span> 处厚 <span
+      class="math inline">\displaystyle dz</span> 的水层, 需提升的距离为
+      <span class="math inline">\displaystyle H-z</span></figcaption>
+      </figure>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-009-frame" data-panel="chpt6-ex-009-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-009-frame" data-panel="chpt6-ex-009-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="chpt6-ex-009-frame" class="ex-frame" hidden="">
+      <div id="chpt6-ex-009-hint-0" class="ex-panel ex-hint-panel"
+      hidden="">
+      <p>将水箱沿高度方向分层，距底面高度 <span
+      class="math inline">\displaystyle x</span> 处的薄层需提升距离为
+      <span class="math inline">\displaystyle H-x</span>，建立积分。</p>
+      </div>
+      <div id="chpt6-ex-009-ans-0" class="ex-panel ex-ans-panel"
+      hidden="">
+      <p>距底面高度 <span class="math inline">\displaystyle x</span>
+      处厚度为 <span class="math inline">\displaystyle dx</span>
+      的水层的质量为 <span class="math inline">\displaystyle \rho\pi
+      R^2\,dx</span>，需提升距离 <span class="math inline">\displaystyle
+      H-x</span>，故功微元为</p>
+      <p><span class="math display">
+      dW = \rho\pi R^2(H-x)\,g\,dx.
+      </span></p>
+      <p>总功为</p>
+      <p><span class="math display">
+      W = \int_0^H \rho g\pi R^2(H-x)\,dx = \rho g\pi R^2 \cdot
+      \frac{H^2}{2} = \frac{1}{2}\rho g\pi R^2 H^2.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <h2 id="第九节-回望来路">第九节 · 回望来路</h2>
+      <p>前两回，我们用极限把握变量的去向，用导数研究函数的变化。这一回，我们学会了另一种看问题的方式：<strong>把整体分成许多小部分，看清每一小部分的贡献，再通过求和与极限得到整体。</strong>
+      这就是“化整为零，积零为整”。</p>
+      <p>定积分从小矩形的面积之和出发，描述一个区间上的累积量。微积分基本定理则揭示了它与导数的联系：<strong>找到被积函数的原函数，就能用两个端点的函数值之差计算定积分。</strong></p>
+      <p><span class="math display">
+      \int_a^b f(x)\,dx=F(b)-F(a),\qquad F&#39;(x)=f(x).
+      </span></p>
+      <p>换元法与分部积分法，都在借用上一回的本领：前者逆用链式法则，后者逆用乘积求导法则。换元时，要把被积式与微分一起处理；计算定积分时，还要把上下限换成新变量对应的值。</p>
+      <p>打上凌霄宝殿，靠的是微元法。面对体积、弧长与功这些不同的问题，我们反复做着同样的事：<strong>选择分割变量，写出微元，确定积分范围，再累积求解。</strong>
+      公式各不相同，背后的思路却是一条。</p>
+      <figure class="chapter-integral-map">
+      <img src="assets/figures/chapter3-integral-map.svg?v=20261030" alt="积分知识结构：从分割、近似、求和、极限到定积分，分为性质、微积分基本定理与计算、微元法与应用三路" style="width:100%;max-width:920px;height:auto">
+      </figure>
+      <p>回看篇首荀子的“不积跬步，无以至千里”，一小步与千里之间，藏着的正是累积的力量。积分让我们不只看到整体有多大，还能说清楚：<strong>这个整体，是怎样一点一点积起来的。</strong></p>
+      <p>这一路，我们从局部累积出整体。下一回换一个方向：用某一点的变化率理解整个区间，用多项式近似复杂函数，再从变化规律寻找未知的函数。</p>
     </article>
     <nav class="reader-pagination" aria-label="篇章翻页"><a href="chapter2.html"><span>← 第二回 · 微分</span></a><a href="chapter5.html"><span>第四回 · 应用 →</span></a></nav>
   </div>
@@ -1277,5 +1836,6 @@
   <script src="assets/three-lazy.js"></script>
   <script src="assets/reader.js"></script>
   <script src="assets/secant-demo.js?v=20261024-two-plots"></script>
+  <script src="assets/teaching-motion.js?v=20261101-accumulation-concave"></script>
 </body>
 </html>

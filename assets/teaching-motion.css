@@ -1,0 +1,43 @@
+/* Scoped diagrams keep their native SVG proportions on phones and in print. */
+#content .teaching-motion{margin:1.7em 0;padding:1em;border:1px solid #a69c85;background:var(--paper,#f4efdf);border-radius:5px;color:var(--ink,#33433e)}
+#content .teaching-motion figcaption{font-weight:700;font-size:1em;text-align:left;margin:0 0 .8em;color:inherit}
+#content .motion-controls{display:flex;align-items:center;gap:.65em;flex-wrap:wrap;font-size:.88em}
+#content .motion-controls label{white-space:normal}#content .motion-controls input{flex:1;min-width:110px;max-width:280px;accent-color:#527b77}#content .motion-controls output{min-width:2.5em;font-variant-numeric:tabular-nums}
+#content .motion-controls button{font:inherit;color:inherit;background:transparent;border:1px solid #9a927c;padding:.25em .7em;cursor:pointer}#content .motion-controls button:focus-visible{outline:2px solid #527b77;outline-offset:3px}
+#content .teaching-motion svg{display:block;width:100%;height:auto;overflow:visible;margin:.6em 0}#content .motion-values{text-indent:0;font-size:.85em;line-height:1.8;margin:.4em 0 0;min-height:3.6em;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.teaching-motion .motion-axis{stroke:#8d9489;stroke-width:1}.teaching-motion .motion-label{fill:currentColor;font:16px "Microsoft YaHei",sans-serif;text-anchor:middle}.teaching-motion .motion-curve{fill:none;stroke:#466d71;stroke-width:3}.teaching-motion .motion-chord{fill:none;stroke:#a58246;stroke-width:2;stroke-dasharray:7 5}.teaching-motion .motion-tangent{fill:none;stroke:#b16d47;stroke-width:2.5;stroke-dasharray:6 4}.teaching-motion .motion-rect,.teaching-motion .motion-slice{fill:#b9a16a;fill-opacity:.3;stroke:#a58246;stroke-width:1}.teaching-motion .motion-outline{fill:none;stroke:#466d71;stroke-width:2}.teaching-motion .motion-dashed{stroke:#8d9489;stroke-dasharray:5 4}.teaching-motion .motion-gold{stroke:#a58246;stroke-width:2}.teaching-motion .motion-dot{fill:#b16d47}
+@media(max-width:600px){#content .teaching-motion{padding:.6em}#content .motion-controls{font-size:.8em}.teaching-motion .motion-label{font-size:18px}}
+@media print{#content .motion-controls{display:none}#content .teaching-motion{break-inside:avoid;background:white;color:#111}.teaching-motion .motion-label{fill:#111}}
+
+#content [data-teaching-motion="riemann"] svg,#content [data-teaching-motion="riemann-sequence"] svg{aspect-ratio:1 / 1;max-width:540px;margin:.6em auto}
+#content .callout-body>[data-teaching-motion="riemann"],#content .callout-body>[data-teaching-motion="riemann-sequence"]{border:0;border-radius:0;padding:0;background:transparent}
+
+#content .riemann-panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start}
+#content .riemann-pair .riemann-panels svg{width:100%;max-width:none;margin:0;aspect-ratio:1 / 1}
+#content .riemann-pair .motion-values{min-height:0;margin-top:0}
+#content .riemann-pair .motion-controls{margin-bottom:.4em}
+#content img[src*="humanities-riemann-example-"]+figcaption{display:none}
+@media(max-width:520px){#content .riemann-panels{grid-template-columns:1fr}}
+#content .riemann-pair .motion-label{font-size:24px}
+
+#content .callout-body>[data-teaching-motion="accumulation"]{border:0;border-radius:0;padding:0;background:transparent}
+#content .accumulation-panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start;margin-top:.7em}
+#content .accumulation-panels svg{margin:0;overflow:hidden}
+#content .accumulation-pair .motion-controls input{max-width:none;min-width:100px}
+#content .accumulation-pair .motion-controls button:disabled{opacity:.45;cursor:default}
+#content .accumulation-pair .motion-values{min-height:0;margin:.3em 0 0;font-variant-numeric:tabular-nums;text-align:right}
+.accumulation-pair .accumulation-label{fill:currentColor;font:25px "Microsoft YaHei",sans-serif;text-anchor:middle}
+.accumulation-pair .accumulation-title{fill:currentColor;font:29px "Microsoft YaHei",sans-serif;text-anchor:middle}
+.accumulation-pair .accumulation-value-background{fill:var(--paper,#f4efdf);fill-opacity:.96;stroke:#a58246;stroke-opacity:.45;stroke-width:1}
+.accumulation-pair .accumulation-value-text{fill:#8c6326;font:23px "Microsoft YaHei",sans-serif;text-anchor:start;font-variant-numeric:tabular-nums}
+.accumulation-pair .accumulation-axis{stroke:#59665e;stroke-width:1.7;fill:none}
+.accumulation-pair .accumulation-area{fill:#466d71;fill-opacity:.15}
+.accumulation-pair .accumulation-increment{fill:#b9a16a;fill-opacity:.5}
+.accumulation-pair .accumulation-future{fill:none;stroke:#466d71;stroke-opacity:.22;stroke-width:2;stroke-dasharray:5 4}
+.accumulation-pair .accumulation-new-curve{fill:none;stroke:#a58246;stroke-width:3.5}
+.accumulation-pair .accumulation-rectangle{fill:none;stroke:#a58246;stroke-width:1.5;stroke-dasharray:5 3}
+.accumulation-pair .accumulation-guide{fill:none;stroke:#a58246;stroke-width:1.5}
+.accumulation-pair .accumulation-current{fill:#a58246;stroke:var(--paper,#f4efdf);stroke-width:1}
+.accumulation-pair .accumulation-previous{fill:var(--paper,#f4efdf);stroke:#466d71;stroke-width:1.5}
+@media(max-width:560px){#content .accumulation-panels{grid-template-columns:1fr;gap:12px}}
+@media print{#content .accumulation-panels{grid-template-columns:1fr 1fr}}

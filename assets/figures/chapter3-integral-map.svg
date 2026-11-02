@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 470" role="img" aria-labelledby="title desc">
+<title id="title">第三回：积分</title><desc id="desc">定积分联系性质、原函数与计算方法、微元法及其应用。</desc>
+<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#35484a;text-anchor:middle;font-size:19px}.box{fill:#f5f0e3;stroke:#7a8a85;stroke-width:1.5}.line{fill:none;stroke:#7a8a85;stroke-width:1.5}.small{font-size:17px}</style>
+<rect class="box" x="290" y="10" width="340" height="48" rx="5"/>
+<text x="460.0" y="41.0">分割 · 近似 · 求和 · 极限</text>
+<rect class="box" x="375" y="90" width="170" height="46" rx="5"/>
+<text x="460.0" y="120.0">定积分</text>
+<path class="line" d="M460 58V90 M460 136V164 M145 164H775 M145 164V195 M460 164V195 M775 164V195"/>
+<rect class="box" x="35" y="195" width="220" height="50" rx="5"/>
+<text x="145.0" y="227.0">积分的性质</text>
+<rect class="box" x="340" y="195" width="240" height="50" rx="5"/>
+<text x="460.0" y="227.0">微积分基本定理</text>
+<rect class="box" x="665" y="195" width="220" height="50" rx="5"/>
+<text x="775.0" y="227.0">微元法</text>
+<path class="line" d="M145 245V290 M460 245V290 M775 245V290 M460 350V390"/>
+<rect class="box" x="35" y="290" width="220" height="60" rx="5"/>
+<text x="145.0" y="313.5">线性 · 区间可加</text>
+<text x="145.0" y="340.5">比较 · 对称性</text>
+<rect class="box" x="330" y="290" width="260" height="60" rx="5"/>
+<text x="460.0" y="313.5">原函数与不定积分</text>
+<text x="460.0" y="340.5">换元法 · 分部积分法</text>
+<rect class="box" x="650" y="290" width="250" height="60" rx="5"/>
+<text x="775.0" y="327.0">体积 · 弧长 · 功</text>
+<rect class="box" x="345" y="390" width="230" height="48" rx="5"/>
+<text x="460.0" y="421.0">定积分的计算</text>
+</svg>

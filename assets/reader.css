@@ -31,6 +31,7 @@ html[data-reading-mode=night]{color-scheme:dark;--paper:#252c24;--paper-panel:#2
 
 /* Chapter names share one brush-script line; reading sequence is inset. */
 #content p{text-indent:2em}
+#content p.lead-label{text-indent:0}
 #content li p,#content td p,#content th p,#content figcaption p,#content p[align],#content p:has(>img),#content p:has(>.math.display),#content p:has(>.katex-display){text-indent:0}
 .reader-banner-copy .reader-chapter-title{font-size:clamp(28px,4.3vw,64px);letter-spacing:.06em;white-space:nowrap}
 .callout-practice{--callout-accent:#6b587b}.callout-practice .callout-icon::before{content:'习'}

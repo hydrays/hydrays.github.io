@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 330" role="img" aria-labelledby="title"><title id="title">第四回：推演天机</title><style>text{font-family:"Microsoft YaHei",sans-serif;fill:#35484a;text-anchor:middle;font-size:19px}rect{fill:#f5f0e3;stroke:#7a8a85;stroke-width:1.5}path{fill:none;stroke:#7a8a85;stroke-width:1.5}</style>
+<rect x="290" y="10" width="340" height="48" rx="5"/>
+<text x="460.0" y="41.0">极限 · 导数 · 积分</text>
+<path d="M460 58V85 M150 85H770 M150 85V115 M460 85V115 M770 85V115 M150 170V215 M460 170V215 M770 170V215"/>
+<rect x="35" y="115" width="230" height="55" rx="5"/>
+<text x="150.0" y="149.5">中值定理</text>
+<rect x="345" y="115" width="230" height="55" rx="5"/>
+<text x="460.0" y="149.5">泰勒展开</text>
+<rect x="655" y="115" width="230" height="55" rx="5"/>
+<text x="770.0" y="149.5">微分方程</text>
+<rect x="20" y="215" width="260" height="85" rx="5"/>
+<text x="150.0" y="251.0">拉格朗日 · 积分中值</text>
+<text x="150.0" y="278.0">局部与整体</text>
+<rect x="330" y="215" width="260" height="85" rx="5"/>
+<text x="460.0" y="251.0">函数值与导数相匹配</text>
+<text x="460.0" y="278.0">局部多项式近似</text>
+<rect x="640" y="215" width="260" height="85" rx="5"/>
+<text x="770.0" y="251.0">变化规律 · 初始条件</text>
+<text x="770.0" y="278.0">增长 · 衰减 · 冷却</text>
+</svg>

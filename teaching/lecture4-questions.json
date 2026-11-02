@@ -1,0 +1,180 @@
+[
+  {
+    "kind": "question",
+    "number": 1,
+    "problem": "计算 $\\lim_{x\\to0}\\dfrac{\\sin(3x)}{2x}$。",
+    "answer": "令 $t=3x$，则 $x\\to0$ 时 $t\\to0$。原式 $=\\dfrac32\\lim_{t\\to0}\\dfrac{\\sin t}{t}=\\dfrac32$。",
+    "space": 14,
+    "pair": true,
+    "star": true
+  },
+  {
+    "kind": "question",
+    "number": 2,
+    "problem": "计算 $\\lim_{x\\to0}\\dfrac{\\sin(2x)}{\\sin(5x)}$。",
+    "answer": "原式 $=\\lim_{x\\to0}\\dfrac25\\dfrac{\\sin(2x)}{2x}\\dfrac{5x}{\\sin(5x)}=\\dfrac25$。两个正弦比值均趋于 $1$。",
+    "space": 14,
+    "pair": true,
+    "star": true
+  },
+  {
+    "kind": "question",
+    "number": 3,
+    "problem": "计算 $\\lim_{n\\to\\infty}\\left(1+\\dfrac2n\\right)^n$。",
+    "answer": "令 $t=\\dfrac2n$，则 $n\\to\\infty$ 时 $t\\to0$，且 $n=\\dfrac2t$。原式 $=\\lim_{t\\to0}\\left[(1+t)^{\\frac1t}\\right]^2=e^2$。",
+    "space": 14,
+    "pair": true,
+    "star": true
+  },
+  {
+    "kind": "question",
+    "number": 4,
+    "problem": "计算 $\\lim_{x\\to0}(1-3x)^{\\frac1x}$。",
+    "answer": "令 $t=-3x$，则 $x\\to0$ 时 $t\\to0$，且 $\\dfrac1x=-\\dfrac3t$。原式 $=\\lim_{t\\to0}\\dfrac1{\\left[(1+t)^{\\frac1t}\\right]^3}=\\dfrac1{e^3}$。",
+    "space": 14,
+    "pair": true,
+    "star": true
+  },
+  {
+    "kind": "table",
+    "number": 5,
+    "problem": "判断下列函数在 $x_0$ 处是否连续，在表中填 A（连续）或 B（不连续）。",
+    "answer": "依次为 B、B、B、A。连续要求 $f(x_0)$ 与 $\\lim_{x\\to x_0}f(x)$ 都存在且相等。",
+    "space": 0,
+    "pair": false,
+    "star": false,
+    "headers": [
+      "$f(x_0)$",
+      "$\\lim_{x\\to x_0}f(x)$",
+      "判断"
+    ],
+    "rows": [
+      [
+        "没有定义",
+        "$1$",
+        "____"
+      ],
+      [
+        "$0$",
+        "不存在",
+        "____"
+      ],
+      [
+        "$0$",
+        "$1$",
+        "____"
+      ],
+      [
+        "$1$",
+        "$1$",
+        "____"
+      ]
+    ],
+    "row_mm": 9
+  },
+  {
+    "kind": "question",
+    "number": 6,
+    "problem": "当 $x\\ne0$ 时，$G(x)=\\dfrac{\\sin(2x)}x$；另设 $G(0)=c$。要使 $G$ 在零点连续，应取 $c=$____。",
+    "answer": "$c=2$，因为 $\\lim_{x\\to0}\\dfrac{\\sin(2x)}x=2$。",
+    "space": 0,
+    "pair": false,
+    "star": false
+  },
+  {
+    "kind": "question",
+    "number": 7,
+    "problem": "设 $f(x)=x^3$，则 $f'(x)=$____，$f'(2)=$____。",
+    "answer": "$f'(x)=3x^2$，$f'(2)=12$。",
+    "space": 0,
+    "pair": false,
+    "star": false
+  },
+  {
+    "kind": "question",
+    "number": 8,
+    "problem": "对 $f(x)=|x|$，补全差商：\\n① $h>0$ 时，$\\dfrac{f(h)-f(0)}h=$____；$h<0$ 时，$\\dfrac{f(h)-f(0)}h=$____。\\n② $f$ 在零点（　）。A. 连续且可导　B. 连续但不可导　C. 不连续\\n③ 若函数在某点可导，则它在该点（　）。A. 一定连续　B. 未必连续",
+    "answer": "① $1$；$-1$。② B。③ A。不同符号的 $h$ 给出不同的差商极限，所以 $|x|$ 在零点不可导。",
+    "space": 0,
+    "pair": false,
+    "star": false
+  },
+  {
+    "kind": "table",
+    "number": 9,
+    "problem": "填写下列函数的导数。",
+    "answer": "左列自上而下：$0$、$3x^2$、$-\\dfrac1{x^2}$、$\\dfrac1{2\\sqrt{x}}$。\n右列自上而下：$\\cos x$、$-\\sin x$、$e^x$、$\\dfrac1x$。",
+    "space": 0,
+    "pair": false,
+    "star": false,
+    "headers": [
+      "函数",
+      "导数",
+      "函数",
+      "导数"
+    ],
+    "rows": [
+      [
+        "$C$（常数）",
+        "____",
+        "$\\sin x$",
+        "____"
+      ],
+      [
+        "$x^3$",
+        "____",
+        "$\\cos x$",
+        "____"
+      ],
+      [
+        "$\\dfrac1x$（$x\\ne0$）",
+        "____",
+        "$e^x$",
+        "____"
+      ],
+      [
+        "$\\sqrt{x}$（$x>0$）",
+        "____",
+        "$\\ln x$（$x>0$）",
+        "____"
+      ]
+    ],
+    "row_mm": 13
+  },
+  {
+    "kind": "question",
+    "number": 10,
+    "problem": "求 $y=3x^4-2x^2+5$ 的导数。",
+    "answer": "$y'=12x^3-4x$。",
+    "space": 42,
+    "pair": true,
+    "star": true
+  },
+  {
+    "kind": "question",
+    "number": 11,
+    "problem": "求 $y=x^2\\sin x$ 的导数。",
+    "answer": "$y'=2x\\sin x+x^2\\cos x$。",
+    "space": 42,
+    "pair": true,
+    "star": true
+  },
+  {
+    "kind": "question",
+    "number": 12,
+    "problem": "求 $y=\\dfrac{x+1}{x-1}$ 的导数（$x\\ne1$）。",
+    "answer": "$y'=\\dfrac{(x-1)-(x+1)}{(x-1)^2}=-\\dfrac2{(x-1)^2}$。",
+    "space": 48,
+    "pair": true,
+    "star": true
+  },
+  {
+    "kind": "question",
+    "number": 13,
+    "problem": "求 $y=xe^x$ 的导数。",
+    "answer": "$y'=e^x+xe^x=(1+x)e^x$。",
+    "space": 48,
+    "pair": true,
+    "star": true
+  }
+]

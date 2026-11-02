@@ -11,7 +11,7 @@
   
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="assets/app.css?v=20261024-proof-label">
-  <link rel="stylesheet" href="assets/reader.css?v=20261025-video-attribution">
+  <link rel="stylesheet" href="assets/reader.css?v=20261101-flush-labels">
   <link rel="stylesheet" href="assets/secant-demo.css?v=20261024-two-plots">
   <link rel="stylesheet" href="assets/katex/katex.min.css">
   <script src="assets/katex/katex.min.js"></script>
@@ -68,6 +68,7 @@
     a { color: #1a3d8f; text-decoration: none; }
     .open-sidebar-btn, .menu-toggle, .floating-btn, .video-btn { display: none !important; }
   </style>
+  <link rel="stylesheet" href="assets/teaching-motion.css?v=20261101-accumulation-concave">
 </head>
 <body>
   <aside id="sidebar" aria-label="讲义目录">
@@ -662,7 +663,7 @@
       <p>在图像上，导数就是该点处切线的斜率。</p>
       </div>
       </div>
-      <p><strong>导数与瞬时速度</strong></p>
+      <p class="lead-label"><strong>导数与瞬时速度</strong></p>
       <p>在上面的图中，如果把 <span class="math inline">\displaystyle
       y</span> 记作位移 <span class="math inline">\displaystyle
       s</span>，把 <span class="math inline">\displaystyle x</span>
@@ -1707,7 +1708,7 @@
       <p><span class="math display">
       v(t)=s&#39;(t),\qquad a(t)=v&#39;(t)=s&#39;&#39;(t).
       </span></p>
-      <p><strong>位移图像的斜率给出速度，速度图像的斜率给出加速度。</strong></p>
+      <p class="lead-label"><strong>位移图像的斜率给出速度，速度图像的斜率给出加速度。</strong></p>
       <p>下图以 <span class="math inline">\displaystyle
       s(t)=\frac12t^2</span>
       为例：位移图像越来越陡，速度随时间增大；速度图像是一条斜率为 <span
@@ -1959,7 +1960,7 @@
       </div>
       </div>
       </div>
-      <p><strong>极值</strong></p>
+      <p class="lead-label"><strong>极值</strong></p>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">极大值与极小值</span></div>
       <div class="callout-body">
@@ -2084,7 +2085,7 @@
       </div>
       </div>
       </div>
-      <p><strong>最值</strong></p>
+      <p class="lead-label"><strong>最值</strong></p>
       <p>从局部转向整体，最值要与整个研究区间的函数值比较。附近的山峰，未必是整段山路的最高处。前面的最值定理保证了闭区间上连续函数的最值存在，现在可以用导数寻找它们的位置。</p>
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">闭区间上的最值</span></div>
@@ -2100,7 +2101,7 @@
       <p>找出候选位置以后，还要比较函数值，才能确定整个区间的最大值和最小值。</p>
       </div>
       </div>
-      <p><strong>凸函数与凹函数</strong></p>
+      <p class="lead-label"><strong>凸函数与凹函数</strong></p>
       <p>对于一般函数，极值未必是整个研究区间上的最值。但有两类“形态特殊”的函数：<strong>凸函数（convex
       function）的极小值一定是全局最小值，凹函数（concave
       function）的极大值一定是全局最大值。</strong>
@@ -2139,7 +2140,7 @@
       <span class="math inline">\displaystyle x</span> 处的高度。</li>
       </ul>
       <p>左边小于或等于右边，表示曲线不高于两点连线，这是凸函数的形态；左边大于或等于右边，表示曲线不低于两点连线，这是凹函数的形态。因此，凸函数的曲线位于弦的下方或与它重合；凹函数的曲线位于弦的上方或与它重合。</p>
-      <p><strong>凸函数的极小值一定是全局最小值；凹函数的极大值一定是全局最大值。</strong></p>
+      <p class="lead-label"><strong>凸函数的极小值一定是全局最小值；凹函数的极大值一定是全局最大值。</strong></p>
       <p>给函数加上负号，图像便上下翻转：<span
       class="math inline">\displaystyle f</span> 是凹函数，当且仅当
       <span class="math inline">\displaystyle-f</span> 是凸函数。</p>
@@ -2305,19 +2306,19 @@
       </span></p>
       <p>这条中点关系，把图像的形态与中学里熟悉的不等式联系起来：</p>
       <ol type="1">
-      <li><p><strong>平方和不等式</strong>。取凸函数 <span
+      <li><p class="lead-label"><strong>平方和不等式</strong>。取凸函数 <span
       class="math inline">\displaystyle f(x)=x^2</span>，对任意实数
       <span class="math inline">\displaystyle a,b</span>，得到</p>
       <p><span class="math display">
       (a+b)^2\le2(a^2+b^2).
       </span></p></li>
-      <li><p><strong>基本不等式</strong>。取凸函数 <span
+      <li><p class="lead-label"><strong>基本不等式</strong>。取凸函数 <span
       class="math inline">\displaystyle f(x)=-\ln x</span>，对 <span
       class="math inline">\displaystyle a,b&gt;0</span>，得到</p>
       <p><span class="math display">
       \sqrt{ab}\le\frac{a+b}{2}.
       </span></p></li>
-      <li><p><strong>倒数不等式</strong>。取 <span
+      <li><p class="lead-label"><strong>倒数不等式</strong>。取 <span
       class="math inline">\displaystyle x&gt;0</span> 上的凸函数 <span
       class="math inline">\displaystyle f(x)=\frac1x</span>，对 <span
       class="math inline">\displaystyle a,b&gt;0</span>，得到</p>
@@ -2375,13 +2376,13 @@
       +\frac{\sqrt{h_2^2+(l-x)^2}}{v_2}.
       </span></p>
       <ul>
-      <li><p><strong>计算导数</strong></p>
+      <li><p class="lead-label"><strong>计算导数</strong></p>
       <p>由四则运算和链式法则，</p>
       <p><span class="math display">
       T&#39;(x)=\frac{x}{v_1\sqrt{h_1^2+x^2}}
       -\frac{l-x}{v_2\sqrt{h_2^2+(l-x)^2}}.
       </span></p></li>
-      <li><p><strong>确定最优进入点</strong></p>
+      <li><p class="lead-label"><strong>确定最优进入点</strong></p>
       <p>再求一次导数，得到</p>
       <p><span class="math display">
       T&#39;&#39;(x)=\frac{h_1^2}{v_1(h_1^2+x^2)^{\frac32}}
@@ -2401,7 +2402,7 @@
       <span class="math inline">\displaystyle P_*=(x_*,0)</span>
       就是最优进入点，最快路线为 <span class="math inline">\displaystyle
       A\to P_*\to B</span>。</p></li>
-      <li><p><strong>读出角度关系</strong></p>
+      <li><p class="lead-label"><strong>读出角度关系</strong></p>
       <p>根据图形，最快路线上的两个角满足</p>
       <p><span class="math display">
       \sin\theta_1=\frac{x_*}{\sqrt{h_1^2+x_*^2}},
@@ -2498,7 +2499,7 @@
       C=\lim_{\Delta\theta\to0}\frac{\Delta
       y}{\Delta\theta}=f&#39;(\theta_0).
       </span></p>
-      <p><strong>描述两个微小变化局部联动的这条直线，其斜率恰好就是函数在当前位置的导数。</strong>
+      <p class="lead-label"><strong>描述两个微小变化局部联动的这条直线，其斜率恰好就是函数在当前位置的导数。</strong>
       这便把微分与我们已经学过的导数联系起来。</p>
       <div class="callout-fold" data-label="为什么线性近似的斜率是导数">
       <button class="callout-fold-btn" type="button" aria-expanded="false">&#9654; 为什么线性近似的斜率是导数</button>
@@ -2571,7 +2572,7 @@
       化曲为直：在固定点附近，用切线近似曲线。
       </figcaption>
       </figure>
-      <p><strong>微分给出了实际改变量的线性近似。</strong> 在图上，<span
+      <p class="lead-label"><strong>微分给出了实际改变量的线性近似。</strong> 在图上，<span
       class="math inline">\displaystyle\Delta y</span>
       是曲线上的高度变化，<span class="math inline">\displaystyle
       dy</span>
@@ -2663,7 +2664,7 @@
       </div>
       <div id="chpt3-ex-001-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p><strong>匀速运动</strong>：<span
+      <p class="lead-label"><strong>匀速运动</strong>：<span
       class="math inline">\displaystyle s = s_0 + vt</span>，求导得
       <span class="math inline">\displaystyle s&#39;(t) =
       v</span>，故</p>
@@ -2674,7 +2675,7 @@
       = v\Delta t</span>
       精确成立（无误差），因为线性函数的差分与微分完全相等：<span
       class="math inline">\displaystyle \Delta s - ds = 0</span>。</p>
-      <p><strong>匀加速运动</strong>：<span
+      <p class="lead-label"><strong>匀加速运动</strong>：<span
       class="math inline">\displaystyle s = s_0 +
       \frac{1}{2}at^2</span>，求导得 <span
       class="math inline">\displaystyle s&#39;(t) = at</span>，故</p>
@@ -2723,7 +2724,7 @@
       <div class="callout callout-note">
       <div class="callout-header callout-header-note"><span class="callout-icon"></span><span class="callout-label">两种直线的含义</span></div>
       <div class="callout-body">
-      <p><strong>这里的拟合直线，与前面“化曲为直”中的直线含义不同。</strong>
+      <p class="lead-label"><strong>这里的拟合直线，与前面“化曲为直”中的直线含义不同。</strong>
       拟合直线用于概括一组数据的<strong>整体趋势</strong>；“化曲为直”则是在某一点附近，用切线对函数作<strong>局部近似</strong>。梯度下降法中的“化曲为直”，体现在后面对损失函数的局部近似中。</p>
       </div>
       </div>
@@ -2917,5 +2918,6 @@
   <script src="assets/three-lazy.js"></script>
   <script src="assets/reader.js"></script>
   <script src="assets/secant-demo.js?v=20261024-two-plots"></script>
+  <script src="assets/teaching-motion.js?v=20261101-accumulation-concave"></script>
 </body>
 </html>

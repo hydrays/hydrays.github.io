@@ -1,0 +1,31 @@
+{
+  "source": "books\\NewMathAnalysis\\build\\teaching\\chapter1-student.html",
+  "source_sha256": "484c09f6d146ef378549c6b923e487aabcd83134b64ad9e29491961f8d225a1d",
+  "source_exercise_positions": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "exercise_blocks": 10,
+  "title": "微积分微修课学案",
+  "added_calculation_questions": [
+    "计算 $\\displaystyle\\lim_{n\\to\\infty}\\frac{3n^2+n-2}{2n^2-3n+1}$。",
+    "计算 $\\displaystyle\\lim_{x\\to2}\\frac{x^2+3x-1}{x+2}$。"
+  ],
+  "arithmetic_rule_groups": [
+    "数列",
+    "函数"
+  ],
+  "arithmetic_result_blanks": 8,
+  "general_epsilon_prompts": 3,
+  "questionnaire_at_last_page_bottom": true,
+  "cutline_label": "裁剪",
+  "numbered_worksheet": false,
+  "numbered_questions": false,
+  "original_internal_items_preserved": true
+}

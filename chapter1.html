@@ -11,7 +11,7 @@
   
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="assets/app.css?v=20261024-proof-label">
-  <link rel="stylesheet" href="assets/reader.css?v=20261025-video-attribution">
+  <link rel="stylesheet" href="assets/reader.css?v=20261101-flush-labels">
   <link rel="stylesheet" href="assets/secant-demo.css?v=20261024-two-plots">
   <link rel="stylesheet" href="assets/katex/katex.min.css">
   <script src="assets/katex/katex.min.js"></script>
@@ -68,6 +68,7 @@
     a { color: #1a3d8f; text-decoration: none; }
     .open-sidebar-btn, .menu-toggle, .floating-btn, .video-btn { display: none !important; }
   </style>
+  <link rel="stylesheet" href="assets/teaching-motion.css?v=20261101-accumulation-concave">
 </head>
 <body>
   <aside id="sidebar" aria-label="讲义目录">
@@ -191,7 +192,7 @@
       同一个圆，六种边数。绿色部分是多边形，浅色空隙是尚未覆盖的部分。
       </p>
       <p>先看图：边数增加后，多边形的边界似乎越来越贴近圆。但眼睛只能帮助我们发现线索。要追踪这种变化，还得把图形变成可以计算的数。</p>
-      <p><strong>从一个三角形算起。</strong> 连接圆心与每个顶点，内接正
+      <p class="lead-label"><strong>从一个三角形算起。</strong> 连接圆心与每个顶点，内接正
       <span class="math inline">\displaystyle n</span> 边形便被分成
       <span class="math inline">\displaystyle n</span>
       个完全相同的等腰三角形。它们的两条腰都是圆的半径 <span
@@ -941,7 +942,7 @@
       </div>
       <div id="chpt1-ex-039-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p><strong>极限不存在。</strong> 无论把 <span
+      <p class="lead-label"><strong>极限不存在。</strong> 无论把 <span
       class="math inline">\displaystyle x</span> 限制在 <span
       class="math inline">\displaystyle0</span>
       附近多小的范围内，函数仍会取到 <span
@@ -1019,7 +1020,7 @@
       </div>
       <div id="chpt1-ex-040-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
-      <p><strong>极限不存在。</strong> 函数值虽然始终在 <span
+      <p class="lead-label"><strong>极限不存在。</strong> 函数值虽然始终在 <span
       class="math inline">\displaystyle-1</span> 与 <span
       class="math inline">\displaystyle1</span> 之间，但无论 <span
       class="math inline">\displaystyle x</span> 多么靠近 <span
@@ -1153,7 +1154,7 @@
       0&lt;|x|&lt;\delta\quad\Longrightarrow\quad
       \left|\frac{\sin x}{x}-1\right|&lt;\varepsilon.
       </span></p>
-      <p><strong>困难在于：我们目前还没有合适的不等式来控制这两种误差，因而暂时难以给出满足要求的
+      <p class="lead-label"><strong>困难在于：我们目前还没有合适的不等式来控制这两种误差，因而暂时难以给出满足要求的
       <span class="math inline">\displaystyle N</span> 或 <span
       class="math inline">\displaystyle \delta</span>。</strong></p>
       </div>
@@ -1203,13 +1204,13 @@
       <div class="callout callout-warning">
       <div class="callout-header callout-header-warning"><span class="callout-icon"></span><span class="callout-label">使用四则运算法则的前提</span></div>
       <div class="callout-body">
-      <p><strong>数列和函数的上述运算法则，都要求两个极限 <span
+      <p class="lead-label"><strong>数列和函数的上述运算法则，都要求两个极限 <span
       class="math inline">\displaystyle A</span>、<span
       class="math inline">\displaystyle B</span>
       同时存在，且都是有限数。只要有一个不存在，就不能直接使用上述法则。</strong></p>
-      <p><strong>需要特别小心：使用除法时，还要求分母的极限 <span
+      <p class="lead-label"><strong>需要特别小心：使用除法时，还要求分母的极限 <span
       class="math inline">\displaystyle B\ne0</span>。</strong></p>
-      <p><strong>分母的极限为零，不能直接使用商法则。</strong> 例如，当
+      <p class="lead-label"><strong>分母的极限为零，不能直接使用商法则。</strong> 例如，当
       <span class="math inline">\displaystyle x\to0</span>
       时，下面两式的分子、分母都趋向零，但在 <span
       class="math inline">\displaystyle x\ne0</span> 时，</p>
@@ -1478,7 +1479,7 @@
       class="math inline">\displaystyle x=0</span> 代入；<span
       class="math inline">\displaystyle 0/0</span>
       也不是一个极限值。</p>
-      <p><strong>这套连招暂时还拿不下大
+      <p class="lead-label"><strong>这套连招暂时还拿不下大
       Boss：仅凭上述四则运算法则，无法直接求出这里的极限。</strong>
       这不表示极限不存在，而是提醒我们还需要新的估计方法。</p>
       </div>
@@ -1652,7 +1653,7 @@
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">从定义证明定理</span></div>
       <div class="callout-body">
-      <p><strong>两边夹定理可以直接根据极限的定义证明。</strong>
+      <p class="lead-label"><strong>两边夹定理可以直接根据极限的定义证明。</strong>
       这是本书为数不多的定理证明之一：我们分别写出数列和函数的证明，看看定义怎样成为推理的工具。</p>
       </div>
       </div>
@@ -1988,7 +1989,7 @@
       <p><span class="math display">
       S=\lim_{n\to\infty}\frac{nr^2}{2}\sin\frac{2\pi}{n}=\pi r^2.
       </span></p>
-      <p><strong>定义说明要达到什么要求，四则运算组合已有结果，两边夹定理帮助我们确定暂时算不出的极限。</strong>
+      <p class="lead-label"><strong>定义说明要达到什么要求，四则运算组合已有结果，两边夹定理帮助我们确定暂时算不出的极限。</strong>
       有限多边形始终不是圆；通过极限，我们把一次次近似变成了准确的面积。</p>
       </div>
       </div>
@@ -2110,7 +2111,7 @@
       a_n\le B</span>，称数列<strong>有上界</strong>；将不等号改为 <span
       class="math inline">\displaystyle a_n\ge
       B</span>，就得到<strong>有下界</strong>的定义。同时有上界与下界的数列，称为<strong>有界数列</strong>。</p>
-      <p><strong>单调递增且有上界的实数数列，必有有限极限；单调递减且有下界的实数数列，也必有有限极限。</strong>
+      <p class="lead-label"><strong>单调递增且有上界的实数数列，必有有限极限；单调递减且有下界的实数数列，也必有有限极限。</strong>
       这就是单调有界定理。</p>
       </div>
       </div>
@@ -2368,15 +2369,15 @@
       <div id="chpt1-ex-045-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
       <ul>
-      <li><p><strong>选择换元。</strong> 为把底数化成已知的 <span
+      <li><p class="lead-label"><strong>选择换元。</strong> 为把底数化成已知的 <span
       class="math inline">\displaystyle1+\frac1m</span>，令 <span
       class="math inline">\displaystyle m=n+1</span>，则 <span
       class="math inline">\displaystyle n=m-1</span>。</p></li>
-      <li><p><strong>变量的趋向。</strong> 当 <span
+      <li><p class="lead-label"><strong>变量的趋向。</strong> 当 <span
       class="math inline">\displaystyle n\to\infty</span> 时，<span
       class="math inline">\displaystyle m</span> 仍取正整数，且 <span
       class="math inline">\displaystyle m\to\infty</span>。</p></li>
-      <li><p><strong>改写与求极限。</strong> 指数比 <span
+      <li><p class="lead-label"><strong>改写与求极限。</strong> 指数比 <span
       class="math inline">\displaystyle m</span> 少 <span
       class="math inline">\displaystyle1</span>，所以要从标准形式中除去一个因子
       <span class="math inline">\displaystyle1+\frac1m</span>：</p>
@@ -2429,14 +2430,14 @@
       <div id="chpt1-ex-041-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
       <ul>
-      <li><p><strong>选择换元。</strong> 为把指数记作新下标，令 <span
+      <li><p class="lead-label"><strong>选择换元。</strong> 为把指数记作新下标，令 <span
       class="math inline">\displaystyle m=n+1</span>，则 <span
       class="math inline">\displaystyle n=m-1</span>。</p></li>
-      <li><p><strong>变量的趋向。</strong> 当 <span
+      <li><p class="lead-label"><strong>变量的趋向。</strong> 当 <span
       class="math inline">\displaystyle n\to\infty</span> 时，<span
       class="math inline">\displaystyle m</span> 仍取正整数，且 <span
       class="math inline">\displaystyle m\to\infty</span>。</p></li>
-      <li><p><strong>改写与求极限。</strong>
+      <li><p class="lead-label"><strong>改写与求极限。</strong>
       代入后，把多出的一个因子拆出来：</p>
       <p><span class="math display">
       \begin{aligned}
@@ -2503,15 +2504,15 @@
       <div id="chpt1-ex-047-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
       <ul>
-      <li><p><strong>选择换元。</strong> 为把数列中的 <span
+      <li><p class="lead-label"><strong>选择换元。</strong> 为把数列中的 <span
       class="math inline">\displaystyle\frac1n</span> 写成新变量，令
       <span class="math inline">\displaystyle x=\frac1n</span>，则 <span
       class="math inline">\displaystyle n=\frac1x</span>。</p></li>
-      <li><p><strong>变量的趋向。</strong> 当 <span
+      <li><p class="lead-label"><strong>变量的趋向。</strong> 当 <span
       class="math inline">\displaystyle n\to\infty</span> 时，<span
       class="math inline">\displaystyle x&gt;0</span> 且 <span
       class="math inline">\displaystyle x\to0</span>。</p></li>
-      <li><p><strong>改写并引出函数形式。</strong> 代入新变量，</p>
+      <li><p class="lead-label"><strong>改写并引出函数形式。</strong> 代入新变量，</p>
       <p><span class="math display">
       \left(1+\frac1n\right)^n=(1+x)^{\frac1x}.
       </span></p>
@@ -2606,7 +2607,7 @@
       <div id="chpt1-ex-046-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
       <ul>
-      <li><p><strong>第一次换元：令 <span
+      <li><p class="lead-label"><strong>第一次换元：令 <span
       class="math inline">\displaystyle
       t=-x</span>，把负数变量变为正数变量。</strong></p>
       <p>当 <span class="math inline">\displaystyle x</span>
@@ -2620,7 +2621,7 @@
       <p><span class="math display">
       (1+x)^{\frac1x}=(1-t)^{-\frac1t}.
       </span></p></li>
-      <li><p><strong>第二次换元：把底数改写成已知形式。</strong></p>
+      <li><p class="lead-label"><strong>第二次换元：把底数改写成已知形式。</strong></p>
       <p>原式指数为负，可以先对底数取倒数：</p>
       <p><span class="math display">
       (1-t)^{-\frac1t}=\left(\frac1{1-t}\right)^{\frac1t}.
@@ -2707,17 +2708,17 @@
       <div id="chpt1-ex-044-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
       <ul>
-      <li><p><strong>选择换元。</strong> 底数和指数中共同出现 <span
+      <li><p class="lead-label"><strong>选择换元。</strong> 底数和指数中共同出现 <span
       class="math inline">\displaystyle x^2</span>，令 <span
       class="math inline">\displaystyle t=x^2</span>，原式就能化成 <span
       class="math inline">\displaystyle(1+t)^{\frac1t}</span>。</p></li>
-      <li><p><strong>变量的趋向。</strong> 不论 <span
+      <li><p class="lead-label"><strong>变量的趋向。</strong> 不论 <span
       class="math inline">\displaystyle x</span> 取正数还是负数，只要
       <span class="math inline">\displaystyle x\ne0</span> 且 <span
       class="math inline">\displaystyle x\to0</span>，都有 <span
       class="math inline">\displaystyle t&gt;0</span> 且 <span
       class="math inline">\displaystyle t\to0</span>。</p></li>
-      <li><p><strong>改写与求极限。</strong> 代入新变量，</p>
+      <li><p class="lead-label"><strong>改写与求极限。</strong> 代入新变量，</p>
       <p><span class="math display">
       (1+x^2)^{\frac1{x^2}}=(1+t)^{\frac1t}.
       </span></p>
@@ -2760,13 +2761,13 @@
       <div id="chpt1-ex-042-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
       <ul>
-      <li><p><strong>选择换元。</strong> 为把底数 <span
+      <li><p class="lead-label"><strong>选择换元。</strong> 为把底数 <span
       class="math inline">\displaystyle1-x</span> 写成 <span
       class="math inline">\displaystyle1+t</span>，令 <span
       class="math inline">\displaystyle t=-x</span>。于是 <span
       class="math inline">\displaystyle x=-t</span>，指数变为 <span
       class="math inline">\displaystyle\frac1x=-\frac1t</span>。</p></li>
-      <li><p><strong>变量的趋向。</strong> <span
+      <li><p class="lead-label"><strong>变量的趋向。</strong> <span
       class="math inline">\displaystyle x</span> 取正数时，<span
       class="math inline">\displaystyle t</span> 取负数；<span
       class="math inline">\displaystyle x</span> 取负数时，<span
@@ -2774,7 +2775,7 @@
       取正数。两种情形下，<span class="math inline">\displaystyle
       x\to0</span> 时都有 <span class="math inline">\displaystyle
       t\to0</span>。</p></li>
-      <li><p><strong>改写与求极限。</strong> 代入新变量，</p>
+      <li><p class="lead-label"><strong>改写与求极限。</strong> 代入新变量，</p>
       <p><span class="math display">
       (1-x)^{\frac1x}
       =(1+t)^{-\frac1t}
@@ -2821,14 +2822,14 @@
       <div id="chpt1-ex-043-ans-0" class="ex-panel ex-ans-panel"
       hidden="">
       <ul>
-      <li><p><strong>选择换元。</strong> 为把底数 <span
+      <li><p class="lead-label"><strong>选择换元。</strong> 为把底数 <span
       class="math inline">\displaystyle1+3x</span> 写成 <span
       class="math inline">\displaystyle1+t</span>，令 <span
       class="math inline">\displaystyle t=3x</span>。于是 <span
       class="math inline">\displaystyle x=\frac t3</span>，指数变为
       <span
       class="math inline">\displaystyle\frac1x=\frac3t</span>。</p></li>
-      <li><p><strong>变量的趋向。</strong> <span
+      <li><p class="lead-label"><strong>变量的趋向。</strong> <span
       class="math inline">\displaystyle x</span> 取正数时，<span
       class="math inline">\displaystyle t</span> 也取正数；<span
       class="math inline">\displaystyle x</span> 取负数时，<span
@@ -2836,7 +2837,7 @@
       也取负数。两种情形下，<span class="math inline">\displaystyle
       x\to0</span> 时都有 <span class="math inline">\displaystyle
       t\to0</span>。</p></li>
-      <li><p><strong>改写与求极限。</strong> 代入新变量，</p>
+      <li><p class="lead-label"><strong>改写与求极限。</strong> 代入新变量，</p>
       <p><span class="math display">
       (1+3x)^{\frac1x}
       =(1+t)^{\frac3t}
@@ -2900,20 +2901,20 @@
       aria-label="本章思维导图：由极限定义分出三路，分别是运算与换元、两边夹定理、单调有界定理">
       <div class="limit-map-tree">
       <div class="limit-map-root">
-      <p><strong>极限的定义</strong></p>
+      <p class="lead-label"><strong>极限的定义</strong></p>
       </div>
       <div class="limit-map-branches">
       <div class="limit-map-branch limit-map-tools">
       <div class="limit-map-method">
-      <p><strong>四则运算</strong></p>
+      <p class="lead-label"><strong>四则运算</strong></p>
       </div>
       <div class="limit-map-result">
-      <p><strong>换元法</strong></p>
+      <p class="lead-label"><strong>换元法</strong></p>
       </div>
       </div>
       <div class="limit-map-branch limit-map-squeeze">
       <div class="limit-map-method">
-      <p><strong>两边夹定理</strong></p>
+      <p class="lead-label"><strong>两边夹定理</strong></p>
       </div>
       <div class="limit-map-result">
       <p><span class="math display">
@@ -2923,7 +2924,7 @@
       </div>
       <div class="limit-map-branch limit-map-monotone">
       <div class="limit-map-method">
-      <p><strong>单调有界有极限</strong></p>
+      <p class="lead-label"><strong>单调有界有极限</strong></p>
       </div>
       <div class="limit-map-result">
       <p><span class="math display">
@@ -2948,5 +2949,6 @@
   <script src="assets/three-lazy.js"></script>
   <script src="assets/reader.js"></script>
   <script src="assets/secant-demo.js?v=20261024-two-plots"></script>
+  <script src="assets/teaching-motion.js?v=20261101-accumulation-concave"></script>
 </body>
 </html>
