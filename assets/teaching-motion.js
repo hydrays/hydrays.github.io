@@ -158,7 +158,7 @@ function init(){document.querySelectorAll('[data-teaching-motion]').forEach(host
  }
  input.addEventListener('input',()=>{stop();draw();});
  buttons[0].addEventListener('click',()=>{if(playing){stop();return;}playing=true;buttons[0].textContent='暂停';buttons[0].setAttribute('aria-pressed','true');last=0;
- function tick(time){if(!playing)return;if(!host.isConnected){stop();return;}if(time-last>140){last=time;let next=Number(input.value)+direction*spec.step;if(next>spec.max||next<spec.min){direction*=-1;next=Number(input.value)+direction*spec.step;}input.value=String(next);draw();}frame=requestAnimationFrame(tick);}frame=requestAnimationFrame(tick);
+ function tick(time){if(!playing)return;if(!host.isConnected||document.hidden||host.closest('[hidden]')){stop();return;}if(time-last>140){last=time;let next=Number(input.value)+direction*spec.step;if(next>spec.max||next<spec.min){direction*=-1;next=Number(input.value)+direction*spec.step;}input.value=String(next);draw();}frame=requestAnimationFrame(tick);}frame=requestAnimationFrame(tick);
  });
  buttons[1].addEventListener('click',()=>{stop();input.value=String(spec.value);direction=1;draw();});draw();
  });}

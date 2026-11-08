@@ -1,0 +1,20 @@
+#content .microelement-motion{max-width:760px;margin:1em auto}
+#content .microelement-motion figcaption{font-weight:400}
+#content .microelement-motion svg{overflow:hidden;aspect-ratio:9/5}
+#content .microelement-motion .motion-values{min-height:0;margin:0;text-align:center}
+.microelement-motion .micro-label{fill:currentColor;font:21px "Microsoft YaHei",sans-serif;text-anchor:middle}
+.microelement-motion .micro-outline{fill:none;stroke:#466d71;stroke-width:2.4;stroke-linejoin:round}
+.microelement-motion .micro-surface{fill:#527b77;fill-opacity:.11;stroke:none}
+.microelement-motion .micro-water{fill:#527b77;fill-opacity:.13;stroke:none}
+.microelement-motion .micro-wire{fill:none;stroke:#466d71;stroke-opacity:.3;stroke-width:1}
+.microelement-motion .micro-selected{fill:#bd9b52;fill-opacity:.5;stroke:#977331;stroke-width:1.6;stroke-linejoin:round}
+.microelement-motion .micro-gold-outline{fill:none;stroke:#977331;stroke-width:2}
+.microelement-motion .micro-guide{fill:none;stroke:#75847c;stroke-width:1.2;stroke-dasharray:5 4}
+.microelement-motion .micro-gold-guide{fill:none;stroke:#a58246;stroke-width:1.7;stroke-dasharray:5 4}
+.microelement-motion .micro-arrow{fill:none;stroke:#a58246;stroke-width:2;stroke-linecap:round}
+.microelement-motion .micro-axis{fill:none;stroke:#59665e;stroke-width:1.6}
+.microelement-motion .micro-trace{fill:none;stroke:#527b77;stroke-width:4;stroke-linecap:round}
+.microelement-motion .micro-small-arc{fill:none;stroke:#b78029;stroke-width:5;stroke-linecap:round}
+.microelement-motion .micro-point{fill:#b78029;stroke:var(--paper,#f4efdf);stroke-width:1}
+@media(max-width:600px){#content .microelement-motion{padding:.6em}.microelement-motion .micro-label{font-size:22px}}
+@media print{#content .microelement-motion{break-inside:avoid}.microelement-motion .micro-label{fill:#111}}

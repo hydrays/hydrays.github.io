@@ -1,0 +1,195 @@
+[
+  {
+    "number": 1,
+    "star": true,
+    "section": "根据定义求导",
+    "problem": "求 $f(x)=\\sqrt{x}$ 的导数（$x>0$）。",
+    "answer": [
+      "由定义，$f'(x)=\\lim_{\\Delta x\\to0}\\dfrac{\\sqrt{x+\\Delta x}-\\sqrt{x}}{\\Delta x}$。",
+      "分子、分母同乘 $\\sqrt{x+\\Delta x}+\\sqrt{x}$，得",
+      "$f'(x)=\\lim_{\\Delta x\\to0}\\dfrac1{\\sqrt{x+\\Delta x}+\\sqrt{x}}=\\dfrac1{2\\sqrt{x}}$。"
+    ]
+  },
+  {
+    "number": 2,
+    "star": true,
+    "section": "根据定义求导",
+    "problem": "求 $f(x)=\\dfrac1x$ 的导数（$x\\ne0$）。",
+    "answer": [
+      "由定义，$f'(x)=\\lim_{\\Delta x\\to0}\\dfrac{\\dfrac{1}{x+\\Delta x}-\\dfrac{1}{x}}{\\Delta x}$。",
+      "通分并约去 $\\Delta x$，得",
+      "$f'(x)=\\lim_{\\Delta x\\to0}\\dfrac{-1}{x(x+\\Delta x)}=-\\dfrac1{x^2}$。"
+    ]
+  },
+  {
+    "number": 3,
+    "star": true,
+    "section": "四则运算（求一阶导数）",
+    "problem": "$y=2x^3-3x^2+4x-1$。",
+    "answer": [
+      "$y'=6x^2-6x+4$。"
+    ]
+  },
+  {
+    "number": 4,
+    "star": true,
+    "section": "四则运算（求一阶导数）",
+    "problem": "$y=x^2e^x$。",
+    "answer": [
+      "$y'=2xe^x+x^2e^x=(x^2+2x)e^x$。"
+    ]
+  },
+  {
+    "number": 5,
+    "star": true,
+    "section": "四则运算（求一阶导数）",
+    "problem": "$y=x\\sin x$。",
+    "answer": [
+      "$y'=\\sin x+x\\cos x$。"
+    ]
+  },
+  {
+    "number": 6,
+    "star": true,
+    "section": "四则运算（求一阶导数）",
+    "problem": "$y=\\dfrac{x+1}{x-1}$（$x\\ne1$）。",
+    "answer": [
+      "$y'=\\dfrac{(x-1)-(x+1)}{(x-1)^2}=-\\dfrac2{(x-1)^2}$。"
+    ]
+  },
+  {
+    "number": 7,
+    "star": true,
+    "section": "链式法则（求一阶导数）",
+    "problem": "$y=(2x+1)^4$。",
+    "answer": [
+      "$y'=4(2x+1)^3\\cdot2=8(2x+1)^3$。"
+    ]
+  },
+  {
+    "number": 8,
+    "star": true,
+    "section": "链式法则（求一阶导数）",
+    "problem": "$y=\\sin(x^2)$。",
+    "answer": [
+      "$y'=\\cos(x^2)\\cdot2x=2x\\cos(x^2)$。"
+    ]
+  },
+  {
+    "number": 9,
+    "star": true,
+    "section": "链式法则（求一阶导数）",
+    "problem": "$y=\\ln(1+x^2)$。",
+    "answer": [
+      "$y'=\\dfrac1{1+x^2}\\cdot2x=\\dfrac{2x}{1+x^2}$。"
+    ]
+  },
+  {
+    "number": 10,
+    "star": true,
+    "section": "高阶导数",
+    "problem": "已知 $y=x^4-2x^3$，求 $y''$。",
+    "answer": [
+      "$y'=4x^3-6x^2$，$y''=12x^2-12x$。"
+    ]
+  },
+  {
+    "number": 11,
+    "star": true,
+    "section": "高阶导数",
+    "problem": "已知 $y=\\sin x$，求 $y''$ 和 $y'''$。",
+    "answer": [
+      "$y'=\\cos x$，$y''=-\\sin x$，$y'''=-\\cos x$。"
+    ]
+  },
+  {
+    "number": 12,
+    "star": true,
+    "section": "高阶导数",
+    "problem": "填写下表中的速度与加速度。",
+    "motion": [
+      {
+        "name": "静止",
+        "s": [
+          "$s(t)=s_0$"
+        ],
+        "v": [
+          "$v(t)=$____"
+        ],
+        "a": [
+          "$a(t)=$____"
+        ],
+        "answer_v": [
+          "$v(t)=0$"
+        ],
+        "answer_a": [
+          "$a(t)=0$"
+        ],
+        "height": 7.6
+      },
+      {
+        "name": "匀速直线运动",
+        "s": [
+          "$s(t)=v_0t$"
+        ],
+        "v": [
+          "$v(t)=$____"
+        ],
+        "a": [
+          "$a(t)=$____"
+        ],
+        "answer_v": [
+          "$v(t)=v_0$"
+        ],
+        "answer_a": [
+          "$a(t)=0$"
+        ],
+        "height": 7.6
+      },
+      {
+        "name": "匀加速直线运动",
+        "s": [
+          "$s(t)=\\dfrac12a_0t^2$"
+        ],
+        "v": [
+          "$v(t)=$____"
+        ],
+        "a": [
+          "$a(t)=$____"
+        ],
+        "answer_v": [
+          "$v(t)=a_0t$"
+        ],
+        "answer_a": [
+          "$a(t)=a_0$"
+        ],
+        "height": 9.2
+      },
+      {
+        "name": "匀速圆周运动",
+        "s": [
+          "$x(t)=\\cos t$",
+          "$y(t)=\\sin t$"
+        ],
+        "v": [
+          "$v_x(t)=$____",
+          "$v_y(t)=$____"
+        ],
+        "a": [
+          "$a_x(t)=$____",
+          "$a_y(t)=$____"
+        ],
+        "answer_v": [
+          "$v_x(t)=-\\sin t$",
+          "$v_y(t)=\\cos t$"
+        ],
+        "answer_a": [
+          "$a_x(t)=-\\cos t$",
+          "$a_y(t)=-\\sin t$"
+        ],
+        "height": 14
+      }
+    ],
+    "conditions": "s₀、v₀、a₀为常数；圆周运动的半径、角速度均取1。"
+  }
+]

@@ -1,0 +1,35 @@
+#content .ode-motion{max-width:820px;margin:1.1em auto}
+#content .ode-motion figcaption{font-weight:400}
+#content .ode-motion svg{overflow:hidden;margin:.6em 0 0}
+#content .ode-motion .motion-values{min-height:0;margin:0;text-align:center}
+#content .ode-motion select{font:inherit;color:inherit;background:transparent;border:1px solid #9a927c;padding:.2em .35em}
+#content .ode-motion .motion-controls button:disabled{opacity:.4;cursor:default}
+.ode-motion .ode-label{font:23px "Microsoft YaHei",sans-serif;fill:currentColor;text-anchor:middle}
+.ode-motion .ode-axis{fill:none;stroke:#59665e;stroke-width:1.7}
+.ode-motion .ode-guide{fill:none;stroke:#7e8e84;stroke-width:1.3;stroke-dasharray:5 4}
+.ode-motion .ode-field{stroke:#527b77;stroke-opacity:.35;stroke-width:1.8;stroke-linecap:round}
+.ode-motion .ode-reference{fill:none;stroke:#466d71;stroke-opacity:.25;stroke-width:2;stroke-dasharray:5 4}
+.ode-motion .ode-solution{fill:none;stroke:#466d71;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}
+.ode-motion .ode-current{fill:#ad7a32;stroke:var(--paper,#f4efdf);stroke-width:1.3}
+.ode-motion .ode-track-line{fill:none;stroke:#758c8a;stroke-width:2.4}
+.ode-motion .ode-track-circle{fill:none;stroke:#ac8b4e;stroke-width:2.4}
+.ode-motion .ode-track-cycloid{fill:none;stroke:#ae634c;stroke-width:3}
+.ode-motion .ode-dot-line{fill:#527b77;stroke:var(--paper,#f4efdf);stroke-width:1.3}
+.ode-motion .ode-dot-circle{fill:#ac8b4e;stroke:var(--paper,#f4efdf);stroke-width:1.3}
+.ode-motion .ode-dot-cycloid{fill:#ae634c;stroke:var(--paper,#f4efdf);stroke-width:1.3}
+.ode-motion .ode-endpoint{fill:#59665e}
+.ode-motion .ode-ray{fill:none;stroke:#a07532;stroke-width:3.2;stroke-linejoin:round}
+.ode-motion .ode-layer-boundary{stroke:#466d71;stroke-opacity:.2;stroke-width:.8}
+.ode-motion .ode-angle{fill:none;stroke:#a07532;stroke-width:1.5}
+.ode-motion .ode-wheel{fill:#a9b7aa;fill-opacity:.12;stroke:#466d71;stroke-width:2}
+.ode-motion .ode-spoke{stroke:#ad7a32;stroke-width:2}
+.ode-motion .ode-wheel-center{fill:#466d71;stroke:none}
+.ode-motion .ode-euler-future{fill:none;stroke:#a58246;stroke-width:2;stroke-opacity:.4}
+.ode-motion .ode-euler{fill:none;stroke:#a58246;stroke-width:3;stroke-linejoin:round}
+.ode-motion .ode-euler-point{fill:#a58246;stroke:var(--paper,#f4efdf);stroke-width:1.3}
+#content .ode-race-times{display:flex;justify-content:center;gap:.4em 1em;flex-wrap:wrap;font-size:.85em;font-variant-numeric:tabular-nums}
+#content .ode-race-times span{border-bottom:2px solid transparent;padding:.15em .3em}
+#content .ode-race-times .arrived{border-bottom-color:currentColor;background:rgba(165,130,70,.08)}
+.ode-route-line{color:#527b77}.ode-route-circle{color:#9c7937}.ode-route-cycloid{color:#ae634c}
+@media(max-width:600px){#content .ode-motion{padding:.6em}.ode-motion .ode-label{font-size:25px}}
+@media print{#content .ode-motion{break-inside:avoid}.ode-motion .ode-label{fill:#111}}

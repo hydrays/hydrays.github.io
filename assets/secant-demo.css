@@ -16,9 +16,34 @@
 .secant-demo svg .secant-point-q:active{cursor:grabbing}
 .secant-demo svg .secant-point-q:focus-visible{outline:none;stroke:var(--reader-gold);stroke-width:4}
 .secant-demo svg .secant-increment-label{fill:var(--secant-line);font-size:27px}
-.secant-demo-controls{border-top:1px solid var(--v-bd);padding:8px 4px 0;margin-top:12px;text-align:center}
-.secant-demo-h{font-size:14px;font-family:Georgia,'KaiTi',serif;font-variant-numeric:tabular-nums}
-.secant-demo-controls input{display:block;width:100%;margin:10px 0;accent-color:var(--secant-line);cursor:ew-resize}
+.secant-demo-controls{display:flex;align-items:center;justify-content:center;gap:12px;border-top:1px solid var(--v-bd);padding:8px 0 0;margin-top:8px;line-height:1.2;text-align:center}
+.secant-demo-controls label{display:inline-flex;align-items:center;flex:0 0 auto;white-space:nowrap;margin:0}
+.secant-demo-increment{font-size:14px;font-family:Georgia,'KaiTi',serif;font-variant-numeric:tabular-nums}
+.secant-demo-controls input{display:inline-block;flex:0 1 190px;width:190px;max-width:55%;min-width:80px;height:18px;margin:0;accent-color:var(--secant-line);cursor:ew-resize}
+.secant-demo-comparison .secant-demo-heading{min-height:98px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.secant-demo-comparison .secant-demo-equation{min-height:28px}
+.secant-demo-comparison .secant-demo-quotient,.secant-demo-linear-quotient{min-height:46px;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--secant-line)}
 html[data-reading-mode=night] .secant-demo{--secant-curve:#88bac4;--secant-line:#edac86;--secant-tangent:#bfca8a}
+.local-zoom{--zoom-curve:#365c67;--zoom-tangent:#a34b30;--secant-line:#a34b30;border:1px solid var(--v-bd);padding:12px 8px 10px;background:var(--paper-panel)}
+.local-zoom-panels{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.local-zoom-panel{min-width:0}.local-zoom-panel+.local-zoom-panel{border-left:1px solid var(--v-bd);padding-left:12px}
+.local-zoom-title{font-size:17px;margin:2px 0 6px;line-height:1.5;text-align:center}
+.local-zoom svg{display:block;width:100%;height:auto;overflow:visible}
+.local-zoom svg text{font-family:Georgia,'KaiTi',serif;font-size:25px;fill:var(--v-tt)}
+.local-zoom .zoom-axis{stroke:var(--v-tt);stroke-width:1.7;fill:none}
+.local-zoom .zoom-grid{stroke:var(--v-bd);stroke-width:1;opacity:.4}
+.local-zoom .zoom-tick{stroke:var(--v-tt);stroke-width:1.4}
+.local-zoom .zoom-curve{stroke:var(--zoom-curve);stroke-width:3;fill:none}
+.local-zoom .zoom-tangent{stroke:var(--zoom-tangent);stroke-width:2.5;stroke-dasharray:8 6;fill:none}
+.local-zoom .zoom-selection{fill:var(--reader-gold);fill-opacity:.1;stroke:var(--zoom-tangent);stroke-width:1.5;stroke-dasharray:5 4}
+.local-zoom .zoom-guide{stroke:var(--zoom-tangent);stroke-width:1.7;stroke-dasharray:5 5;fill:none}
+.local-zoom .zoom-p{fill:var(--zoom-curve);stroke:var(--paper-panel);stroke-width:2}
+.local-zoom .zoom-q{fill:var(--zoom-tangent);stroke:var(--paper-panel);stroke-width:2}
+.local-zoom .zoom-delta{fill:var(--zoom-tangent)}
+.local-zoom-legend{display:flex;justify-content:center;gap:20px;font-size:13px;line-height:1.5;margin:8px 0 0}
+.local-zoom-legend span{display:inline-flex;align-items:center;gap:6px}.local-zoom-legend i{display:inline-block;width:24px;border-top:2px solid var(--zoom-curve)}.local-zoom-legend .zoom-line-key{border-top:2px dashed var(--zoom-tangent)}
+html[data-reading-mode=night] .local-zoom{--zoom-curve:#88bac4;--zoom-tangent:#edac86;--secant-line:#edac86}
+@media(max-width:480px){.local-zoom-panels{grid-template-columns:minmax(0,1fr)}.local-zoom-panel+.local-zoom-panel{border-left:0;padding-left:0;border-top:1px solid var(--v-bd);padding-top:12px}.local-zoom-title{font-size:16px}.local-zoom-legend{font-size:12px;gap:12px}}
+@media(max-width:420px){.secant-demo-comparison .secant-demo-grid{grid-template-columns:minmax(0,1fr)}.secant-demo-comparison .secant-demo-chart+.secant-demo-chart{border-left:0;padding-left:0;border-top:1px solid var(--v-bd);padding-top:12px}.secant-demo-comparison .secant-demo-heading{min-height:86px}}
 @media(max-width:420px){.secant-demo{padding:10px 4px 6px}.secant-demo-grid{gap:4px}.secant-demo-chart+.secant-demo-chart{padding-left:4px}.secant-demo-equation,.secant-demo-quotient{font-size:13px;min-height:45px}}
-@media print{.secant-demo-controls{display:none}.secant-demo{break-inside:avoid}}
+@media print{.secant-demo-controls{display:none}.secant-demo,.local-zoom{break-inside:avoid}}

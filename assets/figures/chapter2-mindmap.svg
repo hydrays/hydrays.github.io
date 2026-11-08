@@ -1,4 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" role="img" aria-labelledby="title">
-<title id="title">第二回知识脉络：极限的定义联系连续函数、导数的定义与微分；连续函数联系最大最小值定理和介值定理，导数的定义下分求导计算与函数性质两路，函数性质依次为单调性、极值与最值、凸函数与凹函数；微分联系线性近似和梯度下降法</title>
-<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif;font-size:16px;fill:#514b3c}.axis{stroke:#81765e;stroke-width:1.3}.guide{stroke:#a59c87;stroke-width:1.1;stroke-dasharray:5 5;fill:none}</style>
-<g fill="none" stroke="#a58b5b" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"><path d="M485 70V112 M125 112H845 M125 112V154 M485 112V154 M845 112V154"/><path d="M125 206V228H28V373 M28 277H48 M28 373H48"/><path d="M485 206V228 M365 228H605 M365 228V244 M605 228V251"/><path d="M365 310V347 M365 399V443 M605 303V347 M605 399V443"/><path d="M845 206V250 M845 302V346"/></g><rect x="387.0" y="18" width="196" height="52" fill="#f5f0e4" stroke="#776244" stroke-width="2"/><text x="485" y="51.0" text-anchor="middle" style="font-size:21px;fill:#776244;font-weight:600">极限的定义</text><rect x="30.0" y="154" width="190" height="52" fill="#f5f0e4" stroke="#4d736b" stroke-width="1.5"/><text x="125" y="187.0" text-anchor="middle" style="font-size:21px;fill:#4d736b;font-weight:500">连续函数</text><rect x="48.0" y="251" width="190" height="52" fill="#f5f0e4" stroke="#4d736b" stroke-width="1.5"/><text x="143" y="284.0" text-anchor="middle" style="font-size:21px;fill:#4d736b;font-weight:500">最大最小值定理</text><rect x="48.0" y="347" width="190" height="52" fill="#f5f0e4" stroke="#4d736b" stroke-width="1.5"/><text x="143" y="380.0" text-anchor="middle" style="font-size:21px;fill:#4d736b;font-weight:500">介值定理</text><rect x="390.0" y="154" width="190" height="52" fill="#f5f0e4" stroke="#776244" stroke-width="1.5"/><text x="485" y="187.0" text-anchor="middle" style="font-size:21px;fill:#776244;font-weight:500">导数的定义</text><rect x="270.0" y="244" width="190" height="66" fill="#f5f0e4" stroke="#776244" stroke-width="1.5"/><text x="365" y="271.5" text-anchor="middle" style="font-size:21px;fill:#776244;font-weight:500">基本公式</text><text x="365" y="296.5" text-anchor="middle" style="font-size:21px;fill:#776244;font-weight:500">四则运算</text><rect x="270.0" y="347" width="190" height="52" fill="#f5f0e4" stroke="#776244" stroke-width="1.5"/><text x="365" y="380.0" text-anchor="middle" style="font-size:21px;fill:#776244;font-weight:500">链式法则</text><rect x="270.0" y="443" width="190" height="52" fill="#f5f0e4" stroke="#776244" stroke-width="1.5"/><text x="365" y="476.0" text-anchor="middle" style="font-size:21px;fill:#776244;font-weight:500">高阶导数</text><rect x="510.0" y="251" width="190" height="52" fill="#f5f0e4" stroke="#85614b" stroke-width="1.5"/><text x="605" y="284.0" text-anchor="middle" style="font-size:21px;fill:#85614b;font-weight:500">单调性</text><rect x="510.0" y="347" width="190" height="52" fill="#f5f0e4" stroke="#85614b" stroke-width="1.5"/><text x="605" y="380.0" text-anchor="middle" style="font-size:21px;fill:#85614b;font-weight:500">极值与最值</text><rect x="510.0" y="443" width="190" height="52" fill="#f5f0e4" stroke="#85614b" stroke-width="1.5"/><text x="605" y="476.0" text-anchor="middle" style="font-size:21px;fill:#85614b;font-weight:500">凸函数与凹函数</text><rect x="750.0" y="154" width="190" height="52" fill="#f5f0e4" stroke="#68764f" stroke-width="1.5"/><text x="845" y="187.0" text-anchor="middle" style="font-size:21px;fill:#68764f;font-weight:500">微分</text><rect x="750.0" y="250" width="190" height="52" fill="#f5f0e4" stroke="#68764f" stroke-width="1.5"/><text x="845" y="283.0" text-anchor="middle" style="font-size:21px;fill:#68764f;font-weight:500">线性近似</text><rect x="750.0" y="346" width="190" height="52" fill="#f5f0e4" stroke="#68764f" stroke-width="1.5"/><text x="845" y="379.0" text-anchor="middle" style="font-size:21px;fill:#68764f;font-weight:500">梯度下降法</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+<title id="title">第二回知识脉络</title>
+<desc id="desc">极限的定义引出导数与微分，再分为三路：基本公式与四则运算、链式法则、高阶导数；单调性、极值与最值、凸函数与凹函数；线性近似与梯度下降法。</desc>
+<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif;font-size:21px;text-anchor:middle}.box{fill:#f5f0e4;stroke-width:1.5}.line{fill:none;stroke:#a58b5b;stroke-width:2;stroke-linecap:square;stroke-linejoin:round}</style>
+<path class="line" d="M480 70V115 M480 167V220 M185 220H790 M185 220V251 M475 220V251 M790 220V251 M185 317V354 M185 406V450 M475 303V354 M475 406V450 M790 303V354"/>
+<rect class="box" x="382" y="18" width="196" height="52" stroke="#776244"/>
+<text x="480" y="51" fill="#776244" font-weight="600">极限的定义</text>
+<rect class="box" x="385" y="115" width="190" height="52" stroke="#776244"/>
+<text x="480" y="148" fill="#776244" font-weight="500">导数与微分</text>
+<rect class="box" x="90" y="251" width="190" height="66" stroke="#776244"/>
+<text x="185" y="278.5" fill="#776244" font-weight="500">基本公式</text>
+<text x="185" y="303.5" fill="#776244" font-weight="500">四则运算</text>
+<rect class="box" x="90" y="354" width="190" height="52" stroke="#776244"/>
+<text x="185" y="387" fill="#776244" font-weight="500">链式法则</text>
+<rect class="box" x="90" y="450" width="190" height="52" stroke="#776244"/>
+<text x="185" y="483" fill="#776244" font-weight="500">高阶导数</text>
+<rect class="box" x="380" y="251" width="190" height="52" stroke="#85614b"/>
+<text x="475" y="284" fill="#85614b" font-weight="500">单调性</text>
+<rect class="box" x="380" y="354" width="190" height="52" stroke="#85614b"/>
+<text x="475" y="387" fill="#85614b" font-weight="500">极值与最值</text>
+<rect class="box" x="380" y="450" width="190" height="52" stroke="#85614b"/>
+<text x="475" y="483" fill="#85614b" font-weight="500">凸函数与凹函数</text>
+<rect class="box" x="695" y="251" width="190" height="52" stroke="#68764f"/>
+<text x="790" y="284" fill="#68764f" font-weight="500">线性近似</text>
+<rect class="box" x="695" y="354" width="190" height="52" stroke="#68764f"/>
+<text x="790" y="387" fill="#68764f" font-weight="500">梯度下降法</text>
+</svg>

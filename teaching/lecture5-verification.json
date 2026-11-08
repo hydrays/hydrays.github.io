@@ -1,0 +1,85 @@
+{
+  "student": {
+    "pdf": "C:\\work\\Code\\calculus\\output\\pdf\\第五讲学案-学生版.pdf",
+    "pages": 1,
+    "questionCount": 12,
+    "tableBottomMm": 38.47,
+    "positions": [
+      {
+        "question": 1,
+        "topMm": 236.64,
+        "rowBottomMm": 208.64
+      },
+      {
+        "question": 2,
+        "topMm": 236.64,
+        "rowBottomMm": 208.64
+      },
+      {
+        "question": 3,
+        "topMm": 202.35,
+        "rowBottomMm": 179.35
+      },
+      {
+        "question": 4,
+        "topMm": 202.35,
+        "rowBottomMm": 179.35
+      },
+      {
+        "question": 5,
+        "topMm": 179.35,
+        "rowBottomMm": 156.35
+      },
+      {
+        "question": 6,
+        "topMm": 179.35,
+        "rowBottomMm": 156.35
+      },
+      {
+        "question": 7,
+        "topMm": 150.07,
+        "rowBottomMm": 127.07
+      },
+      {
+        "question": 8,
+        "topMm": 150.07,
+        "rowBottomMm": 127.07
+      },
+      {
+        "question": 9,
+        "topMm": 150.07,
+        "rowBottomMm": 127.07
+      },
+      {
+        "question": 10,
+        "topMm": 120.78,
+        "rowBottomMm": 95.78
+      },
+      {
+        "question": 11,
+        "topMm": 120.78,
+        "rowBottomMm": 95.78
+      }
+    ]
+  },
+  "answers": {
+    "pdf": "C:\\work\\Code\\calculus\\output\\pdf\\第五讲学案-参考解答.pdf",
+    "pages": 1
+  },
+  "symbolicChecks": "Reviewed by direct differentiation.",
+  "htmlChecks": {
+    "pages": 1,
+    "questions": 12,
+    "starredQuestions": 12,
+    "katexErrors": 0,
+    "definitionCentered": true,
+    "tableFeedbackGapPx": 71.31,
+    "promptOverflow": []
+  },
+  "pdfChecks": {
+    "studentPages": 1,
+    "answerPages": 1,
+    "starsPerPdf": 12,
+    "bothRenderedAndInspected": true
+  }
+}

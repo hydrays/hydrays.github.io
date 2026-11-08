@@ -139,4 +139,12 @@ html[data-reading-mode=night] .callout-practice{--callout-accent:#c4b2d2}
   #content .limit-mindmap .katex-display{font-size:.65em}
 }
 @media print{#content .limit-map-tree{min-width:0}}
+#content .derivative-mindmap .derivative-map-foundation{border-width:1px;font-size:14px;min-width:140px}
+#content .derivative-mindmap .derivative-map-foundation::after{height:36px}
+#content .derivative-mindmap .derivative-map-branch{grid-template-rows:64px 64px 64px}
+#content .derivative-mindmap .derivative-map-numeric{padding:4px}
+#content .derivative-mindmap .derivative-map-numeric p{margin:0;line-height:1.5}
+#content .nobel-portrait{max-width:300px;margin:1.5em auto;text-align:center}
+#content .nobel-portrait img{display:block;width:100%;height:auto;margin:0}
+#content .nobel-portrait figcaption{font-size:12px;line-height:1.6;margin-top:.6em;text-indent:0;overflow-wrap:anywhere}
 .video-attribution{display:flex;flex-direction:column;gap:.25em;margin:.65em 0;font-size:.85em;line-height:1.65;color:inherit;overflow-wrap:anywhere}.video-attribution a{color:inherit;text-underline-offset:.18em}

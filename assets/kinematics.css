@@ -1,0 +1,33 @@
+/* Matched motion graphs; the comparison remains one semantic table. */
+#content .kinematics-summary{margin:1.4em 0 1.8em;border:1px solid var(--v-bd);border-radius:5px;box-shadow:0 4px 14px #5544280a;background:var(--paper-panel);overflow:hidden}
+#content .kinematics-summary .kinematics-title{text-align:left;text-indent:0;font-weight:600;font-size:18px;letter-spacing:1px;margin:0;padding:13px 17px;border-bottom:1px solid var(--v-bd)}
+#content .kinematics-comparison{overflow-x:auto;overscroll-behavior-x:contain}
+#content .kinematics-comparison table{display:table;table-layout:fixed;width:100%;min-width:700px;max-width:none;border-collapse:collapse;overflow:visible;font-size:16px;line-height:1.8}
+#content .kinematics-comparison caption{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+#content .kinematics-comparison th,#content .kinematics-comparison td{padding:13px 10px;text-align:center;vertical-align:middle;border:0;border-bottom:1px solid var(--v-bd);border-right:1px solid var(--v-bd)}
+#content .kinematics-comparison tr:last-child td{border-bottom:0}
+#content .kinematics-comparison th:last-child,#content .kinematics-comparison td:last-child{border-right:0}
+#content .kinematics-comparison th:first-child,#content .kinematics-comparison td:first-child{position:sticky;left:0;z-index:1;width:13%;font-size:15px;background:var(--paper-panel);box-shadow:1px 0 0 var(--v-bd)}
+#content .kinematics-comparison th:not(:first-child),#content .kinematics-comparison td:not(:first-child){width:29%}
+#content .kinematics-comparison col:first-child{width:13%!important}
+#content .kinematics-comparison col:not(:first-child){width:29%!important}
+#content .kinematics-comparison thead th{background:var(--paper-header);font-size:17px;line-height:1.9}
+#content .kinematics-comparison thead th:nth-child(2){box-shadow:inset 0 -3px #466d71;color:#466d71}
+#content .kinematics-comparison thead th:nth-child(3){box-shadow:inset 0 -3px #a17b36;color:#8a692d}
+#content .kinematics-comparison thead th:nth-child(4){box-shadow:inset 0 -3px #a1604b;color:#a1604b}
+#content .kinematics-comparison tbody td:nth-child(2){background:#466d7106}
+#content .kinematics-comparison tbody td:nth-child(3){background:#a17b3606}
+#content .kinematics-comparison tbody td:nth-child(4){background:#a1604b06}
+#content .kinematics-comparison p{margin:.25em 0;text-indent:0}
+#content .kinematics-comparison .katex{font-size:1em}
+#content .kinematics-comparison img{display:block;width:100%;height:auto;margin:10px auto 0!important;max-width:260px}
+#content .kinematics-comparison figure{margin:0}
+#content .kinematics-comparison figcaption{display:none}
+#content .kinematics-comparison small{display:block;font-size:12px;font-weight:400;line-height:1.7;margin-top:6px;color:var(--v-tt-2)}
+#content .kinematics-note{padding:12px 17px;border-top:1px solid var(--v-bd);font-size:14px;line-height:1.8}
+#content .kinematics-note p{margin:0;text-indent:0}
+#content .kinematics-rates{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 20px;margin:.7em 0}
+#content .kinematics-rates>div{min-width:0;overflow-x:auto;padding:.4em 0}
+#content .kinematics-rates p{text-indent:0;margin:.2em 0}
+@media(max-width:720px){#content .kinematics-rates{grid-template-columns:1fr;gap:4px}#content .kinematics-comparison table{font-size:15px}}
+@media print{#content .kinematics-comparison{overflow:visible;box-shadow:none;break-inside:avoid}#content .kinematics-comparison table{min-width:0;font-size:11px}#content .kinematics-comparison th,#content .kinematics-comparison td{padding:8px 5px}#content .kinematics-comparison tr{break-inside:avoid}#content .kinematics-rates{grid-template-columns:1fr 1fr}}

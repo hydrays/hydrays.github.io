@@ -1,0 +1,22 @@
+#content .orbit-motion{max-width:820px;margin:1.1em auto}
+#content .orbit-motion figcaption{font-weight:400}
+#content .orbit-motion .motion-controls{margin:.35em 0}
+#content .orbit-motion svg{overflow:hidden;margin:.5em 0 0}
+#content .orbit-motion select{font:inherit;color:inherit;background:transparent;border:1px solid #9a927c;padding:.2em .35em}
+#content .orbit-motion button:disabled{opacity:.4;cursor:default}
+#content .orbit-motion .motion-values,#content .orbit-motion .orbit-legend{min-height:0;margin:.15em 0;text-align:center;text-indent:0;font-size:.82em}
+.orbit-motion .orbit-label{font:23px "Microsoft YaHei",sans-serif;fill:currentColor;text-anchor:middle}
+.orbit-motion .orbit-axis{fill:none;stroke:#758078;stroke-width:1.4;stroke-opacity:.7}
+.orbit-motion .orbit-reference{fill:none;stroke:#687b75;stroke-width:2;stroke-dasharray:6 5}
+.orbit-motion .orbit-ellipse{fill:none;stroke:#466d71;stroke-width:3}
+.orbit-motion .orbit-euler{fill:none;stroke:#a58246;stroke-width:3.2;stroke-linejoin:round}
+.orbit-motion .orbit-area-a{fill:#466d71;fill-opacity:.24;stroke:#466d71;stroke-width:1}
+.orbit-motion .orbit-area-b{fill:#a58246;fill-opacity:.3;stroke:#a58246;stroke-width:1}
+.orbit-motion .orbit-sun{fill:#c39742;stroke:#9b722f;stroke-width:1.5}
+.orbit-motion .orbit-planet{fill:#466d71;stroke:var(--paper,#f4efdf);stroke-width:1.5}
+.orbit-motion .orbit-start{fill:var(--paper,#f4efdf);stroke:#a58246;stroke-width:1.5}
+.orbit-motion .orbit-radius{stroke:#a58246;stroke-width:1.5;stroke-dasharray:5 4}
+.orbit-motion .orbit-velocity{stroke:#466d71;stroke-width:2;fill:none}
+.orbit-teal{color:#466d71}.orbit-gold{color:#9c7937}
+@media(max-width:600px){#content .orbit-motion{padding:.6em}.orbit-motion .orbit-label{font-size:25px}}
+@media print{#content .orbit-motion{break-inside:avoid}.orbit-motion .orbit-label{fill:#111}}

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 170" role="img" aria-labelledby="title desc">
+<title id="title">匀速圆周运动的速度</title><desc id="desc">速度箭头从点P沿圆的切线指向逆时针方向，与半径垂直；示意时刻t等于π除以4</desc>
+<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif;font-size:15px;fill:#58625c}.axis{fill:none;stroke:#68766c;stroke-width:1.3;stroke-linecap:round}.guide{fill:none;stroke:#9baba2;stroke-width:1;stroke-dasharray:4 3}.curve{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}</style>
+<path d="M20.000,98.000L240.000,98.000M234.597,100.610L240.000,98.000L234.597,95.390" fill="none" stroke="#68766c" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M126.000,158.000L126.000,14.000M128.610,19.403L126.000,14.000L123.390,19.403" fill="none" stroke="#68766c" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="242" y="106" font-style="italic">x</text>
+<text x="108" y="18" font-style="italic">y</text>
+<text x="111" y="106">0</text>
+<circle cx="126" cy="98" r="53" fill="none" stroke="#8c9a92" stroke-width="1.3"/>
+<path class="guide" d="M126,98L163.477,60.523"/>
+<path d="M163.477,60.523L126.000,23.047M132.610,25.351L126.000,23.047L128.304,29.657" fill="none" stroke="#a17b36" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M157.113,66.887L150.749,60.523L157.113,54.159" fill="none" stroke="#8c9a92" stroke-width="1"/>
+<text x="153.477" y="18" fill="#a17b36" font-style="italic">v</text>
+<circle cx="163.477" cy="60.523" r="3.5" fill="#a17b36"/>
+<text x="172.477" y="63.523" font-style="italic">P</text>
+</svg>

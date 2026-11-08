@@ -1,0 +1,110 @@
+{
+  "minutes": 40,
+  "slides": [
+    {
+      "slide": 1,
+      "part": "ppt/slides/slide1.xml",
+      "text": ""
+    },
+    {
+      "slide": 2,
+      "part": "ppt/slides/slide2.xml",
+      "text": "天命人 / 两手空空，初入此境"
+    },
+    {
+      "slide": 3,
+      "part": "ppt/slides/slide3.xml",
+      "text": "金池长老 / “小施主，且慢。”"
+    },
+    {
+      "slide": 4,
+      "part": "ppt/slides/slide4.xml",
+      "text": "金池长老 / “这个圆， / 面积是多少？”"
+    },
+    {
+      "slide": 5,
+      "part": "ppt/slides/slide5.xml",
+      "text": "天命人 / “这有何难！” / S = πr²"
+    },
+    {
+      "slide": 6,
+      "part": "ppt/slides/slide6.xml",
+      "text": "金池长老 / “老衲问的是， / 为什么？”"
+    },
+    {
+      "slide": 7,
+      "part": "ppt/slides/slide7.xml",
+      "text": "天命人 / “我记得公式…… / 可它从何而来？”"
+    },
+    {
+      "slide": 8,
+      "part": "ppt/slides/slide8.xml",
+      "text": "本回大boss / 圆的面积 / 为何恰好是 πr²？"
+    },
+    {
+      "slide": 9,
+      "part": "ppt/slides/slide9.xml",
+      "text": "初识对手 / 金池长老 / 生命    ？ / 防御    ？ / 弱点    ？"
+    },
+    {
+      "slide": 10,
+      "part": "ppt/slides/slide10.xml",
+      "text": "试一下伤害 / 单位圆  r = 1"
+    },
+    {
+      "slide": 11,
+      "part": "ppt/slides/slide11.xml",
+      "text": "先算一块 / 单位圆  r = 1 / 一周 2π，分成 n 份 / 顶角 = 2π/n / 每块面积 / ½ sin(2π/n)"
+    },
+    {
+      "slide": 12,
+      "part": "ppt/slides/slide12.xml",
+      "text": "初识对手 / 金池长老 / 试探所得 / Aₙ = n/2 sin(2π/n) / n = 3, 4, 5, … / f(x) = sin(x)/x / 弱点    ？"
+    },
+    {
+      "slide": 13,
+      "part": "ppt/slides/slide13.xml",
+      "text": "火眼金睛--函数图像"
+    },
+    {
+      "slide": 14,
+      "part": "ppt/slides/slide14.xml",
+      "text": ""
+    },
+    {
+      "slide": 15,
+      "part": "ppt/slides/slide15.xml",
+      "text": "面积数列的图像"
+    },
+    {
+      "slide": 16,
+      "part": "ppt/slides/slide16.xml",
+      "text": "数列与函数的对应"
+    }
+  ],
+  "deck": "C:\\work\\Code\\calculus\\releases\\presentations\\微积分第一回-初识对手-v5.pptx",
+  "deckSha256": "cbf303e11ba6a92e0ecc2013605986aadc07fe6f9d181aa736ff746587fbd5e9",
+  "originalWorksheetSource": "C:\\work\\Code\\calculus\\books\\NewMathAnalysis\\build\\teaching-sources\\chapter1-student-complete.html",
+  "originalSourceSha256": "484c09f6d146ef378549c6b923e487aabcd83134b64ad9e29491961f8d225a1d",
+  "retainedOriginalQuestions": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "cutBeforeHilbert": true,
+  "studentPages": 1,
+  "teacherPages": 4,
+  "studentContentBottomMm": 39.5,
+  "teacherContentBottomMm": [
+    75.6,
+    88.1,
+    42.9,
+    94.3
+  ],
+  "student": "C:\\work\\Code\\calculus\\output\\pdf\\第一讲学案-学生版.pdf",
+  "teacher": "C:\\work\\Code\\calculus\\output\\pdf\\第一讲教案.pdf"
+}

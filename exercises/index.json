@@ -2830,6 +2830,17 @@
     "source": "chpt9-ex-012.md"
   },
   {
+    "id": "humanities-abs-ex-024",
+    "chapter": 2,
+    "tags": [
+      "导数",
+      "可导性"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-abs-ex-024.md"
+  },
+  {
     "id": "humanities-app-ex-001",
     "chapter": 5,
     "tags": [
@@ -2962,6 +2973,265 @@
     "difficulty": "easy",
     "video": null,
     "source": "humanities-app-ex-023.md"
+  },
+  {
+    "id": "humanities-chain-ex-003",
+    "chapter": 2,
+    "tags": [
+      "导数计算",
+      "链式法则"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-chain-ex-003.md"
+  },
+  {
+    "id": "humanities-chain-ex-004",
+    "chapter": 2,
+    "tags": [
+      "导数计算",
+      "链式法则"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-chain-ex-004.md"
+  },
+  {
+    "id": "humanities-chain-ex-005",
+    "chapter": 2,
+    "tags": [
+      "导数计算",
+      "链式法则"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-chain-ex-005.md"
+  },
+  {
+    "id": "humanities-chain-ex-006",
+    "chapter": 2,
+    "tags": [
+      "导数计算",
+      "链式法则"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-chain-ex-006.md"
+  },
+  {
+    "id": "humanities-chain-ex-007",
+    "chapter": 2,
+    "tags": [
+      "导数计算",
+      "链式法则"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "humanities-chain-ex-007.md"
+  },
+  {
+    "id": "humanities-chain-ex-008",
+    "chapter": 2,
+    "tags": [
+      "导数计算",
+      "链式法则"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "humanities-chain-ex-008.md"
+  },
+  {
+    "id": "humanities-derivative-base-exponential",
+    "chapter": 2,
+    "tags": [
+      "导数定义",
+      "指数函数",
+      "换元法"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "humanities-derivative-base-exponential.md"
+  },
+  {
+    "id": "humanities-derivative-base-logarithm",
+    "chapter": 2,
+    "tags": [
+      "导数定义",
+      "对数函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-derivative-base-logarithm.md"
+  },
+  {
+    "id": "humanities-derivative-constant",
+    "chapter": 2,
+    "tags": [
+      "导数定义",
+      "常数函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-derivative-constant.md"
+  },
+  {
+    "id": "humanities-derivative-cosine",
+    "chapter": 2,
+    "tags": [
+      "导数定义",
+      "三角函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-derivative-cosine.md"
+  },
+  {
+    "id": "humanities-derivative-ex-001",
+    "chapter": 2,
+    "tags": [
+      "导数",
+      "线性函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-derivative-ex-001.md"
+  },
+  {
+    "id": "humanities-derivative-ex-002",
+    "chapter": 2,
+    "tags": [
+      "导数",
+      "幂函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-derivative-ex-002.md"
+  },
+  {
+    "id": "humanities-derivative-exponential",
+    "chapter": 2,
+    "tags": [
+      "导数定义",
+      "指数函数",
+      "换元法"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "humanities-derivative-exponential.md"
+  },
+  {
+    "id": "humanities-derivative-logarithm",
+    "chapter": 2,
+    "tags": [
+      "导数定义",
+      "对数函数",
+      "换元法"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "humanities-derivative-logarithm.md"
+  },
+  {
+    "id": "humanities-derivative-power",
+    "chapter": 2,
+    "tags": [
+      "导数定义",
+      "幂函数",
+      "换元法"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "humanities-derivative-power.md"
+  },
+  {
+    "id": "humanities-derivative-product-rule-proof",
+    "chapter": 2,
+    "tags": [
+      "证明",
+      "乘法法则"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "humanities-derivative-product-rule-proof.md"
+  },
+  {
+    "id": "humanities-derivative-quotient-rule-proof",
+    "chapter": 2,
+    "tags": [
+      "证明",
+      "除法法则"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "humanities-derivative-quotient-rule-proof.md"
+  },
+  {
+    "id": "humanities-derivative-reciprocal",
+    "chapter": 2,
+    "tags": [
+      "导数定义",
+      "分式函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-derivative-reciprocal.md"
+  },
+  {
+    "id": "humanities-derivative-scalar-rule-proof",
+    "chapter": 2,
+    "tags": [
+      "证明",
+      "数乘法则"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-derivative-scalar-rule-proof.md"
+  },
+  {
+    "id": "humanities-derivative-sine",
+    "chapter": 2,
+    "tags": [
+      "导数定义",
+      "三角函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-derivative-sine.md"
+  },
+  {
+    "id": "humanities-derivative-square-root",
+    "chapter": 2,
+    "tags": [
+      "导数定义",
+      "根式函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-derivative-square-root.md"
+  },
+  {
+    "id": "humanities-derivative-sum-rule-proof",
+    "chapter": 2,
+    "tags": [
+      "证明",
+      "加减法则"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-derivative-sum-rule-proof.md"
+  },
+  {
+    "id": "humanities-extrema-quartic",
+    "chapter": 2,
+    "tags": [
+      "导数",
+      "极值",
+      "高阶导数",
+      "幂函数"
+    ],
+    "difficulty": "medium",
+    "video": null,
+    "source": "humanities-extrema-quartic.md"
   },
   {
     "id": "humanities-full-chpt4-ex-001",
@@ -3187,7 +3457,7 @@
     "chapter": 4,
     "tags": [
       "定积分",
-      "面积"
+      "做功"
     ],
     "difficulty": "easy",
     "video": null,
@@ -3198,7 +3468,7 @@
     "chapter": 4,
     "tags": [
       "定积分",
-      "面积"
+      "做功"
     ],
     "difficulty": "medium",
     "video": null,
@@ -3556,6 +3826,51 @@
     "source": "humanities-integral-sign-ex-001.md"
   },
   {
+    "id": "humanities-monotonic-ex-012",
+    "chapter": 2,
+    "tags": [
+      "导数",
+      "单调性",
+      "三角函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-monotonic-ex-012.md"
+  },
+  {
+    "id": "humanities-ode-ex-001",
+    "chapter": 5,
+    "tags": [
+      "微分方程",
+      "解的检验"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-ode-ex-001.md"
+  },
+  {
+    "id": "humanities-ode-ex-002",
+    "chapter": 5,
+    "tags": [
+      "微分方程",
+      "初始条件"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-ode-ex-002.md"
+  },
+  {
+    "id": "humanities-ode-ex-003",
+    "chapter": 5,
+    "tags": [
+      "微分方程",
+      "分离变量"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-ode-ex-003.md"
+  },
+  {
     "id": "humanities-riemann-ex-001",
     "chapter": 4,
     "tags": [
@@ -3576,5 +3891,16 @@
     "difficulty": "medium",
     "video": null,
     "source": "humanities-riemann-ex-002.md"
+  },
+  {
+    "id": "humanities-second-derivative-sine",
+    "chapter": 2,
+    "tags": [
+      "二阶导数",
+      "三角函数"
+    ],
+    "difficulty": "easy",
+    "video": null,
+    "source": "humanities-second-derivative-sine.md"
   }
 ]

@@ -1,0 +1,30 @@
+[
+  {
+    "number": 1,
+    "sourceHtml": "<div class=\"exercise\"><p><b>1.</b> 填空：$180^\\circ=$____弧度，$90^\\circ=$____弧度，$60^\\circ=$____弧度，$45^\\circ=$____弧度，$30^\\circ=$____弧度。</p><div class=\"work-space\" style=\"height:8mm\"></div></div>"
+  },
+  {
+    "number": 2,
+    "sourceHtml": "<div class=\"exercise\"><p><b>2.</b> 补全三角函数值表。</p><table><thead><tr><th>角</th><th>$0$</th><th>$\\pi/6$</th><th>$\\pi/4$</th><th>$\\pi/3$</th><th>$\\pi/2$</th></tr></thead><tbody><tr><td>sin</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td></tr><tr><td>cos</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td></tr></tbody></table><div class=\"work-space\" style=\"height:12mm\"></div></div>"
+  },
+  {
+    "number": 3,
+    "sourceHtml": "<div class=\"exercise\"><p><b>3.</b> 单位圆内接正 $n$ 边形分成 $n$ 个等腰三角形，每块的顶角为________。</p><div class=\"work-space\" style=\"height:8mm\"></div></div>"
+  },
+  {
+    "number": 4,
+    "sourceHtml": "<div class=\"exercise\"><p><b>4.</b> 连接圆心 $O$ 与相邻顶点 $P,Q$，向底边作高。半顶角为________，半条底边为________，高为________，一块三角形的面积为________。</p><img alt=\"单位圆内的等腰三角形\" class=\"triangle\" src=\"../assets/figures/circle-triangle-unit.svg\"/><div class=\"work-space\" style=\"height:10mm\"></div></div>"
+  },
+  {
+    "number": 5,
+    "sourceHtml": "<div class=\"exercise\"><p><b>5.</b> 设 $D=\\{3,4,5,\\ldots\\}$，$A_4=2$。在空白处填入 $\\in$ 或 $\\notin$：<br/>$3\\;\\underline{\\qquad}\\;D$，$2\\;\\underline{\\qquad}\\;D$，$3.5\\;\\underline{\\qquad}\\;D$，$A_4\\;\\underline{\\qquad}\\;\\mathbb R$。</p><div class=\"work-space\" style=\"height:8mm\"></div></div>"
+  },
+  {
+    "number": 6,
+    "sourceHtml": "<div class=\"exercise\"><p><b>6.</b> $g(x)=x^2$，填写下表。</p><table><thead><tr><th>x</th><th>−2</th><th>−1</th><th>0</th><th>1</th><th>2</th></tr></thead><tbody><tr><td>g(x)</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____</td></tr></tbody></table><div class=\"work-space\" style=\"height:10mm\"></div></div>"
+  },
+  {
+    "number": 7,
+    "sourceHtml": "<div class=\"exercise\"><p><b>7.</b> 在左图画出 $y=2x+1$，在右图画出 $y=x^2$，每小格取1个单位。两图中 $x=0$ 对应的点分别为________、________。抛物线应画成________（填“平滑曲线”或“折线”）。</p><div class=\"grids\"><svg class=\"grid\" viewbox=\"0 0 205 205\"><path d=\"M 10 10 V 190 M 10 10 H 190\" stroke=\"#d7d7d7\"></path><path d=\"M 30 10 V 190 M 10 30 H 190\" stroke=\"#d7d7d7\"></path><path d=\"M 50 10 V 190 M 10 50 H 190\" stroke=\"#d7d7d7\"></path><path d=\"M 70 10 V 190 M 10 70 H 190\" stroke=\"#d7d7d7\"></path><path d=\"M 90 10 V 190 M 10 90 H 190\" stroke=\"#d7d7d7\"></path><path d=\"M 110 10 V 190 M 10 110 H 190\" stroke=\"#d7d7d7\"></path><path d=\"M 130 10 V 190 M 10 130 H 190\" stroke=\"#d7d7d7\"></path><path d=\"M 150 10 V 190 M 10 150 H 190\" stroke=\"#d7d7d7\"></path><path d=\"M 170 10 V 190 M 10 170 H 190\" stroke=\"#d7d7d7\"></path><path d=\"M 190 10 V 190 M 10 190 H 190\" stroke=\"#d7d7d7\"></path><path d=\"M10 110H195 M90 195V5\" stroke=\"#333\"></path><text x=\"194\" y=\"106\">x</text><text x=\"95\" y=\"13\">y</text><text x=\"94\" y=\"124\">0</text></svg><svg class=\"grid\" viewbox=\"0 0 205 205\"><path d=\"M 10 10 V 190 M 10 10 H 190\" stroke=\"#d7d7d7\"></path><path d=\"M 30 10 V 190 M 10 30 H 190\" stroke=\"#d7d7d7\"></path><path d=\"M 50 10 V 190 M 10 50 H 190\" stroke=\"#d7d7d7\"></path><path d=\"M 70 10 V 190 M 10 70 H 190\" stroke=\"#d7d7d7\"></path><path d=\"M 90 10 V 190 M 10 90 H 190\" stroke=\"#d7d7d7\"></path><path d=\"M 110 10 V 190 M 10 110 H 190\" stroke=\"#d7d7d7\"></path><path d=\"M 130 10 V 190 M 10 130 H 190\" stroke=\"#d7d7d7\"></path><path d=\"M 150 10 V 190 M 10 150 H 190\" stroke=\"#d7d7d7\"></path><path d=\"M 170 10 V 190 M 10 170 H 190\" stroke=\"#d7d7d7\"></path><path d=\"M 190 10 V 190 M 10 190 H 190\" stroke=\"#d7d7d7\"></path><path d=\"M10 110H195 M90 195V5\" stroke=\"#333\"></path><text x=\"194\" y=\"106\">x</text><text x=\"95\" y=\"13\">y</text><text x=\"94\" y=\"124\">0</text></svg></div><div class=\"work-space\" style=\"height:8mm\"></div></div>"
+  }
+]

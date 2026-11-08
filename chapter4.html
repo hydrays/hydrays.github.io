@@ -11,8 +11,8 @@
   
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="assets/app.css?v=20261024-proof-label">
-  <link rel="stylesheet" href="assets/reader.css?v=20261101-flush-labels">
-  <link rel="stylesheet" href="assets/secant-demo.css?v=20261024-two-plots">
+  <link rel="stylesheet" href="assets/reader.css?v=20261108-map-single">
+  <link rel="stylesheet" href="assets/secant-demo.css?v=20261107-zoom-panels">
   <link rel="stylesheet" href="assets/katex/katex.min.css">
   <script src="assets/katex/katex.min.js"></script>
   <script type="importmap">
@@ -69,6 +69,11 @@
     .open-sidebar-btn, .menu-toggle, .floating-btn, .video-btn { display: none !important; }
   </style>
   <link rel="stylesheet" href="assets/teaching-motion.css?v=20261101-accumulation-concave">
+  <link rel="stylesheet" href="assets/microelement-motion.css?v=20261102">
+  <link rel="stylesheet" href="assets/ode-motion.css?v=20261104">
+  <link rel="stylesheet" href="assets/orbit-motion.css?v=20261105">
+  <link rel="stylesheet" href="assets/kinematics.css?v=20261107-motion-note">
+  <link rel="stylesheet" href="assets/refraction-gradient.css?v=20261108-general-descent">
 </head>
 <body>
   <aside id="sidebar" aria-label="讲义目录">
@@ -1193,136 +1198,56 @@
       <div class="callout callout-tip">
       <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">省</span></div>
       <div class="callout-body">
-      <p>微元法是积分学中解决几何与物理问题的核心思想,
-      它将复杂的整体问题分解为无穷多个简单的局部问题.</p>
-      <p class="lead-label"><strong>基本思路</strong>:</p>
+      <p>微元法把整体分成许多小部分，先看清每一小部分的贡献，再通过积分累积成整体。下面用同一个思路计算体积、长度和功。</p>
+      <p>基本思路：</p>
       <ol type="1">
-      <li><strong>分割</strong>:
-      将所求的整体量对应的区域分割成许多微小部分</li>
-      <li><strong>近似</strong>: 在每个微小部分上,
-      用简单的几何量近似代替复杂的实际量</li>
-      <li><strong>求和取极限</strong>: 将所有微小部分的近似值相加,
-      然后通过取极限得到精确值</li>
+      <li>分割：将所求的整体量对应的区域分割成许多微小部分。</li>
+      <li>近似：在每个微小部分上，用简单的量近似实际的量，写出微元。</li>
+      <li>求和取极限：将这些贡献累积起来，得到整体量。</li>
       </ol>
-      </div>
-      </div>
-      <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">微元法数学表述</span></div>
-      <div class="callout-body">
       <p>如果要求整体量 <span class="math inline">\displaystyle
-      Q</span>, 先找出微元 <span class="math inline">\displaystyle dQ =
-      f(x)dx</span>, 然后通过积分得到 <span class="math display">
-      Q = \int_a^b dQ = \int_a^b f(x)dx
+      Q</span>，先找出微元 <span class="math inline">\displaystyle
+      dQ=f(x)\,dx</span>，然后通过积分得到</p>
+      <p><span class="math display">
+      Q=\int_a^b f(x)\,dx.
+      </span></p>
+      <p>曲线下面积的计算本身就是微元法。设 <span
+      class="math inline">\displaystyle f</span> 在 <span
+      class="math inline">\displaystyle[a,b]</span> 上连续且非负，用宽为
+      <span class="math inline">\displaystyle dx</span>、高为 <span
+      class="math inline">\displaystyle f(x)</span>
+      的小矩形近似一条窄条，面积微元为 <span
+      class="math inline">\displaystyle
+      dS=f(x)\,dx</span>，累积起来便得到</p>
+      <p><span class="math display">
+      S=\int_a^b f(x)\,dx.
       </span></p>
       </div>
       </div>
-      <div id="humanities-integral-checked-017" class="exercise-block"
-      data-difficulty="easy">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例15：曲线下面积的计算</span><span
-      class="ex-tags"><span class="ex-tag">定积分</span><span
-      class="ex-tag">面积</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>设 <span class="math inline">\displaystyle f</span> 在 <span
-      class="math inline">\displaystyle[a,b]</span> 上连续且非负，求曲线
-      <span class="math inline">\displaystyle y=f(x)</span>、直线 <span
-      class="math inline">\displaystyle x=a</span>、<span
-      class="math inline">\displaystyle x=b</span>
-      与横轴围成的面积。</p>
-      <figure>
-      <img src="media/img/chpt6_ex017.png" width="400"
-      alt="曲线 \displaystyle y=f(x) 与 \displaystyle x 轴在 \displaystyle [a,b] 围成的区域面积 \displaystyle \int_a^b f(x)\,dx" />
-      <figcaption aria-hidden="true">曲线 <span
-      class="math inline">\displaystyle y=f(x)</span> 与 <span
-      class="math inline">\displaystyle x</span> 轴在 <span
-      class="math inline">\displaystyle [a,b]</span> 围成的区域面积
-      <span class="math inline">\displaystyle \int_a^b
-      f(x)\,dx</span></figcaption>
-      </figure>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="humanities-integral-checked-017-frame" data-panel="humanities-integral-checked-017-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="humanities-integral-checked-017-frame" data-panel="humanities-integral-checked-017-ans-0">解答</button></span>
-      </div>
-      </div>
-      <div id="humanities-integral-checked-017-frame" class="ex-frame"
-      hidden="">
-      <div id="humanities-integral-checked-017-hint-0"
-      class="ex-panel ex-hint-panel" hidden="">
-      <p>利用微元法：将区间 <span class="math inline">\displaystyle
-      [a,b]</span> 分成若干小区间，在每个小区间 <span
-      class="math inline">\displaystyle [x, x+dx]</span>
-      上用矩形近似面积微元，再求和取极限。</p>
-      </div>
-      <div id="humanities-integral-checked-017-ans-0"
-      class="ex-panel ex-ans-panel" hidden="">
-      <p>利用微元法：</p>
       <ul>
-      <li><strong>分割</strong>：将 <span
-      class="math inline">\displaystyle [a,b]</span> 分成 <span
-      class="math inline">\displaystyle n</span> 个小区间；</li>
-      <li><strong>近似</strong>：每个小区间 <span
-      class="math inline">\displaystyle [x, x+dx]</span> 上的面积微元为
-      <span class="math inline">\displaystyle dA = f(x)dx</span>；</li>
-      <li><strong>求和取极限</strong>：</li>
+      <li><strong>计算体积</strong></li>
       </ul>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">省</span></div>
+      <div class="callout-body">
+      <p>把目标沿一个方向切成许多薄片。每一片足够薄时，可以近似看作一个小棱柱，它的体积就是截面面积乘以厚度。</p>
+      <p>若位置 <span class="math inline">\displaystyle x</span>
+      处的截面面积为 <span class="math inline">\displaystyle
+      A(x)</span>，厚度为 <span class="math inline">\displaystyle
+      dx</span>，体积微元便是 <span class="math inline">\displaystyle
+      dV=A(x)\,dx</span>。从 <span class="math inline">\displaystyle
+      a</span> 切到 <span class="math inline">\displaystyle
+      b</span>，把所有薄片的体积累积起来，得到</p>
       <p><span class="math display">
-      A = \int_a^b f(x)\,dx
+      \boxed{V=\int_a^b A(x)\,dx.}
       </span></p>
-      </div>
-      </div>
-      </div>
-      </div>
-      <p class="lead-label"><strong>体积的计算</strong></p>
-      <figure data-teaching-motion="slice">
-      </figure>
-      <div id="chpt6-ex-001" class="exercise-block"
-      data-difficulty="easy">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例16</span><span class="ex-tags"><span
-      class="ex-tag">定积分</span><span
-      class="ex-tag">体积</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>计算底面积为 <span class="math inline">\displaystyle
-      A</span>，高为 <span class="math inline">\displaystyle h</span>
-      的棱柱体积。</p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-001-frame" data-panel="chpt6-ex-001-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-001-frame" data-panel="chpt6-ex-001-ans-0">解答</button></span>
-      </div>
-      </div>
-      <div id="chpt6-ex-001-frame" class="ex-frame" hidden="">
-      <div id="chpt6-ex-001-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>利用截面法：棱柱所有截面面积相同，直接积分。</p>
-      </div>
-      <div id="chpt6-ex-001-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p>所有截面面积均为 <span class="math inline">\displaystyle
-      A</span>，故</p>
-      <p><span class="math display">
-      V = \int_0^h A\,dx = Ah.
-      </span></p>
-      </div>
-      </div>
       </div>
       </div>
       <div id="humanities-integral-checked-002" class="exercise-block"
       data-difficulty="easy">
       <div class="ex-banner">
       <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例17</span><span class="ex-tags"><span
+      class="ex-label">例15：圆锥体积</span><span class="ex-tags"><span
       class="ex-tag">定积分</span><span
       class="ex-tag">体积</span></span>
       </div>
@@ -1331,15 +1256,6 @@
       <p>计算底半径为 <span class="math inline">\displaystyle
       R</span>，高为 <span class="math inline">\displaystyle h</span>
       的圆锥体积。</p>
-      <figure>
-      <img src="media/img/chpt6_ex002.png" width="400"
-      alt="圆锥体积示意 — 高 \displaystyle z 处的截面圆半径为 \displaystyle r(z) = R(1 - z/h), 用切片积分得 \displaystyle V = \pi R^2 h / 3" />
-      <figcaption aria-hidden="true">圆锥体积示意 — 高 <span
-      class="math inline">\displaystyle z</span> 处的截面圆半径为 <span
-      class="math inline">\displaystyle r(z) = R(1 - z/h)</span>,
-      用切片积分得 <span class="math inline">\displaystyle V = \pi R^2 h
-      / 3</span></figcaption>
-      </figure>
       </div>
       <div class="ex-controls">
       <div class="ex-sol-row">
@@ -1352,17 +1268,33 @@
       hidden="">
       <div id="humanities-integral-checked-002-hint-0"
       class="ex-panel ex-hint-panel" hidden="">
-      <p>按图中从底面到顶点的方向取坐标，利用相似三角形求截面半径。</p>
+      <p>沿高度方向分割，利用相似三角形求截面半径，再写出薄片的体积微元。</p>
       </div>
       <div id="humanities-integral-checked-002-ans-0"
       class="ex-panel ex-ans-panel" hidden="">
-      <p>以底面为 <span class="math inline">\displaystyle
+      <p>棱柱的截面面积恒为 <span class="math inline">\displaystyle
+      A</span>，体积为 <span class="math inline">\displaystyle
+      V=\int_0^h A\,dx=Ah</span>。圆锥的截面面积则随高度变化，需要先求出
+      <span class="math inline">\displaystyle A(x)</span>。</p>
+      <figure data-teaching-motion="slice">
+      </figure>
+      <ul>
+      <li>截面：以底面为 <span class="math inline">\displaystyle
       x=0</span>，顶点为 <span class="math inline">\displaystyle
-      x=h</span>。截面半径为 <span class="math inline">\displaystyle
-      r(x)=R\left(1-\frac{x}{h}\right)</span>，所以</p>
-      <p><span class="math display">V=\pi
-      R^2\int_0^h\left(1-\frac{x}{h}\right)^2\,dx=\frac13\pi
-      R^2h.</span></p>
+      x=h</span>。由相似三角形，截面半径为 <span
+      class="math inline">\displaystyle
+      r(x)=R\left(1-\frac{x}{h}\right)</span>，面积为 <span
+      class="math inline">\displaystyle A(x)=\pi
+      R^2\left(1-\frac{x}{h}\right)^2</span>。</li>
+      <li>微元：厚度为 <span class="math inline">\displaystyle dx</span>
+      的薄片可近似看作棱柱，体积微元为 <span
+      class="math inline">\displaystyle dV=A(x)\,dx</span>。</li>
+      <li>积分：从底面累积到顶点，得到</li>
+      </ul>
+      <p><span class="math display">
+      \boxed{V=\int_0^h A(x)\,dx=\pi
+      R^2\int_0^h\left(1-\frac{x}{h}\right)^2\,dx=\frac{1}{3}\pi R^2h.}
+      </span></p>
       </div>
       </div>
       </div>
@@ -1370,23 +1302,26 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">悟</span></div>
       <div class="callout-body">
-      <p>曲线 <span class="math inline">\displaystyle y = f(x)</span> 绕
+      <p>将非负函数 <span class="math inline">\displaystyle
+      y=f(x)</span> 的图像与横轴之间的区域绕 <span
+      class="math inline">\displaystyle x</span>
+      轴旋转，就得到一个旋转体。</p>
+      <p>在 <span class="math inline">\displaystyle x</span> 处垂直于
       <span class="math inline">\displaystyle x</span>
-      轴旋转一周形成的旋转体体积: <span class="math display">
-      V = \int_a^b \pi [f(x)]^2 dx
+      轴切片，截面是半径为 <span class="math inline">\displaystyle
+      f(x)</span> 的圆盘，面积 <span class="math inline">\displaystyle
+      A(x)=\pi[f(x)]^2</span>，因此 <span
+      class="math inline">\displaystyle dV=\pi[f(x)]^2\,dx</span>。</p>
+      <p><span class="math display">
+      \boxed{V=\int_a^b\pi[f(x)]^2\,dx.}
       </span></p>
-      <p class="lead-label"><strong>推导</strong>: 在 <span
-      class="math inline">\displaystyle x</span> 处垂直于 <span
-      class="math inline">\displaystyle x</span> 轴的截面是半径为 <span
-      class="math inline">\displaystyle f(x)</span> 的圆盘, 面积 <span
-      class="math inline">\displaystyle A(x) = \pi [f(x)]^2</span></p>
       </div>
       </div>
-      <div id="chpt6-ex-003" class="exercise-block"
+      <div id="humanities-full-chpt6-ex-003" class="exercise-block"
       data-difficulty="easy">
       <div class="ex-banner">
       <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例18</span><span class="ex-tags"><span
+      class="ex-label">例16</span><span class="ex-tags"><span
       class="ex-tag">定积分</span><span
       class="ex-tag">体积</span></span>
       </div>
@@ -1396,33 +1331,30 @@
       \sqrt{x}</span> 在 <span class="math inline">\displaystyle
       [0,1]</span> 上绕 <span class="math inline">\displaystyle x</span>
       轴旋转一周所形成的旋转体体积。</p>
-      <figure>
-      <img src="media/img/chpt6_ex003.png" width="400"
-      alt="\displaystyle y=\sqrt{x} 在 \displaystyle [0,1] 上绕 \displaystyle x 轴旋转, 形成的旋转体 — 在 \displaystyle x 处的截面是半径 \displaystyle \sqrt{x} 的圆" />
-      <figcaption aria-hidden="true"><span
-      class="math inline">\displaystyle y=\sqrt{x}</span> 在 <span
-      class="math inline">\displaystyle [0,1]</span> 上绕 <span
-      class="math inline">\displaystyle x</span> 轴旋转, 形成的旋转体 —
-      在 <span class="math inline">\displaystyle x</span> 处的截面是半径
-      <span class="math inline">\displaystyle \sqrt{x}</span>
-      的圆</figcaption>
-      </figure>
       </div>
       <div class="ex-controls">
       <div class="ex-sol-row">
       <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-003-frame" data-panel="chpt6-ex-003-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-003-frame" data-panel="chpt6-ex-003-ans-0">解答</button></span>
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="humanities-full-chpt6-ex-003-frame" data-panel="humanities-full-chpt6-ex-003-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="humanities-full-chpt6-ex-003-frame" data-panel="humanities-full-chpt6-ex-003-ans-0">解答</button></span>
       </div>
       </div>
-      <div id="chpt6-ex-003-frame" class="ex-frame" hidden="">
-      <div id="chpt6-ex-003-hint-0" class="ex-panel ex-hint-panel"
+      <div id="humanities-full-chpt6-ex-003-frame" class="ex-frame"
       hidden="">
+      <div id="humanities-full-chpt6-ex-003-hint-0"
+      class="ex-panel ex-hint-panel" hidden="">
       <p>用旋转体体积公式 <span class="math inline">\displaystyle V =
       \displaystyle\int_a^b \pi [f(x)]^2\,dx</span>。</p>
       </div>
-      <div id="chpt6-ex-003-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
+      <div id="humanities-full-chpt6-ex-003-ans-0"
+      class="ex-panel ex-ans-panel" hidden="">
+      <figure data-microelement-motion="disk">
+      </figure>
+      <p>截面是半径为 <span
+      class="math inline">\displaystyle\sqrt{x}</span> 的圆盘，面积为
+      <span class="math inline">\displaystyle\pi x</span>。厚度为 <span
+      class="math inline">\displaystyle dx</span> 的薄片体积微元为 <span
+      class="math inline">\displaystyle dV=\pi x\,dx</span>，所以</p>
       <p><span class="math display">
       V = \int_0^1 \pi(\sqrt{x})^2\,dx = \pi\int_0^1 x\,dx = \pi \cdot
       \frac{1}{2} = \frac{\pi}{2}.
@@ -1434,23 +1366,28 @@
       <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">悟</span></div>
       <div class="callout-body">
-      <p>曲线 <span class="math inline">\displaystyle y = f(x)</span> 绕
-      <span class="math inline">\displaystyle y</span>
-      轴旋转一周形成的旋转体体积: <span class="math display">
-      V = \int_a^b 2\pi x f(x) dx
+      <p>将非负函数 <span class="math inline">\displaystyle
+      y=f(x)</span> 的图像与横轴之间的区域绕 <span
+      class="math inline">\displaystyle y</span> 轴旋转，这里取 <span
+      class="math inline">\displaystyle0\leq a&lt;b</span>。</p>
+      <p>把旋转体分成许多薄柱壳。在半径 <span
+      class="math inline">\displaystyle x</span>
+      处，把薄壳展开，它近似为长 <span
+      class="math inline">\displaystyle2\pi x</span>、高 <span
+      class="math inline">\displaystyle f(x)</span>、厚 <span
+      class="math inline">\displaystyle dx</span> 的薄片，体积微元为
+      <span class="math inline">\displaystyle dV=2\pi x
+      f(x)\,dx</span>，因此</p>
+      <p><span class="math display">
+      \boxed{V=\int_a^b2\pi x f(x)\,dx.}
       </span></p>
-      <p class="lead-label"><strong>推导</strong>: 在 <span
-      class="math inline">\displaystyle x</span> 处厚度为 <span
-      class="math inline">\displaystyle dx</span> 的柱壳体积微元 <span
-      class="math inline">\displaystyle dV = 2\pi x \cdot f(x) \cdot
-      dx</span></p>
       </div>
       </div>
       <div id="humanities-integral-checked-004" class="exercise-block"
       data-difficulty="easy">
       <div class="ex-banner">
       <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例19</span><span class="ex-tags"><span
+      class="ex-label">例17</span><span class="ex-tags"><span
       class="ex-tag">定积分</span><span
       class="ex-tag">体积</span></span>
       </div>
@@ -1461,17 +1398,6 @@
       轴和直线 <span class="math inline">\displaystyle y=1</span>
       围成的区域绕 <span class="math inline">\displaystyle y</span>
       轴旋转一周所得的体积。</p>
-      <figure>
-      <img src="media/img/chpt6_ex004.png" width="400"
-      alt="直线 \displaystyle y=x 在 \displaystyle [0,1] 上绕 \displaystyle y 轴旋转 — 形成顶端在原点的倒置圆锥, 高度 \displaystyle y 处的圆半径等于 \displaystyle y" />
-      <figcaption aria-hidden="true">直线 <span
-      class="math inline">\displaystyle y=x</span> 在 <span
-      class="math inline">\displaystyle [0,1]</span> 上绕 <span
-      class="math inline">\displaystyle y</span> 轴旋转 —
-      形成顶端在原点的倒置圆锥, 高度 <span
-      class="math inline">\displaystyle y</span> 处的圆半径等于 <span
-      class="math inline">\displaystyle y</span></figcaption>
-      </figure>
       </div>
       <div class="ex-controls">
       <div class="ex-sol-row">
@@ -1495,6 +1421,8 @@
       y^2</span>，所以</p>
       <p><span class="math display">V=\int_0^1\pi
       y^2\,dy=\frac\pi3.</span></p>
+      <figure data-microelement-motion="shell">
+      </figure>
       <p>也可以用柱壳法：半径为 <span class="math inline">\displaystyle
       x</span> 的薄壳高度为 <span
       class="math inline">\displaystyle1-x</span>，因此</p>
@@ -1504,25 +1432,130 @@
       </div>
       </div>
       </div>
-      <p class="lead-label"><strong>曲线弧长</strong></p>
-      <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">直角坐标系下的弧长</span></div>
+      <ul>
+      <li><strong>计算长度</strong></li>
+      </ul>
+      <p>把曲线分成许多很短的小段，每一段都可以近似看作一条直线段。由横、纵两个方向的微小变化，用勾股定理求出弧长微元，再沿整条曲线累积，就得到曲线的长度。为使这些小段有顺序地覆盖整条曲线，我们先引入参数。</p>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">参数方程</span></div>
       <div class="callout-body">
-      <p>曲线 <span class="math inline">\displaystyle y = f(x)</span> 在
-      <span class="math inline">\displaystyle [a,b]</span> 上的弧长:
-      <span class="math display">
-      L = \int_a^b \sqrt{1 + [f&#39;(x)]^2}  dx
+      <p>用同一个变量 <span class="math inline">\displaystyle t</span>
+      同时表示动点的两个坐标，</p>
+      <p><span class="math display">
+      \begin{cases}
+      x=x(t),\\
+      y=y(t),
+      \end{cases}
+      \qquad \alpha\leq t\leq\beta,
       </span></p>
-      <p class="lead-label"><strong>推导</strong>: 弧长微元 <span
-      class="math inline">\displaystyle ds = \sqrt{(dx)^2 + (dy)^2} =
-      \sqrt{1 + \left(\frac{dy}{dx}\right)^2} dx</span></p>
+      <p>就得到曲线的参数方程，<span class="math inline">\displaystyle
+      t</span> 称为参数。可以把 <span class="math inline">\displaystyle
+      t</span> 想象成时间：它从 <span
+      class="math inline">\displaystyle\alpha</span> 变到 <span
+      class="math inline">\displaystyle\beta</span> 时，动点 <span
+      class="math inline">\displaystyle P=(x(t),y(t))</span>
+      沿曲线运动。</p>
+      <p>例如，<span class="math inline">\displaystyle x=R\cos
+      t</span>、<span class="math inline">\displaystyle y=R\sin t</span>
+      在 <span class="math inline">\displaystyle0\leq t\leq2\pi</span>
+      时，描画出半径为 <span class="math inline">\displaystyle R</span>
+      的圆。</p>
+      <p>用微元法计算弧长，首先要找到一个能够从头到尾刻画这段曲线的参数。参数范围要覆盖整段曲线，也要避免重复走过某一段，以免漏算或重复计算。</p>
       </div>
       </div>
-      <div id="chpt6-ex-005" class="exercise-block"
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">参数方程下的弧长</span></div>
+      <div class="callout-body">
+      <p>设 <span class="math inline">\displaystyle x(t)</span>、<span
+      class="math inline">\displaystyle y(t)</span> 具有连续导数。沿参数
+      <span class="math inline">\displaystyle t</span>
+      增大的方向分割曲线，当参数增加一个微小量 <span
+      class="math inline">\displaystyle dt</span>
+      时，两个坐标的微分分别为 <span class="math inline">\displaystyle
+      dx=x&#39;(t)\,dt</span>、<span class="math inline">\displaystyle
+      dy=y&#39;(t)\,dt</span>。</p>
+      <p>将这一小段曲线近似看作直线段，由勾股定理得到弧长微元</p>
+      <p><span class="math display">
+      ds=\sqrt{(dx)^2+(dy)^2}=\sqrt{[x&#39;(t)]^2+[y&#39;(t)]^2}\,dt.
+      </span></p>
+      <p>参数从 <span class="math inline">\displaystyle\alpha</span>
+      变到 <span
+      class="math inline">\displaystyle\beta</span>，把这些弧长微元累积起来，就得到</p>
+      <p><span class="math display">
+      \boxed{L=\int_\alpha^\beta\sqrt{[x&#39;(t)]^2+[y&#39;(t)]^2}\,dt.}
+      </span></p>
+      </div>
+      </div>
+      <div id="humanities-full-chpt6-ex-006" class="exercise-block"
+      data-difficulty="easy">
+      <div class="ex-banner">
+      <span class="ex-dot difficulty-easy">🟢</span><span
+      class="ex-label">例18</span><span class="ex-tags"><span
+      class="ex-tag">定积分</span><span
+      class="ex-tag">弧长</span></span>
+      </div>
+      <div class="ex-body">
+      <div class="ex-problem-box">
+      <p>用参数方程下的弧长公式计算半径为 <span
+      class="math inline">\displaystyle R</span> 的圆的周长。</p>
+      </div>
+      <div class="ex-controls">
+      <div class="ex-sol-row">
+      <span
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="humanities-full-chpt6-ex-006-frame" data-panel="humanities-full-chpt6-ex-006-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="humanities-full-chpt6-ex-006-frame" data-panel="humanities-full-chpt6-ex-006-ans-0">解答</button></span>
+      </div>
+      </div>
+      <div id="humanities-full-chpt6-ex-006-frame" class="ex-frame"
+      hidden="">
+      <div id="humanities-full-chpt6-ex-006-hint-0"
+      class="ex-panel ex-hint-panel" hidden="">
+      <p>圆的参数方程为 <span class="math inline">\displaystyle x =
+      R\cos t</span>，<span class="math inline">\displaystyle y = R\sin
+      t</span>（<span class="math inline">\displaystyle 0 \leq t \leq
+      2\pi</span>），代入参数弧长公式。</p>
+      </div>
+      <div id="humanities-full-chpt6-ex-006-ans-0"
+      class="ex-panel ex-ans-panel" hidden="">
+      <figure data-microelement-motion="circle">
+      </figure>
+      <p><span class="math display">
+      \frac{dx}{dt} = -R\sin t, \quad \frac{dy}{dt} = R\cos t.
+      </span></p>
+      <p><span class="math display">
+      L = \int_0^{2\pi} \sqrt{(-R\sin t)^2 + (R\cos t)^2}\,dt =
+      \int_0^{2\pi} R\,dt = 2\pi R.
+      </span></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="callout callout-important">
+      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">函数图像是参数方程的特例</span></div>
+      <div class="callout-body">
+      <p>对于曲线 <span class="math inline">\displaystyle
+      y=f(x)</span>，只需把横坐标本身作为参数，即 <span
+      class="math inline">\displaystyle x=t</span>、<span
+      class="math inline">\displaystyle y=f(t)</span>，其中 <span
+      class="math inline">\displaystyle a\leq t\leq b</span>。由于 <span
+      class="math inline">\displaystyle x&#39;(t)=1</span>、<span
+      class="math inline">\displaystyle
+      y&#39;(t)=f&#39;(t)</span>，一般的弧长公式就变成</p>
+      <p><span class="math display">
+      \boxed{L=\int_a^b\sqrt{1+[f&#39;(x)]^2}\,dx.}
+      </span></p>
+      <p>若曲线写成 <span class="math inline">\displaystyle
+      x=g(y)</span>，也可以把纵坐标作为参数，得到 <span
+      class="math inline">\displaystyle
+      L=\int_c^d\sqrt{1+[g&#39;(y)]^2}\,dy</span>，其中 <span
+      class="math inline">\displaystyle c\leq y\leq d</span>。</p>
+      </div>
+      </div>
+      <div id="humanities-full-chpt6-ex-005" class="exercise-block"
       data-difficulty="medium">
       <div class="ex-banner">
       <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例20</span><span class="ex-tags"><span
+      class="ex-label">例19</span><span class="ex-tags"><span
       class="ex-tag">定积分</span><span class="ex-tag">弧长</span><span
       class="ex-tag">换元法</span></span>
       </div>
@@ -1532,33 +1565,27 @@
       x^{3/2}</span> 从 <span class="math inline">\displaystyle
       x=0</span> 到 <span class="math inline">\displaystyle x=1</span>
       的弧长。</p>
-      <figure>
-      <img src="media/img/chpt6_ex005.png" width="400"
-      alt="\displaystyle y=x^{3/2} 在 \displaystyle [0,1] 的曲线, 红色短箭头标出弧长微元 \displaystyle ds=\sqrt{1+(y&#39;)^2}\,dx" />
-      <figcaption aria-hidden="true"><span
-      class="math inline">\displaystyle y=x^{3/2}</span> 在 <span
-      class="math inline">\displaystyle [0,1]</span> 的曲线,
-      红色短箭头标出弧长微元 <span class="math inline">\displaystyle
-      ds=\sqrt{1+(y&#39;)^2}\,dx</span></figcaption>
-      </figure>
       </div>
       <div class="ex-controls">
       <div class="ex-sol-row">
       <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-005-frame" data-panel="chpt6-ex-005-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-005-frame" data-panel="chpt6-ex-005-ans-0">解答</button></span>
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="humanities-full-chpt6-ex-005-frame" data-panel="humanities-full-chpt6-ex-005-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="humanities-full-chpt6-ex-005-frame" data-panel="humanities-full-chpt6-ex-005-ans-0">解答</button></span>
       </div>
       </div>
-      <div id="chpt6-ex-005-frame" class="ex-frame" hidden="">
-      <div id="chpt6-ex-005-hint-0" class="ex-panel ex-hint-panel"
+      <div id="humanities-full-chpt6-ex-005-frame" class="ex-frame"
       hidden="">
+      <div id="humanities-full-chpt6-ex-005-hint-0"
+      class="ex-panel ex-hint-panel" hidden="">
       <p>用弧长公式 <span class="math inline">\displaystyle L =
       \displaystyle\int_0^1 \sqrt{1 + [f&#39;(x)]^2}\,dx</span>，令
       <span class="math inline">\displaystyle u = 1 +
       \dfrac{9}{4}x</span> 换元求积分。</p>
       </div>
-      <div id="chpt6-ex-005-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
+      <div id="humanities-full-chpt6-ex-005-ans-0"
+      class="ex-panel ex-ans-panel" hidden="">
+      <figure data-microelement-motion="arc">
+      </figure>
       <p><span class="math inline">\displaystyle f&#39;(x) =
       \dfrac{3}{2}x^{1/2}</span>，故</p>
       <p><span class="math display">
@@ -1581,114 +1608,56 @@
       </div>
       </div>
       <div class="callout callout-important">
-      <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">参数方程下的弧长</span></div>
-      <div class="callout-body">
-      <p>曲线由参数方程 <span class="math inline">\displaystyle x =
-      x(t), y = y(t)</span> (<span class="math inline">\displaystyle
-      \alpha \leq t \leq \beta</span>) 给出时, 弧长为: <span
-      class="math display">
-      L = \int_\alpha^\beta \sqrt{\left(\frac{dx}{dt}\right)^2 +
-      \left(\frac{dy}{dt}\right)^2}  dt
-      </span></p>
-      </div>
-      </div>
-      <div id="chpt6-ex-006" class="exercise-block"
-      data-difficulty="easy">
-      <div class="ex-banner">
-      <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例21</span><span class="ex-tags"><span
-      class="ex-tag">定积分</span><span
-      class="ex-tag">弧长</span></span>
-      </div>
-      <div class="ex-body">
-      <div class="ex-problem-box">
-      <p>用参数方程下的弧长公式计算半径为 <span
-      class="math inline">\displaystyle R</span> 的圆的周长。</p>
-      </div>
-      <div class="ex-controls">
-      <div class="ex-sol-row">
-      <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-006-frame" data-panel="chpt6-ex-006-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-006-frame" data-panel="chpt6-ex-006-ans-0">解答</button></span>
-      </div>
-      </div>
-      <div id="chpt6-ex-006-frame" class="ex-frame" hidden="">
-      <div id="chpt6-ex-006-hint-0" class="ex-panel ex-hint-panel"
-      hidden="">
-      <p>圆的参数方程为 <span class="math inline">\displaystyle x =
-      R\cos t</span>，<span class="math inline">\displaystyle y = R\sin
-      t</span>（<span class="math inline">\displaystyle 0 \leq t \leq
-      2\pi</span>），代入参数弧长公式。</p>
-      </div>
-      <div id="chpt6-ex-006-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
-      <p><span class="math display">
-      \frac{dx}{dt} = -R\sin t, \quad \frac{dy}{dt} = R\cos t.
-      </span></p>
-      <p><span class="math display">
-      L = \int_0^{2\pi} \sqrt{(-R\sin t)^2 + (R\cos t)^2}\,dt =
-      \int_0^{2\pi} R\,dt = 2\pi R.
-      </span></p>
-      </div>
-      </div>
-      </div>
-      </div>
-      <div class="callout callout-important">
       <div class="callout-header callout-header-important"><span class="callout-icon"></span><span class="callout-label">极坐标下的弧长</span></div>
       <div class="callout-body">
-      <p>曲线由极坐标方程 <span class="math inline">\displaystyle r =
-      r(\theta)</span> (<span class="math inline">\displaystyle \alpha
-      \leq \theta \leq \beta</span>) 给出时, 弧长为: <span
-      class="math display">
-      L = \int_\alpha^\beta \sqrt{[r(\theta)]^2 +
-      \left[\frac{dr}{d\theta}\right]^2}  d\theta
+      <p>极坐标曲线 <span class="math inline">\displaystyle
+      r=r(\theta)</span> 也可以把角度 <span
+      class="math inline">\displaystyle\theta</span> 作为参数，写成
+      <span class="math inline">\displaystyle
+      x=r(\theta)\cos\theta</span>、<span
+      class="math inline">\displaystyle
+      y=r(\theta)\sin\theta</span>。代入参数方程的弧长公式，得到</p>
+      <p><span class="math display">
+      \boxed{L=\int_\alpha^\beta\sqrt{[r(\theta)]^2+[r&#39;(\theta)]^2}\,d\theta.}
       </span></p>
-      <p class="lead-label"><strong>推导</strong>: 利用直角坐标与极坐标的关系 <span
-      class="math inline">\displaystyle x = r\cos\theta, y =
-      r\sin\theta</span>, 代入参数方程的弧长公式可得.</p>
       </div>
       </div>
-      <div id="chpt6-ex-007" class="exercise-block"
+      <div id="humanities-full-chpt6-ex-007" class="exercise-block"
       data-difficulty="medium">
       <div class="ex-banner">
       <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例22</span><span class="ex-tags"><span
+      class="ex-label">例20</span><span class="ex-tags"><span
       class="ex-tag">定积分</span><span class="ex-tag">弧长</span><span
       class="ex-tag">极坐标</span></span>
       </div>
       <div class="ex-body">
       <div class="ex-problem-box">
-      <p>计算心形线 <span class="math inline">\displaystyle r =
-      a(1+\cos\theta)</span>（<span class="math inline">\displaystyle 0
-      \leq \theta \leq 2\pi</span>）的周长。</p>
-      <figure>
-      <img src="media/img/chpt6_ex007.png" width="400"
-      alt="心形线 \displaystyle r = a(1+\cos\theta), \displaystyle \theta\in[0, 2\pi] — 经典极坐标曲线, 周长为 \displaystyle 8a" />
-      <figcaption aria-hidden="true">心形线 <span
-      class="math inline">\displaystyle r = a(1+\cos\theta)</span>,
-      <span class="math inline">\displaystyle \theta\in[0, 2\pi]</span>
-      — 经典极坐标曲线, 周长为 <span class="math inline">\displaystyle
-      8a</span></figcaption>
-      </figure>
+      <p>计算心形线 <span class="math inline">\displaystyle
+      r=a(1+\cos\theta)</span> 在 <span
+      class="math inline">\displaystyle0\leq\theta\leq2\pi</span>
+      对应的弧长。</p>
       </div>
       <div class="ex-controls">
       <div class="ex-sol-row">
       <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-007-frame" data-panel="chpt6-ex-007-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-007-frame" data-panel="chpt6-ex-007-ans-0">解答</button></span>
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="humanities-full-chpt6-ex-007-frame" data-panel="humanities-full-chpt6-ex-007-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="humanities-full-chpt6-ex-007-frame" data-panel="humanities-full-chpt6-ex-007-ans-0">解答</button></span>
       </div>
       </div>
-      <div id="chpt6-ex-007-frame" class="ex-frame" hidden="">
-      <div id="chpt6-ex-007-hint-0" class="ex-panel ex-hint-panel"
+      <div id="humanities-full-chpt6-ex-007-frame" class="ex-frame"
       hidden="">
+      <div id="humanities-full-chpt6-ex-007-hint-0"
+      class="ex-panel ex-hint-panel" hidden="">
       <p>用极坐标弧长公式 <span class="math inline">\displaystyle L =
       \displaystyle\int_0^{2\pi} \sqrt{r^2 +
       (r&#39;)^2}\,d\theta</span>，利用半角公式 <span
       class="math inline">\displaystyle 1+\cos\theta =
       2\cos^2(\theta/2)</span> 化简被积函数。</p>
       </div>
-      <div id="chpt6-ex-007-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
+      <div id="humanities-full-chpt6-ex-007-ans-0"
+      class="ex-panel ex-ans-panel" hidden="">
+      <figure data-microelement-motion="polar">
+      </figure>
       <p><span class="math inline">\displaystyle \dfrac{dr}{d\theta} =
       -a\sin\theta</span>，故</p>
       <p><span class="math display">
@@ -1706,19 +1675,32 @@
       </div>
       </div>
       </div>
-      <p class="lead-label"><strong>做功的计算</strong></p>
-      <blockquote>
-      <p>在物理学中, 力沿路径做的功定义为力与位移的乘积. 当力是变力时,
-      需要用积分计算.</p>
-      </blockquote>
-      <p class="lead-label"><strong>有限区域内的变力做功</strong></p>
-      <div id="chpt6-ex-008" class="exercise-block"
+      <ul>
+      <li><strong>计算做功</strong></li>
+      </ul>
+      <div class="callout callout-tip">
+      <div class="callout-header callout-header-tip"><span class="callout-icon"></span><span class="callout-label">省</span></div>
+      <div class="callout-body">
+      <p>将运动过程分成许多小段。在一小段位移上，变化的力可以近似看作常量，这一小段的功就是沿运动方向的力乘以位移。</p>
+      <p>若沿运动方向的力为 <span class="math inline">\displaystyle
+      F(x)</span>，位移微元为 <span class="math inline">\displaystyle
+      dx</span>，则功微元为 <span class="math inline">\displaystyle
+      dW=F(x)\,dx</span>。从 <span class="math inline">\displaystyle
+      a</span> 移动到 <span class="math inline">\displaystyle
+      b</span>，累积得到</p>
+      <p><span class="math display">
+      \boxed{W=\int_a^b F(x)\,dx.}
+      </span></p>
+      <p>若分割的是物体本身，例如水箱中的薄水层，就先求每一层的质量和所需移动的距离，写出这一层的功微元，再把各层的功累积起来。</p>
+      </div>
+      </div>
+      <div id="humanities-full-chpt6-ex-008" class="exercise-block"
       data-difficulty="easy">
       <div class="ex-banner">
       <span class="ex-dot difficulty-easy">🟢</span><span
-      class="ex-label">例23</span><span class="ex-tags"><span
+      class="ex-label">例21</span><span class="ex-tags"><span
       class="ex-tag">定积分</span><span
-      class="ex-tag">面积</span></span>
+      class="ex-tag">做功</span></span>
       </div>
       <div class="ex-body">
       <div class="ex-problem-box">
@@ -1730,18 +1712,26 @@
       <div class="ex-controls">
       <div class="ex-sol-row">
       <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-008-frame" data-panel="chpt6-ex-008-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-008-frame" data-panel="chpt6-ex-008-ans-0">解答</button></span>
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="humanities-full-chpt6-ex-008-frame" data-panel="humanities-full-chpt6-ex-008-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="humanities-full-chpt6-ex-008-frame" data-panel="humanities-full-chpt6-ex-008-ans-0">解答</button></span>
       </div>
       </div>
-      <div id="chpt6-ex-008-frame" class="ex-frame" hidden="">
-      <div id="chpt6-ex-008-hint-0" class="ex-panel ex-hint-panel"
+      <div id="humanities-full-chpt6-ex-008-frame" class="ex-frame"
       hidden="">
+      <div id="humanities-full-chpt6-ex-008-hint-0"
+      class="ex-panel ex-hint-panel" hidden="">
       <p>弹簧力 <span class="math inline">\displaystyle F(x) =
       kx</span>，对力沿压缩方向积分。</p>
       </div>
-      <div id="chpt6-ex-008-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
+      <div id="humanities-full-chpt6-ex-008-ans-0"
+      class="ex-panel ex-ans-panel" hidden="">
+      <figure data-microelement-motion="spring">
+      </figure>
+      <p>压缩量为 <span class="math inline">\displaystyle x</span>
+      时，所需外力为 <span class="math inline">\displaystyle
+      F(x)=kx</span>。再压缩一小段 <span
+      class="math inline">\displaystyle dx</span>，功微元为 <span
+      class="math inline">\displaystyle dW=kx\,dx</span>。因此</p>
       <p><span class="math display">
       W = \int_0^L kx\,dx = \frac{1}{2}kL^2.
       </span></p>
@@ -1749,13 +1739,13 @@
       </div>
       </div>
       </div>
-      <div id="chpt6-ex-009" class="exercise-block"
+      <div id="humanities-full-chpt6-ex-009" class="exercise-block"
       data-difficulty="medium">
       <div class="ex-banner">
       <span class="ex-dot difficulty-medium">🟡</span><span
-      class="ex-label">例24</span><span class="ex-tags"><span
+      class="ex-label">例22</span><span class="ex-tags"><span
       class="ex-tag">定积分</span><span
-      class="ex-tag">面积</span></span>
+      class="ex-tag">做功</span></span>
       </div>
       <div class="ex-body">
       <div class="ex-problem-box">
@@ -1764,33 +1754,26 @@
       class="math inline">\displaystyle H</span>，装满密度为 <span
       class="math inline">\displaystyle \rho</span>
       的液体，求将液体全部抽出水箱顶部所需做的功。</p>
-      <figure>
-      <img src="media/img/chpt6_ex009.png" width="400"
-      alt="圆柱形水箱 (半径 \displaystyle R, 高 \displaystyle H), 红色薄片为高 \displaystyle z 处厚 \displaystyle dz 的水层, 需提升的距离为 \displaystyle H-z" />
-      <figcaption aria-hidden="true">圆柱形水箱 (半径 <span
-      class="math inline">\displaystyle R</span>, 高 <span
-      class="math inline">\displaystyle H</span>), 红色薄片为高 <span
-      class="math inline">\displaystyle z</span> 处厚 <span
-      class="math inline">\displaystyle dz</span> 的水层, 需提升的距离为
-      <span class="math inline">\displaystyle H-z</span></figcaption>
-      </figure>
       </div>
       <div class="ex-controls">
       <div class="ex-sol-row">
       <span
-      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="chpt6-ex-009-frame" data-panel="chpt6-ex-009-hint-0">提示</button>
-      <button class="ex-action-btn ex-ans-btn" data-frame="chpt6-ex-009-frame" data-panel="chpt6-ex-009-ans-0">解答</button></span>
+      class="ex-sol-btns"><button class="ex-action-btn ex-hint-btn" data-frame="humanities-full-chpt6-ex-009-frame" data-panel="humanities-full-chpt6-ex-009-hint-0">提示</button>
+      <button class="ex-action-btn ex-ans-btn" data-frame="humanities-full-chpt6-ex-009-frame" data-panel="humanities-full-chpt6-ex-009-ans-0">解答</button></span>
       </div>
       </div>
-      <div id="chpt6-ex-009-frame" class="ex-frame" hidden="">
-      <div id="chpt6-ex-009-hint-0" class="ex-panel ex-hint-panel"
+      <div id="humanities-full-chpt6-ex-009-frame" class="ex-frame"
       hidden="">
+      <div id="humanities-full-chpt6-ex-009-hint-0"
+      class="ex-panel ex-hint-panel" hidden="">
       <p>将水箱沿高度方向分层，距底面高度 <span
       class="math inline">\displaystyle x</span> 处的薄层需提升距离为
       <span class="math inline">\displaystyle H-x</span>，建立积分。</p>
       </div>
-      <div id="chpt6-ex-009-ans-0" class="ex-panel ex-ans-panel"
-      hidden="">
+      <div id="humanities-full-chpt6-ex-009-ans-0"
+      class="ex-panel ex-ans-panel" hidden="">
+      <figure data-microelement-motion="water">
+      </figure>
       <p>距底面高度 <span class="math inline">\displaystyle x</span>
       处厚度为 <span class="math inline">\displaystyle dx</span>
       的水层的质量为 <span class="math inline">\displaystyle \rho\pi
@@ -1819,23 +1802,26 @@
       <p>打上凌霄宝殿，靠的是微元法。面对体积、弧长与功这些不同的问题，我们反复做着同样的事：<strong>选择分割变量，写出微元，确定积分范围，再累积求解。</strong>
       公式各不相同，背后的思路却是一条。</p>
       <figure class="chapter-integral-map">
-      <img src="assets/figures/chapter3-integral-map.svg?v=20261030" alt="积分知识结构：从分割、近似、求和、极限到定积分，分为性质、微积分基本定理与计算、微元法与应用三路" style="width:100%;max-width:920px;height:auto">
+      <img src="assets/figures/chapter3-integral-map.svg?v=20261102" alt="积分的定义联系三条主线：牛顿—莱布尼茨公式与不定积分；基本积分公式和线性性质、换元法、分部积分法；微元法与面积、体积、弧长、做功" style="width:100%;max-width:860px;height:auto">
       </figure>
       <p>回看篇首荀子的“不积跬步，无以至千里”，一小步与千里之间，藏着的正是累积的力量。积分让我们不只看到整体有多大，还能说清楚：<strong>这个整体，是怎样一点一点积起来的。</strong></p>
-      <p>这一路，我们从局部累积出整体。下一回换一个方向：用某一点的变化率理解整个区间，用多项式近似复杂函数，再从变化规律寻找未知的函数。</p>
+      <p>这一路，我们从局部累积出整体。下一回，我们把方向倒过来：从已知的变化规律出发，用微分方程寻找未知的函数，再借助此前学过的折射原理，求出一条用时最短的下落路线。</p>
     </article>
-    <nav class="reader-pagination" aria-label="篇章翻页"><a href="chapter2.html"><span>← 第二回 · 微分</span></a><a href="chapter5.html"><span>第四回 · 应用 →</span></a></nav>
+    <nav class="reader-pagination" aria-label="篇章翻页"><a href="chapter2.html"><span>← 第二回 · 微分</span></a><a href="chapter5.html"><span>第四回 · 微分方程 →</span></a></nav>
   </div>
 
   <script>
-    window.docLib = [{"title": "\u542f\u7a0b", "url": "chapter0.html"}, {"title": "\u7b2c\u4e00\u56de \u00b7 \u6781\u9650", "url": "chapter1.html"}, {"title": "\u7b2c\u4e8c\u56de \u00b7 \u5fae\u5206", "url": "chapter2.html"}, {"title": "\u7b2c\u4e09\u56de \u00b7 \u79ef\u5206", "url": "chapter4.html"}, {"title": "\u7b2c\u56db\u56de \u00b7 \u5e94\u7528", "url": "chapter5.html"}];
+    window.docLib = [{"title": "\u542f\u7a0b", "url": "chapter0.html"}, {"title": "\u7b2c\u4e00\u56de \u00b7 \u6781\u9650", "url": "chapter1.html"}, {"title": "\u7b2c\u4e8c\u56de \u00b7 \u5fae\u5206", "url": "chapter2.html"}, {"title": "\u7b2c\u4e09\u56de \u00b7 \u79ef\u5206", "url": "chapter4.html"}, {"title": "\u7b2c\u56db\u56de \u00b7 \u5fae\u5206\u65b9\u7a0b", "url": "chapter5.html"}];
     window.chpAutonum = "";
   </script>
   <script src="assets/character-link.js?v=20261019-return"></script>
   <script src="assets/app.js?v=20261019-return"></script>
   <script src="assets/three-lazy.js"></script>
   <script src="assets/reader.js"></script>
-  <script src="assets/secant-demo.js?v=20261024-two-plots"></script>
-  <script src="assets/teaching-motion.js?v=20261101-accumulation-concave"></script>
+  <script src="assets/secant-demo.js?v=20261107-zoom-panels"></script>
+  <script src="assets/teaching-motion.js?v=20261104-fold-cleanup"></script>
+  <script src="assets/microelement-motion.js?v=20261102"></script>
+  <script src="assets/ode-motion.js?v=20261104"></script>
+  <script src="assets/orbit-motion.js?v=20261105"></script>
 </body>
 </html>
